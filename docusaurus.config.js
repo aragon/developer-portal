@@ -59,36 +59,35 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Aragon Developer Portal',
         logo: {
           alt: 'Aragon',
-          src: 'img/logo.svg',
+          src: 'img/logo-light.png',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'sdk/README',
-            position: 'left',
-            label: 'SDK',
-          },
-          {
-            type: 'doc',
-            docId: 'core/contracts',
-            position: 'left',
-            label: 'Smart Contracts',
-          },
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'sdk/README',
+          //   position: 'left',
+          //   label: 'SDK',
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: '/docs/core',
+          //   position: 'left',
+          //   label: 'Smart Contracts',
+          // }
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          // },
           //{to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -149,6 +148,17 @@ const config = {
           // Options here
         },
       ],
+      async function TailwindPlugin(context, options) {
+        return {
+          name: "docusaurus-tailwindcss",
+          configurePostCss(postcssOptions) {
+            // Appends TailwindCSS and AutoPrefixer.
+            postcssOptions.plugins.push(require("tailwindcss"));
+            postcssOptions.plugins.push(require("autoprefixer"));
+            return postcssOptions;
+          },
+        };
+      },
     ],
 };
 
