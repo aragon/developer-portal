@@ -34,12 +34,12 @@ struct Vote {
 }
 ```
 
-####  event `VoteStarted`
+####  event `VoteCreated`
 
-Emitted when a vote is started.
+Emitted when a vote is created.
 
 ```solidity
-event VoteStarted(uint256 voteId, address creator, bytes metadata) 
+event VoteCreated(uint256 voteId, address creator, bytes metadata) 
 ```
 
 | Input | Type | Description |
@@ -90,12 +90,12 @@ event ConfigUpdated(uint64 participationRequiredPct, uint64 supportRequiredPct, 
 | supportRequiredPct | uint64 | The required support in percent. |
 | minDuration | uint64 | The minimal duration of a vote. |
 
-#### external function `changeVoteConfig`
+#### external function `setConfiguration`
 
-Change required support and minQuorum.
+Sets the vote configuration.
 
 ```solidity
-function changeVoteConfig(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) external 
+function setConfiguration(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) external 
 ```
 
 | Input | Type | Description |
@@ -106,7 +106,7 @@ function changeVoteConfig(uint64 _participationRequiredPct, uint64 _supportRequi
 
 #### external function `createVote`
 
-Create a new vote.
+Creates a new vote.
 
 ```solidity
 function createVote(bytes _proposalMetadata, struct IDAO.Action[] _actions, uint64 _startDate, uint64 _endDate, bool _executeIfDecided, enum IMajorityVoting.VoteOption _choice) external returns (uint256 voteId) 

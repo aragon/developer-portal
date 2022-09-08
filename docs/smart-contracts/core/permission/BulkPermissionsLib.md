@@ -10,17 +10,30 @@ A library containing objects for bulk permission processing.
 enum Operation {
   Grant,
   Revoke,
-  MakeImmutable
+  Freeze,
+  GrantWithOracle
 }
 ```
 
-#### public struct `Item`
+#### public struct `ItemSingleTarget`
 
 ```solidity
-struct Item {
+struct ItemSingleTarget {
   enum BulkPermissionsLib.Operation operation;
-  bytes32 permissionID;
   address who;
+  bytes32 permissionId;
+}
+```
+
+#### public struct `ItemMultiTarget`
+
+```solidity
+struct ItemMultiTarget {
+  enum BulkPermissionsLib.Operation operation;
+  address where;
+  address who;
+  address oracle;
+  bytes32 permissionId;
 }
 ```
 
