@@ -11,7 +11,7 @@ interface IComponentCardProps {
   to: string
 }
 
-type SvgContainerProps = {  
+type SvgContainerProps = {
   isMobile: boolean
 }
 
@@ -48,7 +48,7 @@ const ContentWrapper = styled.div.attrs({
 const TextWrapper = styled.div.attrs({
   className: 'flex flex-col space-y-1',
 })``;
-const SvgContainer = styled.div<SvgContainerProps>.attrs({
+const SvgContainer = styled.div.attrs({
   className: 'flex rounded-xl',
 })`
 svg {
