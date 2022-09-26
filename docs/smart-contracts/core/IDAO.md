@@ -27,14 +27,14 @@ struct Action {
 Checks if an address has permission on a contract via a permission identifier and considers if `ANY_ADDRESS` was used in the granting process.
 
 ```solidity
-function hasPermission(address _where, address _who, bytes32 _permissionID, bytes _data) external virtual returns (bool) 
+function hasPermission(address _where, address _who, bytes32 _permissionId, bytes _data) external view virtual returns (bool) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _where | address | The address of the contract. |
 | _who | address | The address of a EOA or contract to give the permissions. |
-| _permissionID | bytes32 | The permission identifier. |
+| _permissionId | bytes32 | The permission identifier. |
 | _data | bytes | The optional data passed to the `PermissionOracle` registered. |
 | **Output** | |
 | [0] | bool | bool Returns true if the address has permission, false if not. |

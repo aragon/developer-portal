@@ -14,12 +14,12 @@ The [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID of the contra
 bytes4 MAJORITY_VOTING_INTERFACE_ID 
 ```
 
-#### public variable `CHANGE_VOTE_CONFIG_PERMISSION_ID`
+#### public variable `SET_CONFIGURATION_PERMISSION_ID`
 
-The ID of the permission required to call the `changeVoteConfig` function.
+The ID of the permission required to call the `setConfiguration` function.
 
 ```solidity
-bytes32 CHANGE_VOTE_CONFIG_PERMISSION_ID 
+bytes32 SET_CONFIGURATION_PERMISSION_ID 
 ```
 
 #### public variable `PCT_BASE`
@@ -150,12 +150,12 @@ function __MajorityVotingBase_init(contract IDAO _dao, address _trustedForwarder
 
 *This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
 
-#### external function `changeVoteConfig`
+#### external function `setConfiguration`
 
-Change required support and minQuorum.
+Sets the vote configuration.
 
 ```solidity
-function changeVoteConfig(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) external 
+function setConfiguration(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) external 
 ```
 
 | Input | Type | Description |
@@ -166,7 +166,7 @@ function changeVoteConfig(uint64 _participationRequiredPct, uint64 _supportRequi
 
 #### external function `createVote`
 
-Create a new vote.
+Creates a new vote.
 
 ```solidity
 function createVote(bytes _proposalMetadata, struct IDAO.Action[] _actions, uint64 _startDate, uint64 _endDate, bool _executeIfDecided, enum IMajorityVoting.VoteOption _choice) external virtual returns (uint256 voteId) 

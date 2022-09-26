@@ -106,12 +106,12 @@ function _authorizeUpgrade(address) internal virtual
 Register an [ERC-165](https://eips.ethereum.org/EIPS/eip-165) contract address.
 
 ```solidity
-function _register(address registrant) internal 
+function _register(address _registrant) internal 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| registrant | address | The address of an [ERC-165](https://eips.ethereum.org/EIPS/eip-165) contract. |
+| _registrant | address | The address of an [ERC-165](https://eips.ethereum.org/EIPS/eip-165) contract. |
 
 *The managing DAO needs to grant REGISTER_PERMISSION_ID to registrar.*
 
