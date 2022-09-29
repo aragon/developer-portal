@@ -16,7 +16,7 @@ Typically, governance plugins have the permission to execute actions on the DAO.
 Typically, finance plugins have the permission to withdraw tokens from the DAO.
 :::
 
-- **Membership:** determines **who** will be a part of the DAO and their roles within them. This can mean minting governance tokens like ERC-20, NFTs, or any other token standard.
+- **Membership:** determines **who** will be a part of the DAO and their roles within them. This can mean minting governance tokens like [ERC-20](https://eips.ethereum.org/EIPS/eip-20), NFTs, or any other token standard.
 
 :::note
 Typically, membership related plugins grant permissions (e.g., based on token ownership) to EOAs or contracts.

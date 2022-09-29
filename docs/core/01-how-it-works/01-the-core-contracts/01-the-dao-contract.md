@@ -55,9 +55,9 @@ function execute(uint256 callId, Action[] memory _actions)
 
 The DAO provides basic **asset management** functionality by \*\*\*\*allowing us to `deposit`, `withdraw`, and keep track of certain tokens in the DAO treasury, such as:
 
-- [ERC-20](https://eips.ethereum.org/EIPS/eip-20)
-- [ERC-721](https://eips.ethereum.org/EIPS/eip-721) _(coming soon)_
-- [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) _(coming soon)_
+- [ERC-20 (Token Standard)](https://eips.ethereum.org/EIPS/eip-20)
+- [ERC-721 (NFT Standard)](https://eips.ethereum.org/EIPS/eip-721) _(coming soon)_
+- [ERC-1155 (Multi Token Standard)](https://eips.ethereum.org/EIPS/eip-1155) _(coming soon)_
 
 You can add more advanced asset management and finance functionalities to your DAO in the form of [plugins](03-plugins.md).
 

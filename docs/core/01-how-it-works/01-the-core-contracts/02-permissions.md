@@ -103,7 +103,8 @@ function grantWithOracle(
   address _who,
   bytes32 _permissionId,
   IPermissionOracle _oracle
-)) external auth(_where, ROOT_PERMISSION_ID)
+) external auth(_where, ROOT_PERMISSION_ID) {}
+
 ```
 
 and specifying the `_oracle` address. This provides the possibility to fully customize the conditions under which the function call is allowed.
