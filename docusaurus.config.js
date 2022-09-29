@@ -77,7 +77,7 @@ const config = {
           //   type: 'doc',
           //   docId: '/docs/core',
           //   position: 'left',
-          //   label: 'Smart Contracts',
+          //   label: 'Core',
           // }
           // {
           //   type: 'doc',

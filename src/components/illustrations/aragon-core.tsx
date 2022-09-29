@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const IllustrationSmartContracts = () => {
+export const IllustrationCore = () => {
   return (
     <svg width="320" height="184" viewBox="0 0 320 184" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 6.10352e-05H320V184H0V6.10352e-05Z" fill="#FFE7E9" />
