@@ -73,4 +73,4 @@ Although possible, the permissions to withdraw assets, execute arbitrary actions
 
 Instead, the permissions for the above mentioned functionalities are better restricted to the `DAO` contract itself and triggered through governance [plugins](03-plugins.md) that you can install on your DAO.
 
-In the next section, we will dive deeper into the DAOs permissione management system
+In the next section, we will dive deeper into the DAOs permissione manager.

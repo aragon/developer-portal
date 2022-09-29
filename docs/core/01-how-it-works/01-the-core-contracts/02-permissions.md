@@ -78,14 +78,14 @@ function grant(
 To prevent these functions from being called by any address, they are themselves permissioned via the `auth` modifier and require the caller to have the `ROOT_PERMISSION_ID` permission in order to call them.
 
 :::note
-By default, the `ROOT_PERMISSION_ID` permission is granted only to the `DAO` contract itself. Contracts related to the Aragon infrastructure temporarily require it during the [The DAO Creation Process](https://www.notion.so/The-DAO-Creation-Process-c90a3fa45bcf411c8644ec32aa9dac56) and [The Plugin Setup Process](https://www.notion.so/The-Plugin-Setup-Process-5840be4e7b6a497f8d088fa8d40ad83d).
+By default, the `ROOT_PERMISSION_ID` permission is granted only to the `DAO` contract itself. Contracts related to the Aragon infrastructure temporarily require it during the [DAO creation](../02-the-dao-framework/01-dao-creation-process.md) and [plugin setup ](../02-the-dao-framework/01-plugin-marketplace/04-plugin-setup.md) processes.
 :::note
 
 This means, that these functions can only be called through the DAO’s `execute` function that, in turn, requires the calling address to have the `EXECUTE_PERMISSION_ID` permission. 
 
 :::note
 By default, the `EXECUTE_PERMISSION_ID` permission is granted to governance contracts (such as a majority voting plugin owned by the DAO or a multi-sig). Accordingly, a proposal is often required to change permissions.
-An exception are, again the [The DAO Creation Process](https://www.notion.so/The-DAO-Creation-Process-c90a3fa45bcf411c8644ec32aa9dac56) and [The Plugin Setup Process](https://www.notion.so/The-Plugin-Setup-Process-5840be4e7b6a497f8d088fa8d40ad83d).
+Exceptions are, again, the [DAO creation](../02-the-dao-framework/01-dao-creation-process.md) and [plugin setup ](../02-the-dao-framework/01-plugin-marketplace/04-plugin-setup.md) processes.
 :::
 
 ### Granting Permission with Oracles
@@ -108,28 +108,25 @@ function grantWithOracle(
 and specifying the `_oracle` address. This provides the possibility to fully customize the conditions under which the function call is allowed.
 
 These conditions can be based on the calldata of the function such as
-
 - parameter values
 - function signature
 
 on-chain data such as
-
 - timestamps
 - token ownership
 - …
 
 or off-chain data being made available through third-party oracle services (e.g., [chain.link](https://chain.link/), [witnet.io](https://witnet.io/)) such as
-
 - market data
 - weather data
 - scientific data
 - sports data
 
-Typically, oracles are written specifically for and installed together with [plugins](Plugins%20Customizing%20your%20DAO%2063bf2e9a253f462da8a8ed050610af83.md). 
+Typically, oracles are written specifically for and installed together with [plugins](../01-the-core-contracts/03-plugins.md). 
 
 ### Examples
 
-Let’s assume we have an `Example` contract being managed by a `DAO` and containing a `sendCoins` function allowing you to send an `_amount` to an address `_to` and being permissioned through the `auth` modifier:
+Let’s assume we have an `Example` contract managed by a DAO and containing a `sendCoins` function allowing you to send an `_amount` to an address `_to` and being permissioned through the `auth` modifier:
 
 ```solidity title="Example.sol"
 contract Example is Plugin {
@@ -143,6 +140,7 @@ contract Example is Plugin {
 Instead of just using `grant` the `SEND_COINS_PERMISSION_ID` permission required to call the `sendCoins` function in a deployed `Example` contract located at address `_where` to a specific address `_who`, we can now add additional constraints to it by using the `grantWithOracle` function.
 
 Below, we show four exemplaric oracles for different 4 different use cases that we could attach to the permission.
+
 
 ### Example 1: Adding parameter constraints
 
@@ -273,15 +271,15 @@ Permissions on a target contract `where`) can also be permanently frozen by usin
 
 The following functions in the DAO are permissioned:
 
-| Functions             | Permission Identifier | Description |
-| --------------------- | --------------------- | --- |
-| execute               | EXECUTE_PERMISSION_ID | Required to execute arbitrary actions. |
-| withdraw              | WITHDRAW_PERMISSION_ID | Required to withdraw assets from the DAO. |
-| _authorizeUpgrade     | UPGRADE_PERMISSION_ID | Required to upgrade the DAO (via the UUPS). |
-| setMetadata           | SET_METADATA_PERMISSION_ID | Required to set the DAO’s metadata. |
-| setTrustedForwarder   | SET_TRUSTED_FORWARDER_PERMISSION_ID | Required to set the DAO’s trusted forwarder for meta transactions. |
-| setSignatureValidator | SET_SIGNATURE_VALIDATOR_PERMISSION_ID | Required to set the DAO’s signature validator contract (see ERC-1271). |
-| grant, grantWithOracle, revoke, freeze | ROOT_PERMISSION_ID | Required to manage permissions of the DAO and associated plugins. |
+| Functions                              | Permission Identifier                 | Description                                                            |
+| -------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------- |
+| execute                                | EXECUTE_PERMISSION_ID                 | Required to execute arbitrary actions.                                 |
+| withdraw                               | WITHDRAW_PERMISSION_ID                | Required to withdraw assets from the DAO.                              |
+| _authorizeUpgrade                      | UPGRADE_PERMISSION_ID                 | Required to upgrade the DAO (via the UUPS).                            |
+| setMetadata                            | SET_METADATA_PERMISSION_ID            | Required to set the DAO’s metadata.                                    |
+| setTrustedForwarder                    | SET_TRUSTED_FORWARDER_PERMISSION_ID   | Required to set the DAO’s trusted forwarder for meta transactions.     |
+| setSignatureValidator                  | SET_SIGNATURE_VALIDATOR_PERMISSION_ID | Required to set the DAO’s signature validator contract (see ERC-1271). |
+| grant, grantWithOracle, revoke, freeze | ROOT_PERMISSION_ID                    | Required to manage permissions of the DAO and associated plugins.      |
 
 Plugins installed to the DAO might require their own and introduce new  permission settings.
 
