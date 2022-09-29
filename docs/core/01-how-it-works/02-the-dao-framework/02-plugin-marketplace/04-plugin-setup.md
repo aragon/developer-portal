@@ -1,3 +1,7 @@
+---
+title: Setup
+---
+
 # The Plugin Setup Process
 
 A DAO can be set up and customized by the **installation**, **update, and** **uninstallation** of plugins.
@@ -5,7 +9,7 @@ In this section you will learn how the plugin setup process in aragonOS works.
 
 In order for a plugin to function, associated contracts need to be deployed and gathered and often require permissions from the DAO: A finance plugin might need the permission to withdraw assets from the treasury and a governance plugin needs permission to execute actions in the DAO.
 
-The required setup logic is written and taken care off by the plugin developer in the `PluginSetup` contract associated with each `Plugin` contract version release (see [Developing a Plugin](../../../../02-how-to-guides/01-plugin-development/index.md)) which interact with the aragonOS framework infrastructure so that installing, updating, and uninstalling a plugin to a DAO through the UI becomes very simple for the DAO end-user.
+The required setup logic is written and taken care off by the plugin developer in the `PluginSetup` contract associated with each `Plugin` contract version release (see [Developing a Plugin](docs/core/02-how-to-guides/01-plugin-development/index.md)) which interact with the aragonOS framework infrastructure so that installing, updating, and uninstalling a plugin to a DAO through the UI becomes very simple for the DAO end-user.
 
 ## Security Considerations
 
@@ -32,7 +36,7 @@ The preparation of a plugin setup proceeds as follows:
    - deployment of new contracts
    - initialization of new storage variables
    - deprecating/decomissioning outdated (helper) contracts
-   - …
+   - ...
 
    Because the addresses of all associated contracts are now known, a static permission list can be emitted, hashed, and stored on-chain
 

@@ -20,7 +20,7 @@ The motivation to upgrade smart contracts is nicely summarized by OpenZepplin:
 
 > Smart contracts in Ethereum are immutable by default. Once you create them there is no way to alter them, effectively acting as an unbreakable contract among participants.
 >
-> However, for some scenarios, it is desirable to be able to modify them […]
+> However, for some scenarios, it is desirable to be able to modify them [...]
 >
 > - to fix a bug [...],
 > - to add additional features, or simply to
@@ -33,7 +33,7 @@ The motivation to upgrade smart contracts is nicely summarized by OpenZepplin:
 > 3. Update all contracts that interacted with the old contract to use the address of the new one
 > 4. Reach out to all your users and convince them to start using the new deployment (and handle both contracts being used simultaneously, as users are slow to migrate
 >
-> _source: [https://docs.openzeppelin.com/learn/upgrading-smart-contracts#whats-in-an-upgrade](https://docs.openzeppelin.com/learn/upgrading-smart-contracts#whats-in-an-upgrade)_
+> _source: [OpenZepplin: What's in an upgrade](https://docs.openzeppelin.com/learn/upgrading-smart-contracts#whats-in-an-upgrade)_
 
 With upgradable smart contracts, you can modify their code while keep using or even extending the storage (see the guide [Writing Upgradable Contracts](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) by OpenZepplin).
 
@@ -41,7 +41,7 @@ To enable upgradeable smart contracts (as well as cheap contract clones), the pr
 
 Depending on your upgradeability requirements and the deployment method you choose, you can also greatly reduce the gas costs to distribute your plugin.
 
-However, the upgradeability and deployment method can also introduce caveats during [The Plugin Setup Process](https://www.notion.so/The-Plugin-Setup-Process-5840be4e7b6a497f8d088fa8d40ad83d), especially for updating from an older version to a new one.
+However, the upgradeability and deployment method can also introduce caveats during [the plugin setup](docs/core/01-how-it-works/02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md), especially for updating from an older version to a new one.
 
 The following table presents an overview of the different deployment methods and their benefits and drawbacks:
 

@@ -1,4 +1,8 @@
-# Security Risks & Mitigation
+---
+title: Security Risks & Mitigation
+---
+
+# Security Risks and their Mitigation
 
 :::note
 To do: This is a draft.
@@ -15,4 +19,4 @@ Moreover, a malicious plugin can hide a backdoor in its code or grant elevated p
 
 To mitigate these security risks, each plugin on the marketplace requires a security audit. Additionally, the UI displays you the audit summary and warns you of potentially dangerous permission settings.
 
-In the next section, you’ll learn about the [(PLACEHOLDER) The Plugin Submission and Audit Process](<(PLACEHOLDER)%20The%20Plugin%20Submission%20and%20Audit%20Proc%202ed8aa168e104aa1b61403389d6d4c66.md>).
+In the next section, you’ll learn about the the plugin submission and audit Process.

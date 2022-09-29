@@ -11,11 +11,9 @@ p,
 span {
   font-weight: 500;
 }
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 :root {
   --ifm-color-primary: #3465a4;

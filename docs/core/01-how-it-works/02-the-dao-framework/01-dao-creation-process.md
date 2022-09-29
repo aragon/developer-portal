@@ -1,4 +1,8 @@
-# The DAO Creation Process
+---
+title: DAO Creation
+---
+
+# DAO Creation
 
 Creating a DAO with custom set of plugins on the frontend is simple.  
 After picking an available subdomain name on the `dao.eth` domain, we select the plugins to be installed and configure them. The plugin contracts then get deployed and prepared in
@@ -14,7 +18,7 @@ The `DAOFactory` contract does the following steps:
 4. use the `ROOT_PERMISSION_ID` to
    1. `grant` itself the `EXECUTE_PERMISSION_ID` permission
    2. `grant` the Aragon `PluginSetupProcessor` the `ROOT_PERMISSION_ID` permission for the `PluginSetupProcessor` to give permissions to the plugins being installed
-5. use the `EXECUTE_PERMISSION_ID` permission to call the `PluginSetupProcessor` to install the requested plugins (see [The Plugin Setup Process](The%20Aragon%20Plugin%20Marketplace%20987d6cbbab534411a5bc766c28b24f9a/The%20Plugin%20Setup%20Process%205840be4e7b6a497f8d088fa8d40ad83d.md))
+5. use the `EXECUTE_PERMISSION_ID` permission to call the `PluginSetupProcessor` to install the requested plugins (see [The Plugin Setup Process](../02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md))
    :::note
    The UI will make sure that the creator has selected at least one governance plugin having `EXECUTE_PERMISSION_ID` permission on the DAO as it will be revoked in the next step.
    :::

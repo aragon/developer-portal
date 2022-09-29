@@ -1,3 +1,7 @@
+---
+title: Framework
+---
+
 # The DAO Framework
 
 The **core contracts** constituting the aragonOS DAOs and being customizable and extensible through Aragon and third-party plugins are the central part of the aragonOS DAO Framework.
@@ -22,8 +26,7 @@ Together, the Framework DAO and AN Main DAO present the **governance layer** of 
 
 Schematic overview of the governance layer, code layer and external dependencies of the Aragon DAO Framework and their responsibilities.
 
-In the following sections, the different framework related parts are explained.
+In the following sections, the framework related parts are explained.
 
-[The DAO Creation Process](The%20DAO%20Framework%20bd0be71d2dee442d83a4394e960d7345/The%20DAO%20Creation%20Process%20c90a3fa45bcf411c8644ec32aa9dac56.md)
-
-[The Aragon Plugin Marketplace](The%20DAO%20Framework%20bd0be71d2dee442d83a4394e960d7345/The%20Aragon%20Plugin%20Marketplace%20987d6cbbab534411a5bc766c28b24f9a.md)
+- [The DAO Creation Process](01-dao-creation-process.md)
+- [The Aragon Plugin Marketplace](02-plugin-marketplace/index.md)

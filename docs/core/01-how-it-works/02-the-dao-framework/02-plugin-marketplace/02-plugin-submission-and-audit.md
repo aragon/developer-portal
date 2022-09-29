@@ -1,3 +1,7 @@
+---
+title: Submission & Audit
+---
+
 # The Plugin Submission and Audit Process
 
 :::note
@@ -25,7 +29,7 @@ The plugin audit process consist of X phases:
      2. update to existing plugin (e.g., `v1.2.0`) with options to upgrade from (multiple) previous versions
         - `v1.0.5` → `v1.2.0`
         - `v1.1.0` → `v1.2.0`
-        - … (whatever update the developer wants to support)
+        - ... (whatever update the developer wants to support)
    - proposal text contains description and explanation of
      - the public/user facing functions
      - permissions required during installation / upgrade

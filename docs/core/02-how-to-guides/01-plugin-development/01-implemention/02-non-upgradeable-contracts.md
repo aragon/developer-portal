@@ -1,4 +1,4 @@
-# Writing a Non-Upgradabe Contract
+# Writing a Non-Upgradabe Plugin Contract
 
 :::note
 Work in progress

@@ -1,4 +1,8 @@
-# Versioning
+---
+title: Versioning
+---
+
+# Versioning your Plugin
 
 :::note
 Work in Progress

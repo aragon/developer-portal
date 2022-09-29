@@ -1,3 +1,7 @@
+---
+title: Curation
+---
+
 # Plugin Curation
 
 :::note

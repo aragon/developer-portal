@@ -1,3 +1,7 @@
+---
+title: Permissions
+---
+
 # Permissions: Managing and Governing your DAO
 
 At Aragon, we believe that **DAOs are simply permission management systems**.
@@ -79,14 +83,14 @@ function grant(
 To prevent these functions from being called by any address, they are themselves permissioned via the `auth` modifier and require the caller to have the `ROOT_PERMISSION_ID` permission in order to call them.
 
 :::note
-By default, the `ROOT_PERMISSION_ID` permission is granted only to the `DAO` contract itself. Contracts related to the Aragon infrastructure temporarily require it during the [DAO creation](../02-the-dao-framework/01-dao-creation-process.md) and [plugin setup ](../02-the-dao-framework/01-plugin-marketplace/04-plugin-setup.md) processes.
+By default, the `ROOT_PERMISSION_ID` permission is granted only to the `DAO` contract itself. Contracts related to the Aragon infrastructure temporarily require it during the [DAO creation](../02-the-dao-framework/01-dao-creation-process.md) and [plugin setup ](../02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md) processes.
 :::note
 
 This means, that these functions can only be called through the DAO’s `execute` function that, in turn, requires the calling address to have the `EXECUTE_PERMISSION_ID` permission.
 
 :::note
 By default, the `EXECUTE_PERMISSION_ID` permission is granted to governance contracts (such as a majority voting plugin owned by the DAO or a multi-sig). Accordingly, a proposal is often required to change permissions.
-Exceptions are, again, the [DAO creation](../02-the-dao-framework/01-dao-creation-process.md) and [plugin setup ](../02-the-dao-framework/01-plugin-marketplace/04-plugin-setup.md) processes.
+Exceptions are, again, the [DAO creation](../02-the-dao-framework/01-dao-creation-process.md) and [plugin setup ](../02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md) processes.
 :::
 
 ### Granting Permission with Oracles
@@ -118,7 +122,7 @@ on-chain data such as
 
 - timestamps
 - token ownership
-- …
+- ...
 
 or off-chain data being made available through third-party oracle services (e.g., [chain.link](https://chain.link/), [witnet.io](https://witnet.io/)) such as
 

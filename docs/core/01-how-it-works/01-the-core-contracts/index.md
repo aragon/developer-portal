@@ -1,3 +1,7 @@
+---
+title: Core Contracts
+---
+
 # The Core Contracts
 
 In a nutshell, your aragonOS DAO consists of three pieces:
@@ -16,3 +20,7 @@ Overview of the three core contract pieces and their interactions: The `DAO` and
 The underlying smart contracts constitute **the core contracts** of the aragonOS DAO framework.
 
 In the next sections, you will learn about each of them in more depth.
+
+- [The DAO Contract: The Identity and Basis of your Organization](01-the-dao-contract.md)
+- [Permissions: Managing and Governing your DAO](02-permissions.md)
+- [Plugins: Customizing your DAO]/03-plugins.md)
