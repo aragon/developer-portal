@@ -17,31 +17,32 @@ The plugin audit process consist of X phases:
 **Phase** / `status`:
 
 1. **Submission** (`submitted`)
-    
-    Formal proposal to the Aragon Marketplace DAO
-    
-    - two scenarios
-        1. new plugin (`v1.0.0`)
-        2. update to existing plugin (e.g., `v1.2.0`) with options to upgrade from (multiple) previous versions
-            - `v1.0.5` → `v1.2.0`
-            - `v1.1.0` → `v1.2.0`
-            - … (whatever update the developer wants to support)
-    - proposal text contains description and explanation of
-        - the public/user facing functions
-        - permissions required during installation / upgrade
-        
+
+   Formal proposal to the Aragon Marketplace DAO
+
+   - two scenarios
+     1. new plugin (`v1.0.0`)
+     2. update to existing plugin (e.g., `v1.2.0`) with options to upgrade from (multiple) previous versions
+        - `v1.0.5` → `v1.2.0`
+        - `v1.1.0` → `v1.2.0`
+        - … (whatever update the developer wants to support)
+   - proposal text contains description and explanation of
+     - the public/user facing functions
+     - permissions required during installation / upgrade
+
 2. **Peer Review** (`in review`)
 
 Reviewers review and comment on the different code pieces the developer provides
 
 - contract logic
-    - fee structure
+  - fee structure
 - setup logic
 - UI building blocks
+
 1. **Acceptance** / **Revision** / **Rejection** (`accepted`, `revision requested`, `rejected`)
-    - Accepted
-        - the Plugin is listed as `verified` on the Marketplace
-    - Revision
-        - move to step 2
-    - Rejected
-        - the Plugin is listed as `rejected` on the Marketplace
+   - Accepted
+     - the Plugin is listed as `verified` on the Marketplace
+   - Revision
+     - move to step 2
+   - Rejected
+     - the Plugin is listed as `rejected` on the Marketplace

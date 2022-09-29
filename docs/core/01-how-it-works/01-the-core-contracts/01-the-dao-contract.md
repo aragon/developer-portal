@@ -1,6 +1,6 @@
 # The DAO Contract: The Identity and Basis of your Organization
 
-In this section, you will learn about the core functionality of every aragonOS DAO. 
+In this section, you will learn about the core functionality of every aragonOS DAO.
 
 The `DAO` contract is the identity and basis of your organization. It is the address carrying the DAO’s ENS name, metadata, and holding the funds. Furthermore, it has **four base functionalities** being commonly found in other DAO frameworks in the ecosystem.
 
@@ -11,10 +11,11 @@ In our framework, actions are represented by a solidity struct:
 
 ```solidity title="contracts/core/IDAO.sol"
 struct Action {
-    address to;    // The address to call
-    uint256 value; // The value to be sent with the call (for example ETH if on mainnet)
-    bytes data;    // The `bytes4` function signature and arguments
+  address to; // The address to call
+  uint256 value; // The value to be sent with the call (for example ETH if on mainnet)
+  bytes data; // The `bytes4` function signature and arguments
 }
+
 ```
 
 Actions are typically scheduled in a proposal in a governance [plugin customizing your DAO](03-plugins.md) can be calls to external contracts, plugins, or the aragonOS DAO framework infrastructure, for example, to [setup a plugin](../02-the-dao-framework/01-plugin-marketplace/04-plugin-setup.md).
@@ -28,36 +29,37 @@ Multiple `Action` structs can be put into one `Action[]` array and executed in a
 /// @param _actions The array of actions.
 /// @return bytes[] The array of results obtained from the executed actions in `bytes`.
 function execute(uint256 callId, Action[] memory _actions)
-    external
-    override
-    auth(address(this), EXECUTE_PERMISSION_ID)
-    returns (bytes[] memory)
+  external
+  override
+  auth(address(this), EXECUTE_PERMISSION_ID)
+  returns (bytes[] memory)
 {
-    bytes[] memory execResults = new bytes[](_actions.length);
-    
-		for (uint256 i = 0; i < _actions.length; i++) {
-        (bool success, bytes memory response) = _actions[i].to.call{value: _actions[i].value}(
-            _actions[i].data
-        );
-        if (!success) revert ActionFailed();
-        execResults[i] = response;
-    }
-    
-		emit Executed(msg.sender, callId, _actions, execResults);
-    
-		return execResults;
+  bytes[] memory execResults = new bytes[](_actions.length);
+
+  for (uint256 i = 0; i < _actions.length; i++) {
+    (bool success, bytes memory response) = _actions[i].to.call{
+      value: _actions[i].value
+    }(_actions[i].data);
+    if (!success) revert ActionFailed();
+    execResults[i] = response;
+  }
+
+  emit Executed(msg.sender, callId, _actions, execResults);
+
+  return execResults;
 }
+
 ```
 
 ## 2. Asset Management
 
-The DAO provides basic **asset management** functionality by ****allowing us to `deposit`, `withdraw`, and keep track of certain tokens in the DAO treasury, such as:
+The DAO provides basic **asset management** functionality by \*\*\*\*allowing us to `deposit`, `withdraw`, and keep track of certain tokens in the DAO treasury, such as:
 
 - [ERC-20](https://eips.ethereum.org/EIPS/eip-20)
-- [ERC-721](https://eips.ethereum.org/EIPS/eip-721) *(coming soon)*
-- [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) *(coming soon)*
+- [ERC-721](https://eips.ethereum.org/EIPS/eip-721) _(coming soon)_
+- [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) _(coming soon)_
 
-You can add more advanced asset management and finance functionalities  to your DAO in the form of [plugins](03-plugins.md).
+You can add more advanced asset management and finance functionalities to your DAO in the form of [plugins](03-plugins.md).
 
 ## 3. Upgradeability
 
