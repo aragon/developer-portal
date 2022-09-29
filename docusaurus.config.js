@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Aragon Developer Portal',
-  tagline: 'Let\'s build cool sh*t together',
+  tagline: "Let's build cool sh*t together",
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'log',
@@ -144,25 +144,25 @@ const config = {
       },
     }),
 
-    plugins: [
-      [
-        require.resolve("@cmfcmf/docusaurus-search-local"),
-        {
-          // Options here
-        },
-      ],
-      async function TailwindPlugin(context, options) {
-        return {
-          name: "docusaurus-tailwindcss",
-          configurePostCss(postcssOptions) {
-            // Appends TailwindCSS and AutoPrefixer.
-            postcssOptions.plugins.push(require("tailwindcss"));
-            postcssOptions.plugins.push(require("autoprefixer"));
-            return postcssOptions;
-          },
-        };
+  plugins: [
+    [
+      require.resolve('@cmfcmf/docusaurus-search-local'),
+      {
+        // Options here
       },
     ],
+    async function TailwindPlugin(context, options) {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 };
 
 module.exports = config;

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useViewportSize } from "@mantine/hooks";
+import {useEffect, useState} from 'react';
+import {useViewportSize} from '@mantine/hooks';
 
 export const MOBILE_WIDTH_BREAKPOINT = 600;
 export const TABLET_WIDTH_BREAKPOINT = 992;
@@ -12,7 +12,7 @@ interface IUseScreenSizeRes {
 }
 
 export const useScreenSize = (): IUseScreenSizeRes => {
-  const { width } = useViewportSize();
+  const {width} = useViewportSize();
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
