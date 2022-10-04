@@ -44,13 +44,13 @@ However, the upgradeability and deployment method can also introduce caveats dur
 
 The following table presents an overview of the different deployment methods and their benefits and drawbacks:
 
-| Deployment Method     | `new` Instantiation                         | Minimal Proxy (Clones)                         | Transparent Proxy                             | UUPS Proxy                                    |
-| --------------------- | ------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| upgradability         | <span style={{color: "red"}}>no</span>      | <span style={{color: "red"}}>no</span>         | <span style={{color: "green"}}>yes</span>     | <span style={{color: "green"}}>yes</span>     |
-| gas costs             | <span style={{color: "red"}}>high</span>    | <span style={{color: "green"}}>very low</span> | <span style={{color: "gold"}}>moderate</span> | <span style={{color: "green"}}>low</span>     |
-| plugin installation   | <span style={{color: "green"}}>easy</span>  | <span style={{color: "green"}}>easy</span>     | <span style={{color: "gold"}}>moderate</span> | <span style={{color: "gold"}}>moderate</span> |
-| plugin uninstallation | <span style={{color: "green"}}>easy</span>  | <span style={{color: "green"}}>easy</span>     | <span style={{color: "green"}}>easy</span>    | <span style={{color: "green"}}>easy</span>    |
-| plugin updating       | <span style={{color: "red"}}>limited</span> | <span style={{color: "red"}}>limited</span>    | <span style={{color: "green"}}>easy</span>    | <span style={{color: "green"}}>easy</span>    |
+| Deployment Method     | `new` Instantiation                              | Minimal Proxy (Clones)                            | Transparent Proxy                                | UUPS Proxy                                       |
+| --------------------- | ------------------------------------------------ | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------ |
+| upgradability         | <span class="table-cell-negative">no</span>      | <span class="table-cell-negative">no</span>       | <span class="table-cell-positive">yes</span>     | <span class="table-cell-positive">yes</span>     |
+| gas costs             | <span class="table-cell-negative">high</span>    | <span class="table-cell-positive">very low</span> | <span class="table-cell-neutral">moderate</span> | <span class="table-cell-positive">low</span>     |
+| plugin installation   | <span class="table-cell-positive">easy</span>    | <span class="table-cell-positive">easy</span>     | <span class="table-cell-neutral">moderate</span> | <span class="table-cell-neutral">moderate</span> |
+| plugin uninstallation | <span class="table-cell-positive">easy</span>    | <span class="table-cell-positive">easy</span>     | <span class="table-cell-positive">easy</span>    | <span class="table-cell-positive">easy</span>    |
+| plugin updating       | <span class="table-cell-negative">limited</span> | <span class="table-cell-negative">limited</span>  | <span class="table-cell-positive">easy</span>    | <span class="table-cell-positive">easy</span>    |
 
 Accordingly, we recommend the UUPS proxy method for developing easily updatable Aragon Plugins and minimal clones for those, where the availability of the storage after the update is secondary / not needed.
 

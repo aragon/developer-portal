@@ -1,6 +1,6 @@
 :root {
-  --neutral-500: #52606D;
-  --neutral-700: #323F4B;
+  --neutral-500: #52606d;
+  --neutral-700: #323f4b;
 }
 
 .markdown {
@@ -11,14 +11,14 @@
   color: var(--neutral-500);
 }
 
-.markdown>*>h1 {
+.markdown > * > h1 {
   font-size: 2.1775rem;
   font-weight: 700;
   color: var(--neutral-700);
   margin-bottom: 8px !important;
 }
 
-.markdown>h2 {
+.markdown > h2 {
   font-weight: 500;
   font-size: 1.25rem;
   margin: 0;
@@ -26,7 +26,7 @@
   color: var(--neutral-500);
 }
 
-.markdown>h3 {
+.markdown > h3 {
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--neutral-700);
@@ -34,7 +34,7 @@
   margin-bottom: 16px;
 }
 
-.markdown>h4 {
+.markdown > h4 {
   font-weight: 700;
   font-size: 1rem;
   color: var(--neutral-700);
@@ -42,7 +42,19 @@
   margin-bottom: 16px;
 }
 
-.markdown>p {
+.markdown > p {
   margin: 0;
   margin-bottom: 16px;
+}
+
+.table-cell-positive {
+  color: green;
+}
+
+.table-cell-neutral {
+  color: gold;
+}
+
+.table-cell-negative {
+  color: red;
 }
