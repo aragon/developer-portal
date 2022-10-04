@@ -18,9 +18,15 @@ The names and address of the `PluginRepo` contracts are stored in the `PluginRep
 
 The `PluginSetupProcessor` contract taking care of installing, updating, and uninstalling is described in the context of [the plugin setup process](04-plugin-setup.md).
 
-![Schema showing the`PluginRepoRegistry` maintaining a list the addresses of ENS named `PluginRepo` contracts shown on the left. Each `PluginRepo` contract maintains a list of semantic versions of the `PluginSetup` contract (internally referencing the `Plugin` logic) and the associated UI building blocks as a URI, examplarically shown on the right.](plugin-repo-overview.drawio.svg)
+<div class="center-column">
 
-Schema showing the`PluginRepoRegistry` maintaining a list the addresses of ENS named `PluginRepo` contracts shown on the left. Each `PluginRepo` contract maintains a list of semantic versions of the `PluginSetup` contract (internally referencing the `Plugin` logic) and the associated UI building blocks as a URI, examplarically shown on the right.
+![Schematic depiction of the versioning taking place in the PluginRepoRegistry.](plugin-repo-overview.drawio.svg)
+
+<p class="caption"> 
+  Schema showing the `PluginRepoRegistry` maintaining a list the addresses of ENS named `PluginRepo` contracts shown on the left. Each `PluginRepo` contract maintains a list of semantic versions of the `PluginSetup` contract (internally referencing the `Plugin` logic) and the associated UI building blocks as a URI, examplarically shown on the right.
+</p>
+
+</div>
 
 We will introduce the contracts in the following.
 

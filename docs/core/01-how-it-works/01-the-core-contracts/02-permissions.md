@@ -150,7 +150,6 @@ contract Example is Plugin {
 ```
 
 Instead of just using `grant` the `SEND_COINS_PERMISSION_ID` permission required to call the `sendCoins` function in a deployed `Example` contract located at address `_where` to a specific address `_who`, we can now add additional constraints to it by using the `grantWithOracle` function.
-
 Below, we show four exemplaric oracles for different 4 different use cases that we could attach to the permission.
 
 #### Example 1: Adding parameter constraints
@@ -284,7 +283,6 @@ contract PriceOracle is IPermissionOracle {
 #### Freezing Permissions
 
 Permissions on a target contract `where`) can also be permanently frozen by using the `freeze` function.
-
 **Freezing** means that permissions involving this target contract can not be granted or revoked anymore. This can be useful when we want to secure certain permissions so that they can never by changed (by a contract owning the `ROOT_PERMISSION_ID` permission).
 
 ### OverviewPermissions Native to the `DAO` Contract

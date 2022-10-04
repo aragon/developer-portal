@@ -63,12 +63,14 @@ The two-step setup procedure in aragonOS is not limited to the setup of only one
 
 In the next sections, you will learn about how plugins are curated on the marketplace.
 
-:::note
-To Do: put these graphics in a container with only one caption
-:::
+<div class="center-column">
 
-![Overview of the two-transaction plugin installation process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively.](plugin-installation.drawio.svg)
+**a.** ![Schematic depiction of the plugin installation process.](plugin-installation.drawio.svg)
+**b.** ![Schematic depiction of the plugin update process.](plugin-update.drawio.svg)
+**c.** ![Schematic depiction of the plugin uninstallation process.](plugin-uninstallation.drawio.svg)
 
-![Overview of the two-transaction plugin update process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively.](plugin-update.drawio.svg)
+<p class="caption"> 
+   Overview of the two-transaction plugin <b>a.</b> installation, <b>b.</b> update, and <b>c.</b> uninstallation process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively. 
+</p>
 
-![Overview of the two-transaction plugin uninstallation process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively.](plugin-uninstallation.drawio.svg)
+</div>

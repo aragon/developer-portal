@@ -64,7 +64,7 @@ To help you with developing and deploying the plugin within the Aragon infrastru
 - `PluginTransparentUpgradeable`
 - `PluginUUPSUpgradeable`
 
-##$# Caveats of non-upgradeable Plugins
+#### Caveats of non-upgradeable Plugins
 
 Aragon plugins using non-upgradeable smart contracts can be cheap to deploy (i.e., using clones) but are **limited when it comes to updating**.
 
