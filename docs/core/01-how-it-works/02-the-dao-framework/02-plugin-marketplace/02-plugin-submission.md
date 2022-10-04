@@ -1,8 +1,8 @@
 ---
-title: Submission & Audit
+title: Submission
 ---
 
-## The Plugin Submission and Audit Process
+## The Plugin Submission Process
 
 :::note
 To do: This is a draft.
@@ -43,7 +43,8 @@ Reviewers review and comment on the different code pieces the developer provides
 - setup logic
 - UI building blocks
 
-1. **Acceptance** / **Revision** / **Rejection** (`accepted`, `revision requested`, `rejected`)
+3. **Acceptance** / **Revision** / **Rejection** (`accepted`, `revision requested`, `rejected`)
+
    - Accepted
      - the Plugin is listed as `verified` on the Marketplace
    - Revision
