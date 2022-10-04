@@ -1,8 +1,8 @@
 ---
-title: Setting Up Upgradeable Plugins
+title: Upgradeable Plugins
 ---
 
-# Setting Up Upgradeable Contracts
+## Developing the Setup Contract for Upgradeabe Contracts
 
 :::note
 To Do

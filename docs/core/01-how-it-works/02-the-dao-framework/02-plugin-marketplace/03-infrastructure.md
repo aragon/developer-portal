@@ -2,7 +2,7 @@
 title: Infrastructure
 ---
 
-# The Plugin Marketplace Infrastructure
+## The Plugin Marketplace Infrastructure
 
 In this section, we take a close look on the contracts constituting the plugin marketplace infrastructure.
 
@@ -24,7 +24,7 @@ Schema showing the`PluginRepoRegistry` maintaining a list the addresses of ENS n
 
 We will introduce the contracts in the following.
 
-## The `PuginRepo` Contract
+### The `PuginRepo` Contract
 
 The `PluginRepo` contract versions the releases of a `Plugin`. Each plugin starts as version `1.0.0`. Subsequent versions follow the [semantic versioning convention](https://semver.org/). For major, minor, and patch releases, the respective [version numbers are incremented](docs/core/02-how-to-guides/01-plugin-development/03-versioning.md).
 
@@ -57,7 +57,7 @@ Additionally, each released version has a
 - description / release note
 - audit / review document summary
 
-## The `PluginRepoRegistry` Contract
+### The `PluginRepoRegistry` Contract
 
 The `PluginRepoRegistry` contract is the central contract listing the plugins that have been published on the Aragon Marketplace. Each plugin has its own ENS name (e.g. `my-cool.plugin.aragon.eth`) and own `PluginRepo` contract, in which the different plugin versions are referenced.
 

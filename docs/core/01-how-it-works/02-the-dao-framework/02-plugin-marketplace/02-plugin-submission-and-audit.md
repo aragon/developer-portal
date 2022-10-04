@@ -2,7 +2,7 @@
 title: Submission & Audit
 ---
 
-# The Plugin Submission and Audit Process
+## The Plugin Submission and Audit Process
 
 :::note
 To do: This is a draft.

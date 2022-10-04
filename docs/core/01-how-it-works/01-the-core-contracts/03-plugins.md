@@ -2,7 +2,7 @@
 title: Plugins
 ---
 
-# Plugins: Customizing your DAO
+## Customizing your DAO
 
 To add features beyond the base functionality available, you can customize your aragonOS DAO by installing a wide variety of plugins.
 

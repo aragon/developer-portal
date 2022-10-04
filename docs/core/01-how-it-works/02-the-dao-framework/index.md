@@ -2,7 +2,7 @@
 title: Framework
 ---
 
-# The DAO Framework
+## The DAO Framework
 
 The **core contracts** constituting the aragonOS DAOs and being customizable and extensible through Aragon and third-party plugins are the central part of the aragonOS DAO Framework.
 

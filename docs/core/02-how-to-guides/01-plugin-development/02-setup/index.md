@@ -2,15 +2,11 @@
 title: Setup
 ---
 
-# Writing the Setup Contract
+## Writing the Setup Contract
 
-- depends on the upgradeability of your plugin
+In this section we guide you through the development process of the setup contract of your plugin.
 
-:::note
-To Do: add text, link to subpages (non-upgradeable, upgradeable), explain versioning and that this entails a new plugin contract
-:::
+If your plugin is non-upgradeable continue with our guide on [Developing the Setup Contract for Non-upgradeable Plugins](01-non-upgradeable-plugins.md).
+If not, then follow our guide on [Developing the Setup Contract for Upgradeable Plugins](02-upgradeable-plugins.md).
 
-To fix bugs and vulnerabilities, add new features, or make breaking changes, a new Plugin version can be released. The versioning guidelines are found in the next section.
-
-- [Setting Up Non-upgradeable Plugins](01-non-upgradeable-plugins.md)
-- [Setting Up Upgradeable Plugins](02-upgradeable-plugins.md)
+If you plan to release a new version of your plugin continue to the next topic

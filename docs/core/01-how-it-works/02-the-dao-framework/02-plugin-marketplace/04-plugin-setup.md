@@ -2,7 +2,7 @@
 title: Setup
 ---
 
-# The Plugin Setup Process
+## The Plugin Setup Process
 
 A DAO can be set up and customized by the **installation**, **update, and** **uninstallation** of plugins.
 In this section you will learn how the plugin setup process in aragonOS works.
@@ -11,7 +11,7 @@ In order for a plugin to function, associated contracts need to be deployed and 
 
 The required setup logic is written and taken care off by the plugin developer in the `PluginSetup` contract associated with each `Plugin` contract version release (see [Developing a Plugin](docs/core/02-how-to-guides/01-plugin-development/index.md)) which interact with the aragonOS framework infrastructure so that installing, updating, and uninstalling a plugin to a DAO through the UI becomes very simple for the DAO end-user.
 
-## Security Considerations
+### Security Considerations
 
 The plugin setup process is security critical because permissions are granted to third-party contracts. Safety was our top priority in the design and we wanted to make sure that the DAO knows exactly which contracts receive which permissions before processing and make sure that `PluginSetup` contracts being developed by third parties don’t obtain elevated permissions (i.e., the `ROOT_PERMISSION_ID` permission) on the installing DAO during the setup process.
 
@@ -23,7 +23,7 @@ Plugins can also be setup manually by calling `PluginSetup` contract and grantin
 
 In the following, we describe the two steps in detail.
 
-## 1. Preparation
+### 1. Preparation
 
 The preparation of a plugin setup proceeds as follows:
 
@@ -48,7 +48,7 @@ The governance plugin can be a simple majority vote, an optimistic process or an
 
 This gives the DAO time to see and check which permissions the `PluginSetup` contract request before processing them. Optionally, the proposer can also request refunds for the gas spent for the preparation of the plugin in the proposal.
 
-## 2. Processing
+### 2. Processing
 
 After this initial transaction, all contracts and addresses related to the plugin as well as their permissions are known and the DAO can decide if the proposal should be accepted or denied.
 Once the proposal has passed, the actions specified in the `Action[]` array get executed and the prepared plugin setup is processed as follows:

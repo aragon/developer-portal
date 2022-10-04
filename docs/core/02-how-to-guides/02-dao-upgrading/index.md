@@ -2,11 +2,8 @@
 title: DAO Upgrading
 ---
 
-# Upgrading your DAO
+## Upgrading your DAO
 
-:::note
-To Do: explain the necessity for aragonOS protocol upgrades and that support from Aragon Client will be supported
-:::
+To migrate an existing Aragon Client DAO read our guide about [Migrating your Aragon Client DAO](02-aragon-client-migration.md).
 
-- [Upgrading to future aragonOS Releases](01-upgrade-to-future-aos-versions.md)
-- [Migrating your Aragon Client DAO](02-aragon-client-migration.md)
+AragonOS 6 makes future protocol upgrades much easier for you. To read about it visit our [Upgrading to Future aragonOS Releases](01-upgrade-to-future-aos-versions.md) section.

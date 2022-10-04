@@ -1,8 +1,8 @@
 ---
-title: Implementing Upgradeable Plugins
+title: Upgradeable Plugins
 ---
 
-# Implementing Non-upgradeable Plugin Contracts
+## Developing the Implementation Contract for Upgradeable Plugins
 
 :::note
 Work in progress

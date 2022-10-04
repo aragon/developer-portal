@@ -2,7 +2,7 @@
 title: Curation
 ---
 
-# Plugin Curation
+## Plugin Curation
 
 :::note
 To do

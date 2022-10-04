@@ -2,7 +2,7 @@
 title: Core Contracts
 ---
 
-# The Core Contracts
+## The Contracts Constituting Your DAO
 
 In a nutshell, your aragonOS DAO consists of three pieces:
 
@@ -23,4 +23,4 @@ In the next sections, you will learn about each of them in more depth.
 
 - [The DAO Contract: The Identity and Basis of your Organization](01-the-dao-contract.md)
 - [Permissions: Managing and Governing your DAO](02-permissions.md)
-- [Plugins: Customizing your DAO]/03-plugins.md)
+- [Plugins: Customizing your DAO](03-plugins.md)

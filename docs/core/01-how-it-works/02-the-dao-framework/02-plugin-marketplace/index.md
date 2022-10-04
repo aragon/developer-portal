@@ -2,9 +2,9 @@
 title: Plugin Marketplace
 ---
 
-# The Aragon Plugin Marketplace
+## Customize Your DAO
 
-The Aragon Plugin Marketplace is the place for Aragon and third-party plugins that DAOs can add to customize and adapt their DAO to their needs.
+The Aragon Plugin Marketplace is the place for Aragon and third-party plugins that you can add to customize and adapt your DAO to your needs.
 To be accepted, plugins have to pass an audit process to ensure their security.
 
 The marketplace and audit processes will be managed through a marketplace DAO.

@@ -1,14 +1,14 @@
 ---
-title: Versioning
+title: Version Numbers
 ---
 
-# Versioning your Plugin
+## Using Semantic Versioning for Your Plugin
 
 :::note
 Work in Progress
 :::
 
-<!-- This needs a core team discussion -->
+<!--TODO: This needs a core team discussion-->
 
 Our plugin version numbering follows the common [semantic versioning](https://semver.org/) notation. Below, we define what a version bumps means in the context of the `Plugin` ecosystem.
 

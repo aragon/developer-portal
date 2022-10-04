@@ -2,7 +2,7 @@
 title: Aragon Client Migration
 ---
 
-# Migrating your Aragon Client DAO
+## Migrating Your Aragon Client DAO
 
 :::note
 To Do

@@ -1,4 +1,8 @@
-# Choosing the right Plugin Types
+---
+title: Plugin Types
+---
+
+## Choosing the Base Contract for Your Plugin
 
 In this section, we will learn about the interfaces or base contracts to inherit from when developing a plugin.
 
@@ -12,7 +16,7 @@ Depending on the use-case of your plugin, you might want it to be
 Upgradeable plugin contracts (such as `PluginUpgradeable`, `PluginUUPSUpgradeable` implementations) must reserve storage slots by defining a storage gap. If this is not done properly and/or variables are rearranged in the upgrade, the storage can become corrupted rendering it inaccessible and resulting in the loss of funds.
 :::
 
-## Upgradeability & Deployment
+### Upgradeability & Deployment
 
 Upgradebility and the deployment method of a plugin contract go hand in hand.
 
@@ -60,7 +64,7 @@ To help you with developing and deploying the plugin within the Aragon infrastru
 - `PluginTransparentUpgradeable`
 - `PluginUUPSUpgradeable`
 
-### Caveats of non-upgradeable Plugins
+##$# Caveats of non-upgradeable Plugins
 
 Aragon plugins using non-upgradeable smart contracts can be cheap to deploy (i.e., using clones) but are **limited when it comes to updating**.
 
@@ -68,11 +72,13 @@ Updating, in distinction from upgrading, we call the Aragon DAO Framework specif
 
 To switch from an older version of a non-upgradeable contract to a newer one, the underlying contract has to be replaced. In consequence, the state of the older version is not available in the new version anymore, unless it is migrated or has been made publicly accessible in the old version through getter functions.
 
-## Meta Transaction Compatibility
+### Meta Transaction Compatibility
 
 Another useful trait of a contract is the possibility to allow users to send gasless transactions, also known as meta transactions.
 
 This works by signing a transaction and letting a relay service take care of sending and paying the gas for the transaction.
 As a consequence, `msg.sender` and `msg.data` parameters are not referencing the correct context anymore. To be compatible with meta transactions, all our contracts use internal `_msgSender()` and `_msgData()` functions.
 
-[]: # Beyond that, to enable plugins to operate with meta transactions, we provide the `MetaTxCompatible` contract.
+<!--TODO: Adapt
+Beyond that, to enable plugins to operate with meta transactions, we provide the `MetaTxCompatible` contract.
+-->

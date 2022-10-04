@@ -2,7 +2,7 @@
 title: Permissions
 ---
 
-# Permissions: Managing and Governing your DAO
+## Managing and Governing your DAO
 
 At Aragon, we believe that **DAOs are simply permission management systems**.
 Permissions between contracts and wallets allow a DAO to manage and govern its actions.
@@ -20,7 +20,7 @@ The code and configuration of a DAO specifies which wallets or contracts (`who`)
 
 Identifiers, permissions, and modifiers link everything together.
 
-## Permission Identifiers
+### Permission Identifiers
 
 To differentiate between each permission, we give permissions **identifiers** that you will frequently find at the top of aragonOS contracts. They look something like this:
 
@@ -28,7 +28,7 @@ To differentiate between each permission, we give permissions **identifiers** th
 bytes32 public constant WITHDRAW_PERMISSION_ID = keccak256("WITHDRAW_PERMISSION");
 ```
 
-## Permissions
+### Permissions
 
 A permission specifies an address `who` being allowed to call certain functions on a contract address `where`. In the `PermissionManager` contract, permissions are defined as the concatenation of the word `"PERMISSION"` with the `who` and `where` address, as well as the `bytes32` permission identifier `permissionId`.
 
@@ -51,7 +51,7 @@ mapping(bytes32 => address) internal permissionsHashed;
 
 Here, the `bytes32` keys are the permission hashes and the `address` values are either zero-address flags, such as `ALLOW_FLAG = address(0)` and `UNSET_FLAG = address(2)` indicating if the permission is set, or an actual address pointing to a `PermissionOracle` contract, which is discussed in the next section of this guide.
 
-## Authentication modifiers
+### Authentication modifiers
 
 Using **authentication modifiers** is how we make functions permissioned. Permissions are associated with functions by adding the `auth` modifier, which includes the permission identifier in the function’s definition header.
 
@@ -63,11 +63,11 @@ function withdraw(uint256 value) external auth(WITHDRAW_PERMISSION_ID) {
 }
 ```
 
-## Managing Permissions
+### Managing Permissions
 
 To manage permissions, the DAO contracts have the `grant`, `revoke`, `grantWithOracle` and `freeze` functions in their public interface.
 
-### Granting and Revoking Permissions
+#### Granting and Revoking Permissions
 
 The `grant` and `revoke` functions are the main functions we use to manage permissions.
 Both receive the `_permissionId` identifier of the permission and the `_where` and `_who` addresses as arguments.
@@ -93,7 +93,7 @@ By default, the `EXECUTE_PERMISSION_ID` permission is granted to governance cont
 Exceptions are, again, the [DAO creation](../02-the-dao-framework/01-dao-creation-process.md) and [plugin setup ](../02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md) processes.
 :::
 
-### Granting Permission with Oracles
+#### Granting Permission with Oracles
 
 :::note
 This is and advanced topic that you might want to skip when learning about aragonOS permissions for the first time.
@@ -153,7 +153,7 @@ Instead of just using `grant` the `SEND_COINS_PERMISSION_ID` permission required
 
 Below, we show four exemplaric oracles for different 4 different use cases that we could attach to the permission.
 
-### Example 1: Adding parameter constraints
+#### Example 1: Adding parameter constraints
 
 Let’s imagine that we want to make sure that `_value` is not more than `1 ETH` without changing the code of `Example` contract.
 
@@ -183,7 +183,7 @@ contract ParameterConstraintOracle is IPermissionOracle {
 
 Now, after granting the `SEND_COINS_PERMISSION_ID` permission to `_where` and `_who` via the `grantWithOracle` function and pointing to the `ParameterConstraintOracle` oracle contract, the `_who` address can only call the `sendCoins` of the `Example` contract deployed at address `_where` successfully if `_value` is not larger than `_maxValue` stored in the oracle contract.
 
-### Example 2: Delaying a call with a timestamp
+#### Example 2: Delaying a call with a timestamp
 
 In another use-case, we might want to make sure that the `sendCoins` can only be called after a certain date. This would look as fol
 
@@ -209,7 +209,7 @@ contract TimeOracle is IPermissionOracle {
 
 ```
 
-### Example 3: Using curated registries
+#### Example 3: Using curated registries
 
 In another use-case, we might want to make sure that the `sendCoins` can only be called by real humans to prevent sybil attacks:
 
@@ -239,7 +239,7 @@ contract ProofOfHumanityOracle is IPermissionOracle {
 
 ```
 
-### Example 4: Using price oracles
+#### Example 4: Using price oracles
 
 In another use-case, we might want to make sure that the `sendCoins` can only if the price ETH in USD is above a certain threshold:
 
@@ -280,25 +280,25 @@ contract PriceOracle is IPermissionOracle {
 }
 ```
 
-### Freezing Permissions
+#### Freezing Permissions
 
 Permissions on a target contract `where`) can also be permanently frozen by using the `freeze` function.
 
 **Freezing** means that permissions involving this target contract can not be granted or revoked anymore. This can be useful when we want to secure certain permissions so that they can never by changed (by a contract owning the `ROOT_PERMISSION_ID` permission).
 
-## OverviewPermissions Native to the `DAO` Contract
+### OverviewPermissions Native to the `DAO` Contract
 
 The following functions in the DAO are permissioned:
 
-| Functions                              | Permission Identifier                 | Description                                                            |
-| -------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------- |
-| execute                                | EXECUTE_PERMISSION_ID                 | Required to execute arbitrary actions.                                 |
-| withdraw                               | WITHDRAW_PERMISSION_ID                | Required to withdraw assets from the DAO.                              |
-| \_authorizeUpgrade                     | UPGRADE_PERMISSION_ID                 | Required to upgrade the DAO (via the UUPS).                            |
-| setMetadata                            | SET_METADATA_PERMISSION_ID            | Required to set the DAO’s metadata.                                    |
-| setTrustedForwarder                    | SET_TRUSTED_FORWARDER_PERMISSION_ID   | Required to set the DAO’s trusted forwarder for meta transactions.     |
-| setSignatureValidator                  | SET_SIGNATURE_VALIDATOR_PERMISSION_ID | Required to set the DAO’s signature validator contract (see ERC-1271). |
-| grant, grantWithOracle, revoke, freeze | ROOT_PERMISSION_ID                    | Required to manage permissions of the DAO and associated plugins.      |
+| Functions                                      | Permission Identifier                   | Description                                                            |
+| ---------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |
+| `execute`                                      | `EXECUTE_PERMISSION_ID`                 | Required to execute arbitrary actions.                                 |
+| `withdraw`                                     | `WITHDRAW_PERMISSION_ID`                | Required to withdraw assets from the DAO.                              |
+| `\_authorizeUpgrade`                           | `UPGRADE_PERMISSION_ID`                 | Required to upgrade the DAO (via the UUPS).                            |
+| `setMetadata`                                  | `SET_METADATA_PERMISSION_ID`            | Required to set the DAO’s metadata.                                    |
+| `setTrustedForwarder`                          | `SET_TRUSTED_FORWARDER_PERMISSION_ID`   | Required to set the DAO’s trusted forwarder for meta transactions.     |
+| `setSignatureValidator`                        | `SET_SIGNATURE_VALIDATOR_PERMISSION_ID` | Required to set the DAO’s signature validator contract (see ERC-1271). |
+| `grant`, `grantWithOracle`, `revoke`, `freeze` | `ROOT_PERMISSION_ID`                    | Required to manage permissions of the DAO and associated plugins.      |
 
 Plugins installed to the DAO might require their own and introduce new permission settings.
 

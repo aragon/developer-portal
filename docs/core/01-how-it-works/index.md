@@ -1,4 +1,8 @@
-# How it works
+---
+title: How It Works
+---
+
+## Overview
 
 :::note
 To Do

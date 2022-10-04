@@ -1,8 +1,8 @@
 ---
-title: Setting Up Non-upgradeable Plugins
+title: Non-upgradeable Plugins
 ---
 
-# Setting Up Non-Upgradeabe Contracts
+## Developing the Setup Contract for Non-Upgradeabe Contracts
 
 :::note
 To Do

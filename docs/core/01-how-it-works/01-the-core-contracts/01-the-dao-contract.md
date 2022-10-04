@@ -1,14 +1,14 @@
 ---
-title: The DAO
+title: The DAO Contract
 ---
 
-# The DAO Contract: The Identity and Basis of your Organization
+## The Identity and Basis of your Organization
 
 In this section, you will learn about the core functionality of every aragonOS DAO.
 
 The `DAO` contract is the identity and basis of your organization. It is the address carrying the DAO’s ENS name, metadata, and holding the funds. Furthermore, it has **four base functionalities** being commonly found in other DAO frameworks in the ecosystem.
 
-## 1. Execution of Arbitrary Actions
+### 1. Execution of Arbitrary Actions
 
 The most important and basic functionality of your DAO is the **execution of arbitrary actions**, which allows you to interact with the rest of the world, i.e., calling methods in other contracts services sending assets to other addresses.
 In our framework, actions are represented by a solidity struct:
@@ -55,7 +55,7 @@ function execute(uint256 callId, Action[] memory _actions)
 
 ```
 
-## 2. Asset Management
+### 2. Asset Management
 
 The DAO provides basic **asset management** functionality by \*\*\*\*allowing us to `deposit`, `withdraw`, and keep track of certain tokens in the DAO treasury, such as:
 
@@ -65,11 +65,11 @@ The DAO provides basic **asset management** functionality by \*\*\*\*allowing us
 
 You can add more advanced asset management and finance functionalities to your DAO in the form of [plugins](03-plugins.md).
 
-## 3. Upgradeability
+### 3. Upgradeability
 
 Your DAO contract has the ability to be upgraded to a newer version (see [Upgrade your DAO](../../02-how-to-guides/02-dao-upgrading/index.md)) if a new version of aragonOS is released in the future. These upgrades allow your DAO to smoothly transition to a new protocol version unlocking new features to your DAO.
 
-## 4. Permission Management
+### 4. Permission Management
 
 Lastly, it is essential that only the right entities (e.g., the DAO itself or trusted addresses) have permission to use the above mentioned functionalities.
 
