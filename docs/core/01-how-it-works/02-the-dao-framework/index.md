@@ -14,19 +14,12 @@ To govern the framework infrastructure, a **Framework DAO** exists
 
 - controlling the permissions of and between the infrastructure related contracts to
   - upgrade them
-  - allow them to register ENS names for DAOs and plugins on the `dao.eth` and `plugin.aragon.eth`, respectively
-- reviewing and verifying plugins submissions to the marketplace
+  - allow them to register ENS names for DAOs and plugins on the `dao.eth` and `dao-plugin.eth`, respectively
+- verifying plugins submissions to the marketplace
 
-The governance structure of the Framework DAO is initially run centrally by the Aragon team. In the future, we will progressively decentralize the DAO providing economic incentives for Aragon not to become the gatekeeper / censor of the Marketplace.
-The strategy and roadmap of this decentralization process is decided by the stakeholders in the **Aragon Network (AN) Main DAO**.
+This framework DAO constitutes the **governance layer** of the aragonOS DAO Framework.
 
-Together, the Framework DAO and AN Main DAO present the **governance layer** of the aragonOS DAO Framework.
-
-![Schematic overview of the governance layer, code layer and external dependencies of the Aragon DAO Framework and their responsibilities.](aragon-os-architecture-Overview.drawio.svg)
-
-Schematic overview of the governance layer, code layer and external dependencies of the Aragon DAO Framework and their responsibilities.
-
-In the following sections, the framework related parts are explained.
+In the following sections, the framework-related parts are explained in more detail.
 
 - [The DAO Creation Process](01-dao-creation-process.md)
 - [The Aragon Plugin Marketplace](02-plugin-marketplace/index.md)

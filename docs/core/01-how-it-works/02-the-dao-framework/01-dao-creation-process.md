@@ -3,7 +3,7 @@ title: DAO Creation
 ---
 
 :::note
-Work in Progress
+Work in Progress, needs revision once the code is finalized and frozen.
 :::
 
 ## Creating your DAO and Choosing Plugins
