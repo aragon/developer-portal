@@ -1,9 +1,14 @@
-# Writing a Non-Upgradabe Plugin Contract
+---
+title: Implementing Non-upgradeable Plugins
+---
+
+# Implementing Non-upgradeable Plugin Contracts
 
 :::note
 Work in progress
 :::
 
+<!-- To Do
 - inherit from `Plugin`
 - add the logic
   - require permissions on functions by using the auth modifier
@@ -29,3 +34,4 @@ contract SimpleStorage is Plugin {
 }
 
 ```
+-->

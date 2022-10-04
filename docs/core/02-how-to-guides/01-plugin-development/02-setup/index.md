@@ -12,5 +12,5 @@ To Do: add text, link to subpages (non-upgradeable, upgradeable), explain versio
 
 To fix bugs and vulnerabilities, add new features, or make breaking changes, a new Plugin version can be released. The versioning guidelines are found in the next section.
 
-- [Writing a Non-Upgradabe Plugin Setup Contract](01-non-upgradeable-plugins.md)
-- [Writing ab Upgradabe Plugin Setup Contract](02-upgradeable-plugins.md)
+- [Setting Up Non-upgradeable Plugins](01-non-upgradeable-plugins.md)
+- [Setting Up Upgradeable Plugins](02-upgradeable-plugins.md)

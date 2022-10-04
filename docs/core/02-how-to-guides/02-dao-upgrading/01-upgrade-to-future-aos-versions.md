@@ -2,7 +2,7 @@
 title: Future Upgrades
 ---
 
-# Upgrading to future aragonOS Releases
+# Upgrading to Future aragonOS Releases
 
 :::note
 To Do

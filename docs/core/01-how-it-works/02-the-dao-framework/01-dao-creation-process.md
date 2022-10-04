@@ -12,7 +12,7 @@ To realize this **one-click creation process**, the `DAOFactory` executes multip
 
 The `DAOFactory` contract does the following steps:
 
-1. call `createProxy(address daoBase)` , where `daoBase` is the current Aragon OS (`UUPSUpgradable`) `DAO` implementation contract
+1. call `createProxy(address daoBase)` , where `daoBase` is the current Aragon OS (`UUPSUpgradeable`) `DAO` implementation contract
 2. call `registerDao(string daoName, address daoAddress)` in the `DAORegistry` contract
 3. call `initialize(address initialOwner)` with its own address. As a result, `DAOfactory` now has the `ROOT_PERMISSION_ID` permission on the newly created DAO.
 4. use the `ROOT_PERMISSION_ID` to

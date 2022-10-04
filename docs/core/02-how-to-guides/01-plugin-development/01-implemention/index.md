@@ -8,5 +8,5 @@ title: Implementation
 To Do
 :::
 
-- [Writing a Non-Upgradabe Plugin Contract](./02-non-upgradeable-contracts.md)
-- [Writing ab Upgradabe Plugin Contract](./03-upgradeable-contracts.md)
+- [Implementing Non-upgradeable Plugin Contracts](./02-non-upgradeable-contracts.md)
+- [Implementing Upgradeable Plugin Contracts](./03-upgradeable-contracts.md)

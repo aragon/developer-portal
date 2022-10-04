@@ -4,12 +4,12 @@ In this section, we will learn about the interfaces or base contracts to inherit
 
 Depending on the use-case of your plugin, you might want it to be
 
-- upgradable or non-upgradable
+- upgradeable or non-upgradeable
 - deployed by a specific deployment method
 - compatible with meta transactions
 
 :::caution
-Upgradeable plugin contracts (such as `PluginUpgradeable`, `PluginUUPSUpgradeable` implementations) must reserve storage slots by defining a storage gap. If this is not properly and/or variables are rearranged in the upgrade, the storage can become corrupted rendering it inaccessible and resulting in the loss of funds.
+Upgradeable plugin contracts (such as `PluginUpgradeable`, `PluginUUPSUpgradeable` implementations) must reserve storage slots by defining a storage gap. If this is not done properly and/or variables are rearranged in the upgrade, the storage can become corrupted rendering it inaccessible and resulting in the loss of funds.
 :::
 
 ## Upgradeability & Deployment
@@ -35,24 +35,22 @@ The motivation to upgrade smart contracts is nicely summarized by OpenZepplin:
 >
 > _source: [OpenZepplin: What's in an upgrade](https://docs.openzeppelin.com/learn/upgrading-smart-contracts#whats-in-an-upgrade)_
 
-With upgradable smart contracts, you can modify their code while keep using or even extending the storage (see the guide [Writing Upgradable Contracts](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) by OpenZepplin).
+With upgradeable smart contracts, you can modify their code while keep using or even extending the storage (see the guide [Writing Upgradeable Contracts](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) by OpenZepplin).
 
 To enable upgradeable smart contracts (as well as cheap contract clones), the proxy pattern is used.
 
 Depending on your upgradeability requirements and the deployment method you choose, you can also greatly reduce the gas costs to distribute your plugin.
-
 However, the upgradeability and deployment method can also introduce caveats during [the plugin setup](docs/core/01-how-it-works/02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md), especially for updating from an older version to a new one.
 
 The following table presents an overview of the different deployment methods and their benefits and drawbacks:
 
-| Deployment Method              | new Instantiation | Minimal Proxy (Clones) | Transparent Proxy | UUPS Proxy |
-| ------------------------------ | ----------------- | ---------------------- | ----------------- | ---------- |
-| upgradability                  | no                | no                     | yes               | yes        |
-| gas costs                      | high              | very low               | moderate          | low        |
-| complexity of implementation   | low               | low                    | moderate          | moderate   |
-| complexity of `installation`   | easy              | easy                   | moderate          | moderate   |
-| complexity of `uninstallation` | easy              | easy                   | easy              | easy       |
-| complexity of `update`         | difficult/limited | difficult/limited      | easy              | easy       |
+| Deployment Method     | `new` Instantiation                         | Minimal Proxy (Clones)                         | Transparent Proxy                             | UUPS Proxy                                    |
+| --------------------- | ------------------------------------------- | ---------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| upgradability         | <span style={{color: "red"}}>no</span>      | <span style={{color: "red"}}>no</span>         | <span style={{color: "green"}}>yes</span>     | <span style={{color: "green"}}>yes</span>     |
+| gas costs             | <span style={{color: "red"}}>high</span>    | <span style={{color: "green"}}>very low</span> | <span style={{color: "gold"}}>moderate</span> | <span style={{color: "green"}}>low</span>     |
+| plugin installation   | <span style={{color: "green"}}>easy</span>  | <span style={{color: "green"}}>easy</span>     | <span style={{color: "gold"}}>moderate</span> | <span style={{color: "gold"}}>moderate</span> |
+| plugin uninstallation | <span style={{color: "green"}}>easy</span>  | <span style={{color: "green"}}>easy</span>     | <span style={{color: "green"}}>easy</span>    | <span style={{color: "green"}}>easy</span>    |
+| plugin updating       | <span style={{color: "red"}}>limited</span> | <span style={{color: "red"}}>limited</span>    | <span style={{color: "green"}}>easy</span>    | <span style={{color: "green"}}>easy</span>    |
 
 Accordingly, we recommend the UUPS proxy method for developing easily updatable Aragon Plugins and minimal clones for those, where the availability of the storage after the update is secondary / not needed.
 
@@ -60,15 +58,15 @@ To help you with developing and deploying the plugin within the Aragon infrastru
 
 - `PluginClones`
 - `PluginTransparentUpgradeable`
-- `PluginUUPSUpgradable`
+- `PluginUUPSUpgradeable`
 
-### Caveats of non-upgradable Plugins
+### Caveats of non-upgradeable Plugins
 
-Aragon plugins using non-upgradable smart contracts can be cheap to deploy (i.e., using clones) but are **limited when it comes to updating**.
+Aragon plugins using non-upgradeable smart contracts can be cheap to deploy (i.e., using clones) but are **limited when it comes to updating**.
 
 Updating, in distinction from upgrading, we call the Aragon DAO Framework specific process of switching from an older plugin version to a newer one.
 
-To switch from an older version of a non-upgradable contract to a newer one, the underlying contract has to be replaced. In consequence, the state of the older version is not available in the new version anymore, unless it is migrated or has been made publicly accessible in the old version through getter functions.
+To switch from an older version of a non-upgradeable contract to a newer one, the underlying contract has to be replaced. In consequence, the state of the older version is not available in the new version anymore, unless it is migrated or has been made publicly accessible in the old version through getter functions.
 
 ## Meta Transaction Compatibility
 
@@ -77,4 +75,4 @@ Another useful trait of a contract is the possibility to allow users to send gas
 This works by signing a transaction and letting a relay service take care of sending and paying the gas for the transaction.
 As a consequence, `msg.sender` and `msg.data` parameters are not referencing the correct context anymore. To be compatible with meta transactions, all our contracts use internal `_msgSender()` and `_msgData()` functions.
 
-Beyond that, to enable plugins to operate with meta transactions, we provide the `MetaTxCompatible` contract.
+[]: # Beyond that, to enable plugins to operate with meta transactions, we provide the `MetaTxCompatible` contract.

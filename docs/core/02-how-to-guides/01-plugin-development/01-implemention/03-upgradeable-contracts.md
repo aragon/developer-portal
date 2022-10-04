@@ -1,11 +1,16 @@
-# Writing a Upgradabe Plugin Contract
+---
+title: Implementing Upgradeable Plugins
+---
+
+# Implementing Non-upgradeable Plugin Contracts
 
 :::note
 Work in progress
 :::
 
+<!--
 ```solidity title="SimpleStorageUpgradeable.sol"
-contract SimpleStorageUpgradeable is PluginUpgradable {
+contract SimpleStorageUpgradeable is PluginUpgradeable {
   bytes32 public constant SET_VALUE_PERMISSION_ID =
     keccak256('SET_VALUE_PERMISSION');
   uint256 public value;
@@ -27,7 +32,7 @@ contract SimpleStorageUpgradeable is PluginUpgradable {
 
 ```solidity title="SimpleStorageUpgradeableV2.sol"
 // Version 2
-contract SimpleStorageUpgradeableV2 is PluginUpgradable {
+contract SimpleStorageUpgradeableV2 is PluginUpgradeable {
   bytes32 public constant SET_VALUE_PERMISSION_ID =
     keccak256('SET_VALUE_PERMISSION');
   uint256 public value;
@@ -56,3 +61,4 @@ contract SimpleStorageUpgradeableV2 is PluginUpgradable {
 }
 
 ```
+-->
