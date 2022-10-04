@@ -1,10 +1,11 @@
 ---
-title: Framework
+title: The DAO Framework
 ---
 
-## The DAO Framework
+## The Infrastructure Behind the AraongOS DAO Framework
 
 To enable the creation of DAOs and setup of plugins, aragonOS provides the necessary **framework infrastructure**.
+This infrastructure consists of multiple smart contracts being related to the **creation of DAOs** and the **management of the Aragon Marketplace** - a curated list of plugins.
 
 <div class="center-column">
 
@@ -16,7 +17,6 @@ To enable the creation of DAOs and setup of plugins, aragonOS provides the neces
 
 </div>
 
-This infrastructure consists of multiple smart contracts being related to the **creation of DAOs** and the **management of the Aragon Marketplace** - a curated list of plugins.
 Together, the core and infrastructure related contracts constitute the **code layer** of our aragonOS DAO framework that is built on top of external dependencies, most notably the [OpenZepplin contracts](https://www.openzeppelin.com/contracts).
 To govern the framework infrastructure, a **Framework DAO** exists
 

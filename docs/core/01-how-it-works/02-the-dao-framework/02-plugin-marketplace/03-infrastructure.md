@@ -6,16 +6,14 @@ title: Infrastructure
 
 In this section, we take a close look on the contracts constituting the plugin marketplace infrastructure.
 
-A plugin published on the Aragon Plugin Marketplace consist of
+A plugin published on the Marketplace consist of
 
-- the plugin implementation contract
-- a setup contract (internally referencing the implementation contract and used by the `PluginSetupProcessor`)
+- the `Plugin` implementation contract
+- a `PluginSetup` contract (internally referencing the implementation contract and used by the `PluginSetupProcessor`)
 - the Aragon App frontend / UI
 
 Each plugin has its own, unique ENS name and on-chain repository contract, the `PluginRepo`, in which different versions of the plugin are referenced.
-
 The names and address of the `PluginRepo` contracts are stored in the `PluginRepoRegistry`. Both contracts are described in the following.
-
 The `PluginSetupProcessor` contract taking care of installing, updating, and uninstalling is described in the context of [the plugin setup process](04-plugin-setup.md).
 
 <div class="center-column">
@@ -34,7 +32,7 @@ We will introduce the contracts in the following.
 
 The `PluginRepo` contract versions the releases of a `Plugin`. Each plugin starts as version `1.0.0`. Subsequent versions follow the [semantic versioning convention](https://semver.org/). For major, minor, and patch releases, the respective [version numbers are incremented](docs/core/02-how-to-guides/01-plugin-development/03-versioning.md).
 
-Each semantic version released in the `PluginRepo` contract via the `createVersion` function (see code snippet)
+Each semantic version released in the `PluginRepo` contract via the `createVersion` function
 
 ```solidity
 function createVersion(
@@ -49,6 +47,7 @@ references two pieces of information:
 1. The address of `PluginSetup` contract internally referencing the implementation contract (to copy, proxy, or clone from it) and taking care of [installing, updating to, and uninstalling](04-plugin-setup.md) this specific version.
 2. An URI pointing to the contents defining the UI so that users on the Aragon DAO frontend can interact with it.
 
+<!--TODO
 :::note
 To do: The following is a draft.
 :::
@@ -62,6 +61,7 @@ Additionally, each released version has a
   - vulnerable
 - description / release note
 - audit / review document summary
+-->
 
 ### The `PluginRepoRegistry` Contract
 
