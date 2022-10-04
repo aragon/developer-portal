@@ -12,8 +12,8 @@ This DAO is run initially by Aragon and then progressively decentralized to be o
 
 In the next sections, we will learn about:
 
-- [Security Risks & Mitigation](./01-security-risk-mitigation.md)
-- [The Plugin Submission & Audit Process](./02-plugin-submission-and-audit.md)
-- [The Plugin Marketplace Infrastructure](./03-infrastructure.md)
-- [The Plugin Setup Process](./04-plugin-setup.md)
-- [Plugin Curation](./05-curation.md)
+- [Security Risks & Mitigation](01-security-risk-mitigation.md)
+- [The Plugin Submission & Audit Process](02-plugin-submission-and-audit.md)
+- [The Plugin Marketplace Infrastructure](03-infrastructure.md)
+- [The Plugin Setup Process](04-plugin-setup.md)
+- [Plugin Curation](05-curation.md)

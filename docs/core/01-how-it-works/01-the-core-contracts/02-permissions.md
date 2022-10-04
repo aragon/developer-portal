@@ -51,9 +51,9 @@ mapping(bytes32 => address) internal permissionsHashed;
 
 Here, the `bytes32` keys are the permission hashes and the `address` values are either zero-address flags, such as `ALLOW_FLAG = address(0)` and `UNSET_FLAG = address(2)` indicating if the permission is set, or an actual address pointing to a `PermissionOracle` contract, which is discussed in the next section of this guide.
 
-### Authentication modifiers
+### Authorization modifiers
 
-Using **authentication modifiers** is how we make functions permissioned. Permissions are associated with functions by adding the `auth` modifier, which includes the permission identifier in the function’s definition header.
+Using **authorization modifiers** is how we make functions permissioned. Permissions are associated with functions by adding the `auth` modifier, which includes the permission identifier in the function’s definition header.
 
 For example, one can only withdraw funds from a DAO when the address making the call has been granted the `WITHDRAW_PERMISSION_ID` permission.
 
@@ -65,7 +65,7 @@ function withdraw(uint256 value) external auth(WITHDRAW_PERMISSION_ID) {
 
 ### Managing Permissions
 
-To manage permissions, the DAO contracts have the `grant`, `revoke`, `grantWithOracle` and `freeze` functions in their public interface.
+To manage permissions, the DAO contract has the `grant`, `revoke`, `grantWithOracle` and `freeze` functions in its public interface.
 
 #### Granting and Revoking Permissions
 
@@ -99,7 +99,7 @@ Exceptions are, again, the [DAO creation](../02-the-dao-framework/01-dao-creatio
 This is and advanced topic that you might want to skip when learning about aragonOS permissions for the first time.
 :::
 
-AragonOS 6 supports relaying the decision if a function call is permissioned to a custom oracle inheriting from the `IPermissionOracle` contract interface. This works by granting the permission with the `grantWithOracle` function
+AragonOS 6 supports relaying the authorization of a function call to a custom oracle inheriting from the `IPermissionOracle` contract interface. This works by granting the permission with the `grantWithOracle` function
 
 ```solidity title="contracts/core/permission/PermissionManager.sol"
 function grantWithOracle(
@@ -111,7 +111,7 @@ function grantWithOracle(
 
 ```
 
-and specifying the `_oracle` address. This provides the possibility to fully customize the conditions under which the function call is allowed.
+and specifying the `_oracle` address. This provides full flexibility to customize the conditions under which the function call is allowed.
 
 These conditions can be based on the calldata of the function such as
 
@@ -209,9 +209,9 @@ contract TimeOracle is IPermissionOracle {
 
 ```
 
-#### Example 3: Using curated registries
+#### Example 3: Using Curated Registries
 
-In another use-case, we might want to make sure that the `sendCoins` can only be called by real humans to prevent sybil attacks:
+In another use-case, we might want to make sure that the `sendCoins` can only be called by real humans to prevent sybil attacks. For this, we use the [Proof of Humanity](https://www.proofofhumanity.id/) registry providing a curated list of humans:
 
 ```solidity title="IProofOfHumanity.sol"
 interface IProofOfHumanity {
@@ -239,9 +239,9 @@ contract ProofOfHumanityOracle is IPermissionOracle {
 
 ```
 
-#### Example 4: Using price oracles
+#### Example 4: Using Price Oracles
 
-In another use-case, we might want to make sure that the `sendCoins` can only if the price ETH in USD is above a certain threshold:
+In another use-case, we might want to make sure that the `sendCoins` can only be called if the ETH price in USD is above a certain threshold:
 
 <!-- prettier-ignore -->
 ```solidity title="PriceOracle.sol"
@@ -278,6 +278,7 @@ contract PriceOracle is IPermissionOracle {
     return price > 9000 * 10**18; // It's over 9000!
   }
 }
+
 ```
 
 #### Freezing Permissions
@@ -290,16 +291,16 @@ Permissions on a target contract `where`) can also be permanently frozen by usin
 
 The following functions in the DAO are permissioned:
 
-| Functions                                      | Permission Identifier                   | Description                                                            |
-| ---------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |
-| `execute`                                      | `EXECUTE_PERMISSION_ID`                 | Required to execute arbitrary actions.                                 |
-| `withdraw`                                     | `WITHDRAW_PERMISSION_ID`                | Required to withdraw assets from the DAO.                              |
-| `\_authorizeUpgrade`                           | `UPGRADE_PERMISSION_ID`                 | Required to upgrade the DAO (via the UUPS).                            |
-| `setMetadata`                                  | `SET_METADATA_PERMISSION_ID`            | Required to set the DAO’s metadata.                                    |
-| `setTrustedForwarder`                          | `SET_TRUSTED_FORWARDER_PERMISSION_ID`   | Required to set the DAO’s trusted forwarder for meta transactions.     |
-| `setSignatureValidator`                        | `SET_SIGNATURE_VALIDATOR_PERMISSION_ID` | Required to set the DAO’s signature validator contract (see ERC-1271). |
-| `grant`, `grantWithOracle`, `revoke`, `freeze` | `ROOT_PERMISSION_ID`                    | Required to manage permissions of the DAO and associated plugins.      |
+| Functions                                      | Permission Identifier                   | Description                                                                            |
+| ---------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------- |
+| `execute`                                      | `EXECUTE_PERMISSION_ID`                 | Required to execute arbitrary actions.                                                 |
+| `withdraw`                                     | `WITHDRAW_PERMISSION_ID`                | Required to withdraw assets from the DAO.                                              |
+| `_authorizeUpgrade`                            | `UPGRADE_PERMISSION_ID`                 | Required to upgrade the DAO (via the [UUPS](https://eips.ethereum.org/EIPS/eip-1822)). |
+| `setMetadata`                                  | `SET_METADATA_PERMISSION_ID`            | Required to set the DAO’s metadata.                                                    |
+| `setTrustedForwarder`                          | `SET_TRUSTED_FORWARDER_PERMISSION_ID`   | Required to set the DAO’s trusted forwarder for meta transactions.                     |
+| `setSignatureValidator`                        | `SET_SIGNATURE_VALIDATOR_PERMISSION_ID` | Required to set the DAO’s signature validator contract (see ERC-1271).                 |
+| `grant`, `grantWithOracle`, `revoke`, `freeze` | `ROOT_PERMISSION_ID`                    | Required to manage permissions of the DAO and associated plugins.                      |
 
 Plugins installed to the DAO might require their own and introduce new permission settings.
 
-In the next section, we will learn how to customize your DAOs by installing plugins.
+In the next section, you will learn how to customize your DAO by installing plugins.

@@ -57,7 +57,7 @@ function execute(uint256 callId, Action[] memory _actions)
 
 ### 2. Asset Management
 
-The DAO provides basic **asset management** functionality by \*\*\*\*allowing us to `deposit`, `withdraw`, and keep track of certain tokens in the DAO treasury, such as:
+The DAO provides basic **asset management** functionality by allowing us to `deposit`, `withdraw`, and keep track of certain tokens in the DAO treasury, such as:
 
 - [ERC-20 (Token Standard)](https://eips.ethereum.org/EIPS/eip-20)
 - [ERC-721 (NFT Standard)](https://eips.ethereum.org/EIPS/eip-721) _(coming soon)_

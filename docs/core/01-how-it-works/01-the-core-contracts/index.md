@@ -15,12 +15,10 @@ In a nutshell, your aragonOS DAO consists of three pieces:
 
 ![Overview of the three core contract pieces and their interactions: The `DAO` and `PermissionManager` contract in blue and red as well as `Plugin` implementation contracts in green conducting function calls (black arrows) on the DAO contract that require permission checks (red, dashed arrows).](dao-plugin.drawio.svg)
 
-Overview of the three core contract pieces and their interactions: The `DAO` and `PermissionManager` contract in blue and red as well as `Plugin` implementation contracts in green conducting function calls (black arrows) on the DAO contract that require permission checks (red, dashed arrows).
-
 The underlying smart contracts constitute **the core contracts** of the aragonOS DAO framework.
 
-In the next sections, you will learn about each of them in more depth.
+In the upcoming sections you will learn about each of them in more depth.
 
-- [The DAO Contract: The Identity and Basis of your Organization](01-the-dao-contract.md)
-- [Permissions: Managing and Governing your DAO](02-permissions.md)
-- [Plugins: Customizing your DAO](03-plugins.md)
+- [The Identity and Basis of your Organization](01-the-dao-contract.md)
+- [Managing and Governing your DAO](02-permissions.md)
+- [Customizing your DAO](03-plugins.md)
