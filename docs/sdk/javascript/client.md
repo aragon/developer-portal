@@ -16,8 +16,6 @@
 ## Members
 
 <dl>
-<dt><a href="#pluginAddress">pluginAddress</a> ⇒ <code>string</code></dt>
-<dd><p>Returns the plugin contract address used to interact with</p></dd>
 <dt><a href="#network">network</a> ⇒ <code>Networkish</code></dt>
 <dd><p>Getter for the network</p></dd>
 <dt><a href="#signer">signer</a> ⇒ <code>Signer</code></dt>
@@ -480,7 +478,7 @@ so that the plugin is configured</p>
     * [.create(params)](#Client.create) ⇒ <code>\*</code>
     * [.deposit(params)](#Client.deposit) ⇒ <code>\*</code>
     * [.getBalances(daoAddressOrEns, tokenAddresses)](#Client.getBalances) ⇒ <code>\*</code>
-    * [.getTransfers(daoAddressOrEns)](#Client.getTransfers) ⇒ <code>\*</code>
+    * [.getTransfers(params)](#Client.getTransfers) ⇒ <code>\*</code>
     * [.getDao(daoAddressOrEns)](#Client.getDao) ⇒ <code>\*</code>
     * [.getDaos(params)](#Client.getDaos) ⇒ <code>\*</code>
     * [.hasPermission(where, who, role, data)](#Client.hasPermission) ⇒ <code>\*</code>
@@ -538,15 +536,15 @@ so that the plugin is configured</p>
 
 <a name="Client.getTransfers"></a>
 
-### Client.getTransfers(daoAddressOrEns) ⇒ <code>\*</code>
+### Client.getTransfers(params) ⇒ <code>\*</code>
 <p>Retrieves the list of asset transfers to and from the given DAO (by default, from ETH, DAI, USDC and USDT, on Mainnet)</p>
 
 **Kind**: static method of [<code>Client</code>](#Client)  
-**Returns**: <code>\*</code> - <p>{Promise<IAssetTransfers>}</p>  
+**Returns**: <code>\*</code> - <p>{Promise&lt;Transfer[]&gt;}</p>  
 
 | Param | Type |
 | --- | --- |
-| daoAddressOrEns | <code>string</code> | 
+| params | <code>ITransferQueryParams</code> | 
 
 <a name="Client.getDao"></a>
 
@@ -801,13 +799,6 @@ so that the plugin is configured</p>
 | --- | --- |
 | params | <code>Object</code> | 
 
-<a name="pluginAddress"></a>
-
-## pluginAddress ⇒ <code>string</code>
-<p>Returns the plugin contract address used to interact with</p>
-
-**Kind**: global variable  
-**Access**: public  
 <a name="network"></a>
 
 ## network ⇒ <code>Networkish</code>
@@ -925,7 +916,7 @@ so that the plugin is configured</p>
 <p>Checks if an user can vote in a proposal</p>
 
 **Kind**: global function  
-**Returns**: <code>\*</code> - <p>{AsyncGenerator<CanVoteStepValue>}</p>  
+**Returns**: <code>\*</code> - <p>{Promise<boolean>}</p>  
 
 | Param | Type |
 | --- | --- |
