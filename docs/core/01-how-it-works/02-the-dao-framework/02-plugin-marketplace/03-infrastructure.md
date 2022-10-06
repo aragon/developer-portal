@@ -2,9 +2,9 @@
 title: Infrastructure
 ---
 
-## The Plugin Marketplace Infrastructure
+## The Plugin Ecosystem Infrastructure
 
-In this section, we take a close look on the contracts constituting the plugin marketplace infrastructure.
+In this section, we take a close look on the contracts constituting the plugin ecosystem infrastructure.
 
 A plugin published on the Marketplace consist of
 
@@ -12,7 +12,7 @@ A plugin published on the Marketplace consist of
 - a `PluginSetup` contract (internally referencing the implementation contract and used by the `PluginSetupProcessor`)
 - the Aragon App frontend / UI
 
-Each plugin has its own, unique ENS name and on-chain repository contract, the `PluginRepo`, in which different versions of the plugin are referenced.
+Each plugin has its own, unique ENS name and on-chain repository contract, the `PluginRepo`, in which different versions of the plugin are stored for reference.
 The names and address of the `PluginRepo` contracts are stored in the `PluginRepoRegistry`. Both contracts are described in the following.
 The `PluginSetupProcessor` contract taking care of installing, updating, and uninstalling is described in the context of [the plugin setup process](04-plugin-setup.md).
 
@@ -42,10 +42,10 @@ function createVersion(
 )
 ```
 
-references two pieces of information:
+This function references two pieces of information:
 
 1. The address of `PluginSetup` contract internally referencing the implementation contract (to copy, proxy, or clone from it) and taking care of [installing, updating to, and uninstalling](04-plugin-setup.md) this specific version.
-2. An URI pointing to the contents defining the UI so that users on the Aragon DAO frontend can interact with it.
+2. A URI string pointing to the contents defining the UI so that users on the Aragon DAO frontend can interact with it.
 
 <!--TODO
 :::note
@@ -65,7 +65,7 @@ Additionally, each released version has a
 
 ### The `PluginRepoRegistry` Contract
 
-The `PluginRepoRegistry` contract is the central contract listing the plugins that have been published on the Aragon Marketplace. Each plugin has its own ENS name (e.g. `my-cool.plugin.aragon.eth`) and own `PluginRepo` contract, in which the different plugin versions are referenced.
+The `PluginRepoRegistry` contract is the central contract listing all the plugins within the Aragon framework. Each plugin has its own ENS name (e.g. `my-cool.plugin.aragon.eth`) and its own `PluginRepo` contract, in which the different plugin versions are referenced.
 
 :::note
 To do
