@@ -13,11 +13,8 @@ As we mentioned earlier, it is essential that only the right person or contract 
 
 In aragonOS, we follow the same approach but provide more advanced functionality:
 Each `DAO` contracts includes a `PermissionManager` contract allowing to flexibly, securely, and collectively manage permissions through the DAO and, thus, govern its actions.
-
-The `PermissionManager` was renamed from `ACL` in previous aragonOS versions and was one reason why Aragon OS never got hacked.
-
-The code and configuration of a DAO specifies which wallets or contracts (`who`) are allowed to call which authenticated functions on a target contract (`where`).
-
+This `PermissionManager`, called `ACL` in previous aragonOS contract versions, was one big reason why aragonOS never got hacked.
+The code and configuration of a DAO specifies which wallets or contracts (`who`) are allowed to call which authorized functions on a target contract (`where`).
 Identifiers, permissions, and modifiers link everything together.
 
 ### Permission Identifiers
@@ -51,7 +48,7 @@ mapping(bytes32 => address) internal permissionsHashed;
 
 Here, the `bytes32` keys are the permission hashes and the `address` values are either zero-address flags, such as `ALLOW_FLAG = address(0)` and `UNSET_FLAG = address(2)` indicating if the permission is set, or an actual address pointing to a `PermissionOracle` contract, which is discussed in the next section of this guide.
 
-### Authorization modifiers
+### Authorization Modifiers
 
 Using **authorization modifiers** is how we make functions permissioned. Permissions are associated with functions by adding the `auth` modifier, which includes the permission identifier in the function’s definition header.
 
@@ -152,7 +149,7 @@ contract Example is Plugin {
 Instead of just using `grant` the `SEND_COINS_PERMISSION_ID` permission required to call the `sendCoins` function in a deployed `Example` contract located at address `_where` to a specific address `_who`, we can now add additional constraints to it by using the `grantWithOracle` function.
 Below, we show four exemplaric oracles for different 4 different use cases that we could attach to the permission.
 
-#### Example 1: Adding parameter constraints
+#### Example 1: Adding Parameter Constraints
 
 Let’s imagine that we want to make sure that `_value` is not more than `1 ETH` without changing the code of `Example` contract.
 
@@ -182,7 +179,7 @@ contract ParameterConstraintOracle is IPermissionOracle {
 
 Now, after granting the `SEND_COINS_PERMISSION_ID` permission to `_where` and `_who` via the `grantWithOracle` function and pointing to the `ParameterConstraintOracle` oracle contract, the `_who` address can only call the `sendCoins` of the `Example` contract deployed at address `_where` successfully if `_value` is not larger than `_maxValue` stored in the oracle contract.
 
-#### Example 2: Delaying a call with a timestamp
+#### Example 2: Delaying a Call With a Timestamp
 
 In another use-case, we might want to make sure that the `sendCoins` can only be called after a certain date. This would look as fol
 
