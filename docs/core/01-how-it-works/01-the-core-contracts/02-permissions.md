@@ -132,22 +132,28 @@ Typically, oracles are written specifically for and installed together with [plu
 
 ### Examples
 
-Let’s assume we have an `Example` contract managed by a DAO and containing a `sendCoins` function allowing you to send an `_amount` to an address `_to` and being permissioned through the `auth` modifier:
+Let’s assume we have an `Example` contract managed by a DAO `_dao` containing a `sendCoins` function allowing you to send an `_amount` to an address `_to` and being permissioned through the `auth` modifier:
 
 ```solidity title="Example.sol"
 contract Example is Plugin {
+  constructor(IDAO _dao) Plugin(_dao) {}
+
   function sendCoins(address _to, uint256 _value)
     external
     auth(SEND_COINS_PERMISSION_ID)
   {
-    // logic to send a coins safely to an address `_to`...
+    // logic to send coins safely to an address `_to`...
   }
 }
 
 ```
 
-Instead of just using `grant` the `SEND_COINS_PERMISSION_ID` permission required to call the `sendCoins` function in a deployed `Example` contract located at address `_where` to a specific address `_who`, we can now add additional constraints to it by using the `grantWithOracle` function.
-Below, we show four exemplaric oracles for 4 different use cases that we could attach to the permission.
+Let's assume you own the private key to address `0x123456...` and the `Example` contract was deployed to address `0xabcdef...`.
+Now, to be able to call the `sendCoins` function, you need to `grant` the `SEND_COINS_PERMISSION_ID` permission to your wallet address (`_who=0x123456...`) for the `Example` contract (`_where=0xabcdef...`).
+If this is the case, the function call will succeed, otherwise it will revert.
+
+We can now add additional constraints to it by using the `grantWithOracle` function.
+Below, we show four exemplary oracles for different 4 different use cases that we could attach to the permission.
 
 #### Example 1: Adding Parameter Constraints
 
