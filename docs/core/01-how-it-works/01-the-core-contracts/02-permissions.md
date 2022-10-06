@@ -119,7 +119,7 @@ on-chain data such as
 
 - timestamps
 - token ownership
-- ...
+- entries in curated registries
 
 or off-chain data being made available through third-party oracle services (e.g., [chain.link](https://chain.link/), [witnet.io](https://witnet.io/)) such as
 
