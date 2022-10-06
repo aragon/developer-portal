@@ -2,7 +2,7 @@
 title: The DAO Contract
 ---
 
-## The Identity and Basis of your Organization
+## The Identity and Basis of Your Organization
 
 In this section, you will learn about the core functionality of every aragonOS DAO.
 
