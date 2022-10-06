@@ -4,7 +4,7 @@ title: Permissions
 
 ## Managing and Governing Your DAO
 
-At Aragon, we believe that **DAOs are simply permission management systems**.
+At Aragon, we believe that **DAOs are permission management systems**.
 Permissions between contracts and wallets allow a DAO to manage and govern its actions.
 
 Here, you will learn how the permissions in aragonOS work how they can be granted and revoked from wallets and contracts, and managed through the DAO.
@@ -147,7 +147,7 @@ contract Example is Plugin {
 ```
 
 Instead of just using `grant` the `SEND_COINS_PERMISSION_ID` permission required to call the `sendCoins` function in a deployed `Example` contract located at address `_where` to a specific address `_who`, we can now add additional constraints to it by using the `grantWithOracle` function.
-Below, we show four exemplaric oracles for different 4 different use cases that we could attach to the permission.
+Below, we show four exemplaric oracles for 4 different use cases that we could attach to the permission.
 
 #### Example 1: Adding Parameter Constraints
 
@@ -181,7 +181,7 @@ Now, after granting the `SEND_COINS_PERMISSION_ID` permission to `_where` and `_
 
 #### Example 2: Delaying a Call With a Timestamp
 
-In another use-case, we might want to make sure that the `sendCoins` can only be called after a certain date. This would look as fol
+In another use-case, we might want to make sure that the `sendCoins` can only be called after a certain date. This would look as following:
 
 ```solidity title="TimeOracle.sol"
 contract TimeOracle is IPermissionOracle {
@@ -207,7 +207,7 @@ contract TimeOracle is IPermissionOracle {
 
 #### Example 3: Using Curated Registries
 
-In another use-case, we might want to make sure that the `sendCoins` can only be called by real humans to prevent sybil attacks. For this, we use the [Proof of Humanity](https://www.proofofhumanity.id/) registry providing a curated list of humans:
+In another use-case, we might want to make sure that the `sendCoins` function can only be called by real humans to prevent sybil attacks. For this, let's say we use the [Proof of Humanity](https://www.proofofhumanity.id/) registry providing a curated list of humans:
 
 ```solidity title="IProofOfHumanity.sol"
 interface IProofOfHumanity {
@@ -237,7 +237,7 @@ contract ProofOfHumanityOracle is IPermissionOracle {
 
 #### Example 4: Using Price Oracles
 
-In another use-case, we might want to make sure that the `sendCoins` can only be called if the ETH price in USD is above a certain threshold:
+In another use-case, we might want to make sure that the `sendCoins` function can only be called if the ETH price in USD is above a certain threshold:
 
 <!-- prettier-ignore -->
 ```solidity title="PriceOracle.sol"
@@ -279,7 +279,7 @@ contract PriceOracle is IPermissionOracle {
 
 #### Freezing Permissions
 
-Permissions on a target contract `where`) can also be permanently frozen by using the `freeze` function.
+Permissions on a target contract `where` can also be permanently frozen by using the `freeze` function.
 **Freezing** means that permissions involving this target contract can not be granted or revoked anymore. This can be useful when we want to secure certain permissions so that they can never by changed (by a contract owning the `ROOT_PERMISSION_ID` permission).
 
 ### OverviewPermissions Native to the `DAO` Contract
