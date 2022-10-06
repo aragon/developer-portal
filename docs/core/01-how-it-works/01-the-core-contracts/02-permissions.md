@@ -130,6 +130,29 @@ or off-chain data being made available through third-party oracle services (e.g.
 
 Typically, oracles are written specifically for and installed together with [plugins](../01-the-core-contracts/03-plugins.md).
 
+#### Freezing Permissions
+
+Permissions on a target contract `where` can also be permanently frozen by using the `freeze` function.
+**Freezing** means that permissions involving this target contract can not be granted or revoked anymore. This can be useful when we want to secure certain permissions so that they can never by changed (by a contract owning the `ROOT_PERMISSION_ID` permission).
+
+### Permissions Native to the `DAO` Contract
+
+The following functions in the DAO are permissioned:
+
+| Functions                                      | Permission Identifier                   | Description                                                                            |
+| ---------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------- |
+| `execute`                                      | `EXECUTE_PERMISSION_ID`                 | Required to execute arbitrary actions.                                                 |
+| `withdraw`                                     | `WITHDRAW_PERMISSION_ID`                | Required to withdraw assets from the DAO.                                              |
+| `_authorizeUpgrade`                            | `UPGRADE_PERMISSION_ID`                 | Required to upgrade the DAO (via the [UUPS](https://eips.ethereum.org/EIPS/eip-1822)). |
+| `setMetadata`                                  | `SET_METADATA_PERMISSION_ID`            | Required to set the DAO’s metadata.                                                    |
+| `setTrustedForwarder`                          | `SET_TRUSTED_FORWARDER_PERMISSION_ID`   | Required to set the DAO’s trusted forwarder for meta transactions.                     |
+| `setSignatureValidator`                        | `SET_SIGNATURE_VALIDATOR_PERMISSION_ID` | Required to set the DAO’s signature validator contract (see ERC-1271).                 |
+| `grant`, `grantWithOracle`, `revoke`, `freeze` | `ROOT_PERMISSION_ID`                    | Required to manage permissions of the DAO and associated plugins.                      |
+
+Plugins installed to the DAO might require their own and introduce new permission settings.
+
+In the next section, you will learn how to customize your DAO by installing plugins.
+
 ### Examples
 
 Let’s assume we have an `Example` contract managed by a DAO `_dao` containing a `sendCoins` function allowing you to send an `_amount` to an address `_to` and being permissioned through the `auth` modifier:
@@ -155,7 +178,7 @@ If this is the case, the function call will succeed, otherwise it will revert.
 We can now add additional constraints to it by using the `grantWithOracle` function.
 Below, we show four exemplary oracles for different 4 different use cases that we could attach to the permission.
 
-#### Example 1: Adding Parameter Constraints
+#### Oracle 1: Adding Parameter Constraints
 
 Let’s imagine that we want to make sure that `_value` is not more than `1 ETH` without changing the code of `Example` contract.
 
@@ -185,7 +208,7 @@ contract ParameterConstraintOracle is IPermissionOracle {
 
 Now, after granting the `SEND_COINS_PERMISSION_ID` permission to `_where` and `_who` via the `grantWithOracle` function and pointing to the `ParameterConstraintOracle` oracle contract, the `_who` address can only call the `sendCoins` of the `Example` contract deployed at address `_where` successfully if `_value` is not larger than `_maxValue` stored in the oracle contract.
 
-#### Example 2: Delaying a Call With a Timestamp
+#### Oracle 2: Delaying a Call With a Timestamp
 
 In another use-case, we might want to make sure that the `sendCoins` can only be called after a certain date. This would look as following:
 
@@ -211,7 +234,7 @@ contract TimeOracle is IPermissionOracle {
 
 ```
 
-#### Example 3: Using Curated Registries
+#### Oracle 3: Using Curated Registries
 
 In another use-case, we might want to make sure that the `sendCoins` function can only be called by real humans to prevent sybil attacks. For this, let's say we use the [Proof of Humanity](https://www.proofofhumanity.id/) registry providing a curated list of humans:
 
@@ -241,7 +264,7 @@ contract ProofOfHumanityOracle is IPermissionOracle {
 
 ```
 
-#### Example 4: Using Price Oracles
+#### Oracle 4: Using Price Oracles
 
 In another use-case, we might want to make sure that the `sendCoins` function can only be called if the ETH price in USD is above a certain threshold:
 
@@ -282,26 +305,3 @@ contract PriceOracle is IPermissionOracle {
 }
 
 ```
-
-#### Freezing Permissions
-
-Permissions on a target contract `where` can also be permanently frozen by using the `freeze` function.
-**Freezing** means that permissions involving this target contract can not be granted or revoked anymore. This can be useful when we want to secure certain permissions so that they can never by changed (by a contract owning the `ROOT_PERMISSION_ID` permission).
-
-### OverviewPermissions Native to the `DAO` Contract
-
-The following functions in the DAO are permissioned:
-
-| Functions                                      | Permission Identifier                   | Description                                                                            |
-| ---------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------- |
-| `execute`                                      | `EXECUTE_PERMISSION_ID`                 | Required to execute arbitrary actions.                                                 |
-| `withdraw`                                     | `WITHDRAW_PERMISSION_ID`                | Required to withdraw assets from the DAO.                                              |
-| `_authorizeUpgrade`                            | `UPGRADE_PERMISSION_ID`                 | Required to upgrade the DAO (via the [UUPS](https://eips.ethereum.org/EIPS/eip-1822)). |
-| `setMetadata`                                  | `SET_METADATA_PERMISSION_ID`            | Required to set the DAO’s metadata.                                                    |
-| `setTrustedForwarder`                          | `SET_TRUSTED_FORWARDER_PERMISSION_ID`   | Required to set the DAO’s trusted forwarder for meta transactions.                     |
-| `setSignatureValidator`                        | `SET_SIGNATURE_VALIDATOR_PERMISSION_ID` | Required to set the DAO’s signature validator contract (see ERC-1271).                 |
-| `grant`, `grantWithOracle`, `revoke`, `freeze` | `ROOT_PERMISSION_ID`                    | Required to manage permissions of the DAO and associated plugins.                      |
-
-Plugins installed to the DAO might require their own and introduce new permission settings.
-
-In the next section, you will learn how to customize your DAO by installing plugins.
