@@ -8,7 +8,7 @@ Work in Progress, needs revision once the code is finalized and frozen.
 
 ## Creating Your DAO and Choosing Plugins
 
-Creating a DAO with custom set of plugins on the frontend is simple.  
+Creating a DAO with a custom set of plugins on the frontend is simple.  
 After picking an available subdomain name on the `dao.eth` domain, we select the plugins to be installed and configure them. The plugin contracts then gets deployed and prepared in
 After confirmation, the `DAOFactory` contract creates the `DAO`.
 
