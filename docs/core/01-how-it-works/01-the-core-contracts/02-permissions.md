@@ -234,9 +234,11 @@ contract TimeOracle is IPermissionOracle {
 
 ```
 
+Here, the permission oracle will only allow the call the `_date` specified in the constructor has passed.
+
 #### Oracle 3: Using Curated Registries
 
-In another use-case, we might want to make sure that the `sendCoins` function can only be called by real humans to prevent sybil attacks. For this, let's say we use the [Proof of Humanity](https://www.proofofhumanity.id/) registry providing a curated list of humans:
+In another use-case, we might want to make sure that the `sendCoins` function can only be called by real humans to prevent sybil attacks. For this, let's say we use the [Proof of Humanity (PoH)](https://www.proofofhumanity.id/) registry providing a curated list of humans:
 
 ```solidity title="IProofOfHumanity.sol"
 interface IProofOfHumanity {
@@ -263,6 +265,8 @@ contract ProofOfHumanityOracle is IPermissionOracle {
 }
 
 ```
+
+Here, the permission oracle will only allow the call if the PoH registry confirms that the `_who` address is registered and belongs to a real human.
 
 #### Oracle 4: Using Price Oracles
 
@@ -304,4 +308,6 @@ contract PriceOracle is IPermissionOracle {
   }
 }
 
-```
+Here, we use [a data feed from a Chainlink oracle](https://docs.chain.link/docs/data-feeds/) providing us with the latest ETH/USD price on the Goerli testnet and require that the call is only allowed if the ETH price is over $9000.
+
+````
