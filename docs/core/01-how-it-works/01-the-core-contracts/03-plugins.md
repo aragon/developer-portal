@@ -28,4 +28,4 @@ Typically, membership related plugins grant permissions (e.g., based on token ow
 
 - And **anything** else that comes to mind!
 
-These plugins are found on the Aragon Marketplace. In the next section, we will learn more about plugins and the Aragon Marketplace.
+In the next section, we will learn more about plugins, the surrounding ecosystem, and its infrastructure.

@@ -6,7 +6,7 @@ title: Infrastructure
 
 In this section, we take a close look on the contracts constituting the plugin ecosystem infrastructure.
 
-A plugin published on the Marketplace consist of
+An aragonOS Plugin consist of:
 
 - the `Plugin` implementation contract
 - a `PluginSetup` contract (internally referencing the implementation contract and used by the `PluginSetupProcessor`)
