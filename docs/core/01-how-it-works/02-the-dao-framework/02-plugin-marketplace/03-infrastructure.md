@@ -8,8 +8,8 @@ In this section, we take a close look on the contracts constituting the plugin e
 
 An aragonOS Plugin consist of:
 
-- the `Plugin` implementation contract
-- a `PluginSetup` contract (internally referencing the implementation contract and used by the `PluginSetupProcessor`)
+- The `Plugin` implementation contract containing the plugin's logic
+- The `PluginSetup` contract referencing the `Plugin` implementation and containing the setup instruction to install, update, and uninstall it to a DAO
 - the Aragon App frontend / UI
 
 Each plugin has its own, unique ENS name and on-chain repository contract, the `PluginRepo`, in which different versions of the plugin are stored for reference.
@@ -26,7 +26,7 @@ The `PluginSetupProcessor` contract taking care of installing, updating, and uni
 
 </div>
 
-We will introduce the contracts in the following.
+In the following section, we will introduce the contracts.
 
 ### The `PuginRepo` Contract
 
