@@ -21,7 +21,7 @@ The `PluginSetupProcessor` contract taking care of installing, updating, and uni
 ![Schematic depiction of the versioning taking place in the PluginRepoRegistry.](plugin-repo-overview.drawio.svg)
 
 <p class="caption"> 
-  Schema showing the `PluginRepoRegistry` maintaining a list the addresses of ENS named `PluginRepo` contracts shown on the left. Each `PluginRepo` contract maintains a list of semantic versions of the `PluginSetup` contract (internally referencing the `Plugin` logic) and the associated UI building blocks as a URI, examplarically shown on the right.
+  Schema showing the `PluginRepoRegistry` maintaining a list the addresses of ENS named `PluginRepo` contracts shown on the left. Each `PluginRepo` contract maintains a list of semantic versions of the `PluginSetup` contract (internally referencing the `Plugin` logic) and the associated UI building blocks as a URI, examplarily shown on the right.
 </p>
 
 </div>
@@ -71,6 +71,8 @@ The `PluginRepoRegistry` contract is the central contract listing all the plugin
 To do
 :::
 
+<!--
 - describe details on the registration requirements for a `PluginRepo`
   - registration: a proposal to the DAO
-- describe mechanisms/rational to prevent ENS name squatting / griefing
+- describe mechanisms/rationale to prevent ENS name squatting / griefing
+-->
