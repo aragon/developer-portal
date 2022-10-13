@@ -4,9 +4,9 @@ title: Plugin Types
 
 ## Choosing the Base Contract for Your Plugin
 
-In this section, we will learn about the interfaces or base contracts to inherit from when developing a plugin.
+In this section, we will learn about the interfaces or base contracts you can inherit from when developing a plugin (this is, however, not mandatory). 
 
-Depending on the use-case of your plugin, you might want it to be
+Depending on the use-case of your plugin, you may need it to be:
 
 - upgradeable or non-upgradeable
 - deployed by a specific deployment method
@@ -20,7 +20,7 @@ Upgradeable plugin contracts (such as `PluginUpgradeable`, `PluginUUPSUpgradeabl
 
 Upgradebility and the deployment method of a plugin contract go hand in hand.
 
-The motivation to upgrade smart contracts is nicely summarized by OpenZepplin:
+The motivation behind upgrading smart contracts is nicely summarized by OpenZepplin:
 
 > Smart contracts in Ethereum are immutable by default. Once you create them there is no way to alter them, effectively acting as an unbreakable contract among participants.
 >
@@ -44,9 +44,9 @@ With upgradeable smart contracts, you can modify their code while keep using or 
 To enable upgradeable smart contracts (as well as cheap contract clones), the proxy pattern is used.
 
 Depending on your upgradeability requirements and the deployment method you choose, you can also greatly reduce the gas costs to distribute your plugin.
-However, the upgradeability and deployment method can also introduce caveats during [the plugin setup](docs/core/01-how-it-works/02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md), especially for updating from an older version to a new one.
+However, the upgradeability and deployment method can introduce caveats during [the plugin setup](docs/core/01-how-it-works/02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md), especially when updating from an older version to a new one.
 
-The following table presents an overview of the different deployment methods and their benefits and drawbacks:
+The following table presents an overview of the different deployment methods with each of their benefits and drawbacks:
 
 | Deployment Method     | `new` Instantiation                              | Minimal Proxy (Clones)                            | Transparent Proxy                                | UUPS Proxy                                       |
 | --------------------- | ------------------------------------------------ | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------ |
@@ -68,7 +68,7 @@ To help you with developing and deploying the plugin within the Aragon infrastru
 
 Aragon plugins using non-upgradeable smart contracts can be cheap to deploy (i.e., using clones) but are **limited when it comes to updating**.
 
-Updating, in distinction from upgrading, we call the Aragon DAO Framework specific process of switching from an older plugin version to a newer one.
+Updating, in distinction from upgrading, will call the aragonOS' internal process for switching from an older plugin version to a newer one.
 
 To switch from an older version of a non-upgradeable contract to a newer one, the underlying contract has to be replaced. In consequence, the state of the older version is not available in the new version anymore, unless it is migrated or has been made publicly accessible in the old version through getter functions.
 

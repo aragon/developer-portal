@@ -7,15 +7,20 @@ title: Setup
 A DAO can be set up and customized by the **installation**, **update, and** **uninstallation** of plugins.
 In this section you will learn how the plugin setup process in aragonOS works.
 
-In order for a plugin to function, associated contracts need to be deployed and gathered and often require permissions from the DAO: A finance plugin might need the permission to withdraw assets from the treasury and a governance plugin needs permission to execute actions in the DAO.
+In order for a plugin to function, associated contracts need to be deployed and gathered, often requiring permissions from the DAO.  
+For ex, a finance plugin might need the permission to `withdraw` assets from the treasury and a governance plugin will need permission to `execute` actions in the DAO.
 
 The required setup logic is written and taken care off by the plugin developer in the `PluginSetup` contract associated with each `Plugin` contract version release (see [Developing a Plugin](docs/core/02-how-to-guides/01-plugin-development/index.md)) which interact with the aragonOS framework infrastructure so that installing, updating, and uninstalling a plugin to a DAO through the UI becomes very simple for the DAO end-user.
 
 ### Security Considerations
 
-The plugin setup process is security critical because permissions are granted to third-party contracts. Safety was our top priority in the design and we wanted to make sure that the DAO knows exactly which contracts receive which permissions before processing and make sure that `PluginSetup` contracts being developed by third parties don’t obtain elevated permissions (i.e., the `ROOT_PERMISSION_ID` permission) on the installing DAO during the setup process.
+The plugin setup process is **security critical** because permissions are granted to third-party contracts. 
+Safety was our top priority in the design and we wanted to make sure that the DAO knows exactly which contracts receive which permissions before processing and making sure that the `PluginSetup` contracts developed by third parties don’t obtain elevated permissions (i.e., the `ROOT_PERMISSION_ID` permission) on the installing DAO during the setup process.
 
-This is why we split the **plugin setup in two steps**: a **preparation** and **processing** step and require both to run through a `PluginSetupProcessor` contract being part of the aragonOS DAO framework infrastructure.
+This is why we split the **plugin setup in two steps**: 
+- a **preparation** step, and 
+- a **processing** step.
+Each plugin will then require both to run through the DAO's `PluginSetupProcessor` contract which is part of the aragonOS framework.
 
 :::note
 Plugins can also be setup manually by calling `PluginSetup` contract and granting permissions directly through the `DAO` contract but won’t be displayed in the UI correctly.
@@ -27,11 +32,11 @@ In the following, we describe the two steps in detail.
 
 The preparation of a plugin setup proceeds as follows:
 
-1. A DAO user selects a plugin with a specific version from the marketplace UI to install it or from the DAO dashboard to update or uninstall it. Depending on the case, the `prepareInstallation`, `prepareUpdate`, or `prepareUninstallation` method in the `PluginSetup` contract associated with the version to set up is called through the `PluginSetupProcessor` (and creates a unique setup ID).
+1. A DAO builder selects a plugin with a specific version from the UI to install, uninstall, or update. Depending on the case, the `prepareInstallation`, `prepareUpdate`, or `prepareUninstallation` method in the `PluginSetup` contract associated with that version is called through the `PluginSetupProcessor` (and creates a unique setup ID).
 2. The `PluginSetup` contract deploys all the contracts
 
    and gathers addresses and other input arguments required for the plugin setup.
-   This can include
+   This can include:
 
    - deployment of new contracts
    - initialization of new storage variables
@@ -43,7 +48,7 @@ The preparation of a plugin setup proceeds as follows:
 3. The list containing the required permissions is then proposed as an `Action[]` array for processing in a proposal through a governance plugin of the installing DAO.
 
 :::note
-The governance plugin can be a simple majority vote, an optimistic process or an admin governance plugin that does not involve a waiting period.
+The governance plugin can be a simple majority vote, an optimistic process or an admin governance plugin that does not involve a waiting period. It can be any governance mechanism existing within the DAO.
 :::
 
 This gives the DAO time to see and check which permissions the `PluginSetup` contract request before processing them. Optionally, the proposer can also request refunds for the gas spent for the preparation of the plugin in the proposal.
