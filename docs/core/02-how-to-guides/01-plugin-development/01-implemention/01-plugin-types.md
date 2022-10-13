@@ -4,7 +4,7 @@ title: Plugin Types
 
 ## Choosing the Base Contract for Your Plugin
 
-In this section, we will learn about the interfaces or base contracts you can inherit from when developing a plugin (this is, however, not mandatory). 
+In this section, we will learn about the interfaces or base contracts you can inherit from when developing a plugin (this is, however, not mandatory).
 
 Depending on the use-case of your plugin, you may need it to be:
 
@@ -68,7 +68,7 @@ To help you with developing and deploying the plugin within the Aragon infrastru
 
 Aragon plugins using non-upgradeable smart contracts can be cheap to deploy (i.e., using clones) but are **limited when it comes to updating**.
 
-Updating, in distinction from upgrading, will call the aragonOS' internal process for switching from an older plugin version to a newer one.
+Updating, in distinction from upgrading, will call aragonOS' internal process for switching from an older plugin version to a newer one.
 
 To switch from an older version of a non-upgradeable contract to a newer one, the underlying contract has to be replaced. In consequence, the state of the older version is not available in the new version anymore, unless it is migrated or has been made publicly accessible in the old version through getter functions.
 

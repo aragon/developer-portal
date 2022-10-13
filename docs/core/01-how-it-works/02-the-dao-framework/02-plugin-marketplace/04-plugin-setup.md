@@ -14,12 +14,14 @@ The required setup logic is written and taken care off by the plugin developer i
 
 ### Security Considerations
 
-The plugin setup process is **security critical** because permissions are granted to third-party contracts. 
+The plugin setup process is **security critical** because permissions are granted to third-party contracts.
 Safety was our top priority in the design and we wanted to make sure that the DAO knows exactly which contracts receive which permissions before processing and making sure that the `PluginSetup` contracts developed by third parties don’t obtain elevated permissions (i.e., the `ROOT_PERMISSION_ID` permission) on the installing DAO during the setup process.
 
-This is why we split the **plugin setup in two steps**: 
-- a **preparation** step, and 
-- a **processing** step.
+This is why we split the **plugin setup in two steps**:
+
+1. a **preparation** step, and
+2. a **processing** step.
+
 Each plugin will then require both to run through the DAO's `PluginSetupProcessor` contract which is part of the aragonOS framework.
 
 :::note

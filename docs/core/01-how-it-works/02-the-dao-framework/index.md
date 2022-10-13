@@ -23,7 +23,7 @@ To govern the framework infrastructure, a **Framework DAO** exists to:
 - control the permissions of and between the infrastructure related contracts to:
   - upgrade them
   - allow them to register ENS names for DAOs and plugins on the `dao.eth` and `dao-plugin.eth`, respectively
-- verify plugins submissions to Aragon App
+- verify plugin submissions to Aragon App
 
 This framework DAO constitutes the **governance layer** of the aragonOS DAO Framework.
 
