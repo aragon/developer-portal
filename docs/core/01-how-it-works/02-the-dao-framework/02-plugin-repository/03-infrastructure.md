@@ -2,7 +2,7 @@
 title: Infrastructure
 ---
 
-## The Plugin Ecosystem Infrastructure
+## The Plugin Repository Infrastructure
 
 In this section, we take a close look on the contracts constituting the plugin ecosystem infrastructure.
 

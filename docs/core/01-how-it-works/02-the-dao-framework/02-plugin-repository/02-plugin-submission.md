@@ -8,4 +8,4 @@ title: Submission
 To do: This is a draft.
 :::
 
-To be displayed on the Aragon Plugin Marketplace, Plugins have to be submitted.
+To be displayed on Aragon's plugin repository, plugins have to be submitted.

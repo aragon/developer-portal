@@ -22,7 +22,7 @@ struct Action {
 
 ```
 
-Actions are typically scheduled in a proposal in a governance [plugin customizing your DAO](03-plugins.md) can be calls to external contracts, plugins, or the aragonOS DAO framework infrastructure, for example, to [setup a plugin](../02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md).
+Actions are typically scheduled in a proposal in a governance [plugin customizing your DAO](03-plugins.md) can be calls to external contracts, plugins, or the aragonOS DAO framework infrastructure, for example, to [setup a plugin](../02-the-dao-framework/02-plugin-repository/04-plugin-setup.md).
 
 Multiple `Action` structs can be put into one `Action[]` array and executed in a single transaction via the `execute` function.
 

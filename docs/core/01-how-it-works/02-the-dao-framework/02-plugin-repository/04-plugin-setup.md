@@ -68,7 +68,7 @@ Once the proposal has passed, the actions specified in the `Action[]` array get 
 
 The two-step setup procedure in aragonOS is not limited to the setup of only one plugin — you can **setup multiple plugins at once** by first preparing them in a single proposal and then processing the entire setup sequence in one transaction. This is powerful and allows you to **transform your entire DAO in one proposal**, for example, to install a new governance plugin (e.g., a gasless ZK-vote) and finance plugin (e.g., to stream loans to your members), while uninstalling your old ERC20 token vote in one go.
 
-In the next sections, you will learn about how plugins are curated on the marketplace.
+In the next sections, you will learn about how plugins are curated on Aragon's repository.
 
 <div class="center-column">
 

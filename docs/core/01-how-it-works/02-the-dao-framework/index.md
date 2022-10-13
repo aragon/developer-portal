@@ -5,7 +5,7 @@ title: The DAO Framework
 ## The Infrastructure Behind the AraongOS DAO Framework
 
 To enable the creation of DAOs and the setup of plugins, aragonOS provides the necessary **framework infrastructure**.
-This infrastructure consists of multiple smart contracts being related to the **creation of DAOs** and the **management of the Aragon Marketplace** - a curated list of plugins.
+This infrastructure consists of multiple smart contracts being related to the **creation of DAOs** and the **management of the Aragon plugin repository** - a curated list of plugins.
 
 <div class="center-column">
 
@@ -25,9 +25,6 @@ To govern the framework infrastructure, a **Framework DAO** exists to:
   - allow them to register ENS names for DAOs and plugins on the `dao.eth` and `dao-plugin.eth`, respectively
 - verify plugin submissions to Aragon App
 
-This framework DAO constitutes the **governance layer** of the aragonOS DAO Framework.
+This Framework DAO constitutes the **governance layer** of the aragonOS DAO Framework.
 
-In the following sections, the framework-related parts are explained in more detail.
-
-- [The DAO Creation Process](01-dao-creation-process.md)
-- [The Aragon Plugin Marketplace](02-plugin-marketplace/index.md)
+In the following sections, [The DAO Creation Process](01-dao-creation-process.md) and the [The Aragon Plugin Repository](02-plugin-repository/index.md) are explained in more detail.

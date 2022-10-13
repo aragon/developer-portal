@@ -22,7 +22,7 @@ The `DAOFactory` contract does the following steps:
 4. Use the `ROOT_PERMISSION_ID` permission to
    1. `grant` itself the `EXECUTE_PERMISSION_ID` permission
    2. `grant` the Aragon `PluginSetupProcessor` the `ROOT_PERMISSION_ID` permission for the `PluginSetupProcessor` to give permissions to the plugins being installed
-5. Use the `EXECUTE_PERMISSION_ID` permission to call the `PluginSetupProcessor` to install the requested plugins (see [The Plugin Setup Process](../02-the-dao-framework/02-plugin-marketplace/04-plugin-setup.md))
+5. Use the `EXECUTE_PERMISSION_ID` permission to call the `PluginSetupProcessor` to install the requested plugins (see [The Plugin Setup Process](../02-the-dao-framework/02-plugin-repository/04-plugin-setup.md))
    :::note
    The UI will make sure that the creator has selected at least one governance plugin having `EXECUTE_PERMISSION_ID` permission on the DAO as it will be revoked in the next step.
    :::
