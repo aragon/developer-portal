@@ -1,3 +1,3 @@
-export * from './aragon-sdk'
-export * from './design-system'
-export * from './smart-contracts'
+export * from './aragon-sdk';
+export * from './design-system';
+export * from './aragon-core';

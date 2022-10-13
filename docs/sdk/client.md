@@ -20,62 +20,54 @@ yarn add @aragon/sdk-client
 ```ts
 // For local testing
 const contextParams: ContextParams = {
-    network: 31337,
-    signer: new Wallet("privateKey"),
-    daoFactoryAddress: "daoFactoryAddress",
-    web3Providers: ["http://localhost:8545"],
+  network: 31337,
+  signer: new Wallet('privateKey'),
+  daoFactoryAddress: 'daoFactoryAddress',
+  web3Providers: ['http://localhost:8545'],
 };
 const context = new Context(contextParams);
 
 const client = new ClientDaoERC20Voting(context);
 
 const daoCreationParams: ICreateDaoERC20Voting = {
-    daoConfig: {
-        name: "ERC20VotingDAO_" + Math.floor(Math.random() * 9999) + 1,
-        metadata: "0x1234",
+  daoConfig: {
+    name: 'ERC20VotingDAO_' + Math.floor(Math.random() * 9999) + 1,
+    metadata: '0x1234',
+  },
+  tokenConfig: {
+    address: '0x0000000000000000000000000000000000000000',
+    name:
+      'TestToken' + (Math.random() + 1).toString(36).substring(4).toUpperCase(),
+    symbol:
+      'TEST' + (Math.random() + 1).toString(36).substring(4).toUpperCase(),
+  },
+  mintConfig: [
+    {
+      address: Wallet.createRandom().address,
+      balance: BigInt(Math.floor(Math.random() * 9999) + 1),
     },
-    tokenConfig: {
-        address: "0x0000000000000000000000000000000000000000",
-        name:
-            "TestToken" +
-            (Math.random() + 1)
-                .toString(36)
-                .substring(4)
-                .toUpperCase(),
-        symbol:
-            "TEST" +
-            (Math.random() + 1)
-                .toString(36)
-                .substring(4)
-                .toUpperCase(),
+    {
+      address: Wallet.createRandom().address,
+      balance: BigInt(Math.floor(Math.random() * 9999) + 1),
     },
-    mintConfig: [
-        {
-            address: Wallet.createRandom().address,
-            balance: BigInt(Math.floor(Math.random() * 9999) + 1),
-        },
-        {
-            address: Wallet.createRandom().address,
-            balance: BigInt(Math.floor(Math.random() * 9999) + 1),
-        },
-    ],
-    votingConfig: {
-        minSupport: Math.floor(Math.random() * 100) + 1,
-        minParticipation: Math.floor(Math.random() * 100) + 1,
-        minDuration: Math.floor(Math.random() * 9999) + 1,
-    },
-    gsnForwarder: Wallet.createRandom().address,
+  ],
+  votingConfig: {
+    minSupport: Math.floor(Math.random() * 100) + 1,
+    minParticipation: Math.floor(Math.random() * 100) + 1,
+    minDuration: Math.floor(Math.random() * 9999) + 1,
+  },
+  gsnForwarder: Wallet.createRandom().address,
 };
 
 const gasFeesEstimation = await client.estimate.create(daoCreationParams);
-console.log(gasFeesEstimation)
+console.log(gasFeesEstimation);
 // {
-//   average: BigNumber { _hex: '0x0a509a23250504', _isBigNumber: true }, // Average gas fee estimation (reducing the max value by heuristic) 
+//   average: BigNumber { _hex: '0x0a509a23250504', _isBigNumber: true }, // Average gas fee estimation (reducing the max value by heuristic)
 //   max: BigNumber { _hex: '0x1080f69ea1a1fc', _isBigNumber: true } // Maximum gas fee estimation
 // }
 
 const newDaoAddress = await client.dao.create(daoCreationParams);
-console.log(newDaoAddress) // New DAO address
+console.log(newDaoAddress); // New DAO address
 ```
 
 ###### DAO Whitelist Voting
@@ -83,40 +75,40 @@ console.log(newDaoAddress) // New DAO address
 ```ts
 // For local testing
 const contextParams: ContextParams = {
-    network: 31337,
-    signer: new Wallet("privateKey"),
-    daoFactoryAddress: "daoFactoryAddress",
-    web3Providers: ["http://localhost:8545"],
+  network: 31337,
+  signer: new Wallet('privateKey'),
+  daoFactoryAddress: 'daoFactoryAddress',
+  web3Providers: ['http://localhost:8545'],
 };
 const context = new Context(contextParams);
 
 const client = new ClientDaoWhitelistVoting(context);
 
 const daoCreationParams: ICreateDaoWhitelistVoting = {
-    daoConfig: {
-        name: "WhitelistVotingDAO_" + Math.floor(Math.random() * 9999) + 1,
-        metadata: "0x1234",
-    },
-    votingConfig: {
-        minSupport: Math.floor(Math.random() * 100) + 1,
-        minParticipation: Math.floor(Math.random() * 100) + 1,
-        minDuration: Math.floor(Math.random() * 9999) + 1,
-    },
-    whitelistVoters: [
-        Wallet.createRandom().address,
-        Wallet.createRandom().address,
-    ],
-    gsnForwarder: Wallet.createRandom().address,
+  daoConfig: {
+    name: 'WhitelistVotingDAO_' + Math.floor(Math.random() * 9999) + 1,
+    metadata: '0x1234',
+  },
+  votingConfig: {
+    minSupport: Math.floor(Math.random() * 100) + 1,
+    minParticipation: Math.floor(Math.random() * 100) + 1,
+    minDuration: Math.floor(Math.random() * 9999) + 1,
+  },
+  whitelistVoters: [
+    Wallet.createRandom().address,
+    Wallet.createRandom().address,
+  ],
+  gsnForwarder: Wallet.createRandom().address,
 };
 
 const gasFeesEstimation = await client.estimate.create(daoCreationParams);
 // {
-//   average: BigNumber { _hex: '0x0a509a23250504', _isBigNumber: true }, // Average gas fee estimation (reducing the max value by heuristic) 
+//   average: BigNumber { _hex: '0x0a509a23250504', _isBigNumber: true }, // Average gas fee estimation (reducing the max value by heuristic)
 //   max: BigNumber { _hex: '0x1080f69ea1a1fc', _isBigNumber: true } // Maximum gas fee estimation
 // }
 
 const newDaoAddress = await client.dao.create(daoCreationParams);
-console.log(newDaoAddress) // New DAO address
+console.log(newDaoAddress); // New DAO address
 ```
 
 #### Proposal Creation
@@ -126,26 +118,26 @@ console.log(newDaoAddress) // New DAO address
 ```ts
 // For local testing
 const contextParams: ContextParams = {
-    network: 31337,
-    signer: new Wallet("privateKey"),
-    daoFactoryAddress: "daoFactoryAddress",
-    web3Providers: ["http://localhost:8545"],
+  network: 31337,
+  signer: new Wallet('privateKey'),
+  daoFactoryAddress: 'daoFactoryAddress',
+  web3Providers: ['http://localhost:8545'],
 };
 const context = new Context(contextParams);
 
 const client = new ClientDaoERC20Voting(context);
 
 const proposalCreationParams: ICreateProposal = {
-    metadata: "0x1234", // IPFS CID
-    executeIfDecided: true,
-    creatorChoice: VoteOption.YEA,
+  metadata: '0x1234', // IPFS CID
+  executeIfDecided: true,
+  creatorChoice: VoteOption.YEA,
 };
 
 const newProposalId = await client.dao.simpleVote.createProposal(
-    "votingAddress",
-    proposalCreationParams
+  'votingAddress',
+  proposalCreationParams
 );
-console.log(newProposalId) // New proposal id
+console.log(newProposalId); // New proposal id
 ```
 
 ###### Whitelist Voting Proposal
@@ -153,26 +145,26 @@ console.log(newProposalId) // New proposal id
 ```ts
 // For local testing
 const contextParams: ContextParams = {
-    network: 31337,
-    signer: new Wallet("privateKey"),
-    daoFactoryAddress: "daoFactoryAddress",
-    web3Providers: ["http://localhost:8545"],
+  network: 31337,
+  signer: new Wallet('privateKey'),
+  daoFactoryAddress: 'daoFactoryAddress',
+  web3Providers: ['http://localhost:8545'],
 };
 const context = new Context(contextParams);
 
 const client = new ClientDaoWhitelistVoting(context);
 
 const proposalCreationParams: ICreateProposal = {
-    metadata: "0x1234",
-    executeIfDecided: true,
-    creatorChoice: VoteOption.YEA,
+  metadata: '0x1234',
+  executeIfDecided: true,
+  creatorChoice: VoteOption.YEA,
 };
 
 const newProposalId = await client.dao.whitelist.createProposal(
-    "votingAddress",
-    proposalCreationParams
+  'votingAddress',
+  proposalCreationParams
 );
-console.log(newProposalId) // New proposal id
+console.log(newProposalId); // New proposal id
 ```
 
 ## Testing
