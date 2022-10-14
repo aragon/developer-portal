@@ -13,7 +13,7 @@ Depending on the use-case of your plugin, you may need it to be:
 - compatible with meta transactions
 
 :::caution
-Upgradeable plugin contracts (such as `PluginUpgradeable`, `PluginUUPSUpgradeable` implementations) must reserve storage slots by defining a storage gap. If this is not done properly and/or variables are rearranged in the upgrade, the storage can become corrupted rendering it inaccessible and resulting in the loss of funds.
+Upgradeable plugin contracts (such as `PluginUpgradeable`, `PluginUUPSUpgradeable` implementations) must reserve empty space by defining a [storage gap](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps). If this is not done properly and/or variables are rearranged in the upgrade, the storage can become corrupted rendering it inaccessible and resulting in the loss of funds.
 :::
 
 ### Upgradeability & Deployment

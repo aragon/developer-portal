@@ -4,8 +4,7 @@ title: The DAO Framework
 
 ## The Infrastructure Behind the AraongOS DAO Framework
 
-To enable the creation of DAOs and the setup of plugins, aragonOS provides the necessary **framework infrastructure**.
-This infrastructure consists of multiple smart contracts being related to the **creation of DAOs** and the **management of the Aragon plugin repository** - a curated list of plugins.
+The AragonOS DAO Framework provides **infrastructure-related contracts** for the **creation of DAOs** and the **management of the Aragon plugin repository**.
 
 <div class="center-column">
 
