@@ -10,7 +10,7 @@ In this section you will learn how the plugin setup process in aragonOS works.
 In order for a plugin to function, associated contracts need to be deployed and gathered, often requiring permissions from the DAO.  
 For ex, a finance plugin might need the permission to `withdraw` assets from the treasury and a governance plugin will need permission to `execute` actions in the DAO.
 
-The required setup logic is written and taken care off by the plugin developer in the `PluginSetup` contract associated with each `Plugin` contract version release (see [Developing a Plugin](docs/core/02-how-to-guides/01-plugin-development/index.md)) which interact with the aragonOS framework infrastructure so that installing, updating, and uninstalling a plugin to a DAO through the UI becomes very simple for the DAO end-user.
+The required setup logic is written and taken care off by the plugin developer in the `PluginSetup` contract they create and that is associated with each `Plugin` contract version release (see [Developing a Plugin](docs/core/02-how-to-guides/01-plugin-development/index.md)). The `PluginSetup` contract then interacts with the aragonOS framework so that installing, updating, and uninstalling a plugin to a DAO through the UI becomes very simple for the DAO end-user.
 
 ### Security Considerations
 
@@ -35,10 +35,7 @@ In the following, we describe the two steps in detail.
 The preparation of a plugin setup proceeds as follows:
 
 1. A DAO builder selects a plugin with a specific version from the UI to install, uninstall, or update. Depending on the case, the `prepareInstallation`, `prepareUpdate`, or `prepareUninstallation` method in the `PluginSetup` contract associated with that version is called through the `PluginSetupProcessor` (and creates a unique setup ID).
-2. The `PluginSetup` contract deploys all the contracts
-
-   and gathers addresses and other input arguments required for the plugin setup.
-   This can include:
+2. The `PluginSetup` contract deploys all the contracts and gathers addresses and other input arguments required for the plugin setup. This can include:
 
    - deployment of new contracts
    - initialization of new storage variables
@@ -49,7 +46,7 @@ The preparation of a plugin setup proceeds as follows:
 
 3. The list containing the required permissions is then proposed as an `Action[]` array for processing in a proposal through a governance plugin of the installing DAO.
 
-:::note
+:::info
 The governance plugin can be a simple majority vote, an optimistic process or an admin governance plugin that does not involve a waiting period. It can be any governance mechanism existing within the DAO.
 :::
 
@@ -60,13 +57,15 @@ This gives the DAO time to see and check which permissions the `PluginSetup` con
 After this initial transaction, all contracts and addresses related to the plugin as well as their permissions are known and the DAO can decide if the proposal should be accepted or denied.
 Once the proposal has passed, the actions specified in the `Action[]` array get executed and the prepared plugin setup is processed as follows:
 
-1. The DAO temporarily grants the `ROOT_PERMISSION_ID` permission to the `PluginSetupProcessor`.
+1. The DAO temporarily grants the `ROOT_PERMISSION_ID` permission to the `PluginSetupProcessor`. This is needed so that the processor can modify the DAO's permissions settings to setup the plugin.
 2. The next `Action` calls the `processInstallation`, `processUpdate`, or `processUninstallation` method in the `PluginSetupProcessor` depending on the setup process and with the permission list as an argument. The permission hash is compared with the stored hash to make sure that the permission didn’t change.
    In addition to the above, the update process also upgrades the logic contract to which the proxy points too.
 3. If the hash is valid, the list is processed and `PluginSetupProcessor` conducts the requested sequence of `grant`, `grantWithOracle`, `revoke`, and `freeze` calls on the owning DAO.
    Finally, the `PluginSetupProcessor` asks the DAO to revoke the `ROOT_PERMISSION_ID` permission from itself.
 
+:::info
 The two-step setup procedure in aragonOS is not limited to the setup of only one plugin — you can **setup multiple plugins at once** by first preparing them in a single proposal and then processing the entire setup sequence in one transaction. This is powerful and allows you to **transform your entire DAO in one proposal**, for example, to install a new governance plugin (e.g., a gasless ZK-vote) and finance plugin (e.g., to stream loans to your members), while uninstalling your old ERC20 token vote in one go.
+:::
 
 In the next sections, you will learn about how plugins are curated on Aragon's repository.
 
