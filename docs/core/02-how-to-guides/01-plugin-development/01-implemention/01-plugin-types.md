@@ -58,11 +58,11 @@ The following table presents an overview of the different deployment methods wit
 
 Accordingly, we recommend the UUPS proxy method for developing easily updatable Aragon Plugins and minimal clones for those, where the availability of the storage after the update is secondary / not needed.
 
-To help you with developing and deploying the plugin within the Aragon infrastructure, we provide plugin interfaces and setup contracts for [the OpenZepplin Contracts Proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy) that you can inherit from besides the standard abstract `Plugin` contract
+To help you with developing and deploying your plugin within the Aragon infrastructure, we provide the following implementation and setup contract base classes that you can inherit from:
 
-- `PluginClones`
-- `PluginTransparentUpgradeable`
-- `PluginUUPSUpgradeable`
+- `Plugin` (intended for instantiation via `new`)
+- `PluginClones` (intended for the deployment via the [minimal clones pattern (ERC-1167)](https://eips.ethereum.org/EIPS/eip-1167))
+- `PluginUUPSUpgradeable` (intended for deployment via the [UUPS pattern (ERC-1822)](https://eips.ethereum.org/EIPS/eip-1822))
 
 #### Caveats of non-upgradeable Plugins
 
