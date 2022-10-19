@@ -2,7 +2,7 @@
 title: Upgradeable Plugins
 ---
 
-## Developing the Setup Contract for Upgradeabe Contracts
+## Developing the Setup Contract for Upgradeable Contracts
 
 :::note
 To Do
