@@ -26,7 +26,7 @@ Work in progress
 | `PermissionLib`     | A library for data types needed for the processing of permission operations.                        | used by `DAO`, `PluginSetup`, `PluginSetupProcessor` |
 | `IPermissionOracle` | An interface for oracle implementations.                                                            | implementations can be used by `PermissionManager`   |
 
-#### Plugin Templates Related
+#### Plugin Related
 
 | Contract                         | Description                                                                                                                                                      | Relationship                         |
 | :------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
