@@ -54,12 +54,20 @@ The ID of the permission required to call the `setTrustedForwarder` function.
 bytes32 SET_TRUSTED_FORWARDER_PERMISSION_ID 
 ```
 
-#### internal variable `signatureValidator`
+#### public variable `REGISTER_STANDARD_CALLBACK_PERMISSION_ID`
+
+The ID of the permission required to call the `registerStandardCallback` function.
+
+```solidity
+bytes32 REGISTER_STANDARD_CALLBACK_PERMISSION_ID 
+```
+
+#### public variable `signatureValidator`
 
 The [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
 
 ```solidity
-contract ERC1271 signatureValidator 
+contract IERC1271 signatureValidator 
 ```
 
 #### private variable `trustedForwarder`
@@ -237,7 +245,7 @@ function withdraw(address _token, address _to, uint256 _amount, string _referenc
 
 #### external function `setSignatureValidator`
 
-Setter for the ERC1271 signature validator contract.
+Setter for the [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
 
 ```solidity
 function setSignatureValidator(address _signatureValidator) external 
@@ -245,7 +253,7 @@ function setSignatureValidator(address _signatureValidator) external
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _signatureValidator | address | ERC1271 SignatureValidator. |
+| _signatureValidator | address | The address of the signature validator. |
 
 #### external function `isValidSignature`
 
@@ -304,4 +312,26 @@ function _setTrustedForwarder(address _trustedForwarder) internal
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _trustedForwarder | address | The trusted forwarder address. |
+
+#### external function `registerStandardCallback`
+
+Registers an ERC standard having a callback by registering its [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID and callback function signature.
+
+```solidity
+function registerStandardCallback(bytes4 _interfaceId, bytes4 _callbackSelector, bytes4 _magicNumber) external 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| _interfaceId | bytes4 | The ID of the interface. |
+| _callbackSelector | bytes4 | The selector of the callback function. |
+| _magicNumber | bytes4 | The magic number to be registered for the function signature. |
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[48] __gap 
+```
 

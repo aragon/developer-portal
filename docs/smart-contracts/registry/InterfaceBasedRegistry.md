@@ -115,3 +115,11 @@ function _register(address _registrant) internal
 
 *The managing DAO needs to grant REGISTER_PERMISSION_ID to registrar.*
 
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[48] __gap 
+```
+

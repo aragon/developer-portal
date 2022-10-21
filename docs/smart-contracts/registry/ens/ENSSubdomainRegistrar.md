@@ -4,12 +4,12 @@
 
 This contract registers ENS subdomains under a parent domain specified in the initialization process and maintains ownership of the subdomain since only the resolver address is set. This contract must either be the domain node owner or an approved operator of the node owner. The default resolver being used is the one specified in the parent domain.
 
-#### internal variable `REGISTRY_INTERFACE_ID`
+#### public variable `UPGRADE_PERMISSION_ID`
 
-The [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID of the contract.
+The ID of the permission required to call the `_authorizeUpgrade` function.
 
 ```solidity
-bytes4 REGISTRY_INTERFACE_ID 
+bytes32 UPGRADE_PERMISSION_ID 
 ```
 
 #### public variable `REGISTER_ENS_SUBDOMAIN_PERMISSION_ID`
@@ -88,6 +88,16 @@ function initialize(contract IDAO _managingDao, contract ENS _ens, bytes32 _node
 | _ens | contract ENS | The interface of the ENS registry to be used. |
 | _node | bytes32 | The ENS parent domain node under which the subdomains are to be registered. |
 
+#### internal function `_authorizeUpgrade`
+
+Internal method authorizing the upgrade of the contract via the [upgradeabilty mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
+
+```solidity
+function _authorizeUpgrade(address) internal virtual 
+```
+
+*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+
 #### external function `registerSubnode`
 
 Registers a new subdomain with this registrar as the owner and set the target address in the resolver.
@@ -112,4 +122,12 @@ function setDefaultResolver(contract Resolver _resolver) external
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _resolver | contract Resolver | The resolver contract to be used. |
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[47] __gap 
+```
 

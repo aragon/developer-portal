@@ -10,22 +10,10 @@ To get the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens back, the owne
 
 *This contract intentionally has no public mint functionality because this is the responsibility of the underlying [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token contract.*
 
-#### external function `versionRecipient`
-
-Returns the version of the GSN relay recipient
+#### public function `constructor`
 
 ```solidity
-function versionRecipient() external view virtual returns (string) 
-```
-
-*Describes the version and contract for GSN compatibility*
-
-#### internal function `__GovernanceWrappedERC20_init`
-
-Internal initialization method.
-
-```solidity
-function __GovernanceWrappedERC20_init(contract IERC20Upgradeable _token, string _name, string _symbol) internal 
+constructor(contract IERC20Upgradeable _token, string _name, string _symbol) public 
 ```
 
 | Input | Type | Description |
@@ -34,12 +22,12 @@ function __GovernanceWrappedERC20_init(contract IERC20Upgradeable _token, string
 | _name | string | The name of the wrapped token. |
 | _symbol | string | The symbol fo the wrapped token. |
 
-#### external function `initialize`
+#### public function `initialize`
 
-Initializes the component.
+Initializes the GovernanceWrappedERC20.
 
 ```solidity
-function initialize(contract IERC20Upgradeable _token, string _name, string _symbol) external 
+function initialize(contract IERC20Upgradeable _token, string _name, string _symbol) public 
 ```
 
 | Input | Type | Description |
@@ -47,6 +35,20 @@ function initialize(contract IERC20Upgradeable _token, string _name, string _sym
 | _token | contract IERC20Upgradeable | The underlying [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token. |
 | _name | string | The name of the wrapped token. |
 | _symbol | string | The symbol fo the wrapped token. |
+
+#### public function `supportsInterface`
+
+Checks if this or the parent contract supports an interface by its ID.
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| interfaceId | bytes4 | The ID of the interace. |
+| **Output** | |
+| [0] | bool | bool Returns true if the interface is supported. |
 
 #### public function `decimals`
 
@@ -56,25 +58,31 @@ function decimals() public view returns (uint8)
 
 *Uses the `decimals` of the underlying [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token.*
 
-#### internal function `_msgSender`
+#### public function `depositFor`
 
-Uses the `BaseRelayRecipient` `_msgSender()` context.
-
-```solidity
-function _msgSender() internal view virtual returns (address) 
-```
-
-*`BaseRelayRecipient` is the first contract in the inheritance chain and is thus called by `super._msgSender()`.*
-
-#### internal function `_msgData`
-
-Uses the `BaseRelayRecipient` `_msgData()` context.
+Deposits an amount of underlying token and mints the corresponding number of wrapped tokens for an receiving address.
 
 ```solidity
-function _msgData() internal view virtual returns (bytes) 
+function depositFor(address account, uint256 amount) public returns (bool) 
 ```
 
-*`BaseRelayRecipient` is the first contract in the inheritance chain and is thus called by `super._msgData()`.*
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| account | address | The address receiving the minted, wrapped tokens. |
+| amount | uint256 | The amount of tokens to be  minted. |
+
+#### public function `withdrawTo`
+
+Withdraws an amount of underlying tokens to an receiving address and burns the corresponding number of wrapped tokens.
+
+```solidity
+function withdrawTo(address account, uint256 amount) public returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| account | address | The address receiving the withdrawn, underlying tokens. |
+| amount | uint256 | The amount of underlying tokens to be withdrawn. |
 
 #### internal function `_afterTokenTransfer`
 
@@ -82,18 +90,9 @@ function _msgData() internal view virtual returns (bytes)
 function _afterTokenTransfer(address from, address to, uint256 amount) internal 
 ```
 
-*Hook that is called after any transfer of tokens. This includes
-minting and burning.
+*Move voting power when tokens are transferred.
 
-Calling conditions:
-
-- when `from` and `to` are both non-zero, `amount` of ``from``'s tokens
-has been transferred to `to`.
-- when `from` is zero, `amount` tokens have been minted for `to`.
-- when `to` is zero, `amount` of ``from``'s tokens have been burned.
-- `from` and `to` are never both zero.
-
-To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].*
+Emits a {DelegateVotesChanged} event.*
 
 #### internal function `_mint`
 
@@ -101,14 +100,7 @@ To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hook
 function _mint(address to, uint256 amount) internal 
 ```
 
-*Creates `amount` tokens and assigns them to `account`, increasing
-the total supply.
-
-Emits a {Transfer} event with `from` set to the zero address.
-
-Requirements:
-
-- `account` cannot be the zero address.*
+*Snapshots the totalSupply after it has been increased.*
 
 #### internal function `_burn`
 
@@ -116,13 +108,5 @@ Requirements:
 function _burn(address account, uint256 amount) internal 
 ```
 
-*Destroys `amount` tokens from `account`, reducing the
-total supply.
-
-Emits a {Transfer} event with `to` set to the zero address.
-
-Requirements:
-
-- `account` cannot be the zero address.
-- `account` must have at least `amount` tokens.*
+*Snapshots the totalSupply after it has been decreased.*
 

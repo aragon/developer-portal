@@ -249,13 +249,13 @@ function freeze(address _where, bytes32 _permissionId) external
 Processes bulk items on the permission manager.
 
 ```solidity
-function bulkOnSingleTarget(address _where, struct BulkPermissionsLib.ItemSingleTarget[] items) external 
+function bulkOnSingleTarget(address _where, struct PermissionLib.ItemSingleTarget[] items) external 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _where | address | The address of the contract. |
-| items | struct BulkPermissionsLib.ItemSingleTarget[] | The array of bulk items to process. |
+| items | struct PermissionLib.ItemSingleTarget[] | The array of bulk items to process. |
 
 *Requires the `ROOT_PERMISSION_ID` permission.*
 
@@ -264,12 +264,12 @@ function bulkOnSingleTarget(address _where, struct BulkPermissionsLib.ItemSingle
 Processes bulk items on the permission manager.
 
 ```solidity
-function bulkOnMultiTarget(struct BulkPermissionsLib.ItemMultiTarget[] items) external 
+function bulkOnMultiTarget(struct PermissionLib.ItemMultiTarget[] items) external 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| items | struct BulkPermissionsLib.ItemMultiTarget[] | The array of bulk items to process. |
+| items | struct PermissionLib.ItemMultiTarget[] | The array of bulk items to process. |
 
 *Requires that msg.sender has each permissionId on the where.*
 
@@ -392,10 +392,10 @@ function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _
 
 #### private function `_auth`
 
-A modifier to be used to check permissions on a target contract.
+A private function to be used to check permissions on a target contract.
 
 ```solidity
-function _auth(address _where, bytes32 _permissionId) private 
+function _auth(address _where, bytes32 _permissionId) private view 
 ```
 
 | Input | Type | Description |
@@ -433,4 +433,12 @@ function frozenPermissionHash(address _where, bytes32 _permissionId) internal pu
 | _permissionId | bytes32 | The permission identifier. |
 | **Output** | |
 | [0] | bytes32 | bytes32 The hash used in the `frozenPermissions` mapping. |
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[48] __gap 
+```
 

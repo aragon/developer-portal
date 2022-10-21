@@ -49,6 +49,20 @@ function initialize(contract IDAO _dao, address _trustedForwarder, uint64 _parti
 
 *This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
 
+#### public function `supportsInterface`
+
+adds a IERC165 to check whether contract supports ERC20_VOTING_INTERFACE_ID or not.
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+```
+
+| Output | Type | Description |
+| ------ | ---- | ----------- |
+| [0] | bool | bool whether it supports the IERC165 or ERC20_VOTING_INTERFACE_ID |
+
+*See {ERC165Upgradeable-supportsInterface}.*
+
 #### public function `getVotingToken`
 
 getter function for the voting token.
@@ -62,16 +76,6 @@ function getVotingToken() public view returns (contract ERC20VotesUpgradeable)
 | [0] | contract ERC20VotesUpgradeable | ERC20VotesUpgradeable the token used for voting. |
 
 *public function also useful for registering interfaceId and for distinguishing from majority voting interface.*
-
-#### external function `versionRecipient`
-
-Returns the version of the GSN relay recipient.
-
-```solidity
-function versionRecipient() external view virtual returns (string) 
-```
-
-*Describes the version and contract for GSN compatibility.*
 
 #### external function `createVote`
 
@@ -108,4 +112,14 @@ function _canVote(uint256 _voteId, address _voter) internal view returns (bool)
 | _voter | address | the address of the voter to check. |
 | **Output** | |
 | [0] | bool | True if the given voter can participate a certain vote, false otherwise. |
+
+#### private variable `__gap`
+
+```solidity
+uint256[49] __gap 
+```
+
+*This empty reserved space is put in place to allow future versions to add new
+variables without shifting down storage in the inheritance chain.
+https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps*
 

@@ -150,6 +150,20 @@ function __MajorityVotingBase_init(contract IDAO _dao, address _trustedForwarder
 
 *This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
 
+#### public function `supportsInterface`
+
+Checks if this or the parent contract supports an interface by its ID.
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| interfaceId | bytes4 | The ID of the interace. |
+| **Output** | |
+| [0] | bool | bool Returns true if the interface is supported. |
+
 #### external function `setConfiguration`
 
 Sets the vote configuration.
@@ -239,7 +253,7 @@ function canVote(uint256 _voteId, address _voter) public view returns (bool)
 | _voteId | uint256 | the vote Id. |
 | _voter | address | the address of the voter to check. |
 | **Output** | |
-| [0] | bool | bool true if user is allowed to vote. |
+| [0] | bool | bool Returns true if the voter is allowed to vote. |
 
 #### public function `canExecute`
 
@@ -379,5 +393,13 @@ function _isValuePct(uint256 _value, uint256 _total, uint256 _pct) internal pure
 
 ```solidity
 function _validateAndSetSettings(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) internal virtual 
+```
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[47] __gap 
 ```
 

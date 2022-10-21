@@ -2,14 +2,14 @@
 
 ###  contract `PluginRepoFactory`
 
-This contract creates `PluginRepo` proxies and registers them on an `AragonPluginRegistry` contract.
+This contract creates `PluginRepo` proxies and registers them on an `PluginRepoRegistry` contract.
 
-#### public variable `aragonPluginRegistry`
+#### public variable `pluginRepoRegistry`
 
 The Aragon plugin registry contract.
 
 ```solidity
-contract AragonPluginRegistry aragonPluginRegistry 
+contract PluginRepoRegistry pluginRepoRegistry 
 ```
 
 #### public variable `pluginRepoBase`
@@ -31,12 +31,12 @@ error EmptyPluginRepoName()
 Initializes the addresses of the Aragon plugin registry and `PluginRepo` base contract to proxy to.
 
 ```solidity
-constructor(contract AragonPluginRegistry _aragonPluginRegistry) public 
+constructor(contract PluginRepoRegistry _pluginRepoRegistry) public 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _aragonPluginRegistry | contract AragonPluginRegistry | The aragon plugin registry address. |
+| _pluginRepoRegistry | contract PluginRepoRegistry | The aragon plugin registry address. |
 
 #### external function `createPluginRepo`
 
@@ -56,14 +56,14 @@ function createPluginRepo(string _name, address _initialOwner) external returns 
 Creates and registers a named `PluginRepo` and publishes an initial version.
 
 ```solidity
-function createPluginRepoWithVersion(string _name, uint16[3] _initialSemanticVersion, address _pluginManager, bytes _contentURI, address _maintainer) external returns (contract PluginRepo pluginRepo) 
+function createPluginRepoWithVersion(string _name, uint16[3] _initialSemanticVersion, address _pluginSetup, bytes _contentURI, address _maintainer) external returns (contract PluginRepo pluginRepo) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _name | string | The plugin repository name. |
 | _initialSemanticVersion | uint16[3] | The semantic version for the new plugin repository version. |
-| _pluginManager | address | The plugin factory contract associated with the plugin version. |
+| _pluginSetup | address | The plugin factory contract associated with the plugin version. |
 | _contentURI | bytes | The external URI for fetching the new version's content. |
 | _maintainer | address | The plugin maintainer address. |
 
