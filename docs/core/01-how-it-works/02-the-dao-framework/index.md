@@ -8,10 +8,10 @@ The AragonOS DAO Framework provides **infrastructure-related contracts** for the
 
 <div class="center-column">
 
-![](aragon-os-architecture-Overview.drawio.svg)
+![](aragon-os-framework-overview.drawio.svg)
 
 <p class="caption"> 
-  Schematic overview of the Aragon DAO Framework with its components; the governance layer, code layer with external dependencies; and their responsibilities.
+  Overview of the aragonOS DAO Framework with its components; the governance layer, code layer with external dependencies; and their responsibilities.
 </p>
 
 </div>
