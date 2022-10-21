@@ -47,11 +47,11 @@ To learn more about the architecture of the system, visit the section explaining
 
 #### Permission Related
 
-| Contract            | Description                                                                                         | Relationship                                         |
-| :------------------ | :-------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
+| Contract            | Description                                                                                          | Relationship                                         |
+| :------------------ | :--------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
 | `PermissionManager` | A permission manager (an access control list (ACL)) that `DAO` and other contracts can inherit from. | owned by `DAO`                                       |
-| `PermissionLib`     | A library for data types needed for the processing of permission operations.                        | used by `DAO`, `PluginSetup`, `PluginSetupProcessor` |
-| `IPermissionOracle` | An interface for oracle implementations.                                                            | implementations can be used by `PermissionManager`   |
+| `PermissionLib`     | A library for data types needed for the processing of permission operations.                         | used by `DAO`, `PluginSetup`, `PluginSetupProcessor` |
+| `IPermissionOracle` | An interface for oracle implementations.                                                             | implementations can be used by `PermissionManager`   |
 
 #### Plugin Related
 
@@ -71,29 +71,29 @@ To learn more about the architecture of the system, visit the section explaining
 
 #### DAO Creation
 
-| Contract      | Description                                                | Relationship    |
-| :------------ | :--------------------------------------------------------- | :-------------- |
+| Contract      | Description                                                                                         | Relationship    |
+| :------------ | :-------------------------------------------------------------------------------------------------- | :-------------- |
 | `DAOFactory`  | A global helper to deploy new DAO instances and bootstrap the initial plugins, using our framework. | creates `DAO`   |
-| `DAORegistry` | Registers DAOs and assigns an ENS subdomain                                            | registers `DAO` |
+| `DAORegistry` | Registers DAOs and assigns an ENS subdomain                                                         | registers `DAO` |
 
 #### Plugin Management
 
-| Contract             | Description                                                         | Relationship                                         |
-| :------------------- | :------------------------------------------------------------------ | :--------------------------------------------------- |
-| `PluginSetup`        | A template so that plugin developers can bootstrap plugins and helpers for a DAO using our framework.          | `Plugin`, `PluginCloneable`, `PluginUUPSUpgradeable` |
-| `PluginRepo`         | A repository of a plugin's versions. Each version contains the corresponding `PluginSetup` contract. | versions `PluginSetup`                               |
-| `PluginRepoFactory`  | Creates `PluginRepo` contracts                                      | creates `PluginRepo`                                 |
-| `PluginRepoRegistry` | Registers `PluginRepo` contracts                                    | registers `PluginRepo`                               |
+| Contract             | Description                                                                                           | Relationship                                         |
+| :------------------- | :---------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
+| `PluginSetup`        | A template so that plugin developers can bootstrap plugins and helpers for a DAO using our framework. | `Plugin`, `PluginCloneable`, `PluginUUPSUpgradeable` |
+| `PluginRepo`         | A repository of a plugin's versions. Each version contains the corresponding `PluginSetup` contract.  | versions `PluginSetup`                               |
+| `PluginRepoFactory`  | Creates `PluginRepo` contracts                                                                        | creates `PluginRepo`                                 |
+| `PluginRepoRegistry` | Registers `PluginRepo` contracts                                                                      | registers `PluginRepo`                               |
 
 ### Plugin Implementations
 
 | Contract             | Description                                                                                  | Relationship                                                                    |
 | :------------------- | :------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
-| `MerkleMinter`       | Mints `ERC-20` tokens and distributes them on merkle trees using `MerkleDistributor` clones. | is `PluginUUPSUpgradeable`, uses `MerkleDistributor`, is used by `TokenFactory` |
-| `MerkleDistributor`  | Distributes claimable ERC-20 tokens via a merkle tree.                                       | is `PluginUUPSUpgradeable`                                                      |
-| `MajorityVotingBase` | Contains abstract, majority voting functionality.                                            | is parent of `ERC20Voting` and `AllowlistVoting`                                |
 | `ERC20Voting`        | A majority voting plugin using ERC-20 tokens for the census.                                 | inherits from `MajorityVotingBase`                                              |
 | `AllowlistVoting`    | A majority voting plugin using a list of allowed addresses for the census.                   | inherits from `MajorityVotingBase`                                              |
+| `MajorityVotingBase` | Contains abstract, majority voting functionality.                                            | is parent of `ERC20Voting` and `AllowlistVoting`                                |
+| `MerkleMinter`       | Mints `ERC-20` tokens and distributes them on merkle trees using `MerkleDistributor` clones. | is `PluginUUPSUpgradeable`, uses `MerkleDistributor`, is used by `TokenFactory` |
+| `MerkleDistributor`  | Distributes claimable ERC-20 tokens via a merkle tree.                                       | is `PluginUUPSUpgradeable`                                                      |
 
 ### Utilities
 
