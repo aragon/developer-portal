@@ -49,7 +49,7 @@ To learn more about the architecture of the system, visit the section explaining
 
 | Contract            | Description                                                                                         | Relationship                                         |
 | :------------------ | :-------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
-| `PermissionManager` | A permission manager (an access control list (ACL) that `DAO` and other contracts can inherit from. | owned by `DAO`                                       |
+| `PermissionManager` | A permission manager (an access control list (ACL)) that `DAO` and other contracts can inherit from. | owned by `DAO`                                       |
 | `PermissionLib`     | A library for data types needed for the processing of permission operations.                        | used by `DAO`, `PluginSetup`, `PluginSetupProcessor` |
 | `IPermissionOracle` | An interface for oracle implementations.                                                            | implementations can be used by `PermissionManager`   |
 
@@ -73,15 +73,15 @@ To learn more about the architecture of the system, visit the section explaining
 
 | Contract      | Description                                                | Relationship    |
 | :------------ | :--------------------------------------------------------- | :-------------- |
-| `DAOFactory`  | A template to setup plugins for a DAO using our framework. | creates `DAO`   |
-| `DAORegistry` | Registers DAOs                                             | registers `DAO` |
+| `DAOFactory`  | A global helper to deploy new DAO instances and bootstrap the initial plugins, using our framework. | creates `DAO`   |
+| `DAORegistry` | Registers DAOs and assigns an ENS subdomain                                            | registers `DAO` |
 
 #### Plugin Management
 
 | Contract             | Description                                                         | Relationship                                         |
 | :------------------- | :------------------------------------------------------------------ | :--------------------------------------------------- |
-| `PluginSetup`        | A template to setup plugins for a DAO using our framework.          | `Plugin`, `PluginCloneable`, `PluginUUPSUpgradeable` |
-| `PluginRepo`         | Versions a plugin by storing the associated `PluginSetup` contract. | versions `PluginSetup`                               |
+| `PluginSetup`        | A template so that plugin developers can bootstrap plugins and helpers for a DAO using our framework.          | `Plugin`, `PluginCloneable`, `PluginUUPSUpgradeable` |
+| `PluginRepo`         | A repository of a plugin's versions. Each version contains the corresponding `PluginSetup` contract. | versions `PluginSetup`                               |
 | `PluginRepoFactory`  | Creates `PluginRepo` contracts                                      | creates `PluginRepo`                                 |
 | `PluginRepoRegistry` | Registers `PluginRepo` contracts                                    | registers `PluginRepo`                               |
 
