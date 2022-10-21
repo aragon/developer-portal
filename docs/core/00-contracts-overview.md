@@ -55,9 +55,9 @@ Work in progress
 | Contract                         | Description                                                                                                                                                      | Relationship                         |
 | :------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
 | `IPlugin`                        | The interface for all plugin types.                                                                                                                              |                                      |
-| `Plugin`                         | Intended for non-upgradeable plugin implementations deployed via the `new` keyword.                                                                              |                                      |
-| `PluginCloneable`                | Intended for non-upgradeable plugin implementations deployed via the minimal clones pattern.                                                                     |                                      |
-| `PluginUUPSUpgradeable`          | Intended for upgradeable plugin implementations deployed via the UUPS pattern.                                                                                   |                                      |
+| `Plugin`                         | Intended for non-upgradeable plugin implementations deployed via the `new` keyword.                                                                              | implements `IPlugin`                 |
+| `PluginCloneable`                | Intended for non-upgradeable plugin implementations deployed via the minimal clones pattern.                                                                     | implements `IPlugin`                 |
+| `PluginUUPSUpgradeable`          | Intended for upgradeable plugin implementations deployed via the UUPS pattern.                                                                                   | implements `IPlugin`                 |
 | `DaoAuthorizableBase`            | Provides a `DAO` variable, setter, and meta-transaction compatible modifier for non-upgradeable contracts to authorize function calls through an associated DAO. | used by `DaoAuthorizable`            |
 | `DaoAuthorizable`                | Adds a constructor to `DaoAuthorizableBase`.                                                                                                                     | used by `Plugin`                     |
 | `DaoAuthorizableCloneable`       | Adds an internal initializer to `DaoAuthorizableBase`.                                                                                                           | used by `PluginCloneable`            |
@@ -68,10 +68,10 @@ Work in progress
 
 #### DAO Creation
 
-| Contract      | Description                                                | Relationship |
-| :------------ | :--------------------------------------------------------- | :----------- |
-| `DAOFactory`  | A template to setup plugins for a DAO using our framework. | `DAO`        |
-| `DAORegistry` | Registers DAOs                                             | `DAO`        |
+| Contract      | Description                                                | Relationship    |
+| :------------ | :--------------------------------------------------------- | :-------------- |
+| `DAOFactory`  | A template to setup plugins for a DAO using our framework. | creates `DAO`   |
+| `DAORegistry` | Registers DAOs                                             | registers `DAO` |
 
 #### Plugin Management
 
@@ -104,11 +104,11 @@ Work in progress
 
 #### Miscellaneous
 
-| Contract                  | Description                                                                | Relationship                                            |
-| :------------------------ | :------------------------------------------------------------------------- | :------------------------------------------------------ |
-| `InterfaceBasedRegistry ` | An ERC165 interface based registry for contracts.                          | used by `DAORegistry`, `PluginRepoRegistry`             |
-| `TimeHelpers`             | Returns `block.number` and `block.timestamp` as `uint64` values.           | used by `MajorityVotingBase`                            |
-| `Uint256Helpers`          | Converts `uint256` to `uint64`.                                            | used by`TimeHelpers`                                    |
-| `auth`                    | Provides a free function to be used in the `DaoAuthorizable` base classes. | `DaoAuthorizableBase`, `DaoAuthorizableBaseUpgradeable` |
-| `Proxy`                   | Provides a convenience function to create an UUPS proxy.                   | `DAOFactory`, `PluginRepoFactory`                       |
-| `UncheckedMath`           | Provides convenience functions for unchecked math operations.              | ``                                                      |
+| Contract                  | Description                                                                | Relationship                                                    |
+| :------------------------ | :------------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| `InterfaceBasedRegistry ` | An ERC165 interface based registry for contracts.                          | used by `DAORegistry`, `PluginRepoRegistry`                     |
+| `TimeHelpers`             | Returns `block.number` and `block.timestamp` as `uint64` values.           | used by `MajorityVotingBase`                                    |
+| `Uint256Helpers`          | Converts `uint256` to `uint64`.                                            | used by`TimeHelpers`                                            |
+| `auth`                    | Provides a free function to be used in the `DaoAuthorizable` base classes. | used by `DaoAuthorizableBase`, `DaoAuthorizableBaseUpgradeable` |
+| `Proxy`                   | Provides a convenience function to create an UUPS proxy.                   | used by`DAOFactory`, `PluginRepoFactory`                        |
+| `UncheckedMath`           | Provides convenience functions for unchecked math operations.              | used by `PluginRepo`, `AllowlistVoting`                         |
