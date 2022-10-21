@@ -2,7 +2,7 @@
 title: Contracts Overview
 ---
 
-## A Categorization of the Core Contract files
+## A Categorization of the Core Contracts
 
 :::note
 Work in progress
