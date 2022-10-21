@@ -88,3 +88,13 @@ Work in progress
 | `auth`                    | Provides a free function to be used in the `DaoAuthorizable` base classes. | `DaoAuthorizableBase`, `DaoAuthorizableBaseUpgradeable` |
 | `Proxy`                   | Provides a convenience function to create an UUPS proxy.                   | `DAOFactory`, `PluginRepoFactory`                       |
 | `UncheckedMath`           | Provides convenience functions for unchecked math operations.              | ``                                                      |
+
+<div class="center-column">
+
+![Detailed overview of the framework infrastructure and core primitives.](contracts-overview.drawio.svg)
+
+<p class="caption"> 
+  Schema showing the `PluginRepoRegistry` maintaining a list the addresses of ENS named `PluginRepo` contracts shown on the left. Each `PluginRepo` contract maintains a list of semantic versions of the `PluginSetup` contract (internally referencing the `Plugin` logic) and the associated UI building blocks as a URI, examplarily shown on the right.
+</p>
+
+</div>
