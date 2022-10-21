@@ -5,8 +5,11 @@ title: Contracts Overview
 ## A Categorization of the Core Contracts
 
 :::note
-Work in progress
+Work in Progress:
+This page is intended for external auditors and will be reworked.
 :::
+
+### Overview Diagrams
 
 <div class="center-column">
 
@@ -17,6 +20,8 @@ Work in progress
 </p>
 
 </div>
+
+To learn more about the architecture of the system, visit the section explaining [The Infrastructure Behind the AraongOS DAO Framework](./01-how-it-works/02-the-dao-framework/index.md).
 
 ---
 
@@ -29,8 +34,6 @@ Work in progress
 </p>
 
 </div>
-
----
 
 ### Core Primitives
 
