@@ -6,7 +6,7 @@ title: The DAO Contract
 
 In this section, you will learn about the core functionality of every aragonOS DAO.
 
-The `DAO` contract is the identity and basis of your organization. It is the address carrying the DAO’s ENS name, metadata, and holding the funds. Furthermore, it has **four base functionalities** being commonly found in other DAO frameworks in the ecosystem.
+The `DAO` contract is the identity and basis of your organization. It is the address carrying the DAO’s ENS name, metadata, and holding the funds. Furthermore, it has **six base functionalities** being commonly found in other DAO frameworks in the ecosystem.
 
 ### 1. Execution of Arbitrary Actions
 
@@ -69,14 +69,31 @@ You can add more advanced asset management and finance functionalities to your D
 
 Your DAO contract has the ability to be upgraded to a newer version (see [Upgrade your DAO](../../02-how-to-guides/02-dao-upgrading/index.md)) if a new version of aragonOS is released in the future. These upgrades allow your DAO to smoothly transition to a new protocol version unlocking new features to your DAO.
 
-### 4. Permission Management
+### 4. Callback Handling
 
-Lastly, it is essential that only the right entities (e.g., the DAO itself or trusted addresses) have permission to use the above mentioned functionalities.
+:::note
+Work in Progress.
+:::
+
+<!--Explain Callback Handler. Provide a use case as an example (e.g. NFT standard and the `event TokenReceived`). -->
+
+### 5. Signature Validation
+
+:::note
+Work in Progress.
+:::
+Your DAO contract has the ability to validate signatures according to [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271).
+
+<!--Explain signature validation. Provide a use case as an example. -->
+
+### 6. Permission Management
+
+Lastly, it is essential that only the right entities (e.g., the DAO itself or trusted addresses) have permission to use the above-mentioned functionalities.
 
 This is why aragonOS DAOs contain a flexible and battle-tested **permission manager** being able to assign permissions for the above functionalities to specific addresses.
 
 Although possible, the permissions to withdraw assets, execute arbitrary actions or upgrade the DAO should not be given to externally owned accounts (EOA) as this poses a security risk to the organization if the account is compromised or acts adverserial.
 
-Instead, the permissions for the above mentioned functionalities are better restricted to the `DAO` contract itself and triggered through governance [plugins](03-plugins.md) that you can install on your DAO.
+Instead, the permissions for the above-mentioned functionalities are better restricted to the `DAO` contract itself and triggered through governance [plugins](03-plugins.md) that you can install on your DAO.
 
-In the next section, we will dive deeper into the DAOs permissione manager.
+In the next section, we will dive deeper into the DAOs permission manager.

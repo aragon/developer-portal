@@ -76,7 +76,7 @@ In the next sections, you will learn about how plugins are curated on Aragon's r
 **c.** ![Schematic depiction of the plugin uninstallation process.](plugin-uninstallation.drawio.svg)
 
 <p class="caption"> 
-   Overview of the two-transaction plugin <b>a.</b> installation, <b>b.</b> update, and <b>c.</b> uninstallation process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively. 
+   Simplified overview of the two-transaction plugin <b>a.</b> installation, <b>b.</b> update, and <b>c.</b> uninstallation process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively. 
 </p>
 
 </div>
