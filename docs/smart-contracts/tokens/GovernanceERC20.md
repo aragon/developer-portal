@@ -12,12 +12,10 @@ The permission identifier to mint new tokens
 bytes32 MINT_PERMISSION_ID 
 ```
 
-#### internal function `__GovernanceERC20_init`
-
-Internal initialization method.
+#### public function `constructor`
 
 ```solidity
-function __GovernanceERC20_init(contract IDAO _dao, string _name, string _symbol) internal 
+constructor(contract IDAO _dao, string _name, string _symbol) public 
 ```
 
 | Input | Type | Description |
@@ -26,12 +24,12 @@ function __GovernanceERC20_init(contract IDAO _dao, string _name, string _symbol
 | _name | string | The name of the wrapped token. |
 | _symbol | string | The symbol fo the wrapped token. |
 
-#### external function `initialize`
+#### public function `initialize`
 
-Initializes the component.
+Initializes the GovernanceERC20.
 
 ```solidity
-function initialize(contract IDAO _dao, string _name, string _symbol) external 
+function initialize(contract IDAO _dao, string _name, string _symbol) public 
 ```
 
 | Input | Type | Description |
@@ -39,6 +37,20 @@ function initialize(contract IDAO _dao, string _name, string _symbol) external
 | _dao | contract IDAO | The managing DAO. |
 | _name | string | The name of the wrapped token. |
 | _symbol | string | The symbol fo the wrapped token. |
+
+#### public function `supportsInterface`
+
+Checks if this or the parent contract supports an interface by its ID.
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| interfaceId | bytes4 | The ID of the interace. |
+| **Output** | |
+| [0] | bool | bool Returns true if the interface is supported. |
 
 #### external function `mint`
 

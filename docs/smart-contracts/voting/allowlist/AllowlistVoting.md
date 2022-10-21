@@ -93,15 +93,19 @@ function initialize(contract IDAO _dao, address _trustedForwarder, uint64 _parti
 
 *This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
 
-#### external function `versionRecipient`
+#### public function `supportsInterface`
 
-Returns the version of the GSN relay recipient.
+adds a IERC165 to check whether contract supports ALLOWLIST_VOTING_INTERFACE_ID or not.
 
 ```solidity
-function versionRecipient() external view virtual returns (string) 
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
 ```
 
-*Describes the version and contract for GSN compatibility.*
+| Output | Type | Description |
+| ------ | ---- | ----------- |
+| [0] | bool | bool whether it supports the IERC165 or ALLOWLIST_VOTING_INTERFACE_ID |
+
+*See {ERC165Upgradeable-supportsInterface}.*
 
 #### external function `addAllowedUsers`
 
@@ -214,4 +218,14 @@ function _updateAllowedUsers(address[] _users, bool _enabled) internal
 |:----- | ---- | ----------- |
 | _users | address[] | The user addresses. |
 | _enabled | bool | Whether to add or remove users from the allowlist. |
+
+#### private variable `__gap`
+
+```solidity
+uint256[48] __gap 
+```
+
+*This empty reserved space is put in place to allow future versions to add new
+variables without shifting down storage in the inheritance chain.
+https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps*
 

@@ -2,14 +2,14 @@
 
 ###  contract `PluginRepo`
 
-The repository contract required for managing and publishing different plugin versions within the Aragon DAO framework following the [Semantic Versioning 2.0.0](https://semver.org/) convention.
+The plugin repository contract required for managing and publishing different plugin versions within the Aragon DAO framework following the [Semantic Versioning 2.0.0](https://semver.org/) convention.
 
 #### public struct `Version`
 
 ```solidity
 struct Version {
   uint16[3] semanticVersion;
-  address pluginManager;
+  address pluginSetup;
   bytes contentURI;
 }
 ```
@@ -54,12 +54,12 @@ A mapping between the semantic version number hash and the version index.
 mapping(bytes32 => uint256) versionIndexForSemantic 
 ```
 
-#### internal variable `versionIndexForPluginManager`
+#### internal variable `versionIndexForPluginSetup`
 
-A mapping between the `PluginManager` contract addresses and the version index.
+A mapping between the `PluginSetup` contract addresses and the version index.
 
 ```solidity
-mapping(address => uint256) versionIndexForPluginManager 
+mapping(address => uint256) versionIndexForPluginSetup 
 ```
 
 ####  error `InvalidBump`
@@ -87,29 +87,29 @@ error VersionIndexDoesNotExist(uint256 versionIndex)
 |:----- | ---- | ----------- |
 | versionIndex | uint256 | The index of the version. |
 
-####  error `InvalidPluginManagerInterface`
+####  error `InvalidPluginSetupInterface`
 
-Thrown if a contract does not inherit from `PluginManager`.
+Thrown if a contract does not inherit from `PluginSetup`.
 
 ```solidity
-error InvalidPluginManagerInterface(address invalidPluginManager) 
+error InvalidPluginSetupInterface(address invalidPluginSetup) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| invalidPluginManager | address | The address of the contract missing the `PluginManager` interface. |
+| invalidPluginSetup | address | The address of the contract missing the `PluginSetup` interface. |
 
-####  error `InvalidPluginManagerContract`
+####  error `InvalidPluginSetupContract`
 
-Thrown if a contract is not a `PluginManager` contract.
+Thrown if a contract is not a `PluginSetup` contract.
 
 ```solidity
-error InvalidPluginManagerContract(address invalidPluginManager) 
+error InvalidPluginSetupContract(address invalidPluginSetup) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| invalidPluginManager | address | The address of the contract not being a plugin factory. |
+| invalidPluginSetup | address | The address of the contract not being a plugin factory. |
 
 ####  error `InvalidContractAddress`
 
@@ -152,16 +152,16 @@ function initialize(address initialOwner) external
 
 #### external function `createVersion`
 
-Create new version with contract `_pluginManagerAddress` and content `@fromHex(_contentURI)`
+Creates a new version with contract `_pluginSetupAddress` and content `@fromHex(_contentURI)`.
 
 ```solidity
-function createVersion(uint16[3] _newSemanticVersion, address _pluginManager, bytes _contentURI) external 
+function createVersion(uint16[3] _newSemanticVersion, address _pluginSetup, bytes _contentURI) external 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _newSemanticVersion | uint16[3] | Semantic version for new pluginRepo version |
-| _pluginManager | address |  |
+| _newSemanticVersion | uint16[3] |  |
+| _pluginSetup | address |  |
 | _contentURI | bytes | External URI where the plugin metadata and subsequent resources can be fetched from |
 
 #### public function `getLatestVersion`
@@ -169,27 +169,27 @@ function createVersion(uint16[3] _newSemanticVersion, address _pluginManager, by
 Gets the version information of the latest version.
 
 ```solidity
-function getLatestVersion() public view returns (uint16[3] semanticVersion, address pluginManager, bytes contentURI) 
+function getLatestVersion() public view returns (uint16[3] semanticVersion, address pluginSetup, bytes contentURI) 
 ```
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
 | semanticVersion | uint16[3] | The semantic version number. |
-| pluginManager | address | The address of the plugin factory associated with the version. |
+| pluginSetup | address | The address of the plugin factory associated with the version. |
 | contentURI | bytes | The external URI pointing to the content of the version. |
 
-#### public function `getVersionByPluginManager`
+#### public function `getVersionByPluginSetup`
 
 Gets the version information associated with a plugin factory address.
 
 ```solidity
-function getVersionByPluginManager(address _pluginManager) public view returns (uint16[3] semanticVersion, address pluginManager, bytes contentURI) 
+function getVersionByPluginSetup(address _pluginSetup) public view returns (uint16[3] semanticVersion, address pluginSetup, bytes contentURI) 
 ```
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
 | semanticVersion | uint16[3] | The semantic version number. |
-| pluginManager | address | The address of the plugin factory associated with the version. |
+| pluginSetup | address | The address of the plugin factory associated with the version. |
 | contentURI | bytes | The external URI pointing to the content of the version. |
 
 #### public function `getVersionBySemanticVersion`
@@ -197,13 +197,13 @@ function getVersionByPluginManager(address _pluginManager) public view returns (
 Gets the version information associated with a semantic version number.
 
 ```solidity
-function getVersionBySemanticVersion(uint16[3] _semanticVersion) public view returns (uint16[3] semanticVersion, address pluginManager, bytes contentURI) 
+function getVersionBySemanticVersion(uint16[3] _semanticVersion) public view returns (uint16[3] semanticVersion, address pluginSetup, bytes contentURI) 
 ```
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
 | semanticVersion | uint16[3] | The semantic version number. |
-| pluginManager | address | The address of the plugin factory associated with the version. |
+| pluginSetup | address | The address of the plugin factory associated with the version. |
 | contentURI | bytes | The external URI pointing to the content of the version. |
 
 #### public function `getVersionById`
@@ -211,13 +211,13 @@ function getVersionBySemanticVersion(uint16[3] _semanticVersion) public view ret
 Gets the version information associated with a version index.
 
 ```solidity
-function getVersionById(uint256 _versionIndex) public view returns (uint16[3] semanticVersion, address pluginManager, bytes contentURI) 
+function getVersionById(uint256 _versionIndex) public view returns (uint16[3] semanticVersion, address pluginSetup, bytes contentURI) 
 ```
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
 | semanticVersion | uint16[3] | The semantic version number. |
-| pluginManager | address | The address of the plugin factory associated with the version. |
+| pluginSetup | address | The address of the plugin factory associated with the version. |
 | contentURI | bytes | The external URI pointing to the content of the version. |
 
 #### public function `getVersionCount`
@@ -245,7 +245,7 @@ function isValidBump(uint16[3] _oldVersion, uint16[3] _newVersion) public pure r
 | _oldVersion | uint16[3] | The old semantic version number. |
 | _newVersion | uint16[3] | The new semantic version number. |
 | **Output** | |
-| [0] | bool | bool True if the bump is valid. |
+| [0] | bool | bool Returns true if the bump is valid. |
 
 #### internal function `semanticVersionHash`
 
@@ -270,4 +270,18 @@ function _authorizeUpgrade(address) internal virtual
 ```
 
 *The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+
+#### public function `supportsInterface`
+
+Checks if this or the parent contract supports an interface by its ID.
+
+```solidity
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| interfaceId | bytes4 | The ID of the interace. |
+| **Output** | |
+| [0] | bool | bool Returns true if the interface is supported. |
 

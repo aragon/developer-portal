@@ -152,7 +152,7 @@ function canVote(uint256 _voteId, address _voter) external view returns (bool)
 | _voteId | uint256 | the vote Id. |
 | _voter | address | the address of the voter to check. |
 | **Output** | |
-| [0] | bool | bool true if user is allowed to vote. |
+| [0] | bool | bool Returns true if the voter is allowed to vote. |
 
 #### external function `execute`
 

@@ -20,6 +20,12 @@ The ENS subdomain registrar registering the DAO names.
 contract ENSSubdomainRegistrar subdomainRegistrar 
 ```
 
+####  error `EmptyDaoName`
+
+```solidity
+error EmptyDaoName() 
+```
+
 ####  event `DAORegistered`
 
 Emitted when a new DAO is registered.
@@ -62,4 +68,12 @@ function register(contract IDAO _dao, address _creator, string _name) external
 | _name | string | The DAO name. |
 
 *A name is unique within the Aragon DAO framework and can get stored here.*
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[49] __gap 
+```
 

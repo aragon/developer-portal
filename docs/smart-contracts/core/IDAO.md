@@ -4,14 +4,6 @@
 
 The interface required for DAOs within the Aragon App DAO framework.
 
-#### internal variable `DAO_INTERFACE_ID`
-
-The `IDAO` interface ID.
-
-```solidity
-bytes4 DAO_INTERFACE_ID 
-```
-
 #### public struct `Action`
 
 ```solidity
@@ -96,7 +88,21 @@ event Executed(address actor, uint256 callId, struct IDAO.Action[] actions, byte
 | execResults | bytes[] | Array with the results of the executed actions. |
 
 *The value of callId is defined by the component/contract calling the execute function.
-     A Component implementation can use it, for example, as a nonce.*
+     A `Plugin` implementation can use it, for example, as a nonce.*
+
+####  event `StandardCallbackRegistered`
+
+Emitted when a standard callback is registered.
+
+```solidity
+event StandardCallbackRegistered(bytes4 interfaceId, bytes4 callbackSelector, bytes4 magicNumber) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| interfaceId | bytes4 | The ID of the interface. |
+| callbackSelector | bytes4 | The selector of the callback function. |
+| magicNumber | bytes4 | The magic number to be registered for the callback function selector. |
 
 #### external function `deposit`
 
@@ -140,7 +146,7 @@ event NativeTokenDeposited(address sender, uint256 amount)
 | sender | address | The address of the sender. |
 | amount | uint256 | The amount of native tokens deposited. |
 
-*This event is intended to be emitted in the `receive` function and is therefore bound by the gas limitations for `send`/`transfer` calls introduced by EIP-2929.*
+*This event is intended to be emitted in the `receive` function and is therefore bound by the gas limitations for `send`/`transfer` calls introduced by [ERC-2929](https://eips.ethereum.org/EIPS/eip-2929).*
 
 #### external function `withdraw`
 
@@ -210,7 +216,7 @@ event TrustedForwarderSet(address forwarder)
 
 #### external function `setSignatureValidator`
 
-Setter for the ERC1271 signature validator contract.
+Setter for the [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
 
 ```solidity
 function setSignatureValidator(address _signatureValidator) external virtual 
@@ -218,7 +224,19 @@ function setSignatureValidator(address _signatureValidator) external virtual
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _signatureValidator | address | ERC1271 SignatureValidator. |
+| _signatureValidator | address | The address of the signature validator. |
+
+####  event `SignatureValidatorSet`
+
+Emitted when the signature validator address is updated.
+
+```solidity
+event SignatureValidatorSet(address signatureValidator) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| signatureValidator | address | The address of the signature validator. |
 
 #### external function `isValidSignature`
 
@@ -234,4 +252,18 @@ function isValidSignature(bytes32 _hash, bytes _signature) external virtual retu
 | _signature | bytes | Signature byte array associated with _data. |
 | **Output** | |
 | [0] | bytes4 | magicValue Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
+
+#### external function `registerStandardCallback`
+
+Registers an ERC standard having a callback by registering its [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID and callback function signature.
+
+```solidity
+function registerStandardCallback(bytes4 _interfaceId, bytes4 _callbackSelector, bytes4 _magicNumber) external virtual 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| _interfaceId | bytes4 | The ID of the interface. |
+| _callbackSelector | bytes4 | The selector of the callback function. |
+| _magicNumber | bytes4 | The magic number to be registered for the function signature. |
 
