@@ -58,11 +58,11 @@ The following table presents an overview of the different deployment methods wit
 
 Accordingly, we recommend the UUPS proxy method for developing easily updatable Aragon Plugins and minimal clones for those, where the availability of the storage after the update is secondary / not needed.
 
-To help you with developing and deploying the plugin within the Aragon infrastructure, we provide plugin interfaces and setup contracts for [the OpenZepplin Contracts Proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy) that you can inherit from besides the standard abstract `Plugin` contract
+To help you with developing and deploying your plugin within the Aragon infrastructure, we provide the following implementation and setup contract base classes that you can inherit from:
 
-- `PluginClones`
-- `PluginTransparentUpgradeable`
-- `PluginUUPSUpgradeable`
+- `Plugin` (intended for instantiation via `new`)
+- `PluginClones` (intended for the deployment via the [minimal clones pattern (ERC-1167)](https://eips.ethereum.org/EIPS/eip-1167))
+- `PluginUUPSUpgradeable` (intended for deployment via the [UUPS pattern (ERC-1822)](https://eips.ethereum.org/EIPS/eip-1822))
 
 #### Caveats of non-upgradeable Plugins
 
@@ -73,6 +73,10 @@ Updating, in distinction from upgrading, will call aragonOS' internal process fo
 To switch from an older version of a non-upgradeable contract to a newer one, the underlying contract has to be replaced. In consequence, the state of the older version is not available in the new version anymore, unless it is migrated or has been made publicly accessible in the old version through getter functions.
 
 ### Meta Transaction Compatibility
+
+:::info
+The meta-transaction compatibility of DAOs, plugins, and infrastructure in aragonOS is currently worked on and not finally decided.
+:::
 
 Another useful trait of a contract is the possibility to allow users to send gasless transactions, also known as meta transactions.
 

@@ -30,7 +30,7 @@ In the following section, we will introduce the contracts.
 
 ### The `PuginRepo` Contract
 
-The `PluginRepo` contract versions the releases of a `Plugin`. Each plugin starts as version `1.0.0`. Subsequent versions follow the [semantic versioning convention](https://semver.org/). For major, minor, and patch releases, the respective [version numbers are incremented](docs/core/02-how-to-guides/01-plugin-development/03-versioning.md).
+The `PluginRepo` contract versions the releases of a `Plugin`. Each plugin starts as version `1.0.0`. Subsequent versions follow the [semantic versioning convention](https://semver.org/). For major, minor, and patch releases, the respective [version numbers are incremented](docs/core/../../../../../02-how-to-guides/01-plugin-development/03-publication/02-versioning.md).
 
 Each semantic version released in the `PluginRepo` contract via the `createVersion` function
 
