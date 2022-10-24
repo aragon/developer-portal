@@ -2,7 +2,7 @@
 
 ###  contract `AllowlistVoting`
 
-The majority voting implementation using an list of allowed addresses.
+The majority voting implementation using a list of allowed addresses.
 
 *This contract inherits from `MajorityVotingBase` and implements the `IMajorityVoting` interface.*
 
