@@ -47,7 +47,7 @@ function prepareUpdate(address _dao, address _plugin, address[] _currentHelpers,
 A convenience function to create an [ERC-1967](https://eips.ethereum.org/EIPS/eip-1967) proxy contract pointing to an implementation and being associated to a DAO.
 
 ```solidity
-function createERC1967Proxy(address _implementation, bytes _data) internal returns (address payable proxy) 
+function createERC1967Proxy(address _implementation, bytes _data) internal returns (address) 
 ```
 
 | Input | Type | Description |
@@ -55,7 +55,7 @@ function createERC1967Proxy(address _implementation, bytes _data) internal retur
 | _implementation | address | The address of the implementation contract to which the proxy is pointing to. |
 | _data | bytes | The data to initialize the storage of the proxy contract. |
 | **Output** | |
-| proxy | address payable | The address of the created proxy contract. |
+| [0] | address | address The address of the created proxy contract. |
 
 #### public function `supportsInterface`
 

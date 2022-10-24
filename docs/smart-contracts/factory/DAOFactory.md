@@ -6,7 +6,7 @@ This contract is used to create a DAO.
 
 #### public variable `daoBase`
 
-The DAO base contract, to be used for creating new `DAO`s via `createProxy` function.
+The DAO base contract, to be used for creating new `DAO`s via `createERC1967Proxy` function.
 
 ```solidity
 address daoBase 

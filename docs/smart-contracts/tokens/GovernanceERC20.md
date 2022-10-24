@@ -75,19 +75,3 @@ function _afterTokenTransfer(address from, address to, uint256 amount) internal
 
 Emits a {DelegateVotesChanged} event.*
 
-#### internal function `_mint`
-
-```solidity
-function _mint(address to, uint256 amount) internal 
-```
-
-*Snapshots the totalSupply after it has been increased.*
-
-#### internal function `_burn`
-
-```solidity
-function _burn(address account, uint256 amount) internal 
-```
-
-*Snapshots the totalSupply after it has been decreased.*
-

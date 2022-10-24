@@ -108,6 +108,22 @@ error PermissionFrozen(address where, bytes32 permissionId)
 | where | address | The address of the target contract for which the permission is frozen. |
 | permissionId | bytes32 | The permission identifier. |
 
+####  error `RootPermissionForAnyAddressDisallowed`
+
+Thrown if a Root permission is set on ANY_ADDR.
+
+```solidity
+error RootPermissionForAnyAddressDisallowed() 
+```
+
+####  error `FreezeOnAnyAddressDisallowed`
+
+Thrown if a freeze happens on ANY_ADDR.
+
+```solidity
+error FreezeOnAnyAddressDisallowed() 
+```
+
 ####  event `Granted`
 
 Emitted when a permission `permission` is granted in the context `here` to the address `who` for the contract `where`.
