@@ -143,7 +143,7 @@ The following functions in the DAO are permissioned:
 | ---------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------- |
 | `execute`                                      | `EXECUTE_PERMISSION_ID`                 | Required to execute arbitrary actions.                                                 |
 | `withdraw`                                     | `WITHDRAW_PERMISSION_ID`                | Required to withdraw assets from the DAO.                                              |
-| `_authorizeUpgrade`                            | `UPGRADE_PERMISSION_ID`                 | Required to upgrade the DAO (via the [UUPS](https://eips.ethereum.org/EIPS/eip-1822)). |
+| `_authorizeUpgrade`                            | `UPGRADE_DAO_PERMISSION_ID`             | Required to upgrade the DAO (via the [UUPS](https://eips.ethereum.org/EIPS/eip-1822)). |
 | `setMetadata`                                  | `SET_METADATA_PERMISSION_ID`            | Required to set the DAO’s metadata.                                                    |
 | `setTrustedForwarder`                          | `SET_TRUSTED_FORWARDER_PERMISSION_ID`   | Required to set the DAO’s trusted forwarder for meta transactions.                     |
 | `setSignatureValidator`                        | `SET_SIGNATURE_VALIDATOR_PERMISSION_ID` | Required to set the DAO’s signature validator contract (see ERC-1271).                 |
