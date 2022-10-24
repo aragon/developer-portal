@@ -49,7 +49,7 @@ function createPluginRepo(string _name, address _initialOwner) external returns 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _name | string | The plugin repository name. |
-| _initialOwner | address | The plugin maintainer address. TODO: Rethink if it need permission to prevent it from getting poluted, same for `createPluginRepoWithVersion`. |
+| _initialOwner | address | The plugin maintainer address. TODO: Rethink if it needs permission to prevent it from getting polluted, same for `createPluginRepoWithVersion`. |
 
 #### external function `createPluginRepoWithVersion`
 
@@ -67,11 +67,11 @@ function createPluginRepoWithVersion(string _name, uint16[3] _initialSemanticVer
 | _contentURI | bytes | The external URI for fetching the new version's content. |
 | _maintainer | address | The plugin maintainer address. |
 
-*The initial owner of the new PluginRepo is `address(this)`, afterward ownership will be transfered to the address `_maintainer`.*
+*The initial owner of the new PluginRepo is `address(this)`, afterward ownership will be transferred to the address `_maintainer`.*
 
 #### internal function `setPluginRepoPermissions`
 
-Set the final permissions for the published plugin repository maintainer. All permissions are revoked from the the plugin factory and granted to the specified plugin maintainer.
+Set the final permissions for the published plugin repository maintainer. All permissions are revoked from the plugin factory and granted to the specified plugin maintainer.
 
 ```solidity
 function setPluginRepoPermissions(contract PluginRepo pluginRepo, address maintainer) internal 
