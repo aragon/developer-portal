@@ -41,14 +41,26 @@ contract MerkleDistributor distributorBase
 Emitted when a new token is created.
 
 ```solidity
-event TokenCreated(contract IERC20Upgradeable token, contract MerkleMinter minter, contract MerkleDistributor distributor) 
+event TokenCreated(contract IERC20Upgradeable token, contract MerkleMinter minter, contract IMerkleDistributor distributor) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | token | contract IERC20Upgradeable | [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token address. |
 | minter | contract MerkleMinter | The `MerkleMinter` contract minting the new token. |
-| distributor | contract MerkleDistributor | The `MerkleDistibutor` contract distributing the new token. |
+| distributor | contract IMerkleDistributor | The `MerkleDistibutor` contract distributing the new token. |
+
+####  event `WrappedToken`
+
+Emitted when an existing token is passed and wrapped one is created.
+
+```solidity
+event WrappedToken(contract GovernanceWrappedERC20 token) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| token | contract GovernanceWrappedERC20 | GovernanceWrappedERC20 token address |
 
 #### public struct `TokenConfig`
 

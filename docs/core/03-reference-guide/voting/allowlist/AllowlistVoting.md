@@ -16,18 +16,18 @@ bytes4 ALLOWLIST_VOTING_INTERFACE_ID
 
 #### public variable `MODIFY_ALLOWLIST_PERMISSION_ID`
 
-The ID of the permission required to call the `addAllowlistedUsers` and `removeAllowlistedUsers` function.
+The ID of the permission required to call the `addAllowedUsers` and `removeAllowedUsers` function.
 
 ```solidity
 bytes32 MODIFY_ALLOWLIST_PERMISSION_ID 
 ```
 
-#### private variable `_allowlistedAddressesCheckpoints`
+#### private variable `_allowedAddressesCheckpoints`
 
-The mapping containing the checkpointed history of addresses being allowlisted.
+The mapping containing the checkpointed history of addresses being allowed.
 
 ```solidity
-mapping(address => struct Checkpoints.History) _allowlistedAddressesCheckpoints 
+mapping(address => struct Checkpoints.History) _allowedAddressesCheckpoints 
 ```
 
 #### private variable `_allowlistLengthCheckpoints`
@@ -79,60 +79,63 @@ event UsersRemoved(address[] users)
 Initializes the component.
 
 ```solidity
-function initialize(contract IDAO _dao, address _trustedForwarder, uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration, address[] _allowlisted) public 
+function initialize(contract IDAO _dao, uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration, address[] _allowed) public 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | contract IDAO | The IDAO interface of the associated DAO. |
-| _trustedForwarder | address | The address of the trusted forwarder required for meta transactions. |
 | _participationRequiredPct | uint64 | The minimal required participation in percent. |
 | _supportRequiredPct | uint64 | The minimal required support in percent. |
 | _minDuration | uint64 | The minimal duration of a vote. |
-| _allowlisted | address[] | The allowlisted addresses. |
+| _allowed | address[] | The allowed addresses. |
 
 *This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
 
-#### external function `versionRecipient`
+#### public function `supportsInterface`
 
-Returns the version of the GSN relay recipient.
+adds a IERC165 to check whether contract supports ALLOWLIST_VOTING_INTERFACE_ID or not.
 
 ```solidity
-function versionRecipient() external view virtual returns (string) 
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
 ```
 
-*Describes the version and contract for GSN compatibility.*
+| Output | Type | Description |
+| ------ | ---- | ----------- |
+| [0] | bool | bool whether it supports the IERC165 or ALLOWLIST_VOTING_INTERFACE_ID |
 
-#### external function `addAllowlistedUsers`
+*See {ERC165Upgradeable-supportsInterface}.*
+
+#### external function `addAllowedUsers`
 
 Adds new users to the allowlist.
 
 ```solidity
-function addAllowlistedUsers(address[] _users) external 
+function addAllowedUsers(address[] _users) external 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _users | address[] | The addresses of the users to be added. |
 
-#### internal function `_addAllowlistedUsers`
+#### internal function `_addAllowedUsers`
 
 Internal function to add new users to the allowlist.
 
 ```solidity
-function _addAllowlistedUsers(address[] _users) internal 
+function _addAllowedUsers(address[] _users) internal 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _users | address[] | The addresses of users to be added. |
 
-#### external function `removeAllowlistedUsers`
+#### external function `removeAllowedUsers`
 
 Removes users from the allowlist.
 
 ```solidity
-function removeAllowlistedUsers(address[] _users) external 
+function removeAllowedUsers(address[] _users) external 
 ```
 
 | Input | Type | Description |
@@ -160,12 +163,12 @@ function _vote(uint256 _voteId, enum IMajorityVoting.VoteOption _choice, address
 | _voter | address |  |
 | _executesIfDecided | bool | if true, and it's the last vote required, immediately executes a vote. |
 
-#### public function `isUserAllowlisted`
+#### public function `isAllowed`
 
-Checks if a user is allowlisted at given block number.
+Checks if a user is allowed at given block number.
 
 ```solidity
-function isUserAllowlisted(address account, uint256 blockNumber) public view returns (bool) 
+function isAllowed(address account, uint256 blockNumber) public view returns (bool) 
 ```
 
 | Input | Type | Description |
@@ -173,19 +176,19 @@ function isUserAllowlisted(address account, uint256 blockNumber) public view ret
 | account | address | The user address that is checked. |
 | blockNumber | uint256 | The block number. |
 
-#### public function `allowlistedUserCount`
+#### public function `allowedUserCount`
 
-Returns total count of users that are allowlisted at given block number.
+Returns total count of users that are allowed at given block number.
 
 ```solidity
-function allowlistedUserCount(uint256 blockNumber) public view returns (uint256) 
+function allowedUserCount(uint256 blockNumber) public view returns (uint256) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | blockNumber | uint256 | The specific block to get the count from. |
 | **Output** | |
-| [0] | uint256 | The count of users that were allowlisted at the specified block number. |
+| [0] | uint256 | The count of users that were allowed at the specified block number. |
 
 #### internal function `_canVote`
 
@@ -202,16 +205,26 @@ function _canVote(uint256 _voteId, address _voter) internal view returns (bool)
 | **Output** | |
 | [0] | bool | True if the given voter can participate a certain vote, false otherwise. |
 
-#### internal function `_allowlistUsers`
+#### internal function `_updateAllowedUsers`
 
-Adds or removes users from the allowlist.
+Updates the allowlist by adding or removing users.
 
 ```solidity
-function _allowlistUsers(address[] _users, bool _enabled) internal 
+function _updateAllowedUsers(address[] _users, bool _enabled) internal 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _users | address[] | The user addresses. |
 | _enabled | bool | Whether to add or remove users from the allowlist. |
+
+#### private variable `__gap`
+
+```solidity
+uint256[48] __gap 
+```
+
+*This empty reserved space is put in place to allow future versions to add new
+variables without shifting down storage in the inheritance chain.
+https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps*
 

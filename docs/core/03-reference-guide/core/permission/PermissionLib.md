@@ -1,8 +1,8 @@
 ## Aragon Core
 
-###  contract `BulkPermissionsLib`
+###  contract `PermissionLib`
 
-A library containing objects for bulk permission processing.
+A library containing objects for permission processing.
 
 ####  enum `Operation`
 
@@ -19,7 +19,7 @@ enum Operation {
 
 ```solidity
 struct ItemSingleTarget {
-  enum BulkPermissionsLib.Operation operation;
+  enum PermissionLib.Operation operation;
   address who;
   bytes32 permissionId;
 }
@@ -29,7 +29,7 @@ struct ItemSingleTarget {
 
 ```solidity
 struct ItemMultiTarget {
-  enum BulkPermissionsLib.Operation operation;
+  enum PermissionLib.Operation operation;
   address where;
   address who;
   address oracle;

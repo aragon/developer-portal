@@ -6,12 +6,12 @@ This contract is the entry point to the Aragon DAO framework and provides our us
 
 *Public API of the Aragon DAO framework.*
 
-#### public variable `UPGRADE_PERMISSION_ID`
+#### public variable `UPGRADE_DAO_PERMISSION_ID`
 
 The ID of the permission required to call the `_authorizeUpgrade` function.
 
 ```solidity
-bytes32 UPGRADE_PERMISSION_ID 
+bytes32 UPGRADE_DAO_PERMISSION_ID 
 ```
 
 #### public variable `SET_METADATA_PERMISSION_ID`
@@ -54,12 +54,20 @@ The ID of the permission required to call the `setTrustedForwarder` function.
 bytes32 SET_TRUSTED_FORWARDER_PERMISSION_ID 
 ```
 
-#### internal variable `signatureValidator`
+#### public variable `REGISTER_STANDARD_CALLBACK_PERMISSION_ID`
+
+The ID of the permission required to call the `registerStandardCallback` function.
+
+```solidity
+bytes32 REGISTER_STANDARD_CALLBACK_PERMISSION_ID 
+```
+
+#### public variable `signatureValidator`
 
 The [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
 
 ```solidity
-contract ERC1271 signatureValidator 
+contract IERC1271 signatureValidator 
 ```
 
 #### private variable `trustedForwarder`
@@ -134,7 +142,7 @@ Internal method authorizing the upgrade of the contract via the [upgradeabilty m
 function _authorizeUpgrade(address) internal virtual 
 ```
 
-*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+*The caller must have the `UPGRADE_DAO_PERMISSION_ID` permission.*
 
 #### external function `setTrustedForwarder`
 
@@ -165,14 +173,14 @@ function getTrustedForwarder() public view virtual returns (address)
 Checks if an address has permission on a contract via a permission identifier and considers if `ANY_ADDRESS` was used in the granting process.
 
 ```solidity
-function hasPermission(address _where, address _who, bytes32 _permissionID, bytes _data) external returns (bool) 
+function hasPermission(address _where, address _who, bytes32 _permissionId, bytes _data) external view returns (bool) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _where | address | The address of the contract. |
 | _who | address | The address of a EOA or contract to give the permissions. |
-| _permissionID | bytes32 | The permission identifier. |
+| _permissionId | bytes32 | The permission identifier. |
 | _data | bytes | The optional data passed to the `PermissionOracle` registered. |
 | **Output** | |
 | [0] | bool | bool Returns true if the address has permission, false if not. |
@@ -237,7 +245,7 @@ function withdraw(address _token, address _to, uint256 _amount, string _referenc
 
 #### external function `setSignatureValidator`
 
-Setter for the ERC1271 signature validator contract.
+Setter for the [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
 
 ```solidity
 function setSignatureValidator(address _signatureValidator) external 
@@ -245,7 +253,7 @@ function setSignatureValidator(address _signatureValidator) external
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _signatureValidator | address | ERC1271 SignatureValidator. |
+| _signatureValidator | address | The address of the signature validator. |
 
 #### external function `isValidSignature`
 
@@ -304,4 +312,26 @@ function _setTrustedForwarder(address _trustedForwarder) internal
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _trustedForwarder | address | The trusted forwarder address. |
+
+#### external function `registerStandardCallback`
+
+Registers an ERC standard having a callback by registering its [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID and callback function signature.
+
+```solidity
+function registerStandardCallback(bytes4 _interfaceId, bytes4 _callbackSelector, bytes4 _magicNumber) external 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| _interfaceId | bytes4 | The ID of the interface. |
+| _callbackSelector | bytes4 | The selector of the callback function. |
+| _magicNumber | bytes4 | The magic number to be registered for the function signature. |
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[48] __gap 
+```
 

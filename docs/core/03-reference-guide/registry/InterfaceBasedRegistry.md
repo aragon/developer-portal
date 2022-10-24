@@ -4,12 +4,12 @@
 
 An [ERC-165](https://eips.ethereum.org/EIPS/eip-165)-based registry for contracts
 
-#### public variable `UPGRADE_PERMISSION_ID`
+#### public variable `UPGRADE_REGISTRY_PERMISSION_ID`
 
 The ID of the permission required to call the `_authorizeUpgrade` function.
 
 ```solidity
-bytes32 UPGRADE_PERMISSION_ID 
+bytes32 UPGRADE_REGISTRY_PERMISSION_ID 
 ```
 
 #### public variable `targetInterfaceId`
@@ -99,19 +99,27 @@ Internal method authorizing the upgrade of the contract via the [upgradeabilty m
 function _authorizeUpgrade(address) internal virtual 
 ```
 
-*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+*The caller must have the `UPGRADE_REGISTRY_PERMISSION_ID` permission.*
 
 #### internal function `_register`
 
 Register an [ERC-165](https://eips.ethereum.org/EIPS/eip-165) contract address.
 
 ```solidity
-function _register(address registrant) internal 
+function _register(address _registrant) internal 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| registrant | address | The address of an [ERC-165](https://eips.ethereum.org/EIPS/eip-165) contract. |
+| _registrant | address | The address of an [ERC-165](https://eips.ethereum.org/EIPS/eip-165) contract. |
 
 *The managing DAO needs to grant REGISTER_PERMISSION_ID to registrar.*
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[48] __gap 
+```
 

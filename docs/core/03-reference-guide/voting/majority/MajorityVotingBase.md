@@ -14,12 +14,12 @@ The [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID of the contra
 bytes4 MAJORITY_VOTING_INTERFACE_ID 
 ```
 
-#### public variable `CHANGE_VOTE_CONFIG_PERMISSION_ID`
+#### public variable `SET_CONFIGURATION_PERMISSION_ID`
 
-The ID of the permission required to call the `changeVoteConfig` function.
+The ID of the permission required to call the `setConfiguration` function.
 
 ```solidity
-bytes32 CHANGE_VOTE_CONFIG_PERMISSION_ID 
+bytes32 SET_CONFIGURATION_PERMISSION_ID 
 ```
 
 #### public variable `PCT_BASE`
@@ -137,25 +137,38 @@ error VoteExecutionForbidden(uint256 voteId)
 Initializes the component to be used by inheriting contracts.
 
 ```solidity
-function __MajorityVotingBase_init(contract IDAO _dao, address _trustedForwarder, uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) internal 
+function __MajorityVotingBase_init(contract IDAO _dao, uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) internal 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | contract IDAO | The IDAO interface of the associated DAO. |
-| _trustedForwarder | address | The address of the trusted forwarder required for meta transactions. |
 | _participationRequiredPct | uint64 | The minimal required participation in percent. |
 | _supportRequiredPct | uint64 | The minimal required support in percent. |
 | _minDuration | uint64 | The minimal duration of a vote |
 
 *This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
 
-#### external function `changeVoteConfig`
+#### public function `supportsInterface`
 
-Change required support and minQuorum.
+Checks if this or the parent contract supports an interface by its ID.
 
 ```solidity
-function changeVoteConfig(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) external 
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| interfaceId | bytes4 | The ID of the interace. |
+| **Output** | |
+| [0] | bool | bool Returns true if the interface is supported. |
+
+#### external function `setConfiguration`
+
+Sets the vote configuration.
+
+```solidity
+function setConfiguration(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) external 
 ```
 
 | Input | Type | Description |
@@ -166,7 +179,7 @@ function changeVoteConfig(uint64 _participationRequiredPct, uint64 _supportRequi
 
 #### external function `createVote`
 
-Create a new vote.
+Creates a new vote.
 
 ```solidity
 function createVote(bytes _proposalMetadata, struct IDAO.Action[] _actions, uint64 _startDate, uint64 _endDate, bool _executeIfDecided, enum IMajorityVoting.VoteOption _choice) external virtual returns (uint256 voteId) 
@@ -239,7 +252,7 @@ function canVote(uint256 _voteId, address _voter) public view returns (bool)
 | _voteId | uint256 | the vote Id. |
 | _voter | address | the address of the voter to check. |
 | **Output** | |
-| [0] | bool | bool true if user is allowed to vote. |
+| [0] | bool | bool Returns true if the voter is allowed to vote. |
 
 #### public function `canExecute`
 
@@ -379,5 +392,13 @@ function _isValuePct(uint256 _value, uint256 _total, uint256 _pct) internal pure
 
 ```solidity
 function _validateAndSetSettings(uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration) internal virtual 
+```
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[47] __gap 
 ```
 

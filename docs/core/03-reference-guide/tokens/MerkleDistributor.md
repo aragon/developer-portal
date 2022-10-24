@@ -4,14 +4,6 @@
 
 A component distributing claimable [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens via a merkle tree.
 
-#### internal variable `MERKLE_DISTRIBUTOR_INTERFACE_ID`
-
-The [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID of the contract
-
-```solidity
-bytes4 MERKLE_DISTRIBUTOR_INTERFACE_ID 
-```
-
 #### public variable `token`
 
 The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token to be distributed.
@@ -62,46 +54,35 @@ error TokenClaimInvalid(uint256 index, address to, uint256 amount)
 | to | address | The address to which the tokens should be sent. |
 | amount | uint256 | The amount to be claimed. |
 
-####  event `Claimed`
-
-Emitted when tokens are claimed from the distributor.
-
-```solidity
-event Claimed(uint256 index, address to, uint256 amount) 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| index | uint256 | The index in the balance tree that was claimed. |
-| to | address | The address to which the tokens are send. |
-| amount | uint256 | The claimed amount. |
-
 #### external function `initialize`
 
-Initializes the component.
+Initializes the plugin.
 
 ```solidity
-function initialize(contract IDAO _dao, address _trustedForwarder, contract IERC20Upgradeable _token, bytes32 _merkleRoot) external 
+function initialize(contract IDAO _dao, contract IERC20Upgradeable _token, bytes32 _merkleRoot) external 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | contract IDAO | The IDAO interface of the associated DAO. |
-| _trustedForwarder | address | The address of the trusted forwarder required for meta transactions. |
 | _token | contract IERC20Upgradeable | A mintable [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token. |
 | _merkleRoot | bytes32 | The merkle root of the balance tree. |
 
 *This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
 
-#### external function `versionRecipient`
+#### public function `supportsInterface`
 
-Returns the version of the GSN relay recipient.
+Checks if this or the parent contract supports an interface by its ID.
 
 ```solidity
-function versionRecipient() external view virtual returns (string) 
+function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
 ```
 
-*Describes the version and contract for GSN compatibility.*
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| interfaceId | bytes4 | The ID of the interace. |
+| **Output** | |
+| [0] | bool | bool Returns true if the interface is supported. |
 
 #### external function `claim`
 
@@ -177,4 +158,12 @@ function _setClaimed(uint256 _index) private
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _index | uint256 | The index in the balance tree to be claimed. |
+
+#### private variable `__gap`
+
+This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
+
+```solidity
+uint256[47] __gap 
+```
 

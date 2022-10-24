@@ -1,39 +1,37 @@
 ## Aragon Core
 
-###  contract `MerkleMinter`
+###  contract `IMerkleMinter`
 
-A component minting [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens and distributing them on merkle trees using `MerkleDistributor` clones.
+####  event `MerkleMinted`
 
-#### public variable `MERKLE_MINT_PERMISSION_ID`
-
-The ID of the permission required to call the `merkleMint` function.
+Emitted when a token is minted.
 
 ```solidity
-bytes32 MERKLE_MINT_PERMISSION_ID 
+event MerkleMinted(address distributor, bytes32 merkleRoot, uint256 totalAmount, bytes tree, bytes context) 
 ```
 
-#### public variable `CHANGE_DISTRIBUTOR_PERMISSION_ID`
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| distributor | address | The `MerkleDistributor` address via which the tokens can be claimed. |
+| merkleRoot | bytes32 | The root of the merkle balance tree. |
+| totalAmount | uint256 | The total amount of tokens that were minted. |
+| tree | bytes | The link to the stored merkle tree. |
+| context | bytes | Additional info related to the minting process. |
 
-The ID of the permission required to call the `changeDistributor` function.
-
-```solidity
-bytes32 CHANGE_DISTRIBUTOR_PERMISSION_ID 
-```
-
-#### public variable `token`
+#### external function `token`
 
 The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token to be distributed.
 
 ```solidity
-contract IERC20MintableUpgradeable token 
+function token() external returns (contract IERC20MintableUpgradeable) 
 ```
 
-#### public variable `distributorBase`
+#### external function `distributorBase`
 
 The address of the `MerkleDistributor` to clone from.
 
 ```solidity
-contract IMerkleDistributor distributorBase 
+function distributorBase() external returns (contract IMerkleDistributor) 
 ```
 
 #### external function `initialize`
@@ -64,20 +62,6 @@ function changeDistributorBase(contract IMerkleDistributor _distributorBase) ext
 |:----- | ---- | ----------- |
 | _distributorBase | contract IMerkleDistributor | the address of base distributor |
 
-#### public function `supportsInterface`
-
-Checks if this or the parent contract supports an interface by its ID.
-
-```solidity
-function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| interfaceId | bytes4 | The ID of the interace. |
-| **Output** | |
-| [0] | bool | bool Returns true if the interface is supported. |
-
 #### external function `merkleMint`
 
 Mints [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens and distributes them using a `MerkleDistributor`.
@@ -94,12 +78,4 @@ function merkleMint(bytes32 _merkleRoot, uint256 _totalAmount, bytes _tree, byte
 | _context | bytes | Additional info related to the minting process. |
 | **Output** | |
 | distributor | contract IMerkleDistributor | The `MerkleDistributor` via which the tokens can be claimed. |
-
-#### private variable `__gap`
-
-This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
-
-```solidity
-uint256[48] __gap 
-```
 
