@@ -35,13 +35,12 @@ error NoVotingPower()
 Initializes the component.
 
 ```solidity
-function initialize(contract IDAO _dao, address _trustedForwarder, uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration, contract ERC20VotesUpgradeable _token) public 
+function initialize(contract IDAO _dao, uint64 _participationRequiredPct, uint64 _supportRequiredPct, uint64 _minDuration, contract ERC20VotesUpgradeable _token) public 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | contract IDAO | The IDAO interface of the associated DAO. |
-| _trustedForwarder | address | The address of the trusted forwarder required for meta transactions. |
 | _participationRequiredPct | uint64 | The minimal required participation in percent. |
 | _supportRequiredPct | uint64 | The minimal required support in percent. |
 | _minDuration | uint64 | The minimal duration of a vote. |

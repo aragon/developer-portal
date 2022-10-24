@@ -315,7 +315,7 @@ function prepareInstallation(address _dao, address _pluginSetup, contract Plugin
 |:----- | ---- | ----------- |
 | _dao | address | The address of the installing DAO. |
 | _pluginSetup | address | The address of the `PluginSetup` contract. |
-| _pluginSetupRepo | contract PluginRepo |  |
+| _pluginSetupRepo | contract PluginRepo | The repository storing the `PluginSetup` contracts of all versions of a plugin. |
 | _data | bytes | The `bytes` encoded data containing the input parameters for the installation as specified in the `prepareInstallationDataABI()` function in the `pluginSetup` setup contract. |
 | **Output** | |
 | plugin | address | The prepared plugin contract address. |
@@ -329,13 +329,14 @@ function prepareInstallation(address _dao, address _pluginSetup, contract Plugin
 Applies the permissions of a prepared installation to a DAO.
 
 ```solidity
-function applyInstallation(address _dao, address _pluginSetup, address _plugin, struct PermissionLib.ItemMultiTarget[] _permissions) external 
+function applyInstallation(address _dao, address _pluginSetup, contract PluginRepo _pluginSetupRepo, address _plugin, struct PermissionLib.ItemMultiTarget[] _permissions) external 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | address | The address of the installing DAO. |
 | _pluginSetup | address | The address of the `PluginSetup` contract. |
+| _pluginSetupRepo | contract PluginRepo | The repository storing the `PluginSetup` contracts of all versions of a plugin. |
 | _plugin | address | The address of the `Plugin` contract. |
 | _permissions | struct PermissionLib.ItemMultiTarget[] | The list of multi-targeted permission operations to apply to the installing DAO. |
 
@@ -365,7 +366,7 @@ function prepareUpdate(address _dao, struct PluginSetupProcessor.PluginUpdatePar
 Applies the permissions of a prepared update of an UUPS upgradeable contract to a DAO.
 
 ```solidity
-function applyUpdate(address _dao, address _plugin, address _pluginSetup, bytes _initData, struct PermissionLib.ItemMultiTarget[] _permissions) external 
+function applyUpdate(address _dao, address _plugin, address _pluginSetup, contract PluginRepo _pluginSetupRepo, bytes _initData, struct PermissionLib.ItemMultiTarget[] _permissions) external 
 ```
 
 | Input | Type | Description |
@@ -373,6 +374,7 @@ function applyUpdate(address _dao, address _plugin, address _pluginSetup, bytes 
 | _dao | address | The address of the updating DAO. |
 | _plugin | address | The address of the `PluginUUPSUpgradeable` proxy contract. |
 | _pluginSetup | address | The address of the `PluginSetup` contract. |
+| _pluginSetupRepo | contract PluginRepo | The repository storing the `PluginSetup` contracts of all versions of a plugin. |
 | _initData | bytes | The initialization data to be passed to the upgradeable plugin contract via `upgradeToAndCall`. // revisit |
 | _permissions | struct PermissionLib.ItemMultiTarget[] | The list of multi-targeted permission operations to apply to the updating DAO. |
 
@@ -402,7 +404,7 @@ function prepareUninstallation(address _dao, address _plugin, address _pluginSet
 Applies the permissions of a prepared uninstallation to a DAO.
 
 ```solidity
-function applyUninstallation(address _dao, address _plugin, address _pluginSetup, address[] _currentHelpers, struct PermissionLib.ItemMultiTarget[] _permissions) external 
+function applyUninstallation(address _dao, address _plugin, address _pluginSetup, contract PluginRepo _pluginSetupRepo, address[] _currentHelpers, struct PermissionLib.ItemMultiTarget[] _permissions) external 
 ```
 
 | Input | Type | Description |
@@ -410,6 +412,7 @@ function applyUninstallation(address _dao, address _plugin, address _pluginSetup
 | _dao | address | The address of the DAO. |
 | _plugin | address | The address of the `Plugin` contract. |
 | _pluginSetup | address | The address of the `PluginSetup` contract. |
+| _pluginSetupRepo | contract PluginRepo | The repository storing the `PluginSetup` contracts of all versions of a plugin. |
 | _currentHelpers | address[] | The address array of all current helpers (contracts or EOAs) associated with the plugin that is uninstalled. |
 | _permissions | struct PermissionLib.ItemMultiTarget[] | The list of multi-targeted permission operations to apply to the uninstalling DAO. |
 
@@ -433,13 +436,14 @@ function _getAppliedId(address _dao, address _plugin) private pure returns (byte
 Returns an identifier for prepared installations by hashing the DAO and plugin address.
 
 ```solidity
-function _getSetupId(address _dao, address _pluginSetup, address _plugin) private pure returns (bytes32 setupId) 
+function _getSetupId(address _dao, address _pluginSetup, address _pluginSetupRepo, address _plugin) private pure returns (bytes32 setupId) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | address | The address of the DAO conducting the setup. |
-| _pluginSetup | address |  |
+| _pluginSetup | address | The address of the plugin setup. |
+| _pluginSetupRepo | address | The address of plugin setup repo. |
 | _plugin | address | The address of the `Plugin` contract associated with the setup. |
 
 #### private function `_getHelpersHash`
