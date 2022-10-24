@@ -4,12 +4,12 @@
 
 An [ERC-165](https://eips.ethereum.org/EIPS/eip-165)-based registry for contracts
 
-#### public variable `UPGRADE_PERMISSION_ID`
+#### public variable `UPGRADE_REGISTRY_PERMISSION_ID`
 
 The ID of the permission required to call the `_authorizeUpgrade` function.
 
 ```solidity
-bytes32 UPGRADE_PERMISSION_ID 
+bytes32 UPGRADE_REGISTRY_PERMISSION_ID 
 ```
 
 #### public variable `targetInterfaceId`
@@ -99,7 +99,7 @@ Internal method authorizing the upgrade of the contract via the [upgradeabilty m
 function _authorizeUpgrade(address) internal virtual 
 ```
 
-*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+*The caller must have the `UPGRADE_REGISTRY_PERMISSION_ID` permission.*
 
 #### internal function `_register`
 

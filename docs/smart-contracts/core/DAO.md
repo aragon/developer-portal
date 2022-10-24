@@ -6,12 +6,12 @@ This contract is the entry point to the Aragon DAO framework and provides our us
 
 *Public API of the Aragon DAO framework.*
 
-#### public variable `UPGRADE_PERMISSION_ID`
+#### public variable `UPGRADE_DAO_PERMISSION_ID`
 
 The ID of the permission required to call the `_authorizeUpgrade` function.
 
 ```solidity
-bytes32 UPGRADE_PERMISSION_ID 
+bytes32 UPGRADE_DAO_PERMISSION_ID 
 ```
 
 #### public variable `SET_METADATA_PERMISSION_ID`
@@ -142,7 +142,7 @@ Internal method authorizing the upgrade of the contract via the [upgradeabilty m
 function _authorizeUpgrade(address) internal virtual 
 ```
 
-*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+*The caller must have the `UPGRADE_DAO_PERMISSION_ID` permission.*
 
 #### external function `setTrustedForwarder`
 
