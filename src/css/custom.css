@@ -15,10 +15,8 @@ span {
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
-  --ifm-color-primary: #3465A4;
+  --ifm-color-primary: #3465a4;
   --ifm-color-primary-dark: #2f5b94;
   --ifm-color-primary-darker: #2c568b;
   --ifm-color-primary-darkest: #244773;
