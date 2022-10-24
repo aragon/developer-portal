@@ -82,7 +82,7 @@ function setPluginRepoPermissions(contract PluginRepo pluginRepo, address mainta
 | pluginRepo | contract PluginRepo | The plugin repository instance just created. |
 | maintainer | address | The plugin maintainer address. |
 
-*The plugin maintainer is granted the `CREATE_VERSION_PERMISSION_ID`, `UPGRADE_PERMISSION_ID`, and `ROOT_PERMISSION_ID`.*
+*The plugin maintainer is granted the `CREATE_VERSION_PERMISSION_ID`, `UPGRADE_REPO_PERMISSION_ID`, and `ROOT_PERMISSION_ID`.*
 
 #### internal function `_createPluginRepo`
 

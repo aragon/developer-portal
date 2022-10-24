@@ -4,12 +4,12 @@
 
 This contract registers ENS subdomains under a parent domain specified in the initialization process and maintains ownership of the subdomain since only the resolver address is set. This contract must either be the domain node owner or an approved operator of the node owner. The default resolver being used is the one specified in the parent domain.
 
-#### public variable `UPGRADE_PERMISSION_ID`
+#### public variable `UPGRADE_REGISTRAR_PERMISSION_ID`
 
 The ID of the permission required to call the `_authorizeUpgrade` function.
 
 ```solidity
-bytes32 UPGRADE_PERMISSION_ID 
+bytes32 UPGRADE_REGISTRAR_PERMISSION_ID 
 ```
 
 #### public variable `REGISTER_ENS_SUBDOMAIN_PERMISSION_ID`
@@ -96,7 +96,7 @@ Internal method authorizing the upgrade of the contract via the [upgradeabilty m
 function _authorizeUpgrade(address) internal virtual 
 ```
 
-*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+*The caller must have the `UPGRADE_REGISTRAR_PERMISSION_ID` permission.*
 
 #### external function `registerSubnode`
 

@@ -12,12 +12,12 @@ returns the plugin's type
 function pluginType() public pure returns (enum IPlugin.PluginType) 
 ```
 
-#### public variable `UPGRADE_PERMISSION_ID`
+#### public variable `UPGRADE_PLUGIN_PERMISSION_ID`
 
 The ID of the permission required to call the `_authorizeUpgrade` function.
 
 ```solidity
-bytes32 UPGRADE_PERMISSION_ID 
+bytes32 UPGRADE_PLUGIN_PERMISSION_ID 
 ```
 
 #### internal function `__PluginUUPSUpgradeable_init`
@@ -66,7 +66,7 @@ Internal method authorizing the upgrade of the contract via the [upgradeabilty m
 function _authorizeUpgrade(address) internal virtual 
 ```
 
-*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+*The caller must have the `UPGRADE_PLUGIN_PERMISSION_ID` permission.*
 
 #### private variable `__gap`
 

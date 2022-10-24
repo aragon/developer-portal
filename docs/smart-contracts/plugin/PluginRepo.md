@@ -22,12 +22,12 @@ The ID of the permission required to call the `createVersion` function.
 bytes32 CREATE_VERSION_PERMISSION_ID 
 ```
 
-#### public variable `UPGRADE_PERMISSION_ID`
+#### public variable `UPGRADE_REPO_PERMISSION_ID`
 
 The ID of the permission required to call the `createVersion` function.
 
 ```solidity
-bytes32 UPGRADE_PERMISSION_ID 
+bytes32 UPGRADE_REPO_PERMISSION_ID 
 ```
 
 #### internal variable `nextVersionIndex`
@@ -269,7 +269,7 @@ Internal method authorizing the upgrade of the contract via the [upgradeabilty m
 function _authorizeUpgrade(address) internal virtual 
 ```
 
-*The caller must have the `UPGRADE_PERMISSION_ID` permission.*
+*The caller must have the `UPGRADE_REPO_PERMISSION_ID` permission.*
 
 #### public function `supportsInterface`
 
