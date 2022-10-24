@@ -97,7 +97,7 @@ function createERC20VotingDAO(struct DAOFactory.DAOConfig _daoConfig, struct DAO
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _daoConfig | struct DAOFactory.DAOConfig | The name and metadata hash of the DAO. |
-| _voteConfig | struct DAOFactory.VoteConfig | The configuration used to set up the the majority voting. |
+| _voteConfig | struct DAOFactory.VoteConfig | The configuration used to set up the majority voting. |
 | _tokenConfig | struct TokenFactory.TokenConfig | The configuration used to create a new token. |
 | _mintConfig | struct TokenFactory.MintConfig | The configuration used to mint the newly created tokens. |
 | _trustedForwarder | address | The address of the trusted forwarder required for meta transactions. |
@@ -113,7 +113,7 @@ function createAllowlistVotingDAO(struct DAOFactory.DAOConfig _daoConfig, struct
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _daoConfig | struct DAOFactory.DAOConfig | The name and metadata hash of the DAO. |
-| _voteConfig | struct DAOFactory.VoteConfig | The configuration used to set up the the majority voting. |
+| _voteConfig | struct DAOFactory.VoteConfig | The configuration used to set up the majority voting. |
 | _allowlistVoters | address[] | An array of addresses that are allowed to vote. |
 | _trustedForwarder | address | The address of the trusted forwarder required for meta transactions. |
 
