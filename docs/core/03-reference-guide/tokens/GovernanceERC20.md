@@ -12,10 +12,19 @@ The permission identifier to mint new tokens
 bytes32 MINT_PERMISSION_ID 
 ```
 
+#### public struct `MintSettings`
+
+```solidity
+struct MintSettings {
+  address[] receivers;
+  uint256[] amounts;
+}
+```
+
 #### public function `constructor`
 
 ```solidity
-constructor(contract IDAO _dao, string _name, string _symbol) public 
+constructor(contract IDAO _dao, string _name, string _symbol, struct GovernanceERC20.MintSettings _mintSettings) public 
 ```
 
 | Input | Type | Description |
@@ -23,13 +32,14 @@ constructor(contract IDAO _dao, string _name, string _symbol) public
 | _dao | contract IDAO | The managing DAO. |
 | _name | string | The name of the wrapped token. |
 | _symbol | string | The symbol fo the wrapped token. |
+| _mintSettings | struct GovernanceERC20.MintSettings | The initial mint settings |
 
 #### public function `initialize`
 
 Initializes the GovernanceERC20.
 
 ```solidity
-function initialize(contract IDAO _dao, string _name, string _symbol) public 
+function initialize(contract IDAO _dao, string _name, string _symbol, struct GovernanceERC20.MintSettings _mintSettings) public 
 ```
 
 | Input | Type | Description |
@@ -37,6 +47,9 @@ function initialize(contract IDAO _dao, string _name, string _symbol) public
 | _dao | contract IDAO | The managing DAO. |
 | _name | string | The name of the wrapped token. |
 | _symbol | string | The symbol fo the wrapped token. |
+| _mintSettings | struct GovernanceERC20.MintSettings | The token mint settings struct containing the `receivers` and `amounts`. |
+
+*The lengths of `receivers` and `amounts` must match.*
 
 #### public function `supportsInterface`
 

@@ -95,14 +95,14 @@ TODO: Worth considering the decimals ?
 Creates a new `GovernanceERC20` token or a `GovernanceWrappedERC20` from an existing [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token depending on the address used in the `TokenConfig` provided.
 
 ```solidity
-function createToken(contract DAO _managingDao, struct TokenFactory.TokenConfig _tokenConfig, struct TokenFactory.MintConfig _mintConfig) external returns (contract ERC20VotesUpgradeable, contract MerkleMinter) 
+function createToken(contract DAO _managingDao, struct TokenFactory.TokenConfig _tokenConfig, struct GovernanceERC20.MintSettings _mintSettings) external returns (contract ERC20VotesUpgradeable, contract MerkleMinter) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _managingDao | contract DAO | The address of the DAO managing the token. |
 | _tokenConfig | struct TokenFactory.TokenConfig | The token configuration struct containing the name, and symbol of the token to be create, but also an address. For `address(0)`, a new governance token is created. For any other address pointing to an [ERC-20](https://eips.ethereum.org/EIPS/eip-20)-compatible contract, a wrapped governance token is created. |
-| _mintConfig | struct TokenFactory.MintConfig | The token mint configuration struct containing the `receivers` and `amounts`. |
+| _mintSettings | struct GovernanceERC20.MintSettings | The token mint settings struct containing the `receivers` and `amounts`. |
 | **Output** | |
 | [0] | contract ERC20VotesUpgradeable | ERC20VotesUpgradeable The address of the created token. |
 | **Output** | |

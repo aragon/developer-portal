@@ -62,19 +62,6 @@ A mapping between the `PluginSetup` contract addresses and the version index.
 mapping(address => uint256) versionIndexForPluginSetup 
 ```
 
-####  error `InvalidBump`
-
-Thrown if a semantic version number bump is invalid.
-
-```solidity
-error InvalidBump(uint16[3] currentVersion, uint16[3] nextVersion) 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| currentVersion | uint16[3] | The current semantic version number. |
-| nextVersion | uint16[3] | The next semantic version number. |
-
 ####  error `VersionIndexDoesNotExist`
 
 Thrown if version does not exist.
@@ -128,13 +115,15 @@ error InvalidContractAddress(address invalidContract)
 Emitted when a new version is created.
 
 ```solidity
-event VersionCreated(uint256 versionId, uint16[3] semanticVersion) 
+event VersionCreated(uint256 versionId, uint16[3] semanticVersion, address pluginSetup, bytes contentURI) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | versionId | uint256 | The version index. |
 | semanticVersion | uint16[3] | The semantic version number. |
+| pluginSetup | address | The address of the plugin setup contract. |
+| contentURI | bytes | External URI where the plugin metadata and subsequent resources can be fetched from |
 
 #### external function `initialize`
 
@@ -231,21 +220,6 @@ function getVersionCount() public view returns (uint256)
 | Output | Type | Description |
 | ------ | ---- | ----------- |
 | [0] | uint256 | uint256 The number of published versions. |
-
-#### public function `isValidBump`
-
-Checks if a version bump is valid.
-
-```solidity
-function isValidBump(uint16[3] _oldVersion, uint16[3] _newVersion) public pure returns (bool) 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _oldVersion | uint16[3] | The old semantic version number. |
-| _newVersion | uint16[3] | The new semantic version number. |
-| **Output** | |
-| [0] | bool | bool Returns true if the bump is valid. |
 
 #### internal function `semanticVersionHash`
 

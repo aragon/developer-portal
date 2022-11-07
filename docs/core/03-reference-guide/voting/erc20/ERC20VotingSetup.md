@@ -62,15 +62,6 @@ struct TokenSettings {
 }
 ```
 
-#### public struct `MintSettings`
-
-```solidity
-struct MintSettings {
-  address[] receivers;
-  uint256[] amounts;
-}
-```
-
 ####  error `MintArrayLengthMismatch`
 
 Thrown if `MintSettings`'s params are not of the same length.
