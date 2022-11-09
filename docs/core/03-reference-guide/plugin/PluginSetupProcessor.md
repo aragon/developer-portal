@@ -115,6 +115,20 @@ error PluginNonupgradeable(address plugin)
 |:----- | ---- | ----------- |
 | plugin | address | The address of the plugin contract. |
 
+####  error `PluginProxyUpgradeFailed`
+
+Thrown if the upgrade of a plugin proxy failed.
+
+```solidity
+error PluginProxyUpgradeFailed(address proxy, address implementation, bytes initData) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| proxy | address | The address of the UUPSUpgradeable proxy. |
+| implementation | address | The address of the implementation contract. |
+| initData | bytes | The initialization data to be passed to the upgradeable plugin contract via `upgradeToAndCall`. |
+
 ####  error `IPluginNotSupported`
 
 Thrown if a contract does not support the `IPlugin` interface.
@@ -143,12 +157,12 @@ Thrown if two helpers hashes obtained via  [`getHelpersHash`](#private-function-
 error HelpersHashMismatch() 
 ```
 
-####  error `EmptyPluginRepo`
+####  error `PluginRepoNonexistent`
 
-Thrown if a plugin repository is empty.
+Thrown if a plugin repository does not exist on the plugin repo registry.
 
 ```solidity
-error EmptyPluginRepo() 
+error PluginRepoNonexistent() 
 ```
 
 ####  error `SetupNotPrepared`
