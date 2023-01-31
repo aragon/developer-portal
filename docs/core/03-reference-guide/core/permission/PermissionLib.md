@@ -10,29 +10,28 @@ A library containing objects for permission processing.
 enum Operation {
   Grant,
   Revoke,
-  Freeze,
-  GrantWithOracle
+  GrantWithCondition
 }
 ```
 
-#### public struct `ItemSingleTarget`
+#### public struct `SingleTargetPermission`
 
 ```solidity
-struct ItemSingleTarget {
+struct SingleTargetPermission {
   enum PermissionLib.Operation operation;
   address who;
   bytes32 permissionId;
 }
 ```
 
-#### public struct `ItemMultiTarget`
+#### public struct `MultiTargetPermission`
 
 ```solidity
-struct ItemMultiTarget {
+struct MultiTargetPermission {
   enum PermissionLib.Operation operation;
   address where;
   address who;
-  address oracle;
+  address condition;
   bytes32 permissionId;
 }
 ```

@@ -2,6 +2,8 @@
 
 ###  contract `IPlugin`
 
+An interface defining the traits of a plugin.
+
 ####  enum `PluginType`
 
 ```solidity

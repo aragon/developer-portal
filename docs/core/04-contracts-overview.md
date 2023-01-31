@@ -51,7 +51,7 @@ To learn more about the architecture of the system, visit the section explaining
 | :------------------ | :--------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
 | `PermissionManager` | A permission manager (an access control list (ACL)) that `DAO` and other contracts can inherit from. | owned by `DAO`                                       |
 | `PermissionLib`     | A library for data types needed for the processing of permission operations.                         | used by `DAO`, `PluginSetup`, `PluginSetupProcessor` |
-| `IPermissionOracle` | An interface for oracle implementations.                                                             | implementations can be used by `PermissionManager`   |
+| `IPermissionCondition` | An interface for condition implementations.                                                             | implementations can be used by `PermissionManager`   |
 
 #### Plugin Related
 
@@ -89,9 +89,9 @@ To learn more about the architecture of the system, visit the section explaining
 
 | Contract             | Description                                                                                  | Relationship                                                                    |
 | :------------------- | :------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
-| `ERC20Voting`        | A majority voting plugin using ERC-20 tokens for the census.                                 | inherits from `MajorityVotingBase`                                              |
-| `AllowlistVoting`    | A majority voting plugin using a list of allowed addresses for the census.                   | inherits from `MajorityVotingBase`                                              |
-| `MajorityVotingBase` | Contains abstract, majority voting functionality.                                            | is parent of `ERC20Voting` and `AllowlistVoting`                                |
+| `TokenVoting`        | A majority voting plugin using ERC-20 tokens for the census.                                 | inherits from `MajorityVotingBase`                                              |
+| `AddresslistVoting`  | A majority voting plugin using a list of allowed addresses for the census.                   | inherits from `MajorityVotingBase`                                              |
+| `MajorityVotingBase` | Contains abstract, majority voting functionality.                                            | is parent of `TokenVoting` and `AddresslistVoting`                              |
 | `MerkleMinter`       | Mints `ERC-20` tokens and distributes them on merkle trees using `MerkleDistributor` clones. | is `PluginUUPSUpgradeable`, uses `MerkleDistributor`, is used by `TokenFactory` |
 | `MerkleDistributor`  | Distributes claimable ERC-20 tokens via a merkle tree.                                       | is `PluginUUPSUpgradeable`                                                      |
 
@@ -109,9 +109,7 @@ To learn more about the architecture of the system, visit the section explaining
 
 | Contract                  | Description                                                                | Relationship                                                    |
 | :------------------------ | :------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| `InterfaceBasedRegistry ` | An ERC165 interface based registry for contracts.                          | used by `DAORegistry`, `PluginRepoRegistry`                     |
-| `TimeHelpers`             | Returns `block.number` and `block.timestamp` as `uint64` values.           | used by `MajorityVotingBase`                                    |
-| `Uint256Helpers`          | Converts `uint256` to `uint64`.                                            | used by`TimeHelpers`                                            |
+| `InterfaceBasedRegistry ` | An ERC165 interface based registry for contracts.                          | used by `DAORegistry`, `PluginRepoRegistry`                     |                                    |
 | `auth`                    | Provides a free function to be used in the `DaoAuthorizable` base classes. | used by `DaoAuthorizableBase`, `DaoAuthorizableBaseUpgradeable` |
 | `Proxy`                   | Provides a convenience function to create an UUPS proxy.                   | used by`DAOFactory`, `PluginRepoFactory`                        |
-| `UncheckedMath`           | Provides convenience functions for unchecked math operations.              | used by `PluginRepo`, `AllowlistVoting`                         |
+| `UncheckedMath`           | Provides convenience functions for unchecked math operations.              | used by `PluginRepo`, `AddresslistVoting`                       |
