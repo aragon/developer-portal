@@ -34,7 +34,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _interfaceId | bytes4 | The ID of the interace. |
+| _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns true if the interface is supported. |
+| [0] | bool | bool Returns `true` if the interface is supported. |
 

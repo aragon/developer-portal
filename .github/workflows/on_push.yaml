@@ -1,0 +1,22 @@
+name: On Push
+on:
+  push:
+    branches-ignore:
+      - "staging"
+      - "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          node-version: 16
+          registry-url: "https://registry.npmjs.org"
+      - name: Install deps
+        run: yarn
+      - name: Build
+        run: yarn run build
