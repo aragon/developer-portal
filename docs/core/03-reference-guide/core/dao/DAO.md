@@ -30,14 +30,6 @@ The ID of the permission required to call the `setMetadata` function.
 bytes32 SET_METADATA_PERMISSION_ID 
 ```
 
-#### public variable `WITHDRAW_PERMISSION_ID`
-
-The ID of the permission required to call the `withdraw` function.
-
-```solidity
-bytes32 WITHDRAW_PERMISSION_ID 
-```
-
 #### public variable `SET_TRUSTED_FORWARDER_PERMISSION_ID`
 
 The ID of the permission required to call the `setTrustedForwarder` function.
@@ -116,7 +108,7 @@ error ActionFailed(uint256 index)
 
 ####  error `ZeroAmount`
 
-Thrown if the deposit or withdraw amount is zero.
+Thrown if the deposit amount is zero.
 
 ```solidity
 error ZeroAmount() 
@@ -134,14 +126,6 @@ error NativeTokenDepositAmountMismatch(uint256 expected, uint256 actual)
 |:----- | ---- | ----------- |
 | expected | uint256 | The expected native token amount. |
 | actual | uint256 | The actual native token amount deposited. |
-
-####  error `NativeTokenWithdrawFailed`
-
-Thrown if a native token withdraw fails.
-
-```solidity
-error NativeTokenWithdrawFailed() 
-```
 
 ####  event `NewURI`
 
