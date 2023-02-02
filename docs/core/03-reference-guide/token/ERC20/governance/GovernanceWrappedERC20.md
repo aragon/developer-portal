@@ -12,6 +12,8 @@ To get the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens back, the owne
 
 #### public function `constructor`
 
+Calls the initialize function.
+
 ```solidity
 constructor(contract IERC20Upgradeable _token, string _name, string _symbol) public 
 ```
@@ -24,7 +26,7 @@ constructor(contract IERC20Upgradeable _token, string _name, string _symbol) pub
 
 #### public function `initialize`
 
-Initializes the GovernanceWrappedERC20.
+Initializes the contract.
 
 ```solidity
 function initialize(contract IERC20Upgradeable _token, string _name, string _symbol) public 

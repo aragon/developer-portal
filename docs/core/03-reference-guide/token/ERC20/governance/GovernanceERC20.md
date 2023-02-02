@@ -21,7 +21,22 @@ struct MintSettings {
 }
 ```
 
+####  error `MintSettingsArrayLengthMismatch`
+
+Thrown if the number of receivers and amounts specified in the mint settings do not match.
+
+```solidity
+error MintSettingsArrayLengthMismatch(uint256 receiversArrayLength, uint256 amountsArrayLength) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| receiversArrayLength | uint256 | The length of the `receivers` array. |
+| amountsArrayLength | uint256 | The length of the `amounts` array. |
+
 #### public function `constructor`
+
+Calls the initialize function.
 
 ```solidity
 constructor(contract IDAO _dao, string _name, string _symbol, struct GovernanceERC20.MintSettings _mintSettings) public 
@@ -30,13 +45,13 @@ constructor(contract IDAO _dao, string _name, string _symbol, struct GovernanceE
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | contract IDAO | The managing DAO. |
-| _name | string | The name of the wrapped token. |
-| _symbol | string | The symbol fo the wrapped token. |
-| _mintSettings | struct GovernanceERC20.MintSettings | The initial mint settings |
+| _name | string | The name of the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
+| _symbol | string | The symbol fo the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
+| _mintSettings | struct GovernanceERC20.MintSettings | The token mint settings struct containing the `receivers` and `amounts`. |
 
 #### public function `initialize`
 
-Initializes the GovernanceERC20.
+Initializes the contract and mints tokens to a list of receivers.
 
 ```solidity
 function initialize(contract IDAO _dao, string _name, string _symbol, struct GovernanceERC20.MintSettings _mintSettings) public 
@@ -45,11 +60,9 @@ function initialize(contract IDAO _dao, string _name, string _symbol, struct Gov
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | _dao | contract IDAO | The managing DAO. |
-| _name | string | The name of the wrapped token. |
-| _symbol | string | The symbol fo the wrapped token. |
+| _name | string | The name of the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
+| _symbol | string | The symbol fo the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
 | _mintSettings | struct GovernanceERC20.MintSettings | The token mint settings struct containing the `receivers` and `amounts`. |
-
-*The lengths of `receivers` and `amounts` must match.*
 
 #### public function `supportsInterface`
 

@@ -46,19 +46,6 @@ struct TokenSettings {
 }
 ```
 
-####  error `MintArrayLengthMismatch`
-
-Thrown if `MintSettings`'s params are not of the same length.
-
-```solidity
-error MintArrayLengthMismatch(uint256 receiversArrayLength, uint256 amountsArrayLength) 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| receiversArrayLength | uint256 | The array length of `receivers`. |
-| amountsArrayLength | uint256 | The array length of `amounts`. |
-
 ####  error `TokenNotContract`
 
 Thrown if token address is passed which is not a token.
