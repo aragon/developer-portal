@@ -1,4 +1,4 @@
-# Aragon SDK
+# aragonSDK
 
 This repository contains the SDK for the JavaScript/TypeScript language.
 
