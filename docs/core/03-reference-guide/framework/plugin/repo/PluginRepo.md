@@ -63,14 +63,6 @@ The mapping between the plugin setup address and its corresponding version hash.
 mapping(address => bytes32) latestTagHashForPluginSetup 
 ```
 
-#### internal variable `metadataPerRelease`
-
-The mapping between release id and release's metadata URI.
-
-```solidity
-mapping(uint8 => bytes) metadataPerRelease 
-```
-
 #### public variable `latestRelease`
 
 The ID of the latest release.
@@ -95,15 +87,11 @@ error VersionHashDoesNotExist(bytes32 versionHash)
 
 ####  error `InvalidPluginSetupInterface`
 
-Thrown if a contract does not inherit from `PluginSetup`.
+Thrown if a plugin setup contract does not inherit from `PluginSetup`.
 
 ```solidity
-error InvalidPluginSetupInterface(address invalidPluginSetup) 
+error InvalidPluginSetupInterface() 
 ```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| invalidPluginSetup | address | The address of the contract missing the `PluginSetup` interface. |
 
 ####  error `ReleaseZeroNotAllowed`
 
@@ -140,30 +128,21 @@ error PluginSetupAlreadyInPreviousRelease(uint8 release, uint16 build, address p
 | build | uint16 | The build number of the already existing plugin setup. |
 | pluginSetup | address | The plugin setup contract address. |
 
-####  error `InvalidReleaseMetadata`
+####  error `EmptyReleaseMetadata`
 
-Thrown if the metadata URI is not set for a release.
+Thrown if the metadata URI is empty.
 
 ```solidity
-error InvalidReleaseMetadata(uint8 release, bytes releaseMetadata) 
+error EmptyReleaseMetadata() 
 ```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| release | uint8 | the release number for which the metadata URI is not set. |
-| releaseMetadata | bytes | The release metadata URI. |
 
 ####  error `ReleaseDoesNotExist`
 
 Thrown if release does not exist.
 
 ```solidity
-error ReleaseDoesNotExist(uint8 release) 
+error ReleaseDoesNotExist() 
 ```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| release | uint8 | The release number of the release that does not exist. |
 
 ####  event `VersionCreated`
 
@@ -215,7 +194,7 @@ function initialize(address initialOwner) external
 
 #### external function `createVersion`
 
-Creates a new version with contract `_pluginSetupAddress` and content `@fromHex(_buildMetadata)`.
+Creates a new plugin version as the latest build for an existing release number or the first build for a new release number for the provided `PluginSetup` contract address and metadata.
 
 ```solidity
 function createVersion(uint8 _release, address _pluginSetup, bytes _buildMetadata, bytes _releaseMetadata) external 
@@ -240,19 +219,6 @@ function updateReleaseMetadata(uint8 _release, bytes _releaseMetadata) external
 |:----- | ---- | ----------- |
 | _release | uint8 | The release number. |
 | _releaseMetadata | bytes | The release metadata URI. |
-
-#### internal function `_updateReleaseMetadata`
-
-The private helper function to replace new `_metadata` for the `_release`.
-
-```solidity
-function _updateReleaseMetadata(uint8 _release, bytes _metadata) internal 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _release | uint8 | The release number. |
-| _metadata | bytes | The release metadata URI. |
 
 #### public function `getLatestVersion`
 

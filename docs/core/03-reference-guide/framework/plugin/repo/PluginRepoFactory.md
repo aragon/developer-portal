@@ -53,7 +53,7 @@ function createPluginRepo(string _subdomain, address _initialOwner) external ret
 
 #### external function `createPluginRepoWithFirstVersion`
 
-Creates and registers a `PluginRepo` with an ENS subdomain and publishes an initial version.
+Creates and registers a `PluginRepo` with an ENS subdomain and publishes an initial version `1.0`.
 
 ```solidity
 function createPluginRepoWithFirstVersion(string _subdomain, address _pluginSetup, address _maintainer, bytes _releaseMetadata, bytes _buildMetadata) external returns (contract PluginRepo pluginRepo) 
@@ -67,11 +67,11 @@ function createPluginRepoWithFirstVersion(string _subdomain, address _pluginSetu
 | _releaseMetadata | bytes | The release metadata URI. |
 | _buildMetadata | bytes | The build metadata URI. |
 
-*The initial owner of the new PluginRepo is `address(this)`, afterward ownership will be transfered to the address `_maintainer`.*
+*After the creation of the `PluginRepo` and release of the first version by the factory, ownership is transferred to the `_maintainer` address.*
 
 #### internal function `_setPluginRepoPermissions`
 
-Set the final permissions for the published plugin repository maintainer. All permissions are revoked from the the plugin factory and granted to the specified plugin maintainer.
+Set the final permissions for the published plugin repository maintainer. All permissions are revoked from the plugin factory and granted to the specified plugin maintainer.
 
 ```solidity
 function _setPluginRepoPermissions(contract PluginRepo pluginRepo, address maintainer) internal 

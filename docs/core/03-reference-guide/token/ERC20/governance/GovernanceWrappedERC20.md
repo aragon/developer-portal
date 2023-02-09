@@ -112,11 +112,3 @@ function _burn(address account, uint256 amount) internal
 
 *Snapshots the totalSupply after it has been decreased.*
 
-#### private variable `__gap`
-
-This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
-
-```solidity
-uint256[50] __gap 
-```
-
