@@ -71,7 +71,7 @@ constructor(contract DAORegistry _registry, contract PluginSetupProcessor _plugi
 
 #### external function `createDao`
 
-Creates a new DAO and setup a number of plugins.
+Creates a new DAO, registers it on the  DAO registry, and installs a list of plugins via the plugin setup processor.
 
 ```solidity
 function createDao(struct DAOFactory.DAOSettings _daoSettings, struct DAOFactory.PluginSettings[] _pluginSettings) external returns (contract DAO createdDao) 
@@ -79,12 +79,12 @@ function createDao(struct DAOFactory.DAOSettings _daoSettings, struct DAOFactory
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _daoSettings | struct DAOFactory.DAOSettings | The DAO settings containing `trustedForwarder`, `name` and `metadata`. |
-| _pluginSettings | struct DAOFactory.PluginSettings[] | The list of plugin settings that will be installed after the DAO creation, containing `pluginSetup`, `pluginSetupRepo`, and `data`. |
+| _daoSettings | struct DAOFactory.DAOSettings | The DAO settings to be set during the DAO initialization. |
+| _pluginSettings | struct DAOFactory.PluginSettings[] | The array containing references to plugins and their settings to be installed after the DAO has been created. |
 
 #### internal function `_createDAO`
 
-Creates a new DAO, and initialize it with this contract as intial owner.
+Deploys a new DAO `ERC1967` proxy, and initialize it with this contract as the intial owner.
 
 ```solidity
 function _createDAO(struct DAOFactory.DAOSettings _daoSettings) internal returns (contract DAO dao) 

@@ -101,11 +101,3 @@ function _afterTokenTransfer(address from, address to, uint256 amount) internal
 
 Emits a {IVotes-DelegateVotesChanged} event.*
 
-#### private variable `__gap`
-
-This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
-
-```solidity
-uint256[50] __gap 
-```
-

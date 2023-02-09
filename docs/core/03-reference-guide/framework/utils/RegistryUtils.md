@@ -2,7 +2,10 @@
 
 ### internal function `freeFunction`
 
-Checks if the name is either 0-9, a-z or a dash (-).
+Validates that a subdomain name is composed only from characters in the allowed character set:
+- the lowercase letters `a-z`
+- the digits `0-9`
+- the hyphen `-`
 
 ```solidity
 freeFunction isSubdomainValid(string subDomain) internal pure returns (bool) 
