@@ -12,6 +12,8 @@ To get the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens back, the owne
 
 #### public function `constructor`
 
+Calls the initialize function.
+
 ```solidity
 constructor(contract IERC20Upgradeable _token, string _name, string _symbol) public 
 ```
@@ -24,7 +26,7 @@ constructor(contract IERC20Upgradeable _token, string _name, string _symbol) pub
 
 #### public function `initialize`
 
-Initializes the GovernanceWrappedERC20.
+Initializes the contract.
 
 ```solidity
 function initialize(contract IERC20Upgradeable _token, string _name, string _symbol) public 
@@ -109,12 +111,4 @@ function _burn(address account, uint256 amount) internal
 ```
 
 *Snapshots the totalSupply after it has been decreased.*
-
-#### private variable `__gap`
-
-This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
-
-```solidity
-uint256[50] __gap 
-```
 

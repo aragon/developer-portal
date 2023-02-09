@@ -78,11 +78,3 @@ function executeProposal(bytes _metadata, struct IDAO.Action[] _actions, uint256
 | _actions | struct IDAO.Action[] | The actions to be executed. |
 | _allowFailureMap | uint256 | A bitmap allowing the proposal to succeed, even if individual actions might revert. If the bit at index `i` is 1, the proposal succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert. |
 
-#### private variable `__gap`
-
-This empty reserved space is put in place to allow future versions to add new variables without shifting down storage in the inheritance chain (see [OpenZepplins guide about storage gaps](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps)).
-
-```solidity
-uint256[50] __gap 
-```
-

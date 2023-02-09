@@ -19,7 +19,7 @@ function updateReleaseMetadata(uint8 _release, bytes _releaseMetadata) external
 
 #### external function `createVersion`
 
-Creates a new version with contract `_pluginSetupAddress` and content `@fromHex(_buildMetadata)`.
+Creates a new plugin version as the latest build for an existing release number or the first build for a new release number for the provided `PluginSetup` contract address and metadata.
 
 ```solidity
 function createVersion(uint8 _release, address _pluginSetupAddress, bytes _buildMetadata, bytes _releaseMetadata) external 

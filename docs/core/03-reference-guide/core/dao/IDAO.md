@@ -57,23 +57,21 @@ event MetadataSet(bytes metadata)
 
 #### external function `execute`
 
-Executes a list of actions.
+Executes a list of actions. If no failure map is provided, one failing action results in the entire excution to be reverted. If a non-zero failure map is provided, allowed actions can fail without the remaining actions being reverted.
 
 ```solidity
-function execute(bytes32 callId, struct IDAO.Action[] _actions, uint256 _allowFailureMap) external returns (bytes[], uint256) 
+function execute(bytes32 _callId, struct IDAO.Action[] _actions, uint256 _allowFailureMap) external returns (bytes[], uint256) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| callId | bytes32 | The id of the call. The definition of the value of callId is up to the calling contract and can be used, e.g., as a nonce. |
+| _callId | bytes32 | The ID of the call. The definition of the value of `callId` is up to the calling contract and can be used, e.g., as a nonce. |
 | _actions | struct IDAO.Action[] | The array of actions. |
 | _allowFailureMap | uint256 | A bitmap allowing execution to succeed, even if individual actions might revert. If the bit at index `i` is 1, the execution succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert. |
 | **Output** | |
 | [0] | bytes[] | bytes[] The array of results obtained from the executed actions in `bytes`. |
 | **Output** | |
 | [1] | uint256 | uint256 The constructed failureMap which contains which actions have actually failed. |
-
-*Runs a loop through the array of actions and executes them one by one. If one action fails, all will be reverted.*
 
 ####  event `Executed`
 
@@ -86,13 +84,12 @@ event Executed(address actor, bytes32 callId, struct IDAO.Action[] actions, uint
 | Input | Type | Description |
 |:----- | ---- | ----------- |
 | actor | address | The address of the caller. |
-| callId | bytes32 | The id of the call. |
+| callId | bytes32 | The ID of the call. |
 | actions | struct IDAO.Action[] | Array of actions executed. |
 | failureMap | uint256 | Stores which actions have failed. |
 | execResults | bytes[] | Array with the results of the executed actions. |
 
-*The value of callId is defined by the component/contract calling the execute function.
-     A `Plugin` implementation can use it, for example, as a nonce.*
+*The value of `callId` is defined by the component/contract calling the execute function. A `Plugin` implementation can use it, for example, as a nonce.*
 
 ####  event `StandardCallbackRegistered`
 
@@ -214,7 +211,7 @@ event SignatureValidatorSet(address signatureValidator)
 
 #### external function `isValidSignature`
 
-Checks whether a signature is valid for the provided data.
+Checks whether a signature is valid for the provided hash by forwarding the call to the set [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
 
 ```solidity
 function isValidSignature(bytes32 _hash, bytes _signature) external returns (bytes4) 
@@ -222,8 +219,8 @@ function isValidSignature(bytes32 _hash, bytes _signature) external returns (byt
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _hash | bytes32 | The keccak256 hash of arbitrary length data signed on the behalf of `address(this)`. |
-| _signature | bytes | Signature byte array associated with _data. |
+| _hash | bytes32 | The hash of the data to be signed. |
+| _signature | bytes | The signature byte array associated with `_hash`. |
 | **Output** | |
 | [0] | bytes4 | magicValue Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
 
