@@ -54,6 +54,10 @@ const config = {
             require.resolve('./src/css/markdown.css'),
           ],
         },
+        gtag: {
+          trackingID: 'G-MEJG7Q2SPG',
+          anonymizeIP: true,
+        }
       }),
     ],
   ],
