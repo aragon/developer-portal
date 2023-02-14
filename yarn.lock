@@ -1435,7 +1435,7 @@
     tslib "^2.4.0"
     webpack "^5.73.0"
 
-"@docusaurus/plugin-debug@2.3.1":
+"@docusaurus/plugin-debug@2.3.1", "@docusaurus/plugin-debug@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-debug/-/plugin-debug-2.3.1.tgz#26fef904713e148f6dee44957506280f8b7853bb"
   integrity sha512-Ujpml1Ppg4geB/2hyu2diWnO49az9U2bxM9Shen7b6qVcyFisNJTkVG2ocvLC7wM1efTJcUhBO6zAku2vKJGMw==
@@ -1457,7 +1457,7 @@
     "@docusaurus/utils-validation" "2.3.1"
     tslib "^2.4.0"
 
-"@docusaurus/plugin-google-gtag@2.3.1":
+"@docusaurus/plugin-google-gtag@2.3.1", "@docusaurus/plugin-google-gtag@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.3.1.tgz#b8da54a60c0a50aca609c3643faef78cb4f247a0"
   integrity sha512-uXtDhfu4+Hm+oqWUySr3DNI5cWC/rmP6XJyAk83Heor3dFjZqDwCbkX8yWPywkRiWev3Dk/rVF8lEn0vIGVocA==
