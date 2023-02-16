@@ -214,7 +214,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 
 #### external function `addAddresses`
 
-Adds new members to the address list and updates the minimum approval parameter.
+Adds new members to the address list. Previously, it checks if the new addresslist length would be greater than `type(uint16).max`, the maximal number of approvals.
 
 ```solidity
 function addAddresses(address[] _members) external 
@@ -226,7 +226,7 @@ function addAddresses(address[] _members) external
 
 #### external function `removeAddresses`
 
-Removes existing members from the address list. Previously, it checks if the new address list length at least as long as the minimum approvals parameter requires. Note that `minApprovals` is must be at least 1 so the address list cannot become empty.
+Removes existing members from the address list. Previously, it checks if the new addresslist length is at least as long as the minimum approvals parameter requires. Note that `minApprovals` is must be at least 1 so the address list cannot become empty.
 
 ```solidity
 function removeAddresses(address[] _members) external 
@@ -363,6 +363,22 @@ function execute(uint256 _proposalId) public
 |:----- | ---- | ----------- |
 | _proposalId | uint256 | The ID of the proposal to be executed. |
 
+#### external function `isMember`
+
+Checks if an account is a member of the DAO.
+
+```solidity
+function isMember(address _account) external view returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| _account | address | The address of the account to be checked. |
+| **Output** | |
+| [0] | bool | Whether the account is a member or not. |
+
+*This function must be implemented in the plugin contract that introduces the members to the DAO.*
+
 #### internal function `_execute`
 
 Internal function to execute a vote. It assumes the queried proposal exists.
@@ -425,6 +441,10 @@ Internal function to update the plugin settings.
 ```solidity
 function _updateMultisigSettings(struct Multisig.MultisigSettings _multisigSettings) internal 
 ```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| _multisigSettings | struct Multisig.MultisigSettings | The new settings. |
 
 #### private variable `__gap`
 

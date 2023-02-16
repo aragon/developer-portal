@@ -32,22 +32,6 @@ The merkle root of the balance tree storing the claims.
 function merkleRoot() external returns (bytes32) 
 ```
 
-#### external function `initialize`
-
-Initializes the plugin.
-
-```solidity
-function initialize(contract IDAO _dao, contract IERC20Upgradeable _token, bytes32 _merkleRoot) external 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _dao | contract IDAO | The IDAO interface of the associated DAO. |
-| _token | contract IERC20Upgradeable | A mintable [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token. |
-| _merkleRoot | bytes32 | The merkle root of the balance tree. |
-
-*This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
-
 #### external function `claim`
 
 Claims tokens from the balance tree and sends it to an address.

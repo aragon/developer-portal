@@ -375,15 +375,14 @@ modifier canApply(address _dao, bytes32 _permissionId)
 
 #### public function `constructor`
 
-Constructs the plugin setup processor by setting the managing DAO and the associated plugin repo registry.
+Constructs the plugin setup processor by setting the associated plugin repo registry.
 
 ```solidity
-constructor(contract IDAO _managingDao, contract PluginRepoRegistry _repoRegistry) public 
+constructor(contract PluginRepoRegistry _repoRegistry) public 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _managingDao | contract IDAO | The DAO managing the plugin setup processors permissions. |
 | _repoRegistry | contract PluginRepoRegistry | The plugin repo registry contract. |
 
 #### external function `prepareInstallation`

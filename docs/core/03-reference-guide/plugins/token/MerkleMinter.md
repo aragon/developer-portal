@@ -77,12 +77,12 @@ function changeDistributorBase(contract IMerkleDistributor _distributorBase) ext
 Checks if this or the parent contract supports an interface by its ID.
 
 ```solidity
-function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+function supportsInterface(bytes4 _interfaceId) public view virtual returns (bool) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| interfaceId | bytes4 | The ID of the interface. |
+| _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
 | [0] | bool | bool Returns `true` if the interface is supported. |
 

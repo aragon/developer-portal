@@ -120,6 +120,22 @@ function createProposal(bytes _metadata, struct IDAO.Action[] _actions, uint256 
 | **Output** | |
 | proposalId | uint256 | The ID of the proposal. |
 
+#### external function `isMember`
+
+Checks if an account is a member of the DAO.
+
+```solidity
+function isMember(address _account) external view returns (bool) 
+```
+
+| Input | Type | Description |
+|:----- | ---- | ----------- |
+| _account | address | The address of the account to be checked. |
+| **Output** | |
+| [0] | bool | Whether the account is a member or not. |
+
+*This function must be implemented in the plugin contract that introduces the members to the DAO.*
+
 #### internal function `_vote`
 
 Internal function to cast a vote. It assumes the queried vote exists.
