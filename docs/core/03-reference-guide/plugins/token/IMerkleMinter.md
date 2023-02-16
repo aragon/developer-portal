@@ -34,22 +34,6 @@ The address of the `MerkleDistributor` to clone from.
 function distributorBase() external returns (contract IMerkleDistributor) 
 ```
 
-#### external function `initialize`
-
-Initializes the MerkleMinter.
-
-```solidity
-function initialize(contract IDAO _dao, contract IERC20MintableUpgradeable _token, contract IMerkleDistributor _distributorBase) external 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _dao | contract IDAO | The IDAO interface of the associated DAO. |
-| _token | contract IERC20MintableUpgradeable | A mintable [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token. |
-| _distributorBase | contract IMerkleDistributor | A `MerkleDistributor` to be cloned. |
-
-*This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822).*
-
 #### external function `changeDistributorBase`
 
 changes the base distributor address

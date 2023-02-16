@@ -34,7 +34,7 @@ contract PluginSetupProcessor pluginSetupProcessor
 struct DAOSettings {
   address trustedForwarder;
   string daoURI;
-  string name;
+  string subdomain;
   bytes metadata;
 }
 ```

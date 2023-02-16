@@ -85,9 +85,9 @@ event Executed(address actor, bytes32 callId, struct IDAO.Action[] actions, uint
 |:----- | ---- | ----------- |
 | actor | address | The address of the caller. |
 | callId | bytes32 | The ID of the call. |
-| actions | struct IDAO.Action[] | Array of actions executed. |
-| failureMap | uint256 | Stores which actions have failed. |
-| execResults | bytes[] | Array with the results of the executed actions. |
+| actions | struct IDAO.Action[] | The array of actions executed. |
+| failureMap | uint256 | The failure map encoding which actions have failed. |
+| execResults | bytes[] | The array with the results of the executed actions. |
 
 *The value of `callId` is defined by the component/contract calling the execute function. A `Plugin` implementation can use it, for example, as a nonce.*
 
