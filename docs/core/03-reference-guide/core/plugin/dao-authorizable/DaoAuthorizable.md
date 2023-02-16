@@ -38,7 +38,7 @@ function dao() public view returns (contract IDAO)
 
 #### internal modifier `auth`
 
-A modifier to be used to check permissions on a target contract via the associated DAO.
+A modifier to make functions on inheriting contracts authorized. Permissions to call the function are checked through the associated DAO's permission manager.
 
 ```solidity
 modifier auth(bytes32 _permissionId) 
