@@ -52,7 +52,11 @@ const config = {
           customCss: [
             require.resolve('./src/css/custom.css'),
             require.resolve('./src/css/markdown.css'),
-          ]
+          ],
+        },
+        gtag: {
+          trackingID: 'G-MEJG7Q2SPG',
+          anonymizeIP: true
         }
       })
     ]

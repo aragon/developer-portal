@@ -38,7 +38,7 @@ address ALLOW_FLAG
 
 #### internal variable `permissionsHashed`
 
-A mapping storing permissions as hashes (i.e., `permissionHash(where, who, permissionId)`) and their status (unset, allowed, or redirect to a `PermissionCondition`).
+A mapping storing permissions as hashes (i.e., `permissionHash(where, who, permissionId)`) and their status encoded by an address (unset, allowed, or redirecting to a `PermissionCondition`).
 
 ```solidity
 mapping(bytes32 => address) permissionsHashed 
@@ -49,13 +49,12 @@ mapping(bytes32 => address) permissionsHashed
 Thrown if a call is unauthorized.
 
 ```solidity
-error Unauthorized(address here, address where, address who, bytes32 permissionId) 
+error Unauthorized(address where, address who, bytes32 permissionId) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| here | address | The context in which the authorization reverted. |
-| where | address | The contract requiring the permission. |
+| where | address | The context in which the authorization reverted. |
 | who | address | The address (EOA or contract) missing the permission. |
 | permissionId | bytes32 | The permission identifier. |
 
@@ -77,7 +76,7 @@ error PermissionAlreadyGrantedForDifferentCondition(address where, address who, 
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| where | address | The address of the target contract to grant `who` permission to. |
+| where | address | The address of the target contract to grant `_who` permission to. |
 | who | address | The address (EOA or contract) to which the permission has already been granted. |
 | permissionId | bytes32 | The permission identifier. |
 | currentCondition | address | The current condition set for permissionId |
@@ -111,7 +110,7 @@ error AnyAddressDisallowedForWhoAndWhere()
 
 ####  event `Granted`
 
-Emitted when a permission `permission` is granted in the context `here` to the address `who` for the contract `where`.
+Emitted when a permission `permission` is granted in the context `here` to the address `_who` for the contract `_where`.
 
 ```solidity
 event Granted(bytes32 permissionId, address here, address where, address who, contract IPermissionCondition condition) 
@@ -121,13 +120,13 @@ event Granted(bytes32 permissionId, address here, address where, address who, co
 |:----- | ---- | ----------- |
 | permissionId | bytes32 | The permission identifier. |
 | here | address | The address of the context in which the permission is granted. |
-| where | address | The address of the target contract for which `who` receives permission. |
+| where | address | The address of the target contract for which `_who` receives permission. |
 | who | address | The address (EOA or contract) receiving the permission. |
 | condition | contract IPermissionCondition | The address `ALLOW_FLAG` for regular permissions or, alternatively, the `PermissionCondition` to be used. |
 
 ####  event `Revoked`
 
-Emitted when a permission `permission` is revoked in the context `here` from the address `who` for the contract `where`.
+Emitted when a permission `permission` is revoked in the context `here` from the address `_who` for the contract `_where`.
 
 ```solidity
 event Revoked(bytes32 permissionId, address here, address where, address who) 
@@ -137,20 +136,19 @@ event Revoked(bytes32 permissionId, address here, address where, address who)
 |:----- | ---- | ----------- |
 | permissionId | bytes32 | The permission identifier. |
 | here | address | The address of the context in which the permission is revoked. |
-| where | address | The address of the target contract for which `who` loses permission |
+| where | address | The address of the target contract for which `_who` loses permission. |
 | who | address | The address (EOA or contract) losing the permission. |
 
 #### internal modifier `auth`
 
-A modifier to be used to check permissions on a target contract.
+A modifier to make functions on inheriting contracts authorized. Permissions to call the function are checked through this permission manager.
 
 ```solidity
-modifier auth(address _where, bytes32 _permissionId) 
+modifier auth(bytes32 _permissionId) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which the permission is required. |
 | _permissionId | bytes32 | The permission identifier required to call the method this modifier is applied to. |
 
 #### internal function `__PermissionManager_init`
@@ -177,7 +175,7 @@ function grant(address _where, address _who, bytes32 _permissionId) external
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) receiving the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 
@@ -193,7 +191,7 @@ function grantWithCondition(address _where, address _who, bytes32 _permissionId,
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) receiving the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 | _condition | contract IPermissionCondition | The `PermissionCondition` that will be asked for authorization on calls connected to the specified permission identifier. |
@@ -210,7 +208,7 @@ function revoke(address _where, address _who, bytes32 _permissionId) external
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` loses permission. |
+| _where | address | The address of the target contract for which `_who` loses permission. |
 | _who | address | The address (EOA or contract) losing the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 
@@ -218,7 +216,7 @@ function revoke(address _where, address _who, bytes32 _permissionId) external
 
 #### external function `applySingleTargetPermissions`
 
-Processes bulk items on the permission manager.
+Applies an array of permission operations on a single target contracts `_where`.
 
 ```solidity
 function applySingleTargetPermissions(address _where, struct PermissionLib.SingleTargetPermission[] items) external 
@@ -226,24 +224,20 @@ function applySingleTargetPermissions(address _where, struct PermissionLib.Singl
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the contract. |
-| items | struct PermissionLib.SingleTargetPermission[] | The array of bulk items to process. |
-
-*Requires the `ROOT_PERMISSION_ID` permission.*
+| _where | address | The address of the single target contract. |
+| items | struct PermissionLib.SingleTargetPermission[] | The array of single-targeted permission operations to apply. |
 
 #### external function `applyMultiTargetPermissions`
 
-Processes bulk items on the permission manager.
+Applies an array of permission operations on multiple target contracts `items[i].where`.
 
 ```solidity
-function applyMultiTargetPermissions(struct PermissionLib.MultiTargetPermission[] items) external 
+function applyMultiTargetPermissions(struct PermissionLib.MultiTargetPermission[] _items) external 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| items | struct PermissionLib.MultiTargetPermission[] | The array of bulk items to process. |
-
-*Requires that msg.sender has each permissionId on the where.*
+| _items | struct PermissionLib.MultiTargetPermission[] | The array of multi-targeted permission operations to apply. |
 
 #### public function `isGranted`
 
@@ -255,12 +249,12 @@ function isGranted(address _where, address _who, bytes32 _permissionId, bytes _d
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) for which the permission is checked. |
 | _permissionId | bytes32 | The permission identifier. |
 | _data | bytes | The optional data passed to the `PermissionCondition` registered. |
 | **Output** | |
-| [0] | bool | bool Returns true if `who` has the permissions on the target contract via the specified permission identifier. |
+| [0] | bool | bool Returns true if `_who` has the permissions on the target contract via the specified permission identifier. |
 
 #### internal function `_initializePermissionManager`
 
@@ -284,7 +278,7 @@ function _grant(address _where, address _who, bytes32 _permissionId) internal
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) owning the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 
@@ -298,10 +292,10 @@ function _grantWithCondition(address _where, address _who, bytes32 _permissionId
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) owning the permission. |
 | _permissionId | bytes32 | The permission identifier. |
-| _condition | contract IPermissionCondition | The PermissionCondition to be used or it is just the ALLOW_FLAG. |
+| _condition | contract IPermissionCondition | An address either resolving to a `PermissionCondition` contract address or being the `ALLOW_FLAG` address (`address(2)`). |
 
 #### internal function `_revoke`
 
@@ -313,13 +307,13 @@ function _revoke(address _where, address _who, bytes32 _permissionId) internal
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) owning the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 
 #### internal function `_isGranted`
 
-Checks if a caller is granted permissions on a contract via a permission identifier and redirects the approval to a `PermissionCondition` if this was specified in the setup.
+Checks if a caller is granted permissions on a target contract via a permission identifier and redirects the approval to a `PermissionCondition` if this was specified in the setup.
 
 ```solidity
 function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) internal view returns (bool) 
@@ -327,24 +321,23 @@ function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) owning the permission. |
 | _permissionId | bytes32 | The permission identifier. |
-| _data | bytes | The optional data passed to the `PermissionCondition` registered.. |
+| _data | bytes | The optional data passed to the `PermissionCondition` registered. |
 | **Output** | |
-| [0] | bool | bool Returns true if `who` has the permissions on the contract via the specified permissionId identifier. |
+| [0] | bool | bool Returns true if `_who` has the permissions on the contract via the specified permissionId identifier. |
 
 #### private function `_auth`
 
-A private function to be used to check permissions on a target contract.
+A private function to be used to check permissions on the permission manager contract (`address(this)`) itself.
 
 ```solidity
-function _auth(address _where, bytes32 _permissionId) private view 
+function _auth(bytes32 _permissionId) private view 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which the permission is required. |
 | _permissionId | bytes32 | The permission identifier required to call the method this modifier is applied to. |
 
 #### internal function `permissionHash`
@@ -357,7 +350,7 @@ function permissionHash(address _where, address _who, bytes32 _permissionId) int
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _where | address | The address of the target contract for which `who` recieves permission. |
+| _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) owning the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 | **Output** | |

@@ -140,12 +140,12 @@ struct Tally {
 }
 ```
 
-#### internal variable `MAJORITY_VOTING_INTERFACE_ID`
+#### internal variable `MAJORITY_VOTING_BASE_INTERFACE_ID`
 
 The [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID of the contract.
 
 ```solidity
-bytes4 MAJORITY_VOTING_INTERFACE_ID 
+bytes4 MAJORITY_VOTING_BASE_INTERFACE_ID 
 ```
 
 #### public variable `UPDATE_VOTING_SETTINGS_PERMISSION_ID`
@@ -276,12 +276,12 @@ function __MajorityVotingBase_init(contract IDAO _dao, struct MajorityVotingBase
 Checks if this or the parent contract supports an interface by its ID.
 
 ```solidity
-function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) 
+function supportsInterface(bytes4 _interfaceId) public view virtual returns (bool) 
 ```
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| interfaceId | bytes4 | The ID of the interface. |
+| _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
 | [0] | bool | bool Returns `true` if the interface is supported. |
 
