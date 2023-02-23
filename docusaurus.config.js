@@ -82,7 +82,7 @@ const config = {
           // },
           // {
           //   type: 'doc',
-          //   docId: '/docs/core',
+          //   docId: '/docs/osx',
           //   position: 'left',
           //   label: 'Core',
           // }

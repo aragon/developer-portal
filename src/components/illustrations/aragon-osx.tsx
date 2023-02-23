@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const IllustrationCore = () => {
+export const IllustrationOsx = () => {
   return (
     <svg
       width="320"

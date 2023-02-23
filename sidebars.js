@@ -22,7 +22,7 @@ const sidebars = {
   //   {
   //     type: 'category',
   //     label: 'Tutorial',
-  //     items: ['core/Readme'],
+  //     items: ['osx/Readme'],
   //   },
   // ],
 };
