@@ -10,11 +10,11 @@ const leftLinks = [
   },
   {
     text: 'How it works',
-    to: '/docs/core/how-it-works',
+    to: '/docs/osx/how-it-works',
   },
   {
     text: 'Guides',
-    to: '/docs/core/how-to-guides',
+    to: '/docs/osx/how-to-guides',
   },
   {
     text: 'Support',
