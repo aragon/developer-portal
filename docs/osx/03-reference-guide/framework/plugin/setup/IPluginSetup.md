@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `IPluginSetup`
 
@@ -37,7 +37,6 @@ function prepareInstallation(address _dao, bytes _data) external returns (addres
 | _data | bytes | The bytes-encoded data containing the input parameters for the installation as specified in the plugin's build metadata JSON file. |
 | **Output** | |
 | plugin | address | The address of the `Plugin` contract being prepared for installation. |
-| **Output** | |
 | preparedSetupData | struct IPluginSetup.PreparedSetupData | The deployed plugin's relevant data which consists of helpers and permissions. |
 
 #### external function `prepareUpdate`
@@ -55,7 +54,6 @@ function prepareUpdate(address _dao, uint16 _currentBuild, struct IPluginSetup.S
 | _payload | struct IPluginSetup.SetupPayload | The relevant data necessary for the `prepareUpdate`. see above. |
 | **Output** | |
 | initData | bytes | The initialization data to be passed to upgradeable contracts when the update is applied in the `PluginSetupProcessor`. |
-| **Output** | |
 | preparedSetupData | struct IPluginSetup.PreparedSetupData | The deployed plugin's relevant data which consists of helpers and permissions. |
 
 #### external function `prepareUninstallation`
@@ -73,17 +71,17 @@ function prepareUninstallation(address _dao, struct IPluginSetup.SetupPayload _p
 | **Output** | |
 | permissions | struct PermissionLib.MultiTargetPermission[] | The array of multi-targeted permission operations to be applied by the `PluginSetupProcessor` to the uninstalling DAO. |
 
-#### external function `getImplementationAddress`
+#### external function `implementation`
 
-Returns the plugin's base implementation.
+Returns the plugin implementation address.
 
 ```solidity
-function getImplementationAddress() external view returns (address) 
+function implementation() external view returns (address) 
 ```
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
-| [0] | address | address The address of the plugin implementation contract. |
+| [0] | address | The address of the plugin implementation contract. |
 
 *The implementation can be instantiated via the `new` keyword, cloned via the minimal clones pattern (see [ERC-1167](https://eips.ethereum.org/EIPS/eip-1167)), or proxied via the UUPS pattern (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).*
 

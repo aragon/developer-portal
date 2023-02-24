@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `MerkleDistributor`
 
@@ -54,14 +54,6 @@ error TokenClaimInvalid(uint256 index, address to, uint256 amount)
 | to | address | The address to which the tokens should be sent. |
 | amount | uint256 | The amount to be claimed. |
 
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
-
 #### external function `initialize`
 
 Initializes the plugin.
@@ -90,7 +82,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
 #### external function `claim`
 

@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `DaoAuthorizableUpgradeable`
 
@@ -36,7 +36,7 @@ function dao() public view returns (contract IDAO)
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
-| [0] | contract IDAO | IDAO The DAO contract. |
+| [0] | contract IDAO | The DAO contract. |
 
 #### internal modifier `auth`
 

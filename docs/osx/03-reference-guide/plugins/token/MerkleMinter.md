@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `MerkleMinter`
 
@@ -35,14 +35,6 @@ The address of the `MerkleDistributor` to clone from.
 ```solidity
 contract IMerkleDistributor distributorBase 
 ```
-
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
 
 #### external function `initialize`
 
@@ -84,7 +76,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
 #### external function `merkleMint`
 

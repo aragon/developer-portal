@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `MajorityVotingBase`
 
@@ -283,7 +283,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
 #### public function `vote`
 
@@ -346,7 +346,7 @@ function canVote(uint256 _proposalId, address _voter, enum IMajorityVoting.VoteO
 | _voter | address |  |
 | _voteOption | enum IMajorityVoting.VoteOption | Whether the voter abstains, supports or opposes the proposal. |
 | **Output** | |
-| [0] | bool | bool Returns true if the account is allowed to vote. |
+| [0] | bool | Returns true if the account is allowed to vote. |
 
 *The function assumes the queried proposal exists.*
 
@@ -493,15 +493,10 @@ function getProposal(uint256 _proposalId) public view virtual returns (bool open
 | _proposalId | uint256 | The ID of the proposal. |
 | **Output** | |
 | open | bool | Whether the proposal is open or not. |
-| **Output** | |
 | executed | bool | Whether the proposal is executed or not. |
-| **Output** | |
 | parameters | struct MajorityVotingBase.ProposalParameters | The parameters of the proposal vote. |
-| **Output** | |
 | tally | struct MajorityVotingBase.Tally | The current tally of the proposal vote. |
-| **Output** | |
 | actions | struct IDAO.Action[] | The actions to be executed in the associated DAO after the proposal has passed. |
-| **Output** | |
 | allowFailureMap | uint256 | The bit map representations of which actions are allowed to revert so tx still succeeds. |
 
 #### external function `updateVotingSettings`
@@ -635,7 +630,6 @@ function _validateProposalDates(uint64 _start, uint64 _end) internal view virtua
 | _end | uint64 | The end date of the proposal vote. If 0, `_start + minDuration` is used. |
 | **Output** | |
 | startDate | uint64 | The validated start date of the proposal vote. |
-| **Output** | |
 | endDate | uint64 | The validated end date of the proposal vote. |
 
 #### private variable `__gap`

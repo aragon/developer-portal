@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ### internal function `freeFunction`
 

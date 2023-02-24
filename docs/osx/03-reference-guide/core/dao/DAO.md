@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `DAO`
 
@@ -56,7 +56,7 @@ bytes32 REGISTER_STANDARD_CALLBACK_PERMISSION_ID
 
 #### internal variable `MAX_ACTIONS`
 
-Only allows 256 actions to execute per tx.
+The internal constant storing the maximal action array length.
 
 ```solidity
 uint256 MAX_ACTIONS 
@@ -88,7 +88,7 @@ string _daoURI
 
 ####  error `TooManyActions`
 
-Thrown if action length is more than MAX_ACTIONS.
+Thrown if the action array length is larger than `MAX_ACTIONS`.
 
 ```solidity
 error TooManyActions() 
@@ -104,7 +104,7 @@ error ActionFailed(uint256 index)
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| index | uint256 | Index of action in the array that failed. |
+| index | uint256 | The index of the action in the action array that failed. |
 
 ####  error `ZeroAmount`
 
@@ -141,11 +141,11 @@ event NewURI(string daoURI)
 
 #### public function `constructor`
 
+Disables the initializers on the implementation contract to prevent it from being left uninitialized.
+
 ```solidity
 constructor() public 
 ```
-
-*Used to disallow initializing implementation contract by attacker for extra safety.*
 
 #### external function `initialize`
 
@@ -179,9 +179,9 @@ function isPermissionRestrictedForAnyAddr(bytes32 _permissionId) internal pure r
 |:----- | ---- | ----------- |
 | _permissionId | bytes32 | The permission identifier. |
 | **Output** | |
-| [0] | bool | bool Whether ot not permissionId is restricted. |
+| [0] | bool | Whether or not the permission is restricted. |
 
-*by default, every permission is unrestricted and it's the derived contract's responsibility to override it. NOTE: ROOT_PERMISSION_ID is included and not required to set it again.*
+*By default, every permission is unrestricted and it is the derived contract's responsibility to override it. Note, that the `ROOT_PERMISSION_ID` is included not required to be set it again.*
 
 #### internal function `_authorizeUpgrade`
 
@@ -232,7 +232,7 @@ function hasPermission(address _where, address _who, bytes32 _permissionId, byte
 | _permissionId | bytes32 | The permission identifier. |
 | _data | bytes | The optional data passed to the `PermissionCondition` registered. |
 | **Output** | |
-| [0] | bool | bool Returns true if the address has permission, false if not. |
+| [0] | bool | Returns true if the address has permission, false if not. |
 
 #### external function `setMetadata`
 
@@ -260,9 +260,8 @@ function execute(bytes32 _callId, struct IDAO.Action[] _actions, uint256 _allowF
 | _actions | struct IDAO.Action[] | The array of actions. |
 | _allowFailureMap | uint256 | A bitmap allowing execution to succeed, even if individual actions might revert. If the bit at index `i` is 1, the execution succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert. |
 | **Output** | |
-| execResults | bytes[] | bytes[] The array of results obtained from the executed actions in `bytes`. |
-| **Output** | |
-| failureMap | uint256 | uint256 The constructed failureMap which contains which actions have actually failed. |
+| execResults | bytes[] | The array of results obtained from the executed actions in `bytes`. |
+| failureMap | uint256 | The constructed failureMap which contains which actions have actually failed. |
 
 #### external function `deposit`
 
@@ -303,7 +302,7 @@ function isValidSignature(bytes32 _hash, bytes _signature) external view returns
 | _hash | bytes32 | The hash of the data to be signed. |
 | _signature | bytes | The signature byte array associated with `_hash`. |
 | **Output** | |
-| [0] | bytes4 | magicValue Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
+| [0] | bytes4 | Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
 
 #### external function `receive`
 
@@ -328,7 +327,7 @@ fallback(bytes _input) external returns (bytes)
 |:----- | ---- | ----------- |
 | _input | bytes | An alias being equivalent to `msg.data`. This feature of the fallback function was introduced with the [solidity compiler version 0.7.6](https://github.com/ethereum/solidity/releases/tag/v0.7.6) |
 | **Output** | |
-| [0] | bytes | bytes The magic number registered for the function selector triggering the fallback. |
+| [0] | bytes | The magic number registered for the function selector triggering the fallback. |
 
 #### internal function `_setMetadata`
 

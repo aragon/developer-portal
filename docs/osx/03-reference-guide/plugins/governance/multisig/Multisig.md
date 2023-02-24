@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `Multisig`
 
@@ -174,14 +174,6 @@ event MultisigSettingsUpdated(bool onlyListed, uint16 minApprovals)
 | onlyListed | bool | Whether only listed addresses can create a proposal. |
 | minApprovals | uint16 | The minimum amount of approvals needed to pass a proposal. |
 
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
-
 #### external function `initialize`
 
 Initializes the component.
@@ -210,7 +202,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
 #### external function `addAddresses`
 
@@ -296,7 +288,7 @@ function canApprove(uint256 _proposalId, address _account) external view returns
 | _proposalId | uint256 | The proposal Id. |
 | _account | address | The address of the user to check. |
 | **Output** | |
-| [0] | bool | bool Returns true if the account is allowed to vote. |
+| [0] | bool | Returns true if the account is allowed to vote. |
 
 *The function assumes the queried proposal exists.*
 
@@ -327,13 +319,9 @@ function getProposal(uint256 _proposalId) public view returns (bool executed, ui
 | _proposalId | uint256 | The ID of the proposal. |
 | **Output** | |
 | executed | bool | Whether the proposal is executed or not. |
-| **Output** | |
 | approvals | uint16 | The number of approvals casted. |
-| **Output** | |
 | parameters | struct Multisig.ProposalParameters | The parameters of the proposal vote. |
-| **Output** | |
 | actions | struct IDAO.Action[] | The actions to be executed in the associated DAO after the proposal has passed. |
-| **Output** | |
 | allowFailureMap | uint256 |  |
 
 #### public function `hasApproved`

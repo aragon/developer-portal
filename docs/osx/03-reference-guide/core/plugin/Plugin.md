@@ -1,8 +1,8 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `Plugin`
 
-An abstract, non-upgradeable inherit from when creating a plugin being deployed via the `new` keyword.
+An abstract, non-upgradeable contract to inherit from when creating a plugin being deployed via the `new` keyword.
 
 #### internal function `constructor`
 
@@ -36,5 +36,5 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 

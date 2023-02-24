@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `PluginRepo`
 
@@ -232,7 +232,7 @@ function getLatestVersion(uint8 _release) public view returns (struct PluginRepo
 |:----- | ---- | ----------- |
 | _release | uint8 | The release number. |
 | **Output** | |
-| [0] | struct PluginRepo.Version | Version The latest version of this release. |
+| [0] | struct PluginRepo.Version | The latest version of this release. |
 
 #### public function `getLatestVersion`
 
@@ -244,9 +244,9 @@ function getLatestVersion(address _pluginSetup) public view returns (struct Plug
 
 | Input | Type | Description |
 |:----- | ---- | ----------- |
-| _pluginSetup | address | the plugin setup address |
+| _pluginSetup | address | The plugin setup address |
 | **Output** | |
-| [0] | struct PluginRepo.Version | Version latest version that is bound to the _pluginSetup |
+| [0] | struct PluginRepo.Version | The latest version associated with the plugin Setup. |
 
 #### public function `getVersion`
 
@@ -302,7 +302,7 @@ function tagHash(struct PluginRepo.Tag _tag) internal pure returns (bytes32)
 |:----- | ---- | ----------- |
 | _tag | struct PluginRepo.Tag | The version tag. |
 | **Output** | |
-| [0] | bytes32 | bytes32 The version tag hash. |
+| [0] | bytes32 | The version tag hash. |
 
 #### internal function `_authorizeUpgrade`
 
@@ -326,5 +326,5 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 

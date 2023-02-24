@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `TokenVoting`
 
@@ -30,14 +30,6 @@ Thrown if the voting power is zero
 error NoVotingPower() 
 ```
 
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
-
 #### external function `initialize`
 
 Initializes the component.
@@ -66,7 +58,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
 #### public function `getVotingToken`
 
@@ -78,7 +70,7 @@ function getVotingToken() public view returns (contract IVotesUpgradeable)
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
-| [0] | contract IVotesUpgradeable | IVotesUpgradeable the token used for voting. |
+| [0] | contract IVotesUpgradeable | The token used for voting. |
 
 *public function also useful for registering interfaceId and for distinguishing from majority voting interface.*
 

@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `TokenFactory`
 
@@ -116,9 +116,8 @@ function createToken(contract DAO _managingDao, struct TokenFactory.TokenConfig 
 | _tokenConfig | struct TokenFactory.TokenConfig | The token configuration struct containing the name, and symbol of the token to be create, but also an address. For `address(0)`, a new governance token is created. For any other address pointing to an [ERC-20](https://eips.ethereum.org/EIPS/eip-20)-compatible contract, a wrapped governance token is created. |
 | _mintSettings | struct GovernanceERC20.MintSettings | The token mint settings struct containing the `receivers` and `amounts`. |
 | **Output** | |
-| [0] | contract ERC20VotesUpgradeable | ERC20VotesUpgradeable The address of the created token. |
-| **Output** | |
-| [1] | contract MerkleMinter | MerkleMinter The `MerkleMinter` contract address being used to mint token address(zero address in case passed token addr was not zero) |
+| [0] | contract ERC20VotesUpgradeable | The created `ERC20VotesUpgradeable` compatible token contract. |
+| [1] | contract MerkleMinter | The created `MerkleMinter` contract used to mint the `ERC20VotesUpgradeable` tokens or `address(0)` if an existing token was provided. |
 
 #### private function `setupBases`
 

@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `CounterV2`
 
@@ -37,14 +37,6 @@ uint256 newVariable
 ```
 
 *By appending a new variable, the existing storage gets modified.*
-
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
 
 #### external function `initialize`
 

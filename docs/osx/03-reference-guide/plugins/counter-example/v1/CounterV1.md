@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `CounterV1`
 
@@ -27,14 +27,6 @@ A helper contract associated with the plugin.
 ```solidity
 contract MultiplyHelper multiplyHelper 
 ```
-
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
 
 #### external function `initialize`
 

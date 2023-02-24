@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `PluginRepoFactory`
 
@@ -63,7 +63,7 @@ function createPluginRepoWithFirstVersion(string _subdomain, address _pluginSetu
 |:----- | ---- | ----------- |
 | _subdomain | string | The plugin repository subdomain. |
 | _pluginSetup | address | The plugin factory contract associated with the plugin version. |
-| _maintainer | address | The plugin maintainer address. |
+| _maintainer | address | The maintainer of the plugin repo. This address has permission to update metadata, upgrade the repo logic, and manage the repo permissions. |
 | _releaseMetadata | bytes | The release metadata URI. |
 | _buildMetadata | bytes | The build metadata URI. |
 

@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `AddresslistVoting`
 
@@ -21,14 +21,6 @@ The ID of the permission required to call the `addAddresses` and `removeAddresse
 ```solidity
 bytes32 UPDATE_ADDRESSES_PERMISSION_ID 
 ```
-
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
 
 #### external function `initialize`
 
@@ -58,7 +50,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
 #### external function `addAddresses`
 

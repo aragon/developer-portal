@@ -6,7 +6,7 @@ title: Advanced Action Execution
 
 The DAO's `execute` function is part of the `DAO.sol` contract and has the following function header:
 
-```solidity title="contracts/core/DAO.sol"
+```solidity title="@aragon/osx/core/dao/DAO.sol"
 function execute(
         bytes32 _callId,
         Action[] calldata _actions,
@@ -27,7 +27,7 @@ It offers two features that we will dive into in this article:
 
 In our framework, actions are represented by a solidity struct:
 
-```solidity title="contracts/core/IDAO.sol"
+```solidity title="@aragon/osx/core/dao/IDAO.sol"
 /// @notice The action struct to be consumed by the DAO's `execute` function resulting in an external call.
 /// @param to The address to call.
 /// @param value The native token value to be sent with the call.
@@ -41,12 +41,12 @@ struct Action {
 
 Actions can be
 
-- function calls to the DAO itself (e.g., to upgrade the DAO contract to a newer version of aragonOSx)
+- function calls to the DAO itself (e.g., to upgrade the DAO contract to a newer version of Aragon OSx)
 - function calls to other contracts, such as
 
   - external services (e.g. Uniswap, Compound, etc.)
-  - aragonOSx plugins (e.g., the DAO can be a member of a multisig installed in another DAO),
-  - aragonOSx protocol infrastructure (e.g., to [setup a plugin](../../02-framework/02-plugin-management/02-plugin-setup/index.md))
+  - Aragon OSx plugins (e.g., the DAO can be a member of a multisig installed in another DAO),
+  - Aragon OSx protocol infrastructure (e.g., to [setup a plugin](../../02-framework/02-plugin-management/02-plugin-setup/index.md))
 
 - transfers of native tokens
 

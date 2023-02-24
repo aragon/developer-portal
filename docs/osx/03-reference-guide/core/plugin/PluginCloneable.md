@@ -1,8 +1,16 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `PluginCloneable`
 
 An abstract, non-upgradeable contract to inherit from when creating a plugin being deployed via the minimal clones pattern (see [ERC-1167](https://eips.ethereum.org/EIPS/eip-1167)).
+
+#### internal function `constructor`
+
+Disables the initializers on the implementation contract to prevent it from being left uninitialized.
+
+```solidity
+constructor() internal 
+```
 
 #### internal function `__PluginCloneable_init`
 
@@ -36,5 +44,5 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
