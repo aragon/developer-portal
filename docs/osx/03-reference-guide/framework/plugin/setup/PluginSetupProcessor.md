@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `PluginSetupProcessor`
 
@@ -399,7 +399,6 @@ function prepareInstallation(address _dao, struct PluginSetupProcessor.PrepareIn
 | _params | struct PluginSetupProcessor.PrepareInstallationParams | The struct containing the parameters for the `prepareInstallation` function. |
 | **Output** | |
 | plugin | address | The prepared plugin contract address. |
-| **Output** | |
 | preparedSetupData | struct IPluginSetup.PreparedSetupData | The data struct containing the array of helper contracts and permissions that the setup has prepared. |
 
 #### external function `applyInstallation`
@@ -429,10 +428,9 @@ function prepareUpdate(address _dao, struct PluginSetupProcessor.PrepareUpdatePa
 | _params | struct PluginSetupProcessor.PrepareUpdateParams | The struct containing the parameters for the `prepareUpdate` function. |
 | **Output** | |
 | initData | bytes | The initialization data to be passed to upgradeable contracts when the update is applied |
-| **Output** | |
 | preparedSetupData | struct IPluginSetup.PreparedSetupData | The data struct containing the array of helper contracts and permissions that the setup has prepared. |
 
-*The list of `_currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the update is prepared for.*
+*The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the update is prepared for.*
 
 #### external function `applyUpdate`
 
@@ -462,7 +460,7 @@ function prepareUninstallation(address _dao, struct PluginSetupProcessor.Prepare
 | **Output** | |
 | permissions | struct PermissionLib.MultiTargetPermission[] | The list of multi-targeted permission operations to be applied to the uninstalling DAO. |
 
-*The list of `_currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the uninstallation was prepared for.*
+*The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the uninstallation was prepared for.*
 
 #### external function `applyUninstallation`
 
@@ -477,7 +475,7 @@ function applyUninstallation(address _dao, struct PluginSetupProcessor.ApplyUnin
 | _dao | address | The address of the DAO. |
 | _params | struct PluginSetupProcessor.ApplyUninstallationParams | The struct containing the parameters for the `applyUninstallation` function. |
 
-*The list of `_currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the uninstallation was prepared for.*
+*The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the uninstallation was prepared for.*
 
 #### public function `validatePreparedSetupId`
 

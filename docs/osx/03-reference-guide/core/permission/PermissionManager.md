@@ -1,8 +1,8 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `PermissionManager`
 
-The permission manager used in a DAO and its associated components.
+The abstract permission manager used in a DAO, its associated plugins, and other framework-related components.
 
 #### public variable `ROOT_PERMISSION_ID`
 
@@ -170,7 +170,7 @@ function __PermissionManager_init(address _initialOwner) internal
 Grants permission to an address to call methods in a contract guarded by an auth modifier with the specified permission identifier.
 
 ```solidity
-function grant(address _where, address _who, bytes32 _permissionId) external 
+function grant(address _where, address _who, bytes32 _permissionId) external virtual 
 ```
 
 | Input | Type | Description |
@@ -186,7 +186,7 @@ function grant(address _where, address _who, bytes32 _permissionId) external
 Grants permission to an address to call methods in a target contract guarded by an auth modifier with the specified permission identifier if the referenced condition permits it.
 
 ```solidity
-function grantWithCondition(address _where, address _who, bytes32 _permissionId, contract IPermissionCondition _condition) external 
+function grantWithCondition(address _where, address _who, bytes32 _permissionId, contract IPermissionCondition _condition) external virtual 
 ```
 
 | Input | Type | Description |
@@ -203,7 +203,7 @@ function grantWithCondition(address _where, address _who, bytes32 _permissionId,
 Revokes permission from an address to call methods in a target contract guarded by an auth modifier with the specified permission identifier.
 
 ```solidity
-function revoke(address _where, address _who, bytes32 _permissionId) external 
+function revoke(address _where, address _who, bytes32 _permissionId) external virtual 
 ```
 
 | Input | Type | Description |
@@ -219,7 +219,7 @@ function revoke(address _where, address _who, bytes32 _permissionId) external
 Applies an array of permission operations on a single target contracts `_where`.
 
 ```solidity
-function applySingleTargetPermissions(address _where, struct PermissionLib.SingleTargetPermission[] items) external 
+function applySingleTargetPermissions(address _where, struct PermissionLib.SingleTargetPermission[] items) external virtual 
 ```
 
 | Input | Type | Description |
@@ -232,7 +232,7 @@ function applySingleTargetPermissions(address _where, struct PermissionLib.Singl
 Applies an array of permission operations on multiple target contracts `items[i].where`.
 
 ```solidity
-function applyMultiTargetPermissions(struct PermissionLib.MultiTargetPermission[] _items) external 
+function applyMultiTargetPermissions(struct PermissionLib.MultiTargetPermission[] _items) external virtual 
 ```
 
 | Input | Type | Description |
@@ -244,7 +244,7 @@ function applyMultiTargetPermissions(struct PermissionLib.MultiTargetPermission[
 Checks if an address has permission on a contract via a permission identifier and considers if `ANY_ADDRESS` was used in the granting process.
 
 ```solidity
-function isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) public view returns (bool) 
+function isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) public view virtual returns (bool) 
 ```
 
 | Input | Type | Description |
@@ -254,7 +254,7 @@ function isGranted(address _where, address _who, bytes32 _permissionId, bytes _d
 | _permissionId | bytes32 | The permission identifier. |
 | _data | bytes | The optional data passed to the `PermissionCondition` registered. |
 | **Output** | |
-| [0] | bool | bool Returns true if `_who` has the permissions on the target contract via the specified permission identifier. |
+| [0] | bool | Returns true if `_who` has the permissions on the target contract via the specified permission identifier. |
 
 #### internal function `_initializePermissionManager`
 
@@ -273,7 +273,7 @@ function _initializePermissionManager(address _initialOwner) internal
 This method is used in the public `grant` method of the permission manager.
 
 ```solidity
-function _grant(address _where, address _who, bytes32 _permissionId) internal 
+function _grant(address _where, address _who, bytes32 _permissionId) internal virtual 
 ```
 
 | Input | Type | Description |
@@ -287,7 +287,7 @@ function _grant(address _where, address _who, bytes32 _permissionId) internal
 This method is used in the internal `_grant` method of the permission manager.
 
 ```solidity
-function _grantWithCondition(address _where, address _who, bytes32 _permissionId, contract IPermissionCondition _condition) internal 
+function _grantWithCondition(address _where, address _who, bytes32 _permissionId, contract IPermissionCondition _condition) internal virtual 
 ```
 
 | Input | Type | Description |
@@ -302,7 +302,7 @@ function _grantWithCondition(address _where, address _who, bytes32 _permissionId
 This method is used in the public `revoke` method of the permission manager.
 
 ```solidity
-function _revoke(address _where, address _who, bytes32 _permissionId) internal 
+function _revoke(address _where, address _who, bytes32 _permissionId) internal virtual 
 ```
 
 | Input | Type | Description |
@@ -316,7 +316,7 @@ function _revoke(address _where, address _who, bytes32 _permissionId) internal
 Checks if a caller is granted permissions on a target contract via a permission identifier and redirects the approval to a `PermissionCondition` if this was specified in the setup.
 
 ```solidity
-function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) internal view returns (bool) 
+function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) internal view virtual returns (bool) 
 ```
 
 | Input | Type | Description |
@@ -326,14 +326,14 @@ function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _
 | _permissionId | bytes32 | The permission identifier. |
 | _data | bytes | The optional data passed to the `PermissionCondition` registered. |
 | **Output** | |
-| [0] | bool | bool Returns true if `_who` has the permissions on the contract via the specified permissionId identifier. |
+| [0] | bool | Returns true if `_who` has the permissions on the contract via the specified permissionId identifier. |
 
-#### private function `_auth`
+#### internal function `_auth`
 
 A private function to be used to check permissions on the permission manager contract (`address(this)`) itself.
 
 ```solidity
-function _auth(bytes32 _permissionId) private view 
+function _auth(bytes32 _permissionId) internal view virtual 
 ```
 
 | Input | Type | Description |
@@ -345,7 +345,7 @@ function _auth(bytes32 _permissionId) private view
 Generates the hash for the `permissionsHashed` mapping obtained from the word "PERMISSION", the contract address, the address owning the permission, and the permission identifier.
 
 ```solidity
-function permissionHash(address _where, address _who, bytes32 _permissionId) internal pure returns (bytes32) 
+function permissionHash(address _where, address _who, bytes32 _permissionId) internal pure virtual returns (bytes32) 
 ```
 
 | Input | Type | Description |
@@ -354,7 +354,7 @@ function permissionHash(address _where, address _who, bytes32 _permissionId) int
 | _who | address | The address (EOA or contract) owning the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 | **Output** | |
-| [0] | bytes32 | bytes32 The permission hash. |
+| [0] | bytes32 | The permission hash. |
 
 #### internal function `isPermissionRestrictedForAnyAddr`
 
@@ -368,9 +368,9 @@ function isPermissionRestrictedForAnyAddr(bytes32 _permissionId) internal view v
 |:----- | ---- | ----------- |
 | _permissionId | bytes32 | The permission identifier. |
 | **Output** | |
-| [0] | bool | bool Whether ot not permissionId is restricted. |
+| [0] | bool | Whether or not the permission is restricted. |
 
-*by default, every permission is unrestricted and it's the derived contract's responsibility to override it. NOTE: ROOT_PERMISSION_ID is included and not required to set it again.*
+*By default, every permission is unrestricted and it is the derived contract's responsibility to override it. Note, that the `ROOT_PERMISSION_ID` is included not required to be set it again.*
 
 #### private variable `__gap`
 

@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ### internal variable `RATIO_BASE`
 

@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `IMajorityVoting`
 
@@ -116,7 +116,7 @@ function canVote(uint256 _proposalId, address _account, enum IMajorityVoting.Vot
 | _account | address | The account address to be checked. |
 | _voteOption | enum IMajorityVoting.VoteOption | Whether the voter abstains, supports or opposes the proposal. |
 | **Output** | |
-| [0] | bool | bool Returns true if the account is allowed to vote. |
+| [0] | bool | Returns true if the account is allowed to vote. |
 
 *The function assumes the queried proposal exists.*
 

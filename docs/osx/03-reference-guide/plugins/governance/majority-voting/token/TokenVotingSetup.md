@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `TokenVotingSetup`
 
@@ -10,14 +10,6 @@ The address of the `TokenVoting` base contract.
 
 ```solidity
 contract TokenVoting tokenVotingBase 
-```
-
-#### private variable `NO_CONDITION`
-
-The address zero to be used as condition address for permissions.
-
-```solidity
-address NO_CONDITION 
 ```
 
 #### public variable `governanceERC20Base`
@@ -104,7 +96,6 @@ function prepareInstallation(address _dao, bytes _data) external returns (addres
 | _data | bytes | The bytes-encoded data containing the input parameters for the installation as specified in the plugin's build metadata JSON file. |
 | **Output** | |
 | plugin | address | The address of the `Plugin` contract being prepared for installation. |
-| **Output** | |
 | preparedSetupData | struct IPluginSetup.PreparedSetupData | The deployed plugin's relevant data which consists of helpers and permissions. |
 
 #### external function `prepareUninstallation`
@@ -122,17 +113,17 @@ function prepareUninstallation(address _dao, struct IPluginSetup.SetupPayload _p
 | **Output** | |
 | permissions | struct PermissionLib.MultiTargetPermission[] | The array of multi-targeted permission operations to be applied by the `PluginSetupProcessor` to the uninstalling DAO. |
 
-#### external function `getImplementationAddress`
+#### external function `implementation`
 
-Returns the plugin's base implementation.
+Returns the plugin implementation address.
 
 ```solidity
-function getImplementationAddress() external view virtual returns (address) 
+function implementation() external view virtual returns (address) 
 ```
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
-| [0] | address | address The address of the plugin implementation contract. |
+| [0] | address | The address of the plugin implementation contract. |
 
 *The implementation can be instantiated via the `new` keyword, cloned via the minimal clones pattern (see [ERC-1167](https://eips.ethereum.org/EIPS/eip-1167)), or proxied via the UUPS pattern (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).*
 

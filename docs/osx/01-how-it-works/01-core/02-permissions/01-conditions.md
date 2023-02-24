@@ -7,7 +7,7 @@ title: Conditions
 Permission conditions relay the decision if an authorized call is permitted to another contract.
 This contract must implement the `IPermissionCondition` interface.
 
-```solidity title="contracts/core/permission/IPermissionCondition.sol"
+```solidity title="@aragon/osx/core/permission/IPermissionCondition.sol"
 interface IPermissionCondition {
   /// @notice This method is used to check if a call is permitted.
   /// @param _where The address of the target contract.
@@ -27,28 +27,28 @@ interface IPermissionCondition {
 By implementing the `isGranted` function, any number of custom conditions can be added to the permission.
 These conditions can be based on
 
-- the specific properties of
+- The specific properties of
 
-  - the caller `who`
-  - the target `where`
+  - The caller `who`
+  - The target `where`
 
-- the calldata `_data` of the function such as
+- The calldata `_data` of the function such as
 
-  - parameter values
-  - function signature
+  - Function signature
+  - Parameter values
 
-- general on-chain data such as
+- General on-chain data such as
 
-  - timestamps
-  - token ownership
-  - entries in curated registries
+  - Timestamps
+  - Token ownership
+  - Entries in curated registries
 
 - off-chain data being made available through oracle services (e.g., [chain.link](https://chain.link/), [witnet.io](https://witnet.io/)) such as
 
-  - market data
-  - weather data
-  - scientific data
-  - sports data
+  - Market data
+  - Weather data
+  - Scientific data
+  - Sports data
 
 The following examples illustrate
 

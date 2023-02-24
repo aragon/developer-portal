@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ### public struct `PluginSetupRef`
 
@@ -49,7 +49,7 @@ freeFunction _getPreparedSetupId(struct PluginSetupRef _pluginSetupRef, bytes32 
 | _data | bytes | The bytes-encoded initialize data for the upgrade that is returned by `prepareUpdate`. |
 | _preparationType | enum PreparationType | The type of preparation the plugin is currently undergoing. Without this, it is possible to call `applyUpdate` even after `applyInstallation` is called. |
 | **Output** | |
-| [0] | bytes32 | bytes32 The prepared setup id. |
+| [0] | bytes32 | The prepared setup id. |
 
 ### internal function `freeFunction`
 
@@ -64,7 +64,7 @@ freeFunction _getAppliedSetupId(struct PluginSetupRef _pluginSetupRef, bytes32 _
 | _pluginSetupRef | struct PluginSetupRef | The reference of the plugin setup containing plugin setup repo and version tag. |
 | _helpersHash | bytes32 | The hash of the helper contract addresses. |
 | **Output** | |
-| [0] | bytes32 | bytes32 The applied setup id. |
+| [0] | bytes32 | The applied setup id. |
 
 ### internal function `freeFunction`
 

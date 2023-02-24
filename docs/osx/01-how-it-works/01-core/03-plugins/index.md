@@ -4,7 +4,7 @@ title: Plugins
 
 ## Customizing your DAO
 
-To add features beyond the base functionality available, you can customize your aragonOSx DAO by installing a wide variety of plugins.
+To add features beyond the base functionality available, you can customize your Aragon OSx DAO by installing a wide variety of plugins.
 
 Plugins can be related to:
 
@@ -17,4 +17,4 @@ Plugins can be related to:
 
 - And **anything** else that comes to mind!
 
-In the next section, we will learn more about plugins, the surrounding ecosystem, and its infrastructure.
+In the next section, we will learn more about plugins, how they work, and who owns and manages them.

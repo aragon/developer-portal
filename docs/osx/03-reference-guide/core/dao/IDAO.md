@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `IDAO`
 
@@ -29,7 +29,7 @@ function hasPermission(address _where, address _who, bytes32 _permissionId, byte
 | _permissionId | bytes32 | The permission identifier. |
 | _data | bytes | The optional data passed to the `PermissionCondition` registered. |
 | **Output** | |
-| [0] | bool | bool Returns true if the address has permission, false if not. |
+| [0] | bool | Returns true if the address has permission, false if not. |
 
 #### external function `setMetadata`
 
@@ -69,9 +69,8 @@ function execute(bytes32 _callId, struct IDAO.Action[] _actions, uint256 _allowF
 | _actions | struct IDAO.Action[] | The array of actions. |
 | _allowFailureMap | uint256 | A bitmap allowing execution to succeed, even if individual actions might revert. If the bit at index `i` is 1, the execution succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert. |
 | **Output** | |
-| [0] | bytes[] | bytes[] The array of results obtained from the executed actions in `bytes`. |
-| **Output** | |
-| [1] | uint256 | uint256 The constructed failureMap which contains which actions have actually failed. |
+| [0] | bytes[] | The array of results obtained from the executed actions in `bytes`. |
+| [1] | uint256 | The constructed failureMap which contains which actions have actually failed. |
 
 ####  event `Executed`
 
@@ -222,7 +221,7 @@ function isValidSignature(bytes32 _hash, bytes _signature) external returns (byt
 | _hash | bytes32 | The hash of the data to be signed. |
 | _signature | bytes | The signature byte array associated with `_hash`. |
 | **Output** | |
-| [0] | bytes4 | magicValue Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
+| [0] | bytes4 | Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
 
 #### external function `registerStandardCallback`
 

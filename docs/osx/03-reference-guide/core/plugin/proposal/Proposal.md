@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `Proposal`
 
@@ -36,7 +36,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
 #### internal function `_createProposalId`
 
@@ -85,6 +85,5 @@ function _executeProposal(contract IDAO _dao, uint256 _proposalId, struct IDAO.A
 | _allowFailureMap | uint256 | A bitmap allowing the proposal to succeed, even if individual actions might revert. If the bit at index `i` is 1, the proposal succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert. |
 | **Output** | |
 | execResults | bytes[] | The array with the results of the executed actions. |
-| **Output** | |
 | failureMap | uint256 | The failure map encoding which actions have failed. |
 

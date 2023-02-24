@@ -1,8 +1,16 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `PluginUUPSUpgradeable`
 
 An abstract, upgradeable contract to inherit from when creating a plugin being deployed via the UUPS pattern (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
+
+#### internal function `constructor`
+
+Disables the initializers on the implementation contract to prevent it from being left uninitialized.
+
+```solidity
+constructor() internal 
+```
 
 #### public function `pluginType`
 
@@ -44,19 +52,19 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
-#### public function `getImplementationAddress`
+#### public function `implementation`
 
 Returns the address of the implementation contract in the [proxy storage slot](https://eips.ethereum.org/EIPS/eip-1967) slot the [UUPS proxy](https://eips.ethereum.org/EIPS/eip-1822) is pointing to.
 
 ```solidity
-function getImplementationAddress() public view returns (address implementation) 
+function implementation() public view returns (address) 
 ```
 
 | Output | Type | Description |
 | ------ | ---- | ----------- |
-| implementation | address | The address of the implementation contract. |
+| [0] | address | The address of the implementation contract. |
 
 #### internal function `_authorizeUpgrade`
 

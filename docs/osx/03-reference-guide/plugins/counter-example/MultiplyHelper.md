@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `MultiplyHelper`
 
@@ -11,14 +11,6 @@ The ID of the permission required to call the `multiply` function.
 ```solidity
 bytes32 MULTIPLY_PERMISSION_ID 
 ```
-
-#### public function `constructor`
-
-```solidity
-constructor() public 
-```
-
-*Used to disallow initializing the implementation contract by an attacker for extra safety.*
 
 #### external function `multiply`
 

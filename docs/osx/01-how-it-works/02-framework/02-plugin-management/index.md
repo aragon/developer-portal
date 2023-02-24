@@ -6,10 +6,10 @@ title: Plugin Management
 
 As mentioned earlier, plugins built by Aragon and third-party developers can be added and removed from your DAO to adapt it to your needs.
 
-The management of these plugins is handled for you by the aragonOSx protocol so that the process of
+The management of these plugins is handled for you by the Aragon OSx protocol so that the process of
 
-- releasing new plugins as well as
-- installing, updating, and uninstalling them to your DAO
+- Releasing new plugins as well as
+- Installing, updating, and uninstalling them to your DAO
 
 becomes as streamlined as possible.
 
@@ -19,7 +19,7 @@ In the following, we learn what a plugin consists of.
 
 ### What Does a Plugin Consist Of?
 
-An aragonOSx Plugin consist of:
+An Aragon OSx Plugin consist of:
 
 - The `PluginSetup` contract
 
@@ -28,15 +28,15 @@ An aragonOSx Plugin consist of:
 
 - A metadata URI pointing to a `JSON` file containing the
 
-  - aragonApp frontend information
-  - ABI information needed for the setup ABI
+- AragonApp frontend information
+- Information needed for the setup ABI
 
 - A version tag consisting of a
 
-  - release number
-  - build number
+  - Release number
+  - Build number
 
-A detailed explanation of the [build and release versioning](../../../02-how-to-guides/01-plugin-development/03-publication/02-versioning.md) is found in the How-to sections in our developer portal.
+A detailed explanation of the [build and release versioning](../../../02-how-to-guides/02-plugin-development/07-publication/02-versioning.md) is found in the How-to sections in our developer portal.
 
 <div class="center-column">
 
@@ -48,6 +48,6 @@ A detailed explanation of the [build and release versioning](../../../02-how-to-
 
 </div>
 
-The `PluginSetup` is written by you, the plugin developer. The processing of the setup is managed by the `PluginSetupProcessor`, the central component of the setup process in the aragonOSx framework, which is explained in the section [The Plugin Setup Process](./02-plugin-setup/index.md).
+The `PluginSetup` is written by you, the plugin developer. The processing of the setup is managed by the `PluginSetupProcessor`, the central component of the setup process in the Aragon OSx framework, which is explained in the section [The Plugin Setup Process](./02-plugin-setup/index.md).
 
 Each plugin with its different builds and releases is versioned inside its own plugin repositories in a `PluginRepo` contract, which is explained in the next section.

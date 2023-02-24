@@ -1,4 +1,4 @@
-## Aragon Core
+## Aragon OSx
 
 ###  contract `PluginSetup`
 
@@ -19,7 +19,6 @@ function prepareUpdate(address _dao, uint16 _currentBuild, struct IPluginSetup.S
 | _payload | struct IPluginSetup.SetupPayload | The relevant data necessary for the `prepareUpdate`. see above. |
 | **Output** | |
 | initData | bytes | The initialization data to be passed to upgradeable contracts when the update is applied in the `PluginSetupProcessor`. |
-| **Output** | |
 | preparedSetupData | struct IPluginSetup.PreparedSetupData | The deployed plugin's relevant data which consists of helpers and permissions. |
 
 #### internal function `createERC1967Proxy`
@@ -35,7 +34,7 @@ function createERC1967Proxy(address _implementation, bytes _data) internal retur
 | _implementation | address | The address of the implementation contract to which the proxy is pointing to. |
 | _data | bytes | The data to initialize the storage of the proxy contract. |
 | **Output** | |
-| [0] | address | address The address of the created proxy contract. |
+| [0] | address | The address of the created proxy contract. |
 
 #### public function `supportsInterface`
 
@@ -49,5 +48,5 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 |:----- | ---- | ----------- |
 | _interfaceId | bytes4 | The ID of the interface. |
 | **Output** | |
-| [0] | bool | bool Returns `true` if the interface is supported. |
+| [0] | bool | Returns `true` if the interface is supported. |
 
