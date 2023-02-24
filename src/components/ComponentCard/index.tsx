@@ -9,6 +9,7 @@ interface IComponentCardProps {
   description: string;
   img: ReactNode;
   to: string;
+  cta?: string;
 }
 
 type SvgContainerProps = {
@@ -17,6 +18,7 @@ type SvgContainerProps = {
 
 export const ComponentCard = (props: IComponentCardProps) => {
   const {isMobile} = useScreenSize();
+
   return (
     <CardWrapper>
       <SvgContainer isMobile={isMobile}>{props.img}</SvgContainer>
@@ -28,7 +30,7 @@ export const ComponentCard = (props: IComponentCardProps) => {
         <Link
           href={props.to}
           iconRight={<IconChevronRight />}
-          label="Learn More"
+          label={props.cta || "Learn More"}
         />
       </ContentWrapper>
     </CardWrapper>

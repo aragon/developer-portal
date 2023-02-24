@@ -1,4 +1,0 @@
-## Aragon Core
-
-###  contract `Dummy`
-

@@ -8,16 +8,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Aragon Developer Portal',
   tagline: "Let's build cool sh*t together",
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://devs.aragon.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/Aragon-logo-circle.png',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Aragon', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'Aragon Developer Portal', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -37,7 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/aragon/builders-portal/',
         },
         /*
         blog: {
@@ -54,8 +54,15 @@ const config = {
             require.resolve('./src/css/markdown.css'),
           ],
         },
-      }),
-    ],
+        gtag: {
+          trackingID: 'G-MEJG7Q2SPG',
+          anonymizeIP: true
+        },
+        googleTagManager: {
+            containerId: 'GTM-T2Q7C7K',
+          }
+      })
+    ]
   ],
 
   themeConfig:
@@ -75,7 +82,7 @@ const config = {
           // },
           // {
           //   type: 'doc',
-          //   docId: '/docs/core',
+          //   docId: '/docs/osx',
           //   position: 'left',
           //   label: 'Core',
           // }
@@ -110,15 +117,15 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://ethereum.stackexchange.com/search?q=aragon',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/Wpk36QRdMN',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/AragonProject/',
               },
             ],
           },
@@ -127,11 +134,11 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                to: 'https://blog.aragon.org/',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/aragon',
               },
             ],
           },
@@ -140,7 +147,7 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        darkTheme: darkCodeTheme
       },
     }),
 
@@ -149,7 +156,7 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
-      },
+      }
     ],
     async function TailwindPlugin(context, options) {
       return {
