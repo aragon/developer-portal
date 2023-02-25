@@ -14,7 +14,7 @@ bytes32 ROOT_PERMISSION_ID
 
 #### internal variable `ANY_ADDR`
 
-A special address encoding permissions that are valid for any address.
+A special address encoding permissions that are valid for any address `who` or `where`.
 
 ```solidity
 address ANY_ADDR 
@@ -58,14 +58,6 @@ error Unauthorized(address where, address who, bytes32 permissionId)
 | who | address | The address (EOA or contract) missing the permission. |
 | permissionId | bytes32 | The permission identifier. |
 
-####  error `RootPermissionForAnyAddressDisallowed`
-
-Thrown if a Root permission is set on ANY_ADDR.
-
-```solidity
-error RootPermissionForAnyAddressDisallowed() 
-```
-
 ####  error `PermissionAlreadyGrantedForDifferentCondition`
 
 Thrown if a permission has been already granted with a different condition.
@@ -79,14 +71,14 @@ error PermissionAlreadyGrantedForDifferentCondition(address where, address who, 
 | where | address | The address of the target contract to grant `_who` permission to. |
 | who | address | The address (EOA or contract) to which the permission has already been granted. |
 | permissionId | bytes32 | The permission identifier. |
-| currentCondition | address | The current condition set for permissionId |
-| newCondition | address | The new condition it tries to set for permissionId |
+| currentCondition | address | The current condition set for permissionId. |
+| newCondition | address | The new condition it tries to set for permissionId. |
 
 *This makes sure that condition on the same permission can not be overwriten by a different condition.*
 
 ####  error `ConditionNotPresentForAnyAddress`
 
-thrown when WHO or WHERE is ANY_ADDR, but condition is not present.
+Thrown for permission grants where `who` or `where` is `ANY_ADDR`, but no condition is present.
 
 ```solidity
 error ConditionNotPresentForAnyAddress() 
@@ -94,7 +86,7 @@ error ConditionNotPresentForAnyAddress()
 
 ####  error `PermissionsForAnyAddressDisallowed`
 
-thrown when WHO or WHERE is ANY_ADDR and permissionId is ROOT/EXECUTE
+Thrown for `ROOT_PERMISSION_ID` or `EXECUTE_PERMISSION_ID` permission grants where `who` or `where` is `ANY_ADDR`.
 
 ```solidity
 error PermissionsForAnyAddressDisallowed() 
@@ -102,7 +94,7 @@ error PermissionsForAnyAddressDisallowed()
 
 ####  error `AnyAddressDisallowedForWhoAndWhere`
 
-thrown when WHO and WHERE are both ANY_ADDR
+Thrown for permission grants where `who` and `where` are both `ANY_ADDR`.
 
 ```solidity
 error AnyAddressDisallowedForWhoAndWhere() 
@@ -179,7 +171,8 @@ function grant(address _where, address _who, bytes32 _permissionId) external vir
 | _who | address | The address (EOA or contract) receiving the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 
-*Requires the `ROOT_PERMISSION_ID` permission.*
+*Requires the `ROOT_PERMISSION_ID` permission.
+Note, that granting permissions with `_who` or `_where` equal to `ANY_ADDR` does not replace other permissions with specific `_who` and `_where` addresses that exist in parallel.*
 
 #### external function `grantWithCondition`
 
@@ -196,7 +189,8 @@ function grantWithCondition(address _where, address _who, bytes32 _permissionId,
 | _permissionId | bytes32 | The permission identifier. |
 | _condition | contract IPermissionCondition | The `PermissionCondition` that will be asked for authorization on calls connected to the specified permission identifier. |
 
-*Requires the `ROOT_PERMISSION_ID` permission*
+*Requires the `ROOT_PERMISSION_ID` permission
+Note, that granting permissions with `_who` or `_where` equal to `ANY_ADDR` does not replace other permissions with specific `_who` and `_where` addresses that exist in parallel.*
 
 #### external function `revoke`
 
@@ -212,7 +206,8 @@ function revoke(address _where, address _who, bytes32 _permissionId) external vi
 | _who | address | The address (EOA or contract) losing the permission. |
 | _permissionId | bytes32 | The permission identifier. |
 
-*Requires the `ROOT_PERMISSION_ID` permission.*
+*Requires the `ROOT_PERMISSION_ID` permission.
+Note, that revoking permissions with `_who` or `_where` equal to `ANY_ADDR` does not revoke other permissions with specific `_who` and `_where` addresses that exist in parallel.*
 
 #### external function `applySingleTargetPermissions`
 
@@ -297,6 +292,8 @@ function _grantWithCondition(address _where, address _who, bytes32 _permissionId
 | _permissionId | bytes32 | The permission identifier. |
 | _condition | contract IPermissionCondition | An address either resolving to a `PermissionCondition` contract address or being the `ALLOW_FLAG` address (`address(2)`). |
 
+*Note, that granting permissions with `_who` or `_where` equal to `ANY_ADDR` does not replace other permissions with specific `_who` and `_where` addresses that exist in parallel.*
+
 #### internal function `_revoke`
 
 This method is used in the public `revoke` method of the permission manager.
@@ -310,6 +307,8 @@ function _revoke(address _where, address _who, bytes32 _permissionId) internal v
 | _where | address | The address of the target contract for which `_who` recieves permission. |
 | _who | address | The address (EOA or contract) owning the permission. |
 | _permissionId | bytes32 | The permission identifier. |
+
+*Note, that revoking permissions with `_who` or `_where` equal to `ANY_ADDR` does not revoke other permissions with specific `_who` and `_where` addresses that might have been granted in parallel.*
 
 #### internal function `_isGranted`
 
