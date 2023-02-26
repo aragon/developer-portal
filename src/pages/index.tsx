@@ -88,7 +88,7 @@ export default function Home(): JSX.Element {
       <Container>
         <HeroHeader
           title="Welcome to our Docs"
-          subtitle="Here you'll finds guides, resources, and references to build with Aragon"
+          subtitle="Here you'll find guides, resources, and references to build with the Aragon stack"
           img={require('@site/static/img/welcome-image.png').default}
         />
         {/* <WelcomeCardsWrapper>
