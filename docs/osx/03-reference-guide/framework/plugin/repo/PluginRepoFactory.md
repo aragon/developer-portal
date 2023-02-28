@@ -20,12 +20,6 @@ The address of the `PluginRepo` base contract.
 address pluginRepoBase 
 ```
 
-####  error `EmptyPluginRepoSubdomain`
-
-```solidity
-error EmptyPluginRepoSubdomain() 
-```
-
 #### public function `constructor`
 
 Initializes the addresses of the Aragon plugin registry and `PluginRepo` base contract to proxy to.
@@ -96,4 +90,6 @@ function _createPluginRepo(string _subdomain, address _initialOwner) internal re
 |:----- | ---- | ----------- |
 | _subdomain | string | The plugin repository subdomain. |
 | _initialOwner | address | The initial owner address. |
+
+*Passing an empty `_subdomain` will cause the transaction to revert.*
 

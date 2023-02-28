@@ -34,18 +34,3 @@ freeFunction _applyRatioCeiled(uint256 _value, uint256 _ratio) internal pure ret
 | **Output** | |
 | result | uint256 | The resulting value. |
 
-### internal function `freeFunction`
-
-Applies a ratio to a value and floors the remainder.
-
-```solidity
-freeFunction _applyRatioFloored(uint256 _value, uint256 _ratio) internal pure returns (uint256 result) 
-```
-
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _value | uint256 | The value to which the ratio is applied. |
-| _ratio | uint256 | The ratio that must be in the interval `[0, 10**6]`. |
-| **Output** | |
-| result | uint256 | The resulting value. |
-

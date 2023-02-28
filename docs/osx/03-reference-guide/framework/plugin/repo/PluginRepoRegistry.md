@@ -41,6 +41,14 @@ Thrown if the plugin subdomain doesn't match the regex `[0-9a-z\-]`
 error InvalidPluginSubdomain(string subdomain) 
 ```
 
+####  error `EmptyPluginRepoSubdomain`
+
+Thrown if the plugin repository subdomain is empty.
+
+```solidity
+error EmptyPluginRepoSubdomain() 
+```
+
 #### public function `constructor`
 
 ```solidity
