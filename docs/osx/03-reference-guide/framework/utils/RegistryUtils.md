@@ -17,5 +17,6 @@ freeFunction isSubdomainValid(string subDomain) internal pure returns (bool)
 | **Output** | |
 | [0] | bool | `true` if the name is valid or `false` if at least one char is invalid. |
 
-*Aborts on the first invalid char found.*
+*This function allows empty (zero-length) subdomains. If this should not be allowed, make sure to add a respective check when using this function in your code.
+Aborts on the first invalid char found.*
 
