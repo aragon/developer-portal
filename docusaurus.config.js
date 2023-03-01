@@ -3,6 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -36,8 +38,9 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/aragon/builders-portal/',
+          editUrl: 'https://github.com/aragon/builders-portal/',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         /*
         blog: {
@@ -56,10 +59,20 @@ const config = {
         },
         gtag: {
           trackingID: 'G-MEJG7Q2SPG',
-          anonymizeIP: true
-        }
-      })
-    ]
+          anonymizeIP: true,
+        },
+      }),
+    ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
   ],
 
   themeConfig:
@@ -144,7 +157,8 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
+        darkTheme: darkCodeTheme,
+        additionalLanguages: ['solidity'],
       },
     }),
 
@@ -153,7 +167,7 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
-      }
+      },
     ],
     async function TailwindPlugin(context, options) {
       return {
