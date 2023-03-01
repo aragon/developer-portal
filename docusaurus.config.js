@@ -36,8 +36,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/aragon/builders-portal/',
+          editUrl: 'https://github.com/aragon/builders-portal/',
         },
         /*
         blog: {
@@ -56,10 +55,10 @@ const config = {
         },
         gtag: {
           trackingID: 'G-MEJG7Q2SPG',
-          anonymizeIP: true
-        }
-      })
-    ]
+          anonymizeIP: true,
+        },
+      }),
+    ],
   ],
 
   themeConfig:
@@ -144,7 +143,8 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
+        darkTheme: darkCodeTheme,
+        additionalLanguages: ['solidity'],
       },
     }),
 
@@ -153,7 +153,7 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
-      }
+      },
     ],
     async function TailwindPlugin(context, options) {
       return {
