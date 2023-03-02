@@ -1,10 +1,10 @@
-## Aragon OSx
-
-###  contract `IPlugin`
+## Description
 
 An interface defining the traits of a plugin.
 
-####  enum `PluginType`
+## Implementation
+
+### enum PluginType
 
 ```solidity
 enum PluginType {
@@ -14,11 +14,12 @@ enum PluginType {
 }
 ```
 
-#### external function `pluginType`
+### external function pluginType
 
 returns the plugin's type
 
 ```solidity
-function pluginType() external view returns (enum IPlugin.PluginType) 
+function pluginType() external view returns (enum IPlugin.PluginType)
 ```
 
+<!--CONTRACT_END-->

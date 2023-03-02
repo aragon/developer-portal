@@ -1,4 +1,5 @@
-## Aragon OSx
+## Description
 
-###  contract `Dummy`
+## Implementation
 
+<!--CONTRACT_END-->

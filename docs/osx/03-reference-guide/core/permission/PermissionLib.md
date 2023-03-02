@@ -1,18 +1,18 @@
-## Aragon OSx
-
-###  contract `PermissionLib`
+## Description
 
 A library containing objects for permission processing.
 
-#### public variable `NO_CONDITION`
+## Implementation
+
+### public variable NO_CONDITION
 
 A constant expressing that no condition is applied to a permission.
 
 ```solidity
-address NO_CONDITION 
+address NO_CONDITION
 ```
 
-####  enum `Operation`
+### enum Operation
 
 ```solidity
 enum Operation {
@@ -22,7 +22,7 @@ enum Operation {
 }
 ```
 
-#### public struct `SingleTargetPermission`
+### public struct SingleTargetPermission
 
 ```solidity
 struct SingleTargetPermission {
@@ -32,7 +32,7 @@ struct SingleTargetPermission {
 }
 ```
 
-#### public struct `MultiTargetPermission`
+### public struct MultiTargetPermission
 
 ```solidity
 struct MultiTargetPermission {
@@ -44,3 +44,4 @@ struct MultiTargetPermission {
 }
 ```
 
+<!--CONTRACT_END-->
