@@ -4,7 +4,7 @@ sidebar_label: Intro
 sidebar_position: 0
 ---
 
-## Aragon SDK for the JavaScript/TypeScript language
+## The SDK for the JavaScript/TypeScript Language
 
 Please, see in the respective folder for all details.
 
