@@ -1,6 +1,4 @@
-## Aragon OSx
-
-### public struct `PluginSetupRef`
+### public struct PluginSetupRef
 
 ```solidity
 struct PluginSetupRef {
@@ -9,7 +7,7 @@ struct PluginSetupRef {
 }
 ```
 
-###  enum `PreparationType`
+### enum PreparationType
 
 ```solidity
 enum PreparationType {
@@ -20,75 +18,74 @@ enum PreparationType {
 }
 ```
 
-### internal function `freeFunction`
+### internal function \_getPluginInstallationId
 
 Returns an ID for plugin installation by hashing the DAO and plugin address.
 
 ```solidity
-freeFunction _getPluginInstallationId(address _dao, address _plugin) internal pure returns (bytes32) 
+function _getPluginInstallationId(address _dao, address _plugin) internal pure returns (bytes32)
 ```
 
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _dao | address | The address of the DAO conducting the setup. |
-| _plugin | address | The plugin address. |
+| Input     | Type      | Description                                  |
+| :-------- | --------- | -------------------------------------------- |
+| `_dao`    | `address` | The address of the DAO conducting the setup. |
+| `_plugin` | `address` | The plugin address.                          |
 
-### internal function `freeFunction`
+### internal function \_getPreparedSetupId
 
 Returns an ID for prepared setup obtained from hashing characterizing elements.
 
 ```solidity
-freeFunction _getPreparedSetupId(struct PluginSetupRef _pluginSetupRef, bytes32 _permissionsHash, bytes32 _helpersHash, bytes _data, enum PreparationType _preparationType) internal pure returns (bytes32) 
+function _getPreparedSetupId(struct PluginSetupRef _pluginSetupRef, bytes32 _permissionsHash, bytes32 _helpersHash, bytes _data, enum PreparationType _preparationType) internal pure returns (bytes32)
 ```
 
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _pluginSetupRef | struct PluginSetupRef | The reference of the plugin setup containing plugin setup repo and version tag. |
-| _permissionsHash | bytes32 | The hash of the permission operations requested by the setup. |
-| _helpersHash | bytes32 | The hash of the helper contract addresses. |
-| _data | bytes | The bytes-encoded initialize data for the upgrade that is returned by `prepareUpdate`. |
-| _preparationType | enum PreparationType | The type of preparation the plugin is currently undergoing. Without this, it is possible to call `applyUpdate` even after `applyInstallation` is called. |
-| **Output** | |
-| [0] | bytes32 | The prepared setup id. |
+| Input              | Type                    | Description                                                                                                                                              |
+| :----------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `_pluginSetupRef`  | `struct PluginSetupRef` | The reference of the plugin setup containing plugin setup repo and version tag.                                                                          |
+| `_permissionsHash` | `bytes32`               | The hash of the permission operations requested by the setup.                                                                                            |
+| `_helpersHash`     | `bytes32`               | The hash of the helper contract addresses.                                                                                                               |
+| `_data`            | `bytes`                 | The bytes-encoded initialize data for the upgrade that is returned by `prepareUpdate`.                                                                   |
+| `_preparationType` | `enum PreparationType`  | The type of preparation the plugin is currently undergoing. Without this, it is possible to call `applyUpdate` even after `applyInstallation` is called. |
+| **Output**         |                         |
+| `0`                | `bytes32`               | The prepared setup id.                                                                                                                                   |
 
-### internal function `freeFunction`
+### internal function \_getAppliedSetupId
 
 Returns an identifier for applied installations.
 
 ```solidity
-freeFunction _getAppliedSetupId(struct PluginSetupRef _pluginSetupRef, bytes32 _helpersHash) internal pure returns (bytes32) 
+function _getAppliedSetupId(struct PluginSetupRef _pluginSetupRef, bytes32 _helpersHash) internal pure returns (bytes32)
 ```
 
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _pluginSetupRef | struct PluginSetupRef | The reference of the plugin setup containing plugin setup repo and version tag. |
-| _helpersHash | bytes32 | The hash of the helper contract addresses. |
-| **Output** | |
-| [0] | bytes32 | The applied setup id. |
+| Input             | Type                    | Description                                                                     |
+| :---------------- | ----------------------- | ------------------------------------------------------------------------------- |
+| `_pluginSetupRef` | `struct PluginSetupRef` | The reference of the plugin setup containing plugin setup repo and version tag. |
+| `_helpersHash`    | `bytes32`               | The hash of the helper contract addresses.                                      |
+| **Output**        |                         |
+| `0`               | `bytes32`               | The applied setup id.                                                           |
 
-### internal function `freeFunction`
+### internal function hashHelpers
 
 Returns a hash of an array of helper addresses (contracts or EOAs).
 
 ```solidity
-freeFunction hashHelpers(address[] _helpers) internal pure returns (bytes32) 
+function hashHelpers(address[] _helpers) internal pure returns (bytes32)
 ```
 
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _helpers | address[] | The array of helper addresses (contracts or EOAs) to be hashed. |
+| Input      | Type        | Description                                                     |
+| :--------- | ----------- | --------------------------------------------------------------- |
+| `_helpers` | `address[]` | The array of helper addresses (contracts or EOAs) to be hashed. |
 
-### internal function `freeFunction`
+### internal function hashPermissions
 
 Returns a hash of an array of multi-targeted permission operations.
 
 ```solidity
-freeFunction hashPermissions(struct PermissionLib.MultiTargetPermission[] _permissions) internal pure returns (bytes32) 
+function hashPermissions(struct PermissionLib.MultiTargetPermission[] _permissions) internal pure returns (bytes32)
 ```
 
-| Input | Type | Description |
-|:----- | ---- | ----------- |
-| _permissions | struct PermissionLib.MultiTargetPermission[] | The array of of multi-targeted permission operations. |
-| **Output** | |
-| [0] | bytes32 | The hash of the array of permission operations. |
-
+| Input          | Type                                           | Description                                           |
+| :------------- | ---------------------------------------------- | ----------------------------------------------------- |
+| `_permissions` | `struct PermissionLib.MultiTargetPermission[]` | The array of of multi-targeted permission operations. |
+| **Output**     |                                                |
+| `0`            | `bytes32`                                      | The hash of the array of permission operations.       |
