@@ -1,5 +1,7 @@
 ---
 title: Aragon OSx
+sidebar_label: Intro
+sidebar_position: 0
 ---
 
 ## The Contracts behind Aragon OSx
@@ -21,6 +23,7 @@ import {Plugin, IDAO} from '@aragon/osx/core/plugin/Plugin.sol';
 contract MyCoolPlugin is Plugin {
   // ...
 }
+
 ```
 
 ### Overview
