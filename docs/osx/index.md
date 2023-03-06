@@ -23,7 +23,6 @@ import {Plugin, IDAO} from '@aragon/osx/core/plugin/Plugin.sol';
 contract MyCoolPlugin is Plugin {
   // ...
 }
-
 ```
 
 ### Overview
