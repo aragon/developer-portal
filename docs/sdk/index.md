@@ -15,7 +15,7 @@ made with an Aragon DAO. It consists of three different components:
 
 Contributors: See [development](#development) below
 
-## Installation
+### Installation
 
 Use [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) to install
 @aragon/sdk-client.
@@ -25,13 +25,13 @@ npm install @aragon/sdk-client
 yarn add @aragon/sdk-client
 ```
 
-## Usage
+### Usage
 
 The use of the different SDK features and methods is demonstrated in the [Examples (coming soon)](./01-examples/index.md) section.
 
 An extensive documentation of the different clients can be found in the auto-generated [Reference Guide](./02-reference-guide/index.md) section.
 
-### React Native
+#### React Native
 
 In order for the SDK to be used in restricted environments like react native install the following polyfills into your project:
 
@@ -46,12 +46,12 @@ import 'react-native-url-polyfill/auto';
 import {Client} from '@aragon/sdk-client';
 ```
 
-## Development
+### Development
 
 The building blocks are defined within the `src/internal` folder. The high level
 client wrappers are implemented in `src/client*.ts`
 
-### Low level networking
+#### Low level networking
 
 See `ClientCore` (`/src/internal/core.ts`)):
 
@@ -61,7 +61,7 @@ See `ClientCore` (`/src/internal/core.ts`)):
   - GraphQL
 - Inherited by classes like `Client` and all plugin classes like `TokenVotingClient`.
 
-### Common interfaces, types, enums
+#### Common interfaces, types, enums
 
 When updating a `ClientXXX` (plugin) class:
 
@@ -78,7 +78,7 @@ When updating the `ClientCore` class:
 - **Update first** all affected enums, types and interfaces in
   `src/internal/interfaces/core.ts`
 
-### Developing a new Plugin client
+#### Developing a new Plugin client
 
 Create a new class that `extends` from `ClientCore`, receives a `Context` on the
 `constructor` and follows the structure of `TokenVotingClient` (`./src/tokenVoting/client.ts`).
