@@ -53,7 +53,7 @@ client wrappers are implemented in `src/client*.ts`
 
 #### Low level networking
 
-See `ClientCore` (`/src/internal/core.ts`)):
+See `ClientCore` (`/src/internal/core.ts`):
 
 - Abstract class implementing primitives for:
   - Web3, contracts, signing
