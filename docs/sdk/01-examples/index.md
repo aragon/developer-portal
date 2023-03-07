@@ -2,8 +2,8 @@
 title: Examples
 ---
 
-## Coming Soon
+## Using the Aragon SDK
 
-:::info
-The examples are work in progress.
-:::
+The following pages demonstrate the usage of the different SDK features.
+
+<!-- TODO add overview -->

@@ -8,5 +8,5 @@ This section contains the auto-generated documentation of the individual clients
 
 - [Generic SDK Client](./01-client.md)
 - [Multisig Client](./02-multisig.md)
-- [Token Voting Client](./03-tokenVoting.md)
-- [Addresslist Voting Client](04-addresslistVoting.md)
+- [Token Voting Client](./03-token-voting.md)
+- [Addresslist Voting Client](./04-addresslist-voting.md)
