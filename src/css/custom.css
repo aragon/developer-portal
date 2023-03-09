@@ -5,17 +5,15 @@
  */
 
 /* You can override the default Infima variables here. */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap'); */
 
-p,
-span {
-  font-weight: 500;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  --neutral-500: #52606d;
+  --neutral-700: #323f4b;
   --ifm-color-primary: #3465a4;
   --ifm-color-primary-dark: #2f5b94;
   --ifm-color-primary-darker: #2c568b;
@@ -23,13 +21,18 @@ span {
   --ifm-color-primary-light: #396fb4;
   --ifm-color-primary-lighter: #3c74bd;
   --ifm-color-primary-lightest: #396fb4;
-  --ifm-color-link: #3164fa;
+  --ifm-color-link: #2876ee;
+  --positive-color: #1b9551;
+  --warning-color: #e1b400;
+  --danger-color: #d2102c;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  --neutral-500: #bfcbd6;
+  --neutral-700: #cad5e1;
   --ifm-color-primary: #729fcf;
   --ifm-color-primary-dark: #bad0e7;
   --ifm-color-primary-darker: #96b7db;
@@ -37,7 +40,9 @@ span {
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --ifm-color-link: #5cfdbf;
-  --ifm-code-font-size: 95%;
+  --ifm-color-link: #729fcf;
+  --positive-color: #25b867;
+  --warning-color: #e1c75c;
+  --danger-color: #e75268;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

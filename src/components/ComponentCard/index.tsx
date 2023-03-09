@@ -17,23 +17,25 @@ type SvgContainerProps = {
 };
 
 export const ComponentCard = (props: IComponentCardProps) => {
-  const {isMobile} = useScreenSize();
+  const { isMobile } = useScreenSize();
 
   return (
-    <CardWrapper>
-      <SvgContainer isMobile={isMobile}>{props.img}</SvgContainer>
-      <ContentWrapper>
-        <TextWrapper>
-          <Title>{props.title}</Title>
-          <Description>{props.description}</Description>
-        </TextWrapper>
-        <Link
-          href={props.to}
-          iconRight={<IconChevronRight />}
-          label={props.cta || "Learn More"}
-        />
-      </ContentWrapper>
-    </CardWrapper>
+    <A href={props.to} target="_blank" title={props.cta || "Learn more"}>
+      <CardWrapper>
+        <SvgContainer isMobile={isMobile}>{props.img}</SvgContainer>
+        <ContentWrapper>
+          <TextWrapper>
+            <Title>{props.title}</Title>
+            <Description>{props.description}</Description>
+          </TextWrapper>
+          <Link
+            href={props.to}
+            iconRight={<IconChevronRight />}
+            label={props.cta || "Learn More"}
+          />
+        </ContentWrapper>
+      </CardWrapper>
+    </A>
   );
 };
 
@@ -68,6 +70,11 @@ const Image = styled.img.attrs({
   className: 'max-h-46',
 })`
   object-fit: cover;
+`;
+const A = styled.a`
+&:hover {
+  text-decoration: none;
+}
 `;
 
 function getSvgBorderRadius(props: SvgContainerProps) {
