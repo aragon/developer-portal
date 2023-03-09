@@ -75,9 +75,11 @@ const Image = styled.img.attrs({
 })`
   object-fit: cover;
 `;
-const A = styled.a`
+const A = styled.a.attrs({
+  className: 'hover:no-underline',
+})`
 &:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 `;
 
