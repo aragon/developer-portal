@@ -61,11 +61,15 @@ const SvgContainer = styled.div.attrs({
   }
 `;
 const Title = styled.p.attrs({
-  className: 'text-xl font-bold text-ui-800',
-})``;
+  className: 'text-xl font-bold',
+})`
+color: var(--neutral-700);
+`;
 const Description = styled.p.attrs({
-  className: 'line-clamp-4 md:line-clamp-2 text-ui-600',
-})``;
+  className: 'line-clamp-4 md:line-clamp-2',
+})`
+color: var(--neutral-500);
+`;
 const Image = styled.img.attrs({
   className: 'max-h-46',
 })`
