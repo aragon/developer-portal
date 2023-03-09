@@ -39,12 +39,15 @@ const HeaderWrapper = styled.div.attrs({
 const TextWrapper = styled.div.attrs({
   className: 'flex flex-col space-y-2 justify-center',
 })``;
-const Title = styled.p.attrs({
-  className: 'text-4xl font-bold text-ui-800 text-center md:text-left',
-})``;
-const Subtitle = styled.p.attrs({
-  className: 'text-xl text-ui-600 text-center md:text-left',
-})``;
+const Title = styled.h1.attrs({
+  className: 'text-4xl font-bold text-center md:text-left',
+})`
+color: var(--neutral-700);
+`;
+const Subtitle = styled.h2.attrs({
+  className: 'text-xl text-center md:text-left',
+})`
+color: var(--neutral-500);`;
 const Image = styled.img.attrs({
-  className: 'flex',
+  className: 'flex bg-white',
 })``;
