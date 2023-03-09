@@ -94,5 +94,7 @@ const ComponentCardsWrapper = styled.div.attrs({
 //   className: 'flex md:flex-row md:space-x-4 md:space-y-0 flex-col space-y-4'
 // })``;
 const ComponentCardsTitle = styled.p.attrs({
-  className: 'text-ui-900 font-medium text-xl',
-})``;
+  className: 'font-medium text-xl',
+})`
+color: var(--neutral-700);
+`;

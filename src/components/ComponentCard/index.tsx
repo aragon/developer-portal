@@ -17,23 +17,25 @@ type SvgContainerProps = {
 };
 
 export const ComponentCard = (props: IComponentCardProps) => {
-  const {isMobile} = useScreenSize();
+  const { isMobile } = useScreenSize();
 
   return (
-    <CardWrapper>
-      <SvgContainer isMobile={isMobile}>{props.img}</SvgContainer>
-      <ContentWrapper>
-        <TextWrapper>
-          <Title>{props.title}</Title>
-          <Description>{props.description}</Description>
-        </TextWrapper>
-        <Link
-          href={props.to}
-          iconRight={<IconChevronRight />}
-          label={props.cta || "Learn More"}
-        />
-      </ContentWrapper>
-    </CardWrapper>
+    <A href={props.to} target="_blank" title={props.cta || "Learn more"}>
+      <CardWrapper>
+        <SvgContainer isMobile={isMobile}>{props.img}</SvgContainer>
+        <ContentWrapper>
+          <TextWrapper>
+            <Title>{props.title}</Title>
+            <Description>{props.description}</Description>
+          </TextWrapper>
+          <Link
+            href={props.to}
+            iconRight={<IconChevronRight />}
+            label={props.cta || "Learn More"}
+          />
+        </ContentWrapper>
+      </CardWrapper>
+    </A>
   );
 };
 
@@ -59,15 +61,26 @@ const SvgContainer = styled.div.attrs({
   }
 `;
 const Title = styled.p.attrs({
-  className: 'text-xl font-bold text-ui-800',
-})``;
+  className: 'text-xl font-bold',
+})`
+color: var(--neutral-700);
+`;
 const Description = styled.p.attrs({
-  className: 'line-clamp-4 md:line-clamp-2 text-ui-600',
-})``;
+  className: 'line-clamp-4 md:line-clamp-2',
+})`
+color: var(--neutral-500);
+`;
 const Image = styled.img.attrs({
   className: 'max-h-46',
 })`
   object-fit: cover;
+`;
+const A = styled.a.attrs({
+  className: 'hover:no-underline',
+})`
+&:hover {
+  text-decoration: none !important;
+}
 `;
 
 function getSvgBorderRadius(props: SvgContainerProps) {

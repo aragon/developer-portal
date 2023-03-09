@@ -40,8 +40,8 @@ const ContentWrapper = styled.div.attrs({
   className: `flex flex-col space-y-1`,
 })``;
 const Title = styled.p.attrs({
-  className: `text-xl font-bold text-ui-800`,
+  className: `text-xl font-bold`,
 })``;
 const Description = styled.p.attrs({
-  className: `line-clamp-2 text-ui-600`,
+  className: `line-clamp-2`,
 })``;
