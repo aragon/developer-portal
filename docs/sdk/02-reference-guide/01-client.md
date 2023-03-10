@@ -27,6 +27,7 @@
 **Kind**: global class  
 
 * [ClientDecoding](#ClientDecoding)
+    * [.applyInstallationAction(Uint8Array)](#ClientDecoding+applyInstallationAction) ⇒ <code>\*</code>
     * [.grantAction(data)](#ClientDecoding+grantAction) ⇒ <code>\*</code>
     * [.grantWithConditionAction(data)](#ClientDecoding+grantWithConditionAction) ⇒ <code>\*</code>
     * [.revokeAction(data)](#ClientDecoding+revokeAction) ⇒ <code>\*</code>
@@ -38,6 +39,16 @@
     * [.setSignatureValidatorAction(data)](#ClientDecoding+setSignatureValidatorAction) ⇒ <code>\*</code>
     * [.upgradeToAndCallAction(data)](#ClientDecoding+upgradeToAndCallAction) ⇒ <code>\*</code>
     * [.findInterface(data)](#ClientDecoding+findInterface) ⇒ <code>\*</code>
+
+<a name="ClientDecoding+applyInstallationAction"></a>
+
+### clientDecoding.applyInstallationAction(Uint8Array) ⇒ <code>\*</code>
+**Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
+**Returns**: <code>\*</code> - <p>{DecodedApplyInstallationParams}</p>  
+
+| Param | Type |
+| --- | --- |
+| Uint8Array | <code>data</code> | 
 
 <a name="ClientDecoding+grantAction"></a>
 
@@ -179,6 +190,7 @@
 **Kind**: global class  
 
 * [ClientEncoding](#ClientEncoding)
+    * [.applyInstallationAction(daoAddress, params)](#ClientEncoding+applyInstallationAction) ⇒ <code>\*</code>
     * [.grantAction(daoAddress, params)](#ClientEncoding+grantAction) ⇒ <code>\*</code>
     * [.grantWithConditionAction(daoAddress, params)](#ClientEncoding+grantWithConditionAction) ⇒ <code>\*</code>
     * [.revokeAction(daoAddress, params)](#ClientEncoding+revokeAction) ⇒ <code>\*</code>
@@ -189,6 +201,17 @@
     * [.setSignatureValidatorAction(daoAddressOrEns, signatureValidator)](#ClientEncoding+setSignatureValidatorAction) ⇒ <code>\*</code>
     * [.upgradeToAction(daoAddressOrEns, implementationAddress)](#ClientEncoding+upgradeToAction) ⇒ <code>\*</code>
     * [.upgradeToAndCallAction(daoAddressOrEns, params)](#ClientEncoding+upgradeToAndCallAction) ⇒ <code>\*</code>
+
+<a name="ClientEncoding+applyInstallationAction"></a>
+
+### clientEncoding.applyInstallationAction(daoAddress, params) ⇒ <code>\*</code>
+**Kind**: instance method of [<code>ClientEncoding</code>](#ClientEncoding)  
+**Returns**: <code>\*</code> - <p>{DaoAction}</p>  
+
+| Param | Type |
+| --- | --- |
+| daoAddress | <code>string</code> | 
+| params | <code>ApplyInstallationParams</code> | 
 
 <a name="ClientEncoding+grantAction"></a>
 
