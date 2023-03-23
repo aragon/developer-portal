@@ -122,7 +122,7 @@ so that the plugin is configured</p>
 <p>Computes the parameters to be given when creating a proposal that updates the governance configuration</p>
 
 **Kind**: instance method of [<code>MultisigClientEncoding</code>](#MultisigClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction}</p>  
+**Returns**: <code>\*</code> - <p>{DaoAction[]}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -134,7 +134,7 @@ so that the plugin is configured</p>
 <p>Computes the parameters to be given when creating a proposal that adds addresses to address list</p>
 
 **Kind**: instance method of [<code>MultisigClientEncoding</code>](#MultisigClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction}</p>  
+**Returns**: <code>\*</code> - <p>{DaoAction[]}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -226,6 +226,7 @@ so that the plugin is configured</p>
     * [.pinMetadata(params)](#MultisigClientMethods+pinMetadata) ⇒ <code>\*</code>
     * [.approveProposal(params)](#MultisigClientMethods+approveProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#MultisigClientMethods+executeProposal) ⇒ <code>\*</code>
+    * [.prepareInstallation(params)](#MultisigClientMethods+prepareInstallation) ⇒ <code>\*</code>
     * [.canApprove(addressOrEns)](#MultisigClientMethods+canApprove) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#MultisigClientMethods+canExecute) ⇒ <code>\*</code>
     * [.getVotingSettings(addressOrEns)](#MultisigClientMethods+getVotingSettings) ⇒ <code>\*</code>
@@ -280,6 +281,18 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | proposalId | <code>string</code> | 
+
+<a name="MultisigClientMethods+prepareInstallation"></a>
+
+### multisigClientMethods.prepareInstallation(params) ⇒ <code>\*</code>
+<p>Prepares the installation of a multisig plugin in a given dao</p>
+
+**Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareInstallationStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>MultisigPluginPrepareInstallationParams</code> | 
 
 <a name="MultisigClientMethods+canApprove"></a>
 

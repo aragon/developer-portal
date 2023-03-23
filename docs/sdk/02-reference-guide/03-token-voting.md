@@ -307,8 +307,21 @@ so that the plugin is configured</p>
 **Kind**: global class  
 
 * [TokenVotingClientMethods](#TokenVotingClientMethods)
+    * [.prepareInstallation(params)](#TokenVotingClientMethods+prepareInstallation) ⇒ <code>\*</code>
     * [.canVote(params)](#TokenVotingClientMethods+canVote) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#TokenVotingClientMethods+canExecute) ⇒ <code>\*</code>
+
+<a name="TokenVotingClientMethods+prepareInstallation"></a>
+
+### tokenVotingClientMethods.prepareInstallation(params) ⇒ <code>\*</code>
+<p>Prepares the installation of a token voting plugin in a given dao</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareInstallationStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>TokenVotingPluginPrepareInstallationParams</code> | 
 
 <a name="TokenVotingClientMethods+canVote"></a>
 
