@@ -28,6 +28,12 @@ function prepareInstallation(address _dao, bytes _data) external returns (addres
 | `plugin`            | `address`                               | The address of the `Plugin` contract being prepared for installation.                                                              |
 | `preparedSetupData` | `struct IPluginSetup.PreparedSetupData` | The deployed plugin's relevant data which consists of helpers and permissions.                                                     |
 
+### external function prepareUpdate
+
+```solidity
+function prepareUpdate(address _dao, uint16 _currentBuild, struct IPluginSetup.SetupPayload _payload) external pure returns (bytes initData, struct IPluginSetup.PreparedSetupData preparedSetupData)
+```
+
 ### external function prepareUninstallation
 
 Prepares the uninstallation of a plugin.
