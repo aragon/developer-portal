@@ -90,6 +90,14 @@ error ActionFailed(uint256 index)
 | :------ | --------- | -------------------------------------------------------- |
 | `index` | `uint256` | The index of the action in the action array that failed. |
 
+### error InsufficientGas
+
+Thrown if an action has insufficent gas left.
+
+```solidity
+error InsufficientGas()
+```
+
 ### error ZeroAmount
 
 Thrown if the deposit amount is zero.
@@ -233,7 +241,7 @@ function setMetadata(bytes _metadata) external
 
 ### external function execute
 
-Executes a list of actions. If no failure map is provided, one failing action results in the entire excution to be reverted. If a non-zero failure map is provided, allowed actions can fail without the remaining actions being reverted.
+Executes a list of actions. If a zero allow-failure map is provided, a failing action reverts the entire excution. If a non-zero allow-failure map is provided, allowed actions can fail without the entire call being reverted.
 
 ```solidity
 function execute(bytes32 _callId, struct IDAO.Action[] _actions, uint256 _allowFailureMap) external returns (bytes[] execResults, uint256 failureMap)
@@ -246,7 +254,7 @@ function execute(bytes32 _callId, struct IDAO.Action[] _actions, uint256 _allowF
 | `_allowFailureMap` | `uint256`              | A bitmap allowing execution to succeed, even if individual actions might revert. If the bit at index `i` is 1, the execution succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert. |
 | **Output**         |                        |
 | `execResults`      | `bytes[]`              | The array of results obtained from the executed actions in `bytes`.                                                                                                                                                                   |
-| `failureMap`       | `uint256`              | The constructed failureMap which contains which actions have actually failed.                                                                                                                                                         |
+| `failureMap`       | `uint256`              | The resulting failure map containing the actions have actually failed.                                                                                                                                                                |
 
 ### external function deposit
 
