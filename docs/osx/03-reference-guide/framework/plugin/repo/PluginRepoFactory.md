@@ -47,7 +47,7 @@ function createPluginRepo(string _subdomain, address _initialOwner) external ret
 
 ### external function createPluginRepoWithFirstVersion
 
-Creates and registers a `PluginRepo` with an ENS subdomain and publishes an initial version `1.0`.
+Creates and registers a `PluginRepo` with an ENS subdomain and publishes an initial version `1.1`.
 
 ```solidity
 function createPluginRepoWithFirstVersion(string _subdomain, address _pluginSetup, address _maintainer, bytes _releaseMetadata, bytes _buildMetadata) external returns (contract PluginRepo pluginRepo)
