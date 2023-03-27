@@ -37,16 +37,6 @@ struct MultisigSettings {
 }
 ```
 
-### public variable lastMultisigSettingsChange
-
-Keeps track at which the settings has been changed the last time.
-
-```solidity
-uint64 lastMultisigSettingsChange
-```
-
-_This variable is used to prevent proposal creations from happing in the same block as the settings have been changed._
-
 ### internal variable MULTISIG_INTERFACE_ID
 
 The [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID of the contract.
@@ -78,6 +68,16 @@ The current plugin settings.
 ```solidity
 struct Multisig.MultisigSettings multisigSettings
 ```
+
+### public variable lastMultisigSettingsChange
+
+Keeps track at which block number the multisig settings have been changed the last time.
+
+```solidity
+uint64 lastMultisigSettingsChange
+```
+
+_This variable prevents a proposal from being created in the same block in which the multisig settings change._
 
 ### error ProposalCreationForbidden
 
