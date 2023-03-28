@@ -126,7 +126,7 @@ so that the plugin is configured</p>
 
 | Param | Type |
 | --- | --- |
-| params | <code>UpdateAddressesParams</code> | 
+| params | <code>AddAddressesParams</code> | 
 
 <a name="MultisigClientEncoding+removeAddressesAction"></a>
 
@@ -138,7 +138,7 @@ so that the plugin is configured</p>
 
 | Param | Type |
 | --- | --- |
-| params | <code>UpdateAddressesParams</code> | 
+| params | <code>RemoveAddressesParams</code> | 
 
 <a name="MultisigClientEncoding+updateMultisigVotingSettings"></a>
 
