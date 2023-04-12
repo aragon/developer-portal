@@ -53,16 +53,6 @@
   --docusaurus-announcement-bar-height: auto !important;
 }
 
-/* div[class^="announcementBar"][role="banner"] {
-  border-bottom-color: var(--deepdark);
-
-  button.close {
-    svg {
-      fill: var(--ifm-color-primary-light);
-    }
-  }
-} */
-
 div[class*="announcementBarContent"] {
   line-height: 40px;
   font-size: 20px;
