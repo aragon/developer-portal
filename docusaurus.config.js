@@ -101,11 +101,11 @@ const config = {
         {name: 'og:title', content: 'Aragon Developer Portal'},
         {name: 'og:type', content: 'documentation'},
         {name: 'og:url', content: 'https://devs.aragon.org'},
-        {name: 'og:image', content: 'https://devs.aragon.org'},
+        {name: 'og:image', content: 'img/brand-cover.png'},
         {
           name: 'og:description',
           content:
-            'Building a custom DAO is now easier than ever. Learn everything you need to know about Aragon here'
+            'Building a custom DAO is now easier than ever. Learn everything you need to know about the Aragon stack here',
         },
       ],
 
