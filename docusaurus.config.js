@@ -97,6 +97,18 @@ const config = {
           // },
         ],
       },
+      metadata: [
+        {name: 'og:title', content: 'Aragon Developer Portal'},
+        {name: 'og:type', content: 'documentation'},
+        {name: 'og:url', content: 'https://devs.aragon.org'},
+        {name: 'og:image', content: 'img/brand-cover.png'},
+        {
+          name: 'og:description',
+          content:
+            'Building a custom DAO is now easier than ever. Learn everything you need to know about the Aragon stack here',
+        },
+      ],
+
       footer: {
         style: 'dark',
         links: [
@@ -146,6 +158,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['solidity'],
+      },
+      announcementBar: {
+        id: 'register_dao_global_hackathon',
+        content:
+          'Register for the <strong>DAO Global Hackathon <a target="_blank" rel="noopener noreferrer" href="https://daoglobalhackathon.hackerearth.com/">here</a></strong> ⚡️ and win from a prize pool of 140k+ USD!',
+        backgroundColor: '#3164fa',
+        textColor: '#fff',
+        isCloseable: true,
       },
     }),
 
