@@ -13,13 +13,6 @@
 <dd><p>Methods module the SDK TokenVoting Client</p></dd>
 </dl>
 
-## Members
-
-<dl>
-<dt><a href="#SubgraphTokenType">SubgraphTokenType</a></dt>
-<dd><p>Defines the shape of the Token client class</p></dd>
-</dl>
-
 <a name="TokenVotingClient"></a>
 
 ## TokenVotingClient
@@ -45,12 +38,12 @@
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>TokenVotingClient</code>](#TokenVotingClient)  
-**Returns**: <code>\*</code> - <p>{IPluginInstallItem}</p>  
+**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| params | <code>ITokenVotingPluginInstall</code> |  | 
-| [network] | <code>SupportedNetworks</code> | <code>&quot;mainnet&quot;</code> | 
+| params | <code>TokenVotingPluginInstall</code> |  | 
+| [network] | <code>Networkish</code> | <code>&quot;mainnet&quot;</code> | 
 
 <a name="TokenVotingClient.TokenVotingClientMethods+createProposal"></a>
 
@@ -74,7 +67,7 @@ so that the plugin is configured</p>
 
 | Param | Type |
 | --- | --- |
-| params | <code>IVoteProposalParams</code> | 
+| params | <code>VoteProposalParams</code> | 
 | vote | <code>VoteValues</code> | 
 
 <a name="TokenVotingClient.TokenVotingClientMethods+executeProposal"></a>
@@ -123,7 +116,7 @@ so that the plugin is configured</p>
 
 | Param | Type |
 | --- | --- |
-| params | <code>IProposalQueryParams</code> | 
+| params | <code>ProposalQueryParams</code> | 
 
 <a name="TokenVotingClient.TokenVotingClientMethods+getVotingSettings"></a>
 
@@ -179,7 +172,7 @@ so that the plugin is configured</p>
 <p>Decodes the mint token params from an encoded mint token action</p>
 
 **Kind**: instance method of [<code>TokenVotingClientDecoding</code>](#TokenVotingClientDecoding)  
-**Returns**: <code>\*</code> - <p>{IMintTokenParams}</p>  
+**Returns**: <code>\*</code> - <p>{MintTokenParams}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -191,7 +184,7 @@ so that the plugin is configured</p>
 <p>Returns the decoded function info given the encoded data of an action</p>
 
 **Kind**: instance method of [<code>TokenVotingClientDecoding</code>](#TokenVotingClientDecoding)  
-**Returns**: <code>\*</code> - <p>{(IInterfaceParams | null)}</p>  
+**Returns**: <code>\*</code> - <p>{(InterfaceParams | null)}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -235,7 +228,7 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | minterAddress | <code>string</code> | 
-| params | <code>IMintTokenParams</code> | 
+| params | <code>MintTokenParams</code> | 
 
 <a name="TokenVotingClientEncoding.getPluginInstallItem"></a>
 
@@ -244,12 +237,12 @@ so that the plugin is configured</p>
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>TokenVotingClientEncoding</code>](#TokenVotingClientEncoding)  
-**Returns**: <code>\*</code> - <p>{IPluginInstallItem}</p>  
+**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
 
 | Param | Type |
 | --- | --- |
-| params | <code>ITokenVotingPluginInstall</code> | 
-| network | <code>SupportedNetworks</code> | 
+| params | <code>TokenVotingPluginInstall</code> | 
+| network | <code>Networkish</code> | 
 
 <a name="TokenVotingClientEstimation"></a>
 
@@ -262,6 +255,8 @@ so that the plugin is configured</p>
     * [.createProposal(params)](#TokenVotingClientEstimation+createProposal) ⇒ <code>\*</code>
     * [.voteProposal(params)](#TokenVotingClientEstimation+voteProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#TokenVotingClientEstimation+executeProposal) ⇒ <code>\*</code>
+    * [.delegateTokens(params)](#TokenVotingClientEstimation+delegateTokens) ⇒ <code>\*</code>
+    * [.undelegateTokens(tokenAddress)](#TokenVotingClientEstimation+undelegateTokens) ⇒ <code>\*</code>
 
 <a name="TokenVotingClientEstimation+createProposal"></a>
 
@@ -285,7 +280,7 @@ so that the plugin is configured</p>
 
 | Param | Type |
 | --- | --- |
-| params | <code>IVoteProposalParams</code> | 
+| params | <code>VoteProposalParams</code> | 
 
 <a name="TokenVotingClientEstimation+executeProposal"></a>
 
@@ -299,6 +294,30 @@ so that the plugin is configured</p>
 | --- | --- |
 | proposalId | <code>string</code> | 
 
+<a name="TokenVotingClientEstimation+delegateTokens"></a>
+
+### tokenVotingClientEstimation.delegateTokens(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of delegating voting power to a delegatee</p>
+
+**Kind**: instance method of [<code>TokenVotingClientEstimation</code>](#TokenVotingClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>DelegateTokensParams</code> | 
+
+<a name="TokenVotingClientEstimation+undelegateTokens"></a>
+
+### tokenVotingClientEstimation.undelegateTokens(tokenAddress) ⇒ <code>\*</code>
+<p>Estimates the gas fee of undelegating voting power</p>
+
+**Kind**: instance method of [<code>TokenVotingClientEstimation</code>](#TokenVotingClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| tokenAddress | <code>string</code> | 
+
 <a name="TokenVotingClientMethods"></a>
 
 ## TokenVotingClientMethods
@@ -308,6 +327,9 @@ so that the plugin is configured</p>
 
 * [TokenVotingClientMethods](#TokenVotingClientMethods)
     * [.prepareInstallation(params)](#TokenVotingClientMethods+prepareInstallation) ⇒ <code>\*</code>
+    * [.delegateTokens(params)](#TokenVotingClientMethods+delegateTokens) ⇒ <code>\*</code>
+    * [.undelegateTokens(tokenAddress)](#TokenVotingClientMethods+undelegateTokens) ⇒ <code>\*</code>
+    * [.getDelegatee(tokenAddress)](#TokenVotingClientMethods+getDelegatee) ⇒ <code>\*</code>
     * [.canVote(params)](#TokenVotingClientMethods+canVote) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#TokenVotingClientMethods+canExecute) ⇒ <code>\*</code>
 
@@ -322,6 +344,42 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | params | <code>TokenVotingPluginPrepareInstallationParams</code> | 
+
+<a name="TokenVotingClientMethods+delegateTokens"></a>
+
+### tokenVotingClientMethods.delegateTokens(params) ⇒ <code>\*</code>
+<p>Delegates all the signer's voting power to a delegatee</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<DelegateTokensStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>DelegateTokensParams</code> | 
+
+<a name="TokenVotingClientMethods+undelegateTokens"></a>
+
+### tokenVotingClientMethods.undelegateTokens(tokenAddress) ⇒ <code>\*</code>
+<p>Delegates all the signer's tokens back to itself</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<UndelegateTokensStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| tokenAddress | <code>string</code> | 
+
+<a name="TokenVotingClientMethods+getDelegatee"></a>
+
+### tokenVotingClientMethods.getDelegatee(tokenAddress) ⇒ <code>\*</code>
+<p>Retrieves the current signer's delegatee for the given token</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>{Promise&lt;string | null&gt;}</p>  
+
+| Param | Type |
+| --- | --- |
+| tokenAddress | <code>string</code> | 
 
 <a name="TokenVotingClientMethods+canVote"></a>
 
@@ -347,9 +405,3 @@ so that the plugin is configured</p>
 | --- | --- |
 | proposalId | <code>string</code> | 
 
-<a name="SubgraphTokenType"></a>
-
-## SubgraphTokenType
-<p>Defines the shape of the Token client class</p>
-
-**Kind**: global variable  

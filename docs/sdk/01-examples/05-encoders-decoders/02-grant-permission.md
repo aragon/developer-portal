@@ -12,19 +12,19 @@ Grants permission with the name (`permission`) to an address (`who`) to perform 
 import {
   Client,
   DaoAction,
-  IGrantPermissionParams,
-  IGrantPermissionDecodedParams,
-  Permissions
+  GrantPermissionDecodedParams,
+  GrantPermissionParams,
+  Permissions,
 } from "@aragon/sdk-client";
 import { context } from "../index";
 
 // Instantiates an Aragon OSx SDK client.
 const client: Client = new Client(context);
 
-const params: IGrantPermissionParams = {
+const params: GrantPermissionParams = {
   who: "0x1234567890123456789012345678901234567890",
   where: "0x1234567890123456789012345678901234567890",
-  permission: Permissions.UPGRADE_PERMISSION
+  permission: Permissions.UPGRADE_PERMISSION,
 };
 
 const daoAddress: string = "0x1234567890123456789012345678901234567890";
@@ -37,7 +37,7 @@ console.log({ action });
 Returns:
 
 ```json
-{ grantPermission:
+{ action:
   {
     to: "0x1234567890...",
     value: 0n,
@@ -50,9 +50,10 @@ Returns:
 
 ```ts
 // Decodes the data of a grant permission action.
-const decodedParams: IGrantPermissionDecodedParams = client.decoding.grantAction(
-  action.data
-);
+const decodedParams: GrantPermissionDecodedParams = client.decoding
+  .grantAction(
+    action.data,
+  );
 console.log({ decodedParams });
 ```
 
@@ -60,10 +61,12 @@ console.log({ decodedParams });
 Returns:
 
 ```json
-{
-  who: "0x1234567890...",
-  where: "0x1234567890...",
-  permission: "UPGRADE_PERMISSION",
-  permissionId: "0x12345..."
+{ decodedParams:
+  {
+    who: "0x1234567890...",
+    where: "0x1234567890...",
+    permission: "UPGRADE_PERMISSION",
+    permissionId: "0x12345..."
+  }
 }
 ```

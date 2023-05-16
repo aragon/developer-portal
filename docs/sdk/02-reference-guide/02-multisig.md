@@ -13,13 +13,6 @@
 <dd><p>Methods module the SDK Address List Client</p></dd>
 </dl>
 
-## Members
-
-<dl>
-<dt><a href="#ApproveProposalStep">ApproveProposalStep</a></dt>
-<dd><p>Defines the shape of the AddressList client class</p></dd>
-</dl>
-
 <a name="MultisigClient"></a>
 
 ## MultisigClient
@@ -33,12 +26,12 @@
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>MultisigClient</code>](#MultisigClient)  
-**Returns**: <code>\*</code> - <p>{IPluginInstallItem}</p>  
+**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
 
 | Param | Type | Default |
 | --- | --- | --- |
 | params | <code>MultisigPluginInstallParams</code> |  | 
-| [network] | <code>SupportedNetworks</code> | <code>&quot;mainnet&quot;</code> | 
+| [network] | <code>Networkish</code> | <code>&quot;mainnet&quot;</code> | 
 
 <a name="MultisigClientDecoding"></a>
 
@@ -95,7 +88,7 @@ so that the plugin is configured</p>
 <p>Returns the decoded function info given the encoded data of an action</p>
 
 **Kind**: instance method of [<code>MultisigClientDecoding</code>](#MultisigClientDecoding)  
-**Returns**: <code>\*</code> - <p>{(IInterfaceParams | null)}</p>  
+**Returns**: <code>\*</code> - <p>{(InterfaceParams | null)}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -159,12 +152,12 @@ so that the plugin is configured</p>
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>MultisigClientEncoding</code>](#MultisigClientEncoding)  
-**Returns**: <code>\*</code> - <p>{IPluginInstallItem}</p>  
+**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
 
 | Param | Type |
 | --- | --- |
 | params | <code>MultisigPluginInstallParams</code> | 
-| network | <code>SupportedNetworks</code> | 
+| network | <code>Networkish</code> | 
 
 <a name="MultisigClientEstimation"></a>
 
@@ -364,11 +357,5 @@ so that the plugin is configured</p>
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>IProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
+| { | <code>ProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
 
-<a name="ApproveProposalStep"></a>
-
-## ApproveProposalStep
-<p>Defines the shape of the AddressList client class</p>
-
-**Kind**: global variable  
