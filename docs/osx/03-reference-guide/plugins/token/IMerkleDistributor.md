@@ -13,12 +13,12 @@ event Claimed(uint256 index, address to, uint256 amount)
 | Input    | Type      | Description                                     |
 | :------- | --------- | ----------------------------------------------- |
 | `index`  | `uint256` | The index in the balance tree that was claimed. |
-| `to`     | `address` | The address to which the tokens are send.       |
+| `to`     | `address` | The address to which the tokens are sent.       |
 | `amount` | `uint256` | The claimed amount.                             |
 
 ### external function token
 
-The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token to be distributed.
+The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token being distributed.
 
 ```solidity
 function token() external returns (contract IERC20Upgradeable)

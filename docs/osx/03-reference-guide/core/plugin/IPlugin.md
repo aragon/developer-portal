@@ -16,7 +16,7 @@ enum PluginType {
 
 ### external function pluginType
 
-returns the plugin's type
+Returns the plugin's type
 
 ```solidity
 function pluginType() external view returns (enum IPlugin.PluginType)

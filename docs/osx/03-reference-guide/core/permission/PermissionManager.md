@@ -167,7 +167,7 @@ function grant(address _where, address _who, bytes32 _permissionId) external vir
 
 | Input           | Type      | Description                                                              |
 | :-------------- | --------- | ------------------------------------------------------------------------ |
-| `_where`        | `address` | The address of the target contract for which `_who` recieves permission. |
+| `_where`        | `address` | The address of the target contract for which `_who` receives permission. |
 | `_who`          | `address` | The address (EOA or contract) receiving the permission.                  |
 | `_permissionId` | `bytes32` | The permission identifier.                                               |
 
@@ -184,7 +184,7 @@ function grantWithCondition(address _where, address _who, bytes32 _permissionId,
 
 | Input           | Type                            | Description                                                                                                               |
 | :-------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `_where`        | `address`                       | The address of the target contract for which `_who` recieves permission.                                                  |
+| `_where`        | `address`                       | The address of the target contract for which `_who` receives permission.                                                  |
 | `_who`          | `address`                       | The address (EOA or contract) receiving the permission.                                                                   |
 | `_permissionId` | `bytes32`                       | The permission identifier.                                                                                                |
 | `_condition`    | `contract IPermissionCondition` | The `PermissionCondition` that will be asked for authorization on calls connected to the specified permission identifier. |
@@ -244,7 +244,7 @@ function isGranted(address _where, address _who, bytes32 _permissionId, bytes _d
 
 | Input           | Type      | Description                                                                                                |
 | :-------------- | --------- | ---------------------------------------------------------------------------------------------------------- |
-| `_where`        | `address` | The address of the target contract for which `_who` recieves permission.                                   |
+| `_where`        | `address` | The address of the target contract for which `_who` receives permission.                                   |
 | `_who`          | `address` | The address (EOA or contract) for which the permission is checked.                                         |
 | `_permissionId` | `bytes32` | The permission identifier.                                                                                 |
 | `_data`         | `bytes`   | The optional data passed to the `PermissionCondition` registered.                                          |
@@ -273,7 +273,7 @@ function _grant(address _where, address _who, bytes32 _permissionId) internal vi
 
 | Input           | Type      | Description                                                              |
 | :-------------- | --------- | ------------------------------------------------------------------------ |
-| `_where`        | `address` | The address of the target contract for which `_who` recieves permission. |
+| `_where`        | `address` | The address of the target contract for which `_who` receives permission. |
 | `_who`          | `address` | The address (EOA or contract) owning the permission.                     |
 | `_permissionId` | `bytes32` | The permission identifier.                                               |
 
@@ -287,7 +287,7 @@ function _grantWithCondition(address _where, address _who, bytes32 _permissionId
 
 | Input           | Type                            | Description                                                                                                               |
 | :-------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `_where`        | `address`                       | The address of the target contract for which `_who` recieves permission.                                                  |
+| `_where`        | `address`                       | The address of the target contract for which `_who` receives permission.                                                  |
 | `_who`          | `address`                       | The address (EOA or contract) owning the permission.                                                                      |
 | `_permissionId` | `bytes32`                       | The permission identifier.                                                                                                |
 | `_condition`    | `contract IPermissionCondition` | An address either resolving to a `PermissionCondition` contract address or being the `ALLOW_FLAG` address (`address(2)`). |
@@ -304,7 +304,7 @@ function _revoke(address _where, address _who, bytes32 _permissionId) internal v
 
 | Input           | Type      | Description                                                              |
 | :-------------- | --------- | ------------------------------------------------------------------------ |
-| `_where`        | `address` | The address of the target contract for which `_who` recieves permission. |
+| `_where`        | `address` | The address of the target contract for which `_who` receives permission. |
 | `_who`          | `address` | The address (EOA or contract) owning the permission.                     |
 | `_permissionId` | `bytes32` | The permission identifier.                                               |
 
@@ -320,7 +320,7 @@ function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _
 
 | Input           | Type      | Description                                                                                           |
 | :-------------- | --------- | ----------------------------------------------------------------------------------------------------- |
-| `_where`        | `address` | The address of the target contract for which `_who` recieves permission.                              |
+| `_where`        | `address` | The address of the target contract for which `_who` receives permission.                              |
 | `_who`          | `address` | The address (EOA or contract) owning the permission.                                                  |
 | `_permissionId` | `bytes32` | The permission identifier.                                                                            |
 | `_data`         | `bytes`   | The optional data passed to the `PermissionCondition` registered.                                     |
@@ -349,7 +349,7 @@ function permissionHash(address _where, address _who, bytes32 _permissionId) int
 
 | Input           | Type      | Description                                                              |
 | :-------------- | --------- | ------------------------------------------------------------------------ |
-| `_where`        | `address` | The address of the target contract for which `_who` recieves permission. |
+| `_where`        | `address` | The address of the target contract for which `_who` receives permission. |
 | `_who`          | `address` | The address (EOA or contract) owning the permission.                     |
 | `_permissionId` | `bytes32` | The permission identifier.                                               |
 | **Output**      |           |
@@ -357,7 +357,7 @@ function permissionHash(address _where, address _who, bytes32 _permissionId) int
 
 ### internal function isPermissionRestrictedForAnyAddr
 
-Decides if the granting permissionId is restricted when `_who = ANY_ADDR` or `_where = ANY_ADDR`.
+Decides if the granting permissionId is restricted when `_who == ANY_ADDR` or `_where == ANY_ADDR`.
 
 ```solidity
 function isPermissionRestrictedForAnyAddr(bytes32 _permissionId) internal view virtual returns (bool)
@@ -369,6 +369,6 @@ function isPermissionRestrictedForAnyAddr(bytes32 _permissionId) internal view v
 | **Output**      |           |
 | `0`             | `bool`    | Whether or not the permission is restricted. |
 
-_By default, every permission is unrestricted and it is the derived contract's responsibility to override it. Note, that the `ROOT_PERMISSION_ID` is included not required to be set it again._
+_By default, every permission is unrestricted and it is the derived contract's responsibility to override it. Note, that the `ROOT_PERMISSION_ID` is included and not required to be set it again._
 
 <!--CONTRACT_END-->

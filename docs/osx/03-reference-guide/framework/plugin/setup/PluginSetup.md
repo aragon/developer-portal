@@ -16,7 +16,7 @@ function prepareUpdate(address _dao, uint16 _currentBuild, struct IPluginSetup.S
 | :------------------ | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `_dao`              | `address`                               | The address of the updating DAO.                                                                                        |
 | `_currentBuild`     | `uint16`                                | The build number of the plugin to update from.                                                                          |
-| `_payload`          | `struct IPluginSetup.SetupPayload`      | The relevant data necessary for the `prepareUpdate`. see above.                                                         |
+| `_payload`          | `struct IPluginSetup.SetupPayload`      | The relevant data necessary for the `prepareUpdate`. See above.                                                         |
 | **Output**          |                                         |
 | `initData`          | `bytes`                                 | The initialization data to be passed to upgradeable contracts when the update is applied in the `PluginSetupProcessor`. |
 | `preparedSetupData` | `struct IPluginSetup.PreparedSetupData` | The deployed plugin's relevant data which consists of helpers and permissions.                                          |

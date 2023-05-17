@@ -1,6 +1,6 @@
 ## Description
 
-This contract handles callbacks by registering a magic number together with the callback function's selector. It provides the `_handleCallback` function that inherting have to call inside their `fallback()` function (`_handleCallback(msg.callbackSelector, msg.data)`). This allows to adaptively register ERC standards (e.g., [ERC-721](https://eips.ethereum.org/EIPS/eip-721), [ERC-1115](https://eips.ethereum.org/EIPS/eip-1155), or future versions of [ERC-165](https://eips.ethereum.org/EIPS/eip-165)) and returning the required magic numbers for the associated callback functions for the inheriting contract so that it doesn't need to be upgraded.
+This contract handles callbacks by registering a magic number together with the callback function's selector. It provides the `_handleCallback` function that inheriting contracts have to call inside their `fallback()` function (`_handleCallback(msg.callbackSelector, msg.data)`). This allows to adaptively register ERC standards (e.g., [ERC-721](https://eips.ethereum.org/EIPS/eip-721), [ERC-1115](https://eips.ethereum.org/EIPS/eip-1155), or future versions of [ERC-165](https://eips.ethereum.org/EIPS/eip-165)) and returning the required magic numbers for the associated callback functions for the inheriting contract so that it doesn't need to be upgraded.
 
 This callback handling functionality is intented to be used by executor contracts (i.e., `DAO.sol`).
 
@@ -43,11 +43,11 @@ Emitted when `_handleCallback` is called.
 event CallbackReceived(address sender, bytes4 sig, bytes data)
 ```
 
-| Input    | Type      | Description                              |
-| :------- | --------- | ---------------------------------------- |
-| `sender` | `address` | Who called the callback.                 |
-| `sig`    | `bytes4`  | The function signature.                  |
-| `data`   | `bytes`   | The calldata for the function signature. |
+| Input    | Type      | Description              |
+| :------- | --------- | ------------------------ |
+| `sender` | `address` | Who called the callback. |
+| `sig`    | `bytes4`  | The function signature.  |
+| `data`   | `bytes`   | The calldata.            |
 
 ### internal function \_handleCallback
 
@@ -60,7 +60,7 @@ function _handleCallback(bytes4 _callbackSelector, bytes _data) internal virtual
 | Input               | Type     | Description                                                                    |
 | :------------------ | -------- | ------------------------------------------------------------------------------ |
 | `_callbackSelector` | `bytes4` | The function selector of the callback function.                                |
-| `_data`             | `bytes`  |                                                                                |
+| `_data`             | `bytes`  | The calldata.                                                                  |
 | **Output**          |          |
 | `0`                 | `bytes4` | The magic number registered for the function selector triggering the fallback. |
 

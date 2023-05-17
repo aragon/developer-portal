@@ -14,7 +14,7 @@ constructor() internal
 
 ### public function pluginType
 
-returns the plugin's type
+Returns the plugin's type
 
 ```solidity
 function pluginType() public pure returns (enum IPlugin.PluginType)
@@ -68,7 +68,7 @@ function implementation() public view returns (address)
 
 ### internal function \_authorizeUpgrade
 
-Internal method authorizing the upgrade of the contract via the [upgradeabilty mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
+Internal method authorizing the upgrade of the contract via the [upgradeability mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
 
 ```solidity
 function _authorizeUpgrade(address) internal virtual

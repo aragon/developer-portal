@@ -70,6 +70,16 @@ The [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator cont
 contract IERC1271 signatureValidator
 ```
 
+_Added in v1.0.0._
+
+### error ReentrantCall
+
+Thrown if a call is reentrant.
+
+```solidity
+error ReentrantCall()
+```
+
 ### error TooManyActions
 
 Thrown if the action array length is larger than `MAX_ACTIONS`.
@@ -119,9 +129,17 @@ error NativeTokenDepositAmountMismatch(uint256 expected, uint256 actual)
 | `expected` | `uint256` | The expected native token amount.         |
 | `actual`   | `uint256` | The actual native token amount deposited. |
 
+### error ProtocolVersionUpgradeNotSupported
+
+Thrown if an upgrade is not supported from a specific protocol version .
+
+```solidity
+error ProtocolVersionUpgradeNotSupported(uint8[3] protocolVersion)
+```
+
 ### event NewURI
 
-Emitted when a new DAO uri is set.
+Emitted when a new DAO URI is set.
 
 ```solidity
 event NewURI(string daoURI)
@@ -129,7 +147,17 @@ event NewURI(string daoURI)
 
 | Input    | Type     | Description  |
 | :------- | -------- | ------------ |
-| `daoURI` | `string` | The new uri. |
+| `daoURI` | `string` | The new URI. |
+
+### internal modifier nonReentrant
+
+A modifier to protect a function from calling itself, directly or indirectly (reentrancy).
+
+```solidity
+modifier nonReentrant()
+```
+
+_Currently, this modifier is only applied to the `execute()` function. If this is used multiple times, private `_beforeNonReentrant()` and `_afterNonReentrant()` functions should be created to prevent code duplication._
 
 ### public function constructor
 
@@ -143,6 +171,7 @@ constructor() public
 
 Initializes the DAO by
 
+- setting the reentrancy status variable to `_NOT_ENTERED`
 - registering the [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface ID
 - setting the trusted forwarder for meta transactions
 - giving the `ROOT_PERMISSION_ID` permission to the initial owner (that should be revoked and transferred to the DAO after setup).
@@ -151,18 +180,31 @@ Initializes the DAO by
 function initialize(bytes _metadata, address _initialOwner, address _trustedForwarder, string daoURI_) external
 ```
 
-| Input               | Type      | Description                                                                         |
-| :------------------ | --------- | ----------------------------------------------------------------------------------- |
-| `_metadata`         | `bytes`   | IPFS hash that points to all the metadata (logo, description, tags, etc.) of a DAO. |
-| `_initialOwner`     | `address` | The initial owner of the DAO having the `ROOT_PERMISSION_ID` permission.            |
-| `_trustedForwarder` | `address` | The trusted forwarder responsible for verifying meta transactions.                  |
-| `daoURI_`           | `string`  |                                                                                     |
+| Input               | Type      | Description                                                                          |
+| :------------------ | --------- | ------------------------------------------------------------------------------------ |
+| `_metadata`         | `bytes`   | IPFS hash that points to all the metadata (logo, description, tags, etc.) of a DAO.  |
+| `_initialOwner`     | `address` | The initial owner of the DAO having the `ROOT_PERMISSION_ID` permission.             |
+| `_trustedForwarder` | `address` | The trusted forwarder responsible for verifying meta transactions.                   |
+| `daoURI_`           | `string`  | The DAO URI required to support [ERC-4824](https://eips.ethereum.org/EIPS/eip-4824). |
 
 _This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)._
 
+### external function initializeFrom
+
+Initializes the DAO after an upgrade from a previous protocol version.
+
+```solidity
+function initializeFrom(uint8[3] _previousProtocolVersion, bytes _initData) external
+```
+
+| Input                      | Type       | Description                                                                                                                                            |
+| :------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `_previousProtocolVersion` | `uint8[3]` | The semantic protocol version number of the previous DAO implementation contract this upgrade is transitioning from.                                   |
+| `_initData`                | `bytes`    | The initialization data to be passed to via `upgradeToAndCall` (see [ERC-1967](https://docs.openzeppelin.com/contracts/4.x/api/proxy#ERC1967Upgrade)). |
+
 ### internal function isPermissionRestrictedForAnyAddr
 
-Decides if the granting permissionId is restricted when `_who = ANY_ADDR` or `_where = ANY_ADDR`.
+Decides if the granting permissionId is restricted when `_who == ANY_ADDR` or `_where == ANY_ADDR`.
 
 ```solidity
 function isPermissionRestrictedForAnyAddr(bytes32 _permissionId) internal pure returns (bool)
@@ -174,11 +216,11 @@ function isPermissionRestrictedForAnyAddr(bytes32 _permissionId) internal pure r
 | **Output**      |           |
 | `0`             | `bool`    | Whether or not the permission is restricted. |
 
-_By default, every permission is unrestricted and it is the derived contract's responsibility to override it. Note, that the `ROOT_PERMISSION_ID` is included not required to be set it again._
+_By default, every permission is unrestricted and it is the derived contract's responsibility to override it. Note, that the `ROOT_PERMISSION_ID` is included and not required to be set it again._
 
 ### internal function \_authorizeUpgrade
 
-Internal method authorizing the upgrade of the contract via the [upgradeabilty mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
+Internal method authorizing the upgrade of the contract via the [upgradeability mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
 
 ```solidity
 function _authorizeUpgrade(address) internal virtual
@@ -241,7 +283,7 @@ function setMetadata(bytes _metadata) external
 
 ### external function execute
 
-Executes a list of actions. If a zero allow-failure map is provided, a failing action reverts the entire excution. If a non-zero allow-failure map is provided, allowed actions can fail without the entire call being reverted.
+Executes a list of actions. If a zero allow-failure map is provided, a failing action reverts the entire execution. If a non-zero allow-failure map is provided, allowed actions can fail without the entire call being reverted.
 
 ```solidity
 function execute(bytes32 _callId, struct IDAO.Action[] _actions, uint256 _allowFailureMap) external returns (bytes[] execResults, uint256 failureMap)
@@ -305,8 +347,8 @@ Emits the `NativeTokenDeposited` event to track native token deposits that weren
 receive() external payable
 ```
 
-_This call is bound by the gas limitations for `send`/`transfer` calls introduced by EIP-2929.
-Gas cost increases in future hard forks might break this function. As an alternative, EIP-2930-type transactions using access lists can be employed._
+_This call is bound by the gas limitations for `send`/`transfer` calls introduced by [ERC-2929](https://eips.ethereum.org/EIPS/eip-2929).
+Gas cost increases in future hard forks might break this function. As an alternative, [ERC-2930](https://eips.ethereum.org/EIPS/eip-2930)-type transactions using access lists can be employed._
 
 ### external function fallback
 
@@ -362,15 +404,19 @@ function registerStandardCallback(bytes4 _interfaceId, bytes4 _callbackSelector,
 
 ### external function daoURI
 
-A distinct Uniform Resource Identifier (URI) pointing to a JSON object following the "EIP-4824 DAO JSON-LD Schema". This JSON file splits into four URIs: membersURI, proposalsURI, activityLogURI, and governanceURI. The membersURI should point to a JSON file that conforms to the "EIP-4824 Members JSON-LD Schema". The proposalsURI should point to a JSON file that conforms to the "EIP-4824 Proposals JSON-LD Schema". The activityLogURI should point to a JSON file that conforms to the "EIP-4824 Activity Log JSON-LD Schema". The governanceURI should point to a flatfile, normatively a .md file. Each of the JSON files named above can be statically-hosted or dynamically-generated.
+A distinct Uniform Resource Identifier (URI) pointing to a JSON object following the "EIP-4824 DAO JSON-LD Schema". This JSON file splits into four URIs: membersURI, proposalsURI, activityLogURI, and governanceURI. The membersURI should point to a JSON file that conforms to the "EIP-4824 Members JSON-LD Schema". The proposalsURI should point to a JSON file that conforms to the "EIP-4824 Proposals JSON-LD Schema". The activityLogURI should point to a JSON file that conforms to the "EIP-4824 Activity Log JSON-LD Schema". The governanceURI should point to a flatfile, normatively a .md file. Each of the JSON files named above can be statically hosted or dynamically-generated.
 
 ```solidity
 function daoURI() external view returns (string)
 ```
 
+| Output | Type     | Description |
+| ------ | -------- | ----------- |
+| `0`    | `string` |             |
+
 ### external function setDaoURI
 
-Updates the set DAO uri to a new value.
+Updates the set DAO URI to a new value.
 
 ```solidity
 function setDaoURI(string newDaoURI) external
@@ -378,11 +424,11 @@ function setDaoURI(string newDaoURI) external
 
 | Input       | Type     | Description                |
 | :---------- | -------- | -------------------------- |
-| `newDaoURI` | `string` | The new DAO uri to be set. |
+| `newDaoURI` | `string` | The new DAO URI to be set. |
 
 ### internal function \_setDaoURI
 
-Sets the new DAO uri and emits the associated event.
+Sets the new [ERC-4824](https://eips.ethereum.org/EIPS/eip-4824) DAO URI and emits the associated event.
 
 ```solidity
 function _setDaoURI(string daoURI_) internal
@@ -390,6 +436,6 @@ function _setDaoURI(string daoURI_) internal
 
 | Input     | Type     | Description      |
 | :-------- | -------- | ---------------- |
-| `daoURI_` | `string` | The new DAO uri. |
+| `daoURI_` | `string` | The new DAO URI. |
 
 <!--CONTRACT_END-->

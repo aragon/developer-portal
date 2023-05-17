@@ -6,7 +6,7 @@ An interface for an on-chain multisig governance plugin in which a proposal pass
 
 ### external function addAddresses
 
-Adds new members to the address list. Previously, it checks if the new addresslist length would be greater than `type(uint16).max`, the maximal number of approvals.
+Adds new members to the address list. Previously, it checks if the new address list length would be greater than `type(uint16).max`, the maximal number of approvals.
 
 ```solidity
 function addAddresses(address[] _members) external
@@ -18,7 +18,7 @@ function addAddresses(address[] _members) external
 
 ### external function removeAddresses
 
-Removes existing members from the address list. Previously, it checks if the new addresslist length is at least as long as the minimum approvals parameter requires. Note that `minApprovals` is must be at least 1 so the address list cannot become empty.
+Removes existing members from the address list. Previously, it checks if the new address list length is at least as long as the minimum approvals parameter requires. Note that `minApprovals` is must be at least 1 so the address list cannot become empty.
 
 ```solidity
 function removeAddresses(address[] _members) external
