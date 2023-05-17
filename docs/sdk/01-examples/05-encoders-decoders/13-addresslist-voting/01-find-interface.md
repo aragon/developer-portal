@@ -1,5 +1,5 @@
 ---
-title: Get Function Parameters 
+title: Get Function Parameters
 ---
 
 ## Get function parameters from  encoded action (Addresslist)
@@ -14,7 +14,7 @@ import { addresslistVotingClient } from "./index";
 const data: Uint8Array = new Uint8Array([12, 56]);
 
 const functionParams = addresslistVotingClient.decoding.findInterface(data);
-console.log({ functionParams });
+console.log(functionParams);
 ```
 
 

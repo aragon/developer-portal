@@ -9,25 +9,22 @@ Updates the settings of a given AddresslistVoting plugin.
 ### Encoding
 
 ```ts
-import {
-  DaoAction,
-  VotingMode,
-  VotingSettings
-} from "@aragon/sdk-client";
+import { DaoAction, VotingMode, VotingSettings } from "@aragon/sdk-client";
 import { addresslistVotingClient } from "./index";
 
 // The action object for updating the plugin settings.
-const configActionPrarms: VotingSettings = {
+const params: VotingSettings = {
   minDuration: 60 * 60 * 24 * 2, // seconds
   minParticipation: 0.25, // 25%
   supportThreshold: 0.5, // 50%
   minProposerVotingPower: BigInt("5000"), // default 0
-  votingMode: VotingMode.STANDARD // default STANDARD, otherwise EARLY_EXECUTION or VOTE_REPLACEMENT
+  votingMode: VotingMode.STANDARD, // default STANDARD, otherwise EARLY_EXECUTION or VOTE_REPLACEMENT
 };
 
 const pluginAddress: string = "0x1234567890123456789012345678901234567890"; // the address of the AddresslistVoting plugin contract installed in the DAO
 
-const action: DaoAction = addresslistVotingClient.encoding.updatePluginSettingsAction(pluginAddress, configActionPrarms);
+const action: DaoAction = addresslistVotingClient.encoding
+  .updatePluginSettingsAction(pluginAddress, params);
 console.log({ action });
 ```
 
@@ -35,28 +32,33 @@ console.log({ action });
 Returns:
 
 ```
-{
-  to: "0x1234567890...",
-  value: 0n,
-  data: Uint8Array[12,34,45...]
+{ action:
+  {
+    to: "0x1234567890...",
+    value: 0n,
+    data: Uint8Array[12,34,45...]
+  }
 }
 ```
 
 ### Decoding
 
 ```ts
-const pluginSettings: VotingSettings = addresslistVotingClient.decoding.updatePluginSettingsAction(action.data);
-console.log({ pluginSettings });
+const decodedParams: VotingSettings = addresslistVotingClient.decoding
+  .updatePluginSettingsAction(action.data);
+console.log({ decodedParams });
 ```
 
 
 Returns:
 
 ```json
-{
-  minDuration: 7200, // seconds
-  minParticipation: 0.25, // 25%
-  supportThreshold: 0.5, // 50%
-  minProposerVotingPower: BigInt("1")
+{ decodedParams:
+  {
+    minDuration: 7200, // seconds
+    minParticipation: 0.25, // 25%
+    supportThreshold: 0.5, // 50%
+    minProposerVotingPower: BigInt("1")
+  }
 }
 ```

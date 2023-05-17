@@ -16,7 +16,7 @@ const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
 
 // Create a TokenVoting client.
 const tokenVotingClient = new TokenVotingClient(contextPlugin);
-console.log({ tokenVotingClient });
+console.log(tokenVotingClient);
 ```
 
 

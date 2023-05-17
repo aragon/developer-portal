@@ -26,12 +26,12 @@
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>AddresslistVotingClient</code>](#AddresslistVotingClient)  
-**Returns**: <code>\*</code> - <p>{IPluginInstallItem}</p>  
+**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| params | <code>IAddresslistVotingPluginInstall</code> |  | 
-| [network] | <code>SupportedNetworks</code> | <code>&quot;mainnet&quot;</code> | 
+| params | <code>AddresslistVotingPluginInstall</code> |  | 
+| [network] | <code>Networkish</code> | <code>&quot;mainnet&quot;</code> | 
 
 <a name="AddresslistVotingClientDecoding"></a>
 
@@ -88,7 +88,7 @@ so that the plugin is configured</p>
 <p>Returns the decoded function info given the encoded data of an action</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientDecoding</code>](#AddresslistVotingClientDecoding)  
-**Returns**: <code>\*</code> - <p>{(IInterfaceParams | null)}</p>  
+**Returns**: <code>\*</code> - <p>{(InterfaceParams | null)}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -155,12 +155,12 @@ so that the plugin is configured</p>
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>AddresslistVotingClientEncoding</code>](#AddresslistVotingClientEncoding)  
-**Returns**: <code>\*</code> - <p>{IPluginInstallItem}</p>  
+**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
 
 | Param | Type |
 | --- | --- |
-| params | <code>IAddresslistVotingPluginInstall</code> | 
-| network | <code>SupportedNetworks</code> | 
+| params | <code>AddresslistVotingPluginInstall</code> | 
+| network | <code>Networkish</code> | 
 
 <a name="AddresslistVotingClientEstimation"></a>
 
@@ -196,7 +196,7 @@ so that the plugin is configured</p>
 
 | Param | Type |
 | --- | --- |
-| params | <code>IVoteProposalParams</code> | 
+| params | <code>VoteProposalParams</code> | 
 
 <a name="AddresslistVotingClientEstimation+executeProposal"></a>
 
@@ -250,7 +250,7 @@ so that the plugin is configured</p>
 
 | Param | Type |
 | --- | --- |
-| params | <code>IVoteProposalParams</code> | 
+| params | <code>VoteProposalParams</code> | 
 
 <a name="AddresslistVotingClientMethods+executeProposal"></a>
 
@@ -322,7 +322,7 @@ so that the plugin is configured</p>
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>IProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
+| { | <code>ProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
 
 <a name="AddresslistVotingClientMethods+getVotingSettings"></a>
 
