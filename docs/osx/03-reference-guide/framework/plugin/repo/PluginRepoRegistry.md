@@ -1,6 +1,6 @@
 ## Description
 
-This contract maintains an address-based registery of plugin repositories in the Aragon App DAO framework.
+This contract maintains an address-based registry of plugin repositories in the Aragon App DAO framework.
 
 ## Implementation
 

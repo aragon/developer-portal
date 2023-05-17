@@ -210,7 +210,7 @@ function createVersion(uint8 _release, address _pluginSetup, bytes _buildMetadat
 
 ### external function updateReleaseMetadata
 
-Update the metadata for release with content `@fromHex(_releaseMetadata)`.
+Updates the metadata for release with content `@fromHex(_releaseMetadata)`.
 
 ```solidity
 function updateReleaseMetadata(uint8 _release, bytes _releaseMetadata) external
@@ -307,7 +307,7 @@ function tagHash(struct PluginRepo.Tag _tag) internal pure returns (bytes32)
 
 ### internal function \_authorizeUpgrade
 
-Internal method authorizing the upgrade of the contract via the [upgradeabilty mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
+Internal method authorizing the upgrade of the contract via the [upgradeability mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
 
 ```solidity
 function _authorizeUpgrade(address) internal virtual

@@ -14,7 +14,7 @@ function _uncheckedIncrement(uint256 i) internal pure returns (uint256)
 
 ### internal function \_uncheckedAdd
 
-Add two unsigned integers without checking the result for overflow errors (using safe math).
+Adds two unsigned integers without checking the result for overflow errors (using safe math).
 
 ```solidity
 function _uncheckedAdd(uint256 a, uint256 b) internal pure returns (uint256)

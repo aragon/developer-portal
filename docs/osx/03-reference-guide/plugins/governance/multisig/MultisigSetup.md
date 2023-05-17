@@ -6,7 +6,7 @@ The setup contract of the `Multisig` plugin.
 
 ### public function constructor
 
-The contract constructor, that deployes the `Multisig` plugin logic contract.
+The contract constructor, that deploys the `Multisig` plugin logic contract.
 
 ```solidity
 constructor() public
@@ -45,7 +45,7 @@ function prepareUninstallation(address _dao, struct IPluginSetup.SetupPayload _p
 | Input         | Type                                           | Description                                                                                                            |
 | :------------ | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `_dao`        | `address`                                      | The address of the uninstalling DAO.                                                                                   |
-| `_payload`    | `struct IPluginSetup.SetupPayload`             | The relevant data necessary for the `prepareUninstallation`. see above.                                                |
+| `_payload`    | `struct IPluginSetup.SetupPayload`             | The relevant data necessary for the `prepareUninstallation`. See above.                                                |
 | **Output**    |                                                |
 | `permissions` | `struct PermissionLib.MultiTargetPermission[]` | The array of multi-targeted permission operations to be applied by the `PluginSetupProcessor` to the uninstalling DAO. |
 

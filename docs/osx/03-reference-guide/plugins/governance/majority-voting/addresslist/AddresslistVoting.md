@@ -1,6 +1,6 @@
 ## Description
 
-The majority voting implementation using an list of member addresses.
+The majority voting implementation using a list of member addresses.
 
 This contract inherits from `MajorityVotingBase` and implements the `IMajorityVoting` interface.
 

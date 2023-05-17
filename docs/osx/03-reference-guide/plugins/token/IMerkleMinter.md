@@ -20,7 +20,7 @@ event MerkleMinted(address distributor, bytes32 merkleRoot, uint256 totalAmount,
 
 ### external function token
 
-The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token to be distributed.
+The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token being distributed.
 
 ```solidity
 function token() external returns (contract IERC20MintableUpgradeable)
@@ -36,15 +36,15 @@ function distributorBase() external returns (contract IMerkleDistributor)
 
 ### external function changeDistributorBase
 
-changes the base distributor address
+changes the base distributor address.
 
 ```solidity
 function changeDistributorBase(contract IMerkleDistributor _distributorBase) external
 ```
 
-| Input              | Type                          | Description                     |
-| :----------------- | ----------------------------- | ------------------------------- |
-| `_distributorBase` | `contract IMerkleDistributor` | the address of base distributor |
+| Input              | Type                          | Description                         |
+| :----------------- | ----------------------------- | ----------------------------------- |
+| `_distributorBase` | `contract IMerkleDistributor` | The address of the base distributor |
 
 ### external function merkleMint
 

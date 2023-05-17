@@ -1,6 +1,6 @@
 ## Description
 
-This contract provides the possiblity to register a DAO.
+This contract provides the possibility to register a DAO.
 
 ## Implementation
 

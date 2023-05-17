@@ -6,7 +6,7 @@ A component distributing claimable [ERC-20](https://eips.ethereum.org/EIPS/eip-2
 
 ### public variable token
 
-The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token to be distributed.
+The [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token being distributed.
 
 ```solidity
 contract IERC20Upgradeable token

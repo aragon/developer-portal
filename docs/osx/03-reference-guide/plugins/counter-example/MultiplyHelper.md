@@ -20,9 +20,9 @@ Multiplies the count with a number.
 function multiply(uint256 _a, uint256 _b) external view returns (uint256)
 ```
 
-| Input | Type      | Description                           |
-| :---- | --------- | ------------------------------------- |
-| `_a`  | `uint256` | The number to multiply the coun with. |
-| `_b`  | `uint256` |                                       |
+| Input | Type      | Description                            |
+| :---- | --------- | -------------------------------------- |
+| `_a`  | `uint256` | The number to multiply the count with. |
+| `_b`  | `uint256` |                                        |
 
 <!--CONTRACT_END-->

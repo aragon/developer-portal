@@ -1,6 +1,6 @@
 ## Description
 
-An [OpenZepplin `Votes`](https://docs.openzeppelin.com/contracts/4.x/api/governance#Votes) compatible [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token that can be used for voting and is managed by a DAO.
+An [OpenZeppelin `Votes`](https://docs.openzeppelin.com/contracts/4.x/api/governance#Votes) compatible [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token that can be used for voting and is managed by a DAO.
 
 ## Implementation
 
@@ -46,7 +46,7 @@ constructor(contract IDAO _dao, string _name, string _symbol, struct GovernanceE
 | :-------------- | ------------------------------------- | ----------------------------------------------------------------------------------- |
 | `_dao`          | `contract IDAO`                       | The managing DAO.                                                                   |
 | `_name`         | `string`                              | The name of the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token.   |
-| `_symbol`       | `string`                              | The symbol fo the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
+| `_symbol`       | `string`                              | The symbol of the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
 | `_mintSettings` | `struct GovernanceERC20.MintSettings` | The token mint settings struct containing the `receivers` and `amounts`.            |
 
 ### public function initialize
@@ -61,7 +61,7 @@ function initialize(contract IDAO _dao, string _name, string _symbol, struct Gov
 | :-------------- | ------------------------------------- | ----------------------------------------------------------------------------------- |
 | `_dao`          | `contract IDAO`                       | The managing DAO.                                                                   |
 | `_name`         | `string`                              | The name of the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token.   |
-| `_symbol`       | `string`                              | The symbol fo the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
+| `_symbol`       | `string`                              | The symbol of the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) governance token. |
 | `_mintSettings` | `struct GovernanceERC20.MintSettings` | The token mint settings struct containing the `receivers` and `amounts`.            |
 
 ### public function supportsInterface

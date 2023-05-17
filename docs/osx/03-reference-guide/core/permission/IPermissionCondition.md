@@ -12,13 +12,13 @@ This method is used to check if a call is permitted.
 function isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) external view returns (bool allowed)
 ```
 
-| Input           | Type      | Description                                                         |
-| :-------------- | --------- | ------------------------------------------------------------------- |
-| `_where`        | `address` | The address of the target contract.                                 |
-| `_who`          | `address` | The address (EOA or contract) for which the permission are checked. |
-| `_permissionId` | `bytes32` | The permission identifier.                                          |
-| `_data`         | `bytes`   | Optional data passed to the `PermissionCondition` implementation.   |
+| Input           | Type      | Description                                                          |
+| :-------------- | --------- | -------------------------------------------------------------------- |
+| `_where`        | `address` | The address of the target contract.                                  |
+| `_who`          | `address` | The address (EOA or contract) for which the permissions are checked. |
+| `_permissionId` | `bytes32` | The permission identifier.                                           |
+| `_data`         | `bytes`   | Optional data passed to the `PermissionCondition` implementation.    |
 | **Output**      |           |
-| `allowed`       | `bool`    | Returns true if the call is permitted.                              |
+| `allowed`       | `bool`    | Returns true if the call is permitted.                               |
 
 <!--CONTRACT_END-->

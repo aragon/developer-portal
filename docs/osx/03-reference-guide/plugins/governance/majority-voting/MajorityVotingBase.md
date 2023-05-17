@@ -394,11 +394,11 @@ Checks if the participation value defined as $$\texttt{participation} = \frac{N_
 function isMinParticipationReached(uint256 _proposalId) public view virtual returns (bool)
 ```
 
-| Input         | Type      | Description                                                                                         |
-| :------------ | --------- | --------------------------------------------------------------------------------------------------- |
-| `_proposalId` | `uint256` | The ID of the proposal.                                                                             |
+| Input         | Type      | Description                                                                                          |
+| :------------ | --------- | ---------------------------------------------------------------------------------------------------- |
+| `_proposalId` | `uint256` | The ID of the proposal.                                                                              |
 | **Output**    |           |
-| `0`           | `bool`    | Returns `true` if the participation is greater than the minimum particpation and `false` otherwise. |
+| `0`           | `bool`    | Returns `true` if the participation is greater than the minimum participation and `false` otherwise. |
 
 ### public function supportThreshold
 
@@ -438,7 +438,7 @@ function minDuration() public view virtual returns (uint64)
 
 ### public function minProposerVotingPower
 
-Returns the minimum voting power required to create a proposa stored in the voting settings.
+Returns the minimum voting power required to create a proposal stored in the voting settings.
 
 ```solidity
 function minProposerVotingPower() public view virtual returns (uint256)

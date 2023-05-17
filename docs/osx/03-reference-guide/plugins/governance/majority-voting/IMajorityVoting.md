@@ -90,11 +90,11 @@ Checks if the participation value defined as $$\texttt{participation} = \frac{N_
 function isMinParticipationReached(uint256 _proposalId) external view returns (bool)
 ```
 
-| Input         | Type      | Description                                                                                         |
-| :------------ | --------- | --------------------------------------------------------------------------------------------------- |
-| `_proposalId` | `uint256` | The ID of the proposal.                                                                             |
+| Input         | Type      | Description                                                                                          |
+| :------------ | --------- | ---------------------------------------------------------------------------------------------------- |
+| `_proposalId` | `uint256` | The ID of the proposal.                                                                              |
 | **Output**    |           |
-| `0`           | `bool`    | Returns `true` if the participation is greater than the minimum particpation and `false` otherwise. |
+| `0`           | `bool`    | Returns `true` if the participation is greater than the minimum participation and `false` otherwise. |
 
 ### external function canVote
 

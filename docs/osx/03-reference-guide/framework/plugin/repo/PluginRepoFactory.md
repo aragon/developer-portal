@@ -1,6 +1,6 @@
 ## Description
 
-This contract creates `PluginRepo` proxies and registers them on an `PluginRepoRegistry` contract.
+This contract creates `PluginRepo` proxies and registers them on a `PluginRepoRegistry` contract.
 
 ## Implementation
 
@@ -14,7 +14,7 @@ contract PluginRepoRegistry pluginRepoRegistry
 
 ### public variable pluginRepoBase
 
-The address of the `PluginRepo` base contract.
+The address of the `PluginRepo` base contract to proxy to..
 
 ```solidity
 address pluginRepoBase

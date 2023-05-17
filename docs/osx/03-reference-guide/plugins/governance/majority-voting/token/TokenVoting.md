@@ -1,6 +1,6 @@
 ## Description
 
-The majority voting implementation using an [OpenZepplin `Votes`](https://docs.openzeppelin.com/contracts/4.x/api/governance#Votes) compatible governance token.
+The majority voting implementation using an [OpenZeppelin `Votes`](https://docs.openzeppelin.com/contracts/4.x/api/governance#Votes) compatible governance token.
 
 This contract inherits from `MajorityVotingBase` and implements the `IMajorityVoting` interface.
 

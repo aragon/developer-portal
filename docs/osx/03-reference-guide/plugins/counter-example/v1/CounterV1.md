@@ -14,7 +14,7 @@ bytes32 MULTIPLY_PERMISSION_ID
 
 ### public variable count
 
-A counter varaible.
+A counter variable.
 
 ```solidity
 uint256 count
@@ -40,7 +40,7 @@ function initialize(contract IDAO _dao, contract MultiplyHelper _multiplyHelper,
 | :---------------- | ------------------------- | ------------------------------------------------------------------- |
 | `_dao`            | `contract IDAO`           | The contract of the associated DAO.                                 |
 | `_multiplyHelper` | `contract MultiplyHelper` | The helper contract associated with the plugin to multiply numbers. |
-| `_count`          | `uint256`                 | The inital value of the counter.                                    |
+| `_count`          | `uint256`                 | The initial value of the counter.                                   |
 
 ### public function multiply
 
@@ -50,9 +50,9 @@ Multiplies the count with a number.
 function multiply(uint256 _a) public view returns (uint256)
 ```
 
-| Input | Type      | Description                           |
-| :---- | --------- | ------------------------------------- |
-| `_a`  | `uint256` | The number to multiply the coun with. |
+| Input | Type      | Description                            |
+| :---- | --------- | -------------------------------------- |
+| `_a`  | `uint256` | The number to multiply the count with. |
 
 ### public function execute
 

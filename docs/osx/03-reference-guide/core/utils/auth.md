@@ -24,7 +24,7 @@ function _auth(contract IDAO _dao, address _where, address _who, bytes32 _permis
 | Input           | Type            | Description                                                             |
 | :-------------- | --------------- | ----------------------------------------------------------------------- |
 | `_dao`          | `contract IDAO` |                                                                         |
-| `_where`        | `address`       | The address of the target contract for which `who` recieves permission. |
+| `_where`        | `address`       | The address of the target contract for which `who` receives permission. |
 | `_who`          | `address`       | The address (EOA or contract) owning the permission.                    |
 | `_permissionId` | `bytes32`       | The permission identifier.                                              |
 | `_data`         | `bytes`         | The optional data passed to the `PermissionCondition` registered.       |
