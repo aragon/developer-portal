@@ -93,7 +93,7 @@ error ProposalCreationForbidden(address sender)
 
 ### error ApprovalCastForbidden
 
-Thrown if a approver is not allowed to cast an approve. This can be because the proposal
+Thrown if an approver is not allowed to cast an approve. This can be because the proposal
 
 - is not open,
 - was executed, or
@@ -135,7 +135,7 @@ error MinApprovalsOutOfBounds(uint16 limit, uint16 actual)
 
 ### error AddresslistLengthOutOfBounds
 
-Thrown if the addresslist length is out of bounds.
+Thrown if the address list length is out of bounds.
 
 ```solidity
 error AddresslistLengthOutOfBounds(uint16 limit, uint256 actual)
@@ -161,7 +161,7 @@ error DateOutOfBounds(uint64 limit, uint64 actual)
 
 ### event Approved
 
-Emitted when an proposal is approve by an approver.
+Emitted when a proposal is approve by an approver.
 
 ```solidity
 event Approved(uint256 proposalId, address approver)
@@ -217,7 +217,7 @@ function supportsInterface(bytes4 _interfaceId) public view virtual returns (boo
 
 ### external function addAddresses
 
-Adds new members to the address list. Previously, it checks if the new addresslist length would be greater than `type(uint16).max`, the maximal number of approvals.
+Adds new members to the address list. Previously, it checks if the new address list length would be greater than `type(uint16).max`, the maximal number of approvals.
 
 ```solidity
 function addAddresses(address[] _members) external
@@ -229,7 +229,7 @@ function addAddresses(address[] _members) external
 
 ### external function removeAddresses
 
-Removes existing members from the address list. Previously, it checks if the new addresslist length is at least as long as the minimum approvals parameter requires. Note that `minApprovals` is must be at least 1 so the address list cannot become empty.
+Removes existing members from the address list. Previously, it checks if the new address list length is at least as long as the minimum approvals parameter requires. Note that `minApprovals` is must be at least 1 so the address list cannot become empty.
 
 ```solidity
 function removeAddresses(address[] _members) external
@@ -253,7 +253,7 @@ function updateMultisigSettings(struct Multisig.MultisigSettings _multisigSettin
 
 ### external function createProposal
 
-Creates a new majority voting proposal.
+Creates a new multisig proposal.
 
 ```solidity
 function createProposal(bytes _metadata, struct IDAO.Action[] _actions, uint256 _allowFailureMap, bool _approveProposal, bool _tryExecution, uint64 _startDate, uint64 _endDate) external returns (uint256 proposalId)
@@ -266,8 +266,8 @@ function createProposal(bytes _metadata, struct IDAO.Action[] _actions, uint256 
 | `_allowFailureMap` | `uint256`              | A bitmap allowing the proposal to succeed, even if individual actions might revert. If the bit at index `i` is 1, the proposal succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert. |
 | `_approveProposal` | `bool`                 | If `true`, the sender will approve the proposal.                                                                                                                                                                                        |
 | `_tryExecution`    | `bool`                 | If `true`, execution is tried after the vote cast. The call does not revert if early execution is not possible.                                                                                                                         |
-| `_startDate`       | `uint64`               |                                                                                                                                                                                                                                         |
-| `_endDate`         | `uint64`               |                                                                                                                                                                                                                                         |
+| `_startDate`       | `uint64`               | The start date of the proposal.                                                                                                                                                                                                         |
+| `_endDate`         | `uint64`               | The end date of the proposal.                                                                                                                                                                                                           |
 | **Output**         |                        |
 | `proposalId`       | `uint256`              | The ID of the proposal.                                                                                                                                                                                                                 |
 

@@ -56,7 +56,7 @@ error TokenNotERC20(address token)
 
 ### error WrongHelpersArrayLength
 
-Thrown if passed helpers array is of worng length.
+Thrown if passed helpers array is of wrong length.
 
 ```solidity
 error WrongHelpersArrayLength(uint256 length)
@@ -68,7 +68,7 @@ error WrongHelpersArrayLength(uint256 length)
 
 ### public function constructor
 
-The contract constructor, that deployes the bases.
+The contract constructor, that deploys the bases.
 
 ```solidity
 constructor() public
@@ -101,7 +101,7 @@ function prepareUninstallation(address _dao, struct IPluginSetup.SetupPayload _p
 | Input         | Type                                           | Description                                                                                                            |
 | :------------ | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `_dao`        | `address`                                      | The address of the uninstalling DAO.                                                                                   |
-| `_payload`    | `struct IPluginSetup.SetupPayload`             | The relevant data necessary for the `prepareUninstallation`. see above.                                                |
+| `_payload`    | `struct IPluginSetup.SetupPayload`             | The relevant data necessary for the `prepareUninstallation`. See above.                                                |
 | **Output**    |                                                |
 | `permissions` | `struct PermissionLib.MultiTargetPermission[]` | The array of multi-targeted permission operations to be applied by the `PluginSetupProcessor` to the uninstalling DAO. |
 

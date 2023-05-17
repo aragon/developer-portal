@@ -15,7 +15,7 @@ const data: Uint8Array = new Uint8Array([12, 56]);
 
 // Decodes the parameters of a function call from the TokenVoting plugin.
 const functionParams = tokenVotingClient.decoding.findInterface(data);
-console.log({ functionParams });
+console.log(functionParams);
 ```
 
 

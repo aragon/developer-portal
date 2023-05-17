@@ -99,7 +99,7 @@ function initialize(contract IDAO _managingDao, contract ENS _ens, bytes32 _node
 
 ### internal function \_authorizeUpgrade
 
-Internal method authorizing the upgrade of the contract via the [upgradeabilty mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
+Internal method authorizing the upgrade of the contract via the [upgradeability mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
 
 ```solidity
 function _authorizeUpgrade(address) internal virtual

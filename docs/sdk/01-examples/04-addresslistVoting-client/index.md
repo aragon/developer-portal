@@ -14,8 +14,9 @@ import { context } from "../index";
 const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
 
 // Instantiate an AddresslistVoting client from the Aragon OSx SDK context.
-const addresslistVotingClient: AddresslistVotingClient = new AddresslistVotingClient(contextPlugin);
-console.log({ addresslistVotingClient });
+const addresslistVotingClient: AddresslistVotingClient =
+  new AddresslistVotingClient(contextPlugin);
+console.log(addresslistVotingClient);
 ```
 
 

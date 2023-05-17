@@ -6,7 +6,7 @@ The interface required for a plugin repository.
 
 ### external function updateReleaseMetadata
 
-Update the metadata for release with content `@fromHex(_releaseMetadata)`.
+Updates the metadata for release with content `@fromHex(_releaseMetadata)`.
 
 ```solidity
 function updateReleaseMetadata(uint8 _release, bytes _releaseMetadata) external

@@ -1,11 +1,11 @@
 ## Description
 
-Wraps an existing [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token by inheriting from `ERC20WrapperUpgradeable` and allows to use it for voting by inheriting from `ERC20VotesUpgradeable`. The latter is compatible with [OpenZepplin `Votes`](https://docs.openzeppelin.com/contracts/4.x/api/governance#Votes) interface.
+Wraps an existing [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token by inheriting from `ERC20WrapperUpgradeable` and allows to use it for voting by inheriting from `ERC20VotesUpgradeable`. The latter is compatible with [OpenZeppelin's `Votes`](https://docs.openzeppelin.com/contracts/4.x/api/governance#Votes) interface.
 The contract also supports meta transactions. To use an `amount` of underlying tokens for voting, the token owner has to
 
 1. call `approve` for the tokens to be used by this contract
 2. call `depositFor` to wrap them, which safely transfers the underlying [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens to the contract and mints wrapped [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens.
-   To get the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens back, the owner of the wrapped tokens can call `withdrawFor`, which burns the wrapped tokens [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens and safely transfers the underlying tokens back to the owner.
+   To get the [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens back, the owner of the wrapped tokens can call `withdrawFor`, which burns the wrapped [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens and safely transfers the underlying tokens back to the owner.
 
 This contract intentionally has no public mint functionality because this is the responsibility of the underlying [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token contract.
 
@@ -23,7 +23,7 @@ constructor(contract IERC20Upgradeable _token, string _name, string _symbol) pub
 | :-------- | ---------------------------- | --------------------------------------------------------------------- |
 | `_token`  | `contract IERC20Upgradeable` | The underlying [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token. |
 | `_name`   | `string`                     | The name of the wrapped token.                                        |
-| `_symbol` | `string`                     | The symbol fo the wrapped token.                                      |
+| `_symbol` | `string`                     | The symbol of the wrapped token.                                      |
 
 ### public function initialize
 
@@ -37,7 +37,7 @@ function initialize(contract IERC20Upgradeable _token, string _name, string _sym
 | :-------- | ---------------------------- | --------------------------------------------------------------------- |
 | `_token`  | `contract IERC20Upgradeable` | The underlying [ERC-20](https://eips.ethereum.org/EIPS/eip-20) token. |
 | `_name`   | `string`                     | The name of the wrapped token.                                        |
-| `_symbol` | `string`                     | The symbol fo the wrapped token.                                      |
+| `_symbol` | `string`                     | The symbol of the wrapped token.                                      |
 
 ### public function supportsInterface
 
@@ -63,7 +63,7 @@ _Uses the `decimals` of the underlying [ERC-20](https://eips.ethereum.org/EIPS/e
 
 ### public function depositFor
 
-Deposits an amount of underlying token and mints the corresponding number of wrapped tokens for an receiving address.
+Deposits an amount of underlying token and mints the corresponding number of wrapped tokens for a receiving address.
 
 ```solidity
 function depositFor(address account, uint256 amount) public returns (bool)
@@ -72,11 +72,11 @@ function depositFor(address account, uint256 amount) public returns (bool)
 | Input     | Type      | Description                                       |
 | :-------- | --------- | ------------------------------------------------- |
 | `account` | `address` | The address receiving the minted, wrapped tokens. |
-| `amount`  | `uint256` | The amount of tokens to be minted.                |
+| `amount`  | `uint256` | The amount of tokens to deposit.                  |
 
 ### public function withdrawTo
 
-Withdraws an amount of underlying tokens to an receiving address and burns the corresponding number of wrapped tokens.
+Withdraws an amount of underlying tokens to a receiving address and burns the corresponding number of wrapped tokens.
 
 ```solidity
 function withdrawTo(address account, uint256 amount) public returns (bool)
@@ -85,7 +85,7 @@ function withdrawTo(address account, uint256 amount) public returns (bool)
 | Input     | Type      | Description                                             |
 | :-------- | --------- | ------------------------------------------------------- |
 | `account` | `address` | The address receiving the withdrawn, underlying tokens. |
-| `amount`  | `uint256` | The amount of underlying tokens to be withdrawn.        |
+| `amount`  | `uint256` | The amount of underlying tokens to withdraw.            |
 
 ### internal function \_afterTokenTransfer
 

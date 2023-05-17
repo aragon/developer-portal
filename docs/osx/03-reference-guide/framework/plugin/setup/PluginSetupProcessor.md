@@ -184,7 +184,7 @@ error PluginRepoNonexistent()
 
 ### error SetupAlreadyPrepared
 
-Thrown if a plugin setup was already prepared inidcated by the prepared setup ID.
+Thrown if a plugin setup was already prepared indicated by the prepared setup ID.
 
 ```solidity
 error SetupAlreadyPrepared(bytes32 preparedSetupId)
@@ -435,7 +435,7 @@ function prepareUninstallation(address _dao, struct PluginSetupProcessor.Prepare
 
 | Input         | Type                                                      | Description                                                                             |
 | :------------ | --------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `_dao`        | `address`                                                 | The address of the installing DAO.                                                      |
+| `_dao`        | `address`                                                 | The address of the uninstalling DAO.                                                    |
 | `_params`     | `struct PluginSetupProcessor.PrepareUninstallationParams` | The struct containing the parameters for the `prepareUninstallation` function.          |
 | **Output**    |                                                           |
 | `permissions` | `struct PermissionLib.MultiTargetPermission[]`            | The list of multi-targeted permission operations to be applied to the uninstalling DAO. |

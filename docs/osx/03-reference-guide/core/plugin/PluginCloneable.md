@@ -26,7 +26,7 @@ function __PluginCloneable_init(contract IDAO _dao) internal virtual
 
 ### public function pluginType
 
-returns the plugin's type
+Returns the plugin's type
 
 ```solidity
 function pluginType() public pure returns (enum IPlugin.PluginType)

@@ -28,6 +28,7 @@
 
 * [ClientDecoding](#ClientDecoding)
     * [.applyInstallationAction(Uint8Array)](#ClientDecoding+applyInstallationAction) ⇒ <code>\*</code>
+    * [.applyUninstallationAction(Uint8Array)](#ClientDecoding+applyUninstallationAction) ⇒ <code>\*</code>
     * [.grantAction(data)](#ClientDecoding+grantAction) ⇒ <code>\*</code>
     * [.grantWithConditionAction(data)](#ClientDecoding+grantWithConditionAction) ⇒ <code>\*</code>
     * [.revokeAction(data)](#ClientDecoding+revokeAction) ⇒ <code>\*</code>
@@ -50,13 +51,23 @@
 | --- | --- |
 | Uint8Array | <code>data</code> | 
 
+<a name="ClientDecoding+applyUninstallationAction"></a>
+
+### clientDecoding.applyUninstallationAction(Uint8Array) ⇒ <code>\*</code>
+**Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
+**Returns**: <code>\*</code> - <p>{DecodedApplyInstallationParams}</p>  
+
+| Param | Type |
+| --- | --- |
+| Uint8Array | <code>data</code> | 
+
 <a name="ClientDecoding+grantAction"></a>
 
 ### clientDecoding.grantAction(data) ⇒ <code>\*</code>
 <p>Decodes the permission parameters from an encoded grant action</p>
 
 **Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
-**Returns**: <code>\*</code> - <p>{IGrantPermissionDecodedParams}</p>  
+**Returns**: <code>\*</code> - <p>{GrantPermissionDecodedParams}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -80,7 +91,7 @@
 <p>Decodes the permission parameters from an encoded revoke action</p>
 
 **Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
-**Returns**: <code>\*</code> - <p>{IRevokePermissionDecodedParams}</p>  
+**Returns**: <code>\*</code> - <p>{RevokePermissionDecodedParams}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -176,7 +187,7 @@
 <p>Returns the decoded function info given the encoded data of an action</p>
 
 **Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
-**Returns**: <code>\*</code> - <p>{(IInterfaceParams | null)}</p>  
+**Returns**: <code>\*</code> - <p>{(InterfaceParams | null)}</p>  
 
 | Param | Type |
 | --- | --- |
@@ -224,7 +235,7 @@
 | Param | Type |
 | --- | --- |
 | daoAddress | <code>string</code> | 
-| params | <code>IGrantPermissionParams</code> | 
+| params | <code>GrantPermissionParams</code> | 
 
 <a name="ClientEncoding+grantWithConditionAction"></a>
 
@@ -250,7 +261,7 @@
 | Param | Type |
 | --- | --- |
 | daoAddress | <code>string</code> | 
-| params | <code>IRevokePermissionParams</code> | 
+| params | <code>RevokePermissionParams</code> | 
 
 <a name="ClientEncoding+withdrawAction"></a>
 
@@ -353,7 +364,7 @@
 * [ClientEstimation](#ClientEstimation)
     * [.createDao(_params)](#ClientEstimation+createDao) ⇒ <code>\*</code>
     * [.deposit(params)](#ClientEstimation+deposit) ⇒ <code>\*</code>
-    * [.updateAllowance(_params)](#ClientEstimation+updateAllowance) ⇒ <code>\*</code>
+    * [.setAllowance(_params)](#ClientEstimation+setAllowance) ⇒ <code>\*</code>
 
 <a name="ClientEstimation+createDao"></a>
 
@@ -380,9 +391,9 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 | --- | --- |
 | params | <code>DepositParams</code> | 
 
-<a name="ClientEstimation+updateAllowance"></a>
+<a name="ClientEstimation+setAllowance"></a>
 
-### clientEstimation.updateAllowance(_params) ⇒ <code>\*</code>
+### clientEstimation.setAllowance(_params) ⇒ <code>\*</code>
 <p>Estimates the gas fee of updating the allowance of an ERC20 token</p>
 
 **Kind**: instance method of [<code>ClientEstimation</code>](#ClientEstimation)  
@@ -390,7 +401,7 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 
 | Param | Type |
 | --- | --- |
-| _params | <code>UpdateAllowanceParams</code> | 
+| _params | <code>SetAllowanceParams</code> | 
 
 <a name="ClientMethods"></a>
 
@@ -403,12 +414,15 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
     * [.createDao(params)](#ClientMethods+createDao) ⇒ <code>\*</code>
     * [.pinMetadata(params)](#ClientMethods+pinMetadata) ⇒ <code>\*</code>
     * [.deposit(params)](#ClientMethods+deposit) ⇒ <code>\*</code>
-    * [.updateAllowance(params)](#ClientMethods+updateAllowance) ⇒ <code>\*</code>
+    * [.setAllowance(params)](#ClientMethods+setAllowance) ⇒ <code>\*</code>
+    * [.prepareUninstallation(params)](#ClientMethods+prepareUninstallation) ⇒ <code>\*</code>
     * [.hasPermission(params)](#ClientMethods+hasPermission) ⇒ <code>\*</code>
     * [.getDao(daoAddressOrEns)](#ClientMethods+getDao) ⇒ <code>\*</code>
     * [.getDaos({)](#ClientMethods+getDaos) ⇒ <code>\*</code>
     * [.getDaoBalances({)](#ClientMethods+getDaoBalances) ⇒ <code>\*</code>
     * [.getDaoTransfers({)](#ClientMethods+getDaoTransfers) ⇒ <code>\*</code>
+    * [.getPlugins({)](#ClientMethods+getPlugins) ⇒ <code>\*</code>
+    * [.getPlugin(pluginAddress)](#ClientMethods+getPlugin) ⇒ <code>\*</code>
 
 <a name="ClientMethods+createDao"></a>
 
@@ -446,17 +460,29 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 | --- | --- |
 | params | <code>DepositParams</code> | 
 
-<a name="ClientMethods+updateAllowance"></a>
+<a name="ClientMethods+setAllowance"></a>
 
-### clientMethods.updateAllowance(params) ⇒ <code>\*</code>
+### clientMethods.setAllowance(params) ⇒ <code>\*</code>
 <p>Checks if the allowance is enough and updates it</p>
 
 **Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<UpdateAllowanceStepValue>}`</p>  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<SetAllowanceStepValue>}`</p>  
 
 | Param | Type |
 | --- | --- |
-| params | <code>UpdateAllowanceParams</code> | 
+| params | <code>SetAllowanceParams</code> | 
+
+<a name="ClientMethods+prepareUninstallation"></a>
+
+### clientMethods.prepareUninstallation(params) ⇒ <code>\*</code>
+<p>Prepare uninstallation of a plugin</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUninstallationStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>PrepareUninstallationParams</code> | 
 
 <a name="ClientMethods+hasPermission"></a>
 
@@ -468,7 +494,7 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 
 | Param | Type |
 | --- | --- |
-| params | <code>IHasPermissionParams</code> | 
+| params | <code>HasPermissionParams</code> | 
 
 <a name="ClientMethods+getDao"></a>
 
@@ -492,7 +518,7 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>IDaoQueryParams</code> | <p>limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = DaoSortBy.CREATED_AT, }</p> |
+| { | <code>DaoQueryParams</code> | <p>limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = DaoSortBy.CREATED_AT, }</p> |
 
 <a name="ClientMethods+getDaoBalances"></a>
 
@@ -516,5 +542,29 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>ITransferQueryParams</code> | <p>daoAddressOrEns, type, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = TransferSortBy.CREATED_AT, }</p> |
+| { | <code>TransferQueryParams</code> | <p>daoAddressOrEns, type, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = TransferSortBy.CREATED_AT, }</p> |
+
+<a name="ClientMethods+getPlugins"></a>
+
+### clientMethods.getPlugins({) ⇒ <code>\*</code>
+<p>Retrieves the list of plugins available on the PluginRegistry</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>{(Promise&lt;PluginRepo[] | null&gt;)}</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| { | <code>PluginQueryParams</code> | <p>limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = PluginSortBy.SUBDOMAIN, subdomain }</p> |
+
+<a name="ClientMethods+getPlugin"></a>
+
+### clientMethods.getPlugin(pluginAddress) ⇒ <code>\*</code>
+<p>Get plugin details given an address, release and build</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<PluginRepo>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| pluginAddress | <code>string</code> | 
 

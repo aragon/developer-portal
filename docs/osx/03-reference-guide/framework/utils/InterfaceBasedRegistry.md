@@ -22,7 +22,7 @@ bytes4 targetInterfaceId
 
 ### public variable entries
 
-The mapping containing the registry entries returning true for registererd contract addresses.
+The mapping containing the registry entries returning true for registered contract addresses.
 
 ```solidity
 mapping(address => bool) entries
@@ -54,7 +54,7 @@ error ContractInterfaceInvalid(address registrant)
 
 ### error ContractERC165SupportInvalid
 
-Thrown if the contract do not support ERC165.
+Thrown if the contract does not support ERC165.
 
 ```solidity
 error ContractERC165SupportInvalid(address registrant)
@@ -81,7 +81,7 @@ _This is required for the UUPS upgradability pattern._
 
 ### internal function \_authorizeUpgrade
 
-Internal method authorizing the upgrade of the contract via the [upgradeabilty mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
+Internal method authorizing the upgrade of the contract via the [upgradeability mechanism for UUPS proxies](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)).
 
 ```solidity
 function _authorizeUpgrade(address) internal virtual
