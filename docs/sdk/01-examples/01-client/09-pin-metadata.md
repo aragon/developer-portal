@@ -1,5 +1,5 @@
 ---
-title: Pin Metadata
+title: Pin Metadata to IPFS
 ---
 
 ## Pins Metadata for a DAO within IPFS

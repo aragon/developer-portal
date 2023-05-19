@@ -1,5 +1,5 @@
 ---
-title: DAO Details
+title: Get DAO Details
 ---
 
 ## Get the DAO details

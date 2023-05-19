@@ -1,5 +1,5 @@
 ---
-title: Proposal Creation
+title: Create a Proposal
 ---
 
 ## Create a Multisig Proposal
@@ -70,17 +70,15 @@ for await (const step of steps) {
     console.error(err);
   }
 }
-/* MARKDOWN
+```
+
+
 Returns:
 ```tsx
-{ 
+{
   txHash: "0xb1c14a49...3e8620b0f5832d61c"
 }
 {
   proposalId: "0xb1c14a49...3e862_0x0",
 }
 ```
-*/
-```
-
-
