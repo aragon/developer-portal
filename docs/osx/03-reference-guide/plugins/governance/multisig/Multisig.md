@@ -193,11 +193,11 @@ Initializes Release 1, Build 2.
 function initialize(contract IDAO _dao, address[] _members, struct Multisig.MultisigSettings _multisigSettings) external
 ```
 
-| Input               | Type                               | Description                               |
-| :------------------ | ---------------------------------- | ----------------------------------------- |
-| `_dao`              | `contract IDAO`                    | The IDAO interface of the associated DAO. |
-| `_members`          | `address[]`                        |                                           |
-| `_multisigSettings` | `struct Multisig.MultisigSettings` | The multisig settings.                    |
+| Input               | Type                               | Description                                       |
+| :------------------ | ---------------------------------- | ------------------------------------------------- |
+| `_dao`              | `contract IDAO`                    | The IDAO interface of the associated DAO.         |
+| `_members`          | `address[]`                        | The addresses of the initial members to be added. |
+| `_multisigSettings` | `struct Multisig.MultisigSettings` | The multisig settings.                            |
 
 _This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)._
 
