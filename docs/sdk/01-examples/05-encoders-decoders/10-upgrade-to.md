@@ -1,8 +1,8 @@
 ---
-title: Upgrade To
+title: Upgrade To a Contract Implementation
 ---
 
-## Upgrade the DAO
+## Upgrade To a Contract Implementation
 
 Encodes the action of upgrading the DAO proxy contract to a new implementation address.
 

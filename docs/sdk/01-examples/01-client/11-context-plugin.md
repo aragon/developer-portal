@@ -1,5 +1,5 @@
 ---
-title: Plugin Context
+title: Create a Plugin Context
 ---
 
 ## Create a Plugin Context

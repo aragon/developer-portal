@@ -1,5 +1,5 @@
 ---
-title: Proposal Actions
+title: Create Proposal with Actions
 ---
 
 ## Create a Token Voting Proposal with Actions
@@ -99,7 +99,7 @@ for await (const step of steps) {
 
 Returns:
 ```tsx
-{ 
+{
   txHash: "0xb1c14a49...3e8620b0f5832d61c"
 }
 {
