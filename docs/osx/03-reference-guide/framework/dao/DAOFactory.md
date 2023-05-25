@@ -69,6 +69,20 @@ constructor(contract DAORegistry _registry, contract PluginSetupProcessor _plugi
 | `_registry`             | `contract DAORegistry`          | The DAO registry to register the DAO by its name. |
 | `_pluginSetupProcessor` | `contract PluginSetupProcessor` | The address of PluginSetupProcessor.              |
 
+### public function supportsInterface
+
+Checks if this or the parent contract supports an interface by its ID.
+
+```solidity
+function supportsInterface(bytes4 _interfaceId) public view virtual returns (bool)
+```
+
+| Input          | Type     | Description                                   |
+| :------------- | -------- | --------------------------------------------- |
+| `_interfaceId` | `bytes4` | The ID of the interface.                      |
+| **Output**     |          |
+| `0`            | `bool`   | Returns `true` if the interface is supported. |
+
 ### external function createDao
 
 Creates a new DAO, registers it on the DAO registry, and installs a list of plugins via the plugin setup processor.
