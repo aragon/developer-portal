@@ -1,5 +1,5 @@
 ---
-title: ERC-20 Deposits
+title: Deposit ERC-20
 ---
 
 ### Deposit ERC-20 Tokens to a DAO

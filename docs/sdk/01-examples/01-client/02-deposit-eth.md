@@ -1,5 +1,5 @@
 ---
-title: ETH Deposits
+title: Deposit ETH
 ---
 
 ## Deposit ETH to a DAO

@@ -1,5 +1,5 @@
 ---
-title: Addresslist Voting Settings
+title: Update Addresslist Voting Settings
 ---
 
 ## Update the Addresslist Voting Plugin Settings

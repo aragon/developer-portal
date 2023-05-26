@@ -1,11 +1,11 @@
 ---
-title: Proposal Actions
+title: Create Proposal with Action
 ---
 
 ## Create a Token Voting Proposal with Actions
 
-Create a proposal using the Token Voting plugin.
-This proposal will be created using the TokenVoting plugin as its governance mechanism.
+Create a proposal with an action using the TokenVoting plugin as its governance mechanism.
+An action is the encoded transaction which will get executed when a proposal passes.
 
 ```ts
 import {
@@ -88,8 +88,9 @@ for await (const step of steps) {
     console.error(err);
   }
 }
+```
 
-/* MARKDOWN
+
 Returns:
 ```tsx
 {
@@ -99,7 +100,3 @@ Returns:
   proposalId: "0xb1c14a49...3e862_0x0",
 }
 ```
-*/
-```
-
-

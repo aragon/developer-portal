@@ -1,5 +1,5 @@
 ---
-title: Execution
+title: Execute Proposal
 ---
 
 ## Execute a Multisig Proposal

@@ -1,5 +1,5 @@
 ---
-title: Token Voting Settings
+title: Update Token Voting Settings
 ---
 
 ## Update the Token Voting Plugin Settings

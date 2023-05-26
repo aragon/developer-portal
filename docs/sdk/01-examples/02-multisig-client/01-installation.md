@@ -85,8 +85,9 @@ for await (const step of steps) {
     console.error(err);
   }
 }
+```
 
-/* MARKDOWN
+
 Returns:
 ```tsx
 {
@@ -97,7 +98,3 @@ Returns:
   pluginAddresses: ["0xb1c14a49...3e8620b0f5832d61c", "0xb1c14a49...3e8620b0f5832d61c"]
 }
 ```
-*/
-```
-
-

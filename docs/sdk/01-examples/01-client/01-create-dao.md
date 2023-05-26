@@ -1,5 +1,5 @@
 ---
-title: DAO Creation
+title: Create a DAO
 ---
 
 ## Create a DAO
@@ -82,7 +82,7 @@ for await (const step of steps) {
   try {
     switch (step.key) {
       case DaoCreationSteps.CREATING:
-        console.log({ txHash: step.txHash }); 
+        console.log({ txHash: step.txHash });
         break;
       case DaoCreationSteps.DONE:
         console.log({
@@ -95,11 +95,12 @@ for await (const step of steps) {
     console.error(err);
   }
 }
+```
 
-/* MARKDOWN
+
 Returns:
 ```tsx
-{ 
+{
   txHash: "0xb1c14a49...3e8620b0f5832d61c"
 }
 {
@@ -107,7 +108,3 @@ Returns:
   pluginAddresses: ["0xb1c14a49...3e8620b0f5832d61c", "0xb1c14a49...3e8620b0f5832d61c"]
 }
 ```
-*/
-```
-
-

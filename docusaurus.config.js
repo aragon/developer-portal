@@ -101,7 +101,11 @@ const config = {
         {name: 'og:title', content: 'Aragon Developer Portal'},
         {name: 'og:type', content: 'documentation'},
         {name: 'og:url', content: 'https://devs.aragon.org'},
-        {name: 'og:image', content: 'img/brand-cover.png'},
+        {
+          name: 'og:image',
+          content:
+            'https://res.cloudinary.com/duvrxe0m9/image/upload/v1684963446/Frame_47_3_fufumh.png',
+        },
         {
           name: 'og:description',
           content:
@@ -160,9 +164,9 @@ const config = {
         additionalLanguages: ['solidity'],
       },
       announcementBar: {
-        id: 'register_dao_global_hackathon',
+        id: 'register_to_dev_newsletter',
         content:
-          'Register for the <strong>DAO Global Hackathon <a target="_blank" rel="noopener noreferrer" href="https://daoglobalhackathon.hackerearth.com/">here</a></strong> ⚡️ and win from a prize pool of 140k+ USD!',
+          'Register to our developer newsletter and get the latest updates on DAO tooling <a target="_blank" rel="noopener noreferrer" href="https://aragonproject.typeform.com/to/LngekEhU">here</a></strong>!',
         backgroundColor: '#3164fa',
         textColor: '#fff',
         isCloseable: true,

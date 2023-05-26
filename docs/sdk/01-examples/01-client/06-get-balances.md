@@ -1,5 +1,5 @@
 ---
-title: DAO Balance
+title: Get DAO Balance
 ---
 
 ## Get the Balance of a DAO
