@@ -8,7 +8,6 @@ Delegates your token voting power to another address. To recover yout voting pow
 
 ```ts
 import {
-  ContextPlugin,
   DelegateTokensParams,
   DelegateTokensStep,
   TokenVotingClient,
@@ -16,12 +15,10 @@ import {
 import { context } from "../index";
 
 // Instantiate the general purpose client from the Aragon OSx SDK context.
-// Instantiate a plugin context from the Aragon OSx SDK context.
-const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
 
 // Create a TokenVoting client.
 const tokenVotingClient: TokenVotingClient = new TokenVotingClient(
-  contextPlugin,
+  context,
 );
 
 const delegateTokensParams: DelegateTokensParams = {

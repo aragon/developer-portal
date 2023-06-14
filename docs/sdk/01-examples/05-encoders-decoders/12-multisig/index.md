@@ -7,13 +7,11 @@ title: Multisig
 With an instance of the `MultisigClient`
 
 ```ts
-import { ContextPlugin, MultisigClient } from "@aragon/sdk-client";
+import { MultisigClient } from "@aragon/sdk-client";
 import { context } from "../../index";
 
-// Instantiate a plugin context from the Aragon OSx SDK context.
-const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
 // Instantiate a Multisig client.
-export const multisigClient = new MultisigClient(contextPlugin);
+export const multisigClient = new MultisigClient(context);
 ```
 
 
