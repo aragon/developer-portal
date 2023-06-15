@@ -223,7 +223,7 @@ so that the plugin is configured</p>
     * [.executeProposal(proposalId)](#AddresslistVotingClientMethods+executeProposal) ⇒ <code>\*</code>
     * [.canVote(params)](#AddresslistVotingClientMethods+canVote) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#AddresslistVotingClientMethods+canExecute) ⇒ <code>\*</code>
-    * [.getMembers(pluginAddress)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>\*</code>
+    * [.getMembers(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>\*</code>
     * [.getProposal(proposalId)](#AddresslistVotingClientMethods+getProposal) ⇒ <code>\*</code>
     * [.getProposals({)](#AddresslistVotingClientMethods+getProposals) ⇒ <code>\*</code>
     * [.getVotingSettings(pluginAddress)](#AddresslistVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
@@ -290,7 +290,7 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+getMembers"></a>
 
-### addresslistVotingClientMethods.getMembers(pluginAddress) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.getMembers(pluginAddress, blockNumber) ⇒ <code>\*</code>
 <p>Returns the list of wallet addresses with signing capabilities on the plugin</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
@@ -299,6 +299,7 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | pluginAddress | <code>string</code> | 
+| blockNumber | <code>number</code> | 
 
 <a name="AddresslistVotingClientMethods+getProposal"></a>
 
