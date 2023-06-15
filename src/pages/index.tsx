@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {ComponentCard} from '../components/ComponentCard';
 import {WelcomeCard} from '../components/WelcomeCard';
 import componentCards from '../data/ComponentCards';
