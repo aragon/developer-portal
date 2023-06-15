@@ -1,10 +1,10 @@
-import {IconAdd, IconChevronRight} from '@aragon/ui-components';
+import {IconChevronRight} from '@aragon/ui-components';
 import React, {ReactNode} from 'react';
 import styled from 'styled-components';
 import {Link} from '@aragon/ui-components';
 import {useScreenSize} from '../../hooks/useScreenSize';
 
-interface IComponentCardProps {
+export interface IComponentCardProps {
   title: string;
   description: string;
   img: ReactNode;
@@ -17,10 +17,10 @@ type SvgContainerProps = {
 };
 
 export const ComponentCard = (props: IComponentCardProps) => {
-  const { isMobile } = useScreenSize();
+  const {isMobile} = useScreenSize();
 
   return (
-    <A href={props.to} target="_blank" title={props.cta || "Learn more"}>
+    <A href={props.to} target="_blank" title={props.cta || 'Learn more'}>
       <CardWrapper>
         <SvgContainer isMobile={isMobile}>{props.img}</SvgContainer>
         <ContentWrapper>
@@ -31,7 +31,7 @@ export const ComponentCard = (props: IComponentCardProps) => {
           <Link
             href={props.to}
             iconRight={<IconChevronRight />}
-            label={props.cta || "Learn More"}
+            label={props.cta || 'Learn More'}
           />
         </ContentWrapper>
       </CardWrapper>

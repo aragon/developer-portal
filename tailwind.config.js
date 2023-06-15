@@ -77,9 +77,9 @@ module.exports = {
         18: '72px',
         46: '184px',
       },
-      // fontFamily: {
-      //   sans: ['Manrope'],
-      // },
+      fontFamily: {
+        sans: ['Manrope'],
+      },
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
