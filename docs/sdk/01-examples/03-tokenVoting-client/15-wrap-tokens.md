@@ -7,19 +7,15 @@ title: Wrap Tokens
 ```ts
 import {
   Client,
-  ContextPlugin,
   SetAllowanceSteps,
   TokenVotingClient,
   WrapTokensStep,
 } from "@aragon/sdk-client";
 import { context } from "../index";
 
-// Instantiate a plugin context from the Aragon OSx SDK context.
-const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
-
 // Create a TokenVoting client.
 const tokenVotingClient: TokenVotingClient = new TokenVotingClient(
-  contextPlugin,
+  context,
 );
 // Create a TokenVoting client.
 const client: Client = new Client(

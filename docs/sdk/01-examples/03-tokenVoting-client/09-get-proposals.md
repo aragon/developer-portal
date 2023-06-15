@@ -8,7 +8,6 @@ Gets all proposals from a DAO that are created using the TokenVoting plugin as i
 
 ```ts
 import {
-  ContextPlugin,
   ProposalQueryParams,
   ProposalSortBy,
   ProposalStatus,
@@ -19,10 +18,10 @@ import {
 import { context } from "../index";
 
 // Create a plugin context from the Aragon SDK.
-const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
+
 // Create a TokenVoting client.
 const tokenVotingClient: TokenVotingClient = new TokenVotingClient(
-  contextPlugin,
+  context,
 );
 
 const queryParams: ProposalQueryParams = {

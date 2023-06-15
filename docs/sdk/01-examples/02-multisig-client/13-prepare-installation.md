@@ -6,19 +6,15 @@ title: Prepare Installation
 
 ```ts
 import {
-  ContextPlugin,
   MultisigClient,
   MultisigPluginPrepareInstallationParams,
   PrepareInstallationStep,
 } from "@aragon/sdk-client";
 import { context } from "../index";
 
-// Instantiate a plugin context from the Aragon OSx SDK context.
-const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
-
 // Create an Multisig client.
 const multisigClient: MultisigClient = new MultisigClient(
-  contextPlugin,
+  context,
 );
 
 const installationParams: MultisigPluginPrepareInstallationParams = {
@@ -67,7 +63,7 @@ Returns:
         who: "0x12345...",
         where: "0x12345...",
         operation: 1, // GRANT
-      permissionId: "0x1234567890..."
+        permissionId: "0x1234567890..."
       }
     ]
   }

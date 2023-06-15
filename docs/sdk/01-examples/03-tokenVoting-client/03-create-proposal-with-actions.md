@@ -9,7 +9,6 @@ An action is the encoded transaction which will get executed when a proposal pas
 
 ```ts
 import {
-  ContextPlugin,
   CreateMajorityVotingProposalParams,
   DaoAction,
   ProposalCreationSteps,
@@ -20,12 +19,9 @@ import {
 } from "@aragon/sdk-client";
 import { context } from "../index";
 
-// Instantiate a plugin context from the Aragon OSx SDK context.
-const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
-
 // Create a TokenVoting client.
 const tokenVotingClient: TokenVotingClient = new TokenVotingClient(
-  contextPlugin,
+  context,
 );
 
 // The contract address of the token voting plugin you have installed in your DAO

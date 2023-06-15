@@ -8,8 +8,6 @@ Creates a proposal whose governance mechanism is the Multisig plugin and its def
 
 ```ts
 import {
-  Client,
-  ContextPlugin,
   CreateMultisigProposalParams,
   MultisigClient,
   ProposalCreationSteps,
@@ -17,10 +15,8 @@ import {
 } from "@aragon/sdk-client";
 import { context } from "../index";
 
-// Instantiate a plugin context from the Aragon OSx SDK context.
-const contextPlugin: ContextPlugin = ContextPlugin.fromContext(context);
 // Insantiate a Multisig plugin client.
-const multisigClient: MultisigClient = new MultisigClient(contextPlugin);
+const multisigClient: MultisigClient = new MultisigClient(context);
 
 const proposalMetadata: ProposalMetadata = {
   title: "Test Proposal",
