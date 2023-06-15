@@ -76,13 +76,29 @@ error PermissionAlreadyGrantedForDifferentCondition(address where, address who, 
 
 _This makes sure that condition on the same permission can not be overwriten by a different condition._
 
-### error ConditionNotPresentForAnyAddress
+### error ConditionNotAContract
 
-Thrown for permission grants where `who` or `where` is `ANY_ADDR`, but no condition is present.
+Thrown if a condition address is not a contract.
 
 ```solidity
-error ConditionNotPresentForAnyAddress()
+error ConditionNotAContract(contract IPermissionCondition condition)
 ```
+
+| Input       | Type                            | Description                         |
+| :---------- | ------------------------------- | ----------------------------------- |
+| `condition` | `contract IPermissionCondition` | The address that is not a contract. |
+
+### error ConditionInterfacNotSupported
+
+Thrown if a condition contract does not support the `IPermissionCondition` interface.
+
+```solidity
+error ConditionInterfacNotSupported(contract IPermissionCondition condition)
+```
+
+| Input       | Type                            | Description                         |
+| :---------- | ------------------------------- | ----------------------------------- |
+| `condition` | `contract IPermissionCondition` | The address that is not a contract. |
 
 ### error PermissionsForAnyAddressDisallowed
 
@@ -100,21 +116,29 @@ Thrown for permission grants where `who` and `where` are both `ANY_ADDR`.
 error AnyAddressDisallowedForWhoAndWhere()
 ```
 
+### error GrantWithConditionNotSupported
+
+Thrown if `Operation.GrantWithCondition` is requested as an operation but the method does not support it.
+
+```solidity
+error GrantWithConditionNotSupported()
+```
+
 ### event Granted
 
 Emitted when a permission `permission` is granted in the context `here` to the address `_who` for the contract `_where`.
 
 ```solidity
-event Granted(bytes32 permissionId, address here, address where, address who, contract IPermissionCondition condition)
+event Granted(bytes32 permissionId, address here, address where, address who, address condition)
 ```
 
-| Input          | Type                            | Description                                                                                               |
-| :------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `permissionId` | `bytes32`                       | The permission identifier.                                                                                |
-| `here`         | `address`                       | The address of the context in which the permission is granted.                                            |
-| `where`        | `address`                       | The address of the target contract for which `_who` receives permission.                                  |
-| `who`          | `address`                       | The address (EOA or contract) receiving the permission.                                                   |
-| `condition`    | `contract IPermissionCondition` | The address `ALLOW_FLAG` for regular permissions or, alternatively, the `PermissionCondition` to be used. |
+| Input          | Type      | Description                                                                                                                        |
+| :------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `permissionId` | `bytes32` | The permission identifier.                                                                                                         |
+| `here`         | `address` | The address of the context in which the permission is granted.                                                                     |
+| `where`        | `address` | The address of the target contract for which `_who` receives permission.                                                           |
+| `who`          | `address` | The address (EOA or contract) receiving the permission.                                                                            |
+| `condition`    | `address` | The address `ALLOW_FLAG` for regular permissions or, alternatively, the `IPermissionCondition` contract implementation to be used. |
 
 ### event Revoked
 
@@ -265,7 +289,7 @@ function _initializePermissionManager(address _initialOwner) internal
 
 ### internal function \_grant
 
-This method is used in the public `grant` method of the permission manager.
+This method is used in the external `grant` method of the permission manager.
 
 ```solidity
 function _grant(address _where, address _who, bytes32 _permissionId) internal virtual
@@ -277,9 +301,11 @@ function _grant(address _where, address _who, bytes32 _permissionId) internal vi
 | `_who`          | `address` | The address (EOA or contract) owning the permission.                     |
 | `_permissionId` | `bytes32` | The permission identifier.                                               |
 
+_Note, that granting permissions with `_who` or `_where` equal to `ANY_ADDR` does not replace other permissions with specific `_who` and `_where` addresses that exist in parallel._
+
 ### internal function \_grantWithCondition
 
-This method is used in the internal `_grant` method of the permission manager.
+This method is used in the external `grantWithCondition` method of the permission manager.
 
 ```solidity
 function _grantWithCondition(address _where, address _who, bytes32 _permissionId, contract IPermissionCondition _condition) internal virtual

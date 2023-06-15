@@ -65,7 +65,7 @@ function initialize(contract IDAO _managingDao, contract ENSSubdomainRegistrar _
 
 ### external function register
 
-Registers a DAO by its address.
+Registers a DAO by its address. If a non-empty subdomain name is provided that is not taken already, the DAO becomes the owner of the ENS name.
 
 ```solidity
 function register(contract IDAO dao, address creator, string subdomain) external
