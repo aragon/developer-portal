@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
     <Layout>
       <Container>
         <HeroHeader
-          title="Welcome to our Developer Portal"
+          title="Aragon OSx Developer Portal"
           subtitle="Here you'll find guides, resources, and references to build with the Aragon stack"
           img={require('@site/static/img/welcome-image.png').default}
         />
