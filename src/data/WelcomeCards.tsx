@@ -5,7 +5,7 @@ import {RocketIcon, PageIcon, InfoIcon} from '../components';
 const welcomeCards: IWelcomeCardProps[] = [
   {
     title: 'Get Started',
-    description: 'Customize your DAO through building a DAO plugin',
+    description: 'Customize your DAO through building a DAO plugin or integrating OSx into your dApp',
     icon: <RocketIcon />,
     linkLabel: 'Start Building',
     href: '/docs/getting-started',
@@ -21,7 +21,7 @@ const welcomeCards: IWelcomeCardProps[] = [
   {
     title: 'Join our Developer Community',
     description:
-      'Keep up to date on the latest product alpha and learn about opportunities working with Aragon',
+      'Keep up to date on the latest product releases and learn about working with Aragon',
     icon: <PageIcon />,
     linkLabel: 'Join here',
     href: 'https://aragonproject.typeform.com/to/LngekEhU',

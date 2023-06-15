@@ -39,12 +39,15 @@ const ContentWrapper = styled.div.attrs({
 })``;
 const Title = styled.p.attrs({
   className: `text-xl font-bold`,
-})``;
+})`
+  color: var(--neutral-700);
+`;
 const Description = styled.p.attrs({
   className: `line-clamp-2`,
-})``;
-const Icon = styled.div.attrs({
-  className: `welcome-card-icon`,
 })`
+  color: var(--neutral-500);
+  line-height: 150%;
+`;
+const Icon = styled.div.attrs({})`
   margin-bottom: 5px;
 `;
