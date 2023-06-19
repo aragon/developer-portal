@@ -32,6 +32,20 @@ constructor(contract PluginRepoRegistry _pluginRepoRegistry) public
 | :-------------------- | ----------------------------- | ----------------------------------- |
 | `_pluginRepoRegistry` | `contract PluginRepoRegistry` | The aragon plugin registry address. |
 
+### public function supportsInterface
+
+Checks if this or the parent contract supports an interface by its ID.
+
+```solidity
+function supportsInterface(bytes4 _interfaceId) public view virtual returns (bool)
+```
+
+| Input          | Type     | Description                                   |
+| :------------- | -------- | --------------------------------------------- |
+| `_interfaceId` | `bytes4` | The ID of the interface.                      |
+| **Output**     |          |
+| `0`            | `bool`   | Returns `true` if the interface is supported. |
+
 ### external function createPluginRepo
 
 Creates a plugin repository proxy pointing to the `pluginRepoBase` implementation and registers it in the Aragon plugin registry.
