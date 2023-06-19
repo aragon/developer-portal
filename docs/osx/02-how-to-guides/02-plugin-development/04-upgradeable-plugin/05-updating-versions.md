@@ -228,6 +228,8 @@ contract SimpleStorageBuild3 is PluginUUPSUpgradeable {
 
 With each new build implementation, we will need to udate the Plugin Setup contract to be able to update to that new version. We do this through updating the `prepareUpdate()` function to support any new features that need to be set up.
 
+<details>
+
 ```solidity
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
