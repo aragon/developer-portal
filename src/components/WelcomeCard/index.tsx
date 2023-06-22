@@ -1,9 +1,8 @@
-import {IconChevronRight} from '@aragon/ui-components';
+import {IconChevronRight, Link} from '@aragon/ui-components';
 import React, {ReactNode} from 'react';
 import styled from 'styled-components';
-import {Link} from '@aragon/ui-components';
 
-interface IWelcomeCardProps {
+export interface IWelcomeCardProps {
   title: string;
   description: string;
   icon: ReactNode;
@@ -12,18 +11,16 @@ interface IWelcomeCardProps {
 }
 
 export const WelcomeCard = (props: IWelcomeCardProps) => {
+  const {icon, title, description, linkLabel, href} = props;
+
   return (
     <CardWrapper>
       <ContentWrapper>
-        <div>{props.icon}</div>
-        <Title>{props.title}</Title>
-        <Description> {props.description}</Description>
+        <Icon>{icon}</Icon>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
       </ContentWrapper>
-      <Link
-        href={props.href}
-        iconRight={<IconChevronRight />}
-        label={props.linkLabel}
-      />
+      <Link href={href} iconRight={<IconChevronRight />} label={linkLabel} />
     </CardWrapper>
   );
 };
@@ -34,6 +31,7 @@ const CardWrapper = styled.div.attrs({
 })`
   box-shadow: 0px 10px 20px rgba(31, 41, 51, 0.04),
     0px 2px 6px rgba(31, 41, 51, 0.04), 0px 0px 1px rgba(31, 41, 51, 0.04);
+  flex: 1;
 `;
 
 const ContentWrapper = styled.div.attrs({
@@ -41,7 +39,15 @@ const ContentWrapper = styled.div.attrs({
 })``;
 const Title = styled.p.attrs({
   className: `text-xl font-bold`,
-})``;
+})`
+  color: var(--neutral-700);
+`;
 const Description = styled.p.attrs({
   className: `line-clamp-2`,
-})``;
+})`
+  color: var(--neutral-500);
+  line-height: 150%;
+`;
+const Icon = styled.div.attrs({})`
+  margin-bottom: 5px;
+`;

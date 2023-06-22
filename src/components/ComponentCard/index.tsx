@@ -1,10 +1,10 @@
-import {IconAdd, IconChevronRight} from '@aragon/ui-components';
+import {IconChevronRight} from '@aragon/ui-components';
 import React, {ReactNode} from 'react';
 import styled from 'styled-components';
 import {Link} from '@aragon/ui-components';
 import {useScreenSize} from '../../hooks/useScreenSize';
 
-interface IComponentCardProps {
+export interface IComponentCardProps {
   title: string;
   description: string;
   img: ReactNode;
@@ -17,10 +17,10 @@ type SvgContainerProps = {
 };
 
 export const ComponentCard = (props: IComponentCardProps) => {
-  const { isMobile } = useScreenSize();
+  const {isMobile} = useScreenSize();
 
   return (
-    <A href={props.to} target="_blank" title={props.cta || "Learn more"}>
+    <A href={props.to} target="_blank" title={props.cta || 'Learn more'}>
       <CardWrapper>
         <SvgContainer isMobile={isMobile}>{props.img}</SvgContainer>
         <ContentWrapper>
@@ -31,7 +31,7 @@ export const ComponentCard = (props: IComponentCardProps) => {
           <Link
             href={props.to}
             iconRight={<IconChevronRight />}
-            label={props.cta || "Learn More"}
+            label={props.cta || 'Learn More'}
           />
         </ContentWrapper>
       </CardWrapper>
@@ -63,12 +63,12 @@ const SvgContainer = styled.div.attrs({
 const Title = styled.p.attrs({
   className: 'text-xl font-bold',
 })`
-color: var(--neutral-700);
+  color: var(--neutral-700);
 `;
 const Description = styled.p.attrs({
   className: 'line-clamp-4 md:line-clamp-2',
 })`
-color: var(--neutral-500);
+  color: var(--neutral-500);
 `;
 const Image = styled.img.attrs({
   className: 'max-h-46',
