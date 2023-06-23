@@ -8,7 +8,7 @@ const welcomeCards: IWelcomeCardProps[] = [
     description: 'Customize your DAO through building a DAO plugin or integrating OSx into your dApp',
     icon: <RocketIcon />,
     linkLabel: 'Start Building',
-    href: '/docs/getting-started',
+    href: '/docs/osx/how-to-guides/plugin-development',
   },
   {
     title: 'Browse Use Cases',
