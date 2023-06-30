@@ -9,7 +9,8 @@ Mints vote tokens for an installed TokenVoting plugin.
 ### Encoding
 
 ```ts
-import { DaoAction, MintTokenParams } from "@aragon/sdk-client";
+import { MintTokenParams } from "@aragon/sdk-client";
+import { DaoAction } from "@aragon/sdk-client-common";
 import { tokenVotingClient } from "./index";
 
 const params: MintTokenParams = {

@@ -9,7 +9,8 @@ Encodes the action of upgrading the DAO proxy contract to a new implementation a
 ### Encoding
 
 ```ts
-import { Client, DaoAction } from "@aragon/sdk-client";
+import { Client } from "@aragon/sdk-client";
+import { DaoAction } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiates an Aragon OSx SDK client.

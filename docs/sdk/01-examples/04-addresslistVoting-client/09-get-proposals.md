@@ -12,9 +12,8 @@ import {
   AddresslistVotingProposalListItem,
   ProposalQueryParams,
   ProposalSortBy,
-  ProposalStatus,
-  SortDirection,
 } from "@aragon/sdk-client";
+import { ProposalStatus, SortDirection } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiate an AddresslistVoting client.
