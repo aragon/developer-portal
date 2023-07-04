@@ -9,7 +9,8 @@ Updates the configuration of a given TokenVoting plugin for a DAO.
 ### Encoding
 
 ```ts
-import { DaoAction, VotingMode, VotingSettings } from "@aragon/sdk-client";
+import { VotingMode, VotingSettings } from "@aragon/sdk-client";
+import { DaoAction } from "@aragon/sdk-client-common";
 import { tokenVotingClient } from "./index";
 
 // The new configuration parameters for the plugin

@@ -9,14 +9,13 @@ Encodes the action of applying a plugin installation.
 ### Encoding
 
 ```ts
+import { Client, PermissionIds } from "@aragon/sdk-client";
 import {
   ApplyInstallationParams,
-  Client,
   DaoAction,
   DecodedApplyInstallationParams,
   PermissionOperationType,
-  PermissionIds,
-} from "@aragon/sdk-client";
+} from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiates an Aragon OSx SDK client.

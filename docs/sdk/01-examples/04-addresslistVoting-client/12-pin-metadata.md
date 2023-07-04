@@ -7,7 +7,8 @@ title: Pin Metadata
 Adds and pin data into one of the specified IPFS nodes and return a IPFS CID preceded by "ipfs://".
 
 ```ts
-import { AddresslistVotingClient, ProposalMetadata } from "@aragon/sdk-client";
+import { AddresslistVotingClient } from "@aragon/sdk-client";
+import { ProposalMetadata } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiate an AddresslistVoting plugin client.

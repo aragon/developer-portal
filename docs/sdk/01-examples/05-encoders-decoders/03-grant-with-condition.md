@@ -11,10 +11,10 @@ Grants permission with the name (`permission`) to an address (`who`) to perform 
 ```ts
 import {
   Client,
-  DaoAction,
   GrantPermissionWithConditionParams,
   Permissions,
 } from "@aragon/sdk-client";
+import { DaoAction } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiates an Aragon OSx SDK client.
