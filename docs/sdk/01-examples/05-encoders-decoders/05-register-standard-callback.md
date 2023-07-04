@@ -11,9 +11,9 @@ Register a new standard callback for the DAO.
 ```ts
 import {
   Client,
-  DaoAction,
   RegisterStandardCallbackParams,
 } from "@aragon/sdk-client";
+import { DaoAction } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiates a general purpose Client from the Aragon OSx SDK context.
