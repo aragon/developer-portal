@@ -1,11 +1,31 @@
-# Website
+![Aragon](https://res.cloudinary.com/dacofvu8m/image/upload/v1677353961/Aragon%20CodeArena/osx_blue_logo_lqrvkr.png)
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+<p align="center">
+  <a href="https://aragon.org/">Aragon website</a>
+  •
+  <a href="https://devs.aragon.org/">Developer Portal</a>
+  •
+  <a href="https://aragonproject.typeform.com/to/LngekEhU">Join our Developer Community</a>
+  •
+  <a href="https://aragonproject.typeform.com/dx-contribution">Contribute</a>
+</p>
+
+<br/>
+
+# Aragon OSx Developer Portal
+
+Aragon's Developer Portal holds all documentation developers need to kickstart their journey building with the Aragon OSx stack. You can find it in production [here](https://devs.aragon.org). 
+
+This website is built using [Docusaurus 2](https://docusaurus.io/), a static website generator for technical documentations.
 
 ### Installation
 
 ```
 $ yarn
+```
+or
+```
+$ npm install
 ```
 
 ### Local Development
