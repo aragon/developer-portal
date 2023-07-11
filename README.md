@@ -23,10 +23,6 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a static web
 ```
 $ yarn
 ```
-or
-```
-$ npm install
-```
 
 ### Local Development
 
