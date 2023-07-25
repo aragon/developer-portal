@@ -68,11 +68,16 @@ error WrongHelpersArrayLength(uint256 length)
 
 ### public function constructor
 
-The contract constructor, that deploys the bases.
+The contract constructor deploying the plugin implementation contract and receiving the governance token base contracts to clone from.
 
 ```solidity
-constructor() public
+constructor(contract GovernanceERC20 _governanceERC20Base, contract GovernanceWrappedERC20 _governanceWrappedERC20Base) public
 ```
+
+| Input                         | Type                              | Description                                                       |
+| :---------------------------- | --------------------------------- | ----------------------------------------------------------------- |
+| `_governanceERC20Base`        | `contract GovernanceERC20`        | The base `GovernanceERC20` contract to create clones from.        |
+| `_governanceWrappedERC20Base` | `contract GovernanceWrappedERC20` | The base `GovernanceWrappedERC20` contract to create clones from. |
 
 ### external function prepareInstallation
 
