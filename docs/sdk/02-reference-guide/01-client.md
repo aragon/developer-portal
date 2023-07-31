@@ -39,6 +39,7 @@
     * [.registerStandardCallbackAction(data)](#ClientDecoding+registerStandardCallbackAction) ⇒ <code>\*</code>
     * [.setSignatureValidatorAction(data)](#ClientDecoding+setSignatureValidatorAction) ⇒ <code>\*</code>
     * [.upgradeToAndCallAction(data)](#ClientDecoding+upgradeToAndCallAction) ⇒ <code>\*</code>
+    * [.initializeFromAction(data)](#ClientDecoding+initializeFromAction) ⇒ <code>\*</code>
     * [.findInterface(data)](#ClientDecoding+findInterface) ⇒ <code>\*</code>
 
 <a name="ClientDecoding+applyInstallationAction"></a>
@@ -181,6 +182,18 @@
 | --- | --- |
 | data | <code>Uint8Array</code> | 
 
+<a name="ClientDecoding+initializeFromAction"></a>
+
+### clientDecoding.initializeFromAction(data) ⇒ <code>\*</code>
+<p>Decodes the initializeFrom params from an initializeFromAction</p>
+
+**Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
+**Returns**: <code>\*</code> - <p>{InitializeFromParams}</p>  
+
+| Param | Type |
+| --- | --- |
+| data | <code>Uint8Array</code> | 
+
 <a name="ClientDecoding+findInterface"></a>
 
 ### clientDecoding.findInterface(data) ⇒ <code>\*</code>
@@ -212,6 +225,7 @@
     * [.setSignatureValidatorAction(daoAddressOrEns, signatureValidator)](#ClientEncoding+setSignatureValidatorAction) ⇒ <code>\*</code>
     * [.upgradeToAction(daoAddressOrEns, implementationAddress)](#ClientEncoding+upgradeToAction) ⇒ <code>\*</code>
     * [.upgradeToAndCallAction(daoAddressOrEns, params)](#ClientEncoding+upgradeToAndCallAction) ⇒ <code>\*</code>
+    * [.initializeFromAction(daoAddressOrEns, params)](#ClientEncoding+initializeFromAction) ⇒ <code>\*</code>
 
 <a name="ClientEncoding+applyInstallationAction"></a>
 
@@ -354,6 +368,18 @@
 | daoAddressOrEns | <code>string</code> | 
 | params | <code>UpgradeToAndCallParams</code> | 
 
+<a name="ClientEncoding+initializeFromAction"></a>
+
+### clientEncoding.initializeFromAction(daoAddressOrEns, params) ⇒ <code>\*</code>
+<p>Computes an action to be passed to the upgradeToAndCallAction method when upgrading a DAO to a new version.</p>
+
+**Kind**: instance method of [<code>ClientEncoding</code>](#ClientEncoding)  
+
+| Param | Type |
+| --- | --- |
+| daoAddressOrEns | <code>string</code> | 
+| params | <code>InitializeFromParams</code> | 
+
 <a name="ClientEstimation"></a>
 
 ## ClientEstimation
@@ -423,6 +449,7 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
     * [.getDaoTransfers({)](#ClientMethods+getDaoTransfers) ⇒ <code>\*</code>
     * [.getPlugins({)](#ClientMethods+getPlugins) ⇒ <code>\*</code>
     * [.getPlugin(pluginAddress)](#ClientMethods+getPlugin) ⇒ <code>\*</code>
+    * [.getProtocolVersion(contractAddress)](#ClientMethods+getProtocolVersion) ⇒ <code>\*</code>
 
 <a name="ClientMethods+createDao"></a>
 
@@ -567,4 +594,17 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 | Param | Type |
 | --- | --- |
 | pluginAddress | <code>string</code> | 
+
+<a name="ClientMethods+getProtocolVersion"></a>
+
+### clientMethods.getProtocolVersion(contractAddress) ⇒ <code>\*</code>
+<p>Returns the protocol version of a contract
+if the transaction fails returns [1,0,0]</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>{Promise&lt;[number, number, number]&gt;}</p>  
+
+| Param | Type |
+| --- | --- |
+| contractAddress | <code>string</code> | 
 
