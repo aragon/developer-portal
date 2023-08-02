@@ -16,12 +16,8 @@ In order for a withdrawal to be successful, the address executing it must have `
 #### Encoding
 
 ```ts
-import {
-  Client,
-  DaoAction,
-  TokenType,
-  WithdrawParams,
-} from "@aragon/sdk-client";
+import { Client, WithdrawParams } from "@aragon/sdk-client";
+import { DaoAction, TokenType } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiates an Aragon OSx SDK client.
@@ -129,16 +125,12 @@ Returns:
 
 { erc20DecodedParams:
   {
-    type: "native",
+    type: "erc20",
     recipientAddressOrEns: "0x1234567890123456789012345678901234567890",
     amount: 10n,
     tokenAddress: "0x1234567890123456789012345678901234567890",
   }
 }
-
-:::info
-Work in progress.
-:::
 
 ```ts
 
@@ -149,16 +141,13 @@ Work in progress.
 
 #### Encoding
 
-:::info
-Work in progress.
-:::
-
 ```ts
 params = {
-  type: TokenType.ERC721, // TODO!!
+  type: TokenType.ERC721, 
   tokenAddress: "0x1234567890123456789012345678901234567890", // ERFC721's token contract address
-  amount: BigInt(10), // TODO!!
+  tokenId: BigInt(10),
   recipientAddressOrEns: "0x1234567890123456789012345678901234567890", // the address to transfer the funds to
+  daoAddressOrEns: "0x1234567890123456789012345678901234567890", // the address of the DAO
 };
 
 const erc721WithdrawAction: DaoAction = await client.encoding.withdrawAction(
@@ -169,10 +158,6 @@ console.log({ erc721WithdrawAction });
 
 
 #### Decoding
-
-:::info
-Work in progress.
-:::
 
 ```ts
 const erc721DecodedParams = client.decoding.withdrawAction(
@@ -185,7 +170,10 @@ console.log({ erc721DecodedParams });
 
 
 Returns:
-
-:::info
-Work in progress.
-:::
+{
+  type: TokenType.ERC721;
+  tokenAddress: "0x1234567890123456789012345678901234567890";
+  tokenId: 10n;
+  daoAddressOrEns: "0x1234567890123456789012345678901234567890";
+  recipientAddressOrEns: "0x1234567890123456789012345678901234567890";
+}

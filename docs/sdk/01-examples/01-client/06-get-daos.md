@@ -10,10 +10,10 @@ Gets a list of DAOs from the Aragon OSx DAO registry.
 import {
   Client,
   DaoListItem,
-  DaoSortBy,
   DaoQueryParams,
-  SortDirection,
+  DaoSortBy,
 } from "@aragon/sdk-client";
+import { SortDirection } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiate the general purpose client from the Aragon OSx SDK context.

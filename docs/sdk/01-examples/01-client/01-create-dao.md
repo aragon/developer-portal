@@ -12,11 +12,11 @@ import {
   CreateDaoParams,
   DaoCreationSteps,
   DaoMetadata,
-  GasFeeEstimation,
-  TokenVotingPluginInstall,
   TokenVotingClient,
+  TokenVotingPluginInstall,
   VotingMode,
 } from "@aragon/sdk-client";
+import { GasFeeEstimation } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiate the general purpose client from the Aragon OSx SDK context.
@@ -61,7 +61,7 @@ const tokenVotingPluginInstallParams: TokenVotingPluginInstall = {
 
 // Creates a TokenVoting plugin client with the parameteres defined above (with an existing token).
 const tokenVotingInstallItem = TokenVotingClient.encoding
-  .getPluginInstallItem(tokenVotingPluginInstallParams);
+  .getPluginInstallItem(tokenVotingPluginInstallParams, "goerli");
 
 const createDaoParams: CreateDaoParams = {
   metadataUri,

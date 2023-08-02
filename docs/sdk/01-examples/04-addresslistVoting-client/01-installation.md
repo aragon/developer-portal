@@ -12,14 +12,14 @@ Then, use those encoded instructions when creating your DAO.
 ```ts
 import {
   AddresslistVotingClient,
+  AddresslistVotingPluginInstall,
   Client,
   CreateDaoParams,
   DaoCreationSteps,
   DaoMetadata,
-  GasFeeEstimation,
-  AddresslistVotingPluginInstall,
   VotingMode,
 } from "@aragon/sdk-client";
+import { GasFeeEstimation } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiate a client from the Aragon OSx SDK context.
@@ -44,7 +44,7 @@ const addresslistVotingPluginInstallParams: AddresslistVotingPluginInstall = {
 
 // Encodes the plugin instructions for installing into the DAO with its defined parameters.
 const addresslistVotingPluginInstallItem = AddresslistVotingClient
-  .encoding.getPluginInstallItem(addresslistVotingPluginInstallParams);
+  .encoding.getPluginInstallItem(addresslistVotingPluginInstallParams, "goerli");
 
 const daoMetadata: DaoMetadata = {
   name: "My DAO",

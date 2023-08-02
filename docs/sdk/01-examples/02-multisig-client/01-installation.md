@@ -14,10 +14,10 @@ import {
   Client,
   CreateDaoParams,
   DaoCreationSteps,
-  GasFeeEstimation,
   MultisigClient,
   MultisigPluginInstallParams,
 } from "@aragon/sdk-client";
+import { GasFeeEstimation } from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiate a client from the Aragon OSx SDK context.
@@ -41,7 +41,7 @@ const multisigPluginIntallParams: MultisigPluginInstallParams = {
 
 // Encodes the parameters of the Multisig plugin. These will get used in the installation plugin for the DAO.
 const multisigPluginInstallItem = MultisigClient.encoding
-  .getPluginInstallItem(multisigPluginIntallParams);
+  .getPluginInstallItem(multisigPluginIntallParams, "goerli");
 
 // Pin metadata to IPFS, returns IPFS CID string.
 const metadataUri: string = await client.methods.pinMetadata({
