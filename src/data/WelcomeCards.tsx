@@ -5,10 +5,11 @@ import {RocketIcon, PageIcon, InfoIcon} from '../components';
 const welcomeCards: IWelcomeCardProps[] = [
   {
     title: 'Get Started',
-    description: 'Customize your DAO through building a DAO plugin or integrating OSx into your dApp',
+    description:
+      'Customize your DAO through building a DAO Plugin or integrating OSx into your dApp',
     icon: <RocketIcon />,
     linkLabel: 'Start Building',
-    href: '/docs/osx/how-to-guides/plugin-development',
+    href: '/dev-tools',
   },
   {
     title: 'Browse Use Cases',
