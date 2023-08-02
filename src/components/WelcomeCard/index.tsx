@@ -8,13 +8,14 @@ export interface IWelcomeCardProps {
   icon: ReactNode;
   linkLabel: string;
   href: string;
+  className?: string;
 }
 
 export const WelcomeCard = (props: IWelcomeCardProps) => {
-  const {icon, title, description, linkLabel, href} = props;
+  const {icon, title, description, linkLabel, href, className} = props;
 
   return (
-    <CardWrapper>
+    <CardWrapper className={className}>
       <ContentWrapper>
         <Icon>{icon}</Icon>
         <Title>{title}</Title>
@@ -31,7 +32,6 @@ const CardWrapper = styled.div.attrs({
 })`
   box-shadow: 0px 10px 20px rgba(31, 41, 51, 0.04),
     0px 2px 6px rgba(31, 41, 51, 0.04), 0px 0px 1px rgba(31, 41, 51, 0.04);
-  flex: 1;
 `;
 
 const ContentWrapper = styled.div.attrs({

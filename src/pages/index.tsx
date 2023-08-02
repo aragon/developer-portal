@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import styled from 'styled-components';
+import {HeroHeader} from '../components/HeroHeader';
 import {ComponentCard} from '../components/ComponentCard';
 import {WelcomeCard} from '../components/WelcomeCard';
 import componentCards from '../data/ComponentCards';
 import welcomeCards from '../data/WelcomeCards';
-import styled from 'styled-components';
-import {HeroHeader} from '../components';
 
 export default function Home(): JSX.Element {
   return (
@@ -14,7 +14,9 @@ export default function Home(): JSX.Element {
         <HeroHeader
           title="Aragon OSx Developer Portal"
           subtitle="Here you'll find guides, resources, and references to build with the Aragon stack"
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
           img={require('@site/static/img/welcome-image.png').default}
+          imgAlt="Welcome to Aragon OSx"
         />
         <WelcomeCardsWrapper>
           {welcomeCards.map((card, index) => (
@@ -53,10 +55,10 @@ const ComponentCardsWrapper = styled.div.attrs({
   className: 'flex flex-col space-y-6',
 })``;
 const WelcomeCardsWrapper = styled.div.attrs({
-  className: 'flex md:flex-row md:space-x-4 md:space-y-0 flex-col space-y-4'
+  className: 'flex md:flex-row md:space-x-4 md:space-y-0 flex-col space-y-4',
 })``;
 const ComponentCardsTitle = styled.p.attrs({
   className: 'font-medium text-xl',
 })`
-color: var(--neutral-700);
+  color: var(--neutral-700);
 `;
