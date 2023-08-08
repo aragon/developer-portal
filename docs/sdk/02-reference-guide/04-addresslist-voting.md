@@ -226,7 +226,7 @@ so that the plugin is configured</p>
     * [.getMembers(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>\*</code>
     * [.getProposal(proposalId)](#AddresslistVotingClientMethods+getProposal) ⇒ <code>\*</code>
     * [.getProposals({)](#AddresslistVotingClientMethods+getProposals) ⇒ <code>\*</code>
-    * [.getVotingSettings(pluginAddress)](#AddresslistVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
+    * [.getVotingSettings(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
 
 <a name="AddresslistVotingClientMethods+createProposal"></a>
 
@@ -327,7 +327,7 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+getVotingSettings"></a>
 
-### addresslistVotingClientMethods.getVotingSettings(pluginAddress) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.getVotingSettings(pluginAddress, blockNumber) ⇒ <code>\*</code>
 <p>Returns the settings of a plugin given the address of the plugin instance</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
@@ -336,4 +336,5 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | pluginAddress | <code>string</code> | 
+| blockNumber | <code>number</code> | 
 

@@ -25,10 +25,10 @@
     * [.TokenVotingClientMethods#createProposal(params)](#TokenVotingClient.TokenVotingClientMethods+createProposal) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#voteProposal(params, vote)](#TokenVotingClient.TokenVotingClientMethods+voteProposal) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#executeProposal(proposalId)](#TokenVotingClient.TokenVotingClientMethods+executeProposal) ⇒ <code>\*</code>
-    * [.TokenVotingClientMethods#getMembers(pluginAddress)](#TokenVotingClient.TokenVotingClientMethods+getMembers) ⇒ <code>\*</code>
+    * [.TokenVotingClientMethods#getMembers(pluginAddress, blockNumber)](#TokenVotingClient.TokenVotingClientMethods+getMembers) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#getProposal(proposalId)](#TokenVotingClient.TokenVotingClientMethods+getProposal) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#getProposals(params)](#TokenVotingClient.TokenVotingClientMethods+getProposals) ⇒ <code>\*</code>
-    * [.TokenVotingClientMethods#getVotingSettings(pluginAddress)](#TokenVotingClient.TokenVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
+    * [.TokenVotingClientMethods#getVotingSettings(pluginAddress, blockNumber)](#TokenVotingClient.TokenVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#getToken(pluginAddress)](#TokenVotingClient.TokenVotingClientMethods+getToken) ⇒ <code>\*</code>
 
 <a name="TokenVotingClient.getPluginInstallItem"></a>
@@ -84,7 +84,7 @@ so that the plugin is configured</p>
 
 <a name="TokenVotingClient.TokenVotingClientMethods+getMembers"></a>
 
-### TokenVotingClient.TokenVotingClientMethods#getMembers(pluginAddress) ⇒ <code>\*</code>
+### TokenVotingClient.TokenVotingClientMethods#getMembers(pluginAddress, blockNumber) ⇒ <code>\*</code>
 <p>Returns the list of wallet addresses holding tokens from the underlying Token contract used by the plugin</p>
 
 **Kind**: static method of [<code>TokenVotingClient</code>](#TokenVotingClient)  
@@ -93,6 +93,7 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | pluginAddress | <code>string</code> | 
+| blockNumber | <code>number</code> | 
 
 <a name="TokenVotingClient.TokenVotingClientMethods+getProposal"></a>
 
@@ -120,7 +121,7 @@ so that the plugin is configured</p>
 
 <a name="TokenVotingClient.TokenVotingClientMethods+getVotingSettings"></a>
 
-### TokenVotingClient.TokenVotingClientMethods#getVotingSettings(pluginAddress) ⇒ <code>\*</code>
+### TokenVotingClient.TokenVotingClientMethods#getVotingSettings(pluginAddress, blockNumber) ⇒ <code>\*</code>
 <p>Returns the settings of a plugin given the address of the plugin instance</p>
 
 **Kind**: static method of [<code>TokenVotingClient</code>](#TokenVotingClient)  
@@ -129,6 +130,7 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | pluginAddress | <code>string</code> | 
+| blockNumber | <code>number</code> | 
 
 <a name="TokenVotingClient.TokenVotingClientMethods+getToken"></a>
 
