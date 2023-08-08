@@ -222,7 +222,7 @@ so that the plugin is configured</p>
     * [.prepareInstallation(params)](#MultisigClientMethods+prepareInstallation) ⇒ <code>\*</code>
     * [.canApprove(addressOrEns)](#MultisigClientMethods+canApprove) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#MultisigClientMethods+canExecute) ⇒ <code>\*</code>
-    * [.getVotingSettings(addressOrEns)](#MultisigClientMethods+getVotingSettings) ⇒ <code>\*</code>
+    * [.getVotingSettings(addressOrEns, blockNumber)](#MultisigClientMethods+getVotingSettings) ⇒ <code>\*</code>
     * [.getMembers(pluginAddress, blockNumber)](#MultisigClientMethods+getMembers) ⇒ <code>\*</code>
     * [.getProposal(proposalId)](#MultisigClientMethods+getProposal) ⇒ <code>\*</code>
     * [.getProposals({)](#MultisigClientMethods+getProposals) ⇒ <code>\*</code>
@@ -313,7 +313,7 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+getVotingSettings"></a>
 
-### multisigClientMethods.getVotingSettings(addressOrEns) ⇒ <code>\*</code>
+### multisigClientMethods.getVotingSettings(addressOrEns, blockNumber) ⇒ <code>\*</code>
 <p>Returns the voting settings</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
@@ -322,6 +322,7 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | addressOrEns | <code>string</code> | 
+| blockNumber | <code>number</code> | 
 
 <a name="MultisigClientMethods+getMembers"></a>
 
