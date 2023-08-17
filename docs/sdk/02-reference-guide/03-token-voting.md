@@ -334,6 +334,7 @@ so that the plugin is configured</p>
     * [.getDelegatee(tokenAddress)](#TokenVotingClientMethods+getDelegatee) ⇒ <code>\*</code>
     * [.canVote(params)](#TokenVotingClientMethods+canVote) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#TokenVotingClientMethods+canExecute) ⇒ <code>\*</code>
+    * [.isTokenVotingCompatibleToken(tokenAddress)](#TokenVotingClientMethods+isTokenVotingCompatibleToken) ⇒ <code>\*</code>
 
 <a name="TokenVotingClientMethods+prepareInstallation"></a>
 
@@ -406,4 +407,16 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | proposalId | <code>string</code> | 
+
+<a name="TokenVotingClientMethods+isTokenVotingCompatibleToken"></a>
+
+### tokenVotingClientMethods.isTokenVotingCompatibleToken(tokenAddress) ⇒ <code>\*</code>
+<p>Checks if the given token is compatible with the TokenVoting plugin</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<TokenVotingTokenCompatibility>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| tokenAddress | <code>string</code> | 
 
