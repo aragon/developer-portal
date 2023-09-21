@@ -173,6 +173,7 @@ so that the plugin is configured</p>
     * [.createProposal(params)](#AddresslistVotingClientEstimation+createProposal) ⇒ <code>\*</code>
     * [.voteProposal(params)](#AddresslistVotingClientEstimation+voteProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#AddresslistVotingClientEstimation+executeProposal) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#AddresslistVotingClientEstimation+prepareUpdate) ⇒ <code>\*</code>
 
 <a name="AddresslistVotingClientEstimation+createProposal"></a>
 
@@ -210,6 +211,18 @@ so that the plugin is configured</p>
 | --- | --- |
 | proposalId | <code>string</code> | 
 
+<a name="AddresslistVotingClientEstimation+prepareUpdate"></a>
+
+### addresslistVotingClientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of preparing an update</p>
+
+**Kind**: instance method of [<code>AddresslistVotingClientEstimation</code>](#AddresslistVotingClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>AddresslistVotingPluginPrepareUpdateParams</code> | 
+
 <a name="AddresslistVotingClientMethods"></a>
 
 ## AddresslistVotingClientMethods
@@ -221,6 +234,7 @@ so that the plugin is configured</p>
     * [.createProposal(params)](#AddresslistVotingClientMethods+createProposal) ⇒ <code>\*</code>
     * [.voteProposal(params)](#AddresslistVotingClientMethods+voteProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#AddresslistVotingClientMethods+executeProposal) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#AddresslistVotingClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.canVote(params)](#AddresslistVotingClientMethods+canVote) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#AddresslistVotingClientMethods+canExecute) ⇒ <code>\*</code>
     * [.getMembers(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>\*</code>
@@ -263,6 +277,18 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | proposalId | <code>string</code> | 
+
+<a name="AddresslistVotingClientMethods+prepareUpdate"></a>
+
+### addresslistVotingClientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Prepares the update of a token voting plugin in a given dao</p>
+
+**Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>AddresslistVotingPluginPrepareUpdateParams</code> | 
 
 <a name="AddresslistVotingClientMethods+canVote"></a>
 

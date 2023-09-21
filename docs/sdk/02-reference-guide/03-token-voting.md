@@ -259,6 +259,7 @@ so that the plugin is configured</p>
     * [.executeProposal(proposalId)](#TokenVotingClientEstimation+executeProposal) ⇒ <code>\*</code>
     * [.delegateTokens(params)](#TokenVotingClientEstimation+delegateTokens) ⇒ <code>\*</code>
     * [.undelegateTokens(tokenAddress)](#TokenVotingClientEstimation+undelegateTokens) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#TokenVotingClientEstimation+prepareUpdate) ⇒ <code>\*</code>
 
 <a name="TokenVotingClientEstimation+createProposal"></a>
 
@@ -320,6 +321,18 @@ so that the plugin is configured</p>
 | --- | --- |
 | tokenAddress | <code>string</code> | 
 
+<a name="TokenVotingClientEstimation+prepareUpdate"></a>
+
+### tokenVotingClientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of preparing an update</p>
+
+**Kind**: instance method of [<code>TokenVotingClientEstimation</code>](#TokenVotingClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>TokenVotingPluginPrepareUpdateParams</code> | 
+
 <a name="TokenVotingClientMethods"></a>
 
 ## TokenVotingClientMethods
@@ -329,6 +342,7 @@ so that the plugin is configured</p>
 
 * [TokenVotingClientMethods](#TokenVotingClientMethods)
     * [.prepareInstallation(params)](#TokenVotingClientMethods+prepareInstallation) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#TokenVotingClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.delegateTokens(params)](#TokenVotingClientMethods+delegateTokens) ⇒ <code>\*</code>
     * [.undelegateTokens(tokenAddress)](#TokenVotingClientMethods+undelegateTokens) ⇒ <code>\*</code>
     * [.getDelegatee(tokenAddress)](#TokenVotingClientMethods+getDelegatee) ⇒ <code>\*</code>
@@ -347,6 +361,18 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | params | <code>TokenVotingPluginPrepareInstallationParams</code> | 
+
+<a name="TokenVotingClientMethods+prepareUpdate"></a>
+
+### tokenVotingClientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Prepares the update of a token voting plugin in a given dao</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>TokenVotingPluginPrepareUpdateParams</code> | 
 
 <a name="TokenVotingClientMethods+delegateTokens"></a>
 

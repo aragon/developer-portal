@@ -29,6 +29,7 @@
 * [ClientDecoding](#ClientDecoding)
     * [.applyInstallationAction(Uint8Array)](#ClientDecoding+applyInstallationAction) ⇒ <code>\*</code>
     * [.applyUninstallationAction(Uint8Array)](#ClientDecoding+applyUninstallationAction) ⇒ <code>\*</code>
+    * [.applyUpdateAction(data)](#ClientDecoding+applyUpdateAction) ⇒ <code>\*</code>
     * [.grantAction(data)](#ClientDecoding+grantAction) ⇒ <code>\*</code>
     * [.grantWithConditionAction(data)](#ClientDecoding+grantWithConditionAction) ⇒ <code>\*</code>
     * [.revokeAction(data)](#ClientDecoding+revokeAction) ⇒ <code>\*</code>
@@ -61,6 +62,18 @@
 | Param | Type |
 | --- | --- |
 | Uint8Array | <code>data</code> | 
+
+<a name="ClientDecoding+applyUpdateAction"></a>
+
+### clientDecoding.applyUpdateAction(data) ⇒ <code>\*</code>
+<p>Decodes the apply update parameters from an encoded apply update action</p>
+
+**Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
+**Returns**: <code>\*</code> - <p>{DecodedApplyUpdateParams}</p>  
+
+| Param | Type |
+| --- | --- |
+| data | <code>Uint8Array</code> | 
 
 <a name="ClientDecoding+grantAction"></a>
 
@@ -215,6 +228,7 @@
 
 * [ClientEncoding](#ClientEncoding)
     * [.applyInstallationAction(daoAddress, params)](#ClientEncoding+applyInstallationAction) ⇒ <code>\*</code>
+    * [.applyUpdateAction(daoAddress, params)](#ClientEncoding+applyUpdateAction) ⇒ <code>\*</code>
     * [.grantAction(daoAddress, params)](#ClientEncoding+grantAction) ⇒ <code>\*</code>
     * [.grantWithConditionAction(daoAddress, params)](#ClientEncoding+grantWithConditionAction) ⇒ <code>\*</code>
     * [.revokeAction(daoAddress, params)](#ClientEncoding+revokeAction) ⇒ <code>\*</code>
@@ -237,6 +251,19 @@
 | --- | --- |
 | daoAddress | <code>string</code> | 
 | params | <code>ApplyInstallationParams</code> | 
+
+<a name="ClientEncoding+applyUpdateAction"></a>
+
+### clientEncoding.applyUpdateAction(daoAddress, params) ⇒ <code>\*</code>
+<p>Computes the payload to be given when creating a proposal that applies an update to a plugin</p>
+
+**Kind**: instance method of [<code>ClientEncoding</code>](#ClientEncoding)  
+**Returns**: <code>\*</code> - <p>{DaoAction[]}</p>  
+
+| Param | Type |
+| --- | --- |
+| daoAddress | <code>string</code> | 
+| params | <code>ApplyUpdateParams</code> | 
 
 <a name="ClientEncoding+grantAction"></a>
 
@@ -391,6 +418,7 @@
     * [.createDao(_params)](#ClientEstimation+createDao) ⇒ <code>\*</code>
     * [.deposit(params)](#ClientEstimation+deposit) ⇒ <code>\*</code>
     * [.setAllowance(_params)](#ClientEstimation+setAllowance) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#ClientEstimation+prepareUpdate) ⇒ <code>\*</code>
 
 <a name="ClientEstimation+createDao"></a>
 
@@ -429,6 +457,18 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 | --- | --- |
 | _params | <code>SetAllowanceParams</code> | 
 
+<a name="ClientEstimation+prepareUpdate"></a>
+
+### clientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of preparing an update</p>
+
+**Kind**: instance method of [<code>ClientEstimation</code>](#ClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>PrepareUpdateParams</code> | 
+
 <a name="ClientMethods"></a>
 
 ## ClientMethods
@@ -442,6 +482,7 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
     * [.deposit(params)](#ClientMethods+deposit) ⇒ <code>\*</code>
     * [.setAllowance(params)](#ClientMethods+setAllowance) ⇒ <code>\*</code>
     * [.prepareUninstallation(params)](#ClientMethods+prepareUninstallation) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#ClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.hasPermission(params)](#ClientMethods+hasPermission) ⇒ <code>\*</code>
     * [.getDao(daoAddressOrEns)](#ClientMethods+getDao) ⇒ <code>\*</code>
     * [.getDaos({)](#ClientMethods+getDaos) ⇒ <code>\*</code>
@@ -510,6 +551,18 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 | Param | Type |
 | --- | --- |
 | params | <code>PrepareUninstallationParams</code> | 
+
+<a name="ClientMethods+prepareUpdate"></a>
+
+### clientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Prepare update of a plugin</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>PrepareUpdateParams</code> | 
 
 <a name="ClientMethods+hasPermission"></a>
 

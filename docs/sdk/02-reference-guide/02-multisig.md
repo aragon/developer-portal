@@ -170,6 +170,7 @@ so that the plugin is configured</p>
     * [.createProposal(params)](#MultisigClientEstimation+createProposal) ⇒ <code>\*</code>
     * [.approveProposal(params)](#MultisigClientEstimation+approveProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#MultisigClientEstimation+executeProposal) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#MultisigClientEstimation+prepareUpdate) ⇒ <code>\*</code>
 
 <a name="MultisigClientEstimation+createProposal"></a>
 
@@ -207,6 +208,18 @@ so that the plugin is configured</p>
 | --- | --- |
 | proposalId | <code>string</code> | 
 
+<a name="MultisigClientEstimation+prepareUpdate"></a>
+
+### multisigClientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of preparing an update</p>
+
+**Kind**: instance method of [<code>MultisigClientEstimation</code>](#MultisigClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>MultisigPluginPrepareUpdateParams</code> | 
+
 <a name="MultisigClientMethods"></a>
 
 ## MultisigClientMethods
@@ -220,6 +233,7 @@ so that the plugin is configured</p>
     * [.approveProposal(params)](#MultisigClientMethods+approveProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#MultisigClientMethods+executeProposal) ⇒ <code>\*</code>
     * [.prepareInstallation(params)](#MultisigClientMethods+prepareInstallation) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#MultisigClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.canApprove(addressOrEns)](#MultisigClientMethods+canApprove) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#MultisigClientMethods+canExecute) ⇒ <code>\*</code>
     * [.getVotingSettings(addressOrEns, blockNumber)](#MultisigClientMethods+getVotingSettings) ⇒ <code>\*</code>
@@ -286,6 +300,18 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | params | <code>MultisigPluginPrepareInstallationParams</code> | 
+
+<a name="MultisigClientMethods+prepareUpdate"></a>
+
+### multisigClientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Prepares the update of a multisig plugin in a given dao</p>
+
+**Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>MultisigPluginPrepareUpdateParams</code> | 
 
 <a name="MultisigClientMethods+canApprove"></a>
 
