@@ -1,5 +1,7 @@
 ## Description
 
+An interface for the token wrapping contract wrapping existing [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens.
+
 ## Implementation
 
 ### external function depositFor

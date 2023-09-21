@@ -38,20 +38,20 @@ The ID of the permission required to call the `setTrustedForwarder` function.
 bytes32 SET_TRUSTED_FORWARDER_PERMISSION_ID
 ```
 
-### public variable SET_SIGNATURE_VALIDATOR_PERMISSION_ID
-
-The ID of the permission required to call the `setSignatureValidator` function.
-
-```solidity
-bytes32 SET_SIGNATURE_VALIDATOR_PERMISSION_ID
-```
-
 ### public variable REGISTER_STANDARD_CALLBACK_PERMISSION_ID
 
 The ID of the permission required to call the `registerStandardCallback` function.
 
 ```solidity
 bytes32 REGISTER_STANDARD_CALLBACK_PERMISSION_ID
+```
+
+### public variable VALIDATE_SIGNATURE_PERMISSION_ID
+
+The ID of the permission required to validate [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signatures.
+
+```solidity
+bytes32 VALIDATE_SIGNATURE_PERMISSION_ID
 ```
 
 ### internal variable MAX_ACTIONS
@@ -61,16 +61,6 @@ The internal constant storing the maximal action array length.
 ```solidity
 uint256 MAX_ACTIONS
 ```
-
-### public variable signatureValidator
-
-The [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
-
-```solidity
-contract IERC1271 signatureValidator
-```
-
-_Added in v1.0.0._
 
 ### error ReentrantCall
 
@@ -135,6 +125,14 @@ Thrown if an upgrade is not supported from a specific protocol version .
 
 ```solidity
 error ProtocolVersionUpgradeNotSupported(uint8[3] protocolVersion)
+```
+
+### error FunctionRemoved
+
+Thrown when a function is removed but left to not corrupt the interface ID.
+
+```solidity
+error FunctionRemoved()
 ```
 
 ### event NewURI
@@ -314,30 +312,33 @@ function deposit(address _token, uint256 _amount, string _reference) external pa
 
 ### external function setSignatureValidator
 
-Setter for the [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
+Removed function being left here to not corrupt the IDAO interface ID. Any call will revert.
 
 ```solidity
-function setSignatureValidator(address _signatureValidator) external
+function setSignatureValidator(address) external pure
 ```
 
-| Input                 | Type      | Description                             |
-| :-------------------- | --------- | --------------------------------------- |
-| `_signatureValidator` | `address` | The address of the signature validator. |
+_Introduced in v1.0.0. Removed in v1.4.0._
 
 ### external function isValidSignature
 
-Checks whether a signature is valid for the provided hash by forwarding the call to the set [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
+Checks whether a signature is valid for a provided hash according to [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271).
 
 ```solidity
 function isValidSignature(bytes32 _hash, bytes _signature) external view returns (bytes4)
 ```
 
-| Input        | Type      | Description                                                              |
-| :----------- | --------- | ------------------------------------------------------------------------ |
-| `_hash`      | `bytes32` | The hash of the data to be signed.                                       |
-| `_signature` | `bytes`   | The signature byte array associated with `_hash`.                        |
+| Input        | Type      | Description                                                                                      |
+| :----------- | --------- | ------------------------------------------------------------------------------------------------ |
+| `_hash`      | `bytes32` | The hash of the data to be signed.                                                               |
+| `_signature` | `bytes`   | The signature byte array associated with `_hash`.                                                |
 | **Output**   |           |
-| `0`          | `bytes4`  | Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
+| `0`          | `bytes4`  | Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid and `0xffffffff` if not. |
+
+_Relays the validation logic determining who is allowed to sign on behalf of the DAO to its permission manager.
+Caller specific bypassing can be set direct granting (i.e., `grant({_where: dao, _who: specificErc1271Caller, _permissionId: VALIDATE_SIGNATURE_PERMISSION_ID})`).
+Caller specific signature validation logic can be set by granting with a `PermissionCondition` (i.e., `grantWithCondition({_where: dao, _who: specificErc1271Caller, _permissionId: VALIDATE_SIGNATURE_PERMISSION_ID, _condition: yourConditionImplementation})`)
+Generic signature validation logic can be set for all calling contracts by granting with a `PermissionCondition` to `PermissionManager.ANY_ADDR()` (i.e., `grantWithCondition({_where: dao, _who: PermissionManager.ANY_ADDR(), _permissionId: VALIDATE_SIGNATURE_PERMISSION_ID, _condition: yourConditionImplementation})`)._
 
 ### external function receive
 

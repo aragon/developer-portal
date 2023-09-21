@@ -1,5 +1,7 @@
 ## Description
 
+An interface for the plugin distributing [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens via a merkle balance tree.
+
 ## Implementation
 
 ### event Claimed

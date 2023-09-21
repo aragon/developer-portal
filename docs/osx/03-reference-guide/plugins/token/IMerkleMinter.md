@@ -1,5 +1,7 @@
 ## Description
 
+An interface for the minter plugin minting and distributing [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens via a merkle balance tree.
+
 ## Implementation
 
 ### event MerkleMinted
