@@ -1,6 +1,6 @@
 ## Description
 
-An [ERC-165](https://eips.ethereum.org/EIPS/eip-165)-based registry for contracts
+An [ERC-165](https://eips.ethereum.org/EIPS/eip-165)-based registry for contracts.
 
 ## Implementation
 

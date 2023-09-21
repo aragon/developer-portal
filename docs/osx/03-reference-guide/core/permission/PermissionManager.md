@@ -260,7 +260,7 @@ function applyMultiTargetPermissions(struct PermissionLib.MultiTargetPermission[
 
 ### public function isGranted
 
-Checks if an address has permission on a contract via a permission identifier and considers if `ANY_ADDRESS` was used in the granting process.
+Checks if the caller address has permission on the target contract via a permission identifier and relays the answer to a condition contract if this was declared during the granting process.
 
 ```solidity
 function isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) public view virtual returns (bool)
@@ -271,9 +271,30 @@ function isGranted(address _where, address _who, bytes32 _permissionId, bytes _d
 | `_where`        | `address` | The address of the target contract for which `_who` receives permission.                                   |
 | `_who`          | `address` | The address (EOA or contract) for which the permission is checked.                                         |
 | `_permissionId` | `bytes32` | The permission identifier.                                                                                 |
-| `_data`         | `bytes`   | The optional data passed to the `PermissionCondition` registered.                                          |
+| `_data`         | `bytes`   | Optional data to be passed to the set `PermissionCondition`.                                               |
 | **Output**      |           |
 | `0`             | `bool`    | Returns true if `_who` has the permissions on the target contract via the specified permission identifier. |
+
+### internal function \_checkCondition
+
+Relays the question if caller address has permission on target contract via a permission identifier to a condition contract.
+Checks a condition contract by doing an external call via try/catch.
+
+```solidity
+function _checkCondition(address _condition, address _where, address _who, bytes32 _permissionId, bytes _data) internal view virtual returns (bool)
+```
+
+| Input           | Type      | Description                                                                                                                 |
+| :-------------- | --------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `_condition`    | `address` | The condition contract that is called.                                                                                      |
+| `_where`        | `address` | The address of the target contract for which `_who` receives permission.                                                    |
+| `_who`          | `address` | The address (EOA or contract) owning the permission.                                                                        |
+| `_permissionId` | `bytes32` | The permission identifier.                                                                                                  |
+| `_data`         | `bytes`   | Optional data to be passed to a referenced `PermissionCondition`.                                                           |
+| **Output**      |           |
+| `0`             | `bool`    | Returns `true` if a caller (`_who`) has the permissions on the contract (`_where`) via the specified permission identifier. |
+
+_If the external call fails, we return `false`._
 
 ### internal function \_initializePermissionManager
 
@@ -335,23 +356,6 @@ function _revoke(address _where, address _who, bytes32 _permissionId) internal v
 | `_permissionId` | `bytes32` | The permission identifier.                                               |
 
 _Note, that revoking permissions with `_who` or `_where` equal to `ANY_ADDR` does not revoke other permissions with specific `_who` and `_where` addresses that might have been granted in parallel._
-
-### internal function \_isGranted
-
-Checks if a caller is granted permissions on a target contract via a permission identifier and redirects the approval to a `PermissionCondition` if this was specified in the setup.
-
-```solidity
-function _isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) internal view virtual returns (bool)
-```
-
-| Input           | Type      | Description                                                                                           |
-| :-------------- | --------- | ----------------------------------------------------------------------------------------------------- |
-| `_where`        | `address` | The address of the target contract for which `_who` receives permission.                              |
-| `_who`          | `address` | The address (EOA or contract) owning the permission.                                                  |
-| `_permissionId` | `bytes32` | The permission identifier.                                                                            |
-| `_data`         | `bytes`   | The optional data passed to the `PermissionCondition` registered.                                     |
-| **Output**      |           |
-| `0`             | `bool`    | Returns true if `_who` has the permissions on the contract via the specified permissionId identifier. |
 
 ### internal function \_auth
 

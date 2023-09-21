@@ -185,44 +185,20 @@ event TrustedForwarderSet(address forwarder)
 | :---------- | --------- | -------------------------- |
 | `forwarder` | `address` | the new forwarder address. |
 
-### external function setSignatureValidator
-
-Setter for the [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
-
-```solidity
-function setSignatureValidator(address _signatureValidator) external
-```
-
-| Input                 | Type      | Description                             |
-| :-------------------- | --------- | --------------------------------------- |
-| `_signatureValidator` | `address` | The address of the signature validator. |
-
-### event SignatureValidatorSet
-
-Emitted when the signature validator address is updated.
-
-```solidity
-event SignatureValidatorSet(address signatureValidator)
-```
-
-| Input                | Type      | Description                             |
-| :------------------- | --------- | --------------------------------------- |
-| `signatureValidator` | `address` | The address of the signature validator. |
-
 ### external function isValidSignature
 
-Checks whether a signature is valid for the provided hash by forwarding the call to the set [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271) signature validator contract.
+Checks whether a signature is valid for a provided hash according to [ERC-1271](https://eips.ethereum.org/EIPS/eip-1271).
 
 ```solidity
 function isValidSignature(bytes32 _hash, bytes _signature) external returns (bytes4)
 ```
 
-| Input        | Type      | Description                                                              |
-| :----------- | --------- | ------------------------------------------------------------------------ |
-| `_hash`      | `bytes32` | The hash of the data to be signed.                                       |
-| `_signature` | `bytes`   | The signature byte array associated with `_hash`.                        |
+| Input        | Type      | Description                                                                                      |
+| :----------- | --------- | ------------------------------------------------------------------------------------------------ |
+| `_hash`      | `bytes32` | The hash of the data to be signed.                                                               |
+| `_signature` | `bytes`   | The signature byte array associated with `_hash`.                                                |
 | **Output**   |           |
-| `0`          | `bytes4`  | Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid. |
+| `0`          | `bytes4`  | Returns the `bytes4` magic value `0x1626ba7e` if the signature is valid and `0xffffffff` if not. |
 
 ### external function registerStandardCallback
 
@@ -237,5 +213,15 @@ function registerStandardCallback(bytes4 _interfaceId, bytes4 _callbackSelector,
 | `_interfaceId`      | `bytes4` | The ID of the interface.                                      |
 | `_callbackSelector` | `bytes4` | The selector of the callback function.                        |
 | `_magicNumber`      | `bytes4` | The magic number to be registered for the function signature. |
+
+### external function setSignatureValidator
+
+Removed function being left here to not corrupt the IDAO interface ID. Any call will revert.
+
+```solidity
+function setSignatureValidator(address) external
+```
+
+_Introduced in v1.0.0. Removed in v1.4.0._
 
 <!--CONTRACT_END-->
