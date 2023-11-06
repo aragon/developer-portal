@@ -237,9 +237,10 @@ so that the plugin is configured</p>
     * [.canApprove(addressOrEns)](#MultisigClientMethods+canApprove) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#MultisigClientMethods+canExecute) ⇒ <code>\*</code>
     * [.getVotingSettings(addressOrEns, blockNumber)](#MultisigClientMethods+getVotingSettings) ⇒ <code>\*</code>
-    * [.getMembers(pluginAddress, blockNumber)](#MultisigClientMethods+getMembers) ⇒ <code>\*</code>
+    * [.getMembers({)](#MultisigClientMethods+getMembers) ⇒ <code>\*</code>
     * [.getProposal(proposalId)](#MultisigClientMethods+getProposal) ⇒ <code>\*</code>
     * [.getProposals({)](#MultisigClientMethods+getProposals) ⇒ <code>\*</code>
+    * [.isMember(params)](#MultisigClientMethods+isMember) ⇒
 
 <a name="MultisigClientMethods+createProposal"></a>
 
@@ -352,16 +353,15 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+getMembers"></a>
 
-### multisigClientMethods.getMembers(pluginAddress, blockNumber) ⇒ <code>\*</code>
+### multisigClientMethods.getMembers({) ⇒ <code>\*</code>
 <p>returns the members of the multisig</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
 **Returns**: <code>\*</code> - <p>{Promise&lt;string[]&gt;}</p>  
 
-| Param | Type |
-| --- | --- |
-| pluginAddress | <code>string</code> | 
-| blockNumber | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| { | <code>MembersQueryParams</code> | <p>pluginAddress, blockNumber, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = MembersSortBy.ADDRESS, }</p> |
 
 <a name="MultisigClientMethods+getProposal"></a>
 
@@ -386,4 +386,19 @@ so that the plugin is configured</p>
 | Param | Type | Description |
 | --- | --- | --- |
 | { | <code>ProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
+
+<a name="MultisigClientMethods+isMember"></a>
+
+### multisigClientMethods.isMember(params) ⇒
+<p>Checks if a given address is a member of the tokenVoting contract.</p>
+
+**Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
+**Returns**: <p>A boolean indicating whether the address is a member or not.</p>  
+
+| Param | Description |
+| --- | --- |
+| params | <p>The parameters for the isMember method.</p> |
+| params.pluginAddress | <p>The address of the plugin.</p> |
+| params.address | <p>The address to check.</p> |
+| params.blockNumber | <p>The block number for specifying a specific block.</p> |
 
