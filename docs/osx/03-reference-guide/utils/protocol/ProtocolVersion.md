@@ -1,6 +1,6 @@
 ## Description
 
-An abstract, stateless, non-upgradeable contract serves as a base for other contracts requiring awareness of the OSx protocol version.
+An abstract, stateless, non-upgradeable contract providing the current Aragon OSx protocol version number.
 
 Do not add any new variables to this contract that would shift down storage in the inheritance chain.
 
@@ -8,7 +8,7 @@ Do not add any new variables to this contract that would shift down storage in t
 
 ### public function protocolVersion
 
-Returns the protocol version at which the current contract was built. Use it to check for future upgrades that might be applicable.
+Returns the semantic Aragon OSx protocol version number that the implementing contract is associated with.
 
 ```solidity
 function protocolVersion() public pure returns (uint8[3])
@@ -17,5 +17,7 @@ function protocolVersion() public pure returns (uint8[3])
 | Output | Type       | Description |
 | ------ | ---------- | ----------- |
 | `0`    | `uint8[3]` |             |
+
+_This version number is not to be confused with the `release` and `build` numbers found in the `Version.Tag` struct inside the `PluginRepo` contract being used to version plugin setup and associated plugin implementation contracts._
 
 <!--CONTRACT_END-->
