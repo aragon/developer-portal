@@ -237,10 +237,11 @@ so that the plugin is configured</p>
     * [.prepareUpdate(params)](#AddresslistVotingClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.canVote(params)](#AddresslistVotingClientMethods+canVote) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#AddresslistVotingClientMethods+canExecute) ⇒ <code>\*</code>
-    * [.getMembers(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>\*</code>
+    * [.getMembers({)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>\*</code>
     * [.getProposal(proposalId)](#AddresslistVotingClientMethods+getProposal) ⇒ <code>\*</code>
     * [.getProposals({)](#AddresslistVotingClientMethods+getProposals) ⇒ <code>\*</code>
     * [.getVotingSettings(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
+    * [.isMember(params)](#AddresslistVotingClientMethods+isMember) ⇒
 
 <a name="AddresslistVotingClientMethods+createProposal"></a>
 
@@ -316,16 +317,15 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+getMembers"></a>
 
-### addresslistVotingClientMethods.getMembers(pluginAddress, blockNumber) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.getMembers({) ⇒ <code>\*</code>
 <p>Returns the list of wallet addresses with signing capabilities on the plugin</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
 **Returns**: <code>\*</code> - <p>{Promise&lt;string[]&gt;}</p>  
 
-| Param | Type |
-| --- | --- |
-| pluginAddress | <code>string</code> | 
-| blockNumber | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| { | <code>MembersQueryParams</code> | <p>pluginAddress, blockNumber, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = MembersSortBy.ADDRESS, }</p> |
 
 <a name="AddresslistVotingClientMethods+getProposal"></a>
 
@@ -363,4 +363,19 @@ so that the plugin is configured</p>
 | --- | --- |
 | pluginAddress | <code>string</code> | 
 | blockNumber | <code>number</code> | 
+
+<a name="AddresslistVotingClientMethods+isMember"></a>
+
+### addresslistVotingClientMethods.isMember(params) ⇒
+<p>Checks if a given address is a member of the AddresslistVoting contract.</p>
+
+**Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
+**Returns**: <p>A boolean indicating whether the address is a member or not.</p>  
+
+| Param | Description |
+| --- | --- |
+| params | <p>The parameters for the isMember method.</p> |
+| params.pluginAddress | <p>The address of the plugin.</p> |
+| params.address | <p>The address to check.</p> |
+| params.blockNumber | <p>The block number for specifying a specific block.</p> |
 
