@@ -1,0 +1,45 @@
+name: Publish on Fleek
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: "Publish content from branch (master|staging)"
+        required: true
+        default: staging
+        type: choice
+        options:
+        - master
+        - staging
+
+jobs:
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code ( Branch=${{ inputs.source_branch }} )
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_branch }}
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'yarn'
+
+      - name: Install and build
+        run: yarn && yarn build
+
+      - name: Activate Fleek
+        run: mv fleek_${{ inputs.source_branch }}.json .fleek.json
+
+      - name: Deploy on Fleek
+        id: deploy
+        uses: fleekhq/action-deploy@v1
+        with:
+          apiKey: ${{ secrets.FLEEK_API_KEY }}
+
+      - name: Get Fleek outpu URL ( Branch=${{ inputs.source_branch }} )
+        run: echo "The Fleek output URL is ${{ steps.deploy.outputs.deployUrl }}"

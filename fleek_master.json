@@ -1,0 +1,15 @@
+{
+  "site": {
+    "id": "0690a510-73ea-49d0-8df5-2490ea167fa8",
+    "team": "aragonone-team",
+    "platform": "ipfs",
+    "source": "github",
+    "name": "sweet-butterfly-2931"
+  },
+  "build": {
+    "baseDir": "",
+    "publicDir": "build/",
+    "command": "yarn && yarn build",
+    "rootDir": ""
+  }
+}
