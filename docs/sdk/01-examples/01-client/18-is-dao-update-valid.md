@@ -19,7 +19,7 @@ const actions: DaoAction[] = [
 ];
 
 // check if a dap update proposal is valid
-const isValid = client.methods.isDaoUpdateValid({
+const isValid = client.methods.isDaoUpdateProposalValid({
   daoAddress: "0x1234567890123456789012345678901234567890",
   actions,
 });
