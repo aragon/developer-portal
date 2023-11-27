@@ -29,6 +29,7 @@
 * [ClientDecoding](#ClientDecoding)
     * [.applyInstallationAction(Uint8Array)](#ClientDecoding+applyInstallationAction) ⇒ <code>\*</code>
     * [.applyUninstallationAction(Uint8Array)](#ClientDecoding+applyUninstallationAction) ⇒ <code>\*</code>
+    * [.applyUpdateAction(data)](#ClientDecoding+applyUpdateAction) ⇒ <code>\*</code>
     * [.grantAction(data)](#ClientDecoding+grantAction) ⇒ <code>\*</code>
     * [.grantWithConditionAction(data)](#ClientDecoding+grantWithConditionAction) ⇒ <code>\*</code>
     * [.revokeAction(data)](#ClientDecoding+revokeAction) ⇒ <code>\*</code>
@@ -41,6 +42,7 @@
     * [.upgradeToAndCallAction(data)](#ClientDecoding+upgradeToAndCallAction) ⇒ <code>\*</code>
     * [.initializeFromAction(data)](#ClientDecoding+initializeFromAction) ⇒ <code>\*</code>
     * [.findInterface(data)](#ClientDecoding+findInterface) ⇒ <code>\*</code>
+    * [.daoUpdateAction(data)](#ClientDecoding+daoUpdateAction) ⇒ <code>\*</code>
 
 <a name="ClientDecoding+applyInstallationAction"></a>
 
@@ -61,6 +63,18 @@
 | Param | Type |
 | --- | --- |
 | Uint8Array | <code>data</code> | 
+
+<a name="ClientDecoding+applyUpdateAction"></a>
+
+### clientDecoding.applyUpdateAction(data) ⇒ <code>\*</code>
+<p>Decodes the apply update parameters from an encoded apply update action</p>
+
+**Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
+**Returns**: <code>\*</code> - <p>{DecodedApplyUpdateParams}</p>  
+
+| Param | Type |
+| --- | --- |
+| data | <code>Uint8Array</code> | 
 
 <a name="ClientDecoding+grantAction"></a>
 
@@ -206,6 +220,18 @@
 | --- | --- |
 | data | <code>Uint8Array</code> | 
 
+<a name="ClientDecoding+daoUpdateAction"></a>
+
+### clientDecoding.daoUpdateAction(data) ⇒ <code>\*</code>
+<p>Decodes the dao update params from a daoUpdateAction</p>
+
+**Kind**: instance method of [<code>ClientDecoding</code>](#ClientDecoding)  
+**Returns**: <code>\*</code> - <p>{DaoUpdateDecodedParams}</p>  
+
+| Param | Type |
+| --- | --- |
+| data | <code>Uint8Array</code> | 
+
 <a name="ClientEncoding"></a>
 
 ## ClientEncoding
@@ -215,6 +241,7 @@
 
 * [ClientEncoding](#ClientEncoding)
     * [.applyInstallationAction(daoAddress, params)](#ClientEncoding+applyInstallationAction) ⇒ <code>\*</code>
+    * [.applyUpdateAndPermissionsActionBlock(daoAddress, params)](#ClientEncoding+applyUpdateAndPermissionsActionBlock) ⇒ <code>\*</code>
     * [.grantAction(daoAddress, params)](#ClientEncoding+grantAction) ⇒ <code>\*</code>
     * [.grantWithConditionAction(daoAddress, params)](#ClientEncoding+grantWithConditionAction) ⇒ <code>\*</code>
     * [.revokeAction(daoAddress, params)](#ClientEncoding+revokeAction) ⇒ <code>\*</code>
@@ -226,6 +253,7 @@
     * [.upgradeToAction(daoAddressOrEns, implementationAddress)](#ClientEncoding+upgradeToAction) ⇒ <code>\*</code>
     * [.upgradeToAndCallAction(daoAddressOrEns, params)](#ClientEncoding+upgradeToAndCallAction) ⇒ <code>\*</code>
     * [.initializeFromAction(daoAddressOrEns, params)](#ClientEncoding+initializeFromAction) ⇒ <code>\*</code>
+    * [.daoUpdateAction(daoAddressOrEns, params)](#ClientEncoding+daoUpdateAction) ⇒ <code>\*</code>
 
 <a name="ClientEncoding+applyInstallationAction"></a>
 
@@ -237,6 +265,19 @@
 | --- | --- |
 | daoAddress | <code>string</code> | 
 | params | <code>ApplyInstallationParams</code> | 
+
+<a name="ClientEncoding+applyUpdateAndPermissionsActionBlock"></a>
+
+### clientEncoding.applyUpdateAndPermissionsActionBlock(daoAddress, params) ⇒ <code>\*</code>
+<p>Computes the payload to be given when creating a proposal that applies an update to a plugin</p>
+
+**Kind**: instance method of [<code>ClientEncoding</code>](#ClientEncoding)  
+**Returns**: <code>\*</code> - <p>{DaoAction[]}</p>  
+
+| Param | Type |
+| --- | --- |
+| daoAddress | <code>string</code> | 
+| params | <code>ApplyUpdateParams</code> | 
 
 <a name="ClientEncoding+grantAction"></a>
 
@@ -380,6 +421,18 @@
 | daoAddressOrEns | <code>string</code> | 
 | params | <code>InitializeFromParams</code> | 
 
+<a name="ClientEncoding+daoUpdateAction"></a>
+
+### clientEncoding.daoUpdateAction(daoAddressOrEns, params) ⇒ <code>\*</code>
+<p>Does the necessary steps to encode an action that updates a DAO</p>
+
+**Kind**: instance method of [<code>ClientEncoding</code>](#ClientEncoding)  
+
+| Param | Type |
+| --- | --- |
+| daoAddressOrEns | <code>string</code> | 
+| params | <code>DaoUpdateParams</code> | 
+
 <a name="ClientEstimation"></a>
 
 ## ClientEstimation
@@ -391,6 +444,7 @@
     * [.createDao(_params)](#ClientEstimation+createDao) ⇒ <code>\*</code>
     * [.deposit(params)](#ClientEstimation+deposit) ⇒ <code>\*</code>
     * [.setAllowance(_params)](#ClientEstimation+setAllowance) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#ClientEstimation+prepareUpdate) ⇒ <code>\*</code>
 
 <a name="ClientEstimation+createDao"></a>
 
@@ -429,6 +483,18 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 | --- | --- |
 | _params | <code>SetAllowanceParams</code> | 
 
+<a name="ClientEstimation+prepareUpdate"></a>
+
+### clientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of preparing an update</p>
+
+**Kind**: instance method of [<code>ClientEstimation</code>](#ClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>PrepareUpdateParams</code> | 
+
 <a name="ClientMethods"></a>
 
 ## ClientMethods
@@ -442,6 +508,7 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
     * [.deposit(params)](#ClientMethods+deposit) ⇒ <code>\*</code>
     * [.setAllowance(params)](#ClientMethods+setAllowance) ⇒ <code>\*</code>
     * [.prepareUninstallation(params)](#ClientMethods+prepareUninstallation) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#ClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.hasPermission(params)](#ClientMethods+hasPermission) ⇒ <code>\*</code>
     * [.getDao(daoAddressOrEns)](#ClientMethods+getDao) ⇒ <code>\*</code>
     * [.getDaos({)](#ClientMethods+getDaos) ⇒ <code>\*</code>
@@ -450,6 +517,11 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
     * [.getPlugins({)](#ClientMethods+getPlugins) ⇒ <code>\*</code>
     * [.getPlugin(pluginAddress)](#ClientMethods+getPlugin) ⇒ <code>\*</code>
     * [.getProtocolVersion(contractAddress)](#ClientMethods+getProtocolVersion) ⇒ <code>\*</code>
+    * [.isDaoUpdateProposal(proposalId)](#ClientMethods+isDaoUpdateProposal) ⇒ <code>\*</code>
+    * [.isPluginUpdateProposal(proposalId)](#ClientMethods+isPluginUpdateProposal) ⇒ <code>\*</code>
+    * [.isPluginUpdateProposalValid(proposalId)](#ClientMethods+isPluginUpdateProposalValid) ⇒ <code>\*</code>
+    * [.isDaoUpdateProposalValid(proposalId, [version])](#ClientMethods+isDaoUpdateProposalValid) ⇒ <code>\*</code>
+    * [.getDaoImplementation(daoFactoryAddress)](#ClientMethods+getDaoImplementation) ⇒ <code>\*</code>
 
 <a name="ClientMethods+createDao"></a>
 
@@ -510,6 +582,18 @@ This does not estimate the gas cost of updating the allowance of an ERC20 token<
 | Param | Type |
 | --- | --- |
 | params | <code>PrepareUninstallationParams</code> | 
+
+<a name="ClientMethods+prepareUpdate"></a>
+
+### clientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Prepare update of a plugin</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>PrepareUpdateParams</code> | 
 
 <a name="ClientMethods+hasPermission"></a>
 
@@ -607,4 +691,65 @@ if the transaction fails returns [1,0,0]</p>
 | Param | Type |
 | --- | --- |
 | contractAddress | <code>string</code> | 
+
+<a name="ClientMethods+isDaoUpdateProposal"></a>
+
+### clientMethods.isDaoUpdateProposal(proposalId) ⇒ <code>\*</code>
+<p>Given a proposal id returns if that proposal is a dao update proposal</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<boolean>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| proposalId | <code>string</code> | 
+
+<a name="ClientMethods+isPluginUpdateProposal"></a>
+
+### clientMethods.isPluginUpdateProposal(proposalId) ⇒ <code>\*</code>
+<p>Given a proposal id returns if that proposal is a plugin update proposal</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<boolean>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| proposalId | <code>string</code> | 
+
+<a name="ClientMethods+isPluginUpdateProposalValid"></a>
+
+### clientMethods.isPluginUpdateProposalValid(proposalId) ⇒ <code>\*</code>
+<p>Check if the specified proposal id is valid for updating a plugin</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<PluginUpdateProposalValidity>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| proposalId | <code>string</code> | 
+
+<a name="ClientMethods+isDaoUpdateProposalValid"></a>
+
+### clientMethods.isDaoUpdateProposalValid(proposalId, [version]) ⇒ <code>\*</code>
+<p>Check if the specified proposalId actions are valid for updating a dao</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<DaoUpdateProposalValidity>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| proposalId | <code>string</code> | 
+| [version] | <code>SupportedVersion</code> | 
+
+<a name="ClientMethods+getDaoImplementation"></a>
+
+### clientMethods.getDaoImplementation(daoFactoryAddress) ⇒ <code>\*</code>
+<p>Return the implementation address for the specified dao factory</p>
+
+**Kind**: instance method of [<code>ClientMethods</code>](#ClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<string>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| daoFactoryAddress | <code>string</code> | 
 

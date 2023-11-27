@@ -1,15 +1,17 @@
 ## Description
 
-This interface can be implemented to support more customary permissions depending on on- or off-chain state, e.g., by querying token ownershop or a secondary condition, respectively.
+An interface to be implemented to support custom permission logic.
+
+To attach a condition to a permission, the `grantWithCondition` function must be used and refer to the implementing contract's address with the `condition` argument.
 
 ## Implementation
 
 ### external function isGranted
 
-This method is used to check if a call is permitted.
+Checks if a call is permitted.
 
 ```solidity
-function isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) external view returns (bool allowed)
+function isGranted(address _where, address _who, bytes32 _permissionId, bytes _data) external view returns (bool isPermitted)
 ```
 
 | Input           | Type      | Description                                                          |
@@ -19,6 +21,6 @@ function isGranted(address _where, address _who, bytes32 _permissionId, bytes _d
 | `_permissionId` | `bytes32` | The permission identifier.                                           |
 | `_data`         | `bytes`   | Optional data passed to the `PermissionCondition` implementation.    |
 | **Output**      |           |
-| `allowed`       | `bool`    | Returns true if the call is permitted.                               |
+| `isPermitted`   | `bool`    | Returns true if the call is permitted.                               |
 
 <!--CONTRACT_END-->

@@ -9,7 +9,7 @@ An abstract contract for upgradeable or cloneable contracts to inherit from and 
 Checks if an interface is supported by this or its parent contract.
 
 ```solidity
-function supportsInterface(bytes4 _interfaceId) public view returns (bool)
+function supportsInterface(bytes4 _interfaceId) public view virtual returns (bool)
 ```
 
 | Input          | Type     | Description                                   |

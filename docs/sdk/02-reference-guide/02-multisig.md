@@ -170,6 +170,7 @@ so that the plugin is configured</p>
     * [.createProposal(params)](#MultisigClientEstimation+createProposal) ⇒ <code>\*</code>
     * [.approveProposal(params)](#MultisigClientEstimation+approveProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#MultisigClientEstimation+executeProposal) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#MultisigClientEstimation+prepareUpdate) ⇒ <code>\*</code>
 
 <a name="MultisigClientEstimation+createProposal"></a>
 
@@ -207,6 +208,18 @@ so that the plugin is configured</p>
 | --- | --- |
 | proposalId | <code>string</code> | 
 
+<a name="MultisigClientEstimation+prepareUpdate"></a>
+
+### multisigClientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of preparing an update</p>
+
+**Kind**: instance method of [<code>MultisigClientEstimation</code>](#MultisigClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>MultisigPluginPrepareUpdateParams</code> | 
+
 <a name="MultisigClientMethods"></a>
 
 ## MultisigClientMethods
@@ -220,12 +233,14 @@ so that the plugin is configured</p>
     * [.approveProposal(params)](#MultisigClientMethods+approveProposal) ⇒ <code>\*</code>
     * [.executeProposal(proposalId)](#MultisigClientMethods+executeProposal) ⇒ <code>\*</code>
     * [.prepareInstallation(params)](#MultisigClientMethods+prepareInstallation) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#MultisigClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.canApprove(addressOrEns)](#MultisigClientMethods+canApprove) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#MultisigClientMethods+canExecute) ⇒ <code>\*</code>
     * [.getVotingSettings(addressOrEns, blockNumber)](#MultisigClientMethods+getVotingSettings) ⇒ <code>\*</code>
-    * [.getMembers(pluginAddress, blockNumber)](#MultisigClientMethods+getMembers) ⇒ <code>\*</code>
+    * [.getMembers({)](#MultisigClientMethods+getMembers) ⇒ <code>\*</code>
     * [.getProposal(proposalId)](#MultisigClientMethods+getProposal) ⇒ <code>\*</code>
     * [.getProposals({)](#MultisigClientMethods+getProposals) ⇒ <code>\*</code>
+    * [.isMember(params)](#MultisigClientMethods+isMember) ⇒
 
 <a name="MultisigClientMethods+createProposal"></a>
 
@@ -287,6 +302,18 @@ so that the plugin is configured</p>
 | --- | --- |
 | params | <code>MultisigPluginPrepareInstallationParams</code> | 
 
+<a name="MultisigClientMethods+prepareUpdate"></a>
+
+### multisigClientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Prepares the update of a multisig plugin in a given dao</p>
+
+**Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>MultisigPluginPrepareUpdateParams</code> | 
+
 <a name="MultisigClientMethods+canApprove"></a>
 
 ### multisigClientMethods.canApprove(addressOrEns) ⇒ <code>\*</code>
@@ -326,16 +353,15 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+getMembers"></a>
 
-### multisigClientMethods.getMembers(pluginAddress, blockNumber) ⇒ <code>\*</code>
+### multisigClientMethods.getMembers({) ⇒ <code>\*</code>
 <p>returns the members of the multisig</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
 **Returns**: <code>\*</code> - <p>{Promise&lt;string[]&gt;}</p>  
 
-| Param | Type |
-| --- | --- |
-| pluginAddress | <code>string</code> | 
-| blockNumber | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| { | <code>MembersQueryParams</code> | <p>pluginAddress, blockNumber, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = MembersSortBy.ADDRESS, }</p> |
 
 <a name="MultisigClientMethods+getProposal"></a>
 
@@ -360,4 +386,19 @@ so that the plugin is configured</p>
 | Param | Type | Description |
 | --- | --- | --- |
 | { | <code>ProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
+
+<a name="MultisigClientMethods+isMember"></a>
+
+### multisigClientMethods.isMember(params) ⇒
+<p>Checks if a given address is a member of the tokenVoting contract.</p>
+
+**Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
+**Returns**: <p>A boolean indicating whether the address is a member or not.</p>  
+
+| Param | Description |
+| --- | --- |
+| params | <p>The parameters for the isMember method.</p> |
+| params.pluginAddress | <p>The address of the plugin.</p> |
+| params.address | <p>The address to check.</p> |
+| params.blockNumber | <p>The block number for specifying a specific block.</p> |
 

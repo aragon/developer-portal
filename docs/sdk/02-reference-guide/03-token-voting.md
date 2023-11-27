@@ -25,7 +25,6 @@
     * [.TokenVotingClientMethods#createProposal(params)](#TokenVotingClient.TokenVotingClientMethods+createProposal) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#voteProposal(params, vote)](#TokenVotingClient.TokenVotingClientMethods+voteProposal) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#executeProposal(proposalId)](#TokenVotingClient.TokenVotingClientMethods+executeProposal) ⇒ <code>\*</code>
-    * [.TokenVotingClientMethods#getMembers(pluginAddress, blockNumber)](#TokenVotingClient.TokenVotingClientMethods+getMembers) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#getProposal(proposalId)](#TokenVotingClient.TokenVotingClientMethods+getProposal) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#getProposals(params)](#TokenVotingClient.TokenVotingClientMethods+getProposals) ⇒ <code>\*</code>
     * [.TokenVotingClientMethods#getVotingSettings(pluginAddress, blockNumber)](#TokenVotingClient.TokenVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
@@ -81,19 +80,6 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | proposalId | <code>string</code> | 
-
-<a name="TokenVotingClient.TokenVotingClientMethods+getMembers"></a>
-
-### TokenVotingClient.TokenVotingClientMethods#getMembers(pluginAddress, blockNumber) ⇒ <code>\*</code>
-<p>Returns the list of wallet addresses holding tokens from the underlying Token contract used by the plugin</p>
-
-**Kind**: static method of [<code>TokenVotingClient</code>](#TokenVotingClient)  
-**Returns**: <code>\*</code> - <p>{Promise&lt;string[]&gt;}</p>  
-
-| Param | Type |
-| --- | --- |
-| pluginAddress | <code>string</code> | 
-| blockNumber | <code>number</code> | 
 
 <a name="TokenVotingClient.TokenVotingClientMethods+getProposal"></a>
 
@@ -259,6 +245,7 @@ so that the plugin is configured</p>
     * [.executeProposal(proposalId)](#TokenVotingClientEstimation+executeProposal) ⇒ <code>\*</code>
     * [.delegateTokens(params)](#TokenVotingClientEstimation+delegateTokens) ⇒ <code>\*</code>
     * [.undelegateTokens(tokenAddress)](#TokenVotingClientEstimation+undelegateTokens) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#TokenVotingClientEstimation+prepareUpdate) ⇒ <code>\*</code>
 
 <a name="TokenVotingClientEstimation+createProposal"></a>
 
@@ -320,6 +307,18 @@ so that the plugin is configured</p>
 | --- | --- |
 | tokenAddress | <code>string</code> | 
 
+<a name="TokenVotingClientEstimation+prepareUpdate"></a>
+
+### tokenVotingClientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Estimates the gas fee of preparing an update</p>
+
+**Kind**: instance method of [<code>TokenVotingClientEstimation</code>](#TokenVotingClientEstimation)  
+**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>TokenVotingPluginPrepareUpdateParams</code> | 
+
 <a name="TokenVotingClientMethods"></a>
 
 ## TokenVotingClientMethods
@@ -329,11 +328,15 @@ so that the plugin is configured</p>
 
 * [TokenVotingClientMethods](#TokenVotingClientMethods)
     * [.prepareInstallation(params)](#TokenVotingClientMethods+prepareInstallation) ⇒ <code>\*</code>
+    * [.prepareUpdate(params)](#TokenVotingClientMethods+prepareUpdate) ⇒ <code>\*</code>
     * [.delegateTokens(params)](#TokenVotingClientMethods+delegateTokens) ⇒ <code>\*</code>
     * [.undelegateTokens(tokenAddress)](#TokenVotingClientMethods+undelegateTokens) ⇒ <code>\*</code>
     * [.getDelegatee(tokenAddress)](#TokenVotingClientMethods+getDelegatee) ⇒ <code>\*</code>
     * [.canVote(params)](#TokenVotingClientMethods+canVote) ⇒ <code>\*</code>
     * [.canExecute(proposalId)](#TokenVotingClientMethods+canExecute) ⇒ <code>\*</code>
+    * [.getMembers({)](#TokenVotingClientMethods+getMembers) ⇒ <code>\*</code>
+    * [.isTokenVotingCompatibleToken(tokenAddress)](#TokenVotingClientMethods+isTokenVotingCompatibleToken) ⇒ <code>\*</code>
+    * [.isMember(params)](#TokenVotingClientMethods+isMember) ⇒
 
 <a name="TokenVotingClientMethods+prepareInstallation"></a>
 
@@ -346,6 +349,18 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | params | <code>TokenVotingPluginPrepareInstallationParams</code> | 
+
+<a name="TokenVotingClientMethods+prepareUpdate"></a>
+
+### tokenVotingClientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+<p>Prepares the update of a token voting plugin in a given dao</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| params | <code>TokenVotingPluginPrepareUpdateParams</code> | 
 
 <a name="TokenVotingClientMethods+delegateTokens"></a>
 
@@ -406,4 +421,43 @@ so that the plugin is configured</p>
 | Param | Type |
 | --- | --- |
 | proposalId | <code>string</code> | 
+
+<a name="TokenVotingClientMethods+getMembers"></a>
+
+### tokenVotingClientMethods.getMembers({) ⇒ <code>\*</code>
+<p>Returns the list of wallet addresses holding tokens from the underlying Token contract used by the plugin</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>{Promise&lt;string[]&gt;}</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| { | <code>MembersQueryParams</code> | <p>pluginAddress, blockNumber, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = MembersSortBy.ADDRESS, }</p> |
+
+<a name="TokenVotingClientMethods+isTokenVotingCompatibleToken"></a>
+
+### tokenVotingClientMethods.isTokenVotingCompatibleToken(tokenAddress) ⇒ <code>\*</code>
+<p>Checks if the given token is compatible with the TokenVoting plugin</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <code>\*</code> - <p>`{Promise<TokenVotingTokenCompatibility>}`</p>  
+
+| Param | Type |
+| --- | --- |
+| tokenAddress | <code>string</code> | 
+
+<a name="TokenVotingClientMethods+isMember"></a>
+
+### tokenVotingClientMethods.isMember(params) ⇒
+<p>Checks if a given address is a member of the tokenVoting contract.</p>
+
+**Kind**: instance method of [<code>TokenVotingClientMethods</code>](#TokenVotingClientMethods)  
+**Returns**: <p>A boolean indicating whether the address is a member or not.</p>  
+
+| Param | Description |
+| --- | --- |
+| params | <p>The parameters for the isMember method.</p> |
+| params.pluginAddress | <p>The address of the plugin.</p> |
+| params.address | <p>The address to check.</p> |
+| params.blockNumber | <p>The block number for specifying a specific block.</p> |
 
