@@ -9,9 +9,10 @@ Accordingly, proposals must be checked thoroughly, especially when it comes to D
 
 All proposals scheduled in the DAO are checked via their proposal ID. A proposal is identified as an update proposals if it contains
 
-- one call to
-  - either [`upgradeTo(address newImplementation)`][oz-upgradeto]
-  - or [`upgradeToAndCall(address newImplementation, bytes memory data)`][oz-upgradetoandcall]
+- one call to either
+  - [`upgradeTo(address newImplementation)`][oz-upgradeto]
+    OR
+  - [`upgradeToAndCall(address newImplementation, bytes memory data)`][oz-upgradetoandcall]
 - one or more calls to [`applyUpdate(address _dao, ApplyUpdateParams _params)`][applyupdate]
 
 If a proposal is identified as an update proposal, we conduct general and specific checks on it.
