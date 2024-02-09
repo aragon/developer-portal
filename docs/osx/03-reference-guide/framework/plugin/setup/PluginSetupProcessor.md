@@ -420,10 +420,10 @@ Applies the permissions of a prepared update of an UUPS upgradeable proxy contra
 function applyUpdate(address _dao, struct PluginSetupProcessor.ApplyUpdateParams _params) external
 ```
 
-| Input     | Type                                            | Description                                                                |
-| :-------- | ----------------------------------------------- | -------------------------------------------------------------------------- |
-| `_dao`    | `address`                                       | The address of the updating DAO.                                           |
-| `_params` | `struct PluginSetupProcessor.ApplyUpdateParams` | The struct containing the parameters for the `applyInstallation` function. |
+| Input     | Type                                            | Description                                                          |
+| :-------- | ----------------------------------------------- | -------------------------------------------------------------------- |
+| `_dao`    | `address`                                       | The address of the updating DAO.                                     |
+| `_params` | `struct PluginSetupProcessor.ApplyUpdateParams` | The struct containing the parameters for the `applyUpdate` function. |
 
 ### external function prepareUninstallation
 
