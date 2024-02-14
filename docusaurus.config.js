@@ -162,7 +162,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['solidity'],
+        additionalLanguages: ['solidity','json','bash'],
       },
       announcementBar: {
         id: 'register_to_dev_newsletter',
