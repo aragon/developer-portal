@@ -21,12 +21,12 @@
 **Kind**: global class  
 <a name="AddresslistVotingClient.getPluginInstallItem"></a>
 
-### AddresslistVotingClient.getPluginInstallItem(params, [network]) ⇒ <code>\*</code>
+### AddresslistVotingClient.getPluginInstallItem(params, [network]) ⇒ <code>PluginInstallItem</code>
 <p>Computes the parameters to be given when creating the DAO,
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>AddresslistVotingClient</code>](#AddresslistVotingClient)  
-**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
+**Returns**: <code>PluginInstallItem</code>  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -41,18 +41,18 @@ so that the plugin is configured</p>
 **Kind**: global class  
 
 * [AddresslistVotingClientDecoding](#AddresslistVotingClientDecoding)
-    * [.updatePluginSettingsAction(data)](#AddresslistVotingClientDecoding+updatePluginSettingsAction) ⇒ <code>\*</code>
-    * [.addMembersAction(data)](#AddresslistVotingClientDecoding+addMembersAction) ⇒ <code>\*</code>
-    * [.removeMembersAction(data)](#AddresslistVotingClientDecoding+removeMembersAction) ⇒ <code>\*</code>
-    * [.findInterface(data)](#AddresslistVotingClientDecoding+findInterface) ⇒ <code>\*</code>
+    * [.updatePluginSettingsAction(data)](#AddresslistVotingClientDecoding+updatePluginSettingsAction) ⇒ <code>VotingSettings</code>
+    * [.addMembersAction(data)](#AddresslistVotingClientDecoding+addMembersAction) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.removeMembersAction(data)](#AddresslistVotingClientDecoding+removeMembersAction) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.findInterface(data)](#AddresslistVotingClientDecoding+findInterface) ⇒ <code>InterfaceParams</code> \| <code>null</code>
 
 <a name="AddresslistVotingClientDecoding+updatePluginSettingsAction"></a>
 
-### addresslistVotingClientDecoding.updatePluginSettingsAction(data) ⇒ <code>\*</code>
+### addresslistVotingClientDecoding.updatePluginSettingsAction(data) ⇒ <code>VotingSettings</code>
 <p>Decodes a dao metadata from an encoded update metadata action</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientDecoding</code>](#AddresslistVotingClientDecoding)  
-**Returns**: <code>\*</code> - <p>{VotingSettings}</p>  
+**Returns**: <code>VotingSettings</code>  
 
 | Param | Type |
 | --- | --- |
@@ -60,11 +60,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientDecoding+addMembersAction"></a>
 
-### addresslistVotingClientDecoding.addMembersAction(data) ⇒ <code>\*</code>
+### addresslistVotingClientDecoding.addMembersAction(data) ⇒ <code>Array.&lt;string&gt;</code>
 <p>Decodes a list of addresses from an encoded add members action</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientDecoding</code>](#AddresslistVotingClientDecoding)  
-**Returns**: <code>\*</code> - <p>{string[]}</p>  
+**Returns**: <code>Array.&lt;string&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -72,11 +72,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientDecoding+removeMembersAction"></a>
 
-### addresslistVotingClientDecoding.removeMembersAction(data) ⇒ <code>\*</code>
+### addresslistVotingClientDecoding.removeMembersAction(data) ⇒ <code>Array.&lt;string&gt;</code>
 <p>Decodes a list of addresses from an encoded remove members action</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientDecoding</code>](#AddresslistVotingClientDecoding)  
-**Returns**: <code>\*</code> - <p>{string[]}</p>  
+**Returns**: <code>Array.&lt;string&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -84,11 +84,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientDecoding+findInterface"></a>
 
-### addresslistVotingClientDecoding.findInterface(data) ⇒ <code>\*</code>
+### addresslistVotingClientDecoding.findInterface(data) ⇒ <code>InterfaceParams</code> \| <code>null</code>
 <p>Returns the decoded function info given the encoded data of an action</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientDecoding</code>](#AddresslistVotingClientDecoding)  
-**Returns**: <code>\*</code> - <p>{(InterfaceParams | null)}</p>  
+**Returns**: <code>InterfaceParams</code> \| <code>null</code>  
 
 | Param | Type |
 | --- | --- |
@@ -103,19 +103,19 @@ so that the plugin is configured</p>
 
 * [AddresslistVotingClientEncoding](#AddresslistVotingClientEncoding)
     * _instance_
-        * [.updatePluginSettingsAction(pluginAddress, params)](#AddresslistVotingClientEncoding+updatePluginSettingsAction) ⇒ <code>\*</code>
-        * [.addMembersAction(pluginAddress, members)](#AddresslistVotingClientEncoding+addMembersAction) ⇒ <code>\*</code>
-        * [.removeMembersAction(pluginAddress, members)](#AddresslistVotingClientEncoding+removeMembersAction) ⇒ <code>\*</code>
+        * [.updatePluginSettingsAction(pluginAddress, params)](#AddresslistVotingClientEncoding+updatePluginSettingsAction) ⇒ <code>DaoAction</code>
+        * [.addMembersAction(pluginAddress, members)](#AddresslistVotingClientEncoding+addMembersAction) ⇒ <code>DaoAction</code>
+        * [.removeMembersAction(pluginAddress, members)](#AddresslistVotingClientEncoding+removeMembersAction) ⇒ <code>DaoAction</code>
     * _static_
-        * [.getPluginInstallItem(params, network)](#AddresslistVotingClientEncoding.getPluginInstallItem) ⇒ <code>\*</code>
+        * [.getPluginInstallItem(params, network)](#AddresslistVotingClientEncoding.getPluginInstallItem) ⇒ <code>PluginInstallItem</code>
 
 <a name="AddresslistVotingClientEncoding+updatePluginSettingsAction"></a>
 
-### addresslistVotingClientEncoding.updatePluginSettingsAction(pluginAddress, params) ⇒ <code>\*</code>
+### addresslistVotingClientEncoding.updatePluginSettingsAction(pluginAddress, params) ⇒ <code>DaoAction</code>
 <p>Computes the parameters to be given when creating a proposal that updates the governance configuration</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientEncoding</code>](#AddresslistVotingClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction}</p>  
+**Returns**: <code>DaoAction</code>  
 
 | Param | Type |
 | --- | --- |
@@ -124,11 +124,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientEncoding+addMembersAction"></a>
 
-### addresslistVotingClientEncoding.addMembersAction(pluginAddress, members) ⇒ <code>\*</code>
+### addresslistVotingClientEncoding.addMembersAction(pluginAddress, members) ⇒ <code>DaoAction</code>
 <p>Computes the parameters to be given when creating a proposal that adds addresses to address list</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientEncoding</code>](#AddresslistVotingClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction}</p>  
+**Returns**: <code>DaoAction</code>  
 
 | Param | Type |
 | --- | --- |
@@ -137,11 +137,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientEncoding+removeMembersAction"></a>
 
-### addresslistVotingClientEncoding.removeMembersAction(pluginAddress, members) ⇒ <code>\*</code>
+### addresslistVotingClientEncoding.removeMembersAction(pluginAddress, members) ⇒ <code>DaoAction</code>
 <p>Computes the parameters to be given when creating a proposal that removes addresses from the address list</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientEncoding</code>](#AddresslistVotingClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction}</p>  
+**Returns**: <code>DaoAction</code>  
 
 | Param | Type |
 | --- | --- |
@@ -150,12 +150,12 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientEncoding.getPluginInstallItem"></a>
 
-### AddresslistVotingClientEncoding.getPluginInstallItem(params, network) ⇒ <code>\*</code>
+### AddresslistVotingClientEncoding.getPluginInstallItem(params, network) ⇒ <code>PluginInstallItem</code>
 <p>Computes the parameters to be given when creating the DAO,
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>AddresslistVotingClientEncoding</code>](#AddresslistVotingClientEncoding)  
-**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
+**Returns**: <code>PluginInstallItem</code>  
 
 | Param | Type |
 | --- | --- |
@@ -170,18 +170,18 @@ so that the plugin is configured</p>
 **Kind**: global class  
 
 * [AddresslistVotingClientEstimation](#AddresslistVotingClientEstimation)
-    * [.createProposal(params)](#AddresslistVotingClientEstimation+createProposal) ⇒ <code>\*</code>
-    * [.voteProposal(params)](#AddresslistVotingClientEstimation+voteProposal) ⇒ <code>\*</code>
-    * [.executeProposal(proposalId)](#AddresslistVotingClientEstimation+executeProposal) ⇒ <code>\*</code>
-    * [.prepareUpdate(params)](#AddresslistVotingClientEstimation+prepareUpdate) ⇒ <code>\*</code>
+    * [.createProposal(params)](#AddresslistVotingClientEstimation+createProposal) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
+    * [.voteProposal(params)](#AddresslistVotingClientEstimation+voteProposal) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
+    * [.executeProposal(proposalId)](#AddresslistVotingClientEstimation+executeProposal) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
+    * [.prepareUpdate(params)](#AddresslistVotingClientEstimation+prepareUpdate) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 
 <a name="AddresslistVotingClientEstimation+createProposal"></a>
 
-### addresslistVotingClientEstimation.createProposal(params) ⇒ <code>\*</code>
+### addresslistVotingClientEstimation.createProposal(params) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of creating a proposal on the plugin</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientEstimation</code>](#AddresslistVotingClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -189,11 +189,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientEstimation+voteProposal"></a>
 
-### addresslistVotingClientEstimation.voteProposal(params) ⇒ <code>\*</code>
+### addresslistVotingClientEstimation.voteProposal(params) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of casting a vote on a proposal</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientEstimation</code>](#AddresslistVotingClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -201,11 +201,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientEstimation+executeProposal"></a>
 
-### addresslistVotingClientEstimation.executeProposal(proposalId) ⇒ <code>\*</code>
+### addresslistVotingClientEstimation.executeProposal(proposalId) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of executing an AddressList proposal</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientEstimation</code>](#AddresslistVotingClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -213,11 +213,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientEstimation+prepareUpdate"></a>
 
-### addresslistVotingClientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+### addresslistVotingClientEstimation.prepareUpdate(params) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of preparing an update</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientEstimation</code>](#AddresslistVotingClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -231,25 +231,25 @@ so that the plugin is configured</p>
 **Kind**: global class  
 
 * [AddresslistVotingClientMethods](#AddresslistVotingClientMethods)
-    * [.createProposal(params)](#AddresslistVotingClientMethods+createProposal) ⇒ <code>\*</code>
-    * [.voteProposal(params)](#AddresslistVotingClientMethods+voteProposal) ⇒ <code>\*</code>
-    * [.executeProposal(proposalId)](#AddresslistVotingClientMethods+executeProposal) ⇒ <code>\*</code>
-    * [.prepareUpdate(params)](#AddresslistVotingClientMethods+prepareUpdate) ⇒ <code>\*</code>
-    * [.canVote(params)](#AddresslistVotingClientMethods+canVote) ⇒ <code>\*</code>
-    * [.canExecute(proposalId)](#AddresslistVotingClientMethods+canExecute) ⇒ <code>\*</code>
-    * [.getMembers({)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>\*</code>
-    * [.getProposal(proposalId)](#AddresslistVotingClientMethods+getProposal) ⇒ <code>\*</code>
-    * [.getProposals({)](#AddresslistVotingClientMethods+getProposals) ⇒ <code>\*</code>
-    * [.getVotingSettings(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getVotingSettings) ⇒ <code>\*</code>
+    * [.createProposal(params)](#AddresslistVotingClientMethods+createProposal) ⇒ <code>AsyncGenerator.&lt;ProposalCreationStepValue&gt;</code>
+    * [.voteProposal(params)](#AddresslistVotingClientMethods+voteProposal) ⇒ <code>AsyncGenerator.&lt;VoteProposalStepValue&gt;</code>
+    * [.executeProposal(proposalId)](#AddresslistVotingClientMethods+executeProposal) ⇒ <code>AsyncGenerator.&lt;ExecuteProposalStepValue&gt;</code>
+    * [.prepareUpdate(params)](#AddresslistVotingClientMethods+prepareUpdate) ⇒ <code>AsyncGenerator.&lt;PrepareUpdateStepValue&gt;</code>
+    * [.canVote(params)](#AddresslistVotingClientMethods+canVote) ⇒ <code>Promise.&lt;boolean&gt;</code>
+    * [.canExecute(proposalId)](#AddresslistVotingClientMethods+canExecute) ⇒ <code>Promise.&lt;boolean&gt;</code>
+    * [.getMembers(params)](#AddresslistVotingClientMethods+getMembers) ⇒ <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>
+    * [.getProposal(proposalId)](#AddresslistVotingClientMethods+getProposal) ⇒ <code>Promise.&lt;(AddresslistVotingProposal\|null)&gt;</code>
+    * [.getProposals(params)](#AddresslistVotingClientMethods+getProposals) ⇒ <code>Promise.&lt;Array.&lt;AddresslistVotingProposalListItem&gt;&gt;</code>
+    * [.getVotingSettings(pluginAddress, blockNumber)](#AddresslistVotingClientMethods+getVotingSettings) ⇒ <code>Promise.&lt;(VotingSettings\|null)&gt;</code>
     * [.isMember(params)](#AddresslistVotingClientMethods+isMember) ⇒
 
 <a name="AddresslistVotingClientMethods+createProposal"></a>
 
-### addresslistVotingClientMethods.createProposal(params) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.createProposal(params) ⇒ <code>AsyncGenerator.&lt;ProposalCreationStepValue&gt;</code>
 <p>Creates a new proposal on the given AddressList plugin contract</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<ProposalCreationStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;ProposalCreationStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -257,11 +257,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+voteProposal"></a>
 
-### addresslistVotingClientMethods.voteProposal(params) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.voteProposal(params) ⇒ <code>AsyncGenerator.&lt;VoteProposalStepValue&gt;</code>
 <p>Cast a vote on the given proposal using the client's wallet. Depending on the proposal settings, an affirmative vote may execute the proposal's actions on the DAO.</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<VoteProposalStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;VoteProposalStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -269,11 +269,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+executeProposal"></a>
 
-### addresslistVotingClientMethods.executeProposal(proposalId) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.executeProposal(proposalId) ⇒ <code>AsyncGenerator.&lt;ExecuteProposalStepValue&gt;</code>
 <p>Executes the given proposal, provided that it has already passed</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<ExecuteProposalStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;ExecuteProposalStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -281,11 +281,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+prepareUpdate"></a>
 
-### addresslistVotingClientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.prepareUpdate(params) ⇒ <code>AsyncGenerator.&lt;PrepareUpdateStepValue&gt;</code>
 <p>Prepares the update of a token voting plugin in a given dao</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;PrepareUpdateStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -293,11 +293,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+canVote"></a>
 
-### addresslistVotingClientMethods.canVote(params) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.canVote(params) ⇒ <code>Promise.&lt;boolean&gt;</code>
 <p>Checks if an user can vote in a proposal</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>`{Promise<boolean>}`</p>  
+**Returns**: <code>Promise.&lt;boolean&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -305,11 +305,11 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+canExecute"></a>
 
-### addresslistVotingClientMethods.canExecute(proposalId) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.canExecute(proposalId) ⇒ <code>Promise.&lt;boolean&gt;</code>
 <p>Checks whether the current proposal can be executed</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>`{Promise<boolean>}`</p>  
+**Returns**: <code>Promise.&lt;boolean&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -317,23 +317,23 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+getMembers"></a>
 
-### addresslistVotingClientMethods.getMembers({) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.getMembers(params) ⇒ <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>
 <p>Returns the list of wallet addresses with signing capabilities on the plugin</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>{Promise&lt;string[]&gt;}</p>  
+**Returns**: <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>MembersQueryParams</code> | <p>pluginAddress, blockNumber, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = MembersSortBy.ADDRESS, }</p> |
+| params | <code>MembersQueryParams</code> | <ul> <li>pluginAddress <ul> <li>blockNumber</li> <li>limit = 10</li> <li>skip = 0</li> <li>direction = SortDirection.ASC</li> <li>sortBy = MembersSortBy.ADDRESS</li> </ul> </li> </ul> |
 
 <a name="AddresslistVotingClientMethods+getProposal"></a>
 
-### addresslistVotingClientMethods.getProposal(proposalId) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.getProposal(proposalId) ⇒ <code>Promise.&lt;(AddresslistVotingProposal\|null)&gt;</code>
 <p>Returns the details of the given proposal</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>{(Promise&lt;AddresslistVotingProposal | null&gt;)}</p>  
+**Returns**: <code>Promise.&lt;(AddresslistVotingProposal\|null)&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -341,23 +341,23 @@ so that the plugin is configured</p>
 
 <a name="AddresslistVotingClientMethods+getProposals"></a>
 
-### addresslistVotingClientMethods.getProposals({) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.getProposals(params) ⇒ <code>Promise.&lt;Array.&lt;AddresslistVotingProposalListItem&gt;&gt;</code>
 <p>Returns a list of proposals on the Plugin, filtered by the given criteria</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>{Promise&lt;AddresslistVotingProposalListItem[]&gt;}</p>  
+**Returns**: <code>Promise.&lt;Array.&lt;AddresslistVotingProposalListItem&gt;&gt;</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>ProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
+| params | <code>ProposalQueryParams</code> | <ul> <li>daoAddressOrEns - limit = 10 - status - skip = 0 - direction = SortDirection.ASC - sortBy = ProposalSortBy.CREATED_AT</li> </ul> |
 
 <a name="AddresslistVotingClientMethods+getVotingSettings"></a>
 
-### addresslistVotingClientMethods.getVotingSettings(pluginAddress, blockNumber) ⇒ <code>\*</code>
+### addresslistVotingClientMethods.getVotingSettings(pluginAddress, blockNumber) ⇒ <code>Promise.&lt;(VotingSettings\|null)&gt;</code>
 <p>Returns the settings of a plugin given the address of the plugin instance</p>
 
 **Kind**: instance method of [<code>AddresslistVotingClientMethods</code>](#AddresslistVotingClientMethods)  
-**Returns**: <code>\*</code> - <p>{(Promise&lt;VotingSettings | null&gt;)}</p>  
+**Returns**: <code>Promise.&lt;(VotingSettings\|null)&gt;</code>  
 
 | Param | Type |
 | --- | --- |
