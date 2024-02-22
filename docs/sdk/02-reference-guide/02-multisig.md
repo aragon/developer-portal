@@ -21,12 +21,12 @@
 **Kind**: global class  
 <a name="MultisigClient.getPluginInstallItem"></a>
 
-### MultisigClient.getPluginInstallItem(params, [network]) ⇒ <code>\*</code>
+### MultisigClient.getPluginInstallItem(params, [network]) ⇒ <code>PluginInstallItem</code>
 <p>Computes the parameters to be given when creating the DAO,
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>MultisigClient</code>](#MultisigClient)  
-**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
+**Returns**: <code>PluginInstallItem</code>  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -41,18 +41,18 @@ so that the plugin is configured</p>
 **Kind**: global class  
 
 * [MultisigClientDecoding](#MultisigClientDecoding)
-    * [.addAddressesAction(data)](#MultisigClientDecoding+addAddressesAction) ⇒ <code>\*</code>
-    * [.removeAddressesAction(data)](#MultisigClientDecoding+removeAddressesAction) ⇒ <code>\*</code>
-    * [.updateMultisigVotingSettings(data)](#MultisigClientDecoding+updateMultisigVotingSettings) ⇒ <code>\*</code>
-    * [.findInterface(data)](#MultisigClientDecoding+findInterface) ⇒ <code>\*</code>
+    * [.addAddressesAction(data)](#MultisigClientDecoding+addAddressesAction) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.removeAddressesAction(data)](#MultisigClientDecoding+removeAddressesAction) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.updateMultisigVotingSettings(data)](#MultisigClientDecoding+updateMultisigVotingSettings) ⇒ <code>MultisigVotingSettings</code>
+    * [.findInterface(data)](#MultisigClientDecoding+findInterface) ⇒ <code>InterfaceParams</code> \| <code>null</code>
 
 <a name="MultisigClientDecoding+addAddressesAction"></a>
 
-### multisigClientDecoding.addAddressesAction(data) ⇒ <code>\*</code>
+### multisigClientDecoding.addAddressesAction(data) ⇒ <code>Array.&lt;string&gt;</code>
 <p>Decodes a list of addresses from an encoded add members action</p>
 
 **Kind**: instance method of [<code>MultisigClientDecoding</code>](#MultisigClientDecoding)  
-**Returns**: <code>\*</code> - <p>{string[]}</p>  
+**Returns**: <code>Array.&lt;string&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -60,11 +60,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientDecoding+removeAddressesAction"></a>
 
-### multisigClientDecoding.removeAddressesAction(data) ⇒ <code>\*</code>
+### multisigClientDecoding.removeAddressesAction(data) ⇒ <code>Array.&lt;string&gt;</code>
 <p>Decodes a list of addresses from an encoded remove members action</p>
 
 **Kind**: instance method of [<code>MultisigClientDecoding</code>](#MultisigClientDecoding)  
-**Returns**: <code>\*</code> - <p>{string[]}</p>  
+**Returns**: <code>Array.&lt;string&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -72,11 +72,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientDecoding+updateMultisigVotingSettings"></a>
 
-### multisigClientDecoding.updateMultisigVotingSettings(data) ⇒ <code>\*</code>
+### multisigClientDecoding.updateMultisigVotingSettings(data) ⇒ <code>MultisigVotingSettings</code>
 <p>Decodes a list of min approvals from an encoded update min approval action</p>
 
 **Kind**: instance method of [<code>MultisigClientDecoding</code>](#MultisigClientDecoding)  
-**Returns**: <code>\*</code> - <p>{MultisigVotingSettings}</p>  
+**Returns**: <code>MultisigVotingSettings</code>  
 
 | Param | Type |
 | --- | --- |
@@ -84,11 +84,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientDecoding+findInterface"></a>
 
-### multisigClientDecoding.findInterface(data) ⇒ <code>\*</code>
+### multisigClientDecoding.findInterface(data) ⇒ <code>InterfaceParams</code> \| <code>null</code>
 <p>Returns the decoded function info given the encoded data of an action</p>
 
 **Kind**: instance method of [<code>MultisigClientDecoding</code>](#MultisigClientDecoding)  
-**Returns**: <code>\*</code> - <p>{(InterfaceParams | null)}</p>  
+**Returns**: <code>InterfaceParams</code> \| <code>null</code>  
 
 | Param | Type |
 | --- | --- |
@@ -103,19 +103,19 @@ so that the plugin is configured</p>
 
 * [MultisigClientEncoding](#MultisigClientEncoding)
     * _instance_
-        * [.addAddressesAction(params)](#MultisigClientEncoding+addAddressesAction) ⇒ <code>\*</code>
-        * [.removeAddressesAction(params)](#MultisigClientEncoding+removeAddressesAction) ⇒ <code>\*</code>
-        * [.updateMultisigVotingSettings(params)](#MultisigClientEncoding+updateMultisigVotingSettings) ⇒ <code>\*</code>
+        * [.addAddressesAction(params)](#MultisigClientEncoding+addAddressesAction) ⇒ <code>Array.&lt;DaoAction&gt;</code>
+        * [.removeAddressesAction(params)](#MultisigClientEncoding+removeAddressesAction) ⇒ <code>Array.&lt;DaoAction&gt;</code>
+        * [.updateMultisigVotingSettings(params)](#MultisigClientEncoding+updateMultisigVotingSettings) ⇒ <code>DaoAction</code>
     * _static_
-        * [.getPluginInstallItem(params, network)](#MultisigClientEncoding.getPluginInstallItem) ⇒ <code>\*</code>
+        * [.getPluginInstallItem(params, network)](#MultisigClientEncoding.getPluginInstallItem) ⇒ <code>PluginInstallItem</code>
 
 <a name="MultisigClientEncoding+addAddressesAction"></a>
 
-### multisigClientEncoding.addAddressesAction(params) ⇒ <code>\*</code>
+### multisigClientEncoding.addAddressesAction(params) ⇒ <code>Array.&lt;DaoAction&gt;</code>
 <p>Computes the parameters to be given when creating a proposal that updates the governance configuration</p>
 
 **Kind**: instance method of [<code>MultisigClientEncoding</code>](#MultisigClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction[]}</p>  
+**Returns**: <code>Array.&lt;DaoAction&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -123,11 +123,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientEncoding+removeAddressesAction"></a>
 
-### multisigClientEncoding.removeAddressesAction(params) ⇒ <code>\*</code>
+### multisigClientEncoding.removeAddressesAction(params) ⇒ <code>Array.&lt;DaoAction&gt;</code>
 <p>Computes the parameters to be given when creating a proposal that adds addresses to address list</p>
 
 **Kind**: instance method of [<code>MultisigClientEncoding</code>](#MultisigClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction[]}</p>  
+**Returns**: <code>Array.&lt;DaoAction&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -135,11 +135,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientEncoding+updateMultisigVotingSettings"></a>
 
-### multisigClientEncoding.updateMultisigVotingSettings(params) ⇒ <code>\*</code>
+### multisigClientEncoding.updateMultisigVotingSettings(params) ⇒ <code>DaoAction</code>
 <p>Computes the parameters to be given when creating a proposal updates multisig settings</p>
 
 **Kind**: instance method of [<code>MultisigClientEncoding</code>](#MultisigClientEncoding)  
-**Returns**: <code>\*</code> - <p>{DaoAction}</p>  
+**Returns**: <code>DaoAction</code>  
 
 | Param | Type |
 | --- | --- |
@@ -147,12 +147,12 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientEncoding.getPluginInstallItem"></a>
 
-### MultisigClientEncoding.getPluginInstallItem(params, network) ⇒ <code>\*</code>
+### MultisigClientEncoding.getPluginInstallItem(params, network) ⇒ <code>PluginInstallItem</code>
 <p>Computes the parameters to be given when creating the DAO,
 so that the plugin is configured</p>
 
 **Kind**: static method of [<code>MultisigClientEncoding</code>](#MultisigClientEncoding)  
-**Returns**: <code>\*</code> - <p>{PluginInstallItem}</p>  
+**Returns**: <code>PluginInstallItem</code>  
 
 | Param | Type |
 | --- | --- |
@@ -167,18 +167,18 @@ so that the plugin is configured</p>
 **Kind**: global class  
 
 * [MultisigClientEstimation](#MultisigClientEstimation)
-    * [.createProposal(params)](#MultisigClientEstimation+createProposal) ⇒ <code>\*</code>
-    * [.approveProposal(params)](#MultisigClientEstimation+approveProposal) ⇒ <code>\*</code>
-    * [.executeProposal(proposalId)](#MultisigClientEstimation+executeProposal) ⇒ <code>\*</code>
-    * [.prepareUpdate(params)](#MultisigClientEstimation+prepareUpdate) ⇒ <code>\*</code>
+    * [.createProposal(params)](#MultisigClientEstimation+createProposal) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
+    * [.approveProposal(params)](#MultisigClientEstimation+approveProposal) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
+    * [.executeProposal(proposalId)](#MultisigClientEstimation+executeProposal) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
+    * [.prepareUpdate(params)](#MultisigClientEstimation+prepareUpdate) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 
 <a name="MultisigClientEstimation+createProposal"></a>
 
-### multisigClientEstimation.createProposal(params) ⇒ <code>\*</code>
+### multisigClientEstimation.createProposal(params) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of creating a proposal on the plugin</p>
 
 **Kind**: instance method of [<code>MultisigClientEstimation</code>](#MultisigClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -186,11 +186,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientEstimation+approveProposal"></a>
 
-### multisigClientEstimation.approveProposal(params) ⇒ <code>\*</code>
+### multisigClientEstimation.approveProposal(params) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of approving a proposal</p>
 
 **Kind**: instance method of [<code>MultisigClientEstimation</code>](#MultisigClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -198,11 +198,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientEstimation+executeProposal"></a>
 
-### multisigClientEstimation.executeProposal(proposalId) ⇒ <code>\*</code>
+### multisigClientEstimation.executeProposal(proposalId) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of executing a proposal</p>
 
 **Kind**: instance method of [<code>MultisigClientEstimation</code>](#MultisigClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -210,11 +210,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientEstimation+prepareUpdate"></a>
 
-### multisigClientEstimation.prepareUpdate(params) ⇒ <code>\*</code>
+### multisigClientEstimation.prepareUpdate(params) ⇒ <code>Promise.&lt;GasFeeEstimation&gt;</code>
 <p>Estimates the gas fee of preparing an update</p>
 
 **Kind**: instance method of [<code>MultisigClientEstimation</code>](#MultisigClientEstimation)  
-**Returns**: <code>\*</code> - <p>`{Promise<GasFeeEstimation>}`</p>  
+**Returns**: <code>Promise.&lt;GasFeeEstimation&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -228,27 +228,27 @@ so that the plugin is configured</p>
 **Kind**: global class  
 
 * [MultisigClientMethods](#MultisigClientMethods)
-    * [.createProposal(params)](#MultisigClientMethods+createProposal) ⇒ <code>\*</code>
-    * [.pinMetadata(params)](#MultisigClientMethods+pinMetadata) ⇒ <code>\*</code>
-    * [.approveProposal(params)](#MultisigClientMethods+approveProposal) ⇒ <code>\*</code>
-    * [.executeProposal(proposalId)](#MultisigClientMethods+executeProposal) ⇒ <code>\*</code>
-    * [.prepareInstallation(params)](#MultisigClientMethods+prepareInstallation) ⇒ <code>\*</code>
-    * [.prepareUpdate(params)](#MultisigClientMethods+prepareUpdate) ⇒ <code>\*</code>
-    * [.canApprove(addressOrEns)](#MultisigClientMethods+canApprove) ⇒ <code>\*</code>
-    * [.canExecute(proposalId)](#MultisigClientMethods+canExecute) ⇒ <code>\*</code>
-    * [.getVotingSettings(addressOrEns, blockNumber)](#MultisigClientMethods+getVotingSettings) ⇒ <code>\*</code>
-    * [.getMembers({)](#MultisigClientMethods+getMembers) ⇒ <code>\*</code>
-    * [.getProposal(proposalId)](#MultisigClientMethods+getProposal) ⇒ <code>\*</code>
-    * [.getProposals({)](#MultisigClientMethods+getProposals) ⇒ <code>\*</code>
+    * [.createProposal(params)](#MultisigClientMethods+createProposal) ⇒ <code>AsyncGenerator.&lt;ProposalCreationStepValue&gt;</code>
+    * [.pinMetadata(params)](#MultisigClientMethods+pinMetadata) ⇒ <code>Promise.&lt;string&gt;</code>
+    * [.approveProposal(params)](#MultisigClientMethods+approveProposal) ⇒ <code>AsyncGenerator.&lt;ApproveProposalStepValue&gt;</code>
+    * [.executeProposal(proposalId)](#MultisigClientMethods+executeProposal) ⇒ <code>AsyncGenerator.&lt;ExecuteMultisigProposalStepValue&gt;</code>
+    * [.prepareInstallation(params)](#MultisigClientMethods+prepareInstallation) ⇒ <code>AsyncGenerator.&lt;PrepareInstallationStepValue&gt;</code>
+    * [.prepareUpdate(params)](#MultisigClientMethods+prepareUpdate) ⇒ <code>AsyncGenerator.&lt;PrepareUpdateStepValue&gt;</code>
+    * [.canApprove(addressOrEns)](#MultisigClientMethods+canApprove) ⇒ <code>Promise.&lt;boolean&gt;</code>
+    * [.canExecute(proposalId)](#MultisigClientMethods+canExecute) ⇒ <code>Promise.&lt;boolean&gt;</code>
+    * [.getVotingSettings(addressOrEns, blockNumber)](#MultisigClientMethods+getVotingSettings) ⇒ <code>Promise.&lt;MultisigVotingSettings&gt;</code>
+    * [.getMembers(params)](#MultisigClientMethods+getMembers) ⇒ <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>
+    * [.getProposal(proposalId)](#MultisigClientMethods+getProposal) ⇒ <code>Promise.&lt;(MultisigProposal\|null)&gt;</code>
+    * [.getProposals(params)](#MultisigClientMethods+getProposals) ⇒ <code>Promise.&lt;Array.&lt;MultisigProposalListItem&gt;&gt;</code>
     * [.isMember(params)](#MultisigClientMethods+isMember) ⇒
 
 <a name="MultisigClientMethods+createProposal"></a>
 
-### multisigClientMethods.createProposal(params) ⇒ <code>\*</code>
+### multisigClientMethods.createProposal(params) ⇒ <code>AsyncGenerator.&lt;ProposalCreationStepValue&gt;</code>
 <p>Creates a new proposal on the given multisig plugin contract</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<ProposalCreationStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;ProposalCreationStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -256,11 +256,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+pinMetadata"></a>
 
-### multisigClientMethods.pinMetadata(params) ⇒ <code>\*</code>
+### multisigClientMethods.pinMetadata(params) ⇒ <code>Promise.&lt;string&gt;</code>
 <p>Pins a metadata object into IPFS and retruns the generated hash</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{Promise<string>}`</p>  
+**Returns**: <code>Promise.&lt;string&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -268,11 +268,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+approveProposal"></a>
 
-### multisigClientMethods.approveProposal(params) ⇒ <code>\*</code>
+### multisigClientMethods.approveProposal(params) ⇒ <code>AsyncGenerator.&lt;ApproveProposalStepValue&gt;</code>
 <p>Allow a wallet in the multisig give approval to a proposal</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<ApproveProposalStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;ApproveProposalStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -280,11 +280,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+executeProposal"></a>
 
-### multisigClientMethods.executeProposal(proposalId) ⇒ <code>\*</code>
+### multisigClientMethods.executeProposal(proposalId) ⇒ <code>AsyncGenerator.&lt;ExecuteMultisigProposalStepValue&gt;</code>
 <p>Allow a wallet in the multisig give approval to a proposal</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<ExecuteMultisigProposalStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;ExecuteMultisigProposalStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -292,11 +292,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+prepareInstallation"></a>
 
-### multisigClientMethods.prepareInstallation(params) ⇒ <code>\*</code>
+### multisigClientMethods.prepareInstallation(params) ⇒ <code>AsyncGenerator.&lt;PrepareInstallationStepValue&gt;</code>
 <p>Prepares the installation of a multisig plugin in a given dao</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareInstallationStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;PrepareInstallationStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -304,11 +304,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+prepareUpdate"></a>
 
-### multisigClientMethods.prepareUpdate(params) ⇒ <code>\*</code>
+### multisigClientMethods.prepareUpdate(params) ⇒ <code>AsyncGenerator.&lt;PrepareUpdateStepValue&gt;</code>
 <p>Prepares the update of a multisig plugin in a given dao</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{AsyncGenerator<PrepareUpdateStepValue>}`</p>  
+**Returns**: <code>AsyncGenerator.&lt;PrepareUpdateStepValue&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -316,11 +316,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+canApprove"></a>
 
-### multisigClientMethods.canApprove(addressOrEns) ⇒ <code>\*</code>
+### multisigClientMethods.canApprove(addressOrEns) ⇒ <code>Promise.&lt;boolean&gt;</code>
 <p>Checks whether the current proposal can be approved by the given address</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{Promise<boolean>}`</p>  
+**Returns**: <code>Promise.&lt;boolean&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -328,11 +328,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+canExecute"></a>
 
-### multisigClientMethods.canExecute(proposalId) ⇒ <code>\*</code>
+### multisigClientMethods.canExecute(proposalId) ⇒ <code>Promise.&lt;boolean&gt;</code>
 <p>Checks whether the current proposal can be executed</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{Promise<boolean>}`</p>  
+**Returns**: <code>Promise.&lt;boolean&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -340,11 +340,11 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+getVotingSettings"></a>
 
-### multisigClientMethods.getVotingSettings(addressOrEns, blockNumber) ⇒ <code>\*</code>
+### multisigClientMethods.getVotingSettings(addressOrEns, blockNumber) ⇒ <code>Promise.&lt;MultisigVotingSettings&gt;</code>
 <p>Returns the voting settings</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>`{Promise<MultisigVotingSettings>}`</p>  
+**Returns**: <code>Promise.&lt;MultisigVotingSettings&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -353,23 +353,23 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+getMembers"></a>
 
-### multisigClientMethods.getMembers({) ⇒ <code>\*</code>
+### multisigClientMethods.getMembers(params) ⇒ <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>
 <p>returns the members of the multisig</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>{Promise&lt;string[]&gt;}</p>  
+**Returns**: <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>MembersQueryParams</code> | <p>pluginAddress, blockNumber, limit = 10, skip = 0, direction = SortDirection.ASC, sortBy = MembersSortBy.ADDRESS, }</p> |
+| params | <code>MembersQueryParams</code> | <ul> <li>pluginAddress <ul> <li>blockNumber</li> <li>limit = 10</li> <li>skip = 0</li> <li>direction = SortDirection.ASC</li> <li>sortBy = MembersSortBy.ADDRESS</li> </ul> </li> </ul> |
 
 <a name="MultisigClientMethods+getProposal"></a>
 
-### multisigClientMethods.getProposal(proposalId) ⇒ <code>\*</code>
+### multisigClientMethods.getProposal(proposalId) ⇒ <code>Promise.&lt;(MultisigProposal\|null)&gt;</code>
 <p>Returns the details of the given proposal</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>{(Promise&lt;MultisigProposal | null&gt;)}</p>  
+**Returns**: <code>Promise.&lt;(MultisigProposal\|null)&gt;</code>  
 
 | Param | Type |
 | --- | --- |
@@ -377,15 +377,15 @@ so that the plugin is configured</p>
 
 <a name="MultisigClientMethods+getProposals"></a>
 
-### multisigClientMethods.getProposals({) ⇒ <code>\*</code>
+### multisigClientMethods.getProposals(params) ⇒ <code>Promise.&lt;Array.&lt;MultisigProposalListItem&gt;&gt;</code>
 <p>Returns a list of proposals on the Plugin, filtered by the given criteria</p>
 
 **Kind**: instance method of [<code>MultisigClientMethods</code>](#MultisigClientMethods)  
-**Returns**: <code>\*</code> - <p>{Promise&lt;MultisigProposalListItem[]&gt;}</p>  
+**Returns**: <code>Promise.&lt;Array.&lt;MultisigProposalListItem&gt;&gt;</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| { | <code>ProposalQueryParams</code> | <p>daoAddressOrEns, limit = 10, status, skip = 0, direction = SortDirection.ASC, sortBy = ProposalSortBy.CREATED_AT, }</p> |
+| params | <code>ProposalQueryParams</code> | <ul> <li>daoAddressOrEns - limit = 10 - status - skip = 0 - direction = SortDirection.ASC - sortBy = ProposalSortBy.CREATED_AT</li> </ul> |
 
 <a name="MultisigClientMethods+isMember"></a>
 
