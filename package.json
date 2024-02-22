@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "optimize": "svgo -rf .",
+    "svg-images": "svgo -rf .",
     "typecheck": "tsc",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
