@@ -18,7 +18,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install deps
         run: yarn
-      - name: Render svg images
-        run: yarn svg-images
+      - name: Optimize SVG images
+        run: yarn optimize-svg
       - name: Build
         run: yarn build
