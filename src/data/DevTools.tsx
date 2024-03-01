@@ -1,6 +1,6 @@
 import React from 'react';
 import {IWelcomeCardProps} from '../components/WelcomeCard';
-import {RocketIcon, PageIcon, InfoIcon} from '../components';
+import {PageIcon, InfoIcon} from '../components';
 
 const devTools: IWelcomeCardProps[] = [
   {
@@ -9,13 +9,6 @@ const devTools: IWelcomeCardProps[] = [
     icon: <InfoIcon />,
     linkLabel: 'Get Started Tutorial',
     href: 'https://github.com/aragon/greeter-plugin-tutorial',
-  },
-  {
-    title: 'CLI',
-    description: 'A CLI to speed up your plugin development lifecycle.',
-    icon: <RocketIcon />,
-    linkLabel: 'Dev Tool',
-    href: 'https://github.com/aragon/cli',
   },
   {
     title: 'Upgradeable Plugin 101',
