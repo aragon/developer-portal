@@ -15,14 +15,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  // The 'onBrokenAnchors' setting is set to ignore due to numerous warnings.
-  // Fixing requires updates to both SDK and OSX documentation.
-  // SDK updates involve overriding default partials and helpers. https://github.com/jsdoc2md/dmd
-  // Refer to the jsdoc2md command line to locate where partials and helpers are overridden.
-  // For OSX, manual fixes are necessary, which may conflict with onBrokenLinks.
-  // Ignoring because the affected anchors currently work as links and redirect properly.
-  // TODO: This will be addressed in a future iteration.
-  onBrokenAnchors: 'ignore',
+  onBrokenAnchors: 'throw',
   favicon: 'img/Aragon-logo-circle.png',
 
   // GitHub pages deployment config.
