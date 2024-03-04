@@ -123,6 +123,7 @@ console.log({ erc20DecodedParams });
 
 Returns:
 
+```
 { erc20DecodedParams:
   {
     type: "erc20",
@@ -131,6 +132,7 @@ Returns:
     tokenAddress: "0x1234567890123456789012345678901234567890",
   }
 }
+```
 
 ```ts
 
@@ -170,13 +172,15 @@ console.log({ erc721DecodedParams });
 
 
 Returns:
+```
 {
   type: TokenType.ERC721;
   tokenAddress: "0x1234567890123456789012345678901234567890";
   tokenId: 10n;
   daoAddressOrEns: "0x1234567890123456789012345678901234567890";
   recipientAddressOrEns: "0x1234567890123456789012345678901234567890";
-}### NFT (ERC-1155) Tokens
+}
+```### NFT (ERC-1155) Tokens
 
 #### Encoding
 
@@ -210,6 +214,7 @@ console.log({ erc1155WithdrawDecodedParams });
 
 
 Returns:
+```
 {
   type: TokenType.ERC1155,
   tokenAddress: "0x1234567890123456789012345678901234567890",
@@ -218,3 +223,4 @@ Returns:
   daoAddressOrEns: "0x1234567890123456789012345678901234567890",
   recipientAddressOrEns: "0x1234567890123456789012345678901234567890",
 }
+```

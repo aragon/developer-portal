@@ -10,12 +10,11 @@ The proposal will need an Action calling the `applyUninstallation` function.
 For more details see https://devs.aragon.org/docs/sdk/examples/encoders-decoders/apply-uninstallation#encoding
 
 ```ts
+import { Client, PrepareUninstallationSteps } from "@aragon/sdk-client";
 import {
-  Client,
   PrepareUninstallationParams,
-  PrepareUninstallationSteps,
-} from "@aragon/sdk-client";
-import { GasFeeEstimation } from "@aragon/sdk-client-common";
+  GasFeeEstimation,
+} from "@aragon/sdk-client-common";
 import { context } from "../index";
 
 // Instantiate the general purpose client from the Aragon OSx SDK context.
@@ -33,10 +32,8 @@ const prepareUninstallationParams: PrepareUninstallationParams = {
 };
 
 // Estimate how much gas the transaction will cost.
-const estimatedGas: GasFeeEstimation = await client.estimation
-  .prepareUninstallation(
-    prepareUninstallationParams,
-  );
+const estimatedGas: GasFeeEstimation =
+  await client.estimation.prepareUninstallation(prepareUninstallationParams);
 console.log({ avg: estimatedGas.average, max: estimatedGas.max });
 
 // Deposit the ERC20 tokens.
