@@ -55,3 +55,11 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+### How to Contribute
+We value your contributions and encourage you to help us improve the Aragon OSx Developer Portal. Whether you're fixing bugs, improving documentation, or suggesting new features, your input is welcome!
+
+For detailed instructions on how to contribute, please refer to our [Contributing Guide](./CONTRIBUTION_GUIDE.md).
+
+### Support
+If you need help or have any questions, please join our Developer Community on [discord](https://discord.gg/aragon-672466989217873929).
