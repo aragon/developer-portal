@@ -2,21 +2,23 @@ name: On Push
 on:
   push:
     branches-ignore:
-      - "staging"
-      - "master"
+      - 'staging'
+      - 'master'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          cache: "yarn"
-          node-version: 16
-          registry-url: "https://registry.npmjs.org"
+          cache: 'yarn'
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
       - name: Install deps
         run: yarn
+      - name: Optimize SVG images
+        run: yarn optimize-svg
       - name: Build
-        run: yarn run build
+        run: yarn build
