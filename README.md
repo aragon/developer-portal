@@ -16,7 +16,7 @@
 
 Aragon's Developer Portal holds all documentation developers need to kickstart their journey building with the Aragon OSx stack. You can find it in production [here](https://devs.aragon.org). 
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a static website generator for technical documentations.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a static website generator for technical documentations.
 
 ### Installation
 
