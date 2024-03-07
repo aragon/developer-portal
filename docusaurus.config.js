@@ -10,26 +10,15 @@ const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Aragon Developer Portal',
-  tagline: "Let's build cool sh*t together",
+  tagline: "Let's build amazing things together",
   url: 'https://devs.aragon.org',
   baseUrl: '/',
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
+  
   favicon: 'img/Aragon-logo-circle.png',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Aragon', // Usually your GitHub org/user name.
-  projectName: 'Aragon Developer Portal', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
 
   presets: [
     [
@@ -72,32 +61,6 @@ const config = {
           alt: 'Aragon',
           src: 'img/logo-light.png',
         },
-        items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'sdk/README',
-          //   position: 'left',
-          //   label: 'SDK',
-          // },
-          // {
-          //   type: 'doc',
-          //   docId: '/docs/osx',
-          //   position: 'left',
-          //   label: 'Core',
-          // }
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
-          //{to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
-        ],
       },
       metadata: [
         {name: 'og:title', content: 'Aragon Developer Portal'},
