@@ -1,0 +1,517 @@
+---
+id: multisig-plugin-filter
+title: MultisigPlugin_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input MultisigPlugin_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  dao: String
+  dao_not: String
+  dao_gt: String
+  dao_lt: String
+  dao_gte: String
+  dao_lte: String
+  dao_in: [String!]
+  dao_not_in: [String!]
+  dao_contains: String
+  dao_contains_nocase: String
+  dao_not_contains: String
+  dao_not_contains_nocase: String
+  dao_starts_with: String
+  dao_starts_with_nocase: String
+  dao_not_starts_with: String
+  dao_not_starts_with_nocase: String
+  dao_ends_with: String
+  dao_ends_with_nocase: String
+  dao_not_ends_with: String
+  dao_not_ends_with_nocase: String
+  dao_: Dao_filter
+  pluginAddress: Bytes
+  pluginAddress_not: Bytes
+  pluginAddress_gt: Bytes
+  pluginAddress_lt: Bytes
+  pluginAddress_gte: Bytes
+  pluginAddress_lte: Bytes
+  pluginAddress_in: [Bytes!]
+  pluginAddress_not_in: [Bytes!]
+  pluginAddress_contains: Bytes
+  pluginAddress_not_contains: Bytes
+  installations_: PluginInstallation_filter
+  proposalCount: BigInt
+  proposalCount_not: BigInt
+  proposalCount_gt: BigInt
+  proposalCount_lt: BigInt
+  proposalCount_gte: BigInt
+  proposalCount_lte: BigInt
+  proposalCount_in: [BigInt!]
+  proposalCount_not_in: [BigInt!]
+  proposals_: MultisigProposal_filter
+  members_: MultisigApprover_filter
+  minApprovals: Int
+  minApprovals_not: Int
+  minApprovals_gt: Int
+  minApprovals_lt: Int
+  minApprovals_gte: Int
+  minApprovals_lte: Int
+  minApprovals_in: [Int!]
+  minApprovals_not_in: [Int!]
+  onlyListed: Boolean
+  onlyListed_not: Boolean
+  onlyListed_in: [Boolean!]
+  onlyListed_not_in: [Boolean!]
+  _change_block: BlockChangedFilter
+  and: [MultisigPlugin_filter]
+  or: [MultisigPlugin_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>dao_</b></code>](#)<Bullet />[`Dao_filter`](/docs/subgraph/reference-guide/inputs/dao-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>pluginAddress_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>installations_</b></code>](#)<Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposalCount_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>proposals_</b></code>](#)<Bullet />[`MultisigProposal_filter`](/docs/subgraph/reference-guide/inputs/multisig-proposal-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>members_</b></code>](#)<Bullet />[`MultisigApprover_filter`](/docs/subgraph/reference-guide/inputs/multisig-approver-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals_not</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals_gt</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals_lt</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals_gte</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals_lte</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>minApprovals_not_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>onlyListed</b></code>](#)<Bullet />[`Boolean`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>onlyListed_not</b></code>](#)<Bullet />[`Boolean`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>onlyListed_in</b></code>](#)<Bullet />[`[Boolean!]`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>onlyListed_not_in</b></code>](#)<Bullet />[`[Boolean!]`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph/reference-guide/inputs/block-changed-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>and</b></code>](#)<Bullet />[`[MultisigPlugin_filter]`](/docs/subgraph/reference-guide/inputs/multisig-plugin-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin_filter.<b>or</b></code>](#)<Bullet />[`[MultisigPlugin_filter]`](/docs/subgraph/reference-guide/inputs/multisig-plugin-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`MultisigApprover_filter`](/docs/subgraph/reference-guide/inputs/multisig-approver-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`MultisigPlugin_filter`](/docs/subgraph/reference-guide/inputs/multisig-plugin-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`MultisigProposal_filter`](/docs/subgraph/reference-guide/inputs/multisig-proposal-filter)  <Badge class="badge badge--secondary" text="input"/>
+

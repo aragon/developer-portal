@@ -2,10 +2,9 @@
 title: Aragon Subgraph
 sidebar_label: Introduction
 sidebar_position: 0
-slug: /subgraph
 ---
 
-## The Graph
+## The Graph [WIP]
 
 [The Graph](https://thegraph.com/docs/en/about/) is a decentralized protocol for indexing and querying blockchain data. The Graph makes it possible to query data that is difficult to query directly.
 

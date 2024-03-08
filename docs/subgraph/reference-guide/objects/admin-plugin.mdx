@@ -1,0 +1,214 @@
+---
+id: admin-plugin
+title: AdminPlugin
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+type AdminPlugin implements IPlugin {
+  id: ID!
+  dao: Dao!
+  pluginAddress: Bytes!
+  installations(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PluginInstallation_orderBy
+    orderDirection: OrderDirection
+    where: PluginInstallation_filter
+  ): [PluginInstallation!]!
+  proposals(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: AdminProposal_orderBy
+    orderDirection: OrderDirection
+    where: AdminProposal_filter
+  ): [AdminProposal!]!
+  administrators(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: AdministratorAdminPlugin_orderBy
+    orderDirection: OrderDirection
+    where: AdministratorAdminPlugin_filter
+  ): [AdministratorAdminPlugin!]!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> TODO: attributes should be appended to Plugin once plugin is separated from Aragon OSx
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.<b>pluginAddress</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.<b>installations</b></code>](#)<Bullet />[`[PluginInstallation!]!`](/docs/subgraph/reference-guide/objects/plugin-installation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.installations.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.installations.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.installations.<b>orderBy</b></code>](#)<Bullet />[`PluginInstallation_orderBy`](/docs/subgraph/reference-guide/enums/plugin-installation-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.installations.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.installations.<b>where</b></code>](#)<Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.<b>proposals</b></code>](#)<Bullet />[`[AdminProposal!]!`](/docs/subgraph/reference-guide/objects/admin-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.proposals.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.proposals.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.proposals.<b>orderBy</b></code>](#)<Bullet />[`AdminProposal_orderBy`](/docs/subgraph/reference-guide/enums/admin-proposal-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.proposals.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.proposals.<b>where</b></code>](#)<Bullet />[`AdminProposal_filter`](/docs/subgraph/reference-guide/inputs/admin-proposal-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.<b>administrators</b></code>](#)<Bullet />[`[AdministratorAdminPlugin!]!`](/docs/subgraph/reference-guide/objects/administrator-admin-plugin) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.administrators.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.administrators.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.administrators.<b>orderBy</b></code>](#)<Bullet />[`AdministratorAdminPlugin_orderBy`](/docs/subgraph/reference-guide/enums/administrator-admin-plugin-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.administrators.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AdminPlugin.administrators.<b>where</b></code>](#)<Bullet />[`AdministratorAdminPlugin_filter`](/docs/subgraph/reference-guide/inputs/administrator-admin-plugin-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+### Interfaces
+
+#### [`IPlugin`](/docs/subgraph/reference-guide/interfaces/iplugin) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`AdministratorAdminPlugin`](/docs/subgraph/reference-guide/objects/administrator-admin-plugin)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AdminProposal`](/docs/subgraph/reference-guide/objects/admin-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+

@@ -10,7 +10,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "subgraph-docs": "docusaurus graphql-to-doc",
+    "docs:subgraph": "docusaurus graphql-to-doc",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "optimize-svg": "svgo -rf .",

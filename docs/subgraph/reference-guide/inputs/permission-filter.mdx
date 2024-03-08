@@ -1,0 +1,783 @@
+---
+id: permission-filter
+title: Permission_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input Permission_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  where: Bytes
+  where_not: Bytes
+  where_gt: Bytes
+  where_lt: Bytes
+  where_gte: Bytes
+  where_lte: Bytes
+  where_in: [Bytes!]
+  where_not_in: [Bytes!]
+  where_contains: Bytes
+  where_not_contains: Bytes
+  permissionId: Bytes
+  permissionId_not: Bytes
+  permissionId_gt: Bytes
+  permissionId_lt: Bytes
+  permissionId_gte: Bytes
+  permissionId_lte: Bytes
+  permissionId_in: [Bytes!]
+  permissionId_not_in: [Bytes!]
+  permissionId_contains: Bytes
+  permissionId_not_contains: Bytes
+  who: Bytes
+  who_not: Bytes
+  who_gt: Bytes
+  who_lt: Bytes
+  who_gte: Bytes
+  who_lte: Bytes
+  who_in: [Bytes!]
+  who_not_in: [Bytes!]
+  who_contains: Bytes
+  who_not_contains: Bytes
+  actor: Bytes
+  actor_not: Bytes
+  actor_gt: Bytes
+  actor_lt: Bytes
+  actor_gte: Bytes
+  actor_lte: Bytes
+  actor_in: [Bytes!]
+  actor_not_in: [Bytes!]
+  actor_contains: Bytes
+  actor_not_contains: Bytes
+  condition: Bytes
+  condition_not: Bytes
+  condition_gt: Bytes
+  condition_lt: Bytes
+  condition_gte: Bytes
+  condition_lte: Bytes
+  condition_in: [Bytes!]
+  condition_not_in: [Bytes!]
+  condition_contains: Bytes
+  condition_not_contains: Bytes
+  dao: String
+  dao_not: String
+  dao_gt: String
+  dao_lt: String
+  dao_gte: String
+  dao_lte: String
+  dao_in: [String!]
+  dao_not_in: [String!]
+  dao_contains: String
+  dao_contains_nocase: String
+  dao_not_contains: String
+  dao_not_contains_nocase: String
+  dao_starts_with: String
+  dao_starts_with_nocase: String
+  dao_not_starts_with: String
+  dao_not_starts_with_nocase: String
+  dao_ends_with: String
+  dao_ends_with_nocase: String
+  dao_not_ends_with: String
+  dao_not_ends_with_nocase: String
+  dao_: Dao_filter
+  pluginRepo: String
+  pluginRepo_not: String
+  pluginRepo_gt: String
+  pluginRepo_lt: String
+  pluginRepo_gte: String
+  pluginRepo_lte: String
+  pluginRepo_in: [String!]
+  pluginRepo_not_in: [String!]
+  pluginRepo_contains: String
+  pluginRepo_contains_nocase: String
+  pluginRepo_not_contains: String
+  pluginRepo_not_contains_nocase: String
+  pluginRepo_starts_with: String
+  pluginRepo_starts_with_nocase: String
+  pluginRepo_not_starts_with: String
+  pluginRepo_not_starts_with_nocase: String
+  pluginRepo_ends_with: String
+  pluginRepo_ends_with_nocase: String
+  pluginRepo_not_ends_with: String
+  pluginRepo_not_ends_with_nocase: String
+  pluginRepo_: PluginRepo_filter
+  _change_block: BlockChangedFilter
+  and: [Permission_filter]
+  or: [Permission_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>where_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>permissionId_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>who_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>actor_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>condition_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>dao_</b></code>](#)<Bullet />[`Dao_filter`](/docs/subgraph/reference-guide/inputs/dao-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>pluginRepo_</b></code>](#)<Bullet />[`PluginRepo_filter`](/docs/subgraph/reference-guide/inputs/plugin-repo-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph/reference-guide/inputs/block-changed-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>and</b></code>](#)<Bullet />[`[Permission_filter]`](/docs/subgraph/reference-guide/inputs/permission-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Permission_filter.<b>or</b></code>](#)<Bullet />[`[Permission_filter]`](/docs/subgraph/reference-guide/inputs/permission-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Dao_filter`](/docs/subgraph/reference-guide/inputs/dao-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Permission_filter`](/docs/subgraph/reference-guide/inputs/permission-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PluginRepo_filter`](/docs/subgraph/reference-guide/inputs/plugin-repo-filter)  <Badge class="badge badge--secondary" text="input"/>
+

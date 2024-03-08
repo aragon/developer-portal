@@ -1,0 +1,263 @@
+---
+id: token-voting-plugin
+title: TokenVotingPlugin
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+type TokenVotingPlugin implements IPlugin {
+  id: ID!
+  dao: Dao!
+  pluginAddress: Bytes!
+  installations(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PluginInstallation_orderBy
+    orderDirection: OrderDirection
+    where: PluginInstallation_filter
+  ): [PluginInstallation!]!
+  proposals(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: TokenVotingProposal_orderBy
+    orderDirection: OrderDirection
+    where: TokenVotingProposal_filter
+  ): [TokenVotingProposal!]!
+  votingMode: VotingMode
+  supportThreshold: BigInt
+  minParticipation: BigInt
+  minDuration: BigInt
+  minProposerVotingPower: BigInt
+  proposalCount: BigInt!
+  token: Token
+  members(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: TokenVotingMember_orderBy
+    orderDirection: OrderDirection
+    where: TokenVotingMember_filter
+  ): [TokenVotingMember!]!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> TODO: attributes should be appended to Plugins once plugin is separated from Aragon OSx
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>pluginAddress</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>installations</b></code>](#)<Bullet />[`[PluginInstallation!]!`](/docs/subgraph/reference-guide/objects/plugin-installation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.installations.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.installations.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.installations.<b>orderBy</b></code>](#)<Bullet />[`PluginInstallation_orderBy`](/docs/subgraph/reference-guide/enums/plugin-installation-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.installations.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.installations.<b>where</b></code>](#)<Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>proposals</b></code>](#)<Bullet />[`[TokenVotingProposal!]!`](/docs/subgraph/reference-guide/objects/token-voting-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.proposals.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.proposals.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.proposals.<b>orderBy</b></code>](#)<Bullet />[`TokenVotingProposal_orderBy`](/docs/subgraph/reference-guide/enums/token-voting-proposal-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.proposals.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.proposals.<b>where</b></code>](#)<Bullet />[`TokenVotingProposal_filter`](/docs/subgraph/reference-guide/inputs/token-voting-proposal-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>votingMode</b></code>](#)<Bullet />[`VotingMode`](/docs/subgraph/reference-guide/enums/voting-mode) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>supportThreshold</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>minParticipation</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>minDuration</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>minProposerVotingPower</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>proposalCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>token</b></code>](#)<Bullet />[`Token`](/docs/subgraph/reference-guide/interfaces/token) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.<b>members</b></code>](#)<Bullet />[`[TokenVotingMember!]!`](/docs/subgraph/reference-guide/objects/token-voting-member) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.members.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.members.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.members.<b>orderBy</b></code>](#)<Bullet />[`TokenVotingMember_orderBy`](/docs/subgraph/reference-guide/enums/token-voting-member-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.members.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TokenVotingPlugin.members.<b>where</b></code>](#)<Bullet />[`TokenVotingMember_filter`](/docs/subgraph/reference-guide/inputs/token-voting-member-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+### Interfaces
+
+#### [`IPlugin`](/docs/subgraph/reference-guide/interfaces/iplugin) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenVotingMember`](/docs/subgraph/reference-guide/objects/token-voting-member)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenVotingProposal`](/docs/subgraph/reference-guide/objects/token-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenVotingVoter`](/docs/subgraph/reference-guide/objects/token-voting-voter)  <Badge class="badge badge--secondary" text="object"/>
+

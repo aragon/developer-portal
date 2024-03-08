@@ -17,7 +17,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
-  
+
   favicon: 'img/Aragon-logo-circle.png',
 
   presets: [
@@ -150,8 +150,8 @@ const config = {
       {
         schema: `https://subgraph.satsuma-prod.com/${process.env.SUBGRAPH_QUERY_KEY}/aragon/${process.env.SUBGRAPH_NAME}/version/${process.env.SUBGRAPH_VERSION}/api`,
         rootPath: './docs',
-        baseURL: 'subgraph',
-        homepage: './static/subgraph-index.md',
+        baseURL: 'subgraph/reference-guide',
+        homepage: './static/subgraph/index.md',
         linkRoot: '/docs',
         printTypeOptions: {
           useApiGroup: false,
@@ -161,8 +161,8 @@ const config = {
             module: '@graphql-tools/url-loader',
             options: {
               rootTypes: {
-                query: 'Query',
-                subscription: '', // disable Subscription type
+                query: '',
+                subscription: '',
                 mutation: '',
               },
             },

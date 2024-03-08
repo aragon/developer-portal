@@ -1,0 +1,254 @@
+---
+id: plugin-preparation-order-by
+title: PluginPreparation_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum PluginPreparation_orderBy {
+  id
+  installation
+  installation__id
+  installation__appliedSetupId
+  installation__state
+  creator
+  dao
+  dao__id
+  dao__subdomain
+  dao__creator
+  dao__daoURI
+  dao__metadata
+  dao__createdAt
+  dao__trustedForwarder
+  dao__signatureValidator
+  preparedSetupId
+  pluginRepo
+  pluginRepo__id
+  pluginRepo__subdomain
+  pluginVersion
+  pluginVersion__id
+  pluginVersion__build
+  pluginVersion__metadata
+  data
+  pluginAddress
+  helpers
+  permissions
+  type
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>installation</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>installation__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>installation__appliedSetupId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>installation__state</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>creator</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__subdomain</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__creator</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__daoURI</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__metadata</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__createdAt</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__trustedForwarder</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>dao__signatureValidator</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>preparedSetupId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginRepo</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginRepo__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginRepo__subdomain</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginVersion</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginVersion__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginVersion__build</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginVersion__metadata</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>data</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>pluginAddress</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>helpers</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>permissions</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPreparation_orderBy.<b>type</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+

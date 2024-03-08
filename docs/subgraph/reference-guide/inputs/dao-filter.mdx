@@ -1,0 +1,1021 @@
+---
+id: dao-filter
+title: Dao_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input Dao_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  subdomain: String
+  subdomain_not: String
+  subdomain_gt: String
+  subdomain_lt: String
+  subdomain_gte: String
+  subdomain_lte: String
+  subdomain_in: [String!]
+  subdomain_not_in: [String!]
+  subdomain_contains: String
+  subdomain_contains_nocase: String
+  subdomain_not_contains: String
+  subdomain_not_contains_nocase: String
+  subdomain_starts_with: String
+  subdomain_starts_with_nocase: String
+  subdomain_not_starts_with: String
+  subdomain_not_starts_with_nocase: String
+  subdomain_ends_with: String
+  subdomain_ends_with_nocase: String
+  subdomain_not_ends_with: String
+  subdomain_not_ends_with_nocase: String
+  creator: Bytes
+  creator_not: Bytes
+  creator_gt: Bytes
+  creator_lt: Bytes
+  creator_gte: Bytes
+  creator_lte: Bytes
+  creator_in: [Bytes!]
+  creator_not_in: [Bytes!]
+  creator_contains: Bytes
+  creator_not_contains: Bytes
+  daoURI: String
+  daoURI_not: String
+  daoURI_gt: String
+  daoURI_lt: String
+  daoURI_gte: String
+  daoURI_lte: String
+  daoURI_in: [String!]
+  daoURI_not_in: [String!]
+  daoURI_contains: String
+  daoURI_contains_nocase: String
+  daoURI_not_contains: String
+  daoURI_not_contains_nocase: String
+  daoURI_starts_with: String
+  daoURI_starts_with_nocase: String
+  daoURI_not_starts_with: String
+  daoURI_not_starts_with_nocase: String
+  daoURI_ends_with: String
+  daoURI_ends_with_nocase: String
+  daoURI_not_ends_with: String
+  daoURI_not_ends_with_nocase: String
+  metadata: String
+  metadata_not: String
+  metadata_gt: String
+  metadata_lt: String
+  metadata_gte: String
+  metadata_lte: String
+  metadata_in: [String!]
+  metadata_not_in: [String!]
+  metadata_contains: String
+  metadata_contains_nocase: String
+  metadata_not_contains: String
+  metadata_not_contains_nocase: String
+  metadata_starts_with: String
+  metadata_starts_with_nocase: String
+  metadata_not_starts_with: String
+  metadata_not_starts_with_nocase: String
+  metadata_ends_with: String
+  metadata_ends_with_nocase: String
+  metadata_not_ends_with: String
+  metadata_not_ends_with_nocase: String
+  createdAt: BigInt
+  createdAt_not: BigInt
+  createdAt_gt: BigInt
+  createdAt_lt: BigInt
+  createdAt_gte: BigInt
+  createdAt_lte: BigInt
+  createdAt_in: [BigInt!]
+  createdAt_not_in: [BigInt!]
+  token: String
+  token_not: String
+  token_gt: String
+  token_lt: String
+  token_gte: String
+  token_lte: String
+  token_in: [String!]
+  token_not_in: [String!]
+  token_contains: String
+  token_contains_nocase: String
+  token_not_contains: String
+  token_not_contains_nocase: String
+  token_starts_with: String
+  token_starts_with_nocase: String
+  token_not_starts_with: String
+  token_not_starts_with_nocase: String
+  token_ends_with: String
+  token_ends_with_nocase: String
+  token_not_ends_with: String
+  token_not_ends_with_nocase: String
+  token_: ERC20Contract_filter
+  actions_: Action_filter
+  transfers_: TokenTransfer_filter
+  balances_: TokenBalance_filter
+  permissions_: Permission_filter
+  proposals_: IProposal_filter
+  trustedForwarder: Bytes
+  trustedForwarder_not: Bytes
+  trustedForwarder_gt: Bytes
+  trustedForwarder_lt: Bytes
+  trustedForwarder_gte: Bytes
+  trustedForwarder_lte: Bytes
+  trustedForwarder_in: [Bytes!]
+  trustedForwarder_not_in: [Bytes!]
+  trustedForwarder_contains: Bytes
+  trustedForwarder_not_contains: Bytes
+  signatureValidator: Bytes
+  signatureValidator_not: Bytes
+  signatureValidator_gt: Bytes
+  signatureValidator_lt: Bytes
+  signatureValidator_gte: Bytes
+  signatureValidator_lte: Bytes
+  signatureValidator_in: [Bytes!]
+  signatureValidator_not_in: [Bytes!]
+  signatureValidator_contains: Bytes
+  signatureValidator_not_contains: Bytes
+  standardCallbacks_: StandardCallback_filter
+  plugins_: PluginInstallation_filter
+  _change_block: BlockChangedFilter
+  and: [Dao_filter]
+  or: [Dao_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>subdomain_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>creator_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>daoURI_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>metadata_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>createdAt_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>token_</b></code>](#)<Bullet />[`ERC20Contract_filter`](/docs/subgraph/reference-guide/inputs/erc20-contract-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>actions_</b></code>](#)<Bullet />[`Action_filter`](/docs/subgraph/reference-guide/inputs/action-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>transfers_</b></code>](#)<Bullet />[`TokenTransfer_filter`](/docs/subgraph/reference-guide/inputs/token-transfer-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>balances_</b></code>](#)<Bullet />[`TokenBalance_filter`](/docs/subgraph/reference-guide/inputs/token-balance-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>permissions_</b></code>](#)<Bullet />[`Permission_filter`](/docs/subgraph/reference-guide/inputs/permission-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>proposals_</b></code>](#)<Bullet />[`IProposal_filter`](/docs/subgraph/reference-guide/inputs/iproposal-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>trustedForwarder_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_not</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_gt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_lt</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_gte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_lte</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_not_in</b></code>](#)<Bullet />[`[Bytes!]`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>signatureValidator_not_contains</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>standardCallbacks_</b></code>](#)<Bullet />[`StandardCallback_filter`](/docs/subgraph/reference-guide/inputs/standard-callback-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>plugins_</b></code>](#)<Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph/reference-guide/inputs/block-changed-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>and</b></code>](#)<Bullet />[`[Dao_filter]`](/docs/subgraph/reference-guide/inputs/dao-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Dao_filter.<b>or</b></code>](#)<Bullet />[`[Dao_filter]`](/docs/subgraph/reference-guide/inputs/dao-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Action_filter`](/docs/subgraph/reference-guide/inputs/action-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AddresslistVotingPlugin_filter`](/docs/subgraph/reference-guide/inputs/addresslist-voting-plugin-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AddresslistVotingProposal_filter`](/docs/subgraph/reference-guide/inputs/addresslist-voting-proposal-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AdminPlugin_filter`](/docs/subgraph/reference-guide/inputs/admin-plugin-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AdminProposal_filter`](/docs/subgraph/reference-guide/inputs/admin-proposal-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Dao_filter`](/docs/subgraph/reference-guide/inputs/dao-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC1155Balance_filter`](/docs/subgraph/reference-guide/inputs/erc1155-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC1155Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc1155-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC20Balance_filter`](/docs/subgraph/reference-guide/inputs/erc20-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC20Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc20-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC721Balance_filter`](/docs/subgraph/reference-guide/inputs/erc721-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC721Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc721-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`IPlugin_filter`](/docs/subgraph/reference-guide/inputs/iplugin-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`IProposal_filter`](/docs/subgraph/reference-guide/inputs/iproposal-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`MultisigPlugin_filter`](/docs/subgraph/reference-guide/inputs/multisig-plugin-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`MultisigProposal_filter`](/docs/subgraph/reference-guide/inputs/multisig-proposal-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`NativeBalance_filter`](/docs/subgraph/reference-guide/inputs/native-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`NativeTransfer_filter`](/docs/subgraph/reference-guide/inputs/native-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Permission_filter`](/docs/subgraph/reference-guide/inputs/permission-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PluginPreparation_filter`](/docs/subgraph/reference-guide/inputs/plugin-preparation-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`StandardCallback_filter`](/docs/subgraph/reference-guide/inputs/standard-callback-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenBalance_filter`](/docs/subgraph/reference-guide/inputs/token-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenTransfer_filter`](/docs/subgraph/reference-guide/inputs/token-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenVotingPlugin_filter`](/docs/subgraph/reference-guide/inputs/token-voting-plugin-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenVotingProposal_filter`](/docs/subgraph/reference-guide/inputs/token-voting-proposal-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TransactionActionsProposal_filter`](/docs/subgraph/reference-guide/inputs/transaction-actions-proposal-filter)  <Badge class="badge badge--secondary" text="input"/>
+

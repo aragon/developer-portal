@@ -1,0 +1,83 @@
+---
+id: transfer-type
+title: TransferType
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TransferType {
+  ExternalTransfer
+  Withdraw
+  Deposit
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TransferType.<b>ExternalTransfer</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransferType.<b>Withdraw</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransferType.<b>Deposit</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`ERC1155Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc1155-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC1155Transfer`](/docs/subgraph/reference-guide/objects/erc1155-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC20Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc20-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC20Transfer`](/docs/subgraph/reference-guide/objects/erc20-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC721Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc721-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC721Transfer`](/docs/subgraph/reference-guide/objects/erc721-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`NativeTransfer_filter`](/docs/subgraph/reference-guide/inputs/native-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`NativeTransfer`](/docs/subgraph/reference-guide/objects/native-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenTransfer_filter`](/docs/subgraph/reference-guide/inputs/token-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenTransfer`](/docs/subgraph/reference-guide/interfaces/token-transfer)  <Badge class="badge badge--secondary" text="interface"/>
+

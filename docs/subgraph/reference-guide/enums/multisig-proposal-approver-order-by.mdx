@@ -1,0 +1,233 @@
+---
+id: multisig-proposal-approver-order-by
+title: MultisigProposalApprover_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum MultisigProposalApprover_orderBy {
+  id
+  approver
+  approver__id
+  approver__address
+  proposal
+  proposal__id
+  proposal__allowFailureMap
+  proposal__failureMap
+  proposal__pluginProposalId
+  proposal__creator
+  proposal__metadata
+  proposal__createdAt
+  proposal__startDate
+  proposal__endDate
+  proposal__creationBlockNumber
+  proposal__snapshotBlock
+  proposal__minApprovals
+  proposal__approvals
+  proposal__approvalReached
+  proposal__isSignaling
+  proposal__executed
+  proposal__executionDate
+  proposal__executionBlockNumber
+  proposal__executionTxHash
+  createdAt
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>approver</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>approver__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>approver__address</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__allowFailureMap</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__failureMap</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__pluginProposalId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__creator</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__metadata</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__createdAt</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__startDate</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__endDate</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__creationBlockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__snapshotBlock</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__minApprovals</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__approvals</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__approvalReached</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__isSignaling</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__executed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__executionDate</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__executionBlockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>proposal__executionTxHash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover_orderBy.<b>createdAt</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+
