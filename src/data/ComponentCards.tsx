@@ -3,6 +3,7 @@ import {IComponentCardProps} from '../components/ComponentCard';
 import {
   IllustrationSdk,
   IllustrationOsx,
+  IllustrationSubgraph,
   IllustrationDesignSystem,
 } from '../components';
 
@@ -20,6 +21,13 @@ const componentCards: IComponentCardProps[] = [
       'A Software Development Kit designed with dApp builders in mind. Your gateway into the Aragon OSx protocol in pure JS - no Solidity required.',
     img: <IllustrationSdk />,
     to: '/docs/sdk',
+  },
+  {
+    title: 'Aragon Subgraph',
+    description:
+      'A powerful indexing and querying tool to power all your Aragon dApp interactions.',
+    img: <IllustrationSubgraph />,
+    to: '/docs/subgraph',
   },
   {
     title: 'Design System',

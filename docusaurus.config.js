@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+require('dotenv').config();
 const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github,
   darkCodeTheme = themes.dracula;
@@ -180,6 +180,31 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
+      },
+    ],
+    [
+      '@graphql-markdown/docusaurus',
+      {
+        schema: `https://subgraph.satsuma-prod.com/${process.env.SUBGRAPH_QUERY_KEY}/aragon/${process.env.SUBGRAPH_NAME}/version/${process.env.SUBGRAPH_VERSION}/api`,
+        rootPath: './docs',
+        baseURL: 'subgraph',
+        homepage: './static/subgraph-index.md',
+        linkRoot: '/docs',
+        printTypeOptions: {
+          useApiGroup: false,
+        },
+        loaders: {
+          UrlLoader: {
+            module: '@graphql-tools/url-loader',
+            options: {
+              rootTypes: {
+                query: 'Query',
+                subscription: '', // disable Subscription type
+                mutation: '',
+              },
+            },
+          },
+        },
       },
     ],
     async function TailwindPlugin(context, options) {
