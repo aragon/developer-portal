@@ -14,7 +14,7 @@ On this site, can be found help with [queries](./01-queryExample/index.md) as we
 
 ## Playground
 
-We encourage users to test the [Aragon subgraph-satsuma playground](https://subgraph.satsuma-prod.com/aragon/osx-mainnet/playground) to fully understand what information is available and how to access it..
+We encourage users to test the [Aragon subgraph-satsuma playground](https://subgraph.satsuma-prod.com/aragon/osx-mainnet/playground) to fully understand what information is available and how to access it.
 
 Query examples to illustrate how information can be queried are provided in the [Query Examples site](./01-queryExample/index.md).
 
