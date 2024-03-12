@@ -1,9 +1,9 @@
 ---
-title: Balances Query
+title: Balances Query [WIP]
 sidebar_label: Balances Query
 ---
 
-## Balances Query [WIP]
+## Balances Query
 
 The query
 

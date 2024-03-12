@@ -25,9 +25,10 @@ const componentCards: IComponentCardProps[] = [
   {
     title: 'Aragon Subgraph',
     description:
-      'A powerful indexing and querying tool to power all your Aragon dApp interactions.',
+      'A powerful indexing and querying tool to facilitate all your Aragon DAO interactions. The site is currently under development.',
     img: <IllustrationSubgraph />,
     to: '/docs/subgraph',
+    cta: 'Learn More (WiP)',
   },
   {
     title: 'Design System',

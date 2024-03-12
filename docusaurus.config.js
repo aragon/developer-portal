@@ -148,7 +148,7 @@ const config = {
     [
       '@graphql-markdown/docusaurus',
       {
-        schema: `https://subgraph.satsuma-prod.com/${process.env.SUBGRAPH_QUERY_KEY}/aragon/${process.env.SUBGRAPH_NAME}/version/${process.env.SUBGRAPH_VERSION}/api`,
+        schema: `https://subgraph.satsuma-prod.com/qHR2wGfc5RLi6/aragon/osx-mainnet/api`,
         rootPath: './docs',
         baseURL: 'subgraph/reference-guide',
         homepage: './static/subgraph/index.md',

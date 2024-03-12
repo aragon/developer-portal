@@ -1,9 +1,9 @@
 ---
-title: DAO Query
+title: DAO Query [WIP]
 sidebar_label: DAO Query
 ---
 
-## DAO Query [WIP]
+## DAO Query
 
 The query
 
