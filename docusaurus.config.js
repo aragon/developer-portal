@@ -17,7 +17,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
-
+  
   favicon: 'img/Aragon-logo-circle.png',
 
   presets: [
