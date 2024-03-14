@@ -44,36 +44,18 @@ No description
 
 ```graphql
 type AddresslistVotingPlugin implements IPlugin {
-  id: ID!
   dao: Dao!
-  pluginAddress: Bytes!
-  installations(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: PluginInstallation_orderBy
-    orderDirection: OrderDirection
-    where: PluginInstallation_filter
-  ): [PluginInstallation!]!
-  proposals(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: AddresslistVotingProposal_orderBy
-    orderDirection: OrderDirection
-    where: AddresslistVotingProposal_filter
-  ): [AddresslistVotingProposal!]!
-  votingMode: VotingMode
-  supportThreshold: BigInt
-  minParticipation: BigInt
+  id: ID!
+  installations: [PluginInstallation!]!
+  members: [AddresslistVotingVoter!]!
   minDuration: BigInt
+  minParticipation: BigInt
   minProposerVotingPower: BigInt
+  pluginAddress: Bytes!
   proposalCount: BigInt
-  members(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: AddresslistVotingVoter_orderBy
-    orderDirection: OrderDirection
-    where: AddresslistVotingVoter_filter
-  ): [AddresslistVotingVoter!]!
+  proposals: [AddresslistVotingProposal!]!
+  supportThreshold: BigInt
+  votingMode: VotingMode
 }
 ```
 
@@ -82,105 +64,25 @@ type AddresslistVotingPlugin implements IPlugin {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> TODO: attributes should be appended to Plugin once plugin is seperated from Aragon OSx
-> 
-
 #### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>pluginAddress</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> TODO: attributes should be appended to Plugin once plugin is seperated from Aragon OSx
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>installations</b></code>](#)<Bullet />[`[PluginInstallation!]!`](/docs/subgraph/reference-guide/objects/plugin-installation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
-> ##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.installations.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.installations.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.installations.<b>orderBy</b></code>](#)<Bullet />[`PluginInstallation_orderBy`](/docs/subgraph/reference-guide/enums/plugin-installation-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.installations.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.installations.<b>where</b></code>](#)<Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter) <Badge class="badge badge--secondary" text="input"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>proposals</b></code>](#)<Bullet />[`[AddresslistVotingProposal!]!`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> ##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.proposals.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.proposals.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.proposals.<b>orderBy</b></code>](#)<Bullet />[`AddresslistVotingProposal_orderBy`](/docs/subgraph/reference-guide/enums/addresslist-voting-proposal-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.proposals.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.proposals.<b>where</b></code>](#)<Bullet />[`AddresslistVotingProposal_filter`](/docs/subgraph/reference-guide/inputs/addresslist-voting-proposal-filter) <Badge class="badge badge--secondary" text="input"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>votingMode</b></code>](#)<Bullet />[`VotingMode`](/docs/subgraph/reference-guide/enums/voting-mode) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>supportThreshold</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>minParticipation</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>members</b></code>](#)<Bullet />[`[AddresslistVotingVoter!]!`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
@@ -192,7 +94,19 @@ type AddresslistVotingPlugin implements IPlugin {
 > 
 > 
 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>minParticipation</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>minProposerVotingPower</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>pluginAddress</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
@@ -204,35 +118,19 @@ type AddresslistVotingPlugin implements IPlugin {
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>members</b></code>](#)<Bullet />[`[AddresslistVotingVoter!]!`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> ##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.members.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>proposals</b></code>](#)<Bullet />[`[AddresslistVotingProposal!]!`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.members.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>supportThreshold</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.members.<b>orderBy</b></code>](#)<Bullet />[`AddresslistVotingVoter_orderBy`](/docs/subgraph/reference-guide/enums/addresslist-voting-voter-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.members.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.members.<b>where</b></code>](#)<Bullet />[`AddresslistVotingVoter_filter`](/docs/subgraph/reference-guide/inputs/addresslist-voting-voter-filter) <Badge class="badge badge--secondary" text="input"/> 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingPlugin.<b>votingMode</b></code>](#)<Bullet />[`VotingMode`](/docs/subgraph/reference-guide/enums/voting-mode) <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
 > 
@@ -252,5 +150,5 @@ type AddresslistVotingPlugin implements IPlugin {
 
 ### Member Of
 
-[`AddresslistVotingProposal`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AddresslistVotingVoter`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`AddresslistVotingProposal`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AddresslistVotingVoter`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter)  <Badge class="badge badge--secondary" text="object"/>
 

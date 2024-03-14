@@ -44,33 +44,15 @@ No description
 
 ```graphql
 type MultisigPlugin implements IPlugin {
-  id: ID!
   dao: Dao!
-  pluginAddress: Bytes!
-  installations(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: PluginInstallation_orderBy
-    orderDirection: OrderDirection
-    where: PluginInstallation_filter
-  ): [PluginInstallation!]!
-  proposalCount: BigInt
-  proposals(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: MultisigProposal_orderBy
-    orderDirection: OrderDirection
-    where: MultisigProposal_filter
-  ): [MultisigProposal!]!
-  members(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: MultisigApprover_orderBy
-    orderDirection: OrderDirection
-    where: MultisigApprover_filter
-  ): [MultisigApprover!]!
+  id: ID!
+  installations: [PluginInstallation!]!
+  members: [MultisigApprover!]!
   minApprovals: Int
   onlyListed: Boolean
+  pluginAddress: Bytes!
+  proposalCount: BigInt
+  proposals: [MultisigProposal!]!
 }
 ```
 
@@ -79,127 +61,25 @@ type MultisigPlugin implements IPlugin {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> TODO: attributes should be appended to Plugin once plugin is seperated from Aragon OSx
-> 
-
 #### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>pluginAddress</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> TODO: attributes should be appended to Plugin once plugin is seperated from Aragon OSx
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>installations</b></code>](#)<Bullet />[`[PluginInstallation!]!`](/docs/subgraph/reference-guide/objects/plugin-installation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
-> ##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.installations.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.installations.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.installations.<b>orderBy</b></code>](#)<Bullet />[`PluginInstallation_orderBy`](/docs/subgraph/reference-guide/enums/plugin-installation-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.installations.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.installations.<b>where</b></code>](#)<Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter) <Badge class="badge badge--secondary" text="input"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>proposalCount</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>proposals</b></code>](#)<Bullet />[`[MultisigProposal!]!`](/docs/subgraph/reference-guide/objects/multisig-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> ##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.proposals.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.proposals.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.proposals.<b>orderBy</b></code>](#)<Bullet />[`MultisigProposal_orderBy`](/docs/subgraph/reference-guide/enums/multisig-proposal-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.proposals.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.proposals.<b>where</b></code>](#)<Bullet />[`MultisigProposal_filter`](/docs/subgraph/reference-guide/inputs/multisig-proposal-filter) <Badge class="badge badge--secondary" text="input"/> 
-> 
-> 
-> 
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>members</b></code>](#)<Bullet />[`[MultisigApprover!]!`](/docs/subgraph/reference-guide/objects/multisig-approver) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> ##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.members.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.members.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.members.<b>orderBy</b></code>](#)<Bullet />[`MultisigApprover_orderBy`](/docs/subgraph/reference-guide/enums/multisig-approver-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.members.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.members.<b>where</b></code>](#)<Bullet />[`MultisigApprover_filter`](/docs/subgraph/reference-guide/inputs/multisig-approver-filter) <Badge class="badge badge--secondary" text="input"/> 
 > 
 > 
 > 
@@ -212,6 +92,24 @@ type MultisigPlugin implements IPlugin {
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>onlyListed</b></code>](#)<Bullet />[`Boolean`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>pluginAddress</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>proposalCount</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigPlugin.<b>proposals</b></code>](#)<Bullet />[`[MultisigProposal!]!`](/docs/subgraph/reference-guide/objects/multisig-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
@@ -231,5 +129,5 @@ type MultisigPlugin implements IPlugin {
 
 ### Member Of
 
-[`MultisigApprover`](/docs/subgraph/reference-guide/objects/multisig-approver)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`MultisigProposal`](/docs/subgraph/reference-guide/objects/multisig-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`MultisigApprover`](/docs/subgraph/reference-guide/objects/multisig-approver)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`MultisigProposal`](/docs/subgraph/reference-guide/objects/multisig-proposal)  <Badge class="badge badge--secondary" text="object"/>
 

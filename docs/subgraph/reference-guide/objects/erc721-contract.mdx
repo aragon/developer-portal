@@ -39,7 +39,7 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+[ERC721 Token Standard](https://eips.ethereum.org/EIPS/eip-721), Non-Fungible Token (NFT), of type Token.
 
 
 ```graphql
@@ -58,19 +58,19 @@ type ERC721Contract implements Token {
 #### [<code style={{ fontWeight: 'normal' }}>ERC721Contract.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+>  The address of the [ERC721 Token Smart Contract](https://eips.ethereum.org/EIPS/eip-721). 
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>ERC721Contract.<b>name</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+>  The name of the token, mirrored from the smart contract. 
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>ERC721Contract.<b>symbol</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+>  The symbol of the token, mirrored from the smart contract. 
 > 
 
 ### Interfaces
@@ -78,7 +78,7 @@ type ERC721Contract implements Token {
 #### [`Token`](/docs/subgraph/reference-guide/interfaces/token) <Badge class="badge badge--secondary" text="interface"/> 
 > 
 > 
-> 
+> Interface representing a generic token. Each entity implementing this interface can be queried as Token.
 > 
 
 
@@ -87,5 +87,5 @@ type ERC721Contract implements Token {
 
 ### Member Of
 
-[`ERC721Balance`](/docs/subgraph/reference-guide/objects/erc721-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC721Transfer`](/docs/subgraph/reference-guide/objects/erc721-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`ERC721Balance`](/docs/subgraph/reference-guide/objects/erc721-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC721Transfer`](/docs/subgraph/reference-guide/objects/erc721-transfer)  <Badge class="badge badge--secondary" text="object"/>
 

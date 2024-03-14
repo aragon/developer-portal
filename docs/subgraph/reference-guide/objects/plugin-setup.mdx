@@ -45,13 +45,7 @@ No description
 ```graphql
 type PluginSetup {
   id: ID!
-  versions(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: PluginVersion_orderBy
-    orderDirection: OrderDirection
-    where: PluginVersion_filter
-  ): [PluginVersion!]!
+  versions: [PluginVersion!]!
 }
 ```
 
@@ -70,34 +64,6 @@ type PluginSetup {
 > 
 > 
 > 
-> ##### [<code style={{ fontWeight: 'normal' }}>PluginSetup.versions.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginSetup.versions.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginSetup.versions.<b>orderBy</b></code>](#)<Bullet />[`PluginVersion_orderBy`](/docs/subgraph/reference-guide/enums/plugin-version-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginSetup.versions.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginSetup.versions.<b>where</b></code>](#)<Bullet />[`PluginVersion_filter`](/docs/subgraph/reference-guide/inputs/plugin-version-filter) <Badge class="badge badge--secondary" text="input"/> 
-> 
-> 
-> 
 > 
 
 
@@ -106,5 +72,5 @@ type PluginSetup {
 
 ### Member Of
 
-[`PluginVersion`](/docs/subgraph/reference-guide/objects/plugin-version)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`PluginVersion`](/docs/subgraph/reference-guide/objects/plugin-version)  <Badge class="badge badge--secondary" text="object"/>
 

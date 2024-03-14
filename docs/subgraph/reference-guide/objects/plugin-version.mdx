@@ -44,26 +44,14 @@ No description
 
 ```graphql
 type PluginVersion {
+  build: Int!
   id: ID!
+  installations: [PluginInstallation!]
+  metadata: String!
   pluginRepo: PluginRepo!
   pluginSetup: PluginSetup
+  preparations: [PluginPreparation!]!
   release: PluginRelease!
-  build: Int!
-  metadata: String!
-  preparations(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: PluginPreparation_orderBy
-    orderDirection: OrderDirection
-    where: PluginPreparation_filter
-  ): [PluginPreparation!]!
-  installations(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: PluginInstallation_orderBy
-    orderDirection: OrderDirection
-    where: PluginInstallation_filter
-  ): [PluginInstallation!]
 }
 ```
 
@@ -72,7 +60,25 @@ type PluginVersion {
 
 ### Fields
 
+#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>build</b></code>](#)<Bullet />[`Int!`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>installations</b></code>](#)<Bullet />[`[PluginInstallation!]`](/docs/subgraph/reference-guide/objects/plugin-installation) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>metadata</b></code>](#)<Bullet />[`String!`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
@@ -90,87 +96,13 @@ type PluginVersion {
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>release</b></code>](#)<Bullet />[`PluginRelease!`](/docs/subgraph/reference-guide/objects/plugin-release) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>build</b></code>](#)<Bullet />[`Int!`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>metadata</b></code>](#)<Bullet />[`String!`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
 #### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>preparations</b></code>](#)<Bullet />[`[PluginPreparation!]!`](/docs/subgraph/reference-guide/objects/plugin-preparation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
-> ##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.preparations.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.preparations.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.preparations.<b>orderBy</b></code>](#)<Bullet />[`PluginPreparation_orderBy`](/docs/subgraph/reference-guide/enums/plugin-preparation-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.preparations.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.preparations.<b>where</b></code>](#)<Bullet />[`PluginPreparation_filter`](/docs/subgraph/reference-guide/inputs/plugin-preparation-filter) <Badge class="badge badge--secondary" text="input"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>installations</b></code>](#)<Bullet />[`[PluginInstallation!]`](/docs/subgraph/reference-guide/objects/plugin-installation) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> ##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.installations.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.installations.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.installations.<b>orderBy</b></code>](#)<Bullet />[`PluginInstallation_orderBy`](/docs/subgraph/reference-guide/enums/plugin-installation-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.installations.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginVersion.installations.<b>where</b></code>](#)<Bullet />[`PluginInstallation_filter`](/docs/subgraph/reference-guide/inputs/plugin-installation-filter) <Badge class="badge badge--secondary" text="input"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PluginVersion.<b>release</b></code>](#)<Bullet />[`PluginRelease!`](/docs/subgraph/reference-guide/objects/plugin-release) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
@@ -182,5 +114,5 @@ type PluginVersion {
 
 ### Member Of
 
-[`PluginInstallation`](/docs/subgraph/reference-guide/objects/plugin-installation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginPreparation`](/docs/subgraph/reference-guide/objects/plugin-preparation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginRelease`](/docs/subgraph/reference-guide/objects/plugin-release)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginSetup`](/docs/subgraph/reference-guide/objects/plugin-setup)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`PluginInstallation`](/docs/subgraph/reference-guide/objects/plugin-installation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginPreparation`](/docs/subgraph/reference-guide/objects/plugin-preparation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginRelease`](/docs/subgraph/reference-guide/objects/plugin-release)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginSetup`](/docs/subgraph/reference-guide/objects/plugin-setup)  <Badge class="badge badge--secondary" text="object"/>
 

@@ -44,13 +44,13 @@ No description
 
 ```graphql
 type PluginPermission {
+  condition: Bytes
   id: ID!
-  pluginPreparation: PluginPreparation!
   operation: PermissionOperation!
+  permissionId: Bytes!
+  pluginPreparation: PluginPreparation!
   where: Bytes!
   who: Bytes!
-  condition: Bytes
-  permissionId: Bytes!
 }
 ```
 
@@ -59,19 +59,31 @@ type PluginPermission {
 
 ### Fields
 
+#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>condition</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>pluginPreparation</b></code>](#)<Bullet />[`PluginPreparation!`](/docs/subgraph/reference-guide/objects/plugin-preparation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>operation</b></code>](#)<Bullet />[`PermissionOperation!`](/docs/subgraph/reference-guide/enums/permission-operation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>operation</b></code>](#)<Bullet />[`PermissionOperation!`](/docs/subgraph/reference-guide/enums/permission-operation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>permissionId</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>pluginPreparation</b></code>](#)<Bullet />[`PluginPreparation!`](/docs/subgraph/reference-guide/objects/plugin-preparation) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
@@ -89,23 +101,11 @@ type PluginPermission {
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>condition</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginPermission.<b>permissionId</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
 
 
 
 
 ### Member Of
 
-[`PluginPreparation`](/docs/subgraph/reference-guide/objects/plugin-preparation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`PluginPreparation`](/docs/subgraph/reference-guide/objects/plugin-preparation)  <Badge class="badge badge--secondary" text="object"/>
 

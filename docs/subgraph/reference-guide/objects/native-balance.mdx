@@ -39,14 +39,15 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+The Native token balances of the DAO, representing the amount of the blockchain's native currency
+(e.g., Ether on Ethereum, MATIC on Polygon) held by the DAO.
 
 
 ```graphql
 type NativeBalance implements TokenBalance {
-  id: ID!
-  dao: Dao!
   balance: BigInt!
+  dao: Dao!
+  id: ID!
   lastUpdated: BigInt!
 }
 ```
@@ -56,28 +57,28 @@ type NativeBalance implements TokenBalance {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>balance</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+>  The amount of native tokens held by the DAO. 
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
-> 
+>  The DAO that holds the native tokens
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>balance</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+>  The concatenation of DAO Smart contract address and Token Smart contract address. Joined by '_'. 
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>lastUpdated</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+>  The block timestamp of the last update (transfer) for this native token balance. 
 > 
 
 ### Interfaces
@@ -85,14 +86,10 @@ type NativeBalance implements TokenBalance {
 #### [`TokenBalance`](/docs/subgraph/reference-guide/interfaces/token-balance) <Badge class="badge badge--secondary" text="interface"/> 
 > 
 > 
+> Balance of the DAO for any kind of token. Each entity implementing this interface can be queried as TokenBalance.
 > 
-> 
 
 
 
 
-
-### Member Of
-
-[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
 

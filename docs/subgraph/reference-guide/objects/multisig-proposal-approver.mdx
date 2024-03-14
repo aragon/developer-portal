@@ -44,10 +44,10 @@ No description
 
 ```graphql
 type MultisigProposalApprover {
-  id: ID!
   approver: MultisigApprover!
-  proposal: MultisigProposal!
   createdAt: BigInt!
+  id: ID!
+  proposal: MultisigProposal!
 }
 ```
 
@@ -56,19 +56,7 @@ type MultisigProposalApprover {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> ApproverProposal for Many-to-Many
-> 
-
 #### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover.<b>approver</b></code>](#)<Bullet />[`MultisigApprover!`](/docs/subgraph/reference-guide/objects/multisig-approver) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover.<b>proposal</b></code>](#)<Bullet />[`MultisigProposal!`](/docs/subgraph/reference-guide/objects/multisig-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
@@ -80,11 +68,23 @@ type MultisigProposalApprover {
 > 
 > 
 
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ApproverProposal for Many-to-Many
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>MultisigProposalApprover.<b>proposal</b></code>](#)<Bullet />[`MultisigProposal!`](/docs/subgraph/reference-guide/objects/multisig-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
 
 
 
 
 ### Member Of
 
-[`MultisigApprover`](/docs/subgraph/reference-guide/objects/multisig-approver)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`MultisigProposal`](/docs/subgraph/reference-guide/objects/multisig-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`MultisigApprover`](/docs/subgraph/reference-guide/objects/multisig-approver)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`MultisigProposal`](/docs/subgraph/reference-guide/objects/multisig-proposal)  <Badge class="badge badge--secondary" text="object"/>
 

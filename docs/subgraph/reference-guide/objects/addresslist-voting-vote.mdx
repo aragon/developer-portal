@@ -44,14 +44,14 @@ No description
 
 ```graphql
 type AddresslistVotingVote {
-  id: ID!
-  voter: AddresslistVotingVoter!
-  proposal: AddresslistVotingProposal!
-  voteOption: VoteOption!
-  votingPower: BigInt!
   createdAt: BigInt!
-  voteReplaced: Boolean!
+  id: ID!
+  proposal: AddresslistVotingProposal!
   updatedAt: BigInt!
+  voteOption: VoteOption!
+  voteReplaced: Boolean!
+  voter: AddresslistVotingVoter!
+  votingPower: BigInt!
 }
 ```
 
@@ -60,43 +60,19 @@ type AddresslistVotingVote {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> VoterProposal for Many-to-Many
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>voter</b></code>](#)<Bullet />[`AddresslistVotingVoter!`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>proposal</b></code>](#)<Bullet />[`AddresslistVotingProposal!`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>voteOption</b></code>](#)<Bullet />[`VoteOption!`](/docs/subgraph/reference-guide/enums/vote-option) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>votingPower</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
 #### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>createdAt</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>voteReplaced</b></code>](#)<Bullet />[`Boolean!`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> VoterProposal for Many-to-Many
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>proposal</b></code>](#)<Bullet />[`AddresslistVotingProposal!`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > 
@@ -108,11 +84,35 @@ type AddresslistVotingVote {
 > 
 > 
 
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>voteOption</b></code>](#)<Bullet />[`VoteOption!`](/docs/subgraph/reference-guide/enums/vote-option) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>voteReplaced</b></code>](#)<Bullet />[`Boolean!`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>voter</b></code>](#)<Bullet />[`AddresslistVotingVoter!`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddresslistVotingVote.<b>votingPower</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
 
 
 
 
 ### Member Of
 
-[`AddresslistVotingProposal`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AddresslistVotingVoter`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`AddresslistVotingProposal`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AddresslistVotingVoter`](/docs/subgraph/reference-guide/objects/addresslist-voting-voter)  <Badge class="badge badge--secondary" text="object"/>
 

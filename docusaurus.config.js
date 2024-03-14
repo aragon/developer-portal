@@ -148,17 +148,14 @@ const config = {
     [
       '@graphql-markdown/docusaurus',
       {
-        schema: `https://subgraph.satsuma-prod.com/qHR2wGfc5RLi6/aragon/osx-mainnet/api`,
+        schema: `./static/subgraph/schema-introspection.json`,
         rootPath: './docs',
         baseURL: 'subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
         linkRoot: '/docs',
-        printTypeOptions: {
-          useApiGroup: false,
-        },
         loaders: {
-          UrlLoader: {
-            module: '@graphql-tools/url-loader',
+          JsonFileLoader: {
+            module: '@graphql-tools/json-file-loader',
             options: {
               rootTypes: {
                 query: '',
@@ -167,6 +164,9 @@ const config = {
               },
             },
           },
+        },
+        printTypeOptions: {
+          useApiGroup: false,
         },
       },
     ],

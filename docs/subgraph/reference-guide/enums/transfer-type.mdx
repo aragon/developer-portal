@@ -39,14 +39,14 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Classifies the types of transfers from the DAO's point of view.
 
 
 ```graphql
 enum TransferType {
+  Deposit
   ExternalTransfer
   Withdraw
-  Deposit
 }
 ```
 
@@ -55,22 +55,24 @@ enum TransferType {
 
 ### Values
 
+#### [<code style={{ fontWeight: 'normal' }}>TransferType.<b>Deposit</b></code>](#)  
+> 
+> 
+> A deposit to the DAO treasury. Using either the DAO `deposit` function or executed by the DAO via proposal calling `transferFrom` as an action to transfer to itself.
+> The DAO must have token approval.
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>TransferType.<b>ExternalTransfer</b></code>](#)  
 > 
 > 
-> 
+> When a DAO facilitates a transfer and neither the source nor the destination addresses match the DAO's. The DAO must
+> have token approval to execute the transfer via proposal, acting as an intermediary in the process.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>TransferType.<b>Withdraw</b></code>](#)  
 > 
 > 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>TransferType.<b>Deposit</b></code>](#)  
-> 
-> 
-> 
+>  A withdrawal form the DAO treasury. Executed by the DAO via proposal calling `transfer`. 
 > 
 
 
@@ -79,5 +81,5 @@ enum TransferType {
 
 ### Member Of
 
-[`ERC1155Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc1155-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC1155Transfer`](/docs/subgraph/reference-guide/objects/erc1155-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC20Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc20-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC20Transfer`](/docs/subgraph/reference-guide/objects/erc20-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC721Transfer_filter`](/docs/subgraph/reference-guide/inputs/erc721-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ERC721Transfer`](/docs/subgraph/reference-guide/objects/erc721-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`NativeTransfer_filter`](/docs/subgraph/reference-guide/inputs/native-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`NativeTransfer`](/docs/subgraph/reference-guide/objects/native-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenTransfer_filter`](/docs/subgraph/reference-guide/inputs/token-transfer-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenTransfer`](/docs/subgraph/reference-guide/interfaces/token-transfer)  <Badge class="badge badge--secondary" text="interface"/>
+[`ERC1155Transfer`](/docs/subgraph/reference-guide/objects/erc1155-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC20Transfer`](/docs/subgraph/reference-guide/objects/erc20-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC721Transfer`](/docs/subgraph/reference-guide/objects/erc721-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`NativeTransfer`](/docs/subgraph/reference-guide/objects/native-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenTransfer`](/docs/subgraph/reference-guide/interfaces/token-transfer)  <Badge class="badge badge--secondary" text="interface"/>
 

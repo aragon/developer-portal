@@ -1,6 +1,6 @@
 ---
-id: plugin-release-order-by
-title: PluginRelease_orderBy
+id: specified-by
+title: specifiedBy
 ---
 
 
@@ -39,66 +39,24 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Exposes a URL that specifies the behavior of this scalar.
 
 
 ```graphql
-enum PluginRelease_orderBy {
-  id
-  pluginRepo
-  pluginRepo__id
-  pluginRepo__subdomain
-  release
-  metadata
-  builds
-}
+directive @specifiedBy(
+  url: String!
+) on SCALAR
 ```
 
 
 
 
-### Values
+### Arguments
 
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease_orderBy.<b>id</b></code>](#)  
+#### [<code style={{ fontWeight: 'normal' }}>specifiedBy.<b>url</b></code>](#)<Bullet />[`String!`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease_orderBy.<b>pluginRepo</b></code>](#)  
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease_orderBy.<b>pluginRepo__id</b></code>](#)  
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease_orderBy.<b>pluginRepo__subdomain</b></code>](#)  
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease_orderBy.<b>release</b></code>](#)  
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease_orderBy.<b>metadata</b></code>](#)  
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease_orderBy.<b>builds</b></code>](#)  
-> 
-> 
-> 
+> The URL that specifies the behavior of this scalar.
 > 
 
 

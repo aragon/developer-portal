@@ -44,17 +44,11 @@ No description
 
 ```graphql
 type PluginRelease {
+  builds: [PluginVersion!]!
   id: ID!
+  metadata: String!
   pluginRepo: PluginRepo!
   release: Int!
-  metadata: String!
-  builds(
-    skip: Int = 0
-    first: Int = 100
-    orderBy: PluginVersion_orderBy
-    orderDirection: OrderDirection
-    where: PluginVersion_filter
-  ): [PluginVersion!]!
 }
 ```
 
@@ -63,7 +57,19 @@ type PluginRelease {
 
 ### Fields
 
+#### [<code style={{ fontWeight: 'normal' }}>PluginRelease.<b>builds</b></code>](#)<Bullet />[`[PluginVersion!]!`](/docs/subgraph/reference-guide/objects/plugin-version) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>PluginRelease.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PluginRelease.<b>metadata</b></code>](#)<Bullet />[`String!`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
@@ -81,51 +87,11 @@ type PluginRelease {
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease.<b>metadata</b></code>](#)<Bullet />[`String!`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>PluginRelease.<b>builds</b></code>](#)<Bullet />[`[PluginVersion!]!`](/docs/subgraph/reference-guide/objects/plugin-version) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
-> 
-> 
-> 
-> ##### [<code style={{ fontWeight: 'normal' }}>PluginRelease.builds.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginRelease.builds.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph/reference-guide/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginRelease.builds.<b>orderBy</b></code>](#)<Bullet />[`PluginVersion_orderBy`](/docs/subgraph/reference-guide/enums/plugin-version-order-by) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginRelease.builds.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph/reference-guide/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
-
-##### [<code style={{ fontWeight: 'normal' }}>PluginRelease.builds.<b>where</b></code>](#)<Bullet />[`PluginVersion_filter`](/docs/subgraph/reference-guide/inputs/plugin-version-filter) <Badge class="badge badge--secondary" text="input"/> 
-> 
-> 
-> 
-> 
-
 
 
 
 
 ### Member Of
 
-[`PluginRepo`](/docs/subgraph/reference-guide/objects/plugin-repo)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginVersion`](/docs/subgraph/reference-guide/objects/plugin-version)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph/reference-guide/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph/reference-guide/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+[`PluginRepo`](/docs/subgraph/reference-guide/objects/plugin-repo)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginVersion`](/docs/subgraph/reference-guide/objects/plugin-version)  <Badge class="badge badge--secondary" text="object"/>
 
