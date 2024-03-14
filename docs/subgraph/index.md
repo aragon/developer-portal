@@ -14,9 +14,9 @@ On this site, can be found help with [queries](./01-queryExample/index.md) as we
 
 ## Playground
 
-We encourage users to test the [Aragon subgraph-satsuma playground](https://subgraph.satsuma-prod.com/aragon/osx-mainnet/playground) to fully understand what information is available and how to access it.
+You can use the [Aragon subgraph-satsuma playground](https://subgraph.satsuma-prod.com/aragon/osx-mainnet/playground) for testing.
 
-Query examples to illustrate how information can be queried are provided in the [Query Examples site](./01-queryExample/index.md).
+Examples queries are provided in the [Query Example](./01-queryExample/index.md) section.
 
 - [DAO queries](./01-queryExample/01-dao-query.md)
 - [Balances queries](./01-queryExample/02-balances-query.md)
