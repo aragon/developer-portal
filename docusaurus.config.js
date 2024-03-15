@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+require('dotenv').config();
 const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github,
   darkCodeTheme = themes.dracula;
@@ -143,6 +143,31 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
+      },
+    ],
+    [
+      '@graphql-markdown/docusaurus',
+      {
+        schema: `./static/subgraph/schema-introspection.json`,
+        rootPath: './docs',
+        baseURL: 'subgraph/reference-guide',
+        homepage: './static/subgraph/index.md',
+        linkRoot: '/docs',
+        loaders: {
+          JsonFileLoader: {
+            module: '@graphql-tools/json-file-loader',
+            options: {
+              rootTypes: {
+                query: '',
+                subscription: '',
+                mutation: '',
+              },
+            },
+          },
+        },
+        printTypeOptions: {
+          useApiGroup: false,
+        },
       },
     ],
     async function TailwindPlugin(context, options) {
