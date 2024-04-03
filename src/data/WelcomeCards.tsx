@@ -25,7 +25,7 @@ const welcomeCards: IWelcomeCardProps[] = [
       'Keep up to date on the latest product releases and learn about working with Aragon',
     icon: <PageIcon />,
     linkLabel: 'Join here',
-    href: 'https://aragonproject.typeform.com/to/LngekEhU',
+    href: 'https://aragondevelopers.substack.com/',
   },
 ];
 
