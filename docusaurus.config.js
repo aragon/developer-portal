@@ -17,7 +17,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
-  
+
   favicon: 'img/Aragon-logo-circle.png',
 
   presets: [
@@ -131,7 +131,7 @@ const config = {
       announcementBar: {
         id: 'register_to_dev_newsletter',
         content:
-          'Register to our developer newsletter and get the latest updates on DAO tooling <a target="_blank" rel="noopener noreferrer" href="https://aragonproject.typeform.com/to/LngekEhU">here</a></strong>!',
+          'Register to our developer newsletter and get the latest updates on DAO tooling <a target="_blank" rel="noopener noreferrer" href="https://aragondevelopers.substack.com/">here</a></strong>!',
         backgroundColor: '#3164fa',
         textColor: '#fff',
         isCloseable: true,
