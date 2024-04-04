@@ -1,0 +1,59 @@
+---
+id: bytes
+title: Bytes
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ Byte array, represented as a hexadecimal string. Commonly used for Ethereum hashes and addresses. 
+
+
+```graphql
+scalar Bytes
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`Action`](/docs/subgraph/reference-guide/objects/action)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AddresslistVotingPlugin`](/docs/subgraph/reference-guide/objects/addresslist-voting-plugin)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AddresslistVotingProposal`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AdminPlugin`](/docs/subgraph/reference-guide/objects/admin-plugin)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AdminProposal`](/docs/subgraph/reference-guide/objects/admin-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Dao`](/docs/subgraph/reference-guide/objects/dao)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC1155Transfer`](/docs/subgraph/reference-guide/objects/erc1155-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC20Transfer`](/docs/subgraph/reference-guide/objects/erc20-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC721Transfer`](/docs/subgraph/reference-guide/objects/erc721-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`IPlugin`](/docs/subgraph/reference-guide/interfaces/iplugin)  <Badge class="badge badge--secondary" text="interface"/><Bullet />[`IProposal`](/docs/subgraph/reference-guide/interfaces/iproposal)  <Badge class="badge badge--secondary" text="interface"/><Bullet />[`MultisigPlugin`](/docs/subgraph/reference-guide/objects/multisig-plugin)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`MultisigProposal`](/docs/subgraph/reference-guide/objects/multisig-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`NativeTransfer`](/docs/subgraph/reference-guide/objects/native-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Permission`](/docs/subgraph/reference-guide/objects/permission)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginInstallation`](/docs/subgraph/reference-guide/objects/plugin-installation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginPermission`](/docs/subgraph/reference-guide/objects/plugin-permission)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PluginPreparation`](/docs/subgraph/reference-guide/objects/plugin-preparation)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`StandardCallback`](/docs/subgraph/reference-guide/objects/standard-callback)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenTransfer`](/docs/subgraph/reference-guide/interfaces/token-transfer)  <Badge class="badge badge--secondary" text="interface"/><Bullet />[`TokenVotingMember`](/docs/subgraph/reference-guide/objects/token-voting-member)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenVotingPlugin`](/docs/subgraph/reference-guide/objects/token-voting-plugin)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenVotingProposal`](/docs/subgraph/reference-guide/objects/token-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TransactionActionsProposal`](/docs/subgraph/reference-guide/objects/transaction-actions-proposal)  <Badge class="badge badge--secondary" text="object"/>
+

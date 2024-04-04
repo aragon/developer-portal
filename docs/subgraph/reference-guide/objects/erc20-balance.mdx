@@ -1,0 +1,101 @@
+---
+id: erc20-balance
+title: ERC20Balance
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The ERC20 Token balances for the DAO.
+
+
+```graphql
+type ERC20Balance implements TokenBalance {
+  balance: BigInt!
+  dao: Dao!
+  id: ID!
+  lastUpdated: BigInt!
+  token: ERC20Contract!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>balance</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The amount of ERC20 tokens held by the DAO. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  The DAO that holds the ERC20 token. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The concatenation of DAO Smart contract address and Token Smart contract address. Joined by '_'. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>lastUpdated</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The block timestamp of the last update (transfer) for this token balance. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>token</b></code>](#)<Bullet />[`ERC20Contract!`](/docs/subgraph/reference-guide/objects/erc20-contract) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  The [ERC20 Token Smart Contract](https://eips.ethereum.org/EIPS/eip-20) instance. 
+> 
+
+### Interfaces
+
+#### [`TokenBalance`](/docs/subgraph/reference-guide/interfaces/token-balance) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> Balance of the DAO for any kind of token. Each entity implementing this interface can be queried as TokenBalance.
+> 
+
+
+
+
+

@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+require('dotenv').config();
 const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github,
   darkCodeTheme = themes.dracula;
@@ -17,7 +17,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
-  
+
   favicon: 'img/Aragon-logo-circle.png',
 
   presets: [
@@ -131,7 +131,7 @@ const config = {
       announcementBar: {
         id: 'register_to_dev_newsletter',
         content:
-          'Register to our developer newsletter and get the latest updates on DAO tooling <a target="_blank" rel="noopener noreferrer" href="https://aragonproject.typeform.com/to/LngekEhU">here</a></strong>!',
+          'Register to our developer newsletter and get the latest updates on DAO tooling <a target="_blank" rel="noopener noreferrer" href="https://aragondevelopers.substack.com/">here</a></strong>!',
         backgroundColor: '#3164fa',
         textColor: '#fff',
         isCloseable: true,
@@ -143,6 +143,31 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
+      },
+    ],
+    [
+      '@graphql-markdown/docusaurus',
+      {
+        schema: `./static/subgraph/schema-introspection.json`,
+        rootPath: './docs',
+        baseURL: 'subgraph/reference-guide',
+        homepage: './static/subgraph/index.md',
+        linkRoot: '/docs',
+        loaders: {
+          JsonFileLoader: {
+            module: '@graphql-tools/json-file-loader',
+            options: {
+              rootTypes: {
+                query: '',
+                subscription: '',
+                mutation: '',
+              },
+            },
+          },
+        },
+        printTypeOptions: {
+          useApiGroup: false,
+        },
       },
     ],
     async function TailwindPlugin(context, options) {

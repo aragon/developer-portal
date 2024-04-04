@@ -20,5 +20,7 @@ jobs:
         run: yarn
       - name: Optimize SVG images
         run: yarn optimize-svg
+      - name: Generate Subgraph Auto-Documentation
+        run: yarn docs:subgraph
       - name: Build
         run: yarn build

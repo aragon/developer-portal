@@ -1,0 +1,287 @@
+---
+id: token-voting-proposal
+title: TokenVotingProposal
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+type TokenVotingProposal implements IProposal {
+  abstain: BigInt
+  actions: [Action!]!
+  allowFailureMap: BigInt!
+  approvalReached: Boolean!
+  castedVotingPower: BigInt
+  createdAt: BigInt!
+  creationBlockNumber: BigInt!
+  creator: Bytes!
+  dao: Dao!
+  earlyExecutable: Boolean
+  endDate: BigInt!
+  executed: Boolean!
+  executionBlockNumber: BigInt
+  executionDate: BigInt
+  executionTxHash: Bytes
+  failureMap: BigInt
+  id: ID!
+  isSignaling: Boolean!
+  metadata: String
+  minVotingPower: BigInt!
+  no: BigInt
+  open: Boolean!
+  plugin: TokenVotingPlugin!
+  pluginProposalId: BigInt!
+  snapshotBlock: BigInt!
+  startDate: BigInt!
+  supportThreshold: BigInt!
+  totalVotingPower: BigInt!
+  voters: [TokenVotingVote!]!
+  votingMode: VotingMode!
+  yes: BigInt
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>abstain</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>actions</b></code>](#)<Bullet />[`[Action!]!`](/docs/subgraph/reference-guide/objects/action) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>allowFailureMap</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>approvalReached</b></code>](#)<Bullet />[`Boolean!`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>castedVotingPower</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>createdAt</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>creationBlockNumber</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>creator</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>earlyExecutable</b></code>](#)<Bullet />[`Boolean`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>endDate</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>executed</b></code>](#)<Bullet />[`Boolean!`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>executionBlockNumber</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>executionDate</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>executionTxHash</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>failureMap</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>isSignaling</b></code>](#)<Bullet />[`Boolean!`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>metadata</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>minVotingPower</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>no</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>open</b></code>](#)<Bullet />[`Boolean!`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>plugin</b></code>](#)<Bullet />[`TokenVotingPlugin!`](/docs/subgraph/reference-guide/objects/token-voting-plugin) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>pluginProposalId</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>snapshotBlock</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>startDate</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>supportThreshold</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>totalVotingPower</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>voters</b></code>](#)<Bullet />[`[TokenVotingVote!]!`](/docs/subgraph/reference-guide/objects/token-voting-vote) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>votingMode</b></code>](#)<Bullet />[`VotingMode!`](/docs/subgraph/reference-guide/enums/voting-mode) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TokenVotingProposal.<b>yes</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+### Interfaces
+
+#### [`IProposal`](/docs/subgraph/reference-guide/interfaces/iproposal) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`TokenVotingPlugin`](/docs/subgraph/reference-guide/objects/token-voting-plugin)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenVotingVote`](/docs/subgraph/reference-guide/objects/token-voting-vote)  <Badge class="badge badge--secondary" text="object"/>
+
