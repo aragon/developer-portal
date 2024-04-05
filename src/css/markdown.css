@@ -1,5 +1,9 @@
 .markdown {
-  font-family: Manrope, system-ui, -apple-system, sans-serif;
+  font-family:
+    Manrope,
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.7;
   font-style: normal;
   font-size: 1rem;
@@ -35,7 +39,9 @@
   margin: 16px 0 6px;
 }
 
-.markdown p, .markdown ul, .markdown ol {
+.markdown p,
+.markdown ul,
+.markdown ol {
   margin: 0 0 20px;
   font-size: 1rem;
 }
@@ -78,7 +84,7 @@
 
 .markdown img {
   background-color: white;
-  padding: 8px
+  padding: 8px;
 }
 
 .table-cell-positive {
@@ -104,4 +110,8 @@
   font-size: 0.75rem !important;
   margin-left: 10pc;
   margin-right: 10pc;
+}
+
+.hidden {
+  display: none !important;
 }

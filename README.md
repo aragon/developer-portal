@@ -5,7 +5,7 @@
   •
   <a href="https://devs.aragon.org/">Developer Portal</a>
   •
-  <a href="https://aragonproject.typeform.com/to/LngekEhU">Join our Developer Community</a>
+  <a href="https://aragondevelopers.substack.com/">Join our Developer Community</a>
   •
   <a href="https://aragonproject.typeform.com/dx-contribution">Contribute</a>
 </p>
@@ -14,7 +14,7 @@
 
 # Aragon OSx Developer Portal
 
-Aragon's Developer Portal holds all documentation developers need to kickstart their journey building with the Aragon OSx stack. You can find it in production [here](https://devs.aragon.org). 
+Aragon's Developer Portal holds all documentation developers need to kickstart their journey building with the Aragon OSx stack. You can find it in production [here](https://devs.aragon.org).
 
 This website is built using [Docusaurus 3](https://docusaurus.io/), a static website generator for technical documentations.
 

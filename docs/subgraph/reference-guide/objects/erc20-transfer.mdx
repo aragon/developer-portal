@@ -1,0 +1,136 @@
+---
+id: erc20-transfer
+title: ERC20Transfer
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Transfers of ERC20 token associated with the DAO, including transfers sent to, received by, or intermediated by the DAO (refer to `Enum` `TransferType` for a better understanding of transfers associated with the DAO meaning).
+
+
+```graphql
+type ERC20Transfer implements TokenTransfer {
+  amount: BigInt!
+  createdAt: BigInt!
+  dao: Dao!
+  from: Bytes!
+  id: ID!
+  proposal: IProposal
+  to: Bytes!
+  token: Token!
+  txHash: Bytes!
+  type: TransferType!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>amount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The amount of ERC20 token transferred. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>createdAt</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The timestamp of the block including the ERC20 token transfer. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  The DAO that manages the transfer. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>from</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The Ethereum address from which the ERC20 tokens are being transferred. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The concatenation of the transfer transaction hash, the log index and the action index. Joined by '_'. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>proposal</b></code>](#)<Bullet />[`IProposal`](/docs/subgraph/reference-guide/interfaces/iproposal) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+>  The associated DAO proposal, if applicable. Using the DAO `deposit` function there's no need for proposal. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>to</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The Ethereum address receiving the ERC20 tokens. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>token</b></code>](#)<Bullet />[`Token!`](/docs/subgraph/reference-guide/interfaces/token) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+>  The ERC20 Smart Contract Token entity involved in the transfer. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>txHash</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The hash of the ERC20 token transfer to track the transaction. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Transfer.<b>type</b></code>](#)<Bullet />[`TransferType!`](/docs/subgraph/reference-guide/enums/transfer-type) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+>  The type of transfer (External, Withdraw, Deposit) from the DAO's POV. 
+> 
+
+### Interfaces
+
+#### [`TokenTransfer`](/docs/subgraph/reference-guide/interfaces/token-transfer) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> Interface representing a generic token transfer associated with the DAO. Each entity implementing this interface can be queried as TokenTransfer (refer to `Enum` `TransferType` for a better understanding of transfers associated with the DAO meaning).
+> 
+
+
+
+
+

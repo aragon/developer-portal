@@ -1,0 +1,150 @@
+---
+id: iproposal
+title: IProposal
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+interface IProposal {
+  actions: [Action!]!
+  allowFailureMap: BigInt!
+  createdAt: BigInt!
+  creator: Bytes!
+  dao: Dao!
+  endDate: BigInt!
+  executed: Boolean!
+  executionTxHash: Bytes
+  failureMap: BigInt
+  id: ID!
+  metadata: String
+  startDate: BigInt!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>actions</b></code>](#)<Bullet />[`[Action!]!`](/docs/subgraph/reference-guide/objects/action) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>allowFailureMap</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>createdAt</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>creator</b></code>](#)<Bullet />[`Bytes!`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>endDate</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>executed</b></code>](#)<Bullet />[`Boolean!`](/docs/subgraph/reference-guide/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>executionTxHash</b></code>](#)<Bullet />[`Bytes`](/docs/subgraph/reference-guide/scalars/bytes) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>failureMap</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>metadata</b></code>](#)<Bullet />[`String`](/docs/subgraph/reference-guide/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IProposal.<b>startDate</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Action`](/docs/subgraph/reference-guide/objects/action)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Dao`](/docs/subgraph/reference-guide/objects/dao)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC1155Transfer`](/docs/subgraph/reference-guide/objects/erc1155-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC20Transfer`](/docs/subgraph/reference-guide/objects/erc20-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ERC721Transfer`](/docs/subgraph/reference-guide/objects/erc721-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`NativeTransfer`](/docs/subgraph/reference-guide/objects/native-transfer)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenTransfer`](/docs/subgraph/reference-guide/interfaces/token-transfer)  <Badge class="badge badge--secondary" text="interface"/>
+
+### Implemented By
+
+[`AddresslistVotingProposal`](/docs/subgraph/reference-guide/objects/addresslist-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AdminProposal`](/docs/subgraph/reference-guide/objects/admin-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`MultisigProposal`](/docs/subgraph/reference-guide/objects/multisig-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenVotingProposal`](/docs/subgraph/reference-guide/objects/token-voting-proposal)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TransactionActionsProposal`](/docs/subgraph/reference-guide/objects/transaction-actions-proposal)  <Badge class="badge badge--secondary" text="object"/>
+
