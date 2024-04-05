@@ -4,20 +4,18 @@ on:
   workflow_dispatch:
     inputs:
       source_branch:
-        description: "Publish content from branch (master|staging)"
+        description: 'Publish content from branch (master|staging-temp)'
         required: true
-        default: staging
+        default: staging-temp
         type: choice
         options:
-        - master
-        - staging
+          - master
+          - staging-temp
 
 jobs:
-
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout code ( Branch=${{ inputs.source_branch }} )
         uses: actions/checkout@v4
         with:
