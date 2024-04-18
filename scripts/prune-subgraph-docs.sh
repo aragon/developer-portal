@@ -20,7 +20,7 @@ if ! line_exists "sidebar_class_name: hidden" "docs/subgraph/reference-guide/obj
 fi
 
 # Add pagination_next/pagination_previous to gracefully skip the previous sidbar hidden pages, to hide them from the
-# nex/previous page buttons at the bottom of the webpages
+# next/previous page buttons at the bottom of the webpages
 if ! line_exists "pagination_prev: subgraph/reference-guide/index" "docs/subgraph/reference-guide/enums/permission-operation.mdx"; then
     sed -i '2s#^#pagination_prev: subgraph/reference-guide/index\n#' "docs/subgraph/reference-guide/enums/permission-operation.mdx"
 fi
