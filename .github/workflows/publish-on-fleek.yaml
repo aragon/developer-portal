@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       source_branch:
-        description: 'Publish content from branch (master|staging-temp)'
+        description: 'Publish content from branch (master|staging)'
         required: true
-        default: staging-temp
+        default: staging
         type: choice
         options:
           - master
-          - staging-temp
+          - staging
 
 jobs:
   build-and-deploy:
