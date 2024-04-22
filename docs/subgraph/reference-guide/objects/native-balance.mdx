@@ -57,25 +57,25 @@ type NativeBalance implements TokenBalance {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>balance</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>balance</b></code>](#)<Bullet />[`BigInt!`](/docs/next/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 >  The amount of native tokens held by the DAO. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/next/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 >  The DAO that holds the native tokens
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/next/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 >  The concatenation of DAO Smart contract address and Token Smart contract address. Joined by '_'. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>lastUpdated</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>NativeBalance.<b>lastUpdated</b></code>](#)<Bullet />[`BigInt!`](/docs/next/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 >  The block timestamp of the last update (transfer) for this native token balance. 
@@ -83,7 +83,7 @@ type NativeBalance implements TokenBalance {
 
 ### Interfaces
 
-#### [`TokenBalance`](/docs/subgraph/reference-guide/interfaces/token-balance) <Badge class="badge badge--secondary" text="interface"/> 
+#### [`TokenBalance`](/docs/next/subgraph/reference-guide/interfaces/token-balance) <Badge class="badge badge--secondary" text="interface"/> 
 > 
 > 
 > Balance of the DAO for any kind of token. Each entity implementing this interface can be queried as TokenBalance.

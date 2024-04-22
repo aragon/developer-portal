@@ -57,31 +57,31 @@ type ERC20Balance implements TokenBalance {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>balance</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>balance</b></code>](#)<Bullet />[`BigInt!`](/docs/next/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 >  The amount of ERC20 tokens held by the DAO. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>dao</b></code>](#)<Bullet />[`Dao!`](/docs/next/subgraph/reference-guide/objects/dao) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 >  The DAO that holds the ERC20 token. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/next/subgraph/reference-guide/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 >  The concatenation of DAO Smart contract address and Token Smart contract address. Joined by '_'. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>lastUpdated</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>lastUpdated</b></code>](#)<Bullet />[`BigInt!`](/docs/next/subgraph/reference-guide/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 >  The block timestamp of the last update (transfer) for this token balance. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>token</b></code>](#)<Bullet />[`ERC20Contract!`](/docs/subgraph/reference-guide/objects/erc20-contract) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>ERC20Balance.<b>token</b></code>](#)<Bullet />[`ERC20Contract!`](/docs/next/subgraph/reference-guide/objects/erc20-contract) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 >  The [ERC20 Token Smart Contract](https://eips.ethereum.org/EIPS/eip-20) instance. 
@@ -89,7 +89,7 @@ type ERC20Balance implements TokenBalance {
 
 ### Interfaces
 
-#### [`TokenBalance`](/docs/subgraph/reference-guide/interfaces/token-balance) <Badge class="badge badge--secondary" text="interface"/> 
+#### [`TokenBalance`](/docs/next/subgraph/reference-guide/interfaces/token-balance) <Badge class="badge badge--secondary" text="interface"/> 
 > 
 > 
 > Balance of the DAO for any kind of token. Each entity implementing this interface can be queried as TokenBalance.
