@@ -5592,7 +5592,7 @@
       {
         "kind": "OBJECT",
         "name": "Query",
-        "description": " Fake query, needed to generate introspection query. ",
+        "description": " Query type, required to generate introspection query. ",
         "fields": [
           {
             "name": "id",

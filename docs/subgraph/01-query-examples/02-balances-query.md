@@ -8,6 +8,8 @@ sidebar_label: Balances Query
 The query
 
 ```ts
+import {gql} from 'graphql-request';
+
 export const QueryTokenBalances = gql`
   query TokenBalances(
     $where: TokenBalance_filter!

@@ -8,7 +8,7 @@ sidebar_position: 0
 
 Subgraph is a protocol for indexing and querying event data emitted from the smart contracts.
 
-The Aragon Subgraph stores all DAO-related information, either to help users to manage and interact with their DAOs or to query useful information, such as its treasury information, members, installed plugins, etc.
+The Aragon Subgraph stores all DAO-related information, either to help users to manage and interact with their DAOs or to query useful information, such as its treasury information, members, plugins, etc.
 
 ## Playground
 
