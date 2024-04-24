@@ -9,7 +9,7 @@
   "build": {
     "baseDir": "",
     "publicDir": "build/",
-    "command": "yarn && yarn build",
+    "command": "yarn && yarn docs:subgraph && yarn optimize-svg && yarn build",
     "rootDir": ""
   }
 }
