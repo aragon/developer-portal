@@ -28,12 +28,10 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          includeCurrentVersion: false,
-          // lastVersion: 'current',
-          // onlyIncludeVersions: ['1.3.0'],
+          includeCurrentVersion: true,
           versions: {
             current: {
-              label: '1.4.0',
+              label: '1.4.0-alpha',
               path: '1.4.0',
             },
           },
@@ -71,11 +69,11 @@ const config = {
           src: 'img/logo-light.png',
         },
         items: [
-          // {
-          //   type: 'docsVersionDropdown',
-          //   position: 'right',
-          //   dropdownActiveClassDisabled: true,
-          // },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+          },
         ],
       },
       metadata: [
