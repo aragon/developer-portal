@@ -28,6 +28,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          includeCurrentVersion: true,
+          versions: {
+            current: {
+              label: '1.4.0-alpha',
+              path: '1.4.0',
+            },
+          },
         },
         theme: {
           customCss: [
@@ -61,6 +68,13 @@ const config = {
           alt: 'Aragon',
           src: 'img/logo-light.png',
         },
+        items: [
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+          },
+        ],
       },
       metadata: [
         {name: 'og:title', content: 'Aragon Developer Portal'},
@@ -148,11 +162,11 @@ const config = {
     [
       '@graphql-markdown/docusaurus',
       {
-        schema: `./static/subgraph/schema-introspection.json`,
+        schema: `./static/subgraph/schema-introspection-partial.json`,
         rootPath: './docs',
         baseURL: 'subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/docs',
+        linkRoot: '/docs/1.4.0',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',
