@@ -16,7 +16,7 @@ function UnreleasedVersionLabel({siteTitle, versionMetadata}) {
   return (
     <Translate
       id="theme.docs.versions.unreleasedVersionLabel"
-      description="The label indicating an unreleased docs version"
+      description="The label indicating an unreleased version"
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
