@@ -23,7 +23,7 @@ function UnreleasedVersionLabel({siteTitle, versionMetadata}) {
       }}
     >
       {
-        "⚠️ Version {versionLabel} is a pre-release and hasn't been audited. This documentation section is work in progess."
+        "⚠️ Version {versionLabel} is a pre-release and hasn't been audited. This documentation section is work in progress."
       }
     </Translate>
   );
@@ -65,7 +65,7 @@ function LatestVersionSuggestionLabel({versionLabel, to, onClick}) {
             <Link to={to} onClick={onClick}>
               <Translate
                 id="theme.docs.versions.latestVersionLinkLabel"
-                description="The label used for the latest version suggestion link label"
+                description="The label suggesting the latest version"
               >
                 latest version
               </Translate>
@@ -74,9 +74,7 @@ function LatestVersionSuggestionLabel({versionLabel, to, onClick}) {
         ),
       }}
     >
-      {
-        'For the latest version, see {latestVersionLink} ({versionLabel}).'
-      }
+      {'For the latest version, see {latestVersionLink} ({versionLabel}).'}
     </Translate>
   );
 }
