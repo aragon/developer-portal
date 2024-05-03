@@ -31,8 +31,8 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --neutral-500: #9AA5B1;
-  --neutral-700: #CBD2D9;
+  --neutral-500: #9aa5b1;
+  --neutral-700: #cbd2d9;
   --ifm-color-primary: #729fcf;
   --ifm-color-primary-dark: #bad0e7;
   --ifm-color-primary-darker: #96b7db;
@@ -57,19 +57,19 @@ a {
   color: var(--ifm-color-link);
 }
 
-div[class*="announcementBarContent"] {
+div[class*='announcementBarContent'] {
   line-height: 40px;
   font-size: 20px;
   padding: 8px 30px;
 }
 
-div[class*="announcementBarContent"] a {
+div[class*='announcementBarContent'] a {
   text-decoration: underline;
   display: inline-block;
   color: var(--brand) !important;
 }
 
-div[class*="announcementBarContent"] a:hover {
+div[class*='announcementBarContent'] a:hover {
   color: var(--ifm-color-primary) !important;
 }
 
@@ -87,4 +87,9 @@ div[class*="announcementBarContent"] a:hover {
     line-height: 22px;
     padding: 6px 30px;
   }
+}
+
+/* Adding custom style to specific documents */
+.docs-doc-id-osx\/get-started .markdown {
+  max-width: 100%; /* or use pixel value: max-width: 800px */
 }

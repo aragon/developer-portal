@@ -8,6 +8,8 @@ interface IHeroHeader {
   img: ReactNode;
   imgStyle?: React.CSSProperties;
   imgAlt: string;
+  titleStyle?: React.CSSProperties; // Added titleStyle prop
+  subtitleStyle?: React.CSSProperties; // Added subtitleStyle prop
 }
 
 export const HeroHeader = (props: IHeroHeader) => {
@@ -17,8 +19,8 @@ export const HeroHeader = (props: IHeroHeader) => {
     <HeaderWrapper>
       {isMobile && <Image src={props.img} alt={props.imgAlt || ''} />}
       <TextWrapper>
-        <Title>{props.title}</Title>
-        <Subtitle>{props.subtitle}</Subtitle>
+        <Title style={props.titleStyle}>{props.title}</Title>
+        <Subtitle style={props.subtitleStyle}>{props.subtitle}</Subtitle>
       </TextWrapper>
       {!isMobile && (
         <Image
