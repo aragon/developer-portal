@@ -8,8 +8,8 @@ interface IHeroHeader {
   img: ReactNode;
   imgStyle?: React.CSSProperties;
   imgAlt: string;
-  titleStyle?: React.CSSProperties; // Added titleStyle prop
-  subtitleStyle?: React.CSSProperties; // Added subtitleStyle prop
+  titleStyle?: React.CSSProperties;
+  subtitleStyle?: React.CSSProperties;
 }
 
 export const HeroHeader = (props: IHeroHeader) => {
