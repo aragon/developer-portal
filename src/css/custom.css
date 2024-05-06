@@ -91,5 +91,5 @@ div[class*='announcementBarContent'] a:hover {
 
 /* Adding custom style to specific documents */
 .docs-doc-id-osx\/get-started .markdown {
-  max-width: 100%; /* or use pixel value: max-width: 800px */
+  max-width: 100%;
 }

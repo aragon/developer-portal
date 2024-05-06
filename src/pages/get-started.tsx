@@ -1,11 +1,10 @@
 import React from 'react';
-import Layout from '@theme/Layout';
 import {HeroHeader} from '../components/HeroHeader';
 import {WelcomeCard} from '../components/WelcomeCard';
 import devTools from '../data/DevTools';
 import styled from 'styled-components';
 
-const DevTools = () => {
+const GetStarted = () => {
   return (
     <Container>
       <HeroHeader
@@ -15,8 +14,8 @@ const DevTools = () => {
         img="https://res.cloudinary.com/duvrxe0m9/image/upload/v1688153627/dev-portal-huuman_ziy7xv.png"
         imgAlt="Developer"
         imgStyle={styles.heroHeader}
-        titleStyle={styles.title} // Pass overridden styles for title
-        subtitleStyle={styles.subtitle} // Pass overridden styles for subtitle
+        titleStyle={styles.title}
+        subtitleStyle={styles.subtitle}
       />
       <WelcomeCardsWrapper>
         {devTools.map((card, index) => (
@@ -61,4 +60,4 @@ const WelcomeCardsWrapper = styled.div.attrs({
   className: 'flex flex-wrap md:flex-row place-content-stretch gap-8',
 })``;
 
-export default DevTools;
+export default GetStarted;
