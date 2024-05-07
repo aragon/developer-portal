@@ -31,8 +31,8 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --neutral-500: #9AA5B1;
-  --neutral-700: #CBD2D9;
+  --neutral-500: #9aa5b1;
+  --neutral-700: #cbd2d9;
   --ifm-color-primary: #729fcf;
   --ifm-color-primary-dark: #bad0e7;
   --ifm-color-primary-darker: #96b7db;
@@ -57,19 +57,19 @@ a {
   color: var(--ifm-color-link);
 }
 
-div[class*="announcementBarContent"] {
+div[class*='announcementBarContent'] {
   line-height: 40px;
   font-size: 20px;
   padding: 8px 30px;
 }
 
-div[class*="announcementBarContent"] a {
+div[class*='announcementBarContent'] a {
   text-decoration: underline;
   display: inline-block;
   color: var(--brand) !important;
 }
 
-div[class*="announcementBarContent"] a:hover {
+div[class*='announcementBarContent'] a:hover {
   color: var(--ifm-color-primary) !important;
 }
 
@@ -87,4 +87,15 @@ div[class*="announcementBarContent"] a:hover {
     line-height: 22px;
     padding: 6px 30px;
   }
+}
+
+/* Apply customization to sidebar level 1 menu items when not active */
+.theme-doc-sidebar-item-link-level-1 .menu__link,
+.theme-doc-sidebar-item-category.theme-doc-sidebar-item-category-level-1:not(
+    .menu__list-item-collapsed
+  )
+  > .menu__list-item-collapsible
+  > .menu__link {
+  color: var(--ifm-color-primary-darkest);
+  font-weight: bold;
 }
