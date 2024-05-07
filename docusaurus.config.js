@@ -163,8 +163,8 @@ const config = {
       '@graphql-markdown/docusaurus',
       {
         schema: `./static/subgraph/schema-introspection-partial.json`,
-        rootPath: './docs',
-        baseURL: 'subgraph/reference-guide',
+        rootPath: './docs/',
+        baseURL: 'osx/subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
         linkRoot: '/docs/1.4.0',
         loaders: {

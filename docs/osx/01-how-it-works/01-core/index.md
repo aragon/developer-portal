@@ -1,5 +1,6 @@
 ---
 title: The Smart Contracts behind DAOs
+sidebar_label: Smart Contracts
 ---
 
 ## The Contracts Constituting Your DAO
