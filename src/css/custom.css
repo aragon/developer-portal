@@ -99,3 +99,8 @@ div[class*='announcementBarContent'] a:hover {
   color: var(--ifm-color-primary-darkest);
   font-weight: bold;
 }
+
+/* Adding custom style to specific documents */
+.docs-doc-id-osx\/get-started .markdown {
+  max-width: 100%;
+}
