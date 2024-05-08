@@ -4,14 +4,6 @@ import {RocketIcon, PageIcon, InfoIcon} from '../components';
 
 const welcomeCards: IWelcomeCardProps[] = [
   {
-    title: 'Get Started',
-    description:
-      'Customize your DAO through building a DAO Plugin or integrating OSx into your dApp',
-    icon: <RocketIcon />,
-    linkLabel: 'Start Building',
-    href: '/dev-tools',
-  },
-  {
     title: 'Browse Use Cases',
     description:
       'Check out how developers are leveraging Aragon OSx for their projects',
