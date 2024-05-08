@@ -12,6 +12,12 @@ Thrown if the dummy is used.
 error PlaceholderSetupCannotBeUsed()
 ```
 
+### public function constructor
+
+```solidity
+constructor() public
+```
+
 ### external function prepareInstallation
 
 Prepares the installation of a plugin.
@@ -42,19 +48,5 @@ function prepareUninstallation(address, struct IPluginSetup.SetupPayload) extern
 | ``         | `struct IPluginSetup.SetupPayload`             |             |
 | **Output** |                                                |
 | `0`        | `struct PermissionLib.MultiTargetPermission[]` |             |
-
-### external function implementation
-
-Returns the plugin implementation address.
-
-```solidity
-function implementation() external pure returns (address)
-```
-
-| Output | Type      | Description                                        |
-| ------ | --------- | -------------------------------------------------- |
-| `0`    | `address` | The address of the plugin implementation contract. |
-
-_The implementation can be instantiated via the `new` keyword, cloned via the minimal clones pattern (see [ERC-1167](https://eips.ethereum.org/EIPS/eip-1167)), or proxied via the UUPS pattern (see [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822))._
 
 <!--CONTRACT_END-->
