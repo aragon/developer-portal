@@ -1,11 +1,6 @@
 import React from 'react';
 import {IComponentCardProps} from '../components/ComponentCard';
-import {
-  IllustrationSdk,
-  IllustrationOsx,
-  IllustrationSubgraph,
-  IllustrationDesignSystem,
-} from '../components';
+import {IllustrationOsx, IllustrationDesignSystem} from '../components';
 
 const componentCards: IComponentCardProps[] = [
   {
@@ -15,21 +10,6 @@ const componentCards: IComponentCardProps[] = [
     img: <IllustrationOsx />,
     to: '/docs/osx',
   },
-  {
-    title: 'Aragon SDK',
-    description:
-      'A Software Development Kit designed with dApp builders in mind. Your gateway into the Aragon OSx protocol in pure JS - no Solidity required.',
-    img: <IllustrationSdk />,
-    to: '/docs/sdk',
-  },
-  // {
-  //   title: 'Aragon Subgraph',
-  //   description:
-  //     'A powerful indexing and querying tool to get information from events emitted by the Aragon OSx contracts. The site is currently under development.',
-  //   img: <IllustrationSubgraph />,
-  //   to: '/docs/subgraph',
-  //   cta: 'Learn More (WiP)',
-  // },
   {
     title: 'Design System',
     description:

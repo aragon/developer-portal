@@ -1,7 +1,7 @@
 ---
 title: Aragon Subgraph [WIP]
 sidebar_label: Introduction
-sidebar_position: 0
+sidebar_position: 6
 ---
 
 ## The On-Chain Information

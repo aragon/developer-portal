@@ -1,5 +1,5 @@
 ---
-title: How to build a DAO Plugin
+title: Developing a Plugin
 ---
 
 ## Plugin Development Quickstart Guide
