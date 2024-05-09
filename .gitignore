@@ -7,7 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
-/docs/subgraph/reference-guide
+**/subgraph/reference-guide
 
 # Misc
 .DS_Store

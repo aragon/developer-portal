@@ -89,6 +89,17 @@ div[class*='announcementBarContent'] a:hover {
   }
 }
 
+/* Apply customization to sidebar level 1 menu items when not active */
+.theme-doc-sidebar-item-link-level-1 .menu__link,
+.theme-doc-sidebar-item-category.theme-doc-sidebar-item-category-level-1:not(
+    .menu__list-item-collapsed
+  )
+  > .menu__list-item-collapsible
+  > .menu__link {
+  color: var(--ifm-color-primary-darkest);
+  font-weight: bold;
+}
+
 /* Adding custom style to specific documents */
 .docs-doc-id-osx\/get-started .markdown {
   max-width: 100%;

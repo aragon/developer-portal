@@ -1,7 +1,7 @@
 ---
 title: Reference Guide [WIP]
 sidebar_label: Reference Guide
-pagination_next: subgraph/reference-guide/enums/permission-operation
+pagination_next: osx/subgraph/reference-guide/enums/permission-operation
 ---
 
 ## Subgraph
