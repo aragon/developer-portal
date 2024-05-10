@@ -1,5 +1,5 @@
 ---
-title: Plugin Development
+title: Developing a Plugin
 ---
 
 ## Plugin Development Quickstart Guide

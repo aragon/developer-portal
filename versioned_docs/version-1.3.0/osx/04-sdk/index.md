@@ -1,7 +1,7 @@
 ---
 title: Aragon SDK
-sidebar_label: Intro
-sidebar_position: 0
+sidebar_label: SDK
+sidebar_position: 5
 ---
 
 ## The JavaScript/TypeScript SDK for Aragon OSx
