@@ -40,6 +40,14 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### Quick Serve
+
+```
+$ yarn quick:serve
+```
+
+This command encapsulates all commands needed to build and serve our website locally.
+
 ### Deployment
 
 Using SSH:
