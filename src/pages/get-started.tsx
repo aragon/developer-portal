@@ -11,7 +11,7 @@ const GetStarted = () => {
         title="Tools to get you building quick"
         subtitle="Here you'll find tooling, boilerplates, and tutorials to get started building with Aragon OSx quick."
         // eslint-disable-next-line @typescript-eslint/no-var-requires
-        img="https://res.cloudinary.com/duvrxe0m9/image/upload/v1688153627/dev-portal-huuman_ziy7xv.png"
+        img="/img/dev-portal-huuman_ziy7xv.png"
         imgAlt="Developer"
         imgStyle={styles.heroHeader}
         titleStyle={styles.title}

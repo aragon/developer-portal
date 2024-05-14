@@ -16,7 +16,7 @@ Different versions might contain:
 
 <div class="center-column">
 
-![Schematic depiction of the versioning taking place in the PluginRepoRegistry.](./plugin-repo-overview.drawio.svg)
+![Schematic depiction of the versioning taking place in the PluginRepoRegistry.](/img/docs/optimized-svg/plugin-repo-overview.drawio.svg)
 
 <p class="caption">
   Overview of the plugin versioning and registry in the Aragon OSx protocol. The `PluginRepoRegistry` contract, which is a curated list of ENS named `PluginRepo` contracts, is shown on the left. Each `PluginRepo` contract maintains a list of versions of the `PluginSetup` contract (internally referencing the `Plugin` implementation contract) and the associated UI building blocks as a URI, examplarily shown on the right.

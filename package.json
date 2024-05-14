@@ -13,7 +13,7 @@
     "docs:subgraph": "docusaurus graphql-to-doc && ./scripts/prune-subgraph-docs.sh",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "optimize-svg": "svgo -rf .",
+    "optimize-svg": "svgo -f ./static/img/docs -o ./static/img/docs/optimized-svg",
     "typecheck": "tsc",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },

@@ -1,4 +1,4 @@
-![Aragon](https://res.cloudinary.com/dacofvu8m/image/upload/v1677353961/Aragon%20CodeArena/osx_blue_logo_lqrvkr.png)
+![Aragon](/static/img/osx_blue_logo_lqrvkr.png)
 
 <p align="center">
   <a href="https://aragon.org/">Aragon website</a>

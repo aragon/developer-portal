@@ -8,6 +8,7 @@
 .docusaurus
 .cache-loader
 **/subgraph/reference-guide
+/static/img/docs/optimized-svg
 
 # Misc
 .DS_Store

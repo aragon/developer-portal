@@ -9,7 +9,7 @@ A DAO can be set up and customized by the **installation, update, and uninstalla
 - **Plugin contract:** contains the plugin's implementation logic; everything needed to extend the functionality for DAOs.
 - **Plugin Setup contract:** contains the instructions needed to install, update, and uninstall the plugin into the DAO. This is done through granting or revoking permissions, enabling plugins to perform actions within the scope of the DAO.
 
-![Aragon OSx Plugins](https://res.cloudinary.com/dacofvu8m/image/upload/v1683225098/Screen_Shot_2023-05-04_at_14.31.25_r0qqut.png)
+![Aragon OSx Plugins](/img/docs/what_is_a_plugin.png)
 
 How this works:
 
@@ -87,9 +87,9 @@ In the next sections, you will learn about how plugins are curated on Aragon's r
 
 <div class="center-column">
 
-**a.** ![Schematic depiction of the plugin installation process.](plugin-installation.drawio.svg)
-**b.** ![Schematic depiction of the plugin update process.](plugin-update.drawio.svg)
-**c.** ![Schematic depiction of the plugin uninstallation process.](plugin-uninstallation.drawio.svg)
+**a.** ![Schematic depiction of the plugin installation process.](/img/docs/optimized-svg/plugin-installation.drawio.svg)
+**b.** ![Schematic depiction of the plugin update process.](/img/docs/optimized-svg/plugin-update.drawio.svg)
+**c.** ![Schematic depiction of the plugin uninstallation process.](/img/docs/optimized-svg/plugin-uninstallation.drawio.svg)
 
 <p class="caption">
    Simplified overview of the two-transaction plugin <b>a.</b> installation, <b>b.</b> update, and <b>c.</b> uninstallation process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively.
