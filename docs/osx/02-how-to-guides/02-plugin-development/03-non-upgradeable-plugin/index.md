@@ -14,7 +14,7 @@ Some observations:
 
 Before moving on with the Guide, make sure you've read our documentation on [Choosing the Best Type for Your Plugin](../02-plugin-types.md) to make sure you're selecting the right type of contract for your Plugin.
 
-## Building a Non-Upgradable Plugin
+## Building a Non-Upgradeble Plugin
 
 We will build a plugin which returns "Hello world!" and the amount of times the function has been called.
 
@@ -43,7 +43,7 @@ sudo apt-get install -y nodejs
 
 [Here's a tutorial](https://hardhat.org/tutorial/setting-up-the-environment) on installing this if you haven't done so already.
 
-2. Next up, we want to create a Hardhat project in our terminal. This is the Solidity framework we'll use to get our project up and running.
+2. Next up, we want to create a Hardhat project in our terminal. This is the Solidity framework we'll use to get our project up and runing.
 
 ```bash
 npm init

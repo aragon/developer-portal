@@ -1,6 +1,6 @@
 ---
 title: Aragon OSx
-sidebar_label: Introduction
+sidebar_label: Introduction to Aragon OSx
 sidebar_position: 0
 ---
 
@@ -58,4 +58,4 @@ This documentation is divided into conceptual and practical sections as well as 
 
 - Conceptual [How It Works articles](01-how-it-works/index.md) explain the architecture behind our protocol.
 - Practical [How-to Guides](02-how-to-guides/index.md) explain how to use and leverage our protocol.
-- The [Reference Guide](03-reference-guide/index.md) generated from the NatSpec comments of the latest `@aragon/osx` release documents each individual Solidity contract, function, and variable.
+- The [Reference Guide](03-reference-guide/index.md) generated from the NatSpec comments of the latest `@aragon/osx` release documents each individual Solididty contract, function, and variable.

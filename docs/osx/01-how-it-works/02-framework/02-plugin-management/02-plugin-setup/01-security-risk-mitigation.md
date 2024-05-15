@@ -22,7 +22,7 @@ that might be carelessly or intentionally caused, a malicious plugin can hide **
 
 #### Backdoors
 
-- [metamorphic contracts](https://a16zcrypto.com/metamorphic-smart-contract-detector-tool/) (contracts, that can be redeployed with new code to the same address)
+- [metamorpic contracts](https://a16zcrypto.com/metamorphic-smart-contract-detector-tool/) (contracts, that can be redeployed with new code to the same address)
 - malicious repurposing of storage in an update of an upgradeable plugin contract
 
 <!-- Add statement that Aragon will provide / collaborate with 3rd parties to create tools to check for this-->

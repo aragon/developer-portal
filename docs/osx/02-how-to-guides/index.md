@@ -1,5 +1,5 @@
 ---
-title: Tutorials
+title: How-to Guides
 ---
 
 ## Welcome to our How To Guides on Using the Aragon OSx Protocol!

@@ -92,7 +92,7 @@ error ActionFailed(uint256 index)
 
 ### error InsufficientGas
 
-Thrown if an action has insufficent gas left.
+Thrown if an action has insufficient gas left.
 
 ```solidity
 error InsufficientGas()

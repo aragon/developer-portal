@@ -88,12 +88,12 @@ error ConditionNotAContract(contract IPermissionCondition condition)
 | :---------- | ------------------------------- | ----------------------------------- |
 | `condition` | `contract IPermissionCondition` | The address that is not a contract. |
 
-### error ConditionInterfacNotSupported
+### error ConditionInterfaceNotSupported
 
 Thrown if a condition contract does not support the `IPermissionCondition` interface.
 
 ```solidity
-error ConditionInterfacNotSupported(contract IPermissionCondition condition)
+error ConditionInterfaceNotSupported(contract IPermissionCondition condition)
 ```
 
 | Input       | Type                            | Description                         |

@@ -2,7 +2,7 @@
 
 This contract handles callbacks by registering a magic number together with the callback function's selector. It provides the `_handleCallback` function that inheriting contracts have to call inside their `fallback()` function (`_handleCallback(msg.callbackSelector, msg.data)`). This allows to adaptively register ERC standards (e.g., [ERC-721](https://eips.ethereum.org/EIPS/eip-721), [ERC-1115](https://eips.ethereum.org/EIPS/eip-1155), or future versions of [ERC-165](https://eips.ethereum.org/EIPS/eip-165)) and returning the required magic numbers for the associated callback functions for the inheriting contract so that it doesn't need to be upgraded.
 
-This callback handling functionality is intented to be used by executor contracts (i.e., `DAO.sol`).
+This callback handling functionality is intended to be used by executor contracts (i.e., `DAO.sol`).
 
 ## Implementation
 
@@ -22,12 +22,12 @@ The magic number refering to unregistered callbacks.
 bytes4 UNREGISTERED_CALLBACK
 ```
 
-### error UnkownCallback
+### error UnknownCallback
 
 Thrown if the callback function is not registered.
 
 ```solidity
-error UnkownCallback(bytes4 callbackSelector, bytes4 magicNumber)
+error UnknownCallback(bytes4 callbackSelector, bytes4 magicNumber)
 ```
 
 | Input              | Type     | Description                                                           |
