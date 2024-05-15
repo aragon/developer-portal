@@ -77,7 +77,7 @@ function __InterfaceBasedRegistry_init(contract IDAO _managingDao, bytes4 _targe
 | `_managingDao`       | `contract IDAO` | The interface of the DAO managing the components permissions.                                         |
 | `_targetInterfaceId` | `bytes4`        | The [ERC-165](https://eips.ethereum.org/EIPS/eip-165) interface id of the contracts to be registered. |
 
-_This is required for the UUPS upgradability pattern._
+_This is required for the UUPS upgradeability pattern._
 
 ### internal function \_authorizeUpgrade
 

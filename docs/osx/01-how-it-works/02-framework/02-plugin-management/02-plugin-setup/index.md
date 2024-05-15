@@ -15,7 +15,7 @@ How this works:
 
 - Although a Plugin is composed by the `Plugin` and `PluginSetup` contracts, the Aragon OSx protocol only knows of the `PluginSetup` contract.
 - Since the `PluginSetup` contract is the one containing the plugin installation instructions, it is the one in charge of deploying the Plugin instance. Each plugin instance is specific to that DAO, deployed with its own unique parameters. You can review how to build a `PluginSetup` contract [here](../../../../02-how-to-guides/02-plugin-development/index.md).
-- The `PluginSetup` contract then interacts with the Aragon OSx framework's `PluginSetupProcessor` contract, which is in charge of applying the installion, update, or uninstallation of a plugin into a DAO.
+- The `PluginSetup` contract then interacts with the Aragon OSx framework's `PluginSetupProcessor` contract, which is in charge of applying the installation, update, or uninstallation of a plugin into a DAO.
 - Publishing a Plugin into the Aragon OSx protocol is done through creating the first version of the plugin's `PluginRepo`. The plugin's `PluginRepo` instance stores all plugin versions. You can read more about that [here](../../../../02-how-to-guides/02-plugin-development/07-publication/index.md).
 - Except for the gas costs required, plugins are completely free to install, unless decided otherwise by the developer.
 
@@ -44,7 +44,7 @@ The preparation of a `PluginSetup` contract proceeds as follows:
 
    - deployment of new contracts
    - initialization of new storage variables
-   - deprecating/decomissioning outdated (helper) contracts
+   - deprecating/decommissioning outdated (helper) contracts
    - governance settings or other attributes
    - ...
 
