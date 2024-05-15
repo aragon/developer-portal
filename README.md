@@ -40,13 +40,13 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Quick Serve
+### Serve All Optimized Assets
 
-```
-$ yarn quick:serve
+```bash
+$ yarn serve:all-optimized
 ```
 
-This command encapsulates all commands needed to build and serve our website locally.
+This command runs all the necessary commands to serve the website from scratch. It installs all the needed libraries, generates the Subgraph documentation, and then builds and serves the website, locally, with all optimized assets.
 
 ### Deployment
 
