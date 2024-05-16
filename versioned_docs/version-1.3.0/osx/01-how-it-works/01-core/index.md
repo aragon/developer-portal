@@ -29,7 +29,7 @@ The underlying smart contracts constitute **the core contracts** of the Aragon O
 
 <div class="center-column">
 
-![Schematic depiction of the interaction between the DAO, the PermissionManager, and a Plugin contract.](/img/docs/optimized-svg/dao-plugin.drawio.svg)
+![Schematic depiction of the interaction between the DAO, the PermissionManager, and a Plugin contract.](/optimized-svg/plugins/dao-plugin.drawio.svg)
 
 <p class="caption">
   An examplary DAO setup showing interactions between the three core contract pieces triggered by different user groups: The <code>DAO</code> contract in blue containing the <code>PermissionManager</code> in red, respectively, as well as two <code>Plugin</code> contracts in green.

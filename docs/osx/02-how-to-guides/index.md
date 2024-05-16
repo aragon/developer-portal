@@ -31,14 +31,14 @@ Technically speaking, Aragon DAOs are:
 
 All other functionality is enabled through plugins. This allows DAOs to be extremely flexible and modular as they mature, through installing and uninstalling these plugins as needs arise.
 
-![Aragon DAO](/img/docs/Aragon_DAO_Diagram.png)
+![Aragon DAO](/img/dao/Aragon_DAO_Diagram.png)
 
 On the technical level, plugins are composed of two key contracts:
 
 - ⚡️ The Plugin implementation contract: containing all of the logic and functionality for your DAO, and
 - 👩🏻‍🏫 The Plugin Setup contract: containing the installation, uninstallation and upgrade instructions for your plugin.
 
-![Aragon OSx Plugins](/img/docs/what_is_a_plugin.png)
+![Aragon OSx Plugins](/img/plugins/what_is_a_plugin.png)
 
 Through plugins, we provide a secure, flexible way for on-chain organizations to iterate as they grow.
 

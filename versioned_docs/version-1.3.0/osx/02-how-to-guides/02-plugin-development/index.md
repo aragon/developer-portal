@@ -186,7 +186,7 @@ Lastly, we can call the [`createPluginRepoWithFirstVersion` function from Aragon
 
 We can do this directly by calling the function on Etherscan ([make sure to get the right scan and contract address based on your network](https://github.com/aragon/osx-commons/tree/develop/configs/src/deployments/json)) or through locally calling on the method from your project using Ethers.
 
-![Etherscan](/img/docs/create_plugin_etherscan_tx.png)
+![Etherscan](/img/plugins/create_plugin_etherscan_tx.png)
 
 If you want to review how to publish your plugin in more depth, review our [How to Publish a Plugin in Aragon OSx guide here](./07-publication//index.md)
 

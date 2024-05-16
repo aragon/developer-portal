@@ -275,7 +275,7 @@ You can publish the plugin into Aragon's protocol through a few different ways:
 
 Go to the [`PluginFactory`](https://goerli.etherscan.io/address/0x301868712b77744A3C0E5511609238399f0A2d4d#writeContract) contract on Etherscan and deploy the first version of your plugin.
 
-![Register your Plugin through Etherscan](/img/docs/create_plugin_etherscan_tx.png)
+![Register your Plugin through Etherscan](/img/plugins/create_plugin_etherscan_tx.png)
 
 #### b) Publishing script
 
