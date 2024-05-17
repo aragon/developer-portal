@@ -11,6 +11,7 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "docs:subgraph": "docusaurus graphql-to-doc && ./scripts/prune-subgraph-docs.sh",
+    "serve:all-optimized": "yarn && yarn docs:subgraph && yarn optimize-svg && yarn build && yarn serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "optimize-svg": "svgo -rf ./static/img -o ./static/optimized-svg",

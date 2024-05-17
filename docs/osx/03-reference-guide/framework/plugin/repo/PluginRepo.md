@@ -144,34 +144,6 @@ Thrown if release does not exist.
 error ReleaseDoesNotExist()
 ```
 
-### event VersionCreated
-
-Thrown if the same plugin setup exists in previous releases.
-
-```solidity
-event VersionCreated(uint8 release, uint16 build, address pluginSetup, bytes buildMetadata)
-```
-
-| Input           | Type      | Description                               |
-| :-------------- | --------- | ----------------------------------------- |
-| `release`       | `uint8`   | The release number.                       |
-| `build`         | `uint16`  | The build number.                         |
-| `pluginSetup`   | `address` | The address of the plugin setup contract. |
-| `buildMetadata` | `bytes`   | The build metadata URI.                   |
-
-### event ReleaseMetadataUpdated
-
-Thrown when a release's metadata was updated.
-
-```solidity
-event ReleaseMetadataUpdated(uint8 release, bytes releaseMetadata)
-```
-
-| Input             | Type    | Description               |
-| :---------------- | ------- | ------------------------- |
-| `release`         | `uint8` | The release number.       |
-| `releaseMetadata` | `bytes` | The release metadata URI. |
-
 ### public function constructor
 
 ```solidity
@@ -192,6 +164,21 @@ function initialize(address initialOwner) external
 ```
 
 _This method is required to support [ERC-1822](https://eips.ethereum.org/EIPS/eip-1822)._
+
+### external function initializeFrom
+
+Initializes the pluginRepo after an upgrade from a previous protocol version.
+
+```solidity
+function initializeFrom(uint8[3] _previousProtocolVersion, bytes _initData) external
+```
+
+| Input                      | Type       | Description                                                                                                                                            |
+| :------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `_previousProtocolVersion` | `uint8[3]` | The semantic protocol version number of the previous DAO implementation contract this upgrade is transitioning from.                                   |
+| `_initData`                | `bytes`    | The initialization data to be passed to via `upgradeToAndCall` (see [ERC-1967](https://docs.openzeppelin.com/contracts/4.x/api/proxy#ERC1967Upgrade)). |
+
+_This function is a placeholder until we require reinitialization._
 
 ### external function createVersion
 

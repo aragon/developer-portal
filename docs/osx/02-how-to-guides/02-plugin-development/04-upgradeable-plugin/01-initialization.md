@@ -1,12 +1,12 @@
 ---
-title: Intialization
+title: Initialization
 ---
 
 ## How to Initialize Upgradeable Plugins
 
 To deploy your implementation contract via the [UUPS pattern (ERC-1822)](https://eips.ethereum.org/EIPS/eip-1822), you inherit from the `PluginUUPSUpgradeable` contract.
 
-We must protect it from being set up multiple times by using [OpenZeppelin's `initializer` modifier made available through `Initalizable`](https://docs.openzeppelin.com/contracts/4.x/api/proxy#Initializable). In order to do this, we will call the internal function `__PluginUUPSUpgradeable_init(IDAO _dao)` function available through the `PluginUUPSUpgradeable` base contract to store the `IDAO _dao` reference in the right place.
+We must protect it from being set up multiple times by using [OpenZeppelin's `initializer` modifier made available through `Initializable`](https://docs.openzeppelin.com/contracts/4.x/api/proxy#Initializable). In order to do this, we will call the internal function `__PluginUUPSUpgradeable_init(IDAO _dao)` function available through the `PluginUUPSUpgradeable` base contract to store the `IDAO _dao` reference in the right place.
 
 :::note
 This has to be called - otherwise, anyone else could call the plugin's initialization with whatever params they wanted.
