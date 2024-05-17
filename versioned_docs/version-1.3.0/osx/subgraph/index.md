@@ -1,5 +1,5 @@
 ---
-title: Aragon Subgraph [WIP]
+title: Aragon Subgraph
 sidebar_label: Introduction
 sidebar_position: 6
 ---

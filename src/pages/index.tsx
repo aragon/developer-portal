@@ -18,18 +18,6 @@ export default function Home(): JSX.Element {
           img={require('@site/static/img/welcome-image.png').default}
           imgAlt="Welcome to Aragon OSx"
         />
-        <WelcomeCardsWrapper>
-          {welcomeCards.map((card, index) => (
-            <WelcomeCard
-              key={index}
-              title={card.title}
-              description={card.description}
-              icon={card.icon}
-              href={card.href}
-              linkLabel={card.linkLabel}
-            />
-          ))}
-        </WelcomeCardsWrapper>
         <ComponentCardsWrapper>
           <ComponentCardsTitle>Explore Products</ComponentCardsTitle>
           {componentCards.map((card, index) => (
@@ -43,6 +31,18 @@ export default function Home(): JSX.Element {
             />
           ))}
         </ComponentCardsWrapper>
+        <WelcomeCardsWrapper>
+          {welcomeCards.map((card, index) => (
+            <WelcomeCard
+              key={index}
+              title={card.title}
+              description={card.description}
+              icon={card.icon}
+              href={card.href}
+              linkLabel={card.linkLabel}
+            />
+          ))}
+        </WelcomeCardsWrapper>
       </Container>
     </Layout>
   );
