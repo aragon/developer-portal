@@ -275,7 +275,7 @@ You can publish the plugin into Aragon's protocol through a few different ways:
 
 Go to the [`PluginFactory`](https://goerli.etherscan.io/address/0x301868712b77744A3C0E5511609238399f0A2d4d#writeContract) contract on Etherscan and deploy the first version of your plugin.
 
-![Register your Plugin through Etherscan](https://res.cloudinary.com/dacofvu8m/image/upload/v1682466427/Screen_Shot_2023-04-25_at_19.46.58_nlo9p1.png)
+![Register your Plugin through Etherscan](/img/plugins/create_plugin_etherscan_tx.png)
 
 #### b) Publishing script
 
@@ -306,7 +306,10 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   const pluginRepoFactoryAddr = '0x301868712b77744A3C0E5511609238399f0A2d4d';
 
-  const pluginRepoFactory = PluginRepoFactory__factory.connect(pluginRepoFactoryAddr, deployer);
+  const pluginRepoFactory = PluginRepoFactory__factory.connect(
+    pluginRepoFactoryAddr,
+    deployer,
+  );
 
   const pluginName = 'greeter-plugin';
   const pluginSetupContractName = 'GreeterPluginSetup';
@@ -318,11 +321,11 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     pluginSetupContract.address,
     deployer.address,
     '0x00', // releaseMetadata: the hex representation of the CID containing your plugin's metadata - so the description, name, author, any UI, etc
-    '0x00' // buildMetadata: same as above but for each build, rather than release
+    '0x00', // buildMetadata: same as above but for each build, rather than release
   );
 
   console.log(
-    `You can find the transaction address which published the ${pluginName} Plugin here: ${tx}`
+    `You can find the transaction address which published the ${pluginName} Plugin here: ${tx}`,
   );
 };
 

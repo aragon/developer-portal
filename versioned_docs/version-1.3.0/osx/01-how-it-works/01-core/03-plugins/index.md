@@ -39,7 +39,7 @@ A DAO manages plugins and interactions between them. In more detail, its permiss
 
 <div class="center-column">
 
-![Schematic depiction of the interaction between the DAO, the PermissionManager, and a Plugin contract.](../dao-plugin.drawio.svg)
+![Schematic depiction of the interaction between the DAO, the PermissionManager, and a Plugin contract.](/optimized-svg/plugins/dao-plugin.drawio.svg)
 
 <p class="caption">
   An exemplary DAO setup showing interactions between the three core contract pieces triggered by different user groups: The <code>DAO</code> contract in blue containing the <code>PermissionManager</code> in red, respectively, as well as two <code>Plugin</code> contracts in green.
