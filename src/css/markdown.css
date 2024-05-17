@@ -83,7 +83,7 @@
 }
 
 .markdown img {
-  background-color: white;
+  background-color: var(--ifm-color-background);
   padding: 8px;
 }
 

@@ -45,6 +45,14 @@
   --warning-color: #e1c75c;
   --danger-color: #e75268;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-background:    
+;
+}
+
+/* Custom background for images  */
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: var(--ifm-color-background);
 }
 
 /* Announcement banner */
