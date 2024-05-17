@@ -32,8 +32,6 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-Notice: you may need to run `yarn optimize-svg` and `yarn docs:subgraph` before `yarn start` to correctly build this website.
-
 ### Build
 
 ```
@@ -42,7 +40,7 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-Notice: you may need to run `yarn optimize-svg` and `yarn docs:subgraph` before `yarn build` to correctly build this website.
+Notice: you may need to run `yarn optimize-svg` and `yarn docs:subgraph` before `yarn build` or `yarn start` to correctly build this website.
 
 ### Serve All Optimized Assets
 
