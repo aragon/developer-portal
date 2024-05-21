@@ -18,18 +18,6 @@ export default function Home(): JSX.Element {
           img={require('@site/static/img/welcome-image.png').default}
           imgAlt="Welcome to Aragon OSx"
         />
-        <WelcomeCardsWrapper>
-          {welcomeCards.map((card, index) => (
-            <WelcomeCard
-              key={index}
-              title={card.title}
-              description={card.description}
-              icon={card.icon}
-              href={card.href}
-              linkLabel={card.linkLabel}
-            />
-          ))}
-        </WelcomeCardsWrapper>
         <ComponentCardsWrapper>
           <ComponentCardsTitle>Explore Products</ComponentCardsTitle>
           {componentCards.map((card, index) => (
@@ -40,6 +28,18 @@ export default function Home(): JSX.Element {
               img={card.img}
               to={card.to}
               cta={card.cta}
+            />
+          ))}
+        </ComponentCardsWrapper>
+        <ComponentCardsWrapper>
+          {welcomeCards.map((card, index) => (
+            <WelcomeCard
+              key={index}
+              title={card.title}
+              description={card.description}
+              icon={card.icon}
+              href={card.href}
+              linkLabel={card.linkLabel}
             />
           ))}
         </ComponentCardsWrapper>
@@ -56,7 +56,13 @@ const ComponentCardsWrapper = styled.div.attrs({
 })``;
 const WelcomeCardsWrapper = styled.div.attrs({
   className: 'flex md:flex-row md:space-x-4 md:space-y-0 flex-col space-y-4',
-})``;
+})`
+  display: flex;
+  justify-content: center; /* Centers children horizontally */
+  align-items: center; /* Centers children vertically */
+  margin: auto; /* Centers the wrapper itself within its parent */
+`;
+
 const ComponentCardsTitle = styled.p.attrs({
   className: 'font-medium text-xl',
 })`
