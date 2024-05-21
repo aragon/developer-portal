@@ -151,7 +151,7 @@ const config = {
       },
       colorMode: {
         defaultMode: 'light',
-        disableSwitch: false,
+        disableSwitch: true,
       },
       prism: {
         theme: lightCodeTheme,
