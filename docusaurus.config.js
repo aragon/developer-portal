@@ -199,6 +199,15 @@ const config = {
         },
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'technical',
+        path: 'technical',
+        routeBasePath: 'technical',
+        sidebarPath: require.resolve('./sidebarsTechnical.js'),
+      },
+    ]
   ],
 };
 
