@@ -137,6 +137,10 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Aragon Association, Inc.`,
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
