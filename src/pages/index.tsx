@@ -31,7 +31,7 @@ export default function Home(): JSX.Element {
             />
           ))}
         </ComponentCardsWrapper>
-        <WelcomeCardsWrapper>
+        <ComponentCardsWrapper>
           {welcomeCards.map((card, index) => (
             <WelcomeCard
               key={index}
@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
               linkLabel={card.linkLabel}
             />
           ))}
-        </WelcomeCardsWrapper>
+        </ComponentCardsWrapper>
       </Container>
     </Layout>
   );
@@ -56,7 +56,13 @@ const ComponentCardsWrapper = styled.div.attrs({
 })``;
 const WelcomeCardsWrapper = styled.div.attrs({
   className: 'flex md:flex-row md:space-x-4 md:space-y-0 flex-col space-y-4',
-})``;
+})`
+  display: flex;
+  justify-content: center; /* Centers children horizontally */
+  align-items: center; /* Centers children vertically */
+  margin: auto; /* Centers the wrapper itself within its parent */
+`;
+
 const ComponentCardsTitle = styled.p.attrs({
   className: 'font-medium text-xl',
 })`
