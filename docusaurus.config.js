@@ -22,7 +22,7 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -69,6 +69,18 @@ const config = {
           src: 'img/logo-light.png',
         },
         items: [
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'osxSidebar',
+            label: 'Concepts',
+          },
+          {
+            to: 'technical',
+            position: 'left',
+            // sidebarId: 'technicalSidebar',
+            label: 'Technical',
+          },
           {
             type: 'docsVersionDropdown',
             position: 'right',
@@ -157,6 +169,15 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'technical',
+        path: 'technical',
+        routeBasePath: 'technical',
+        sidebarPath: require.resolve('./sidebarsTechnical.js'),
       },
     ],
     [
