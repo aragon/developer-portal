@@ -29,6 +29,7 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
           includeCurrentVersion: true,
+          lastVersion: 'current',
           versions: {
             current: {
               label: '1.4.0-alpha',
@@ -76,10 +77,25 @@ const config = {
             label: 'Concepts',
           },
           {
-            to: 'technical',
+            type: 'docSidebar',
+            docsPluginId: 'advanced',
             position: 'left',
-            // sidebarId: 'technicalSidebar',
-            label: 'Technical',
+            sidebarId: 'advancedSidebar',
+            label: 'Advanced',
+          },
+          {
+            type: 'docSidebar',
+            docsPluginId: 'guides',
+            position: 'left',
+            sidebarId: 'guidesSidebar',
+            label: 'Guides',
+          },
+          {
+            type: 'docSidebar',
+            docsPluginId: 'support',
+            position: 'left',
+            sidebarId: 'supportSidebar',
+            label: 'Support',
           },
           {
             type: 'docsVersionDropdown',
@@ -178,10 +194,28 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'technical',
-        path: 'technical',
-        routeBasePath: 'technical',
-        sidebarPath: require.resolve('./sidebarsTechnical.js'),
+        id: 'advanced',
+        path: 'advanced',
+        routeBasePath: 'advanced',
+        sidebarPath: require.resolve('./sidebars.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guides',
+        path: 'guides',
+        routeBasePath: 'guides',
+        sidebarPath: require.resolve('./sidebars.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'support',
+        path: 'support',
+        routeBasePath: 'support',
+        sidebarPath: require.resolve('./sidebars.js'),
       },
     ],
     [
@@ -191,7 +225,7 @@ const config = {
         rootPath: './versioned_docs/version-1.3.0',
         baseURL: 'osx/subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/docs',
+        linkRoot: '/docs/1.3.0',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',
