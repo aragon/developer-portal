@@ -33,7 +33,6 @@ const config = {
           versions: {
             current: {
               label: '1.4.0-alpha',
-              path: '1.4.0',
             },
           },
         },

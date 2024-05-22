@@ -1,20 +1,13 @@
 import React from 'react';
 import DocsVersionDropdownNavbarItem from '@theme-original/NavbarItem/DocsVersionDropdownNavbarItem';
-import {useLocation} from '@docusaurus/router';
+import {useActiveDocContext} from '@docusaurus/plugin-content-docs/client';
 
 // We don't want to show the Versions Dropdown in the mainpage.
 export default function DocsVersionDropdownNavbarItemWrapper(props) {
-  const {pathname} = useLocation();
-
-  const isRootPath = pathname === '' || pathname === '/';
-
-  // Render null if the pathname does not start with /docs
-  if (isRootPath) {
+  const {activeDoc} = useActiveDocContext(props.docsPluginId);
+  if (!activeDoc) {
     return null;
   }
-  return (
-    <>
-      <DocsVersionDropdownNavbarItem {...props} />
-    </>
-  );
+
+  return <DocsVersionDropdownNavbarItem {...props} />;
 }
