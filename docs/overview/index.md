@@ -1,7 +1,7 @@
 ---
 title: What is Aragon OSx?
-sidebar_label: What is Aragon OSx?
-sidebar_position: 1
+sidebar_label: Introduction
+sidebar_position: 0
 ---
 
 ## Welcome to Aragon OSx's Documentation

@@ -1,7 +1,7 @@
 ---
 title: Plugin
 sidebar_label: Plugin
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 ## Plugin

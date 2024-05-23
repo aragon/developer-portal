@@ -1,6 +1,7 @@
 ---
 title: Creation
 sidebar_label: Creation
+sidebar_position: 0
 ---
 
 ## DAO Creation

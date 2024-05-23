@@ -73,7 +73,7 @@ const config = {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'osxSidebar',
-            label: 'Concepts',
+            label: 'Overview',
           },
           {
             type: 'docSidebar',

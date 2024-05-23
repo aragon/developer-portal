@@ -1,8 +1,9 @@
 ---
-title: Plugin
-sidebar_label: Plugin
+title: Introduction
+sidebar_label: Introduction
+sidebar_position: 0
 ---
 
-## Plugin
+## Introduction
 
 This section will contain docs.

@@ -1,6 +1,7 @@
 ---
-title: Executioner
-sidebar_label: Executioner
+title: Actions
+sidebar_label: Actions
+sidebar_position: 1
 ---
 
 ## Dao Action Execution
