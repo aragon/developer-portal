@@ -20,11 +20,30 @@ export default function DocSidebarNavbarItem({
     );
   }
 
-  // Hide the navbar item if the pathname starts with 'docs/1.3.0'
-  if (pathname.startsWith('/docs/1.3.0')) {
+  const isFrontPage = pathname === '' || pathname === '/';
+  const isLegacyPath = pathname.startsWith('/legacy');
+
+  // Conditionally render the "Legacy Docs" item if the pathname starts with '/legacy'
+  if (isLegacyPath) {
+    if (label === 'Legacy Docs') {
+      return (
+        <DefaultNavbarItem
+          exact
+          {...props}
+          isActive={() => activeDoc?.sidebar === sidebarId}
+          label="Legacy Docs"
+          to="/legacy"
+        />
+      );
+    }
+    // Hide other items on the legacy path
     return null;
   }
 
+  // Hide the "Legacy Docs" item if not on the legacy path or the front page
+  if (label === 'Legacy Docs' && !isLegacyPath && !isFrontPage) {
+    return null;
+  }
   return (
     <DefaultNavbarItem
       exact

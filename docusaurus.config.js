@@ -97,10 +97,17 @@ const config = {
             label: 'Support',
           },
           {
-            type: 'docsVersionDropdown',
+            type: 'docSidebar',
+            docsPluginId: 'legacy',
             position: 'right',
-            dropdownActiveClassDisabled: true,
+            sidebarId: 'legacySidebar',
+            label: 'Legacy Docs',
           },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          //   dropdownActiveClassDisabled: true,
+          // },
         ],
       },
       metadata: [
@@ -218,13 +225,22 @@ const config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'legacy',
+        path: 'legacy',
+        routeBasePath: 'legacy',
+        sidebarPath: require.resolve('./sidebars.js'),
+      },
+    ],
+    [
       '@graphql-markdown/docusaurus',
       {
         schema: `./static/subgraph/schema-introspection-partial.json`,
-        rootPath: './versioned_docs/version-1.3.0',
-        baseURL: 'osx/subgraph/reference-guide',
+        rootPath: './legacy',
+        baseURL: 'subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/docs/1.3.0',
+        linkRoot: '/legacy',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',
