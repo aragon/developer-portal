@@ -11,16 +11,22 @@ export default function DocsVersionDropdownNavbarItemWrapper(props) {
   // Check if the current path is the front page
   const isFrontPage = pathname === '' || pathname === '/';
 
+  // Always show the default docs dropdown
+  const defaultDocsDropdown = (
+    <DocsVersionDropdownNavbarItem {...props} docsPluginId="default" />
+  );
+
   // Show the /docs version dropdown on the front page
-  if (isFrontPage) {
-    return <DocsVersionDropdownNavbarItem docsPluginId="default" {...props} />;
+  if (isFrontPage && props.docsPluginId === 'default') {
+    return defaultDocsDropdown;
+  }
+  // If there's no active document, or the plugin is "default", don't display any dropdown
+  if (!activeDoc && props.docsPluginId === 'default') {
+    return defaultDocsDropdown;
   }
 
   // Check if there's an active document for the current plugin
-  if (!activeDoc) {
-    return null;
+  if (activeDoc) {
+    return <DocsVersionDropdownNavbarItem {...props} />;
   }
-
-  // Otherwise, render the version dropdown for the active document's plugin
-  return <DocsVersionDropdownNavbarItem {...props} />;
 }
