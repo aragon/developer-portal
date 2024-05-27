@@ -77,21 +77,18 @@ const config = {
           },
           {
             type: 'docSidebar',
-            docsPluginId: 'advanced',
             position: 'left',
             sidebarId: 'advancedSidebar',
             label: 'Advanced',
           },
           {
             type: 'docSidebar',
-            docsPluginId: 'guides',
             position: 'left',
             sidebarId: 'guidesSidebar',
             label: 'Guides',
           },
           {
             type: 'docSidebar',
-            docsPluginId: 'support',
             position: 'left',
             sidebarId: 'supportSidebar',
             label: 'Support',
@@ -188,33 +185,6 @@ const config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         // Options here
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'advanced',
-        path: 'advanced',
-        routeBasePath: 'advanced',
-        sidebarPath: require.resolve('./sidebars.js'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'guides',
-        path: 'guides',
-        routeBasePath: 'guides',
-        sidebarPath: require.resolve('./sidebars.js'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'support',
-        path: 'support',
-        routeBasePath: 'support',
-        sidebarPath: require.resolve('./sidebars.js'),
       },
     ],
     [

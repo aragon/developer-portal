@@ -21,7 +21,7 @@ export default function DocSidebarNavbarItem({
   }
 
   // Hide the navbar item if the pathname starts with 'docs/1.3.0'
-  if (pathname.startsWith('/docs/1.3.0')) {
+  if (pathname.startsWith('/docs/1.3.0') || pathname === ('' || '/')) {
     return null;
   }
 

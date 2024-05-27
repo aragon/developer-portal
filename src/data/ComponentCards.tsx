@@ -8,7 +8,7 @@ const componentCards: IComponentCardProps[] = [
     description:
       'Secure, modular, and lean, the Aragon OSx protocol is your go-to DAO framework for building custom organizations on-chain.',
     img: <IllustrationOsx />,
-    to: '/docs/overview',
+    to: '/docs/overview/overview',
   },
   {
     title: 'Design System',
