@@ -19,7 +19,7 @@ An overview of the involved contracts and their interactions is shown below:
 
 <div class="center-column">
 
-![](/optimized-svg/framework/aragon-os-infrastructure-core-overview.drawio.svg)
+![](/optimized-svg/framework/aragon-os-infrastructure-core-overview.drawio.svg#gh-light-mode-only) ![](/optimized-svg/framework/aragon-os-infrastructure-core-overview-dark.drawio.svg#gh-dark-mode-only)
 
 <p class="caption">
   Overview of the framework and core contracts of the Aragon OSx protocol.
