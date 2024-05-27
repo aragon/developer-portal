@@ -87,9 +87,12 @@ In the next sections, you will learn about how plugins are curated on Aragon's r
 
 <div class="center-column">
 
-**a.** ![Schematic depiction of the plugin installation process.](/optimized-svg/plugins/plugin-installation.drawio.svg)
-**b.** ![Schematic depiction of the plugin update process.](/optimized-svg/plugins/plugin-update.drawio.svg)
-**c.** ![Schematic depiction of the plugin uninstallation process.](/optimized-svg/plugins/plugin-uninstallation.drawio.svg)
+**a.** ![Schematic depiction of the plugin installation process.](/optimized-svg/plugins/plugin-installation.drawio.svg#gh-light-mode-only)
+![Schematic depiction of the plugin installation process.](/optimized-svg/plugins/plugin-installation-dark.drawio.svg#gh-dark-mode-only)
+**b.** ![Schematic depiction of the plugin update process.](/optimized-svg/plugins/plugin-update.drawio.svg#gh-light-mode-only)
+![Schematic depiction of the plugin update process.](/optimized-svg/plugins/plugin-update-dark.drawio.svg#gh-dark-mode-only)
+**c.** ![Schematic depiction of the plugin uninstallation process.](/optimized-svg/plugins/plugin-uninstallation.drawio.svg#gh-light-mode-only)
+![Schematic depiction of the plugin uninstallation process.](/optimized-svg/plugins/plugin-uninstallation-dark.drawio.svg#gh-dark-mode-only)
 
 <p class="caption">
    Simplified overview of the two-transaction plugin <b>a.</b> installation, <b>b.</b> update, and <b>c.</b> uninstallation process with the involved contracts as rounded rectangles, interactions between them as arrows, and relations as dashed lines. The first and second transaction are distinguished by numbering as well as solid and dotted lines, respectively.

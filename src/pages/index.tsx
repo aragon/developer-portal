@@ -15,7 +15,8 @@ export default function Home(): JSX.Element {
           title="Aragon OSx Developer Portal"
           subtitle="Here you'll find guides, resources, and references to build with the Aragon stack"
           // eslint-disable-next-line @typescript-eslint/no-var-requires
-          img={require('@site/static/img/welcome-image.png').default}
+          imgLight="/img/welcome-image.png"
+          imgDark="/img/welcome-image-dark.png"
           imgAlt="Welcome to Aragon OSx"
         />
         <ComponentCardsWrapper>
