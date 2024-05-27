@@ -45,7 +45,7 @@
   --warning-color: #e1c75c;
   --danger-color: #e75268;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-color-background:    
+  --ifm-color-background:         
 ;
 }
 
@@ -111,4 +111,10 @@ div[class*='announcementBarContent'] a:hover {
 /* Adding custom style to specific documents */
 .docs-doc-id-osx\/get-started .markdown {
   max-width: 100%;
+}
+
+/* Adding light/dark theme image selector */
+[data-theme='light'] img[src$='#gh-dark-mode-only'],
+[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+  display: none;
 }
