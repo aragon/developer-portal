@@ -410,7 +410,7 @@ function prepareUpdate(address _dao, struct PluginSetupProcessor.PrepareUpdatePa
 | `initData`          | `bytes`                                           | The initialization data to be passed to upgradeable contracts when the update is applied              |
 | `preparedSetupData` | `struct IPluginSetup.PreparedSetupData`           | The data struct containing the array of helper contracts and permissions that the setup has prepared. |
 
-_The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the update is prepared for._
+_The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happened) on which the update is prepared for._
 
 ### external function applyUpdate
 
@@ -440,7 +440,7 @@ function prepareUninstallation(address _dao, struct PluginSetupProcessor.Prepare
 | **Output**    |                                                           |
 | `permissions` | `struct PermissionLib.MultiTargetPermission[]`            | The list of multi-targeted permission operations to be applied to the uninstalling DAO. |
 
-_The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the uninstallation was prepared for._
+_The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happened) on which the uninstallation was prepared for._
 
 ### external function applyUninstallation
 
@@ -455,7 +455,7 @@ function applyUninstallation(address _dao, struct PluginSetupProcessor.ApplyUnin
 | `_dao`    | `address`                                               | The address of the DAO.                                                      |
 | `_params` | `struct PluginSetupProcessor.ApplyUninstallationParams` | The struct containing the parameters for the `applyUninstallation` function. |
 
-_The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happend) on which the uninstallation was prepared for._
+_The list of `_params.setupPayload.currentHelpers` has to be specified in the same order as they were returned from previous setups preparation steps (the latest `prepareInstallation` or `prepareUpdate` step that has happened) on which the uninstallation was prepared for._
 
 ### public function validatePreparedSetupId
 

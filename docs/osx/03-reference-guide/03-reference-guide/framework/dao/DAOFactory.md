@@ -98,7 +98,7 @@ function createDao(struct DAOFactory.DAOSettings _daoSettings, struct DAOFactory
 
 ### internal function \_createDAO
 
-Deploys a new DAO `ERC1967` proxy, and initialize it with this contract as the intial owner.
+Deploys a new DAO `ERC1967` proxy, and initialize it with this contract as the initial owner.
 
 ```solidity
 function _createDAO(struct DAOFactory.DAOSettings _daoSettings) internal returns (contract DAO dao)
