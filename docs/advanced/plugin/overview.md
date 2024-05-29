@@ -52,14 +52,25 @@ An Aragon OSx Plugin consists of:
 
 The Aragon OSx Plugin Framework consists of:
 
-- The `PluginRepo` contract
-
-  - versions the releases of a Plugin
-
 - The `PluginRepoFactory` contract
 
   - creates a `PluginRepo` for a plugin
+  - registers it to the `PluginRepoRegistry`
 
 - The `PluginRepoRegistry` contract
 
   - listing all the plugins managed through the Aragon OSx protocol
+
+- The `PluginRepo` contract
+
+  - versions the releases of a Plugin
+
+<div class="center-column">
+
+![](/optimized-svg/framework/aragon-os-plugin-framework.drawio.svg)
+
+<p class="caption">
+  A schematic depiction of plugins's framework. PluginRepoFactory creates and registers PluginRepo to PluginRepoRegistry. PluginRepo versions PluginSetup processed by PluginSetupProcessor.
+</p>
+
+</div>

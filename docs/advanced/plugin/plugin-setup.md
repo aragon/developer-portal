@@ -17,7 +17,7 @@ Each `PluginSetup` contract is in charge of deploying its respective Plugin inst
 The `PluginSetup` processing is **security critical** because the permissions it handles are granted to third-party contracts.
 
 :::caution
-Be careful if you decide to use `PluginSetup`s not hosted by the Aragon OSx protocol, as they may not be audited. They could grant `EXECUTE_PERMISSION_ID` to malicious entities, which would have fully control of your DAO.
+Be careful when using `PluginSetup`s not hosted by the Aragon OSx protocol. These setups may not be audited and could grant `EXECUTE_PERMISSION_ID` to malicious entities, giving them full control of your DAO.
 :::
 
 ### Responsibilities of PluginSetup

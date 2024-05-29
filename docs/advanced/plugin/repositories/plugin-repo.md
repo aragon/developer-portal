@@ -14,7 +14,7 @@ Different versions might contain:
 - new features
 - breaking changes
 
-`PluginRepo` contracts themselves, each associated with a different plugin, are registered in the Aragon OSx [`PluginRepoRegistry`](./01-plugin-repo-creation.md#the-pluginreporegistry-contract) and carry their own [ENS name](../../03-ens-names.md) that the creator chooses. The [`PluginRepoRegistry` contract](./01-plugin-repo-creation.md#the-pluginreporegistry-contract) is described in the upcoming subsection.
+Each `PluginRepo` contract, associated with a specific plugin, is registered in the Aragon OSx [`PluginRepoRegistry`](./01-plugin-repo-creation.md#the-pluginreporegistry-contract) and carry their own [ENS name](../../03-ens-names.md) that the creator chooses.
 
 <div class="center-column">
 
@@ -29,7 +29,7 @@ Different versions might contain:
 ### The `PluginRepo` Contract
 
 The `PluginRepo` contract versions the releases of a `Plugin`. The first version of a plugin is always published as release 1 and build 1 (version tag `1.1`).
-When you publish the first plugin version, a new plugin repository is automatically created for you by the Aragon OSx protocol in which you are the maintainer. The creation process is described in the [plugin repo creation process](./01-plugin-repo-creation.md) section.
+When you publish the first plugin version, a new plugin repository is automatically created for you by the Aragon OSx protocol, with you as the maintainer. The creation process is described in the [plugin repo creation process](./01-plugin-repo-creation.md) section.
 
 The `PluginRepo` contract is [UUPS upgradeable](https://eips.ethereum.org/EIPS/eip-1822), inherits from the [`PermissionManager`](../../../01-core/02-permissions/index.md) and allows the maintainer of the repository to create new versions with the `createVersion` function:
 
@@ -47,12 +47,12 @@ function createVersion(
 ) external auth(address(this), MAINTAINER_PERMISSION_ID);
 ```
 
-The function receives four input arguments:
+### Function Arguments:
 
-1. The `_release` number to create the build for. If the release number exists already (e.g., release `1`), it is registered as the latest build (e.g., `1.3` if the previous build was `1.2`). If it is a new release number, the build number is `1` (e.g., `2.1`).
-2. The address of `PluginSetup` contract internally referencing the implementation contract (to copy, proxy, or clone from it) and taking care of [installing, updating to, and uninstalling](../02-plugin-setup/index.md) this specific version.
-3. The `_buildMetadata` URI pointing to a JSON file containing the UI data, setup data, and change description for this specific version.
-4. The `_releaseMetadata` URI pointing to a JSON file containing the plugin name, description, as well as optional data such as images to be shown in the aragonApp frontend.
+1. **`_release`**: The release number to create the build for. If the release number exists already (e.g., release `1`), it is registered as the latest build (e.g., `1.3` if the previous build was `1.2`). If it is a new release number, the build number is `1` (e.g., `2.1`).
+2. **\_pluginSetup**: The address of the `PluginSetup` contract internally referencing the implementation contract (to copy, proxy, or clone from it) and taking care of [installing, updating to, and uninstalling](../02-plugin-setup/index.md) this specific version.
+3. **`_buildMetadata`**: URI pointing to a JSON file containing the UI data, setup data, and change description for this specific version.
+4. **`_releaseMetadata`**: URI pointing to a JSON file containing the plugin name, description, as well as optional data such as images to be shown in the aragonApp frontend.
 
 Other functions present in the contract allow you to query previous versions and to update the release metadata. For more details visit the [`PluginRepo` reference guide entry](../../../../03-reference-guide/framework/plugin/repo/PluginRepo.md).
 
