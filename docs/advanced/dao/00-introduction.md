@@ -22,6 +22,7 @@ contracts and sending assets to other addresses.
 :::note
 
 Typically, actions are scheduled in a proposal in a governance [plugin installed to your DAO](/docs/advanced/plugin/index.md).
+:::
 
 Multiple `Action` structs can be put into one `Action[]` array and executed in a single transaction via the `execute` function. To learn more about actions and advanced features of the DAO executor, visit the [A Deep Dive Into Actions](/docs/1.4.0/osx/how-it-works/core/dao/actions) section.
 
