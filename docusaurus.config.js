@@ -25,16 +25,11 @@ const config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          includeCurrentVersion: true,
-          versions: {
-            current: {
-              label: '1.4.0-alpha',
-              path: '1.4.0',
-            },
-          },
+          includeCurrentVersion: false,
         },
         theme: {
           customCss: [
@@ -68,13 +63,7 @@ const config = {
           alt: 'Aragon',
           src: 'img/logo-light.png',
         },
-        items: [
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-          },
-        ],
+        items: [],
       },
       metadata: [
         {name: 'og:title', content: 'Aragon Developer Portal'},
@@ -170,7 +159,7 @@ const config = {
         rootPath: './versioned_docs/version-1.3.0',
         baseURL: 'osx/subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/docs',
+        linkRoot: '/',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',

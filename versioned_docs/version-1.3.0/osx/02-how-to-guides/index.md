@@ -3,7 +3,7 @@ title: Tutorials
 sidebar_label: Tutorials
 ---
 
-## Welcome to our How To Guides on Using the Aragon OSx Protocol!
+## Welcome to our Tutorials on Using the Aragon OSx Protocol!
 
 With a few lines of code, the Aragon OSx protocol allows you create, manage, and change your on-chain organizations, through extending functionality for DAOs through the installation and uninstallation of plugins.
 
