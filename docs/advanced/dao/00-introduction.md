@@ -19,7 +19,7 @@ The most important and basic functionality of your DAO is the **execution of arb
 interacting with the rest of the world, i.e., calling methods in other 
 contracts and sending assets to other addresses.
 
-note
+:::note
 
 Typically, actions are scheduled in a proposal in a governance [plugin installed to your DAO](/docs/advanced/plugin/index.md).
 
