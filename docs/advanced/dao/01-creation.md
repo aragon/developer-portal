@@ -29,7 +29,6 @@ When the `createDao` function is called in the `DAOFactory` this triggers a four
 3. Installs the plugins using the `PluginSetupProcessor` (see also the section about [the plugin setup process](docs/osx/how-it-works/framework/plugin-management/plugin-setup/)).
 4. Sets the [native permissions](docs/osx/how-it-works/core/permissions/#permissions-native-to-the-dao-contract) of the `DAO` and revokes its own ownership.
 
-
 ### Plugins
 
 When calling `createDao` an array of `PluginSettings` are requested. A DAO cannot be created without at least one plugin. The DAO contract works as a permission manager system but it is agnostic to the type of governance that you want to use to manage the DAO. We currently provide two plugins that can be used for governing your DAO:
@@ -62,3 +61,33 @@ If the `subdomain` parameter is non-empty (not `""`) and still available, the EN
 In case you want to verify that you DAO got registered in the `DAORegistry` you can call `entries(address)` and it will return `true` if the DAO is registered
 
 For more details visit the [`DAORegistry` reference guide entry](docs/osx/reference-guide/framework/dao/DAORegistry).
+
+## Events
+
+When creating a DAO there is 2 main events that you'll be looking for:
+
+- `DAORegistered`
+- `InstallationApplied`
+
+When the `createDao` function is called in the `DAORegistry` emits the `DaoRegistered` event. This event contains the DAO address, the creator address and the subdomain.
+
+```solidity
+event DAORegistered(
+  address indexed dao,
+  address indexed creator,
+  string subdomain
+);
+```
+
+The `InstallationApplied` event is emitted when the `PluginSetupProcessor` finishes installing the plugins in the DAO.
+
+```solidity
+event InstallationApplied(
+  address indexed dao,
+  address indexed plugin,
+  bytes32 preparedSetupId,
+  bytes32 appliedSetupId
+);
+```
+
+There are a set of events emitted by the `DAO` contract itself, you can find more information about them in the [`DAO` reference guide entry](docs/osx/reference-guide/framework/dao/DAO).
