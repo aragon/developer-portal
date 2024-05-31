@@ -16,7 +16,7 @@ The Aragon OSx protocol provides **three primitives** for users to build their o
 
 Through permissions and plugins, DAO builders are able to build and customize their DAO to suit their needs.
 
-Developers can implement their own plugins by inheriting from our **plugin base classes**, writing a **plugin setup** and publishing it in an on-chain **plugin repository**.
+Developers can implement their own plugin by inheriting from one of our **plugin base classes**, writing a **plugin setup** and publishing it in an on-chain **plugin repository**.
 
 To facilitate this, Aragon OSx runs a set of **framework contracts**:
 
