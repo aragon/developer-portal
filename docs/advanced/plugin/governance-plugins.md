@@ -32,7 +32,6 @@ More complex systems using more than one governance plugin are possible with Ara
 
 Aragon offers several pre-developed governance plugins that you can use without needing to write your own:
 
-- [A token-voting plugin](https://github.com/aragon/osx/tree/develop/packages/contracts/src/plugins/governance/majority-voting/token): Results are based on what the majority votes and the vote's weight is determined by how many tokens an account holds. Ex: Alice has 10 tokens, Bob 2, and Alice votes yes, the yes wins.
-- [Multisig plugin](https://github.com/aragon/osx/tree/develop/packages/contracts/src/plugins/governance/multisig): A determined set of addresses is able to approve. Once `x` amount of addresses approve (as determined by the plugin settings), then the proposal automatically succeeds.
-- [Admin plugin](https://github.com/aragon/osx/tree/develop/packages/contracts/src/plugins/governance/admin): One address can create and immediately execute proposals on the DAO (full control).
-- [Addresslist plugin](https://github.com/aragon/osx/tree/develop/packages/contracts/src/plugins/governance/majority-voting/addresslist): Majority-based voting, where list of addresses are able to vote in decision-making for the organization. Unlike a multisig, everybody here is expected to vote yes/no/abstain within a certain time frame.
+- [A token-voting plugin](https://github.com/aragon/token-voting-plugin): Results are based on what the majority votes and the vote's weight is determined by how many tokens an account holds. Ex: Alice has 10 tokens, Bob 2, and Alice votes yes, the yes wins.
+- [Multisig plugin](https://github.com/aragon/multisig-plugin): A determined set of addresses is able to approve. Once `x` amount of addresses approve (as determined by the plugin settings), then the proposal automatically succeeds.
+- [Admin plugin](https://github.com/aragon/admin-plugin): One address can create and immediately execute proposals on the DAO (full control).
