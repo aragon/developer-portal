@@ -42,7 +42,7 @@ Thi interface contains two events and one function
 
 ### `ProposalCreated` event
 
-This event should be emmited when a proposal is created. It contains the following parameters:
+This event should be emitted when a proposal is created. It contains the following parameters:
 
 - `proposalId`: The ID of the proposal.
 - `creator`: The creator of the proposal.
