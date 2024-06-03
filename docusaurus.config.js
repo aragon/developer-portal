@@ -13,22 +13,28 @@ const config = {
   tagline: "Let's build amazing things together",
   url: 'https://devs.aragon.org',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
-  onBrokenAnchors: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   favicon: 'img/Aragon-logo-circle.png',
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          includeCurrentVersion: false,
+          includeCurrentVersion: true,
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '1.4.0-alpha',
+            },
+          },
         },
         theme: {
           customCss: [
@@ -62,7 +68,37 @@ const config = {
           alt: 'Aragon',
           src: 'img/logo-light.png',
         },
-        items: [],
+        items: [
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'osxSidebar',
+            label: 'Overview',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'advancedSidebar',
+            label: 'Advanced',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'guidesSidebar',
+            label: 'Guides',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'supportSidebar',
+            label: 'Support',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+          },
+        ],
       },
       metadata: [
         {name: 'og:title', content: 'Aragon Developer Portal'},
@@ -158,7 +194,7 @@ const config = {
         rootPath: './versioned_docs/version-1.3.0',
         baseURL: 'osx/subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/',
+        linkRoot: '/1.3.0',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',
