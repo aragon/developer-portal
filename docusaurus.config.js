@@ -13,9 +13,9 @@ const config = {
   tagline: "Let's build amazing things together",
   url: 'https://devs.aragon.org',
   baseUrl: '/',
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'ignore',
-  onBrokenAnchors: 'ignore',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
 
   favicon: 'img/Aragon-logo-circle.png',
 
