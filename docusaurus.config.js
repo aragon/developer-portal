@@ -13,7 +13,6 @@ const config = {
   tagline: "Let's build amazing things together",
   url: 'https://devs.aragon.org',
   baseUrl: '/',
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',

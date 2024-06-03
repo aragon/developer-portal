@@ -31,8 +31,6 @@ Technically speaking, Aragon DAOs are:
 
 All other functionality is enabled through plugins. This allows DAOs to be extremely flexible and modular as they mature, through installing and uninstalling these plugins as needs arise.
 
-![Aragon DAO](/img/dao/Aragon_DAO_Diagram.png)
-
 On the technical level, plugins are composed of two key contracts:
 
 - ⚡️ The Plugin implementation contract: containing all of the logic and functionality for your DAO, and
