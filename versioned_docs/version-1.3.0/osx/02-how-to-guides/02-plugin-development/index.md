@@ -58,7 +58,7 @@ For more information on how to develop a plugin, you can our plugin development 
 - [Different plugin types](./02-plugin-types.md)
 - [Non-upgradeable plugin](./03-non-upgradeable-plugin/index.md)
 - [Upgradeable plugin](./04-upgradeable-plugin/index.md)
-- [Governance plugin](./05-governance-plugin/index.md)
+- [Governance plugin](./05-governance-plugins/index.md)
 
 :::danger
 This plugin template uses version `1.4.0-alpha.5` of the Aragon OSx protocol. This version is still in development and is not audited yet.
