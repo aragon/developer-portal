@@ -4,7 +4,7 @@ title: Membership
 
 ## The `IMembership` Interface
 
-The `IMembership` interface defines common function and events for for plugins that keep track of membership in a DAO. This plugins can be used to define who can vote on proposals, who can create proposals, etc. The list of members can be defined in the plugin itself or by a contract that defines the membership like an ERC20 or ERC721 token.
+The `IMembership` interface defines common functions and events for for plugins that keep track of membership in a DAO. This plugins can be used to define who can vote on proposals, who can create proposals, etc. The list of members can be defined in the plugin itself or by a contract that defines the membership like an ERC20 or ERC721 token.
 
 The interface is defined as follows:
 
@@ -45,7 +45,7 @@ The members added event should be emitted when members are removed from the DAO 
 
 ### `MembershipContractAnnounced` event
 
-This event should be emmited during the initialization of the membership plugin to announce the membership being defined by a contract. It contains the defining contract as a parameter.
+This event should be emitted during the initialization of the membership plugin to announce the membership being defined by a contract. It contains the defining contract as a parameter.
 
 ### `isMember` function
 
@@ -84,3 +84,4 @@ contract MyPlugin is IMembership {
   }
 }
 
+```

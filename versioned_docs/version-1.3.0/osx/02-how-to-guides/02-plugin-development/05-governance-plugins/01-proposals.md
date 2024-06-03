@@ -38,7 +38,7 @@ interface IProposal {
 }
 ```
 
-Thi interface contains two events and one function
+This interface contains two events and one function
 
 ### `ProposalCreated` event
 

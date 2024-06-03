@@ -9,18 +9,21 @@ slug: /
 
 The Aragon OSx protocol is the foundation layer of the new Aragon stack. It allows users to create, manage, and customize DAOs in a way that is lean, adaptable, and secure.
 
-The Aragon OSx protocol architecture is composed of two key sections:
+The Aragon OSx protocol provides **three primitives** for users to build their organization:
 
-- **Core contracts**: the primitives the end user will interact with. It is composed of 3 parts:
-  - **DAO contract:** the main contract of our protocol. It holds a DAO's assets and possible actions.
-  - **Permissions**: govern interactions between the plugins, DAOs, and any other address - allowing them (or not) to execute actions on behalf of and within the DAO.
-  - **Plugins**: base templates of plugins.
-- **Framework contracts**: in charge of creating and registering each deployed DAO or plugin. It contains:
-  - **DAO and Plugin Repository Factories**: creates DAOs or plugins.
-  - **DAO and Plugin Registries**: registers into our protocol those DAOs or plugins.
-  - **Plugin Setup Processor:** installs and uninstalls plugins into DAOs.
+- **DAO contract:** the main body and identity of your organization containing the core functionality. It holds your assets, executes actions, and manages permissions.
+- **Permissions**: define relationships between plugins, DAOs, and other addresses.
+- **Plugins**: provide custom functionality for your organization and are managed in on-chain plugin repositories. They can be plugged in and out into your DAO without writing or deploying any contract code yourself.
 
 Through permissions and plugins, DAO builders are able to build and customize their DAO to suit their needs.
+
+Developers can implement their own plugin by inheriting from one of our **plugin base classes**, writing a **plugin setup** and publishing it in an on-chain **plugin repository**.
+
+To facilitate this, Aragon OSx runs a set of **framework contracts**:
+
+- **DAO Factory and registry contract:** create and curate DAOs.
+- **Plugin repo factory and registry contract:** create and version plugin repositories.
+- **Plugin Setup Processor contract:** sets up plugins from a plugin repository in a DAO (installation, update, uninstallation).
 
 ## Getting Started
 
