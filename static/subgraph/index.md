@@ -1,6 +1,7 @@
 ---
-title: Reference Guide [WIP]
+title: Reference Guide
 sidebar_label: Reference Guide
+pagination_next: osx/subgraph/reference-guide/enums/permission-operation
 ---
 
 ## Subgraph

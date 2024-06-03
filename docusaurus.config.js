@@ -13,7 +13,6 @@ const config = {
   tagline: "Let's build amazing things together",
   url: 'https://devs.aragon.org',
   baseUrl: '/',
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
@@ -25,9 +24,11 @@ const config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          includeCurrentVersion: false,
         },
         theme: {
           customCss: [
@@ -61,6 +62,7 @@ const config = {
           alt: 'Aragon',
           src: 'img/logo-light.png',
         },
+        items: [],
       },
       metadata: [
         {name: 'og:title', content: 'Aragon Developer Portal'},
@@ -123,6 +125,10 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Aragon Association, Inc.`,
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
@@ -148,11 +154,11 @@ const config = {
     [
       '@graphql-markdown/docusaurus',
       {
-        schema: `./static/subgraph/schema-introspection.json`,
-        rootPath: './docs',
-        baseURL: 'subgraph/reference-guide',
+        schema: `./static/subgraph/schema-introspection-partial.json`,
+        rootPath: './versioned_docs/version-1.3.0',
+        baseURL: 'osx/subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/docs',
+        linkRoot: '/',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',

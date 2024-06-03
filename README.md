@@ -1,4 +1,4 @@
-![Aragon](https://res.cloudinary.com/dacofvu8m/image/upload/v1677353961/Aragon%20CodeArena/osx_blue_logo_lqrvkr.png)
+![Aragon](/static/img/osx_blue_logo_lqrvkr.png)
 
 <p align="center">
   <a href="https://aragon.org/">Aragon website</a>
@@ -39,6 +39,16 @@ $ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+Notice: you may need to run `yarn optimize-svg` and `yarn docs:subgraph` before `yarn build` or `yarn start` to correctly build this website.
+
+### Serve All Optimized Assets
+
+```bash
+$ yarn serve:all-optimized
+```
+
+This command runs all the necessary commands to serve the website from scratch. It installs all the needed libraries, generates the Subgraph documentation, and then builds and serves the website, locally, with all optimized assets.
 
 ### Deployment
 

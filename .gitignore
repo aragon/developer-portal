@@ -7,6 +7,8 @@
 # Generated files
 .docusaurus
 .cache-loader
+**/subgraph/reference-guide
+/static/optimized-svg
 
 # Misc
 .DS_Store
