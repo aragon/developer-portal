@@ -4,13 +4,8 @@ title: Membership
 
 ## The `IMembership` Interface
 
-:::note
-This page is a stub and work in progress
-:::
-
-Introduce members to the DAO upon installation through [the `IMembership` interface](./02-membership.md).
-
-### Interface IMembership
+The IMembership interface is used to define the notion of membership to the DAO.This interface is implemented by DAO plugins that define either by having a list of members or by having a contract that defines the membership.
+The interface is defined as follows:
 
 ```solidity title=
 /// @notice An interface to be implemented by DAO plugins that define membership.
@@ -35,10 +30,56 @@ interface IMembership {
 }
 ```
 
-### Introducing Members directly
+The interface contains three events and one function.
+
+### `MembersAdded` event
+
+The members added event should be emitted when members are added to the DAO plugin. It only contains one `address[] members` parameter that references the list of new members being added.
+
+- `members`: The list of new members being added.
+
+### `MembersRemoved` event
+
+The members added event should be emitted when members are removed from the DAO plugin. It only contains one `address[] members` parameter that references the list of members being removed.
+
+### `MembershipContractAnnounced` event
+
+This event should be emmited during the initialization of the membership plugin to announce the membership being defined by a contract. It contains the defining contract as a parameter.
+
+### `isMember` function
+
+This is a simple function that should be implemented in the plugin contract that introduces the members to the DAO. It checks if an account is a member of the DAO and returns a boolean value.
+
+## Usage
 
 ```solidity
-event MembersAdded(address[] members)
 
-event MembersRemoved(address[] members)
-```
+contract MyPlugin is IMembership {
+  address public membershipContract;
+
+  constructor(address tokenAddress) {
+    // Initialize the membership contract
+    // ...
+    membershipContract = tokenAddress;
+    emit MembershipContractAnnounced(tokenAddress);
+  }
+
+  function isMember(address _account) external view returns (bool) {
+    // Check if the account is a member of the DAO
+    // ...
+  }
+
+  // Other plugin functions
+  function addMembers(address[] memory _members) external {
+    // Add members to the DAO
+    // ...
+    emit MembersAdded(_members);
+  }
+
+  function removeMembers(address[] memory _members) external {
+    // Remove members from the DAO
+    // ...
+    emit MembersRemoved(_members);
+  }
+}
+
