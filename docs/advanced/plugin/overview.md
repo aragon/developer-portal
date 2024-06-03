@@ -28,15 +28,15 @@ An Aragon OSx Plugin consists of:
   - referencing the `Plugin` implementation internally
   - containing the instructions needed to install, update, and uninstall the plugin into the DAO
 
-- A metadata URI pointing to a `JSON` file containing the
-
-  - AragonApp frontend information
-  - Information needed for the setup ABI
-
 - A version tag consisting of a
 
   - Release number
   - Build number
+
+- A metadata URI pointing to a `JSON` file containing the
+
+  - AragonApp frontend information
+  - Information needed for the setup ABI
 
 <div class="center-column">
 

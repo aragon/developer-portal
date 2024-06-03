@@ -1,7 +1,7 @@
 ---
 title: Plugin Security and Risks
 sidebar_label: Security and Risks
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 ## Risks and Their Mitigation
