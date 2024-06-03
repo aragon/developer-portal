@@ -54,7 +54,7 @@ This event should be emitted when a proposal is created. It contains the followi
 
 ### `ProposalExecuted` event
 
-This event should be emmited when a proposal is executed. It contains the proposal ID as a parameter.
+This event should be emitted when a proposal is executed. It contains the proposal ID as a parameter.
 
 ### `proposalCount` function
 
