@@ -48,7 +48,7 @@ This event should be emitted when a proposal is created. It contains the followi
 - `creator`: The creator of the proposal.
 - `startDate`: The start block number of the proposal.
 - `endDate`: The end block number of the proposal.
-- `metadata`: This should contain an metadata ipfs hash or any other type of link to the metadata of the proposal.
+- `metadata`: This should contain a metadata ipfs hash or any other type of link to the metadata of the proposal.
 - `actions`: The actions that will be executed if the proposal passes.
 - `allowFailureMap`: A bitmap allowing the proposal to succeed, even if individual actions might revert. If the bit at index `i` is 1, the proposal succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert.
 
