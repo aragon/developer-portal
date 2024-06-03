@@ -16,11 +16,12 @@ We recommend using our [hardhat template](https://github.com/aragon/osx-plugin-t
 ```bash
 git clone github.com/aragon/osx-plugin-template-hardhat
 ```
-Once you have cloned the repository the first step is to add a `.env` file with your `ALCHEMY_API_KEY`, there is a `.env.example` file you can use as a template.
+Once you have cloned the repository the first step is to add a `.env` file with your `ALCHEMY_API_KEY`, there is a [`.env.example`](https://github.com/aragon/osx-plugin-template-hardhat/blob/main/.env.example) file you can use as a template.
 
-This file contains more env variables that you may need throughout the development process, but for gerring started you only need to add the `ALCHEMY_API_KEY`.
+This file contains more env variables that you may need throughout the development process, but for getting started you only need to add the `ALCHEMY_API_KEY`.
 
 ```bash
+# INCOMPLETE - PLEASE FILL IN THE MISSING VALUES
 # GENERAL
 
 ## The network used for testing purposes
@@ -33,26 +34,6 @@ PRIVATE_KEY="0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 
 ## Alchemy RPC endpoint credentials
 ALCHEMY_API_KEY="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
-
-## Gas Reporting
-REPORT_GAS='true'
-COINMARKETCAP_API_KEY="zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz"
-
-## Block explorers
-ETHERSCAN_API_KEY="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
-POLYGONSCAN_API_KEY="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
-BASESCAN_API_KEY="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
-ARBISCAN_API_KEY="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
-
-# SUBGRAPH
-
-## The Graph credentials
-GRAPH_KEY="zzzzzzzzzzzz"
-
-## Subgraph
-SUBGRAPH_NAME="osx"
-SUBGRAPH_VERSION="v1.0.0"
-SUBGRAPH_NETWORK_NAME="mainnet" #  ["mainnet", "sepolia", "polygon", "base", "arbitrum"]
 ```
 
 Once the `.env` file is created, you can run the following command to install the dependencies:
@@ -65,11 +46,12 @@ yarn install && cd packages/contracts && yarn install && yarn build && yarn type
 
 Now you are ready to start developing your plugin. You should have two files called `MyPlugin.sol` and `MyPluginSetup.sol` inside the `contracts` folder.
 
+
 The template is already set up with a basic plugin and plugin setup contract. You can start by modifying these files to create your own plugin. The tests and deployment scripts are also set up for you to use.
 
 ## Next Steps
 
-For more information on how to use the template, you can check the [README](https://github.com/aragon/osx-plugin-template-hardhat/blob/main/README.md)
+For more information on how to use the template, you can check the [README](https://github.com/aragon/osx-plugin-template-hardhat/blob/main/README.md) and the [USAGE GUIDE](https://github.com/aragon/osx-plugin-template-hardhat/blob/main/USAGE_GUIDE.md)
 
 For more information on how to develop a plugin, you can our plugin development guides:
 - [Best practices and patterns](./01-best-practices.md)
