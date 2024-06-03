@@ -4,7 +4,8 @@ title: Membership
 
 ## The `IMembership` Interface
 
-The IMembership interface is used to define the notion of membership to the DAO.This interface is implemented by DAO plugins that define either by having a list of members or by having a contract that defines the membership.
+The `IMembership` interface defines common function and events for for plugins that keep track of membership in a DAO. This plugins can be used to define who can vote on proposals, who can create proposals, etc. The list of members can be defined in the plugin itself or by a contract that defines the membership like an ERC20 or ERC721 token.
+
 The interface is defined as follows:
 
 ```solidity title=
