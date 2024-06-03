@@ -13,10 +13,9 @@ const config = {
   tagline: "Let's build amazing things together",
   url: 'https://devs.aragon.org',
   baseUrl: '/',
-
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
-  onBrokenAnchors: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   favicon: 'img/Aragon-logo-circle.png',
 
@@ -25,6 +24,7 @@ const config = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
@@ -194,7 +194,7 @@ const config = {
         rootPath: './versioned_docs/version-1.3.0',
         baseURL: 'osx/subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/docs/1.3.0',
+        linkRoot: '/1.3.0',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',

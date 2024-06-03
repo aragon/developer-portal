@@ -1,4 +1,5 @@
 ---
+slug: /
 title: What is Aragon OSx?
 sidebar_label: Introduction
 sidebar_position: 0
