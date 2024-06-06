@@ -1,6 +1,6 @@
 ---
-title: Technical - Reference
-sidebar_label: Technical - Reference
+title: Technical Reference
+sidebar_label: Technical Reference
 ---
 
 ## Reference Guide
