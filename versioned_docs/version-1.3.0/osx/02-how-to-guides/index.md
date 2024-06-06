@@ -3,7 +3,7 @@ title: Tutorials
 sidebar_label: Tutorials
 ---
 
-## Welcome to our How To Guides on Using the Aragon OSx Protocol!
+## Welcome to our Tutorials on Using the Aragon OSx Protocol!
 
 With a few lines of code, the Aragon OSx protocol allows you create, manage, and change your on-chain organizations, through extending functionality for DAOs through the installation and uninstallation of plugins.
 
@@ -30,8 +30,6 @@ Technically speaking, Aragon DAOs are:
 - 🤝 A permission management system: protecting the assets, through checking that only addresses with x permissions can execute actions on behalf of the DAO.
 
 All other functionality is enabled through plugins. This allows DAOs to be extremely flexible and modular as they mature, through installing and uninstalling these plugins as needs arise.
-
-![Aragon DAO](/img/dao/Aragon_DAO_Diagram.png)
 
 On the technical level, plugins are composed of two key contracts:
 

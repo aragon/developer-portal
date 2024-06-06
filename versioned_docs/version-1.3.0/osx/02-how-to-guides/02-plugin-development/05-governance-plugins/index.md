@@ -32,9 +32,6 @@ Some examples of governance plugins are:
 - [Admin plugin](https://github.com/aragon/osx/tree/develop/packages/contracts/src/plugins/governance/admin): One address can create and immediately execute proposals on the DAO (full control).
 - [Addresslist plugin](https://github.com/aragon/osx/tree/develop/packages/contracts/src/plugins/governance/majority-voting/addresslist): Majority-based voting, where list of addresses are able to vote in decision-making for the organization. Unlike a multisig, everybody here is expected to vote yes/no/abstain within a certain time frame.
 
-:::note
-More tutorials on how to build governance plugins coming soon.
-:::
 
 <!-- Add a graphic -->
 

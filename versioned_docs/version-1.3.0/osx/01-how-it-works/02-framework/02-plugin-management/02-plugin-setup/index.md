@@ -40,7 +40,7 @@ The preparation of a `PluginSetup` contract proceeds as follows:
 
 2. The DAO builder defines the parameters and settings that he/she wants for their DAO. Depending on the case, the `prepareInstallation`, `prepareUpdate`, or `prepareUninstallation` method in the `PluginSetup` contract is called through the `PluginSetupProcessor` (and creates a unique setup ID).
 
-3. The [`PluginSetup`](https://github.com/aragon/osx/blob/develop/packages/contracts/src/framework/plugin/setup/PluginSetupProcessor.sol) contract deploys all the contracts and gathers addresses and other input arguments required for the installation/uninstallation/upgrade instructions. This can include:
+3. The [`PluginSetup`](https://github.com/aragon/osx/blob/e24d9fa3bd6d5a4c9f5936c14ccda1fe9886c2b0/packages/contracts/src/framework/plugin/setup/PluginSetup.sol) contract deploys all the contracts and gathers addresses and other input arguments required for the installation/uninstallation/upgrade instructions. This can include:
 
    - deployment of new contracts
    - initialization of new storage variables
