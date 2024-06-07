@@ -42,7 +42,7 @@ When calling `createDao` an array of `PluginSettings` are requested. A DAO canno
 - `Multisig`
 - `TokenVoting`
 
-If none of this options meet your requirements you can also build your own governance plugin, check our tutorial on ["How to build a plugin?"](/docs/1.3.0/osx/how-to-guides/plugin-development/) to get started.
+If none of this options meet your requirements you can also build your own governance plugin, check our tutorial on ["How to build a plugin?"](/1.3.0/osx/how-to-guides/plugin-development/) to get started.
 
 ## `DAORegistry`
 
