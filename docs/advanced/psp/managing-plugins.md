@@ -39,7 +39,7 @@ The governance plugin can be a simple majority vote, an optimistic process or an
 
 This gives the DAO members the opportunity to check which permissions the `PluginSetup` contract request before granting/revoking them.
 
-Plugin setup proposals must be carefully examined as they can be a potential security risk if the `PluginSetup` contract comes from an untrusted source. To learn more visit the [Security](./01-security-risk-mitigation.md) section.
+Plugin setup proposals must be carefully examined as they can be a potential security risk if the `PluginSetup` contract comes from an untrusted source. To learn more visit the [Security](/1.3.0/osx/how-it-works/framework/plugin-management/plugin-setup/security-risk-mitigation) section.
 
 <!-- TODO: add a costs sections
 
