@@ -29,4 +29,4 @@ Once your DAO is deployed, you might want to install additional plugins, or unin
 For the PSP to grant or revoke permissions within your DAO, it must have the `ROOT_PERMISSION_ID` permission. Therefore, the proposal for applying the plugin installation, uninstallation, or upgrade must include a first action granting `ROOT_PERMISSION_ID` to the PSP and a final action revoking this permission from it.
 :::
 
-For more details on how the two step process works in Aragon OSx using PSP and `PluginSetup` visit the next section [Managing Plugins](./managing-plugins.md)
+For more details on how the two-step process works in Aragon OSx using PSP and `PluginSetup` visit the next section [Managing Plugins](/docs/advanced/psp/managing-plugins.md)
