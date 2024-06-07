@@ -46,7 +46,7 @@ Plugin setup proposals must be carefully examined as they can be a potential sec
 Optionally, the proposer can also request refunds for the gas spent for the preparation of the plugin in the proposal.
 -->
 
-#### What happens during the Preparation Application?
+### What happens during the Preparation Application?
 
 After this initial preparation transaction, the addresses and permissions related to the plugin become apparent. The members of a governance plugin with permissions can decide if the installation proposal should be accepted or denied.
 
