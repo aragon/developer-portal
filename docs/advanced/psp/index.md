@@ -19,7 +19,7 @@ This two step method guarantees that DAO members are aware of the changes being 
 
 When you deploy your DAO using the `DAOFactory` contract, the PSP is utilized to install the necessary plugins. A DAO requires at least one plugin to function, and the `DAOFactory` expects you to install at least one plugin during the creation process.
 
-During this process, the `ROOT_PERMISSION_ID` is granted to the PSP to allow it to prepare and apply the installation of your requested plugin. Once the plugin is installed, the `ROOT_PERMISSION_ID` is revoked from the PSP.
+During this process, the `ROOT_PERMISSION_ID` over the Dao is granted to the PSP to allow it to prepare and apply the installation of your requested plugin. Once the plugin is installed, the `ROOT_PERMISSION_ID` is revoked from the PSP.
 
 ### After DAO Deployment
 
