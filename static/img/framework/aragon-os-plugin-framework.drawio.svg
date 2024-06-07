@@ -182,8 +182,6 @@
                 </text>
             </switch>
         </g>
-        <path d="M 215 170 L 161.37 170" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
-        <path d="M 156.12 170 L 163.12 166.5 L 161.37 170 L 163.12 173.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
         <path d="M 155 105 L 265 105 Q 275 105 275 115 L 275 143.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
         <path d="M 275 148.88 L 271.5 141.88 L 275 143.63 L 278.5 141.88 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
         <g transform="translate(-0.5 -0.5)">
