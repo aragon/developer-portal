@@ -6,7 +6,7 @@ sidebar_position: 0
 
 ## Introduction to Plugin Setup Processor (PSP)
 
-The Plugin Setup Processor (PSP) is a crucial component of the Aragon OSx framework, facilitating the integration of plugins with DAOs. Created and maintained by Aragon, the PSP is a non-upgradeable smart contract that has undergone rigorous audits to ensure transparency and safety. This contract governs how plugins are managed within your DAO, handling the necessary permissions to install, uninstall, or upgrade plugins.
+The Plugin Setup Processor (PSP) is a crucial component of the Aragon OSx framework, facilitating the integration of plugins with DAOs. Created and maintained by Aragon, the PSP is a **non-upgradeable** smart contract that has undergone rigorous audits to ensure transparency and safety. This contract governs how plugins are managed within your DAO, handling the necessary permissions to install, uninstall, or upgrade plugins.
 
 ### Why is the PSP Important?
 
