@@ -19,7 +19,7 @@ This is why we see the installation process in two phases:
 
 The `PluginSetupProcessor` is the Aragon contract in charge of invoking the `prepareInstallation()` function from your plugin's `PluginSetup` contract and use it to prepare the installation and (eventually) apply it once it has been approved by the DAO.
 
-#### What happens during the Plugin Preparation?
+### What happens during the Plugin Preparation?
 
 The preparation of a `PluginSetup` contract proceeds as follows:
 
