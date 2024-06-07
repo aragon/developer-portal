@@ -13,7 +13,7 @@ Two framework contracts manage the `DAO` contract creation process:
 
 The `DAOFactory` is the contract that creates and sets up a `DAO` for you. The `DAORegistry` is used by the `DAOFactory` to register the DAOs that are created. Plugins are installed in the DAO by the `PluginSetupProcessor`.
 
-![Creation Schema](/img/advanced/dao/aragon-osx-dao-creation.drawio.svg)
+![Creation Schema](/optimized-svg/advanced/dao/aragon-osx-dao-creation.drawio.svg)
 
 ## `DAOFactory`
 
