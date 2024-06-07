@@ -1,4 +1,3 @@
-export * from './ComponentCard';
 export * from './Footer';
 export * from './HeroHeader';
 export * from './WelcomeCard';
