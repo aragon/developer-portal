@@ -68,7 +68,7 @@ For more details visit the [`DAORegistry` reference guide entry](docs/osx/refere
 
 ## Events
 
-When creating a DAO there is 2 main events that you'll be looking for:
+When creating a DAO there is two main events that you'll be looking for:
 
 - `DAORegistered`
 - `InstallationApplied`
