@@ -4,7 +4,7 @@ sidebar_label: Managing Plugins
 sidebar_position: 1
 ---
 
-### Two Steps Plugin Install/Uninstall/Upgrade
+## Two Steps Plugin Install/Uninstall/Upgrade
 
 **Safety is our top priority in the design of the whole protocol.** We want to make sure that the DAO members know exactly what permissions are granted/revoked to whom before any processing takes place.
 
