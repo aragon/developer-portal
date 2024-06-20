@@ -7,7 +7,6 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
 
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -45,7 +44,7 @@
   --warning-color: #e1c75c;
   --danger-color: #e75268;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-color-background:    
+  --ifm-color-background:                   
 ;
 }
 

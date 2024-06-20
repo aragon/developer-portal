@@ -4,6 +4,6 @@ sidebar_label: Support
 sidebar_position: 0
 ---
 
-## Support
+## Overview
 
 This section will contain docs.
