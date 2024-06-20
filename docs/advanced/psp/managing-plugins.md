@@ -57,7 +57,7 @@ This is processed as follows:
 1. The DAO temporarily grants the `ROOT_PERMISSION` to the `PluginSetupProcessor`. This is needed so that the processor can modify the DAO's permissions settings to set up the plugin.
 2. This `Action` calls the `applyInstallation` method in the `PluginSetupProcessor`, containing the list of requested permissions as argument. The permissions hash is compared with the stored hash to make sure that no permission was changed.
 3. If the hash is valid, the list is processed, and `PluginSetupProcessor` conducts the requested sequence of `grant`, `grantWithCondition`, and/or `revoke` calls on the owning DAO.
-   Finally, the `PluginSetupProcessor` asks the DAO to revoke the `ROOT_PERMISSION_ID` permission from itself.
+   4. Finally, the temporarily granted `ROOT_PERMISSION` to the `PluginSetupProcessor` is revoked.
 
 :::info
 The two-step setup procedure in Aragon OSx is not limited to the setup of only one plugin — you can **setup multiple plugins at once** by first preparing them in a single proposal and then processing the entire setup sequence in one transaction. This is powerful and allows you to **transform your entire DAO in one proposal**, for example, to install a new governance plugin (e.g., a gasless ZK-vote) and finance plugin (e.g., to stream loans to your members), while uninstalling your old ERC20 token vote in one go.
