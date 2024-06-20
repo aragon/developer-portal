@@ -56,7 +56,6 @@ This is processed as follows:
 
 1. The DAO temporarily grants the `ROOT_PERMISSION` to the `PluginSetupProcessor`. This is needed so that the processor can modify the DAO's permissions settings to set up the plugin.
 2. This `Action` calls the `applyInstallation` method in the `PluginSetupProcessor`, containing the list of requested permissions as argument. The permissions hash is compared with the stored hash to make sure that no permission was changed.
-   In addition to the above, the update process also upgrades the logic contract to which the proxy points too.
 3. If the hash is valid, the list is processed, and `PluginSetupProcessor` conducts the requested sequence of `grant`, `grantWithCondition`, and/or `revoke` calls on the owning DAO.
    Finally, the `PluginSetupProcessor` asks the DAO to revoke the `ROOT_PERMISSION_ID` permission from itself.
 
