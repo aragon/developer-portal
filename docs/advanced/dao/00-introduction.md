@@ -21,7 +21,7 @@ contracts and sending assets to other addresses.
 
 :::note
 
-Typically, actions are scheduled in a proposal in a governance [plugin installed to your DAO](/docs/advanced/plugin/index.md).
+Typically, actions are scheduled in a proposal in a governance [plugin installed to your DAO](/docs/advanced/plugin/overview.md).
 :::
 
 Multiple `Action` structs can be put into one `Action[]` array and executed in a single transaction via the `execute` function. To learn more about actions and advanced features of the DAO executor, visit the [A Deep Dive Into Actions](/1.3.0/osx/how-it-works/core/dao/actions) section.
@@ -36,7 +36,7 @@ The DAO provides basic **asset management** functionality to deposit, withdraw, 
 - [ERC-1155 (Multi Token Standard)](https://eips.ethereum.org/EIPS/eip-1155)
 
 tokens in the treasury.
-In the future, more advanced asset management and finance functionality can be added to your DAO in the form of [plugins](/docs/advanced/plugin/index.md).
+In the future, more advanced asset management and finance functionality can be added to your DAO in the form of [plugins](/docs/advanced/plugin/overview.md).
 
 ### 3. Upgradeability
 
@@ -76,12 +76,6 @@ Although possible, the permissions to execute arbitrary actions or
 upgrade the DAO should not be given to EOAs as this poses a security
 risk to the organization if the account is compromised or acts
 adversarial. Instead, the permissions for the above-mentioned
-functionalities are better restricted to the `DAO` contract itself and triggered through governance [plugins](/docs/advanced/plugin/index.md) that you can install on your DAO.
+functionalities are better restricted to the `DAO` contract itself and triggered through governance [plugins](/docs/advanced/plugin/overview.md) that you can install on your DAO.
 
-To learn more, visit the [Permission Manager](/1.3.0/osx/how-it-works/core/permissions/) section.
-
-<!-- todo update links when all the documentation is migrated
-     todo  - A Deep Dive Into Actions link
-     todo  - Upgrade your DAO link
-     todo  - Permission Manager link
- -->
+To learn more, visit the [Permission Manager](/docs/advanced/permissions/index.md) section.

@@ -86,12 +86,12 @@ function grant(
 To prevent these functions from being called by any address, they are themselves permissioned via the `auth` modifier and require the caller to have the `ROOT_PERMISSION_ID` permission in order to call them.
 
 :::note
-Typically, the `ROOT_PERMISSION_ID` permission is granted only to the `DAO` contract itself. Contracts related to the Aragon infrastructure temporarily require it during the [DAO creation](../../02-framework/01-dao-creation/index.md) and [plugin setup ](../../02-framework/02-plugin-management/02-plugin-setup/index.md) processes.
+Typically, the `ROOT_PERMISSION_ID` permission is granted only to the `DAO` contract itself. Contracts related to the Aragon infrastructure temporarily require it during the [DAO creation](/docs/advanced/dao/01-creation.md) and [plugin setup ](/docs/advanced/plugin/plugin-setup.md) processes.
 
 This means, that these functions can only be called through the DAO’s `execute` function that, in turn, requires the calling address to have the `EXECUTE_PERMISSION_ID` permission.
 
 Typically, the `EXECUTE_PERMISSION_ID` permission is granted to governance contracts (such as a majority voting plugin owned by the DAO or a multi-sig). Accordingly, a proposal is often required to change permissions.
-Exceptions are, again, the [DAO creation](../../02-framework/01-dao-creation/index.md) and [plugin setup ](../../02-framework/02-plugin-management/02-plugin-setup/index.md) processes.
+Exceptions are, again, the[DAO creation](/docs/advanced/dao/01-creation.md) and [plugin setup ](/docs/advanced/plugin/plugin-setup.md) processes.
 :::
 
 #### Granting Permission with Conditions
@@ -109,9 +109,9 @@ function grantWithCondition(
 
 and specifying the `_condition` contract address. This provides full flexibility to customize the conditions under which the function call is allowed.
 
-Typically, conditions are written specifically for and installed together with [plugins](../../01-core/03-plugins/index.md).
+Typically, conditions are written specifically for and installed together with [plugins](/docs/advanced/plugin/overview.md).
 
-To learn more about this advanced topic and possible applications, visit the [permission conditions](./01-conditions.md) section.
+To learn more about this advanced topic and possible applications, visit the [permission conditions](/docs/advanced/permissions/conditions.md) section.
 
 #### Granting Permission to `ANY_ADDR`
 
@@ -131,7 +131,7 @@ By granting the `USE_PERMISSION_ID` to `_who: ANY_ADDR` on the contract `_where:
 Granting a permission with `_where: ANY_ADDR` to a condition has the effect that is granted on every contract. This is useful if you want to give an address `_who` permission over a large set of contracts that would be too costly or too much work to be granted on a per-contract basis.
 Imagine, for example, that many instances of the `Service` contract exist, and a user should have the permission to use all of them. By granting the `USE_PERMISSION_ID` with `_where: ANY_ADDR`, to some user `_who: userAddr`, the user has access to all of them. If this should not be possible anymore, you can later revoke the permission.
 
-However, some restrictions apply. For security reasons, Aragon OSx does not allow you to use both, `_where: ANY_ADDR` and `_who: ANY_ADDR` in the same permission. Furthermore, the permission IDs of [permissions native to the `DAO` Contract](#permissions-native-to-the-dao-contract) cannot be used.
+However, some restrictions apply. For security reasons, Aragon OSx does not allow you to use both, `_where: ANY_ADDR` and `_who: ANY_ADDR` in the same permission. Furthermore, the permission IDs of [permissions native to the `DAO` Contract](/docs/advanced/dao/02-permissions.md) cannot be used.
 Moreover, if a condition is set, we return its `isGranted` result and do not fall back to a more generic one. The condition checks occur in the following order
 
 1. Condition with specific `_who` and specific `where`.

@@ -31,7 +31,7 @@ that might be carelessly or intentionally caused, a malicious plugin can hide **
 
 #### Permissions
 
-Examples for elevated permissions, are the [permissions native to the DAO contract](../../../01-core/02-permissions/index.md#permissions-native-to-the-dao-contract) such as
+Examples for elevated permissions, are the [permissions native to the DAO contract](/docs/advanced/dao/02-permissions.md) such as
 
 - `ROOT_PERMISSION_ID`
 - `EXECUTE_PERMISSION_ID`
@@ -61,5 +61,5 @@ Generally, we recommend only installing plugins from trusted, verified sources s
 
 More information can be found in the How-to guides
 
-- [Operating your DAO](../../../../02-how-to-guides/01-dao/index.md)
-- [Developing a Plugin](../../../../02-how-to-guides/02-plugin-development/index.md)
+- [Operating your DAO](/1.3.0/osx/how-to-guides/dao/)
+- [Developing a Plugin](/1.3.0/osx/how-to-guides/plugin-development/)
