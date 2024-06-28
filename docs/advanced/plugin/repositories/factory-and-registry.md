@@ -8,8 +8,8 @@ sidebar_position: 1
 
 To be available for installation in the Aragon OSx framework, a `PluginRepo` must be created for each plugin. The `PluginRepo` creation process is handled by:
 
-- The [`PluginRepoFactory`](../../../../03-reference-guide/framework/plugin/repo/PluginRepoFactory.md): who creates the `PluginRepo` instance for each plugin to hold all plugin versions
-- The [`PluginRepoRegistry`](../../../../03-reference-guide/framework/plugin/repo/PluginRepoRegistry.md): who registers the Plugin into the Protocol for DAOs to install.
+- The [`PluginRepoFactory`](/docs/advanced/technical-reference/framework/plugin/repo/PluginRepoFactory.md): who creates the `PluginRepo` instance for each plugin to hold all plugin versions
+- The [`PluginRepoRegistry`](/docs/advanced/technical-reference/framework/plugin/repo/PluginRepoRegistry.md): who registers the Plugin into the Protocol for DAOs to install.
 
 ### The `PluginRepoFactory` Contract
 
@@ -32,14 +32,14 @@ function createPluginRepoWithFirstVersion(
 ) external returns (PluginRepo pluginRepo);
 ```
 
-It also registers the plugin in the Aragon OSx `PluginRepoRegistry`contract with an [ENS subdomain](../../03-ens-names.md) under the `plugin.dao.eth` domain managed by Aragon.
+It also registers the plugin in the Aragon OSx `PluginRepoRegistry`contract with an [ENS subdomain](/docs/advanced/ens.md) under the `plugin.dao.eth` domain managed by Aragon.
 
-Additional to the information required by the [`createVersion` function discussed earlier](./index.md#the-pluginrepo-contract), it receives:
+Additional to the information required by the [`createVersion` function discussed earlier](/docs/advanced/plugin/repositories/plugin-repo.md#the-pluginrepo-contract), it receives:
 
 - A valid ENS `_subdomain` unique name composed of letters from a-z, all in lower caps, separated by a `-`. For ex: `token-voting-plugin`.
 - The address of the plugin repo maintainer who ends up having the `ROOT_PERMISSION_ID`, `MAINTAINER_PERMISSION_ID`, and `UPGRADE_REPO_PERMISSION_ID` permissions. These permissions enable the maintainer to call the internal `PermissionManager`, the `createVersion` and `updateReleaseMetadata` functions as well as upgrading the plugin contract.
 
-For more details visit the [`PluginRepoFactory` Reference Guide entry](../../../../03-reference-guide/framework/plugin/repo/PluginRepoFactory.md).
+For more details visit the [`PluginRepoFactory` Reference Guide entry](/docs/advanced/technical-reference/framework/plugin/repo/PluginRepoFactory.md).
 
 ### The `PluginRepoRegistry` Contract
 
@@ -57,4 +57,4 @@ address pluginRepo
 }
 ```
 
-For more details visit the [`PluginRepoRegistry` reference guide entry](../../../../03-reference-guide/framework/plugin/repo/PluginRepoRegistry.md).
+For more details visit the [`PluginRepoRegistry` reference guide entry](/docs/advanced/technical-reference/framework/plugin/repo/PluginRepoRegistry.md).

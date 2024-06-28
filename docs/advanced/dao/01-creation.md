@@ -37,8 +37,6 @@ When the `createDao` function is called in the `DAOFactory` this triggers a four
 
 When calling `createDao` an array of `PluginSettings` are requested. A DAO cannot be created without at least one plugin. The DAO contract works as a permission manager system but it is agnostic to the type of governance that you want to use to manage the DAO. We currently provide two plugins that can be used for governing your DAO:
 
-<!--  todo add link when respective documentation is added  -->
-
 - `Multisig`
 - `TokenVoting`
 
@@ -97,7 +95,3 @@ event InstallationApplied(
 ```
 
 There are a set of events emitted by the `DAO` contract itself, you can find more information about them in the [`DAO` reference guide entry](/docs/advanced/technical-reference/core/dao/DAO.md).
-
-<!-- todo update links when all the documentation is migrated 
-     todo  - How to build a plugin? link
- -->

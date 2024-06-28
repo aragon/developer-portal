@@ -39,7 +39,7 @@ The governance plugin can be a simple majority vote, an optimistic process or an
 
 This gives the DAO members the opportunity to check which permissions the `PluginSetup` contract request before granting/revoking them.
 
-Plugin setup proposals must be carefully examined as they can be a potential security risk if the `PluginSetup` contract comes from an untrusted source. To learn more visit the [Security](/1.3.0/osx/how-it-works/framework/plugin-management/plugin-setup/security-risk-mitigation) section.
+Plugin setup proposals must be carefully examined as they can be a potential security risk if the `PluginSetup` contract comes from an untrusted source. To learn more visit the [Security](/docs/advanced/plugin/security-risk-mitigation.md) section.
 
 <!-- TODO: add a costs sections
 
@@ -56,8 +56,7 @@ This is processed as follows:
 
 1. The DAO temporarily grants the `ROOT_PERMISSION` to the `PluginSetupProcessor`. This is needed so that the processor can modify the DAO's permissions settings to set up the plugin.
 2. This `Action` calls the `applyInstallation` method in the `PluginSetupProcessor`, containing the list of requested permissions as argument. The permissions hash is compared with the stored hash to make sure that no permission was changed.
-3. If the hash is valid, the list is processed, and `PluginSetupProcessor` conducts the requested sequence of `grant`, `grantWithCondition`, and/or `revoke` calls on the owning DAO.
-   4. Finally, the temporarily granted `ROOT_PERMISSION` to the `PluginSetupProcessor` is revoked.
+3. If the hash is valid, the list is processed, and `PluginSetupProcessor` conducts the requested sequence of `grant`, `grantWithCondition`, and/or `revoke` calls on the owning DAO. 4. Finally, the temporarily granted `ROOT_PERMISSION` to the `PluginSetupProcessor` is revoked.
 
 :::info
 The two-step setup procedure in Aragon OSx is not limited to the setup of only one plugin — you can **setup multiple plugins at once** by first preparing them in a single proposal and then processing the entire setup sequence in one transaction. This is powerful and allows you to **transform your entire DAO in one proposal**, for example, to install a new governance plugin (e.g., a gasless ZK-vote) and finance plugin (e.g., to stream loans to your members), while uninstalling your old ERC20 token vote in one go.
