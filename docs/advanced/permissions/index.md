@@ -91,7 +91,7 @@ Typically, the `ROOT_PERMISSION_ID` permission is granted only to the `DAO` cont
 This means, that these functions can only be called through the DAO’s `execute` function that, in turn, requires the calling address to have the `EXECUTE_PERMISSION_ID` permission.
 
 Typically, the `EXECUTE_PERMISSION_ID` permission is granted to governance contracts (such as a majority voting plugin owned by the DAO or a multi-sig). Accordingly, a proposal is often required to change permissions.
-Exceptions are, again, the[DAO creation](/docs/advanced/dao/01-creation.md) and [plugin setup ](/docs/advanced/plugin/plugin-setup.md) processes.
+Exceptions are, again, the [DAO creation](/docs/advanced/dao/01-creation.md) and [plugin setup ](/docs/advanced/plugin/plugin-setup.md) processes.
 :::
 
 #### Granting Permission with Conditions

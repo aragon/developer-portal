@@ -4,7 +4,7 @@ sidebar_label: Permissions
 sidebar_position: 2
 ---
 
-# Dao Permissions
+# DAO Permissions
 
 The following functions in the DAO are permissioned:
 
