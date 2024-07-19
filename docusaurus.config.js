@@ -106,13 +106,12 @@ const config = {
         {name: 'og:url', content: 'https://devs.aragon.org'},
         {
           name: 'og:image',
-          content:
-            'https://res.cloudinary.com/duvrxe0m9/image/upload/v1684963446/Frame_47_3_fufumh.png',
+          content: '/img/Aragon_OSx_Thumbnail.png',
         },
         {
           name: 'og:description',
           content:
-            'Building a custom DAO is now easier than ever. Learn everything you need to know about the Aragon stack here',
+            'Aragon OSx enhances security and flexibility by isolating governance logic into modular plugins, making governance contracts safer and faster to customize.',
         },
       ],
 
