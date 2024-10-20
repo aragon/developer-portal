@@ -24,7 +24,6 @@ const config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
@@ -114,51 +113,9 @@ const config = {
             'Aragon OSx enhances security and flexibility by isolating governance logic into modular plugins, making governance contracts safer and faster to customize.',
         },
       ],
-
       footer: {
+        // Costom footer is used (see: /theme/Footers)
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://ethereum.stackexchange.com/search?q=aragon',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/Wpk36QRdMN',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/AragonProject/',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: 'https://blog.aragon.org/',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/aragon',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Aragon Association, Inc.`,
       },
       colorMode: {
         defaultMode: 'light',
@@ -193,7 +150,7 @@ const config = {
         rootPath: './versioned_docs/version-1.3.0',
         baseURL: 'osx/subgraph/reference-guide',
         homepage: './static/subgraph/index.md',
-        linkRoot: '/1.3.0',
+        linkRoot: '/docs',
         loaders: {
           JsonFileLoader: {
             module: '@graphql-tools/json-file-loader',
