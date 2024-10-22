@@ -5,35 +5,19 @@ const currentYear = new Date().getFullYear();
 
 const leftLinks = [
   {
-    text: 'Home',
-    to: '/',
-  },
-  {
-    text: 'How it works',
-    to: '/docs/osx/how-it-works',
-  },
-  {
-    text: 'Guides',
-    to: '/docs/osx/how-to-guides',
-  },
-  {
-    text: 'Support',
+    text: 'Discord',
     to: 'https://discord.gg/Wpk36QRdMN',
-  }
+  },
+  {
+    text: 'Github',
+    to: 'https://github.com/aragon',
+  },
 ];
 const rightLinks = [
   {
     text: 'Aragon',
     to: 'https://aragon.org',
-  }
-  // {
-  //   text: 'Terms of service',
-  //   to: 'https://aragon.org',
-  // },
-  // {
-  //   text: 'Privacy',
-  //   to: 'https://aragon.org',
-  // },
+  },
 ];
 
 export const Footer = () => {
@@ -43,7 +27,12 @@ export const Footer = () => {
         <Image src={require('@site/static/img/logo-dark.png').default}></Image>
         <LinksContainer>
           {leftLinks.map((link, index) => (
-            <Link href={link.to} key={index}>
+            <Link
+              href={link.to}
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {link.text}
             </Link>
           ))}
@@ -53,11 +42,10 @@ export const Footer = () => {
         <LinksContainer>
           {rightLinks.map((link, index) => (
             <Link href={link.to} key={index}>
-              {link.text}
+              {link.text} <Text>©{currentYear}</Text>
             </Link>
           ))}
         </LinksContainer>
-        <Text>© {currentYear}</Text>
       </RightContainer>
     </FooterWrapper>
   );
