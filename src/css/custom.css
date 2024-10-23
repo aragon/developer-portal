@@ -44,7 +44,7 @@
   --warning-color: #e1c75c;
   --danger-color: #e75268;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-color-background:                   
+  --ifm-color-background:                    
 ;
 }
 
@@ -105,9 +105,4 @@ div[class*='announcementBarContent'] a:hover {
   > .menu__link {
   color: var(--ifm-color-primary-darkest);
   font-weight: bold;
-}
-
-/* Adding custom style to specific documents */
-.docs-doc-id-osx\/get-started .markdown {
-  max-width: 100%;
 }

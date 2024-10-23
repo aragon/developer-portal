@@ -1,5 +1,4 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 require('dotenv').config();
 const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github,
@@ -24,17 +23,12 @@ const config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          id: 'default',
+          path: 'docs/osx',
+          routeBasePath: '/', // OSx docs as the main entry point
+          sidebarPath: require.resolve('./sidebars/osxSidebar.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          includeCurrentVersion: true,
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: '1.4.0-alpha',
-            },
-          },
         },
         theme: {
           customCss: [
@@ -48,6 +42,51 @@ const config = {
         },
       },
     ],
+  ],
+
+  plugins: [
+    // Governance UI Kit Documentation
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'governanceUiKit',
+        path: 'docs/governanceUiKit',
+        routeBasePath: 'governance-ui-kit',
+        sidebarPath: require.resolve('./sidebars/governanceUiKitSidebar.js'),
+        includeCurrentVersion: true,
+      },
+    ],
+    // Governance App Template Documentation
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'governanceAppTemplate',
+        path: 'docs/governanceAppTemplate',
+        routeBasePath: 'governance-app-template',
+        sidebarPath: require.resolve(
+          './sidebars/governanceAppTemplateSidebar.js',
+        ),
+        includeCurrentVersion: true,
+      },
+    ],
+    // Search Plugin
+    [
+      require.resolve('@cmfcmf/docusaurus-search-local'),
+      {
+        // Options here (default options are fine unless you have specific needs)
+      },
+    ],
+    // Tailwind Plugin
+    async function TailwindPlugin(context, options) {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        },
+      };
+    },
   ],
 
   stylesheets: [
@@ -71,32 +110,19 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            position: 'left',
             sidebarId: 'osxSidebar',
-            label: 'Overview',
-          },
-          {
-            type: 'docSidebar',
             position: 'left',
-            sidebarId: 'advancedSidebar',
-            label: 'Advanced',
+            label: 'Aragon OSx',
           },
           {
-            type: 'docSidebar',
+            to: '/governance-ui-kit', // Link to Governance UI Kit documentation
+            label: 'Governance UI Kit',
             position: 'left',
-            sidebarId: 'guidesSidebar',
-            label: 'Guides',
           },
           {
-            type: 'docSidebar',
+            to: '/governance-app-template', // Link to Governance App Template documentation
+            label: 'Governance App Template',
             position: 'left',
-            sidebarId: 'supportSidebar',
-            label: 'Support',
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
           },
         ],
       },
@@ -117,48 +143,6 @@ const config = {
 
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://ethereum.stackexchange.com/search?q=aragon',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/Wpk36QRdMN',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/AragonProject/',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: 'https://blog.aragon.org/',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/aragon',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Aragon Association, Inc.`,
       },
       colorMode: {
         defaultMode: 'light',
@@ -172,57 +156,12 @@ const config = {
       announcementBar: {
         id: 'register_to_dev_newsletter',
         content:
-          'Register to our developer newsletter and get the latest updates on DAO tooling <a target="_blank" rel="noopener noreferrer" href="https://aragondevelopers.substack.com/">here</a></strong>!',
+          'Register to our developer newsletter and get the latest updates on DAO tooling <a target="_blank" rel="noopener noreferrer" href="https://aragondevelopers.substack.com/">here</a>!',
         backgroundColor: '#3164fa',
         textColor: '#fff',
         isCloseable: true,
       },
     }),
-
-  plugins: [
-    [
-      require.resolve('@cmfcmf/docusaurus-search-local'),
-      {
-        // Options here
-      },
-    ],
-    [
-      '@graphql-markdown/docusaurus',
-      {
-        schema: `./static/subgraph/schema-introspection-partial.json`,
-        rootPath: './versioned_docs/version-1.3.0',
-        baseURL: 'osx/subgraph/reference-guide',
-        homepage: './static/subgraph/index.md',
-        linkRoot: '/1.3.0',
-        loaders: {
-          JsonFileLoader: {
-            module: '@graphql-tools/json-file-loader',
-            options: {
-              rootTypes: {
-                query: '',
-                subscription: '',
-                mutation: '',
-              },
-            },
-          },
-        },
-        printTypeOptions: {
-          useApiGroup: false,
-        },
-      },
-    ],
-    async function TailwindPlugin(context, options) {
-      return {
-        name: 'docusaurus-tailwindcss',
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'));
-          postcssOptions.plugins.push(require('autoprefixer'));
-          return postcssOptions;
-        },
-      };
-    },
-  ],
 };
 
 module.exports = config;
