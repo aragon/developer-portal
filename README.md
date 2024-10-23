@@ -40,7 +40,7 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-Notice: you may need to run `yarn optimize-svg` and `yarn docs:subgraph` before `yarn build` or `yarn start` to correctly build this website.
+Notice: you may need to run `yarn optimize-svg` before `yarn build` or `yarn start` to correctly build this website.
 
 ### Serve All Optimized Assets
 
@@ -48,7 +48,7 @@ Notice: you may need to run `yarn optimize-svg` and `yarn docs:subgraph` before 
 $ yarn serve:all-optimized
 ```
 
-This command runs all the necessary commands to serve the website from scratch. It installs all the needed libraries, generates the Subgraph documentation, and then builds and serves the website, locally, with all optimized assets.
+This command runs all the necessary commands to serve the website from scratch. It installs all the needed libraries, and then builds and serves the website, locally, with all optimized assets.
 
 ### Deployment
 
