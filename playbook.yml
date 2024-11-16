@@ -1,0 +1,32 @@
+site:
+  title: OpenZeppelin Docs
+  url: https://docs.openzeppelin.com
+  # start_page: ROOT::index.adoc
+  keys:
+    google_analytics: 'UA-85043059-1'
+    gtm: 'GTM-W9X5Q6F'
+content:
+  sources:
+    - url: .
+      branches: staging
+      start_path: docs/osx
+    - url: https://github.com/aragon/multisig-plugin
+      branches: feature/docs
+      start_path: packages/contracts/docs
+    - url: https://github.com/aragon/token-voting-plugin
+      branches: feature/docs
+      start_path: packages/contracts/docs
+ui:
+  bundle:
+    url: ./ui/theme
+asciidoc:
+  attributes:
+    idprefix: ''
+antora:
+  extensions:
+    - require: './lunr-tokenizer'
+    - require: '@antora/lunr-extension'
+      index_latest_only: true
+urls:
+  html_extension_style: drop
+  redirect_facility: netlify

@@ -1,0 +1,12 @@
+{
+    "name": "@types/cssnano",
+    "version": "5.1.3",
+    "description": "Stub TypeScript definitions entry for cssnano, which provides its own types definitions",
+    "main": "",
+    "scripts": {},
+    "license": "MIT",
+    "dependencies": {
+        "cssnano": "*"
+    },
+    "deprecated": "This is a stub types definition. cssnano provides its own type definitions, so you do not need this installed."
+}
