@@ -8,7 +8,7 @@ site:
 content:
   sources:
     - url: .
-      branches: staging
+      branches: feature/new-way
       start_path: docs/osx
     - url: https://github.com/aragon/multisig-plugin
       branches: feature/docs
