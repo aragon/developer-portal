@@ -1,0 +1,3 @@
+= Documentation
+
+Explore our guides and examples to learn how.    
