@@ -19,11 +19,7 @@
     {{#each (pick site.components "token-voting, multisig")}}
     {{> navigation-component }}
     {{/each}}
-
-    <h3 class="nav-title">More</h3>
-    {{#each (pick site.components "upgrades-plugins, contracts-cairo, contracts-stylus, substrate-runtimes") }}
-    {{> navigation-component }}
-    {{/each}}
+    
   </div>
 
   {{else}}
