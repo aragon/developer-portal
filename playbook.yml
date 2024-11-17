@@ -19,6 +19,13 @@ content:
     - url: https://github.com/aragon/token-voting-plugin
       branches: feature/docs
       start_path: packages/contracts/docs
+    - url: https://github.com/aragon/osx
+      branches: feature/docs
+      start_path: packages/contracts/docs
+    - url: https://github.com/aragon/osx-commons
+      branches: feature/docs
+      start_path: contracts/docs
+
 ui:
   bundle:
     url: ./ui/theme

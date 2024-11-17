@@ -11,7 +11,12 @@
   {{#if (eq @root.page.component.name "ROOT")}}
   <div class="nav-components">
     <h3 class="nav-title">Start here</h3>
-    {{#each (pick site.components "ROOT, osx")}}
+    {{#each (pick site.components "ROOT")}}
+    {{> navigation-component }}
+    {{/each}}
+
+    <h3 class="nav-title">Core</h3>
+    {{#each (pick site.components "osx-contracts, osx-commons-contracts")}}
     {{> navigation-component }}
     {{/each}}
 
@@ -19,7 +24,7 @@
     {{#each (pick site.components "token-voting, multisig")}}
     {{> navigation-component }}
     {{/each}}
-    
+
   </div>
 
   {{else}}
