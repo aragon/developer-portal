@@ -4,7 +4,7 @@
 
 Two framework contracts manage the `DAO` contract creation process:
 
-- The TODO:GIORGI [`DAOFactory`](../../../03-reference-guide/framework/dao/DAOFactory.md)
+- The TODO1:GIORGI [`DAOFactory`](../../../03-reference-guide/framework/dao/DAOFactory.md)
 - The TODO:GIORGI [`DAORegistry`](../../../03-reference-guide/framework/dao/DAORegistry.md).
 
 
