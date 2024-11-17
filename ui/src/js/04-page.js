@@ -67,7 +67,7 @@
   title.classList.add('toc-title');
   // title.textContent = 'On This Page';
   var elTitle = document.querySelector('main .article-wrapper h1');
-  title.textContent = elTitle.textContent;
+  title.textContent = elTitle?.textContent || 'On This Page'
   menu.appendChild(title);
   menu.appendChild(list);
 

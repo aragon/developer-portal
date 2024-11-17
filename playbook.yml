@@ -9,6 +9,9 @@ content:
   sources:
     - url: .
       branches: feature/new-way
+      start_path: components/home
+    - url: .
+      branches: feature/new-way
       start_path: components/osx
     - url: https://github.com/aragon/multisig-plugin
       branches: feature/docs

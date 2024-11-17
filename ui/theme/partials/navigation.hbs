@@ -7,19 +7,20 @@
     </svg>
   </button>
 
+
   {{#if (eq @root.page.component.name "ROOT")}}
   <div class="nav-components">
     <h3 class="nav-title">Start here</h3>
-    {{#each (pick site.components "ROOT, learn")}}
+    {{#each (pick site.components "ROOT, osx")}}
     {{> navigation-component }}
     {{/each}}
 
     <h3 class="nav-title">Our Plugins</h3>
-    {{#each (pick site.components "TokenVoting, Multisig")}}
+    {{#each (pick site.components "token-voting, multisig")}}
     {{> navigation-component }}
     {{/each}}
 
-    <h3 class="nav-title">OSX</h3>
+    <h3 class="nav-title">More</h3>
     {{#each (pick site.components "upgrades-plugins, contracts-cairo, contracts-stylus, substrate-runtimes") }}
     {{> navigation-component }}
     {{/each}}

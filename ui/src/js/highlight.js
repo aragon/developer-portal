@@ -10,4 +10,4 @@ hljs.registerLanguage('shell', require('highlight.js/lib/languages/shell'));
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 require('highlightjs-solidity')(hljs);
 require('highlightjs-cairo')(hljs);
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
