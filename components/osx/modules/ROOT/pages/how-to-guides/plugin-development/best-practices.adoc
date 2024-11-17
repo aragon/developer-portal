@@ -1,18 +1,16 @@
----
-title: Before Starting
----
+= Before Starting
 
-## Advice for Developing a Plugin
+=== Advice for Developing a Plugin
 
 ### DOs 👌
 
-- Document your contracts using [NatSpec](https://docs.soliditylang.org/en/v0.8.17/natspec-format.html).
-- Test your contracts, e.g., using toolkits such as [hardhat (JS)](https://hardhat.org/hardhat-runner/docs/guides/test-contracts) or [Foundry (Rust)](https://book.getfoundry.sh/forge/tests).
+- Document your contracts using link:https://docs.soliditylang.org/en/v0.8.17/natspec-format.html[NatSpec].
+- Test your contracts, e.g., using toolkits such as link:https://hardhat.org/hardhat-runner/docs/guides/test-contracts[hardhat (JS)] or link:https://book.getfoundry.sh/forge/tests[Foundry (Rust)].
 - Use the `auth` modifier to control the access to functions in your plugin instead of `onlyOwner` or similar.
 - Write plugins implementations that need minimal permissions on the DAO.
 - Write `PluginSetup` contracts that remove all permissions on uninstallation that they requested during installation or updates.
 - Plan the lifecycle of your plugin (need for upgrades).
-- Follow our [versioning guidelines](../02-plugin-development/07-publication/01-versioning.md).
+- Follow our xref:how-to-guides/plugin-development/publication/versioning.adoc[versioning guidelines].
 
 ### DON'Ts ✋
 
@@ -23,8 +21,5 @@ title: Before Starting
 - Write upgradeable contracts that:
   - Repurpose existing storage (in upgradeable plugins).
   - Inherit from previous versions as this can mess up the inheritance chain. Instead, write self-contained contracts.
-
-<!-- - A plugin requesting the exact same permission to another one + uninstalling it -->
-<!-- - Publishing plugin versions that provide no guarantees (setup contracts upgradeable behind the scenes by the dev)-->
 
 In the following sections, you will learn about the details about plugin development.

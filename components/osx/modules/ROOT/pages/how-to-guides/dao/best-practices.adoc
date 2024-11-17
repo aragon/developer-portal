@@ -1,8 +1,6 @@
----
-title: Best Practices
----
+= Best Practices
 
-## Some Advice When Operating your DAO
+=== Some Advice When Operating your DAO
 
 ### DOs 👌
 

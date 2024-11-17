@@ -1,8 +1,6 @@
----
-title: Protocol Governance
----
+= Protocol Governance
 
-## Governing the Aragon OSx Framework
+=== Governing the Aragon OSx Framework
 
 To govern the framework infrastructure, a **Framework DAO** was deployed.
 

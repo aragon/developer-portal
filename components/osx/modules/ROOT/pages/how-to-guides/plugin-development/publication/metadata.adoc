@@ -1,8 +1,6 @@
----
-title: Plugin Metadata
----
+= Plugin Metadata
 
-## Plugin Metadata Specification
+== Plugin Metadata Specification
 
 The plugin metadata is necessary to allow the App frontend to interact with any plugins:
 
@@ -25,11 +23,23 @@ It can be replaced at any time with [`updateReleaseMetadata()`](../../../03-refe
 
 The `release-metadata.json` file consists of the following entries:
 
-| Key         | Type        | Description                                                                  |
-| ----------- | ----------- | ---------------------------------------------------------------------------- |
-| name        | `string`    | Name of the plugin (e.g. `"Multisig"`)                                       |
-| description | `string`    | Description of the plugin release and its functionality.                     |
-| images      | UNSPECIFIED | Optional. Contains a series of images advertising the plugins functionality. |
+|===
+|Key |Type |Description
+
+| name
+| `string` 
+| Name of the plugin (e.g. `"Multisig"`)  
+
+| description
+| `string`
+| Description of the plugin release and its functionality.   
+
+| images
+| UNSPECIFIED
+| Optional. Contains a series of images advertising the plugins functionality..
+
+|===
+
 
 #### Example
 
@@ -43,16 +53,28 @@ The `release-metadata.json` file consists of the following entries:
 
 ### Build Metadata
 
-The build metadata is a `.json` file stored on IPFS with its IPFS CID published for each build **only once** in the [PluginRepo](../../../01-how-it-works/02-framework/02-plugin-management/01-plugin-repo/index.md) (see also the section about [versioning](../07-publication/01-versioning.md#)).
+The build metadata is a `.json` file stored on IPFS with its IPFS CID published for each build **only once** 
+in the xref:how-it-works/framework/plugin-management/plugin-repo/index.adoc[PluginRepo] (see also the section about xref:how-to-guides/plugin-development/publication/versioning.adoc[versioning]).
 
 The intention is to inform about the changes that were introduced in this build compared to the previous one and give instructions to the App frontend and other users on how to interact with the plugin setup and implementation contract.
-It can be published **only once** with the call to [`createVersion()`](../../../03-reference-guide/framework/plugin/repo/IPluginRepo.md#external-function-createversion) in `IPluginRepo` by the repo maintainer.
+It can be published **only once** with the call to TODO:GIORGI [`createVersion()`](../../../03-reference-guide/framework/plugin/repo/IPluginRepo.md#external-function-createversion) in `IPluginRepo` by the repo maintainer.
 
-| Key         | Type        | Description                                                                                               |
-| ----------- | ----------- | --------------------------------------------------------------------------------------------------------- |
-| ui          | UNSPECIFIED | A special formatted object containing instructions for the App frontend on how to render the plugin's UI. |
-| change      | `string`    | Description of the code and UI changes compared to the previous build of the same release.                |
-| pluginSetup | `object`    | Optional. Contains a series of images advertising the plugins functionality.                              |
+|===
+|Key |Type |Description
+
+| ui
+| UNSPECIFIED 
+| A special formatted object containing instructions for the App frontend on how to render the plugin's UI.
+
+| change
+| `string`
+| Description of the code and UI changes compared to the previous build of the same release. 
+
+| pluginSetup
+| `object`
+| Optional. Contains a series of images advertising the plugins functionality.  
+
+|===
 
 Each build metadata contains the following fields:
 
@@ -62,10 +84,20 @@ Each build metadata contains the following fields:
 
 Each `"prepare..."` object contains:
 
-| Key         | Type       | Description                                                                                                                                                                                                                                    |
-| ----------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| description | `string`   | The description of what this particular setup step is doing and what it requires the input for.                                                                                                                                                |
-| inputs      | `object[]` | A description of the inputs required for this setup step following the [Solidity JSON ABI](https://docs.ethers.org/v5/api/utils/abi/formats/#abi-formats--solidity) format enriched with an additional `"description"` field for each element. |
+|===
+|Key |Type |Description
+
+| description
+| `string`
+| The description of what this particular setup step is doing and what it requires the input for. 
+
+| inputs
+| `object[]`
+| A description of the inputs required for this setup step following the link:https://docs.ethers.org/v5/api/utils/abi/formats/#abi-formats--solidity[Solidity JSON ABI] format enriched with an additional `"description"` field for each element.
+
+|===
+
+
 
 By following the Solidity JSON ABI format for the inputs, we followed an established standard, have support for complex types (tuples, arrays, nested versions of the prior) and allow for future extensibility (such as the human readable description texts that we have added).
 

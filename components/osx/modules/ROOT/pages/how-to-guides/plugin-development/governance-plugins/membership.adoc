@@ -1,10 +1,10 @@
----
-title: Membership
----
+= Membership
 
-## The `IMembership` Interface
+== The `IMembership` Interface
 
-The `IMembership` interface defines common functions and events for for plugins that keep track of membership in a DAO. This plugins can be used to define who can vote on proposals, who can create proposals, etc. The list of members can be defined in the plugin itself or by a contract that defines the membership like an ERC20 or ERC721 token.
+The `IMembership` interface defines common functions and events for for plugins that keep track of membership in a DAO. 
+This plugins can be used to define who can vote on proposals, who can create proposals, etc. The list of members can be defined 
+in the plugin itself or by a contract that defines the membership like an ERC20 or ERC721 token.
 
 The interface is defined as follows:
 
@@ -35,21 +35,25 @@ The interface contains three events and one function.
 
 ### `MembersAdded` event
 
-The members added event should be emitted when members are added to the DAO plugin. It only contains one `address[] members` parameter that references the list of new members being added.
+The members added event should be emitted when members are added to the DAO plugin. It only contains one 
+`address[] members` parameter that references the list of new members being added.
 
 - `members`: The list of new members being added.
 
 ### `MembersRemoved` event
 
-The members added event should be emitted when members are removed from the DAO plugin. It only contains one `address[] members` parameter that references the list of members being removed.
+The members added event should be emitted when members are removed from the DAO plugin. It only contains one `address[] members` 
+parameter that references the list of members being removed.
 
 ### `MembershipContractAnnounced` event
 
-This event should be emitted during the initialization of the membership plugin to announce the membership being defined by a contract. It contains the defining contract as a parameter.
+This event should be emitted during the initialization of the membership plugin to announce the membership being defined by a contract. 
+It contains the defining contract as a parameter.
 
 ### `isMember` function
 
-This is a simple function that should be implemented in the plugin contract that introduces the members to the DAO. It checks if an account is a member of the DAO and returns a boolean value.
+This is a simple function that should be implemented in the plugin contract that introduces the members to the DAO. It checks if an 
+account is a member of the DAO and returns a boolean value.
 
 ## Usage
 

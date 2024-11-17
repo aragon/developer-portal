@@ -1,8 +1,6 @@
----
-title: Plugin Setup Contract
----
+= Plugin Setup Contract
 
-## What is the Plugin Setup contract?
+== What is the Plugin Setup contract?
 
 The Plugin Setup contract is the contract defining the instructions for installing, uninstalling, or upgrading plugins into DAOs. This contract prepares the permission granting or revoking that needs to happen in order for plugins to be able to perform actions on behalf of the DAO.
 
@@ -132,7 +130,7 @@ contract SimpleAdminSetup is PluginSetup {
 }
 ```
 
-Then, we will use [OpenZeppelin's `Clones` library](https://docs.openzeppelin.com/contracts/4.x/api/proxy#Clones) to clone our Plugin contract and initialize it with the `admin` address. The first line, `using Clones for address;`, allows us to call OpenZeppelin `Clones` library to clone contracts deployed at an address.
+Then, we will use link:https://docs.openzeppelin.com/contracts/4.x/api/proxy#Clones[OpenZeppelin's `Clones` library] to clone our Plugin contract and initialize it with the `admin` address. The first line, `using Clones for address;`, allows us to call OpenZeppelin `Clones` library to clone contracts deployed at an address.
 
 The second line introduces a custom error being thrown if the admin address specified is the zero address.
 
@@ -329,10 +327,11 @@ contract SimpleAdminSetup is PluginSetup {
 }
 ```
 
-Once done, our plugin is ready to be published on the Aragon plugin registry. With the address of the `SimpleAdminSetup` contract, we are ready for creating our `PluginRepo`, the plugin's repository where all plugin versions will live. Check out our how to guides on [publishing your plugin here](../07-publication/index.md).
+Once done, our plugin is ready to be published on the Aragon plugin registry. With the address of the `SimpleAdminSetup` contract, we are ready for creating our `PluginRepo`, the plugin's repository where all plugin versions will live. 
+Check out our how to guides on xref:how-to-guides/plugin-development/publication/index.adoc[publishing your plugin here].
 
 ### In the future: Subsequent Builds
 
 For subsequent builds or releases of your plugin, you'll simply write a new implementation and associated Plugin Setup contract providing a new `prepareInstallation` and `prepareUninstallation` function.
 
-If a DAO wants to install the new build or release, it must uninstall its current plugin and freshly install the new plugin version, which can happen in the same action array in a governance proposal. However, the plugin storage and event history will be lost since this is a non-upgradeable plugin. If you want to prevent the latter, you can learn [how to write an upgradeable plugin here](../03-non-upgradeable-plugin/index.md).
+If a DAO wants to install the new build or release, it must uninstall its current plugin and freshly install the new plugin version, which can happen in the same action array in a governance proposal. However, the plugin storage and event history will be lost since this is a non-upgradeable plugin. If you want to prevent the latter, you can learn xref:how-to-guides/plugin-development/non-upgradeable-plugin/index.adoc[how to write an upgradeable plugin here].

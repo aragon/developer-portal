@@ -1,8 +1,6 @@
----
-title: Proposals
----
+= Proposals
 
-## The `IProposal` Interface
+== The `IProposal` Interface
 
 The `IProposal` interface is used to create and execute proposals containing actions and a description.
 
