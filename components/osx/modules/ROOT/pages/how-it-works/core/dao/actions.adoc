@@ -1,6 +1,6 @@
 = Advanced DAO Actions
 
-=== A Deep Dive into Actions and Execution
+== A Deep Dive into Actions and Execution
 
 The DAO's `execute` function is part of the `DAO.sol` contract and has the following function header:
 

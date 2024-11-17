@@ -1,6 +1,6 @@
 = Framework - How Everything Connects
 
-=== The Infrastructure Running the Aragon OSx Protocol
+== The Infrastructure Running the Aragon OSx Protocol
 
 The Aragon OSx protocol is composed of **framework-related contracts** creating and managing the **core contracts**. This includes the
 

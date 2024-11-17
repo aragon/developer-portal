@@ -1,6 +1,6 @@
 = Installing Plugins
 
-=== The Smart Contracts Behind Plugins
+== The Smart Contracts Behind Plugins
 
 A DAO can be set up and customized by the **installation, update, and uninstallation** of plugins. Plugins are composed of two key contracts:
 

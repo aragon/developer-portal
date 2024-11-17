@@ -1,6 +1,6 @@
 = Choosing the Plugin Type
 
-=== How to Choose the Base Contract for Your Plugin
+== How to Choose the Base Contract for Your Plugin
 
 Although it is not mandatory to choose one of our interfaces as the base contracts for your plugins, we do offer some options for you to inherit from and speed up development.
 
@@ -45,7 +45,7 @@ Some key things to keep in mind:
 - To enable upgradeable smart contracts (as well as cheap contract clones), the proxy pattern is used.
 - Depending on your upgradeability requirements and the deployment method you choose, you can also greatly reduce the gas costs to distribute your plugin. 
 However, the upgradeability and deployment method can introduce caveats 
-during xref:how-it-works/framework/plugin-setup/index.adoc[the plugin setup] especially when updating from an older version to a new one.
+during xref:how-it-works/framework/plugin-management/plugin-setup/index.adoc[the plugin setup] especially when updating from an older version to a new one.
 
 We recommend to use link:https://eips.ethereum.org/EIPS/eip-1167[minimal proxies (ERC-1167)] for non-upgradeable and link:https://eips.ethereum.org/EIPS/eip-1822(UUPS proxies (1822)) for upgradeable plugin.
 To help you with developing and deploying your plugin within the Aragon infrastructure, we provide the following implementation that you can inherit from:

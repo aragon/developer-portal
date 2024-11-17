@@ -1,6 +1,6 @@
 = Before Starting
 
-=== Advice for Developing a Plugin
+== Advice for Developing a Plugin
 
 ### DOs 👌
 

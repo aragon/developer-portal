@@ -1,6 +1,6 @@
 = ENS Names
 
-=== Unique DAO and Plugin Repo Names
+== Unique DAO and Plugin Repo Names
 
 To make DAOs and plugin repositories easily identifiable in the Aragon OSx ecosystem, we assign unique ENS names to them upon 
 registration during the xref:how-it-works/framework/dao-creation/index.adoc[DAO creation] and xref:how-it-works/framework/plugin-management/plugin-repo/plugin-repo-creation.md[plugin publishing] processes.

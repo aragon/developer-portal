@@ -1,6 +1,6 @@
 = Upgrade your DAO to future Aragon OSx Versions
 
-=== Upgrading to Future Aragon OSx Protocol Versions
+== Upgrading to Future Aragon OSx Protocol Versions
 
 At Aragon, we are constantly working on improving the Aragon OSx framework.
 

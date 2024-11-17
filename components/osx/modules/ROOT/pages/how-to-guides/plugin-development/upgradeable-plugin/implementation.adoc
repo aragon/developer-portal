@@ -1,6 +1,6 @@
 = Plugin Implementation Contract
 
-=== How to build an Upgradeable Plugin implementation contract
+== How to build an Upgradeable Plugin implementation contract
 
 In this guide, we'll build a `SimpleStorage` Upgradeable plugin which all it does is storing a number.
 

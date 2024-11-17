@@ -1,6 +1,6 @@
 = DAO
 
-=== The DAO Contract: The Identity and Basis of Your Organization
+== The DAO Contract: The Identity and Basis of Your Organization
 
 In this section, you will learn about the core functionality of every Aragon OSx DAO.
 

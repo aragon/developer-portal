@@ -1,6 +1,6 @@
 = The Smart Contracts behind DAOs
 
-=== The Contracts Constituting Your DAO
+== The Contracts Constituting Your DAO
 
 In a nutshell, your Aragon OSx DAO consists of three pieces:
 

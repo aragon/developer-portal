@@ -1,6 +1,6 @@
 = Permission Conditions
 
-=== Permission Conditions
+== Permission Conditions
 
 Permission conditions relay the decision if an authorized call is permitted to another contract.
 This contract must inherit from `PermissionCondition` and implement the `IPermissionCondition` interface.

@@ -1,6 +1,6 @@
 = Plugin Implementation Contract
 
-=== How to Build a Non-Upgradeable Plugin
+== How to Build a Non-Upgradeable Plugin
 
 Once we've initialized our plugin (take a look at our guide on xref:how-to-guides/plugin-development/non-upgradeable-plugin/initialization.adoc[how to initialize Non-Upgradeable Plugins here]), 
 we can start using the Non-Upgradeable Base Template to perform actions on the DAO.

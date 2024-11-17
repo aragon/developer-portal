@@ -1,6 +1,6 @@
 = Plugin Repositories
 
-=== What are Plugin Repositories?
+== What are Plugin Repositories?
 
 Each plugin has its own Plugin Repository, unique ENS name, and on-chain repository contract, the `PluginRepo`, in which different versions of the plugin are stored for reference using version tags constituted by a **release** and **build** number.
 

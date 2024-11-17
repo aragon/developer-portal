@@ -1,6 +1,6 @@
 = Creating a DAO
 
-=== The DAO Creation Process
+== The DAO Creation Process
 
 Two framework contracts manage the `DAO` contract creation process:
 
