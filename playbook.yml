@@ -25,6 +25,9 @@ content:
     - url: https://github.com/aragon/osx-commons
       branches: feature/docs
       start_path: contracts/docs
+    - url: https://github.com/aragon/staged-proposal-processor-plugin
+      branches: feature/docs
+      start_path: docs
 
 ui:
   bundle:
