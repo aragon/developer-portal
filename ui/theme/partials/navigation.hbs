@@ -15,13 +15,18 @@
     {{> navigation-component }}
     {{/each}}
 
-    <h3 class="nav-title">Core</h3>
+    <h3 class="nav-title">Aragon OSx</h3>
     {{#each (pick site.components "osx-contracts, osx-commons-contracts")}}
     {{> navigation-component }}
     {{/each}}
 
-    <h3 class="nav-title">Our Plugins</h3>
+    <h3 class="nav-title">Plugin Marketplace</h3>
     {{#each (pick site.components "token-voting, multisig, spp")}}
+    {{> navigation-component }}
+    {{/each}}
+
+    <h3 class="nav-title">Governance Tooling</h3>
+    {{#each (pick site.components "gov-ui-kit")}}
     {{> navigation-component }}
     {{/each}}
 
