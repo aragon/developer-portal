@@ -1,6 +1,8 @@
+/* page-version-selector.scss */
+
 .page-version-selector {
   display: none;
-  margin-right: 0.7rem;
+  margin-right: var(--guk-space-2); /* Approximately 8px */
   position: relative;
 }
 
@@ -14,28 +16,28 @@
   background-color: transparent;
   background-image: url(../images/icons/chevron.svg);
   background-repeat: no-repeat;
-  background-position: right 0.5rem top 50%;
+  background-position: right var(--guk-space-2) top 50%;
   background-size: auto 0.95em;
   border: 1px solid transparent;
   cursor: pointer;
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.75rem;
+  font-family: var(--guk-font-family);
+  font-size: var(--guk-font-size-xs); /* 0.75rem */
   margin: 0;
-  padding: .3rem 1.75rem .3rem 0.5rem;
+  padding: var(--guk-space-1) var(--guk-space-7) var(--guk-space-1) var(--guk-space-2);
   position: relative;
   z-index: 3;
 }
 
 .page-version-selector[data-state=expanded] .page-version-selector-toggle {
   background-image: url(../images/icons/chevron.svg);
-  color: #fff;
+  color: var(--guk-color-neutral-0); /* #ffffff */
 }
 
 .page-version-selector-toggle:hover,
 .page-version-selector-toggle:active,
 .page-version-selector-toggle:focus {
   outline: none;
-  border-color: var(--core-violet-3);
+  border-color: var(--guk-color-primary-300); /* Replaces var(--core-violet-3) */
 }
 
 .page-version-selector-toggle::-moz-focus-inner {
@@ -43,10 +45,10 @@
 }
 
 .page-version-selector-panel {
-  background-color: var(--core-violet-3);
-  border: 1px solid var(--core-violet-3);
+  background-color: var(--guk-color-primary-300); /* Replaces var(--core-violet-3) */
+  border: 1px solid var(--guk-color-primary-300);
   box-sizing: border-box;
-  padding: 1.6rem 0.5rem 0.3rem 0.5rem;
+  padding: var(--guk-space-8) var(--guk-space-2) var(--guk-space-1) var(--guk-space-2);
   position: absolute;
   top: 0;
   left: 0;
@@ -61,8 +63,8 @@
 
 .page-version-selector a.page-version {
   display: block;
-  font-size: 0.75rem;
-  color: #fff;
+  font-size: var(--guk-font-size-xs); /* 0.75rem */
+  color: var(--guk-color-neutral-0); /* #ffffff */
 }
 
 .page-version-selector a.page-version--current {
@@ -70,7 +72,7 @@
 }
 
 .page-version-selector a.page-version--missing {
-  color: var(--core-blue-1);
+  color: var(--guk-color-info-500); /* Assuming a blue color for missing versions */
   text-decoration: none;
   font-style: italic;
 }

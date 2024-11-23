@@ -1,6 +1,8 @@
+/* toc.scss */
+
 .toc-sidebar {
-  font-size: .8em;
-  opacity: .8;
+  font-size: 0.8em;
+  opacity: 0.8;
 }
 
 .toc-menu {
@@ -14,35 +16,38 @@
   }
 
   .subheading-list {
-    margin-left: 0.5em;
+    margin-left: var(--guk-space-2); /* Equivalent to 8px */
   }
 }
 
 .toc-title {
+ /* font-size: inherit; */
   font-size: inherit;
   margin: 0;
   padding: 0;
-  font-family: var(--heading);
-  color: var(--aluminum-5);
-  letter-spacing: .05em;
-  font-weight: var(--weight-bold);
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+  color: var(--guk-color-neutral-900); /* Replaces var(--aluminum-5) */
+  letter-spacing: 0.05em;
+  font-weight: var(--guk-font-weight-semibold); /* Assuming bold weight */
   text-transform: uppercase;
 }
 
 .toc .toc-menu li {
   margin: 0.5rem 0 0;
-  padding-top: var(--xs);
-  padding-bottom: var(--xs);
-  padding-right: var(--sm);
+  padding-top: var(--guk-space-1); /* 4px */
+  padding-bottom: var(--guk-space-1);
+  padding-right: var(--guk-space-2); /* 8px */
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: var(--sans-serif);
-  font-weight: var(--weight-bold);
-  font-size: var(--md);
+  font-family: var(--guk-font-family); /* Replaces var(--sans-serif) */
+ /* font-weight: var(--guk-font-weight-semibold); /* Replaces var(--weight-bold) */
+  font-size: var(--guk-font-size-base); /* 1rem */
+  color: var(--guk-color-neutral-400); /* Replaces var(--aluminum-5) */
 
   &.subheading-item {
-    font-weight: var(--weight-normal);
-    margin: .25rem 0 0;
+    font-weight: var(--guk-font-weight-normal); /* Replaces var(--weight-normal) */
+   /* margin: 0.25rem 0 0; */
+    margin-left: .7rem; 
   }
 }
 
@@ -51,10 +56,10 @@
   text-decoration: none;
 
   &:hover {
-    color: var(--core-violet-2);
+    color: var(--guk-color-neutral-900); /* Replaces var(--core-violet-2) */
   }
 }
 
 .toc .toc-menu li a.toc-active {
-  color: var(--core-violet-4);
+  color: var(--guk-color-neutral-900); /* Replaces var(--core-violet-4) */
 }

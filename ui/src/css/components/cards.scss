@@ -1,5 +1,12 @@
 /* grid layout */
 
+.sectionbody{
+  background-color: var(--guk-color-neutral-0); /* White background */
+  border: 1px solid var(--guk-color-neutral-100); /* Slightly darker grey border */
+  border-radius: var(--guk-border-rounded-xl); /* Rounded edges */
+  padding: var(--guk-space-6);
+}
+
 .card-section .sectionbody, .card-section .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(calc(max(30%, 230px)), 1fr));;
@@ -15,7 +22,6 @@
 }
 
 .card {
-
   .content,
   .paragraph,
   p {
@@ -35,7 +41,7 @@
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem 1.2rem;
+  padding: var(--guk-space-6) var(--guk-space-5); /* 1.5rem 1.2rem */
 
   .card-body {
     flex-grow: 1;
@@ -44,7 +50,7 @@
 
 .card-title {
   display: flex;
-  vertical-align: center;
+  align-items: center;
 }
 
 .card-body {
@@ -54,38 +60,38 @@
 /* styling */
 
 .card a {
-  border-radius: var(--border-radius);
+  border-radius: var(--guk-border-rounded);
   color: inherit;
   text-decoration: none;
-  font-size: .9rem;
+  font-size: var(--guk-font-size-sm); /* 0.9rem */
 
   .card-title {
-    font-family: var(--heading);
-    font-weight: var(--weight-bold);
-    font-size: 1rem;
+    font-family: var(--guk-font-family);
+    font-weight: var(--guk-font-weight-semibold);
+    font-size: var(--guk-font-size-base); /* 1rem */
     line-height: 1.4;
-    margin-bottom: 1.2rem;
+    margin-bottom: var(--guk-space-5); /* 1.2rem */
   }
 }
 
 /* styling learn */
 
 .card-learn a {
-  border: solid 1px #cacbcc;
-  border-left: solid 3px #53536B;
-  color: var(--color-text-light);
+  border: solid 1px var(--guk-color-neutral-300); /* #cacbcc */
+  border-left: solid 3px var(--guk-color-neutral-700); /* #53536B */
+  color: var(--guk-color-neutral-600); /* Replaces var(--color-text-light) */
 
   .card-title {
-    margin-bottom: .8rem;
+    margin-bottom: var(--guk-space-4); /* 0.8rem */
   }
 
   &:hover {
-    border-color: #B8BFF4;
-    border-left-color: #4E5EE4;
+    border-color: var(--guk-color-primary-200); /* #B8BFF4 */
+    border-left-color: var(--guk-color-primary-400); /* #3164fa */
     box-shadow: 0 6px 12px 0 rgba(60, 60, 60, 0.09);
 
     .card-title {
-      color: #4E5EE4;
+      color: var(--guk-color-primary-400); /* #3164fa */
     }
   }
 }
@@ -109,21 +115,20 @@
     height: 1.2em;
     display: inline-block;
     vertical-align: middle;
-    margin-right: .6em;
+    margin-right: var(--guk-space-2); /* 0.5rem */
   }
 }
 
 .card-primary a {
   min-height: 14rem;
-  color: white;
+  color: var(--guk-color-neutral-0); /* White text */
   position: relative;
-  padding-top: 3em;
-  padding-bottom: 2em;
+  padding-top: var(--guk-space-12); /* 3rem */
+  padding-bottom: var(--guk-space-8); /* 2rem */
   overflow: hidden;
-  /* hide background image */
 
   .card-title {
-    font-size: 1.2em;
+    font-size: var(--guk-font-size-lg); /* 1.2em */
   }
 
   &::before {
@@ -141,32 +146,36 @@
 
   &::after {
     content: "Get started >";
-    font-family: var(--heading);
-    font-weight: var(--weight-bold);
-    font-size: .8em;
+    font-family: var(--guk-font-family);
+    font-weight: var(--guk-font-weight-semibold);
+    font-size: var(--guk-font-size-sm); /* 0.8em */
     text-transform: uppercase;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
   }
 }
 
 .card-secondary a {
-  border: solid 1px #e9e9ed;
-  color: var(--color-text-light);
+  border: solid 1px var(--guk-color-neutral-100); /* #e9e9ed */
+  color: var(--guk-color-neutral-600); /* Replaces var(--color-text-light) */
 
   &:hover {
-    border-color: #dfdfe0;
+    border-color: var(--guk-color-neutral-200); /* #dfdfe0 */
   }
 }
 
+/* Product-specific card styles */
+
 .card-contracts a {
   --card-icon: url(../images/contracts_white.svg);
-  background-image: linear-gradient(45deg, #6746d6 0%, #a134d1 100%);
+  background-image: linear-gradient(45deg, var(--guk-color-primary-500) 0%, #a134d1 100%);
 }
 
 .card-defender a {
   --card-icon: url(../images/defender_white.svg);
-  background-image: linear-gradient(-135deg, #00e1d4 0%, #00c7f2 100%);
+  background-image: linear-gradient(-135deg, var(--guk-color-info-500) 0%, #00c7f2 100%);
 }
+
+/* Icons for other cards */
 
 .card-upgrades {
   --card-icon: url(../images/icons/upgrades-plugins.svg);

@@ -7,15 +7,12 @@
     </svg>
   </button>
 
+    <img src="../../../../../../../_/images/aragon.svg" width="229" style="margin-top: 18px; margin-bottom: 28px; margin-left: 20px;">
 
   {{#if (eq @root.page.component.name "ROOT")}}
   <div class="nav-components">
-    <h3 class="nav-title">Start here</h3>
-    {{#each (pick site.components "ROOT")}}
-    {{> navigation-component }}
-    {{/each}}
 
-    <h3 class="nav-title">Aragon OSx</h3>
+    <h3 class="nav-title">OSx</h3>
     {{#each (pick site.components "osx-contracts, osx-commons-contracts")}}
     {{> navigation-component }}
     {{/each}}
@@ -35,9 +32,8 @@
   {{else}}
   {{#with @root.page.component}}
   <div class="nav-component-active">
-    <a class="btn-back" href="/">Home</a>
+    <a class="btn-back" href="/" style="color: var(--guk-color-primary-400)">Home</a><span style="padding:.5em">/</span>{{{./title}}}
     <div class="flex justify-justified nav-heading">
-      <span class="">{{{./title}}}</span>
       <div class="component-version">
         {{#if (and versions (eq this @root.page.component))}}
         {{#unless (eq versions.length 1)}}

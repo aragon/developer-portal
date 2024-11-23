@@ -32,57 +32,60 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--guk-color-neutral-800);
   font-family: var(--guk-font-family);
-  font-weight: var(--guk-font-weight-semibold); /* 600 */
+ /* font-weight: var(--guk-font-weight-semibold); /* 600 */
   line-height: var(--guk-line-height-tight); /* 1.25 */
   margin-bottom: var(--guk-space-4); /* Consistent spacing */
+  margin-top: var(--guk-space-8);
 }
 
+/*
 h2,
 h3,
 h4,
 h5,
 h6 {
-  padding-top: var(--guk-space-8); /* Increased spacing for hierarchy */
-  margin-top: var(--guk-space-8);
+  padding-top: var(--guk-space-8); 
+  
 }
+*/
 
-h1,
-h2 {
-  padding-top: var(--guk-space-6); /* Adjusted spacing */
+h1
+ {
+ /* padding-top: var(--guk-space-6); /* Adjusted spacing */
   border-bottom: 1px solid var(--guk-color-neutral-200);
 }
 
 /* Heading Specific Styles */
 h1 {
-  font-size: var(--guk-font-size-5xl); /* 3rem */
+  font-size: var(--guk-font-size-3xl); /* 3rem */
   padding-bottom: var(--guk-space-2);
 }
 
 h2 {
-  font-size: var(--guk-font-size-4xl); /* 2.25rem */
-  padding-bottom: var(--guk-space-2);
+  font-size: var(--guk-font-size-2xl); /* 2.25rem */
 }
 
 h3 {
-  font-size: var(--guk-font-size-3xl); /* 1.875rem */
+  font-size: var(--guk-font-size-xl); /* 1.875rem */
 }
 
 h4 {
-  font-size: var(--guk-font-size-2xl); /* 1.5rem */
+  font-size: var(--guk-font-size-lg); /* 1.5rem */
 }
 
 h5 {
-  font-size: var(--guk-font-size-xl); /* 1.25rem */
+  font-size: var(--guk-font-size-m); /* 1.25rem */
 }
 
 h6 {
-  font-size: var(--guk-font-size-lg); /* 1.125rem */
+  font-size: var(--guk-font-size-m); /* 1.125rem */
 }
 
 /* Inline Code */
 code {
-  background-color: var(--guk-color-neutral-50); /* #f5f7fa */
+  background-color: var(--guk-color-neutral-100); /* #f5f7fa */
   border-radius: var(--guk-border-rounded); /* 4px */
   padding: var(--guk-space-1) var(--guk-space-2);
   font-family: var(--guk-font-family-monospace, monospace);
@@ -91,19 +94,30 @@ code {
 
 /* Paragraphs and Lists */
 p,
-ul,
-ol,
-dl,
 figure {
-  margin-bottom: var(--guk-space-4);
-  margin-top: var(--guk-space-4);
+  margin-bottom: var(--guk-space-4); 
+  /* margin-top: var(--guk-space-6); */
 }
 
-pre,
-table,
-aside {
-  margin-bottom: var(--guk-space-6);
-  margin-top: var(--guk-space-6);
+ul,
+ol,
+dl {
+  margin-bottom: var(--guk-space-4);
+  margin-top: var(--guk-space-4);
+  padding-left: var(--guk-space-6);
+}
+
+li {
+  margin-top: var(--guk-space-2);
+  margin-bottom: var(--guk-space-2);
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-type: disc;
 }
 
 /* Links */
@@ -129,10 +143,12 @@ code {
 }
 
 pre {
-  background-color: var(--guk-color-neutral-50);
+  background-color: var(--guk-color-neutral-0);
   border-radius: var(--guk-border-rounded);
-  padding: var(--guk-space-4);
+/*  padding: var(--guk-space-4); */
   overflow: auto;
+  margin-bottom: var(--guk-space-6);
+  margin-top: var(--guk-space-6);
 }
 
 /* Table Headings */
@@ -157,24 +173,6 @@ th {
 
 td > .tableblock {
   margin: 0;
-}
-
-/* Lists */
-ol,
-ul {
-  padding-left: var(--guk-space-6);
-}
-
-ol {
-  list-style-type: decimal;
-}
-
-ul {
-  list-style-type: disc;
-}
-
-li {
-  margin-bottom: var(--guk-space-2);
 }
 
 /* Definition Lists */
@@ -230,15 +228,6 @@ strong,
 }
 
 /* Miscellaneous */
-p,
-ul,
-ol,
-dl,
-figure {
-  margin-bottom: var(--guk-space-4);
-  margin-top: var(--guk-space-4);
-}
-
 pre,
 table,
 aside {
