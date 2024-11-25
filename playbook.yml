@@ -10,9 +10,6 @@ content:
     - url: .
       branches: feature/new-way-theming
       start_path: components/home
-    - url: .
-      branches: feature/new-way
-      start_path: components/osx
     - url: https://github.com/aragon/multisig-plugin
       branches: feature/docs
       start_path: packages/contracts/docs
