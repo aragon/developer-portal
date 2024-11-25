@@ -14,7 +14,7 @@
 }
 
 .nav-heading {
-  margin: .75rem 0;
+  margin: .75rem 1.3rem;
   align-items: center;
 }
 
@@ -137,16 +137,17 @@ button.collapse-toggle {
 .navbar-search {
   position: relative;
   display: flex;
-  flex-grow: 1;
+ /*  flex-grow: 1; */
 }
 
 .navbar-search-input {
-  flex-grow: 1;
+ /* flex-grow: 1; */
+  width: 20em;
   padding: .5rem !important;
 }
 
 .navbar-end {
-  flex-grow: 1;
+ /* flex-grow: 1; */
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

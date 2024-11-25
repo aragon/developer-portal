@@ -39,6 +39,8 @@
 }
 
 .navbar-item {
+  margin-left: 32px;
+  margin-right: 0px;
   color: var(--guk-color-neutral-500); /* Replaces var(--color-text) */
   padding: var(--guk-space-2); /* 8px */
   font-family: var(--guk-font-family); /* Replaces var(--heading) */
@@ -74,6 +76,7 @@
 }
 
 .navbar-search-input {
+  margin-right: 8px;
   font-size: var(--guk-font-size-base); /* 1rem */
   background-color: var(--guk-color-neutral-0); /* Replaces var(--aluminum-1) */
   color: var(--guk-color-neutral-500);

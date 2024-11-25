@@ -7,7 +7,7 @@
     </svg>
   </button>
 
-    <img src="../../../../../../../_/images/aragon.svg" width="229" style="margin-top: 18px; margin-bottom: 28px; margin-left: 20px;">
+    <a href="/"><img src="../../../../../../../_/images/aragon.svg" height="38" style="margin-top: 0px; margin-bottom: 24px; margin-left: 8px;"></a>
 
   {{#if (eq @root.page.component.name "ROOT")}}
   <div class="nav-components">
@@ -18,12 +18,12 @@
     {{/each}}
 
     <h3 class="nav-title">Plugin Marketplace</h3>
-    {{#each (pick site.components "token-voting, multisig, spp")}}
+    {{#each (pick site.components "token-voting, multisig, admin, spp")}}
     {{> navigation-component }}
     {{/each}}
 
-    <h3 class="nav-title">Governance Tooling</h3>
-    {{#each (pick site.components "gov-ui-kit")}}
+    <h3 class="nav-title">More</h3>
+    {{#each (pick site.components "gov-ui-kit, gov-app-template")}}
     {{> navigation-component }}
     {{/each}}
 
@@ -32,8 +32,9 @@
   {{else}}
   {{#with @root.page.component}}
   <div class="nav-component-active">
-    <a class="btn-back" href="/" style="color: var(--guk-color-primary-400)">Home</a><span style="padding:.5em">/</span>{{{./title}}}
+    <a class="btn-back" href="/">Home</a>
     <div class="flex justify-justified nav-heading">
+      <span class="">{{{./title}}}</span>
       <div class="component-version">
         {{#if (and versions (eq this @root.page.component))}}
         {{#unless (eq versions.length 1)}}

@@ -16,13 +16,13 @@
   }
 
   .subheading-list {
+    border-left: solid 1px var(--guk-color-neutral-200);
     margin-left: var(--guk-space-2); /* Equivalent to 8px */
   }
 }
 
 .toc-title {
- /* font-size: inherit; */
-  font-size: inherit;
+  font-size: var(--guk-font-size-sm);
   margin: 0;
   padding: 0;
   font-family: var(--guk-font-family); /* Replaces var(--heading) */
