@@ -12,7 +12,7 @@
 
 <br/>
 
-# Aragon OSx Developer Portal
+# Aragon OSx Developer Portal.
 
 Aragon's Developer Portal holds all documentation developers need to kickstart their journey building with the Aragon OSx stack. You can find it in production [here](https://devs.aragon.org).
 
