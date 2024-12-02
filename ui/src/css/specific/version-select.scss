@@ -1,31 +1,33 @@
+/* version-select.scss */
+
 .component-version {
   position: relative;
 }
 
 .btn-version {
-  font-size: .85rem;
-  font-weight: var(--weight-normal);
+  font-size: 0.85rem;
+  font-weight: var(--guk-font-weight-normal); /* Replaces var(--weight-normal) */
   min-height: 1.5rem;
-  padding: 0 .5rem;
-  margin: .4rem 0;
+  padding: 0 var(--guk-space-2); /* 8px */
+  margin: 0.4rem 0;
   border: 1px solid;
-  border-radius: 1rem;
+  border-radius: var(--guk-border-rounded-full); /* 9999px */
 
-  &::after{
+  &::after {
     display: inline-block;
     content: url(../images/icons/chevron.svg);
-    width: .8rem;
-    margin-left: .2rem;
+    width: 0.8rem;
+    margin-left: 0.2rem;
   }
 
   &:hover,
   &:focus {
-    color: var(--core-violet-4);
+    color: var(--guk-color-primary-400); /* Replaces var(--core-violet-4) */
   }
 
   svg {
-    height: var(--md);
-    width: var(--md);
+    height: var(--guk-space-4); /* Replaces var(--md) */
+    width: var(--guk-space-4);
   }
 }
 
@@ -36,7 +38,7 @@
   right: 0;
   top: 100%;
   z-index: 1;
-  padding-top: .5em;
+  padding-top: 0.5em;
 
   .btn-version:focus + &,
   &:focus-within {
@@ -46,23 +48,23 @@
 }
 
 .popover {
-  font-family: var(--sans-serif);
-  font-size: .9em;
-  background: var(--tertiary);
-  border: 1px solid var(--aluminum-3);
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .05) ;
-  color: var(--steel-3);
-  padding: .5em;
-  margin: 0 var(--xs);
+  font-family: var(--guk-font-family); /* Replaces var(--sans-serif) */
+  font-size: 0.9em;
+  background: var(--guk-color-neutral-0); /* Replaces var(--tertiary) */
+  border: 1px solid var(--guk-color-neutral-100); /* Replaces var(--aluminum-3) */
+  border-radius: var(--guk-border-rounded); /* Replaces var(--border-radius) */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  color: var(--guk-color-neutral-700); /* Replaces var(--steel-3) */
+  padding: 0.5em;
+  margin: 0 var(--guk-space-1); /* Replaces var(--xs) */
   width: 10em;
   user-select: none;
 
   p {
     margin: 0;
-    padding: 0 .5em;
+    padding: 0 0.5em;
     font-weight: bold;
-    font-size: .9em;
+    font-size: 0.9em;
   }
 
   ul {
@@ -74,10 +76,10 @@
 
       a {
         display: block;
-        padding: .2em .5em;
+        padding: 0.2em 0.5em;
 
         &:hover {
-          background-color: var(--aluminum-2);
+          background-color: var(--guk-color-neutral-50); /* Replaces var(--aluminum-2) */
         }
       }
     }

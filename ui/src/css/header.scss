@@ -1,13 +1,16 @@
+/* header.scss */
+
 .header {
-  border-bottom: solid 1px #e2e2e7;
+  border-bottom: solid 1px var(--guk-color-neutral-200); /* Replaces #e2e2e7 */
+  padding:1em 0em 1em 0em;
 }
 
 .navbar {
-  background-color: var(--color-navbar-bg);
-  color: var(--color-navbar-text);
-  font-size: 0.83333rem;
+ /* background-color: var(--guk-color-neutral-0); /* Assuming white background */
+  color: var(--guk-color-neutral-900); /* Replaces var(--color-navbar-text) */
+  font-size: var(--guk-font-size-sm); /* 0.875rem */
   word-wrap: break-word;
-  z-index: var(--z-index-navbar);
+  z-index: 10; /* Ensure this z-index is appropriate */
 }
 
 .navbar a {
@@ -16,16 +19,16 @@
 
 .navbar-brand .navbar-item:first-child,
 .navbar-brand .navbar-item:first-child a {
-  color: var(--color-navbar-text);
-  font-size: 1.15rem;
+  color: var(--guk-color-neutral-900); /* Replaces var(--color-navbar-text) */
+  font-size: var(--guk-font-size-lg); /* 1.125rem */
 }
 
 .navbar-brand .separator {
-  padding: 0 0.375rem;
+  padding: 0 var(--guk-space-1); /* 4px */
 }
 
 .navbar-burger {
-  color: var(--color-navbar-text);
+  color: var(--guk-color-neutral-900); /* Replaces var(--color-navbar-text) */
   background: none;
   border: none;
   outline: none;
@@ -36,46 +39,49 @@
 }
 
 .navbar-item {
-  color: var(--color-text);
-  padding: 0.5rem;
-  font-family: var(--heading);
-  font-weight: 500;
-  font-size: 0.9rem;
+  margin-left: 32px;
+  margin-right: 0px;
+  color: var(--guk-color-neutral-500); /* Replaces var(--color-text) */
+  padding: var(--guk-space-2); /* 8px */
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+  font-weight: var(--guk-font-weight-medium); /* Replaces font-weight: 500 */
+  font-size: var(--guk-font-size-base); /* 1rem */
 }
 
 .navbar-item:hover {
-  color: var(--color-navbar-hover);
+  color: var(--guk-color-neutral-800); /* Replaces var(--color-navbar-hover) */
 }
 
-.navbar-button{
-  color: white;
-  padding: 6px 14px;
-  font-family: var(--heading);
-  font-weight: 500;
-  font-size: 0.9rem;
+.navbar-button {
+  color: var(--guk-color-neutral-0); /* White text */
+  padding: var(--guk-space-1-5) var(--guk-space-3); /* 6px 12px */
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+  font-weight: var(--guk-font-weight-medium); /* Replaces font-weight: 500 */
+  font-size: var(--guk-font-size-base); /* 1rem */
   display: inline-block;
-  border-radius: 100px;
+  border-radius: var(--guk-border-rounded-full); /* Fully rounded button */
   letter-spacing: -0.02em;
   transition: all 0.2s ease;
-  background: #4F56FA;
+  background: var(--guk-color-primary-500); /* Replaces #4F56FA */
   text-decoration: none;
   text-transform: none;
-  border: 1px solid #EFEFEF;
+  border: 1px solid var(--guk-color-neutral-200); /* Replaces #EFEFEF */
   text-align: center;
   white-space: nowrap;
-  text-wrap: nowrap;
 }
 
 .navbar-button:hover {
-  background: #4349D4!important;
-  color: white;
+  background: var(--guk-color-primary-600) !important; /* Replaces #4349D4 */
+  color: var(--guk-color-neutral-0);
 }
 
 .navbar-search-input {
-  font-size: 1rem;
-  background-color: var(--aluminum-1);
-  border-radius: 0.25rem;
-  border: 1px solid var(--aluminum-3);
+  margin-right: 8px;
+  font-size: var(--guk-font-size-base); /* 1rem */
+  background-color: var(--guk-color-neutral-0); /* Replaces var(--aluminum-1) */
+  color: var(--guk-color-neutral-500);
+  border-radius: var(--guk-border-rounded);
+  border: 1px solid var(--guk-color-neutral-200); /* Replaces var(--aluminum-3) */
 
   &:focus {
     outline: none;
@@ -86,7 +92,7 @@
   display: none;
 }
 
-@media screen and (min-width: $mobile-breakpoint) {
+@media screen and (min-width: 1000px) {
   .navbar-burger {
     display: none;
   }

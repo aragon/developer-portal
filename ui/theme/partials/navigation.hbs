@@ -7,21 +7,23 @@
     </svg>
   </button>
 
+    <a href="/"><img src="../../../../../../../_/images/aragon.svg" height="38" style="margin-top: 0px; margin-bottom: 24px; margin-left: 8px;"></a>
 
   {{#if (eq @root.page.component.name "ROOT")}}
   <div class="nav-components">
-    <h3 class="nav-title">Start here</h3>
-    {{#each (pick site.components "ROOT")}}
-    {{> navigation-component }}
-    {{/each}}
 
-    <h3 class="nav-title">Core</h3>
+    <h3 class="nav-title">OSx</h3>
     {{#each (pick site.components "osx-contracts, osx-commons-contracts")}}
     {{> navigation-component }}
     {{/each}}
 
-    <h3 class="nav-title">Our Plugins</h3>
-    {{#each (pick site.components "token-voting, multisig, spp")}}
+    <h3 class="nav-title">Plugin Marketplace</h3>
+    {{#each (pick site.components "token-voting, multisig, admin, spp")}}
+    {{> navigation-component }}
+    {{/each}}
+
+    <h3 class="nav-title">More</h3>
+    {{#each (pick site.components "gov-ui-kit, gov-app-template")}}
     {{> navigation-component }}
     {{/each}}
 

@@ -1,15 +1,19 @@
+/* navigation.scss */
+
 .nav {
+  border-right: solid 1px var(--guk-color-neutral-100);
   padding: 1rem;
-  background: var(--core-gray);
-  color: var(--color-text-light);
+  background: var(--guk-color-neutral-0); /* Replaces var(--core-gray) */
+  color: var(--guk-color-neutral-600); /* Replaces var(--color-text-light) */
 
   a {
     text-decoration: none;
-    color: inherit;
+  /*  color: var(--guk-color-neutral-600); */
   }
 
   .nav-li-active > a {
-    color: var(--core-violet-4);
+    color: var(--guk-color-primary-400); /* Replaces var(--core-violet-4) */
+  /*  border-bottom: 2px solid var(--guk-color-primary-400); */
   }
 }
 
@@ -17,29 +21,35 @@
   line-height: 1rem;
 }
 
+
+
 .nav-component a,
-.btn-back {
-  padding: .7rem 1rem;
-}
+/*.btn-back */
+{
+  padding: 0.7rem 1rem;
+} 
+
 
 .nav-title {
   padding: 0 1rem;
-  font-size: .8em;
-  font-family: var(--heading);
-  color: var(--aluminum-5);
-  letter-spacing: .05em;
-  font-weight: var(--weight-bold);
+  font-size: 0.8em;
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+  color: var(--guk-color-neutral-600); /* Replaces var(--aluminum-5) */
+  letter-spacing: 0.05em;
+  font-weight: var(--guk-font-weight-semibold); /* Replaces var(--weight-bold) */
   text-transform: uppercase;
 }
 
 .btn-back {
-  opacity: .6;
+ /* opacity: 0.6; 
   margin-bottom: 0.5rem;
-  line-height: 1.5rem;
-  margin-left: 1.3rem;
+  line-height: 1.5rem;*/
+  margin-left: 1.3rem; 
   cursor: pointer;
+  color: var(--guk-color-neutral-400);
 
-  &::before{
+  
+  &::before {
     display: inline-block;
     content: url(../images/icons/arrow_back.svg);
     margin-right: 0.3em;
@@ -48,48 +58,52 @@
   }
 }
 
+.btn-back:hover {
+   color: var(--guk-color-neutral-700);
+ }
+
 .nav-heading {
-  font-size: 1.3rem;
-  font-weight: var(--weight-medium);
-  font-family: var(--heading);
-  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: var(--guk-font-weight-semibold); /* Replaces var(--weight-medium) */
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+ /* padding: 0 1rem; */
 }
 
 .nav-component-active {
   .nav-heading-active {
     padding-top: 15px;
     padding-bottom: 4px;
-    background: var(--core-gray);
+    background: var(--guk-color-neutral-50); /* Replaces var(--core-gray) */
     z-index: 2;
   }
 }
 
-.nav-list {
-  padding-left: 0;
-  list-style: none;
-  line-height: 1.7em;
-}
-
 .nav-component-heading {
-  color: var(--steel-4);
-  font-family: var(--heading);
-  font-weight: var(--weight-medium);
+  color: var(--guk-color-neutral-600); /* Replaces var(--steel-4) */
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+  font-weight: var(--guk-font-weight-normal); /* Replaces var(--weight-medium) */
   position: relative;
   font-size: 1rem;
 }
 
+.nav-link {
+  color: var(--guk-color-neutral-600);
+  margin-bottom: var(--guk-space-2);
+  cursor: pointer;
+}
+
 .nav-link:hover {
-  opacity: .8;
+  color: var(--guk-color-neutral-900);
   cursor: pointer;
 }
 
 .nav-link code {
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 0;
 }
 
 .nav-icon {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 button.collapse-toggle {
@@ -111,3 +125,31 @@ button.collapse-toggle {
 .close-menu-btn {
   border: 0;
 }
+
+  /* Scope list styles to navigation */
+  .nav-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0; /* Optional: remove default margins */
+  }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-color: var(--guk-color-neutral-100) transparent;
+    scrollbar-width: thin;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--guk-color-neutral-100);
+    border-radius: 10px;
+  }

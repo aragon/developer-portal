@@ -1,10 +1,12 @@
 <header class="header">
   <nav class="navbar">
+    
     <button class="navbar-burger sidr-toggle">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
       </svg>
     </button>
+    <!--
     <div class="navbar-logo">
       <a href="{{@root.site.url}}">
         <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
@@ -22,19 +24,17 @@
           </g>
         </svg>
       </a>
-    </div>
-
-    <div id="search-field" class="navbar-search">
+    </div> -->
+    <div id="search-field" class="navbar-search" >
       <input class="navbar-search-input" id="search-input" type="text" placeholder="{{#if (eq @root.page.component.name "ROOT")}}Search{{else}}Search {{@root.page.component.title}}{{/if}}">
       {{#unless (eq @root.page.component.name "ROOT")}}
       <input class="navbar-search-filter" type="checkbox" data-facet-filter="component:{{page.component.name}}" checked>
       {{/unless}}
     </div>
-
     <div class="navbar-end">
       <a class="navbar-item" href="https://github.com/aragon/osx">GitHub</a>
-      <a class="navbar-item" href="https://blog.aragon.org/">Blog</a>
-      <a class="navbar-item" href="https://app.aragon.org">Website</a>
+      <a class="navbar-item" href="https://app.aragon.org/">App</a>
+      <a class="navbar-item" href="https://www.aragon.org">Website</a>
     </div>
   </nav>
 </header>

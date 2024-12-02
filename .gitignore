@@ -4,6 +4,8 @@
 # Production
 /build
 
+ui/node_modules
+
 # Generated files
 .docusaurus
 .cache-loader

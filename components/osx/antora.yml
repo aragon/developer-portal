@@ -1,5 +1,0 @@
-name: osx
-title: OSX
-version: ~
-nav:
-  - modules/ROOT/nav.adoc
