@@ -1,6 +1,6 @@
 site:
-  title: OpenZeppelin Docs
-  url: https://docs.openzeppelin.com
+  title: Aragon Docs
+  url: https://docs.aragon.org
   start_page: ROOT::index.adoc
   keys:
     google_analytics: 'UA-85043059-1'

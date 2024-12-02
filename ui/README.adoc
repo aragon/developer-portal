@@ -1,4 +1,4 @@
-= OpenZeppelin UI Docs Theme
+= Aragon UI Docs Theme
 
 == Development
 Triggers a file Watcher and with LiveReload for UI Development
