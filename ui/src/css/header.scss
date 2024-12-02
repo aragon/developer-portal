@@ -86,6 +86,10 @@
   &:focus {
     outline: none;
   }
+ &:before {
+  content: url(../images/icons/arrow_back.svg);
+  display: inline-block;
+ }
 }
 
 .navbar-search-checkbox {
