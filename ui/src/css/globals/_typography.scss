@@ -19,7 +19,7 @@
 
 /* Body Styles */
 body {
-  color: var(--guk-color-neutral-600);
+  color: var(--guk-color-neutral-900);
   font-family: var(--guk-font-family);
   font-size: var(--guk-font-size-base); /* 1rem */
   line-height: var(--guk-line-height-normal); /* 1.5 */
@@ -85,7 +85,7 @@ h6 {
 
 /* Inline Code */
 code {
-  background-color: var(--guk-color-neutral-100); /* #f5f7fa */
+  background-color: var(--guk-color-neutral-50); /* #f5f7fa */
   border-radius: var(--guk-border-rounded); /* 4px */
   font-family: var(--guk-font-family-monospace, monospace);
   font-size: 0.95em;

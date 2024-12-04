@@ -9,7 +9,8 @@
   overflow-y: auto;
   position: sticky;
   top: 0;
-  width: 300px;
+  width: 20%;
+  max-width: 300px;  
   flex: 0 0 auto;
 }
 
@@ -106,7 +107,6 @@ button.collapse-toggle {
 }
 
 .navbar, .article-wrapper {
-  max-width: 60rem;
   margin: 0 var(--side-margin);
 }
 
@@ -180,7 +180,8 @@ button.collapse-toggle {
   margin-left: var(--lg);
   flex-grow: 0;
   flex-shrink: 0;
-  width: 200px;
+  width: 20%;
+  max-width: 300px;  
   max-height: 80vh;
   position: sticky;
   top: 10vh;

@@ -1,5 +1,3 @@
-/* toc.scss */
-
 .toc-sidebar {
   font-size: 0.8em;
   opacity: 0.8;
@@ -26,9 +24,9 @@
   margin-bottom: 16px;
   padding: 0;
   font-family: var(--guk-font-family); /* Replaces var(--heading) */
-  color: var(--guk-color-neutral-900); /* Replaces var(--aluminum-5) */
+  color: var(--guk-color-neutral-400); /* Replaces var(--aluminum-5) */
   letter-spacing: 0.05em;
-  font-weight: var(--guk-font-weight-semibold); /* Assuming bold weight */
+  font-weight: var(--guk-font-weight-normal); /* Assuming bold weight */
   text-transform: uppercase;
 }
 
@@ -39,13 +37,12 @@
   padding-right: var(--guk-space-3); /* 8px */
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: var(--guk-font-weight-normal);
   font-family: var(--guk-font-family); /* Replaces var(--sans-serif) */
- /* font-weight: var(--guk-font-weight-semibold); /* Replaces var(--weight-bold) */
   font-size: var(--guk-font-size-base); /* 1rem */
-  color: var(--guk-color-neutral-400); /* Replaces var(--aluminum-5) */
 
   &.subheading-item {
-    font-weight: var(--guk-font-weight-normal); /* Replaces var(--weight-normal) */
+    font-weight: var(--guk-font-weight-normall); /* Replaces var(--weight-normal) */
    /* margin: 0.25rem 0 0; */
     margin-left: .7rem; 
   }
@@ -57,11 +54,10 @@
   padding-right: 8px;
 
   &:hover {
-    color: var(--guk-color-neutral-900); /* Replaces var(--core-violet-2) */
+    color: var(--guk-color-primary-300); /* Replaces var(--core-violet-2) */
   }
 }
 
 .toc .toc-menu li a.toc-active {
-  color: var(--guk-color-neutral-900); /* Replaces var(--core-violet-4) */
-  font-weight: var(--guk-font-weight-semibold); /* Assuming bold weight */
+  color: var(--guk-color-primary-400); /* Replaces var(--core-violet-4) */
 }
