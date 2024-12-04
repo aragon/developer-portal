@@ -26,7 +26,7 @@
   font-family: var(--guk-font-family); /* Replaces var(--heading) */
   color: var(--guk-color-neutral-400); /* Replaces var(--aluminum-5) */
   letter-spacing: 0.05em;
-  font-weight: var(--guk-font-weight-semibold); /* Assuming bold weight */
+  font-weight: var(--guk-font-weight-normal); /* Assuming bold weight */
   text-transform: uppercase;
 }
 
@@ -37,12 +37,12 @@
   padding-right: var(--guk-space-3); /* 8px */
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: var(--guk-font-weight-semibold);
+  font-weight: var(--guk-font-weight-normal);
   font-family: var(--guk-font-family); /* Replaces var(--sans-serif) */
   font-size: var(--guk-font-size-base); /* 1rem */
 
   &.subheading-item {
-    font-weight: var(--weight-normal); /* Replaces var(--weight-normal) */
+    font-weight: var(--guk-font-weight-normall); /* Replaces var(--weight-normal) */
    /* margin: 0.25rem 0 0; */
     margin-left: .7rem; 
   }
