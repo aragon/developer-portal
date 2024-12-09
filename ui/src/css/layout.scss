@@ -9,9 +9,20 @@
   overflow-y: auto;
   position: sticky;
   top: 0;
-  width: 20%;
-  max-width: 300px;  
   flex: 0 0 auto;
+  width: 300px; // default narrow width
+
+  @media (min-width: 1000px) {
+    width: 300px; // medium screens
+  }
+  
+  @media (min-width: 1400px) {
+    width: 350px; // middle screens
+  }
+
+  @media (min-width: 1800px) {
+    width: 400px; // larger screens
+  }
 }
 
 .nav-heading {
@@ -108,6 +119,7 @@ button.collapse-toggle {
 
 .navbar, .article-wrapper {
   margin: 0 var(--side-margin);
+  max-width : 1280px;
 }
 
 .navbar {
@@ -180,12 +192,13 @@ button.collapse-toggle {
   margin-left: var(--lg);
   flex-grow: 0;
   flex-shrink: 0;
-  width: 20%;
-  max-width: 300px;  
   max-height: 80vh;
   position: sticky;
   top: 10vh;
   overflow-y: auto;
+  padding: 1rem;
+  padding-left: 0;
+
 
   @media (max-width: math.div($mobile-breakpoint * 2, 3)) {
     display: none;

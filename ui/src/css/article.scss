@@ -1,5 +1,8 @@
 .article {
   padding-bottom: var(--guk-space-5); /* matches nav padding */
+  max-width: 900px;
+  margin:0 auto; 
+  padding: 40px; 
 
   .listingblock {
     position: relative;
