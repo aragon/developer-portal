@@ -19,7 +19,7 @@ content:
     - url: https://github.com/aragon/admin-plugin
       branches: feat/docs
       start_path: packages/contracts/docs
-    - url: /Users/claubar/Projects/Aragon/osx
+    - url: https://github.com/aragon/osx
       branches: feat/docs-add-missing-pages
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx-commons
