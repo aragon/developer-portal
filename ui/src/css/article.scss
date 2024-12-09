@@ -265,13 +265,12 @@
 
     a {
       text-decoration: none;
-    /*  text-transform: uppercase; */
       font-size: var(--guk-font-size-base);
       color: var(--guk-color-neutral-500);
     }
 
     a:hover {
-    color: var(--guk-color-neutral-800);
+      color: var(--guk-color-primary-400);
     }
 
     &.btn-next {
