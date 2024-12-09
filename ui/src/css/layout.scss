@@ -198,6 +198,20 @@ button.collapse-toggle {
   overflow-y: auto;
   padding: 1rem;
   padding-left: 0;
+  width: 300px;
+
+  @media (min-width: 1000px) {
+    width: 250px; // medium screens
+  }
+
+  @media (min-width: 1500px) {
+    width: 300px; // medium screens
+  }
+
+  
+  @media (min-width: 1800px) {
+    width: 350px; // larger screens
+  }
 
 
   @media (max-width: math.div($mobile-breakpoint * 2, 3)) {
