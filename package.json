@@ -5,7 +5,7 @@
   "scripts": {
     "build": "yarn build:theme &&  bash scripts/build.sh --fetch playbook.yml",
     "build:no-fetch": "bash scripts/build.sh playbook.yml",
-    "build:local": "bash scripts/build.sh playbook-local-only.yml",
+    "build:local": "yarn build:theme && bash scripts/build.sh playbook-local-only.yml",
     "serve:all-optimized": "yarn && yarn optimize-svg && yarn build && yarn serve",
     "optimize-svg": "svgo -rf ./static/img -o ./static/optimized-svg",
     "build:theme": "yarn --cwd ui build",
