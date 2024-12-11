@@ -31,7 +31,7 @@ The core plugins currently supported by Aragon are:
 
 [.card-section]
 
-== Governance Toolingz
+== Governance Tooling
 
 The Governance UI Kit and Governance App Template are used to build custom applications and UIs that integrate seamlessly with OSx. 
 
