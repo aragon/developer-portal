@@ -37,7 +37,6 @@ h6 {
  /* font-weight: var(--guk-font-weight-semibold); /* 600 */
   line-height: var(--guk-line-height-tight); /* 1.25 */
   margin-bottom: var(--guk-space-4); /* Consistent spacing */
-  margin-top: var(--guk-space-8);
 }
 
 /*
@@ -130,9 +129,6 @@ a {
     color: var(--guk-color-primary-400);
   }
 
-  .admonitionblock & {
-    color: inherit;
-  }
 }
 
 /* Preformatted Text */

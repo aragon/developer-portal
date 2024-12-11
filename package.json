@@ -9,7 +9,7 @@
     "serve:all-optimized": "yarn && yarn optimize-svg && yarn build && yarn serve",
     "optimize-svg": "svgo -rf ./static/img -o ./static/optimized-svg",
     "build:theme": "yarn --cwd ui build",
-    "serve": "live-server build/site",
+    "serve": "yarn build && live-server build/site",
     "watch:local": "fgbg 'nodemon -e yml,adoc,css,scss,js -w components -w ui --ignore ui/theme/dist -x sh scripts/watch-local-build.sh' 'live-server build/site'",
     "typecheck": "tsc",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"

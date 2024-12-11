@@ -1,14 +1,14 @@
 = Documentation
 
-Explore our guides and examples to learn how. test  dsfasfasfzz
+Explore our guides and examples to learn how. TODO
 
 == The modular governance stack
 
-Explanation here
+TDOO Explanation here
 
 === Aragon OSx
 
-Docs here
+TODO Docs here
 
 === Plugin marketplace
 
@@ -17,10 +17,15 @@ Governance logic is encapsulated in reusable contracts called _plugins_.
 Plugins are granted specific permissions depending what you want them to do. In practice, they often act as governing bodies or decision-making processes. For example, a token voting plugin or multisig plugin define all of their unique governance logic within the plugin itself. This “separation of concerns” keeps the protocol focused and ultimately more flexible.
 
 The core plugins currently supported by Aragon are:
-* *Token Voting*: Proposals are created for token holders and delegates to vote on proposals, with execution decided using a simple majority rule.
-* *Multisig*: Proposals are created for designated addresses to approve, with execution decided by whether a minimum number of approvers is met.
-* *Admin*: Proposals are created by designated addresses and immediately executed.
-* *Staged Proposal Processor*: Proposals are created and progress through any number of stages, with other plugins either voting to approve or veto the proposal. The SPP plugin is essentially a cross-plugin state manager that enables governance processes with multiple stages and multiple governing bodies.
+
+  * *Token Voting*: Proposals are created for token holders and delegates to vote on proposals, with execution decided using a simple majority rule.
+
+  * *Multisig*: Proposals are created for designated addresses to approve, with execution decided by whether a minimum number of approvers is met.
+
+  * *Admin*: Proposals are created by designated addresses and immediately executed.
+
+  * *Staged Proposal Processor*: Proposals are created and progress through any number of stages, with other plugins either voting to approve or veto the proposal. The SPP plugin is essentially a cross-plugin state manager that enables governance processes with multiple stages and multiple governing bodies.
+
 
 [.card-section]
 

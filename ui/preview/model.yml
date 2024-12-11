@@ -1,7 +1,7 @@
 antoraVersion: '1.0.0'
 env: []
 site:
-  title: OpenZeppelin Docs
+  title: Aragon Docs
   ui:
     url: /_
   components:
