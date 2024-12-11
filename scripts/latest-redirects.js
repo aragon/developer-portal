@@ -1,43 +1,38 @@
-#!/usr/bin/env node
-
-// Generates a Netlify _redirects file which sets up redirections to the
-// latest version of each component (i.e. documented project).
-
 const fs = require('fs');
-const glob = require('glob');
-const sv = require('semver');
+const path = require('path');
 
-const buildDir = 'build/site';
+// Directory to scan
+const baseDir = 'build/site';
 
-// Get the names of all components.
-const components = glob.sync('sitemap-*.xml', { cwd: buildDir })
-  .map(c => c.match(/sitemap-(.*)\.xml/)[1]);
+// Output file
+const redirectsFile = '_redirects';
 
-let redirects = [];
+// Function to recursively get HTML files and generate redirects
+const generateRedirects = (dir, basePathToRemove) => {
+  let redirects = [];
 
-if (fs.existsSync(`${buildDir}/_redirects`)) {
-  redirects.push(fs.readFileSync(`${buildDir}/_redirects`, 'utf8').trim());
-}
+  const filesAndDirs = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of filesAndDirs) {
+    const fullPath = path.join(dir, item.name);
 
-redirects.push(fs.readFileSync('_redirects', 'utf8').trim());
-
-for (const comp of components) {
-  // Get all the versions of this component.
-  const versions = glob.sync('*/', { cwd: `${buildDir}/${comp}` })
-    // Remove trailing slash.
-    .map(c => c.replace(/\/$/, ''))
-    // Remove anything that doesn't look like a version.
-    .filter(c => sv.coerce(c) !== null)
-    // Remove prereleases: these will have a dash, e.g. '3.x-rc.0'
-    .filter(c => !c.includes('-'))
-    // Sort from latest to oldest. Coerces each version into a valid semver
-    // version because some component versions might be '2.x'.
-    .sort((a, b) => sv.rcompare(sv.coerce(a), sv.coerce(b)));
-
-  if (versions.length > 0) {
-    const latest = versions[0];
-    redirects.push(`/${comp}/* /${comp}/${latest}/:splat 302`);
+    if (item.isDirectory()) {
+      // If it's a directory, recursively process it
+      redirects = redirects.concat(generateRedirects(fullPath, basePathToRemove));
+    } else if (item.isFile() && fullPath.endsWith('.html')) {
+      // If it's an HTML file, generate the redirect line
+      const relativePath = fullPath.replace(basePathToRemove + path.sep, ''); // Remove the base path
+      const withoutHtml = relativePath.slice(0, -5); // Remove '.html'
+      redirects.push(`/${withoutHtml} /${relativePath} 200`);
+    }
   }
-}
 
-fs.writeFileSync(`${buildDir}/_redirects`, redirects.join('\n') + '\n');
+  return redirects;
+};
+
+// Generate redirects
+const redirects = generateRedirects(baseDir, baseDir);
+
+// Write to the _redirects file
+fs.writeFileSync(`${baseDir}/_redirects`, redirects.join('\n'), 'utf8');
+
+console.log(`Redirects file '${redirectsFile}' has been generated.`);
