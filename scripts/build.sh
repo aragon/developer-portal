@@ -14,7 +14,9 @@ rm -rf theme/dist
 
 yarn install --frozen-lockfile
 
-yarn build:theme
+yarn build
+
+cd ..
 
 
 ## Antora
