@@ -159,28 +159,28 @@
 
 .card-contracts a {
   --card-icon: url(../images/contracts_white.svg);
-  background-image: linear-gradient(45deg, #6746d6 0%, #a134d1 100%);
+  background-image: linear-gradient(45deg, var(--guk-color-primary-400) 0%, var(--guk-color-primary-900) 100%);
 }
 
 .card-defender a {
   --card-icon: url(../images/defender_white.svg);
-  background-image: linear-gradient(-135deg, #00e1d4 0%, #00c7f2 100%);
+  background-image: conic-gradient(45deg, var(--guk-color-primary-400) 0%, var(--guk-color-primary-900) 100%);
 }
 
-.card-upgrades {
-  --card-icon: url(../images/icons/upgrades-plugins.svg);
+.card-token-voting {
+  --card-icon: url(../images/icons/token-voting.svg);
 }
 
-.card-contracts-cairo {
-  --card-icon: url(../images/icons/contracts-cairo.svg);
+.card-multisig {
+  --card-icon: url(../images/icons/multisig.svg);
 }
 
-.card-contracts-stylus {
-  --card-icon: url(../images/icons/contracts-stylus.svg);
+.card-admin {
+  --card-icon: url(../images/icons/admin.svg);
 }
 
-.card-substrate-runtimes {
-  --card-icon: url(../images/icons/substrate-runtimes.svg);
+.card-spp {
+  --card-icon: url(../images/icons/spp.svg);
 }
 
 .card-test-environment {
