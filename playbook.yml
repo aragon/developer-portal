@@ -20,7 +20,7 @@ content:
       branches: feat/docs
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx
-      branches: feat/docs-add-missing-pages
+      branches: feature/docs
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx-commons
       branches: feature/docs
