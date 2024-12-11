@@ -36,7 +36,8 @@ h6 {
   font-family: var(--guk-font-family);
  /* font-weight: var(--guk-font-weight-semibold); /* 600 */
   line-height: var(--guk-line-height-tight); /* 1.25 */
-  margin-bottom: var(--guk-space-4); /* Consistent spacing */
+  margin-bottom: var(--guk-space-4);
+  margin-top: var(--guk-space-7);
 }
 
 /*
@@ -88,7 +89,8 @@ code {
   border-radius: var(--guk-border-rounded); /* 4px */
   font-family: var(--guk-font-family-monospace, monospace);
   font-size: 0.95em;
-  padding: 2px 4px;
+  padding: 0;
+  border: 1px solid var(--guk-color-neutral-200);
 }
 
 /* Paragraphs and Lists */
