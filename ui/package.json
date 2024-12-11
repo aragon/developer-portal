@@ -1,13 +1,9 @@
 {
-  "name": "openzeppelin-docs-site-theme",
+  "name": "aragon-docs-site-theme",
   "private": true,
   "version": "0.0.0",
-  "description": "The default theme for the openzeppelin documentation site",
-  "homepage": "https://docs.openzeppelin.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/openzeppelin/docs-site-theme.git"
-  },
+  "description": "The default theme for the aragon documentation site",
+  "homepage": "https://devs.aragon.org/",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -cw"
