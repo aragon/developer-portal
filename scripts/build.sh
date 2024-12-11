@@ -6,6 +6,16 @@ log() {
   echo "$*" >&2
 }
 
+yarn install --frozen-lockfile
+
+cd ui
+
+rm -rf theme/dist
+
+yarn install --frozen-lockfile
+
+yarn build:theme
+
 
 ## Antora
 
