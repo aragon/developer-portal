@@ -1,0 +1,13 @@
+= Aragon UI Docs Theme
+
+== Development
+Triggers a file Watcher and with LiveReload for UI Development
+```
+yarn dev
+```
+
+=== Build
+Builds the UI
+```
+yarn build
+```

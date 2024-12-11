@@ -1,0 +1,21 @@
+/* footer.scss */
+
+footer.footer {
+  font-size: var(--guk-size-base);
+  background-color: var(--guk-color-neutral-0); /* #ffffff */
+  padding: var(--guk-space-6) var(--guk-space-8); /* 24px 32px */
+  color: var(--guk-color-neutral-500); /* #616e7c */
+  border-top: solid 1px var(--guk-color-neutral-100); /* Uses --guk-color-neutral-900 */
+}
+
+.footer a {
+  color: var(--guk-color-neutral-500); /* Semi-transparent using --guk-color-neutral-900 */
+  display: inline;
+  margin-left: var(--guk-space-4); /* 6px */
+ /* border-left: 1px solid rgba(31, 41, 51, 0.7); */
+  padding-left: var(--guk-space-1-5); /* 6px */
+}
+
+.footer a:hover {
+  color: var(--guk-color-neutral-800); /* Semi-transparent using --guk-color-neutral-900 */
+}

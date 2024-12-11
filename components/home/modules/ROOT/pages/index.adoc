@@ -1,0 +1,64 @@
+= Documentation
+
+Aragon is a secure and modular tech stack for organizations to manage their protocols and assets onchain. Built on battle-tested infrastructure, Aragon empowers teams to create, manage, and upgrade decentralized organizations with confidence. Our comprehensive suite of tools enables everything from basic multisig management to complex, multi-stage governance systems.
+
+
+== Aragon OSx
+
+OSx is our Ethereum-based smart contract framework. It enables organizations to deploy custom governance tailored to their unique needs and securely adapt over time. It was designed to overcome the monolithic one-size-fits-approach commonly used by onchain organizations.
+
+**The central principle behind OSx is that permissions are the core primitive that enables effective governance in any complex organization**.
+
+== Aragon Plugin Marketplace
+
+Governance logic and other functionality is encapsulated in reusable contracts called _plugins_.
+
+Plugins are granted specific permissions depending what you want them to do. In practice, they often act as governing bodies or decision-making processes. For example, a token voting plugin or multisig plugin define all of their unique governance logic within the plugin itself. This “separation of concerns” keeps the protocol focused and ultimately more flexible.
+
+The core plugins currently supported by Aragon are:
+
+  * *Token Voting*: Proposals are created for token holders and delegates to vote on proposals, with execution decided using a simple majority rule.
+
+  * *Multisig*: Proposals are created for designated addresses to approve, with execution decided by whether a minimum number of approvers is met.
+
+  * *Admin*: Proposals are created by designated addresses and immediately executed.
+
+  * *Staged Proposal Processor*: Proposals are created and progress through any number of stages, with other plugins either voting to approve or veto the proposal. The SPP plugin is essentially a cross-plugin state manager that enables governance processes with multiple stages and multiple governing bodies.
+
+
+**Explore or publish your own community-built plugins** that can be used to extend any OSx-based organization with new governance logic.
+
+
+[.card-section]
+
+== Governance Tooling
+
+The Governance UI Kit and Governance App Template are used to build custom applications and UIs that integrate seamlessly with OSx. 
+
+[.card-section.card-section-2col]
+====
+[.card.card-primary.card-contracts]
+--
+xref:osx-contracts::index.adoc[[.card-title]#Osx Contracts# [.card-body]#pass:q[A smart contract framework built on Solidity, designed for creating and managing decentralized organizations.]#]
+--
+====
+
+[.card.card-secondary.card-token-voting]
+--
+xref:token-voting::index.adoc[[.card-title]#Token Voting# [.card-body]#pass:q[A governance plugin that enables token-weighted voting.]#]
+--
+
+[.card.card-secondary.card-multisig]
+--
+xref:multisig::index.adoc[[.card-title]#Multisig# [.card-body]#pass:q[A governance plugin that enables a group of addresses to manage an organization through approval-based decision making.]#]
+--
+
+[.card.card-secondary.card-admin]
+--
+xref:admin::index.adoc[[.card-title]#Admin# [.card-body]#pass:q[A governance plugin that grants direct execution rights to create and execute proposals without voting or approval processes.]#]
+--
+
+[.card.card-secondary.card-spp]
+--
+xref:spp::index.adoc[[.card-title]#Staged Proposal Processor# [.card-body]#pass:q[A governance plugin that enables multi-stage workflows, allowing to implement complex decision-making processes with multiple approval or veto checkpoints.]#]
+--
