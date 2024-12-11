@@ -8,7 +8,6 @@ ui/node_modules
 ui/theme/dist
 
 # Generated files
-.docusaurus
 .cache-loader
 /static/optimized-svg
 

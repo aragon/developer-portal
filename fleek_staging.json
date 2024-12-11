@@ -8,8 +8,8 @@
   },
   "build": {
     "baseDir": "",
-    "publicDir": "build/",
-    "command": "yarn && yarn optimize-svg && yarn build",
+    "publicDir": "build/site/",
+    "command": "yarn install --frozen-lockfile && yarn build",
     "rootDir": ""
   }
 }

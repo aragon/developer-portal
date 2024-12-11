@@ -6,8 +6,6 @@
     "build": "bash scripts/build.sh --fetch playbook.yml",
     "build:no-fetch": "bash scripts/build.sh playbook.yml",
     "build:local": "bash scripts/build.sh playbook-local-only.yml",
-    "serve:all-optimized": "yarn && yarn optimize-svg && yarn build && yarn serve",
-    "optimize-svg": "svgo -rf ./static/img -o ./static/optimized-svg",
     "build:theme": "yarn --cwd ui build",
     "serve": "yarn build && live-server build/site",
     "watch:local": "fgbg 'nodemon -e yml,adoc,css,scss,js -w components -w ui --ignore ui/theme/dist -x sh scripts/watch-local-build.sh' 'live-server build/site'",
