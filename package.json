@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build:staging": "bash scripts/build.sh --fetch playbook-staging.yml",
+    "build": "bash scripts/build.sh --fetch playbook.yml",
     "build:master": "bash scripts/build.sh --fetch playbook-master.yml",
     "build:local": "bash scripts/build.sh playbook-local-only.yml",
     "build:no-fetch": "bash scripts/build.sh playbook.yml",
