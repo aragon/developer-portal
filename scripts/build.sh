@@ -7,17 +7,11 @@ log() {
 }
 
 yarn install --frozen-lockfile
-
 cd ui
-
 rm -rf theme/dist
-
 yarn install --frozen-lockfile
-
 yarn build
-
 cd ..
-
 
 ## Antora
 
