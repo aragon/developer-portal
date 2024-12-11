@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "bash scripts/build.sh --fetch playbook.yml",
-    "build:no-fetch": "bash scripts/build.sh playbook.yml",
+    "build:staging": "bash scripts/build.sh --fetch playbook-staging.yml",
+    "build:master": "bash scripts/build.sh --fetch playbook-master.yml",
     "build:local": "bash scripts/build.sh playbook-local-only.yml",
+    "build:no-fetch": "bash scripts/build.sh playbook.yml",
     "build:theme": "yarn --cwd ui build",
     "serve": "yarn build && live-server build/site",
     "watch:local": "fgbg 'nodemon -e yml,adoc,css,scss,js -w components -w ui --ignore ui/theme/dist -x sh scripts/watch-local-build.sh' 'live-server build/site'",

@@ -1,6 +1,6 @@
 site:
   title: Aragon Docs
-  url: https://docs.aragon.org
+  url: https://devs-stg.aragon.org
   start_page: ROOT::index.adoc
   keys:
     google_analytics: 'UA-85043059-1'
