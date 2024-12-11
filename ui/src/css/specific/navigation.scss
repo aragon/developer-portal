@@ -34,10 +34,11 @@
   padding: 0 1rem;
   font-size: 0.8em;
   font-family: var(--guk-font-family); /* Replaces var(--heading) */
-  color: var(--guk-color-neutral-600); /* Replaces var(--aluminum-5) */
+  color: var(--guk-color-neutral-300); /* Replaces var(--aluminum-5) */
   letter-spacing: 0.05em;
   font-weight: var(--guk-font-weight-semibold); /* Replaces var(--weight-bold) */
   text-transform: uppercase;
+  margin-top: var(--guk-space-5);
 }
 
 .btn-back {
