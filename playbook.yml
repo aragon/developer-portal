@@ -8,7 +8,7 @@ site:
 content:
   sources:
     - url: .
-      branches: feature/new-way-theming
+      branches: feature/new-way
       start_path: components/home
     # - url: https://github.com/aragon/multisig-plugin
     #   branches: feature/docs
