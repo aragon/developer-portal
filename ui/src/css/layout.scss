@@ -150,11 +150,11 @@ button.collapse-toggle {
 .navbar-search {
   position: relative;
   display: flex;
- /*  flex-grow: 1; */
+  flex-grow: 1;
 }
 
 .navbar-search-input {
- /* flex-grow: 1; */
+  flex-grow: 1;
   width: 20em;
   padding: .5rem !important;
 }

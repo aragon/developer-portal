@@ -75,9 +75,8 @@
 }
 
 .navbar-search-input {
-  margin-right: 8px;
   font-size: var(--guk-font-size-base); /* 1rem */
-  background-color: var(--guk-color-neutral-0); /* Replaces var(--aluminum-1) */
+  background-color: var(--guk-color-neutral-50); /* Replaces var(--aluminum-1) */
   color: var(--guk-color-neutral-500);
   border-radius: var(--guk-border-rounded);
   border: 1px solid var(--guk-color-neutral-200); /* Replaces var(--aluminum-3) */
