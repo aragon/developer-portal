@@ -8,7 +8,7 @@ site:
 content:
   sources:
     - url: .
-      branches: update-minor-css-changes
+      branches: feature/new-way
       start_path: components/home
     - url: https://github.com/aragon/multisig-plugin
       branches: feature/docs
