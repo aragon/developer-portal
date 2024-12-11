@@ -8,7 +8,7 @@ site:
 content:
   sources:
     - url: .
-      branches: feature/new-way-theming
+      branches: update-minor-css-changes
       start_path: components/home
     - url: https://github.com/aragon/multisig-plugin
       branches: feature/docs
@@ -19,7 +19,7 @@ content:
     - url: https://github.com/aragon/admin-plugin
       branches: feat/docs
       start_path: packages/contracts/docs
-    - url: https://github.com/aragon/osx
+    - url: /Users/claubar/Projects/Aragon/osx/
       branches: feat/docs-add-missing-pages
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx-commons
