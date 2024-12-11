@@ -21,7 +21,14 @@
     {{/each}}
 
     <h3 class="nav-title">More</h3>
-    {{#each (pick site.components "gov-ui-kit, gov-app-template")}}
+    {{!-- gov-ui-kit --}}
+    <div class="nav-component">
+      <a class="flex align-center" href="https://aragon.github.io/gov-ui-kit" tabindex="0">
+        <img class="nav-icon" src="{{@root.site.ui.url}}/images/icons/gov-ui-kit.svg">
+        <span class="nav-component-heading">Governance UI Kit</span>
+      </a>
+    </div>
+    {{#each (pick site.components "gov-app-template")}}
     {{> navigation-component }}
     {{/each}}
 
