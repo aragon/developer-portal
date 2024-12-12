@@ -27,9 +27,6 @@ jobs:
           node-version: 18
           cache: 'yarn'
 
-      - name: Install and build
-        run: yarn install --frozen-lockfile && yarn build
-
       - name: Install Fleek CLI
         run: yarn global add @fleek-platform/cli
 
