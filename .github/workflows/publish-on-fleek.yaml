@@ -39,7 +39,7 @@ jobs:
       - name: Deploy on Fleek
         id: deploy
         run: fleek sites deploy
-        with:
+        env:
           FLEEK_TOKEN: ${{ secrets.FLEEK_TOKEN }}
           FLEEK_PROJECT_ID: ${{ secrets.FLEEK_PROJECT_ID }}
 
