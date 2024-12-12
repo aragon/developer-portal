@@ -291,3 +291,15 @@
   padding: var(--guk-space-2-5);
   margin: 0 calc(-1 * var(--guk-space-2-5));
 }
+
+.doc table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+  display: block;
+  position: relative;
+
+  &:hover {
+    background: var(--guk-color-neutral-50);
+  }
+}
