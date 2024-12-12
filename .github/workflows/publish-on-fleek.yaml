@@ -32,6 +32,9 @@ jobs:
 
       - name: Activate Fleek
         run: mv fleek_${{ inputs.source_branch }}.json fleek.config.json
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
     
       - name: Deploy on Fleek
         id: deploy
