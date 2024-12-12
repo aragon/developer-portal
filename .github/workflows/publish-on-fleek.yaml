@@ -30,14 +30,18 @@ jobs:
       - name: Install and build
         run: yarn install --frozen-lockfile && yarn build
 
+      - name: Install Fleek CLI
+        run: yarn global add @fleek-platform/cli
+
       - name: Activate Fleek
         run: mv fleek_${{ inputs.source_branch }}.json .fleek.json
-
+    
       - name: Deploy on Fleek
         id: deploy
-        uses: fleekhq/action-deploy@v1.0.1
+        uses: fleek sites deploy
         with:
-          apiKey: ${{ secrets.FLEEK_API_KEY }}
+          FLEEK_TOKEN: ${{ secrets.FLEEK_TOKEN }}
+          FLEEK_PROJECT_ID: ${{ secrets.FLEEK_PROJECT_ID }}
 
       - name: Get Fleek output URL ( Branch=${{ inputs.source_branch }} )
         run: echo "The Fleek output URL is ${{ steps.deploy.outputs.deployUrl }}"
