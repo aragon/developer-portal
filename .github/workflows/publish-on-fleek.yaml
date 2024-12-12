@@ -38,7 +38,7 @@ jobs:
     
       - name: Deploy on Fleek
         id: deploy
-        uses: fleek sites deploy
+        run: fleek sites deploy
         with:
           FLEEK_TOKEN: ${{ secrets.FLEEK_TOKEN }}
           FLEEK_PROJECT_ID: ${{ secrets.FLEEK_PROJECT_ID }}
