@@ -28,7 +28,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install Fleek CLI
-        run: yarn global add @fleek-platform/cli
+        run: npm i -g @fleek-platform/cli
 
       - name: Activate Fleek
         run: mv fleek_${{ inputs.source_branch }}.json fleek.config.json
