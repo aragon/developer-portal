@@ -3,7 +3,7 @@
     {
       "slug": "holy-feather-8175",
       "distDir": "build/site",
-      "buildCommand": "yarn run build"
+      "buildCommand": "yarn build:staging"
     }
   ]
 }
