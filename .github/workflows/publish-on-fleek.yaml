@@ -27,17 +27,21 @@ jobs:
           node-version: 18
           cache: 'yarn'
 
-      - name: Install and build
-        run: yarn && yarn docs:subgraph && yarn optimize-svg && yarn build
+      - name: Install Fleek CLI
+        run: npm i -g @fleek-platform/cli
 
       - name: Activate Fleek
-        run: mv fleek_${{ inputs.source_branch }}.json .fleek.json
+        run: mv fleek_${{ inputs.source_branch }}.json fleek.config.json
 
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+    
       - name: Deploy on Fleek
         id: deploy
-        uses: fleekhq/action-deploy@v1
-        with:
-          apiKey: ${{ secrets.FLEEK_API_KEY }}
+        run: fleek sites deploy
+        env:
+          FLEEK_TOKEN: ${{ secrets.FLEEK_TOKEN }}
+          FLEEK_PROJECT_ID: ${{ secrets.FLEEK_PROJECT_ID }}
 
       - name: Get Fleek output URL ( Branch=${{ inputs.source_branch }} )
         run: echo "The Fleek output URL is ${{ steps.deploy.outputs.deployUrl }}"

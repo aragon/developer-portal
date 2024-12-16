@@ -4,10 +4,11 @@
 # Production
 /build
 
+ui/node_modules
+ui/theme/dist
+
 # Generated files
-.docusaurus
 .cache-loader
-**/subgraph/reference-guide
 /static/optimized-svg
 
 # Misc

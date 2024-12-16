@@ -1,0 +1,258 @@
+// _vars.scss
+
+:root {
+  // Existing Variables (Preserved)
+  --core-gray: #f8f8fa;
+  --core-violet-1: #9aa2e7;
+  --core-violet-2: #6d79e9;
+  --core-violet-3: #6472e7;
+  --core-violet-4: #4e5ee4;
+  --core-violet-6: #282846;
+  --robust-blue-1: #a1b1b8;
+  --robust-blue-2: #6b8a99;
+  --robust-blue-3: #506773;
+  --robust-blue-4: #32444d;
+  --robust-blue-5: #272f33;
+  --future-green-1: #aaf2cb;
+  --future-green-2: #33cc7a;
+  --future-green-3: #17bc65;
+  --future-green-4: #0e8c48;
+  --future-green-5: #174d30;
+  --steel-1: #6b6c6d;
+  --steel-2: #58595a;
+  --steel-3: #3a3b3c;
+  --steel-4: #3D3D58;
+  --steel-5: #121314;
+  --aluminum-0: #f5f6fe;
+  --aluminum-1: #f9fafb;
+  --aluminum-2: #f4f5f6;
+  --aluminum-3: #e8e9ea;
+  --aluminum-4: #cacbcc;
+  --aluminum-5: #989a9b;
+  --yellow-3: #f2be24;
+  --viridian-3: #00b49d;
+  --teal-3: #00b5d1;
+  --navy-3: #178bea;
+  --indigo-3: #5e66f9;
+  --violet-3: #9a63f9;
+  --red-3: #d1344e;
+  --blue: #196BF7;
+  --tertiary: #fff;
+
+  --color-text: #282846;
+  --color-text-light: #555566;
+  --color-navbar-text: #282846;
+
+  --border-radius: 0.3rem;
+
+  --heading: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --sans-serif: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --monospace: "Roboto Mono", monospace;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold: 600;
+
+  --header-height: 66px;
+  --navbar-height: 70px;
+  --footer-height: 361px;
+  --nav-item-height: 32px;
+  --xs: 5px;
+  --sm: 10px;
+  --md: 15px;
+  --lg: 20px;
+  --xl: 40px;
+  --input-md: 30px;
+
+  --transition-speed-sm: 0.15s;
+  --transition-speed-md: 0.3s;
+  --transition-timing: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+  // New Variables from Style Guide
+
+  /* Border Radius */
+  --guk-border-rounded: 4px;
+  --guk-border-rounded-lg: 8px;
+  --guk-border-rounded-xl: 12px;
+  --guk-border-rounded-2xl: 16px;
+  --guk-border-rounded-3xl: 24px;
+  --guk-border-rounded-full: 9999px;
+  --guk-border-rounded-none: 0;
+
+  /* Colors */
+
+  /* Primary */
+  --guk-color-primary-50: #f5f8ff;
+  --guk-color-primary-100: #c4d7ff;
+  --guk-color-primary-200: #93b2ff;
+  --guk-color-primary-300: #628cfe;
+  --guk-color-primary-400: #3164fa;
+  --guk-color-primary-500: #003bf5;
+  --guk-color-primary-600: #0037d2;
+  --guk-color-primary-700: #0031ad;
+  --guk-color-primary-800: #002985;
+  --guk-color-primary-900: #001f5c;
+
+  /* Neutral */
+  --guk-color-neutral-0: #ffffff;
+  --guk-color-neutral-50: #f5f7fa;
+  --guk-color-neutral-100: #e4e7eb;
+  --guk-color-neutral-200: #cbd2d9;
+  --guk-color-neutral-300: #9aa5b1;
+  --guk-color-neutral-400: #7b8794;
+  --guk-color-neutral-500: #616e7c;
+  --guk-color-neutral-600: #52606d;
+  --guk-color-neutral-700: #3e4c59;
+  --guk-color-neutral-800: #323f4b;
+  --guk-color-neutral-900: #1f2933;
+
+  /* Info */
+  --guk-color-info-100: #d1fdfa;
+  --guk-color-info-200: #a4f9fb;
+  --guk-color-info-300: #75e8f3;
+  --guk-color-info-400: #52cfe7;
+  --guk-color-info-500: #1eadd8;
+  --guk-color-info-600: #1588b9;
+  --guk-color-info-700: #0f669b;
+  --guk-color-info-800: #09497d;
+  --guk-color-info-900: #053467;
+
+  /* Success */
+  --guk-color-success-100: #f3fccc;
+  --guk-color-success-200: #e4f99a;
+  --guk-color-success-300: #ccef66;
+  --guk-color-success-400: #b2e040;
+  --guk-color-success-500: #8ecc0a;
+  --guk-color-success-600: #74af07;
+  --guk-color-success-700: #5c9205;
+  --guk-color-success-800: #467603;
+  --guk-color-success-900: #366101;
+
+  /* Warning */
+  --guk-color-warning-100: #fff3d6;
+  --guk-color-warning-200: #ffe4ad;
+  --guk-color-warning-300: #ffd083;
+  --guk-color-warning-400: #ffbe65;
+  --guk-color-warning-500: #ff9f32;
+  --guk-color-warning-600: #db7d24;
+  --guk-color-warning-700: #b75e19;
+  --guk-color-warning-800: #93430f;
+  --guk-color-warning-900: #7a3009;
+
+  /* Critical */
+  --guk-color-critical-100: #fee4d6;
+  --guk-color-critical-200: #fec3ae;
+  --guk-color-critical-300: #fd9a86;
+  --guk-color-critical-400: #fb7467;
+  --guk-color-critical-500: #f93636;
+  --guk-color-critical-600: #d62736;
+  --guk-color-critical-700: #b31b35;
+  --guk-color-critical-800: #901132;
+  --guk-color-critical-900: #770a30;
+
+  /* Transparent */
+  --guk-color-transparent: transparent;
+
+  /* Spacing */
+  --guk-space-base: 4px;
+  --guk-space-0: calc(var(--guk-space-base) * 0);
+  --guk-space-0-25: calc(var(--guk-space-base) * 0.25);
+  --guk-space-0-5: calc(var(--guk-space-base) * 0.5);
+  --guk-space-1-5: calc(var(--guk-space-base) * 1.5);
+  --guk-space-2: calc(var(--guk-space-base) * 2);
+  --guk-space-2-5: calc(var(--guk-space-base) * 2.5);
+  --guk-space-3: calc(var(--guk-space-base) * 3);
+  --guk-space-3-5: calc(var(--guk-space-base) * 3.5);
+  --guk-space-4: calc(var(--guk-space-base) * 4);
+  --guk-space-5: calc(var(--guk-space-base) * 5);
+  --guk-space-6: calc(var(--guk-space-base) * 6);
+  --guk-space-7: calc(var(--guk-space-base) * 7);
+  --guk-space-8: calc(var(--guk-space-base) * 8);
+  --guk-space-9: calc(var(--guk-space-base) * 9);
+  --guk-space-10: calc(var(--guk-space-base) * 10);
+  --guk-space-11: calc(var(--guk-space-base) * 11);
+  --guk-space-12: calc(var(--guk-space-base) * 12);
+  --guk-space-14: calc(var(--guk-space-base) * 14);
+  --guk-space-16: calc(var(--guk-space-base) * 16);
+  --guk-space-20: calc(var(--guk-space-base) * 20);
+  --guk-space-24: calc(var(--guk-space-base) * 24);
+  --guk-space-28: calc(var(--guk-space-base) * 28);
+  --guk-space-32: calc(var(--guk-space-base) * 32);
+  --guk-space-36: calc(var(--guk-space-base) * 36);
+  --guk-space-40: calc(var(--guk-space-base) * 40);
+  --guk-space-44: calc(var(--guk-space-base) * 44);
+  --guk-space-48: calc(var(--guk-space-base) * 48);
+  --guk-space-52: calc(var(--guk-space-base) * 52);
+  --guk-space-56: calc(var(--guk-space-base) * 56);
+  --guk-space-60: calc(var(--guk-space-base) * 60);
+  --guk-space-64: calc(var(--guk-space-base) * 64);
+  --guk-space-72: calc(var(--guk-space-base) * 72);
+  --guk-space-80: calc(var(--guk-space-base) * 80);
+  --guk-space-96: calc(var(--guk-space-base) * 96);
+
+  /* Typography */
+
+  /* Font Weight */
+  --guk-font-weight-normal: 500;
+  --guk-font-weight-semibold: 600;
+
+  /* Font Size */
+  --guk-font-size-xs: 0.75rem;   // 12px
+  --guk-font-size-sm: 0.875rem;  // 14px
+  --guk-font-size-base: 1rem;    // 16px
+  --guk-font-size-lg: 1.125rem;  // 18px
+  --guk-font-size-xl: 1.25rem;   // 20px
+  --guk-font-size-2xl: 1.5rem;   // 24px
+  --guk-font-size-3xl: 1.875rem; // 30px
+  --guk-font-size-4xl: 2.25rem;  // 36px
+  --guk-font-size-5xl: 3rem;     // 48px
+
+  /* Line Height */
+  --guk-line-height-normal: 1.5;
+  --guk-line-height-tight: 1.25;
+  --guk-line-height-relaxed: 1.65;
+
+  /* Font Family */
+  --guk-font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+/* Font-face Definitions */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../fonts/Manrope-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../../fonts/Manrope-SemiBold.ttf") format("truetype");
+}
+
+// Existing SCSS Variables (Preserved)
+$mobile-breakpoint: 1000px;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1160px;
+
+$header-height: 66px;
+$footer-height: 361px;
+$nav-width: 300px;
+
+$xs: 5px;
+$sm: 10px;
+$md: 15px;
+$lg: 20px;
+$xl: 40px;

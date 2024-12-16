@@ -1,0 +1,101 @@
+/* header.scss */
+
+.header {
+  border-bottom: solid 1px var(--guk-color-neutral-200); /* Replaces #e2e2e7 */
+}
+
+.navbar {
+ /* background-color: var(--guk-color-neutral-0); /* Assuming white background */
+  color: var(--guk-color-neutral-900); /* Replaces var(--color-navbar-text) */
+  font-size: var(--guk-font-size-sm); /* 0.875rem */
+  word-wrap: break-word;
+  z-index: 10; /* Ensure this z-index is appropriate */
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar-brand .navbar-item:first-child,
+.navbar-brand .navbar-item:first-child a {
+  color: var(--guk-color-neutral-900); /* Replaces var(--color-navbar-text) */
+  font-size: var(--guk-font-size-lg); /* 1.125rem */
+}
+
+.navbar-brand .separator {
+  padding: 0 var(--guk-space-1); /* 4px */
+}
+
+.navbar-burger {
+  color: var(--guk-color-neutral-900); /* Replaces var(--color-navbar-text) */
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.navbar-burger::-moz-focus-inner {
+  border: none;
+}
+
+.navbar-item {
+  margin-left: 32px;
+  margin-right: 0px;
+  color: var(--guk-color-neutral-500); /* Replaces var(--color-text) */
+  padding: var(--guk-space-2); /* 8px */
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+  font-weight: var(--guk-font-weight-medium); /* Replaces font-weight: 500 */
+  font-size: var(--guk-font-size-base); /* 1rem */
+}
+
+.navbar-item:hover {
+  color: var(--guk-color-neutral-800); /* Replaces var(--color-navbar-hover) */
+}
+
+.navbar-button {
+  color: var(--guk-color-neutral-0); /* White text */
+  padding: var(--guk-space-1-5) var(--guk-space-3); /* 6px 12px */
+  font-family: var(--guk-font-family); /* Replaces var(--heading) */
+  font-weight: var(--guk-font-weight-medium); /* Replaces font-weight: 500 */
+  font-size: var(--guk-font-size-base); /* 1rem */
+  display: inline-block;
+  border-radius: var(--guk-border-rounded-full); /* Fully rounded button */
+  letter-spacing: -0.02em;
+  transition: all 0.2s ease;
+  background: var(--guk-color-primary-500); /* Replaces #4F56FA */
+  text-decoration: none;
+  text-transform: none;
+  border: 1px solid var(--guk-color-neutral-200); /* Replaces #EFEFEF */
+  text-align: center;
+  white-space: nowrap;
+}
+
+.navbar-button:hover {
+  background: var(--guk-color-primary-600) !important; /* Replaces #4349D4 */
+  color: var(--guk-color-neutral-0);
+}
+
+.navbar-search-input {
+  font-size: var(--guk-font-size-base); /* 1rem */
+  background-color: var(--guk-color-neutral-50); /* Replaces var(--aluminum-1) */
+  color: var(--guk-color-neutral-500);
+  border-radius: var(--guk-border-rounded);
+  border: 1px solid var(--guk-color-neutral-200); /* Replaces var(--aluminum-3) */
+
+  &:focus {
+    outline: none;
+  }
+ &:before {
+  content: url(../images/icons/arrow_back.svg);
+  display: inline-block;
+ }
+}
+
+.navbar-search-checkbox {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar-burger {
+    display: none;
+  }
+}

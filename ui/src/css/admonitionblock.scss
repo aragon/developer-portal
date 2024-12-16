@@ -1,0 +1,102 @@
+/* admonitionblock.scss */
+
+.alert {
+  p {
+    font-family: var(--guk-font-family);
+    color: inherit;
+    font-size: var(--guk-font-size-base); /* 1rem */
+  }
+}
+
+.admonitionblock,
+.alert {
+  max-width: 90vw;
+  background-color: var(--guk-color-neutral-0); /* white */
+  border: solid var(--guk-color-neutral-300); /* #9aa5b1 */
+  border-radius: var(--guk-border-rounded);
+  border-width: 1px 1px 1px 6px;
+  font-family: var(--guk-font-family);
+  font-weight: var(--guk-font-weight-normal);
+  color: var(--guk-color-neutral-600); /* Replaces var(--color-text-light) */
+  font-size: var(--guk-font-size-sm); /* 0.875rem */
+  text-align: center;
+  line-height: var(--guk-line-height-normal);
+  padding: var(--guk-space-5) var(--guk-space-4);
+  margin-bottom: var(--guk-space-7);
+  overflow-wrap: break-word;
+
+  table {
+    padding: 0;
+    margin: 0;
+    th,
+    td {
+      padding: 0;
+      margin: 0;
+      word-wrap: break-word;
+    }
+  }
+
+  .content {
+    max-width: 82vw;
+    padding-left: var(--guk-space-1);
+    font-size: var(--guk-font-size-base); /* 1rem */
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  &::before {
+    display: block;
+    font-size: 0.9em;
+    font-weight: var(--guk-font-weight-semibold);
+    text-align: left;
+    text-transform: uppercase;
+    padding-left: var(--guk-space-1);
+    margin-bottom: var(--guk-space-2);
+  }
+
+  &.note {
+    border-left-color: var(--guk-color-primary-400); /* Replaces var(--core-violet-4) */
+
+    &::before {
+      content: "Note";
+      color: var(--guk-color-primary-400);
+    }
+  }
+
+  &.tip {
+    border-left-color: var(--guk-color-info-500); /* Replaces var(--teal-3) */
+
+    &::before {
+      content: "Tip";
+      color: var(--guk-color-info-500);
+    }
+  }
+
+  &.warning,
+  &.caution,
+  &.important {
+    border-left-color: var(--guk-color-warning-500); /* Replaces #F79F1F */
+
+    &::before {
+      color: var(--guk-color-warning-500);
+      padding-left: var(--guk-space-6); /* Adjusted for spacing */
+      margin-left: var(--guk-space-2);
+      background-image: url(../images/icons/warning.svg);
+      background-repeat: no-repeat;
+      background-position: left;
+      background-origin: border-box;
+    }
+  }
+
+  &.warning::before {
+    content: "Warning";
+  }
+
+  &.caution::before {
+    content: "Caution";
+  }
+
+  &.important::before {
+    content: "Important";
+  }
+}

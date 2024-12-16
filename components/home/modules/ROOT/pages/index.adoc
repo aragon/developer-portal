@@ -1,0 +1,50 @@
+
+= Documentation
+
+Aragon is a secure and modular tech stack for organizations to manage their protocols and assets onchain. 
+
+[.card-section]
+== Guides
+Aragon supports a diverse set of builders who want to build on top of OSx:
+
+[.card-section.card-section-2col]
+
+[.card.card-secondary.card-dao-guide]
+--
+xref:osx-contracts::guide-set-up-dao/index.adoc[[.card-title]#Building a DAO# [.card-body]#pass:q[Launch or upgrade your DAO directly by calling the OSx framework.]#]
+--
+
+[.card.card-secondary.card-plugin-guide]
+--
+xref:osx-contracts::guide-develop-plugin/index.adoc[[.card-title]#Developing a plugin# [.card-body]#pass:q[Create and publish  plugins to the Aragon Plugin Marketplace for others to use.]#]
+--
+
+[.card.card-secondary.card-building-app]
+--
+link:https://aragon.github.io/gov-ui-kit[[.card-title]#Building a custom application# [.card-body]#pass:q[Integrate OSx into custom web apps using our suite of React-based UI tools.]#]
+--
+
+
+== Aragon OSx
+
+OSx is our Ethereum-based smart contract framework. It enables organizations to deploy custom governance tailored to their unique needs and securely adapt over time. It was designed to overcome the monolithic one-size-fits-approach commonly used by onchain organizations.
+
+**The central principle behind OSx is that permissions are the core primitive that enables effective governance in any complex organization**.
+
+== Aragon Plugin Marketplace
+
+Permissions can be granted to an OSx plugin address. Plugins contain governance logic inside of reusable contracts. Each plugin is limited in scope, with single-purpose logic that can be mixed and matched to compose novel governance designs.
+
+**Explore or publish your own community-built plugins** that can be used to extend any OSx-based organization with new governance logic.
+
+
+== Governance Tooling
+
+The Governance UI Kit and Governance App Template are used to build custom applications and UIs that integrate seamlessly with OSx. 
+
+== Questions?
+
+We’re here to help you build your DAO, plugin, or own governance-based platform.
+
+- Check out our *developer community* in link:https://discord.com/invite/aragonorg[our Discord]!
+- **If you’re not a developer**, head over to our link:https://www.aragon.org/resource-library[Resource Library] to learn more about how to better govern your organization with Aragon.

@@ -1,0 +1,225 @@
+/*!
+  Customized Theme aligned with the Style Guide
+*/
+
+/* Dark Theme */
+.hljs {
+  color: var(--guk-color-neutral-300); /* Default text color */
+  background: var(--guk-color-neutral-900); /* Background color */
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* Keywords */
+  color: var(--guk-color-critical-500);
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* Titles and Functions */
+  color: var(--guk-color-primary-300);
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* Attributes, Numbers, Operators */
+  color: var(--guk-color-info-300);
+}
+
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* Strings and Regex */
+  color: var(--guk-color-info-500);
+}
+
+.hljs-built_in,
+.hljs-symbol {
+  /* Built-in and Symbols */
+  color: var(--guk-color-warning-500);
+}
+
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* Comments */
+  color: var(--guk-color-neutral-500);
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* Names and Selectors */
+  color: var(--guk-color-success-500);
+}
+
+.hljs-subst {
+  /* Substitutions */
+  color: var(--guk-color-neutral-300);
+}
+
+.hljs-section {
+  /* Sections */
+  color: var(--guk-color-primary-500);
+  font-weight: bold;
+}
+
+.hljs-bullet {
+  /* Bullets */
+  color: var(--guk-color-warning-300);
+}
+
+.hljs-emphasis {
+  /* Emphasis */
+  color: var(--guk-color-neutral-300);
+  font-style: italic;
+}
+
+.hljs-strong {
+  /* Strong */
+  color: var(--guk-color-neutral-300);
+  font-weight: bold;
+}
+
+.hljs-addition {
+  /* Additions */
+  color: var(--guk-color-success-300);
+  background-color: var(--guk-color-success-100);
+}
+
+.hljs-deletion {
+  /* Deletions */
+  color: var(--guk-color-critical-300);
+  background-color: var(--guk-color-critical-100);
+}
+
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Light Theme */
+.hljs-theme-light {
+  .hljs {
+    color: var(--guk-color-neutral-900);
+    background: var(--guk-color-neutral-0);
+  }
+
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-meta .hljs-keyword,
+  .hljs-template-tag,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-variable.language_ {
+    color: var(--guk-color-critical-500);
+  }
+
+  .hljs-title,
+  .hljs-title.class_,
+  .hljs-title.class_.inherited__,
+  .hljs-title.function_ {
+    color: var(--guk-color-primary-500);
+  }
+
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-operator,
+  .hljs-variable,
+  .hljs-selector-attr,
+  .hljs-selector-class,
+  .hljs-selector-id {
+    color: var(--guk-color-primary-500);
+  }
+
+  .hljs-regexp,
+  .hljs-string,
+  .hljs-meta .hljs-string {
+    color: var(--guk-color-primary-700);
+  }
+
+  .hljs-built_in,
+  .hljs-symbol {
+    color: var(--guk-color-warning-500);
+  }
+
+  .hljs-comment,
+  .hljs-code,
+  .hljs-formula {
+    color: var(--guk-color-neutral-500);
+  }
+
+  .hljs-name,
+  .hljs-quote,
+  .hljs-selector-tag,
+  .hljs-selector-pseudo {
+    color: var(--guk-color-success-500);
+  }
+
+  .hljs-subst {
+    color: var(--guk-color-neutral-900);
+  }
+
+  .hljs-section {
+    color: var(--guk-color-primary-500);
+    font-weight: bold;
+  }
+
+  .hljs-bullet {
+    color: var(--guk-color-warning-300);
+  }
+
+  .hljs-emphasis {
+    color: var(--guk-color-neutral-900);
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    color: var(--guk-color-neutral-900);
+    font-weight: bold;
+  }
+
+  .hljs-addition {
+    color: var(--guk-color-success-700);
+    background-color: var(--guk-color-success-100);
+  }
+
+  .hljs-deletion {
+    color: var(--guk-color-critical-700);
+    background-color: var(--guk-color-critical-100);
+  }
+
+  .hljs-char.escape_,
+  .hljs-link,
+  .hljs-params,
+  .hljs-property,
+  .hljs-punctuation,
+  .hljs-tag {
+    color: inherit;
+    background-color: transparent;
+  }
+}

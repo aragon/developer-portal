@@ -12,11 +12,11 @@
 
 <br/>
 
-# Aragon OSx Developer Portal
+# Aragon OSx Developer Portal.
 
 Aragon's Developer Portal holds all documentation developers need to kickstart their journey building with the Aragon OSx stack. You can find it in production [here](https://devs.aragon.org).
 
-This website is built using [Docusaurus 3](https://docusaurus.io/), a static website generator for technical documentations.
+This website is built using [Antora](https://antora.org/), a static multi-repo website generator for technical documentations.
 
 ### Installation
 
@@ -38,17 +38,7 @@ This command starts a local development server and opens up a browser window. Mo
 $ yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-Notice: you may need to run `yarn optimize-svg` and `yarn docs:subgraph` before `yarn build` or `yarn start` to correctly build this website.
-
-### Serve All Optimized Assets
-
-```bash
-$ yarn serve:all-optimized
-```
-
-This command runs all the necessary commands to serve the website from scratch. It installs all the needed libraries, generates the Subgraph documentation, and then builds and serves the website, locally, with all optimized assets.
+This command generates static content into the `build/site` directory and can be served using any static contents hosting service.
 
 ### Deployment
 
