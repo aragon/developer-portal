@@ -33,4 +33,4 @@ For this command to work, you need to create `playbook-local-only.yml`. For refe
 
 ### Adding a new repo to the docs
 
-Edit the [playbook.yml](playbook.yml) file by adding the new repository under "sources", with the branch or branches that should be deployed, and the path where the `antora.yml` file is. To show it in the sidebar, add the name from the repo's antora.yml in navigation.hbs, and add an svg icon inside the icons folder matching the name.
+Edit the [playbook-master.yml](playbook-master.yml) (or [playbook-staging.yml](playbook-staging.yml)) file by adding the new repository under "sources", with the branch or branches that should be deployed, and the path where the `antora.yml` file is. To show it in the sidebar, add the name from the repo's antora.yml in navigation.hbs, and add an svg icon inside the icons folder matching the name.
