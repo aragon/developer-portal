@@ -8,10 +8,8 @@
     "build:local": "bash scripts/build.sh playbook-local-only.yml",
     "build:no-fetch": "bash scripts/build.sh playbook.yml",
     "build:theme": "yarn --cwd ui build",
-    "serve": "yarn build && live-server build/site",
-    "watch:local": "fgbg 'nodemon -e yml,adoc,css,scss,js -w components -w ui --ignore ui/theme/dist -x sh scripts/watch-local-build.sh' 'live-server build/site'",
-    "typecheck": "tsc",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "serve": "yarn build:local && live-server build/site",
+    "watch:local": "fgbg 'nodemon -e yml,adoc,css,scss,js -w components -w ui --ignore ui/theme/dist -x sh scripts/watch-local-build.sh' 'live-server build/site'"
   },
   "dependencies": {
     "@antora/lunr-extension": "^1.0.0-alpha.8",

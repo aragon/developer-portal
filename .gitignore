@@ -2,7 +2,7 @@
 /node_modules
 
 # Production
-/build
+build
 
 ui/node_modules
 ui/theme/dist
@@ -10,6 +10,8 @@ ui/theme/dist
 # Generated files
 .cache-loader
 /static/optimized-svg
+
+playbook-local-only.yml
 
 # Misc
 .DS_Store
