@@ -26,10 +26,8 @@ cd ui && yarn && yarn build
 ### Local Build and Development
 
 ```
-$ yarn serve
+$ yarn build:local
 ```
-
-This command starts a local development server and opens up a browser window. Changes are not reflected live, you will need to restart the server.
 
 For this command to work, you need to create `playbook-local-only.yml`. For reference, you can use `playbook-master.yml` or `playbook-staging.yml` to fill in the information. 
 
