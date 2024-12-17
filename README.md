@@ -1,4 +1,4 @@
-![Aragon](/static/img/osx_blue_logo_lqrvkr.png)
+![Aragon](/osx_blue_logo.png)
 
 <p align="center">
   <a href="https://aragon.org/">Aragon website</a>
