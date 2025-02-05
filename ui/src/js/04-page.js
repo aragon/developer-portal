@@ -28,10 +28,16 @@
     $shdsList.classList.add('subheading-list');
 
     function createLink(heading) {
-      const link = toArray(heading.childNodes).reduce(function(target, child) {
-        if (child.nodeName !== 'A') target.appendChild(child.cloneNode(true));
-        return target;
-      }, document.createElement('a'));
+      const link = document.createElement('a');
+
+      toArray(heading.childNodes).forEach(child => {
+        if (child.nodeName === 'A') {
+          const anchorText = document.createTextNode(child.textContent);
+          link.appendChild(anchorText);
+        } else {
+          link.appendChild(child.cloneNode(true));
+        }
+      });
 
       links[(link.href = '#' + heading.id)] = link;
       return link;

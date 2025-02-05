@@ -15,12 +15,12 @@
     {{> navigation-component }}
     {{/each}}
 
-    <h3 class="nav-title">Plugin Marketplace</h3>
-    {{#each (pick site.components "token-voting, multisig, admin, spp")}}
+    <h3 class="nav-title">Governance</h3>
+    {{#each (pick site.components "token-voting, multisig, admin, spp, marketplace")}}
     {{> navigation-component }}
     {{/each}}
 
-    <h3 class="nav-title">More</h3>
+    <h3 class="nav-title">App Development</h3>
     {{!-- gov-ui-kit --}}
     <div class="nav-component">
       <a class="flex align-center" href="https://aragon.github.io/gov-ui-kit" tabindex="0">
