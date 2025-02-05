@@ -5,28 +5,28 @@ site:
 content:
   sources:
     - url: .
-      branches: my-deploy
+      branches: staging
       start_path: components/home
     - url: .
-      branches: my-deploy
+      branches: staging
       start_path: components/marketplace
     - url: https://github.com/aragon/multisig-plugin
-      branches: feat/docs-update-page-title
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/token-voting-plugin
-      branches: feat/docs-update-page-title
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/admin-plugin
-      branches: feat/docs-update-page-title
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx
       branches: develop
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx-commons
-      branches: feat/docs-update-page-title
+      branches: main
       start_path: contracts/docs
     - url: https://github.com/aragon/staged-proposal-processor-plugin
-      branches: feat/docs-update-page-title
+      branches: main
       start_path: docs
     - url: https://github.com/aragon/gov-app-template
       branches: feat/documentation-antora
