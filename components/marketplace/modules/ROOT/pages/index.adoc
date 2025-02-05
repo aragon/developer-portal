@@ -5,32 +5,33 @@ The following plugins were built by third-party developers in the Aragon ecosyst
 
 WARNING: Plugins in the Governance Marketplace may not have gone through the same level of security review as official Aragon plugins. It is the responsibility of each DAO and its participants to evaluate each plugin prior to giving it any governance permissions. Use at your own risk. 
 
+== Plugins
 
-== link:https://github.com/aragon/toucan-voting-plugin[Multichain token voting (with LayerZero)]
+=== https://github.com/aragon/toucan-voting-plugin[Multichain token voting (with LayerZero)]
 
 By link:https://github.com/aragon[@AragonR&D]
 
 Leverages the LayerZero protocol for cross-chain messaging and the zkSync Era rollup for low-cost and secure voting. 
 
-== link:https://github.com/crosschain-alliance/toucan-voting-plugin/tree/feat/hashi[Multichain token voting (with Hashi)]
+=== https://github.com/crosschain-alliance/toucan-voting-plugin/tree/feat/hashi[Multichain token voting (with Hashi)]
 
 link:https://github.com/allemanfredi[@allemanfredi]
 
 A forked version of the Multichain token voting plugin that uses Hashi for cross-chain messaging.
 
-== link:https://github.com/aragon/ve-governance[veGovernance]
+=== https://github.com/aragon/ve-governance[veGovernance]
 
 link:https://github.com/aragon[@AragonR&D]
 
 A modernized vote escrow (ve) and gauge-based governance model which can be used to foster a strong alignment between token holders and capital flows.
 
-== link:https://github.com/aragon/optimistic-token-voting-plugin[Optimistic token voting]
+=== https://github.com/aragon/optimistic-token-voting-plugin[Optimistic token voting]
 
 link:https://github.com/aragon[@AragonR&D]
 
 An optimistic voting plugin where selected groups or members can submit proposals and token holders can veto them.
 
-== link:https://github.com/aragon/polygon-multithreshold-multisig[Polygon multithreshold multisig]
+=== https://github.com/aragon/polygon-multithreshold-multisig[Polygon multithreshold multisig]
 
 link:https://github.com/aragon[@AragonR&D]
 
