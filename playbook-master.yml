@@ -7,6 +7,9 @@ content:
     - url: .
       branches: master
       start_path: components/home
+    - url: .
+      branches: master
+      start_path: components/marketplace
     - url: https://github.com/aragon/multisig-plugin
       branches: main
       start_path: packages/contracts/docs
@@ -14,7 +17,7 @@ content:
       branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/admin-plugin
-      branches: feat/docs
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx
       branches: main
