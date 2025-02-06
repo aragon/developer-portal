@@ -7,23 +7,26 @@ content:
     - url: .
       branches: staging
       start_path: components/home
+    - url: .
+      branches: staging
+      start_path: components/marketplace
     - url: https://github.com/aragon/multisig-plugin
-      branches: feature/docs
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/token-voting-plugin
-      branches: feature/docs
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/admin-plugin
-      branches: feat/docs
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx
-      branches: feature/docs
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx-commons
-      branches: feature/docs
+      branches: main
       start_path: contracts/docs
     - url: https://github.com/aragon/staged-proposal-processor-plugin
-      branches: feature/docs
+      branches: main
       start_path: docs
     - url: https://github.com/aragon/gov-app-template
       branches: feat/documentation-antora
