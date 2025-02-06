@@ -20,7 +20,7 @@ content:
       branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx
-      branches: develop
+      branches: main
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx-commons
       branches: main
