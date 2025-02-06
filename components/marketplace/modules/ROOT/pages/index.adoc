@@ -3,7 +3,7 @@
 The following plugins were built by third-party developers in the Aragon ecosystem or by members of the Aragon team.
 
 
-WARNING: Plugins in the Governance Marketplace may not have gone through the same level of security review as official Aragon plugins. It is the responsibility of each DAO and its participants to evaluate each plugin prior to giving it any governance permissions. Use at your own risk. 
+WARNING: Plugins in the Governance Marketplace may not have gone through the same level of security review as official Aragon plugins. Use at your own risk.
 
 == Plugins
 
@@ -36,3 +36,6 @@ An optimistic voting plugin where selected groups or members can submit proposal
 link:https://github.com/aragon[@AragonR&D]
 
 A multi-threshold approval mechanism for handling both standard and emergency proposals.
+
+[.info-text-style]
+_By installing and using these plugins, some of which are 3rd party plugins, you acknowledge that Aragon is not responsible for their functionality, security, updates, or any potential risks, including data loss or security breaches. Use of these plugins at your own risk, and you should verify their third-party privacy policies and terms before installation. Aragon disclaims all liability for any issues arising from the use of these plugins. Aragon disclaims all liability for any issues arising from the use of these plugins._
