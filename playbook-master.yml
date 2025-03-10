@@ -28,6 +28,9 @@ content:
     - url: https://github.com/aragon/staged-proposal-processor-plugin
       branches: main
       start_path: docs
+    - url: https://github.com/aragon/ve-governance
+      branches: main
+      start_path: docs
     - url: https://github.com/aragon/gov-app-template
       branches: feat/documentation-antora
       start_path: docs
