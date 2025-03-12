@@ -29,7 +29,7 @@ content:
       branches: main
       start_path: docs
     - url: https://github.com/aragon/ve-governance
-      branches: main
+      branches: develop
       start_path: docs
     - url: https://github.com/aragon/gov-app-template
       branches: feat/documentation-antora
