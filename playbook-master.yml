@@ -10,6 +10,9 @@ content:
     - url: .
       branches: master
       start_path: components/marketplace
+    - url: https://github.com/aragon/protocol-factory
+      branches: main
+      start_path: docs
     - url: https://github.com/aragon/multisig-plugin
       branches: main
       start_path: packages/contracts/docs

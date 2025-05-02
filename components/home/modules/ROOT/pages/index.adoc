@@ -1,7 +1,7 @@
 
 = Documentation
 
-Aragon is a secure and modular tech stack for organizations to manage their protocols and assets onchain. 
+Aragon is a secure and modular tech stack for organizations to manage their protocols and assets onchain.
 
 [.card-section]
 == Guides
@@ -29,18 +29,17 @@ link:https://aragon.github.io/gov-ui-kit[[.card-title]#Building a custom applica
 
 OSx is our Ethereum-based smart contract framework. It enables organizations to deploy custom governance tailored to their unique needs and securely adapt over time. It was designed to overcome the monolithic one-size-fits-approach commonly used by onchain organizations.
 
-**The central principle behind OSx is that permissions are the core primitive that enables effective governance in any complex organization**.
+**In OSx everything is a permission.** Permissions are the core primitive that enables scalable governance in large and complex organizations.
 
-== Aragon Plugin Marketplace
+== Aragon Plugins
 
 Permissions can be granted to an OSx plugin address. Plugins contain governance logic inside of reusable contracts. Each plugin is limited in scope, with single-purpose logic that can be mixed and matched to compose novel governance designs.
 
-**Explore or publish your own community-built plugins** that can be used to extend any OSx-based organization with new governance logic.
-
+Explore the link:https://github.com/aragon/osx-plugin-template-foundry[OSx Plugin Template] and publish your own, which can be used to extend any OSx-based organization with new governance logic.
 
 == Governance Tooling
 
-The Governance UI Kit and Governance App Template are used to build custom applications and UIs that integrate seamlessly with OSx. 
+The link:https://github.com/aragon/gov-ui-kit[Governance UI Kit] and link:https://github.com/aragon/gov-app-template[Governance App Template] are used to build custom applications and UIs that integrate seamlessly with OSx.
 
 == Questions?
 
