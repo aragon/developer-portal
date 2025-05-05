@@ -29,7 +29,7 @@ cd ui && yarn && yarn build
 $ yarn build:local
 ```
 
-For this command to work, you need to create `playbook-local-only.yml`. For reference, you can use `playbook-master.yml` or `playbook-staging.yml` to fill in the information. 
+For this command to work, adjust `playbook-local.yml` to match your desired settings.
 
 ### Adding a new repo to the docs
 
