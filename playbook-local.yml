@@ -1,0 +1,51 @@
+site:
+  title: Aragon Docs
+  url: http://127.0.0.1:8080
+  start_page: ROOT::index.adoc
+content:
+  sources:
+    - url: .
+      branches: staging
+      start_path: components/home
+    - url: .
+      branches: staging
+      start_path: components/marketplace
+    - url: https://github.com/aragon/protocol-factory
+      branches: main
+      start_path: docs
+    - url: https://github.com/aragon/multisig-plugin
+      branches: main
+      start_path: packages/contracts/docs
+    - url: https://github.com/aragon/token-voting-plugin
+      branches: main
+      start_path: packages/contracts/docs
+    - url: https://github.com/aragon/admin-plugin
+      branches: main
+      start_path: packages/contracts/docs
+    - url: https://github.com/aragon/osx
+      branches: main
+      start_path: packages/contracts/docs
+    - url: https://github.com/aragon/osx-commons
+      branches: main
+      start_path: contracts/docs
+    - url: https://github.com/aragon/staged-proposal-processor-plugin
+      branches: main
+      start_path: docs
+    - url: https://github.com/aragon/ve-governance
+      branches: develop
+      start_path: docs
+    - url: https://github.com/aragon/gov-app-template
+      branches: feat/documentation-antora
+      start_path: docs
+
+ui:
+  bundle:
+    url: ./ui/theme
+asciidoc:
+  attributes:
+    idprefix: ''
+antora:
+  extensions:
+    - require: './lunr-tokenizer'
+    - require: '@antora/lunr-extension'
+      index_latest_only: true

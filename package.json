@@ -5,7 +5,7 @@
   "scripts": {
     "build:staging": "bash scripts/build.sh --fetch playbook-staging.yml",
     "build:master": "bash scripts/build.sh --fetch playbook-master.yml",
-    "build:local": "bash scripts/build.sh playbook-local-only.yml",
+    "build:local": "bash scripts/build.sh playbook-local.yml",
     "build:no-fetch": "bash scripts/build.sh playbook.yml",
     "build:theme": "yarn --cwd ui build",
     "serve": "yarn build:local && live-server build/site",
