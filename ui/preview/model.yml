@@ -11,11 +11,11 @@ site:
       title: Home
       url: /index.html
       versions:
-      - &latest_version_abc
+      - &latest_version_root
         url: '#' 
         version: 'master'
         displayVersion: 'master'
-      latestVersion: *latest_version_abc
+      latestVersion: *latest_version_root
     osx-contracts:
       &component_contracts
       name: osx-contracts
@@ -26,6 +26,7 @@ site:
         url: /osx-contracts/1.x/index.html
         version: '1.x'
         displayVersion: '1.x'
+      latestVersion: *latest_version_contracts
     token-voting:
       name: token-voting
       title: Token Voting
@@ -66,3 +67,13 @@ site:
         version: '1.x'
         displayVersion: '1.x'
       latestVersion: *latest_version_spp
+    protocol-factory:
+      name: protocol-factory
+      title: Protocol Factory
+      url: /protocol-factory/1.x/index.html
+      versions:
+      - &latest_version_protocol_factory
+        url: /protocol-factory/1.x/index.html
+        version: '1.x'
+        displayVersion: '1.x'
+      latestVersion: *latest_version_protocol_factory

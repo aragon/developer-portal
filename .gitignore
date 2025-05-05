@@ -11,8 +11,6 @@ ui/theme/dist
 .cache-loader
 /static/optimized-svg
 
-playbook-local-only.yml
-
 # Misc
 .DS_Store
 .env.local

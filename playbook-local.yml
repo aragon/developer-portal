@@ -1,14 +1,14 @@
 site:
   title: Aragon Docs
-  url: https://docs.aragon.org
+  url: http://127.0.0.1:8080
   start_page: ROOT::index.adoc
 content:
   sources:
     - url: .
-      branches: master
+      branches: staging
       start_path: components/home
     - url: .
-      branches: master
+      branches: staging
       start_path: components/marketplace
     - url: https://github.com/aragon/protocol-factory
       branches: main

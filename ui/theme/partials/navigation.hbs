@@ -32,6 +32,11 @@
     {{> navigation-component }}
     {{/each}}
 
+    <h3 class="nav-title">Protocol Testing and Deployment</h3>
+    {{#each (pick site.components "protocol-factory")}}
+    {{> navigation-component }}
+    {{/each}}
+
   </div>
 
   {{else}}
