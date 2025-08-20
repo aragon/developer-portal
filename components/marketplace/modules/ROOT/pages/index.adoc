@@ -7,13 +7,19 @@ WARNING: Plugins in the Governance Marketplace may not have gone through the sam
 
 == Plugins
 
-=== https://github.com/aragon/toucan-voting-plugin[Multichain token voting (with LayerZero)]
+=== https://github.com/privacy-scaling-explorations/maci-voting-plugin-aragon[Private voting with MACI]
+
+By link:https://github.com/privacy-scaling-explorations/[@Privacy Stewards of Ethereum]
+
+Leverages the MACI (Minimum Anti-Collusion Infrastructure) open source infrastructure for private onchain voting.
+
+=== https://github.com/aragon/toucan-voting-plugin[Multichain token voting with LayerZero]
 
 By link:https://github.com/aragon[@AragonR&D]
 
 Leverages the LayerZero protocol for cross-chain messaging and the zkSync Era rollup for low-cost and secure voting. 
 
-=== https://github.com/crosschain-alliance/toucan-voting-plugin/tree/feat/hashi[Multichain token voting (with Hashi)]
+=== https://github.com/crosschain-alliance/toucan-voting-plugin/tree/feat/hashi[Multichain token voting with Hashi]
 
 link:https://github.com/allemanfredi[@allemanfredi]
 
