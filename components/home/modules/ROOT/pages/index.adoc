@@ -39,7 +39,7 @@ Explore the link:https://github.com/aragon/osx-plugin-template-foundry[OSx Plugi
 
 == Governance Tooling
 
-The link:https://github.com/aragon/gov-ui-kit[Governance UI Kit] and link:https://github.com/aragon/gov-app-template[Governance App Template] are used to build custom applications and UIs that integrate seamlessly with OSx.
+The link:https://uikit.aragon.org/[Governance UI Kit] and link:https://github.com/aragon/gov-app-template[Governance App Template] are used to build custom applications and UIs that integrate seamlessly with OSx.
 
 == Questions?
 
