@@ -21,7 +21,7 @@ xref:osx-contracts::guide-develop-plugin/index.adoc[[.card-title]#Developing a p
 
 [.card.card-secondary.card-building-app]
 --
-link:https://aragon.github.io/gov-ui-kit[[.card-title]#Building a custom application# [.card-body]#pass:q[Integrate OSx into custom web apps using our suite of React-based UI tools.]#]
+link:https://uikit.aragon.org/[[.card-title]#Building a custom application# [.card-body]#pass:q[Integrate OSx into custom web apps using our suite of React-based UI tools.]#]
 --
 
 
