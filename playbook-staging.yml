@@ -16,9 +16,9 @@ content:
     - url: https://github.com/aragon/multisig-plugin
       branches: main
       start_path: packages/contracts/docs
-    - url: https://github.com/aragon/token-voting-plugin-hardhat
+    - url: https://github.com/aragon/token-voting-plugin
       branches: main
-      start_path: packages/contracts/docs
+      start_path: docs
     - url: https://github.com/aragon/admin-plugin
       branches: main
       start_path: packages/contracts/docs
