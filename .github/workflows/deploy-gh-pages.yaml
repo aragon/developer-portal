@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - feat/fleek-to-gh-page
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,9 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build site
-        run: yarn build:master
+        run: |
+          yarn build:master
+          echo "ghdocs.aragon.org" > build/site/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
