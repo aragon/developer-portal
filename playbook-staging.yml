@@ -1,14 +1,14 @@
 site:
-  title: Aragon Docs
-  url: https://devs-stg.aragon.org
+  title: Aragon Docs (Staging)
+  url: https://stg-ghdocs.aragon.org
   start_page: ROOT::index.adoc
 content:
   sources:
     - url: .
-      branches: staging
+      branches: feat/fleek-to-gh-page
       start_path: components/home
     - url: .
-      branches: staging
+      branches: feat/fleek-to-gh-page
       start_path: components/marketplace
     - url: https://github.com/aragon/protocol-factory
       branches: main

@@ -5,6 +5,15 @@ on:
     branches:
       - feat/fleek-to-gh-page
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   build-and-deploy:
@@ -13,7 +22,10 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    
+    environment:
+      name: ${{ github.event.inputs.environment || 'production' }}
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,10 +39,17 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build site
+      - name: Build site (Production)
+        if: ${{ github.event.inputs.environment == 'production' || github.event_name == 'push' }}
         run: |
           yarn build:master
           echo "ghdocs.aragon.org" > build/site/CNAME
+
+      - name: Build site (Staging)
+        if: ${{ github.event.inputs.environment == 'staging' }}
+        run: |
+          yarn build:staging
+          echo "stg-ghdocs.aragon.org" > build/site/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

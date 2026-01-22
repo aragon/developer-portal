@@ -1,0 +1,122 @@
+name: Deploy PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Create preview playbook
+        run: |
+          cat > playbook-preview.yml << 'EOF'
+          site:
+            title: Aragon Docs (Preview)
+            url: /developer-portal/pr-preview/pr-${{ github.event.pull_request.number }}
+            start_page: ROOT::index.adoc
+          content:
+            sources:
+              - url: .
+                branches: HEAD
+                start_path: components/home
+              - url: .
+                branches: HEAD
+                start_path: components/marketplace
+              - url: https://github.com/aragon/protocol-factory
+                branches: main
+                start_path: docs
+              - url: https://github.com/aragon/multisig-plugin
+                branches: main
+                start_path: packages/contracts/docs
+              - url: https://github.com/aragon/token-voting-plugin
+                branches: main
+                start_path: docs
+              - url: https://github.com/aragon/admin-plugin
+                branches: main
+                start_path: packages/contracts/docs
+              - url: https://github.com/aragon/osx
+                branches: main
+                start_path: packages/contracts/docs
+              - url: https://github.com/aragon/osx-commons
+                branches: main
+                start_path: contracts/docs
+              - url: https://github.com/aragon/staged-proposal-processor-plugin
+                branches: main
+                start_path: docs
+              - url: https://github.com/aragon/ve-governance
+                branches: develop
+                start_path: docs
+              - url: https://github.com/aragon/gov-app-template
+                branches: feat/documentation-antora
+                start_path: docs
+          ui:
+            bundle:
+              url: ./ui/theme
+          asciidoc:
+            attributes:
+              idprefix: ''
+          antora:
+            extensions:
+              - require: './lunr-tokenizer'
+              - require: '@antora/lunr-extension'
+                index_latest_only: true
+          EOF
+
+      - name: Build site
+        run: bash scripts/build.sh --fetch playbook-preview.yml
+
+      - name: Deploy to GitHub Pages (Preview)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/site
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
+
+      - name: Comment PR with preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const previewUrl = `https://aragon.github.io/developer-portal/pr-preview/pr-${{ github.event.pull_request.number }}/`;
+            const body = `## 🚀 Preview Deployment\n\nYour preview is ready!\n\n**Preview URL:** ${previewUrl}\n\n_This preview will be updated on each push to this PR._`;
+
+            // Check if comment already exists
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existingComment = comments.data.find(c => c.body.includes('Preview Deployment'));
+
+            if (existingComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingComment.id,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }
