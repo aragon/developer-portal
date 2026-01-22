@@ -13,8 +13,9 @@ else
   echo "Generating preview playbook for branch: $VERCEL_GIT_COMMIT_REF"
   echo "Preview URL: $VERCEL_URL"
 
-  # Reemplazar la URL del sitio y cambiar 'branches: staging' a 'branches: HEAD' para sources locales
-  sed -e "s|url: https://devs-stg.aragon.org|url: https://$VERCEL_URL|" \
+  # Eliminar la URL del sitio (usar ruta relativa) y cambiar 'branches: staging' a 'branches: HEAD' para sources locales
+  # Usamos "/" como site.url para que todos los assets usen rutas relativas desde la raíz
+  sed -e "s|url: https://devs-stg.aragon.org|url: /|" \
       -e "s|branches: staging|branches: HEAD|g" \
       playbook-staging.yml > playbook-preview.yml
 
