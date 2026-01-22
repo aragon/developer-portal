@@ -9,9 +9,19 @@ elif [ "$VERCEL_GIT_COMMIT_REF" = "staging" ]; then
   PLAYBOOK="playbook-staging.yml"
 else
   # Para cualquier otra rama (previews), generar playbook con URL dinámica
-  echo "Generating preview playbook with URL: $VERCEL_URL"
-  sed "s|url: https://devs-stg.aragon.org|url: https://$VERCEL_URL|" playbook-staging.yml > playbook-preview.yml
+  # y usando HEAD para los sources locales
+  echo "Generating preview playbook for branch: $VERCEL_GIT_COMMIT_REF"
+  echo "Preview URL: $VERCEL_URL"
+
+  # Reemplazar la URL del sitio y cambiar 'branches: staging' a 'branches: HEAD' para sources locales
+  sed -e "s|url: https://devs-stg.aragon.org|url: https://$VERCEL_URL|" \
+      -e "s|branches: staging|branches: HEAD|g" \
+      playbook-staging.yml > playbook-preview.yml
+
   PLAYBOOK="playbook-preview.yml"
+
+  echo "Generated playbook-preview.yml:"
+  cat playbook-preview.yml
 fi
 
 echo "Building with $PLAYBOOK for branch $VERCEL_GIT_COMMIT_REF"
