@@ -2,7 +2,7 @@
   "buildCommand": "bash scripts/vercel-build.sh",
   "outputDirectory": "build/site",
   "installCommand": "yarn install --ignore-scripts --frozen-lockfile",
-  "trailingSlash": true,
+  "trailingSlash": false,
   "cleanUrls": true,
   "headers": [
     {
