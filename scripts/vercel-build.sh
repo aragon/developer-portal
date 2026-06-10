@@ -3,10 +3,15 @@
 set -o xtrace -o errexit
 
 # Determinar qué playbook usar según la rama
+# NOTA: el clone de Vercel no tiene refs de ramas (solo una rama sintética
+# llamada "master" apuntando al commit desplegado), así que los sources
+# locales deben usar HEAD en vez del nombre real de la rama.
 if [ "$VERCEL_GIT_COMMIT_REF" = "master" ]; then
-  PLAYBOOK="playbook-master.yml"
+  sed "s|branches: master|branches: HEAD|g" playbook-master.yml > playbook-vercel.yml
+  PLAYBOOK="playbook-vercel.yml"
 elif [ "$VERCEL_GIT_COMMIT_REF" = "staging" ]; then
-  PLAYBOOK="playbook-staging.yml"
+  sed "s|branches: staging|branches: HEAD|g" playbook-staging.yml > playbook-vercel.yml
+  PLAYBOOK="playbook-vercel.yml"
 else
   # Para cualquier otra rama (previews), generar playbook con URL dinámica
   # y usando HEAD para los sources locales
