@@ -38,6 +38,9 @@ content:
       branches: feat/documentation-antora
       start_path: docs
 
+urls:
+  html_extension_style: indexify
+
 ui:
   bundle:
     url: ./ui/theme
