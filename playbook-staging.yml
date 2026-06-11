@@ -24,7 +24,7 @@ content:
       start_path: packages/contracts/docs
     - url: https://github.com/aragon/osx
       branches: main
-      start_path: packages/contracts/docs
+      start_path: docs
     - url: https://github.com/aragon/osx-commons
       branches: main
       start_path: contracts/docs
@@ -37,6 +37,9 @@ content:
     - url: https://github.com/aragon/gov-app-template
       branches: feat/documentation-antora
       start_path: docs
+
+urls:
+  html_extension_style: indexify
 
 ui:
   bundle:
