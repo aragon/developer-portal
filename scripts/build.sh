@@ -21,6 +21,10 @@ antora --stacktrace "$@"
 
 node scripts/latest-redirects.js
 
+## Root-absolute URLs on pages Vercel serves without a trailing slash
+
+node scripts/absolutize-dotted-root-urls.js
+
 ## Headers
 
 sh scripts/custom_headers.sh
