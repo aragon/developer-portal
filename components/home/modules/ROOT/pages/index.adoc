@@ -49,5 +49,6 @@ The link:https://uikit.aragon.org/[Governance UI Kit] and link:https://github.co
 
 We’re here to help you build an OSx organization, plugin, or custom governance application.
 
-- Check out our *developer community* in link:https://discord.com/invite/aragonorg[our Discord]!
-- **If you’re not a developer**, head over to our link:https://www.aragon.org/resource-library[Resource Library] to learn more about how to govern and manage your organization with Aragon.
+- **Support and feedback** — reach the team through our link:https://aragonassociation.atlassian.net/servicedesk/customer/portal/3[customer service portal].
+- **Services, partnerships, and press** — send us a note via the link:https://www.aragon.org/get-assistance-form[get in touch form].
+- **New to Aragon?** — the link:https://www.aragon.org/get-started[Get started page] covers how to govern and manage your organization.
